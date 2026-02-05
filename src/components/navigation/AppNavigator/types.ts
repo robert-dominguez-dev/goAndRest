@@ -1,17 +1,11 @@
-import { ConverterFieldName } from './screens/TabsNavigator/screens/ConverterScreen/types.ts';
-
 export enum AppNavigatorScreen {
-  TabsNavigator = 'TabsNavigator',
-  CurrencySelectScreen = 'CurrencySelectScreen',
+  LandingScreen = 'LandingScreen',
+  RunningWorkoutScreen = 'RunningWorkoutScreen',
+  WorkoutCreationScreen = 'WorkoutCreationScreen',
 }
 
-export type CurrencySelectScreenProps = {
-  currencyFieldName:
-    | ConverterFieldName.fromCurrency
-    | ConverterFieldName.toCurrency;
-};
-
 export type AppNavigatorScreenParams = {
-  [AppNavigatorScreen.TabsNavigator]: undefined;
-  [AppNavigatorScreen.CurrencySelectScreen]: CurrencySelectScreenProps;
+  [AppNavigatorScreen.LandingScreen]: undefined;
+  [AppNavigatorScreen.RunningWorkoutScreen]: undefined;
+  [AppNavigatorScreen.WorkoutCreationScreen]: undefined;
 };

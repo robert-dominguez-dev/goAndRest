@@ -1,1 +1,0 @@
-export const CURRENCY_AMOUNT_PLACEHOLDER = '0.000';
