@@ -1,46 +1,30 @@
-import React from 'react';
-import styled from 'styled-components/native';
+import { Text, TextProps } from 'react-native';
 import { ChildrenProp } from '../../../types/common.ts';
-import { AppTextCategory, AppTextConfig, AppTextStatus } from './types.ts';
-import { categoryConfigMap } from './constants.ts';
-import { useTextStatusColor } from './hooks/useTextStatusColor.ts';
-import { TextProps } from 'react-native';
+import {
+  useAppTextStyle,
+  UseAppTextStyleParams,
+} from './hooks/useAppTextStyle.ts';
 
-type AppTextProps = ChildrenProp &
-  Pick<TextProps, 'numberOfLines'> & {
-    status?: AppTextStatus;
-    category?: AppTextCategory;
-    colorOverride?: string;
-  };
+export type AppTextProps = Pick<TextProps, 'numberOfLines'> &
+  ChildrenProp &
+  UseAppTextStyleParams;
 
 export const AppText = ({
   children,
-  numberOfLines,
-  colorOverride,
-  category = 'body',
-  status = 'default',
+  numberOfLines = 1,
+  ...textStyleProps
 }: AppTextProps) => {
-  const color = useTextStatusColor(status);
-  const preset = categoryConfigMap[category];
-  const colorEvaluated: string = colorOverride || color;
+  const style = useAppTextStyle(textStyleProps);
+
+  const ellipsizeMode: TextProps['ellipsizeMode'] =
+    numberOfLines > 1 ? undefined : 'tail';
 
   return (
-    <BaseTextStyled
-      $color={colorEvaluated}
-      $preset={preset}
-      numberOfLines={numberOfLines}>
+    <Text
+      numberOfLines={numberOfLines}
+      ellipsizeMode={ellipsizeMode}
+      style={style}>
       {children}
-    </BaseTextStyled>
+    </Text>
   );
 };
-
-type BaseTextStyledProps = { $color: string; $preset: AppTextConfig };
-
-const BaseTextStyled = styled.Text<BaseTextStyledProps>`
-  color: ${({ $color }) => $color};
-  font-size: ${({ $preset }) => $preset.fontSize}px;
-  font-weight: ${({ $preset }) => $preset.fontWeight};
-  line-height: ${({ $preset }) => $preset.lineHeight}px;
-  font-family: ${({ $preset }) => $preset.fontFamily};
-  letter-spacing: ${({ $preset }) => $preset.letterSpacing}px;
-`;

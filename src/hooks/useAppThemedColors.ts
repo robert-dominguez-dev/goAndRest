@@ -1,10 +1,10 @@
-import { AppTheme } from '../constants/common.ts';
 import {
   AppColors,
   appColorsDark,
   appColorsLight,
 } from '../constants/colors.ts';
 import { useAppTheme } from '../contexts/AppThemeProvider.tsx';
+import { AppTheme } from '../types/common.ts';
 
 const appColors: Record<AppTheme, AppColors> = {
   [AppTheme.light]: appColorsLight,

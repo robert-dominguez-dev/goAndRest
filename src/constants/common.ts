@@ -1,30 +1,31 @@
-export enum AppSize {
-  xxs = 2,
-  xs = 4,
-  s = 8,
-  m = 16,
-  ml = 24,
-  l = 32,
-  xl = 48,
-  xxl = 64,
-  '3xl' = 80,
-}
+import { DimensionValue, Platform } from 'react-native';
 
-export enum AppTheme {
-  light = 'light',
-  dark = 'dark',
-}
+export const IS_DEV_MODE = __DEV__;
 
-export const DASH = '-';
-export const PIPE = '|';
-export const DOT = '.';
+export const IS_ANDROID = Platform.OS === 'android';
+
+export const FILL_CONTAINER_DIMENSION: DimensionValue = '100%';
+
+export const UNLIMITED_NUMBER_OF_LINES = 0;
+
+export const EMPTY_OBJECT_STRING = '{}';
+
+export const ONE_SECOND_MS = 1000;
+
+export const ONE_MINUTE_SECONDS = 60;
+
+export const POP_UP_Z_INDEX = 1000;
+
+export const DEFAULT_POLLING_INTERVAL_IN_MS = 2000;
+
+export const NOT_KNOWN_PLACEHOLDER = '???';
+
 export const EMPTY_SPACE = ' ';
 
-export const EMPTY_SPACES_REGEXP = /\s+/;
+export const DASH = '-';
 
-export const ONE_HOUR_IN_MS = 3_600_000;
+export const COMMA = ',';
 
-export const LINE_BREAK_SEPARATOR = '\n';
+export const COMMA_SPACE = COMMA + EMPTY_SPACE;
 
-export const ICONS_STROKE_WIDTH = 2.5;
-export const ICONS_SIZE = AppSize.ml;
+export const DOT = '.';

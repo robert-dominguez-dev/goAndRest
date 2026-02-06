@@ -1,6 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { AppTheme } from '../constants/common.ts';
-import { ChildrenProp } from '../types/common.ts';
+import { AppTheme, ChildrenProp } from '../types/common.ts';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Appearance } from 'react-native';
 import { checkIsAppTheme } from '../helpers/checkIsAppTheme.ts';

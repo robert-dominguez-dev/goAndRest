@@ -1,9 +1,9 @@
-import { AppScreenLayout } from '../../../../common/AppScreenLayout/AppScreenLayout.tsx';
 import { AppText } from '../../../../common/AppText/AppText.tsx';
+import { AppScreenLayout } from '../../../../common/AppScreenLayout.tsx';
 
 export const LandingScreen = () => {
   return (
-    <AppScreenLayout title={'LandingScreen'}>
+    <AppScreenLayout headerTitle={'LandingScreen'}>
       <AppText>JOJOJOJ</AppText>
     </AppScreenLayout>
   );
