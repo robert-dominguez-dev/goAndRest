@@ -9,7 +9,6 @@ import {
 import { AppBackdrop } from '../AppBackdrop.tsx';
 import { AppButtonUIProps } from '../../controls/AppButton/components/AppButtonUI.tsx';
 import { AppLink } from '../AppLink.tsx';
-import { useDevScreenEasterEggHandler } from '../../navigation/hooks/useDevScreenEasterEggHandler.ts';
 
 export type AppPopUpTextProps = {
   popUpTitle: string;
@@ -33,8 +32,6 @@ export const AppPopUp = ({
   secondaryButtonLabel,
   secondaryButtonColorStatus = 'secondary',
 }: AppPopUpProps) => {
-  const devScreenEasterEggHandler = useDevScreenEasterEggHandler();
-
   const maybeSecondaryButton = secondaryButtonLabel ? (
     <AppView
       width={FILL_CONTAINER_DIMENSION}
@@ -54,12 +51,9 @@ export const AppPopUp = ({
         padding={'m'}
         margin={'m'}
         borderRadius={'s'}
-        backgroundColorStatus={'secondaryVeryDark'}
-        borderColorStatus={'secondaryDark'}>
-        <AppLink
-          label={popUpTitle}
-          onPress={devScreenEasterEggHandler}
-        />
+        backgroundColorStatus={'secondaryDeep'}
+        borderColorStatus={'secondaryStrong'}>
+        <AppLink label={popUpTitle} />
         <AppText
           grow
           numberOfLines={UNLIMITED_NUMBER_OF_LINES}>

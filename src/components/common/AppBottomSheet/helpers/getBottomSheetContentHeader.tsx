@@ -1,5 +1,6 @@
-import { AppHeader } from '../../AppHeader/AppHeader.tsx';
-import { AppIcon } from '../../../icons/constants.tsx';
+import { AppHeader, AppHeaderProps } from '../../AppHeader/AppHeader.tsx';
+import { JSX } from 'react';
+import { CircleX } from 'lucide-react-native';
 
 export type GetBottomSheetContentHeaderParams = {
   title: string | undefined;
@@ -22,12 +23,13 @@ export const getBottomSheetContentHeader = ({
     return undefined;
   }
 
-  const accessoryRightIconName = closeable ? AppIcon.close : undefined;
+  const AccessoryRightIconComponent: AppHeaderProps['AccessoryRightIconComponent'] =
+    closeable ? CircleX : undefined;
 
   return (
     <AppHeader
       title={title}
-      AccessoryRightIconComponent={accessoryRightIconName}
+      AccessoryRightIconComponent={AccessoryRightIconComponent}
       onAccessoryRightPress={onClose}
     />
   );

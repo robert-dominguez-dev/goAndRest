@@ -1,10 +1,11 @@
-import { AppGradientColorUnion, AppSize } from '../../../../types/ui.ts';
 import { AppText } from '../../../common/AppText/AppText.tsx';
 import { sizes } from '../../../../constants/ui.ts';
 import { AppViewWithGradientBorder } from '../../../common/AppViewWithGradientBorder.tsx';
 import { AppButtonDisabledDependentProps } from '../types.ts';
 import { AppRow } from '../../../common/AppRow.tsx';
 import { AppLoader } from '../../../common/AppLoader.tsx';
+import { AppGradientColorUnion } from '../../../../constants/colors.ts';
+import { AppSize } from '../../../../types/ui.ts';
 
 const { buttonHeight, buttonBorderRadius } = sizes;
 

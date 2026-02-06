@@ -1,9 +1,9 @@
 import { View, ViewProps, ViewStyle } from 'react-native';
 import { AppColorUnion, AppSizeUnion, BorderProps } from '../../types/ui.ts';
 import { getAppSize } from '../../helpers/getAppSize.ts';
-import { getAppColor } from '../../helpers/getAppColor.ts';
-import { convertBooleanToBinary } from '../../helpers/convertBooleanToBinary.ts';
+
 import { sizes } from '../../constants/ui.ts';
+import { useAppThemedColors } from '../../hooks/useAppThemedColors.ts';
 
 export type AppViewProps = Pick<
   ViewProps,
@@ -89,9 +89,11 @@ export const AppView = ({
   grow,
   shrink,
 }: AppViewProps) => {
+  const appColors = useAppThemedColors();
+
   const borderProps: BorderProps | undefined = borderColorStatus
     ? {
-        borderColor: getAppColor(borderColorStatus),
+        borderColor: appColors[borderColorStatus],
         borderWidth: sizes.defaultBorderWidth,
       }
     : undefined;
@@ -115,7 +117,9 @@ export const AppView = ({
     zIndex,
     pointerEvents,
     opacity,
-    backgroundColor: getAppColor(backgroundColorStatus),
+    backgroundColor: backgroundColorStatus
+      ? appColors[backgroundColorStatus]
+      : undefined,
     margin: getAppSize(margin),
     padding: getAppSize(padding),
     paddingHorizontal: getAppSize(paddingHorizontal),
@@ -129,8 +133,8 @@ export const AppView = ({
     borderTopLeftRadius: getAppSize(borderTopLeftRadius),
     borderTopRightRadius: getAppSize(borderTopRightRadius),
     borderBottomWidth: disableBorderBottom ? 0 : undefined,
-    flexGrow: convertBooleanToBinary(grow),
-    flexShrink: convertBooleanToBinary(shrink),
+    flexGrow: Number(grow),
+    flexShrink: Number(shrink),
   };
 
   return (

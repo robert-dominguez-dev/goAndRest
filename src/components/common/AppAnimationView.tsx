@@ -3,12 +3,12 @@ import { ViewStyle } from 'react-native';
 import { AppAnimation } from '../../assets/constants.ts';
 import Rive from 'rive-react-native';
 import { useState } from 'react';
-import { useTimeoutWhen } from 'rooks';
 import {
   appAnimationToDuration,
   getIsOneShotAnimation,
 } from '../../assets/helpers/getIsOneShotAnimation.ts';
 import { NON_PRESENT_VIEW_STYLE } from '../../constants/ui.ts';
+import { useConditionalTimeout } from '../../hooks/useConditionalTimeout.ts';
 
 export type AppAnimationViewProps = Pick<ViewStyle, 'width' | 'height'> & {
   /**
@@ -30,7 +30,7 @@ export const AppAnimationView = ({
   const isPresentEvaluated = isPresent && isPresentInner;
 
   /**
-   * Presence of the animation needs to be solved like this,
+   * The Presence of the animation needs to be solved like this,
    * because when we remove Rive animation from the view completely,
    * it won't appear on the next mount even if it should be present.
    */
@@ -55,7 +55,11 @@ export const AppAnimationView = ({
 
   const shouldStartDismissTimeout = isPresentEvaluated && !!dismissAfterMs;
 
-  useTimeoutWhen(handleDismiss, dismissAfterMs, shouldStartDismissTimeout);
+  useConditionalTimeout(
+    handleDismiss,
+    dismissAfterMs,
+    shouldStartDismissTimeout,
+  );
 
   return (
     <Rive

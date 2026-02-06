@@ -14,7 +14,7 @@ export const AppMultiColorScreenDescription = ({
 }: AppMultiColorScreenDescriptionProps) => (
   <AppMultiColorText
     category={'header'}
-    textShadowColorStatus={'black'}
+    textShadowColorStatus={'background'}
     textAlign={'center'}
     numberOfLines={UNLIMITED_NUMBER_OF_LINES}
     textParts={textParts}

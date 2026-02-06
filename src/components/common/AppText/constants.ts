@@ -1,5 +1,5 @@
 import { AppTextCategory, AppTextConfig } from './types.ts';
-import { AppSize } from '../../../constants/common.ts';
+import { AppSize } from '../../../types/ui.ts';
 
 enum AppFontFamily {
   QuicksandRegular = 'Quicksand-Regular',

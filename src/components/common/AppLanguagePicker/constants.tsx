@@ -1,9 +1,8 @@
-import { appIcons } from '../../icons/constants.tsx';
-import { SupportedLanguageCode } from '../../../shared/types.ts';
+import { SupportedLanguageCode } from '../../../contexts/AppLanguageProvider/types.ts';
 
-export const appLanguageCodeToIcon: Record<SupportedLanguageCode, JSX.Element> =
+export const appLanguageCodeToFlagEmoji: Record<SupportedLanguageCode, string> =
   {
-    [SupportedLanguageCode.cs]: appIcons.csFlag,
-    [SupportedLanguageCode.sk]: appIcons.skFlag,
-    [SupportedLanguageCode.en]: appIcons.enFlag,
+    [SupportedLanguageCode.cs]: '🇨🇿',
+    [SupportedLanguageCode.sk]: '🇸🇰',
+    [SupportedLanguageCode.en]: '🇬🇧',
   };

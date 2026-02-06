@@ -8,6 +8,7 @@ import { JSX } from 'react';
 import isString from 'lodash/isString';
 import { LucideIcon } from 'lucide-react-native';
 import { AppText } from '../AppText/AppText.tsx';
+import { useAppThemedColors } from '../../../hooks/useAppThemedColors.ts';
 
 export type AppHeaderProps = {
   title: string | JSX.Element;
@@ -24,8 +25,14 @@ export const AppHeader = ({
   AccessoryRightIconComponent,
   onAccessoryRightPress,
 }: AppHeaderProps) => {
+  const { text } = useAppThemedColors();
+
   const titleElement = isString(title) ? (
-    <AppText category={'header'}>{title}</AppText>
+    <AppText
+      textAlign={'center'}
+      category={'header'}>
+      {title}
+    </AppText>
   ) : (
     title
   );
@@ -43,7 +50,9 @@ export const AppHeader = ({
       <AppHeaderAccessoryContainer
         alignItems={'flex-end'}
         onPress={onAccessoryRightPress}>
-        {AccessoryRightIconComponent && <AccessoryRightIconComponent />}
+        {AccessoryRightIconComponent && (
+          <AccessoryRightIconComponent color={text} />
+        )}
       </AppHeaderAccessoryContainer>
     </AppRow>
   );

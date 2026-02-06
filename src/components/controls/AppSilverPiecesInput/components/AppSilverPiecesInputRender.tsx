@@ -8,7 +8,6 @@ import { AppRow } from '../../../common/AppRow.tsx';
 import { useEffect } from 'react';
 import { getNumberOfSilverPiecesFromTouchPosition } from '../helpers/getNumberOfSilverPiecesFromTouchPosition.ts';
 import { AppSilverPiecesInputIllustrations } from './AppSilverPiecesInputIllustrations.tsx';
-import { DEFAULT_SILVER_PIECES_INPUT_MIN_VALUE } from '../../../../constants/config.ts';
 import { triggerHapticFeedback } from '../../helpers/triggerHapticFeedback.ts';
 
 export const AppSilverPiecesInputRender = <TFieldValues extends FieldValues>({
@@ -16,7 +15,7 @@ export const AppSilverPiecesInputRender = <TFieldValues extends FieldValues>({
   maxValue,
   onChange,
   disabled,
-  minValue = DEFAULT_SILVER_PIECES_INPUT_MIN_VALUE,
+  minValue = 1,
 }: AppFormRenderProps<TFieldValues, AppSilverPiecesInputSpecificProps>) => {
   const { handleTouchEvent, touchOffsets } = useTouchOffsets();
   const { handleLayout, layout } = useLayout();

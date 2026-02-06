@@ -1,0 +1,169 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/Quicksand-Bold.ttf",
+      "sha1": "111e880f4de54ccf0a7fd14f38999b9c066e46bb"
+    },
+    {
+      "path": "src/assets/fonts/Montserrat-Medium.ttf",
+      "sha1": "4656e40419da86a5fec473ea8e7fc0efef183f05"
+    },
+    {
+      "path": "src/assets/fonts/Montserrat-Bold.ttf",
+      "sha1": "c7d907722af4fb845ab97d515bb414f29651f000"
+    },
+    {
+      "path": "src/assets/fonts/Quicksand-Medium.ttf",
+      "sha1": "04b8198132a4a092b10d0631500268d6a2a0f889"
+    },
+    {
+      "path": "src/assets/fonts/Bangers-Regular.ttf",
+      "sha1": "16e3bc27f1343b6661711eaacb999be3307790d4"
+    },
+    {
+      "path": "src/assets/fonts/Quicksand-Regular.ttf",
+      "sha1": "61504eaec812663121918199aac7d960229bd306"
+    },
+    {
+      "path": "src/assets/fonts/Quicksand-SemiBold.ttf",
+      "sha1": "339f8d3e09ad271ff12727eef33a99f7a066eee3"
+    },
+    {
+      "path": "src/assets/fonts/Montserrat-Black.ttf",
+      "sha1": "ea4feb16f3d8cb3f1cbc8e3a7af7388cc01ce32e"
+    },
+    {
+      "path": "src/assets/fonts/Montserrat-Regular.ttf",
+      "sha1": "1c8119b38eef1914a4fbd9f6cfdedf198445ab97"
+    },
+    {
+      "path": "src/assets/images/backgrounds/ancient_pillars_at_night.png",
+      "sha1": "811ab83ed3f80c72bfe169b7fe26a401d3c9b1af"
+    },
+    {
+      "path": "src/assets/images/backgrounds/ancient_city_at_night_with_stairs.png",
+      "sha1": "b067061cf0b2fef0be2386ff2d62c9a244213094"
+    },
+    {
+      "path": "src/assets/images/backgrounds/shepherds_around_fire.png",
+      "sha1": "48dc3bce297763f448e783466f5957d238a34bb5"
+    },
+    {
+      "path": "src/assets/images/backgrounds/ancient_city_at_night.png",
+      "sha1": "3897d1389a66ab277e144709997c677baab73763"
+    },
+    {
+      "path": "src/assets/images/backgrounds/ancient_rocks_at_night.png",
+      "sha1": "a476d3038fe3a72c16da4e3035e9559935bf687c"
+    },
+    {
+      "path": "src/assets/images/piece_of_silver.png",
+      "sha1": "239b184d8fc0ce21f5e65880e0c4582c7bc337ea"
+    },
+    {
+      "path": "src/assets/images/avatars/male/sage_male_1.png",
+      "sha1": "4b9847881317a30da4cea07b55a2c52f05d83b52"
+    },
+    {
+      "path": "src/assets/images/avatars/male/sage_male_2.png",
+      "sha1": "3cf29a3a72931b1f9bbd017d62e68a7ec062bca5"
+    },
+    {
+      "path": "src/assets/images/avatars/male/sage_male_3.png",
+      "sha1": "412c7f372dbff6ddc8594c966f05db5120a544da"
+    },
+    {
+      "path": "src/assets/images/avatars/male/sage_male_7.png",
+      "sha1": "d50a3211aaeddea3a7734c7d9bbaeed965efbcdf"
+    },
+    {
+      "path": "src/assets/images/avatars/male/sage_male_6.png",
+      "sha1": "2b8b3e1ac39651dbfec50c4d43001b0776641c7e"
+    },
+    {
+      "path": "src/assets/images/avatars/male/sage_male_4.png",
+      "sha1": "d8a953914475eb1e01b0248abb18fc748e87a7f5"
+    },
+    {
+      "path": "src/assets/images/avatars/male/sage_male_5.png",
+      "sha1": "ebc7250601eef931b98d94cfaabc7cce02591f69"
+    },
+    {
+      "path": "src/assets/images/avatars/male/sage_male_8.png",
+      "sha1": "cb2473c87a211325ce42dfc5e04a34f42af74e12"
+    },
+    {
+      "path": "src/assets/images/avatars/male/sage_male_9.png",
+      "sha1": "b978cdb13b9fccf231a4bae80966a5bc71d72f1c"
+    },
+    {
+      "path": "src/assets/images/avatars/female/sage_female_8.png",
+      "sha1": "40955437467cf40b0f82e14574804bdb3308983b"
+    },
+    {
+      "path": "src/assets/images/avatars/female/sage_female_9.png",
+      "sha1": "1b2d1615c0fab9a36614228ebb18b24c816d3e80"
+    },
+    {
+      "path": "src/assets/images/avatars/female/sage_female_2.png",
+      "sha1": "800c8c20e3794a315776882cdaf4752f0e06d13e"
+    },
+    {
+      "path": "src/assets/images/avatars/female/sage_female_3.png",
+      "sha1": "cb5b2327cc1f343fba28d95bb035ad6fd7facccc"
+    },
+    {
+      "path": "src/assets/images/avatars/female/sage_female_1.png",
+      "sha1": "eb51c7d72c7123af66dcb31ea184c8c3ae89e388"
+    },
+    {
+      "path": "src/assets/images/avatars/female/sage_female_4.png",
+      "sha1": "bc4daab3c9385bc1d6bf522c8c206713fd495290"
+    },
+    {
+      "path": "src/assets/images/avatars/female/sage_female_5.png",
+      "sha1": "3e0cd449199a76ef142dbecaaab14ef5649c624b"
+    },
+    {
+      "path": "src/assets/images/avatars/female/sage_female_7.png",
+      "sha1": "05ede12d92ac9535cacbf951e493885f40d76d52"
+    },
+    {
+      "path": "src/assets/images/avatars/female/sage_female_6.png",
+      "sha1": "7fa8dae94c76dc4f4f3fbf0776ca82124df29cd6"
+    },
+    {
+      "path": "src/assets/images/questions/universe.png",
+      "sha1": "0e6bb0aa8216e8dddc7dc4fd005de931300f5e03"
+    },
+    {
+      "path": "src/assets/images/questions/hourglass.png",
+      "sha1": "59497e0717337a10277db1d9dabec060fc516595"
+    },
+    {
+      "path": "src/assets/images/questions/earth.png",
+      "sha1": "c7fdaf8793fdccb08c55e20f6a9b1f7bbc10f59e"
+    },
+    {
+      "path": "src/assets/images/questions/robotic_arm.png",
+      "sha1": "90cc52de29ee02fff26054e23c962f5f539a9f3f"
+    },
+    {
+      "path": "src/assets/images/questions/bible.png",
+      "sha1": "ab8365833114bfe16a38dc99522bacf2e52ed716"
+    },
+    {
+      "path": "src/assets/animations/thinking_owl.riv",
+      "sha1": "c6b221b264cb09709961a72436eee1e29384ca42"
+    },
+    {
+      "path": "src/assets/animations/confetti.riv",
+      "sha1": "73dc0c807b4189d2a541f2da313ada296db6ddd0"
+    },
+    {
+      "path": "src/assets/animations/loader.riv",
+      "sha1": "86e7241cc9c47e817a4c155047fd24e9f6374d7f"
+    }
+  ]
+}

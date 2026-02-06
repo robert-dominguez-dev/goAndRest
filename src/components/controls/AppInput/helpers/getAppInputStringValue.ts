@@ -1,12 +1,12 @@
 import isString from 'lodash/isString';
-import { getIsValidNumber } from '../../../../shared/utils/getIsValidNumber.ts';
+import { checkIsValidNumber } from '../../../../helpers/checkIsValidNumber.ts';
 
 export const getAppInputStringValue = (value: unknown) => {
   if (isString(value)) {
     return value;
   }
 
-  if (getIsValidNumber(value)) {
+  if (checkIsValidNumber(value)) {
     return String(value);
   }
 

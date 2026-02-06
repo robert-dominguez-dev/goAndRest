@@ -33,7 +33,7 @@ export const AppThemeProvider = ({ children }: ChildrenProp) => {
   const toggleTheme = () =>
     setTheme(prev => {
       const newTheme = prev === AppTheme.light ? AppTheme.dark : AppTheme.light;
-      AsyncStorage.setItem(APP_THEME_STORAGE_KEY, newTheme);
+      void AsyncStorage.setItem(APP_THEME_STORAGE_KEY, newTheme);
       return newTheme;
     });
 

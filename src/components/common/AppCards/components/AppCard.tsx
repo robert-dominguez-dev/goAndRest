@@ -7,6 +7,7 @@ import { AppRow } from '../../AppRow.tsx';
 import { AppColorUnion, AppSize, AppSizeUnion } from '../../../../types/ui.ts';
 import { Pressable } from 'react-native';
 import { AppCardImage } from './AppCardImage.tsx';
+import { JSX } from 'react';
 
 const CARD_PADDING = AppSize.s;
 const CARD_HORIZONTAL_PADDING = CARD_PADDING * 2;

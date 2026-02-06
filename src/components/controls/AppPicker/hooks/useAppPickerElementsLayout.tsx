@@ -8,11 +8,11 @@ import { AppFormRenderProps } from '../../types.ts';
 import { AppPickerSpecificProps } from '../types.ts';
 import { FieldValues } from 'react-hook-form';
 import { PrimitiveValue } from '../../../../types/common.ts';
-import { useMemo } from 'react';
+import { JSX, useMemo } from 'react';
 import { AppColorUnion } from '../../../../types/ui.ts';
 import { getOnPressWithHapticFeedback } from '../../helpers/getOnPressWithHapticFeedback.ts';
 
-const DEFAULT_PICKER_ITEM_COLOR_STATUS: AppColorUnion = 'secondaryDark';
+const DEFAULT_PICKER_ITEM_COLOR_STATUS: AppColorUnion = 'secondaryStrong';
 
 type AppPickerElementsLayout = {
   selectedItem: JSX.Element | undefined;

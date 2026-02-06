@@ -34,7 +34,7 @@ export const AppButton = ({
         label: enabledLabel,
         backgroundColorStatus:
           appButtonStatusToEnabledBackgroundColorStatus[status],
-        textColorStatus: 'white',
+        textColorStatus: 'text',
       };
 
   return (

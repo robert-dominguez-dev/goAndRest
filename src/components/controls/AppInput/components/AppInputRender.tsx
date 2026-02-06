@@ -63,7 +63,7 @@ export const AppInputRender = <TFieldValues extends FieldValues>({
   return (
     <AppViewWithGradientBorderForInput
       isInvalid={isInvalid}
-      backgroundColorStatus={'white'}
+      backgroundColorStatus={'text'}
       minHeight={minHeight}
       height={height}>
       <AppRow

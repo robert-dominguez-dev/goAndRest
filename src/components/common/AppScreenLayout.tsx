@@ -5,7 +5,6 @@ import {
   AppScreenBackground,
   AppScreenBackgroundProps,
 } from './AppScreenBackground.tsx';
-import { AppIllustration } from '../../assets/constants.ts';
 import { AppHeader, AppHeaderProps } from './AppHeader/AppHeader.tsx';
 import { ReactNode } from 'react';
 
@@ -34,9 +33,9 @@ export const AppScreenLayout = ({
   onHeaderAccessoryRightPress,
   footer,
   scrollable,
-  backgroundColorStatus,
   disablePaddingBottom,
-  backgroundIllustration = AppIllustration.shepherdsAroundFire,
+  backgroundIllustration,
+  backgroundColorStatus = 'background',
 }: AppScreenLayoutProps) => {
   const { paddingTop, paddingBottom } = useAppSafeAreaPadding();
 
@@ -60,7 +59,9 @@ export const AppScreenLayout = ({
 
   return (
     <AppView>
-      <AppScreenBackground illustrationName={backgroundIllustration} />
+      {backgroundIllustration && (
+        <AppScreenBackground illustrationName={backgroundIllustration} />
+      )}
       <AppView
         paddingHorizontal={'m'}
         paddingTop={paddingTop}

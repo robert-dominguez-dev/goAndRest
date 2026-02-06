@@ -3,7 +3,7 @@ import {
   AppViewWithGradientBorderProps,
 } from '../common/AppViewWithGradientBorder.tsx';
 import { sizes } from '../../constants/ui.ts';
-import { AppGradientColorUnion } from '../../types/ui.ts';
+import { AppGradientColorUnion } from '../../constants/colors.ts';
 
 export type AppViewWithGradientBorderForInputProps = Pick<
   AppViewWithGradientBorderProps,

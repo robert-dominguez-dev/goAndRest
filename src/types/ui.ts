@@ -1,4 +1,4 @@
-import { appColorsLight, appLinearGradientColors, } from '../constants/colors.ts';
+import { appColorsLight } from '../constants/colors.ts';
 import { ViewStyle } from 'react-native';
 
 export enum AppSize {
@@ -16,8 +16,6 @@ export enum AppSize {
 export type AppSizeUnion = keyof typeof AppSize | number;
 
 export type AppColorUnion = keyof typeof appColorsLight;
-
-export type AppGradientColorUnion = keyof typeof appLinearGradientColors;
 
 export type AppTextCategoryUnion =
   | 'header'

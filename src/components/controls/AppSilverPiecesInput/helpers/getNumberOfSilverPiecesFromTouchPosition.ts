@@ -1,6 +1,7 @@
 import { AppSilverPiecesInputSpecificProps } from '../types.ts';
-import { getIsValidNumber } from '../../../../shared/utils/getIsValidNumber.ts';
+
 import { AppSize } from '../../../../types/ui.ts';
+import { checkIsValidNumber } from '../../../../helpers/checkIsValidNumber.ts';
 
 type GetNumberOfSilverPiecesFromTouchPositionParams =
   Required<AppSilverPiecesInputSpecificProps> & {
@@ -16,7 +17,7 @@ export const getNumberOfSilverPiecesFromTouchPosition = ({
   touchOffsetX,
   paddingLeft = AppSize.m,
 }: GetNumberOfSilverPiecesFromTouchPositionParams) => {
-  if (!layoutWidth || !getIsValidNumber(touchOffsetX)) {
+  if (!layoutWidth || !checkIsValidNumber(touchOffsetX)) {
     return undefined;
   }
 

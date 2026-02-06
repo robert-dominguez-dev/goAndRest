@@ -7,8 +7,9 @@ import {
 import { AppImage } from '../../../common/AppImage.tsx';
 import { AppIllustration } from '../../../../assets/constants.ts';
 import { AppView } from '../../../common/AppView.tsx';
-import { isLast } from '../../../../shared/utils/isLast.ts';
+
 import { memo } from 'react';
+import { checkIsLast } from '../../../../helpers/checkIsLast.ts';
 
 const { silverPieceWidth, silverPieceHeight } = sizes;
 
@@ -27,7 +28,7 @@ const _AppSilverPiecesInputIllustrations = ({
     {new Array(maxValue).fill(undefined).map((_, index, array) => {
       const orderNumber = index + 1;
       const opacity = orderNumber > value ? INACTIVE_OPACITY : ACTIVE_OPACITY;
-      const shrink = !isLast(index, array);
+      const shrink = !checkIsLast(array, index);
 
       return (
         <AppView

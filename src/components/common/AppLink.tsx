@@ -12,7 +12,7 @@ import { getOnPressWithHapticFeedback } from '../controls/helpers/getOnPressWith
 export type AppLinkProps = Pick<PressableProps, 'onPress' | 'disabled'> & {
   label: string;
   isPending?: boolean;
-  status?: Extract<AppColorUnion, 'white' | 'negative'>;
+  status?: Extract<AppColorUnion, 'text' | 'negative'>;
 };
 
 export const AppLink = ({
@@ -20,7 +20,7 @@ export const AppLink = ({
   isPending,
   onPress,
   disabled,
-  status = 'white',
+  status = 'text',
 }: AppLinkProps) => (
   <Pressable
     onPress={getOnPressWithHapticFeedback(onPress)}

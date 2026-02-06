@@ -67,8 +67,8 @@ const _AppBottomSheetContent = ({
       paddingTop={'m'}
       paddingHorizontal={'m'}
       paddingBottom={paddingBottom}
-      backgroundColorStatus={'secondaryVeryDark'}
-      borderColorStatus={'secondaryDark'}
+      backgroundColorStatus={'secondaryDeep'}
+      borderColorStatus={'secondaryStrong'}
       borderTopLeftRadius={'m'}
       borderTopRightRadius={'m'}>
       {header}

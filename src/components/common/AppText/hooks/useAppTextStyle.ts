@@ -16,7 +16,7 @@ export const useAppTextStyle = ({
   textAlign,
   textShadowColorStatus,
   category = 'content',
-  colorStatus = 'white',
+  colorStatus = 'text',
   grow = true,
   shrink = true,
 }: UseAppTextStyleParams): TextStyle => {

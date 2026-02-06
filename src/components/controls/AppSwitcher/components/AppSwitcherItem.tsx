@@ -36,10 +36,10 @@ export const AppSwitcherItem = <
   const isSelected = selectedValue === value;
 
   const colorProps: Omit<AppButtonDisabledDependentProps, 'label'> = isSelected
-    ? { textColorStatus: 'white', backgroundColorStatus: 'primary' }
+    ? { textColorStatus: 'text', backgroundColorStatus: 'primary' }
     : {
         textColorStatus: 'primary',
-        backgroundColorStatus: 'primaryLight',
+        backgroundColorStatus: 'primaryMuted',
       };
 
   const handleSelect = () => onChange(value);
