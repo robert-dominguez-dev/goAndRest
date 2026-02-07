@@ -70,7 +70,7 @@ const appDesignSystemColors: Record<string, DesignSystemColors> = {
 };
 
 export const appColorsLight = {
-  primary: appDesignSystemColors.primary['600'],
+  primary: appDesignSystemColors.primary['400'],
   primaryMuted: appDesignSystemColors.primary['400'],
   secondary: appDesignSystemColors.secondary['600'],
   secondaryMuted: appDesignSystemColors.secondary['400'],
@@ -78,9 +78,9 @@ export const appColorsLight = {
   secondaryDeep: appDesignSystemColors.secondary['50'],
   negative: appDesignSystemColors.negative['600'],
   negativeMuted: appDesignSystemColors.negative['400'],
-  text: appDesignSystemColors.grayscale['900'],
-  background: appDesignSystemColors.grayscale['50'],
-  backgroundAlt: appDesignSystemColors.grayscale['400'],
+  text: appDesignSystemColors.grayscale['700'],
+  background: appDesignSystemColors.grayscale['100'],
+  backgroundAlt: appDesignSystemColors.grayscale['200'],
   pink: '#a50076',
   pinkDark: '#6a004c',
   green: '#089146',
@@ -98,7 +98,7 @@ export type AppColorName = keyof typeof appColorsLight;
 export type AppColors = Record<AppColorName, HexColor>;
 
 export const appColorsDark = {
-  primary: appDesignSystemColors.primary['400'],
+  primary: appDesignSystemColors.primary['500'],
   primaryMuted: appDesignSystemColors.primary['0'],
   secondary: appDesignSystemColors.secondary['400'],
   secondaryMuted: appDesignSystemColors.secondary['0'],
@@ -106,7 +106,7 @@ export const appColorsDark = {
   secondaryDeep: appDesignSystemColors.secondary['800'],
   negative: appDesignSystemColors.negative['400'],
   negativeMuted: appDesignSystemColors.negative['0'],
-  text: appDesignSystemColors.grayscale['50'],
+  text: appDesignSystemColors.grayscale['100'],
   background: appDesignSystemColors.grayscale['800'],
   backgroundAlt: appDesignSystemColors.grayscale['600'],
   pink: appColorsLight.pink,

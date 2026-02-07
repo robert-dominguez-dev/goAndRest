@@ -12,7 +12,7 @@ import { useAppThemedColors } from '../../../hooks/useAppThemedColors.ts';
 
 export type AppHeaderProps = {
   title: string | JSX.Element;
-  accessoryLeft?: JSX.Element;
+  AccessoryLeftIconComponent?: LucideIcon;
   onAccessoryLeftPress?: AppHeaderAccessoryContainerProps['onPress'];
   AccessoryRightIconComponent?: LucideIcon;
   onAccessoryRightPress?: AppHeaderAccessoryContainerProps['onPress'];
@@ -20,7 +20,7 @@ export type AppHeaderProps = {
 
 export const AppHeader = ({
   title,
-  accessoryLeft,
+  AccessoryLeftIconComponent,
   onAccessoryLeftPress,
   AccessoryRightIconComponent,
   onAccessoryRightPress,
@@ -44,7 +44,9 @@ export const AppHeader = ({
       <AppHeaderAccessoryContainer
         alignItems={'flex-start'}
         onPress={onAccessoryLeftPress}>
-        {accessoryLeft}
+        {AccessoryLeftIconComponent && (
+          <AccessoryLeftIconComponent color={text} />
+        )}
       </AppHeaderAccessoryContainer>
       {titleElement}
       <AppHeaderAccessoryContainer

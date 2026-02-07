@@ -8,7 +8,7 @@ const APP_THEME_STORAGE_KEY = 'APP_THEME';
 
 type AppThemeContextProps = {
   theme: AppTheme;
-  toggleTheme: () => void;
+  changeTheme: (theme: AppTheme) => void;
 };
 
 const AppThemeContext = createContext<AppThemeContextProps | undefined>(
@@ -24,24 +24,23 @@ export const AppThemeProvider = ({ children }: ChildrenProp) => {
   useEffect(() => {
     AsyncStorage.getItem(APP_THEME_STORAGE_KEY).then(storedTheme => {
       const isAppTheme = checkIsAppTheme(storedTheme);
+      console.log({ storedTheme });
       if (isAppTheme) {
         setTheme(storedTheme);
       }
     });
   }, []);
 
-  const toggleTheme = () =>
-    setTheme(prev => {
-      const newTheme = prev === AppTheme.light ? AppTheme.dark : AppTheme.light;
-      void AsyncStorage.setItem(APP_THEME_STORAGE_KEY, newTheme);
-      return newTheme;
-    });
+  const changeTheme = (themeToChange: AppTheme) => {
+    void AsyncStorage.setItem(APP_THEME_STORAGE_KEY, themeToChange);
+    setTheme(themeToChange);
+  };
 
   return (
     <AppThemeContext.Provider
       value={{
         theme,
-        toggleTheme,
+        changeTheme,
       }}>
       {children}
     </AppThemeContext.Provider>

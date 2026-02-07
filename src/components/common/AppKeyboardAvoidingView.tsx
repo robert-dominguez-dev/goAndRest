@@ -3,10 +3,12 @@ import { KeyboardAvoidingView } from 'react-native';
 import { ChildrenProp } from '../../types/common.ts';
 
 export const AppKeyboardAvoidingView = ({ children }: ChildrenProp) => {
-  const { paddingTop } = useAppSafeAreaPadding();
+  const { safeAreaPaddingTop } = useAppSafeAreaPadding();
 
   return (
-    <KeyboardAvoidingView behavior={'padding'} style={{ paddingTop }}>
+    <KeyboardAvoidingView
+      behavior={'padding'}
+      style={{ paddingTop: safeAreaPaddingTop }}>
       {children}
     </KeyboardAvoidingView>
   );

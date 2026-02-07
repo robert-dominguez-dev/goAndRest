@@ -15,45 +15,46 @@ export type AppScreenLayoutProps = Pick<AppViewProps, 'children'> &
   Pick<AppViewProps, 'backgroundColorStatus'> & {
     headerTitle?: AppHeaderProps['title'];
     HeaderAccessoryRightIconComponent?: AppHeaderProps['AccessoryRightIconComponent'];
-    headerAccessoryLeft?: AppHeaderProps['accessoryLeft'];
+    HeaderAccessoryLeftIconComponent?: AppHeaderProps['AccessoryLeftIconComponent'];
     onHeaderAccessoryRightPress?: AppHeaderProps['onAccessoryRightPress'];
     onHeaderAccessoryLeftPress?: AppHeaderProps['onAccessoryLeftPress'];
     footer?: ReactNode;
     scrollable?: boolean;
     backgroundIllustration?: AppScreenBackgroundProps['illustrationName'];
-    disablePaddingBottom?: boolean;
+    screenPaddingTopOverride?: AppSizeUnion;
   };
 
 export const AppScreenLayout = ({
   children,
   headerTitle,
-  headerAccessoryLeft,
+  HeaderAccessoryLeftIconComponent,
   onHeaderAccessoryLeftPress,
   HeaderAccessoryRightIconComponent,
   onHeaderAccessoryRightPress,
   footer,
   scrollable,
-  disablePaddingBottom,
   backgroundIllustration,
+  screenPaddingTopOverride,
   backgroundColorStatus = 'background',
 }: AppScreenLayoutProps) => {
-  const { paddingTop, paddingBottom } = useAppSafeAreaPadding();
+  const { safeAreaPaddingTop, safeAreaPaddingBottom } = useAppSafeAreaPadding();
 
   const maybeHeader = headerTitle ? (
     <AppHeader
       title={headerTitle}
-      accessoryLeft={headerAccessoryLeft}
+      AccessoryLeftIconComponent={HeaderAccessoryLeftIconComponent}
       onAccessoryLeftPress={onHeaderAccessoryLeftPress}
       AccessoryRightIconComponent={HeaderAccessoryRightIconComponent}
       onAccessoryRightPress={onHeaderAccessoryRightPress}
     />
   ) : undefined;
 
-  const screenPaddingBottom: AppSizeUnion = disablePaddingBottom
-    ? 0
-    : paddingBottom;
+  const screenPaddingTop: AppSizeUnion =
+    screenPaddingTopOverride ?? safeAreaPaddingTop;
 
-  const contentPaddingBottom: AppSizeUnion = disablePaddingBottom ? 0 : 'm';
+  const screenPaddingBottom: AppSizeUnion = footer ? safeAreaPaddingBottom : 0;
+
+  const contentPaddingBottom: AppSizeUnion = footer ? 'm' : 0;
 
   const content = scrollable ? <ScrollView>{children}</ScrollView> : children;
 
@@ -64,7 +65,7 @@ export const AppScreenLayout = ({
       )}
       <AppView
         paddingHorizontal={'m'}
-        paddingTop={paddingTop}
+        paddingTop={screenPaddingTop}
         paddingBottom={screenPaddingBottom}
         backgroundColorStatus={backgroundColorStatus}
         height={FILL_CONTAINER_DIMENSION}>

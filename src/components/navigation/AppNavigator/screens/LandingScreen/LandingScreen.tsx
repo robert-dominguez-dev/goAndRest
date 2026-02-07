@@ -4,9 +4,16 @@ import { AppCardProps } from '../../../../common/AppCards/components/AppCard.tsx
 import { AppCards } from '../../../../common/AppCards/AppCards.tsx';
 import { useState } from 'react';
 import { useAppTranslation } from '../../../../../locales/hooks/useAppTranslation.ts';
-import { AppLanguagePicker } from '../../../../common/AppLanguagePicker/AppLanguagePicker.tsx';
+import { Menu } from 'lucide-react-native';
+import { ScreenProps } from '../../../types.ts';
+import { AppNavigatorScreen, AppNavigatorScreenParams } from '../../types.ts';
 
-export const LandingScreen = () => {
+type LandingScreenProps = ScreenProps<
+  AppNavigatorScreenParams,
+  AppNavigatorScreen.LandingScreen
+>;
+
+export const LandingScreen = ({ navigation }: LandingScreenProps) => {
   const t = useAppTranslation();
 
   const [selectedWorkoutId, setSelectedWorkoutId] =
@@ -50,10 +57,14 @@ export const LandingScreen = () => {
     },
   ];
 
-  const title = t('landingScreen.title');
+  const goToSettings = () =>
+    navigation.navigate(AppNavigatorScreen.SettingsScreen);
 
   return (
-    <AppScreenLayout headerTitle={title}>
+    <AppScreenLayout
+      headerTitle={t('screens.landingScreen.title')}
+      HeaderAccessoryLeftIconComponent={Menu}
+      onHeaderAccessoryLeftPress={goToSettings}>
       <AppCards
         shouldUseScrollView
         cards={options}
@@ -62,7 +73,6 @@ export const LandingScreen = () => {
         selectedCardValue={selectedWorkoutId}
         onCardPress={setSelectedWorkoutId}
       />
-      <AppLanguagePicker />
     </AppScreenLayout>
   );
 };

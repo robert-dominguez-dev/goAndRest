@@ -35,7 +35,7 @@ const _AppBottomSheetContent = ({
   headerOverride,
   scrollable = true,
 }: AppBottomSheetContentProps) => {
-  const { paddingBottom } = useAppSafeAreaPadding();
+  const { safeAreaPaddingBottom } = useAppSafeAreaPadding();
 
   const maybeInnerBottomSheetButton = bottomSheetSubmitButtonProps ? (
     <AppBottomSheetButton
@@ -66,7 +66,7 @@ const _AppBottomSheetContent = ({
       gap={'l'}
       paddingTop={'m'}
       paddingHorizontal={'m'}
-      paddingBottom={paddingBottom}
+      paddingBottom={safeAreaPaddingBottom}
       backgroundColorStatus={'secondaryDeep'}
       borderColorStatus={'secondaryStrong'}
       borderTopLeftRadius={'m'}

@@ -1,6 +1,10 @@
 import { AppRow } from '../AppRow.tsx';
 import { useAppCardSize, UseAppCardSizeProps } from './hooks/useAppCardSize.ts';
-import { AppCard, AppCardComponentProps, AppCardProps, } from './components/AppCard.tsx';
+import {
+  AppCard,
+  AppCardComponentProps,
+  AppCardProps,
+} from './components/AppCard.tsx';
 import { ScrollView } from 'react-native';
 import { AppSpacer } from '../AppSpacer.tsx';
 import { Fragment } from 'react';
@@ -47,7 +51,11 @@ export const AppCards = <TValue,>({
   });
 
   const contentElement = shouldUseScrollView ? (
-    <ScrollView horizontal>{cardElements}</ScrollView>
+    <ScrollView
+      horizontal
+      showsHorizontalScrollIndicator={false}>
+      {cardElements}
+    </ScrollView>
   ) : (
     cardElements
   );
