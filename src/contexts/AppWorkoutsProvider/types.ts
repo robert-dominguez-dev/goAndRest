@@ -4,17 +4,23 @@ export enum AppWorkoutBlockType {
   PREP = 'PREP',
 }
 
-type AppWorkoutBlock = {
-  type: AppWorkoutBlockType;
+type AppWorkoutMetaData = {
   name: string;
+  description?: string;
+  createdAt: Date;
+  updatedAt: Date;
+};
+
+type AppWorkoutConfig = {
+  prep: number;
+  work: number;
+  rest: number;
   rounds: number;
+  cooldown: number;
 };
 
 export type AppWorkout = {
   id: string;
-  name: string;
-  description?: string;
-  blocks: AppWorkoutBlock[];
-  createdAt: Date;
-  updatedAt: Date;
+  meta: AppWorkoutMetaData;
+  config: AppWorkoutConfig;
 };

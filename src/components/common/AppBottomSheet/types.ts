@@ -1,9 +1,5 @@
 import { ReactNode } from 'react';
-import {
-  AppBottomSheetContentProps,
-  BottomSheetSubmitButtonProps,
-} from './components/AppBottomSheetContent.tsx';
-import { AppButtonProps } from '../../controls/AppButton/AppButton.tsx';
+import { AppBottomSheetContentProps } from './components/AppBottomSheetContent.tsx';
 
 type BottomSheetHeaderProps =
   | {
@@ -24,15 +20,4 @@ export type AppBottomSheetProps = Pick<
   BottomSheetHeaderProps & {
     isVisible: boolean;
     bottomSheetContent: ReactNode;
-  };
-
-export type AppBottomSheetWithOpenElementProps = Pick<
-  AppButtonProps,
-  'isPending' | 'disabled' | 'status' | 'enabledLabel' | 'disabledLabel'
-> &
-  Partial<Pick<AppBottomSheetProps, 'onClose' | 'scrollable'>> & {
-    closeable?: boolean;
-    bottomSheetTitle: string;
-    bottomSheetContent: ReactNode;
-    bottomSheetSubmitButtonProps?: BottomSheetSubmitButtonProps;
   };

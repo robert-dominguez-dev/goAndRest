@@ -1,45 +1,63 @@
-import { AppText } from '../../../common/AppText/AppText.tsx';
 import { sizes } from '../../../../constants/ui.ts';
-import { AppViewWithGradientBorder } from '../../../common/AppViewWithGradientBorder.tsx';
-import { AppButtonDisabledDependentProps } from '../types.ts';
 import { AppRow } from '../../../common/AppRow.tsx';
-import { AppLoader } from '../../../common/AppLoader.tsx';
-import { AppGradientColorUnion } from '../../../../constants/colors.ts';
-import { AppSize } from '../../../../types/ui.ts';
+import { AppText } from '../../../common/AppText/AppText.tsx';
+import { AppColorUnion } from '../../../../types/ui.ts';
+import { AppViewProps } from '../../../common/AppView.tsx';
+import { LucideIcon } from 'lucide-react-native';
+import { useAppThemedColors } from '../../../../hooks/useAppThemedColors.ts';
 
 const { buttonHeight, buttonBorderRadius } = sizes;
 
-export type AppButtonUIProps = AppButtonDisabledDependentProps & {
-  status: AppGradientColorUnion;
-  isPending?: boolean;
+const ICON_SIZE = 28;
+
+export type AppButtonUIProps = Pick<
+  AppViewProps,
+  'opacity' | 'backgroundColorStatus'
+> & {
+  label: string;
+  value: string;
+  textColorStatus: AppColorUnion;
+  IconComponent?: LucideIcon;
 };
 
 export const AppButtonUI = ({
   label,
+  value,
+  opacity,
   textColorStatus,
   backgroundColorStatus,
-  isPending,
-  status,
+  IconComponent,
 }: AppButtonUIProps) => {
+  const appColors = useAppThemedColors();
   return (
-    <AppViewWithGradientBorder
-      gradientBorderColorStatus={status}
-      height={buttonHeight}
+    <AppRow
+      gap={'s'}
+      paddingHorizontal={'m'}
+      alignItems={'center'}
+      justifyContent={'space-between'}
       backgroundColorStatus={backgroundColorStatus}
-      borderRadius={buttonBorderRadius}>
-      <AppRow
-        gap={AppSize.s}
-        alignItems={'center'}
-        justifyContent={'center'}>
-        <AppText
-          grow={!isPending}
-          textAlign={'center'}
-          category={'header'}
-          colorStatus={textColorStatus}>
-          {label}
-        </AppText>
-        <AppLoader isPending={isPending} />
-      </AppRow>
-    </AppViewWithGradientBorder>
+      height={buttonHeight}
+      borderRadius={buttonBorderRadius}
+      opacity={opacity}>
+      {IconComponent && (
+        <IconComponent
+          color={appColors[textColorStatus]}
+          size={ICON_SIZE}
+        />
+      )}
+      <AppText
+        category={'header'}
+        colorStatus={textColorStatus}
+        numberOfLines={1}>
+        {label}
+      </AppText>
+      <AppText
+        textAlign={'right'}
+        category={'header'}
+        colorStatus={textColorStatus}
+        numberOfLines={1}>
+        {value}
+      </AppText>
+    </AppRow>
   );
 };

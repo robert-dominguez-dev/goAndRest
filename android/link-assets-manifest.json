@@ -2,10 +2,6 @@
   "migIndex": 1,
   "data": [
     {
-      "path": "src/assets/fonts/Quicksand-Bold.ttf",
-      "sha1": "111e880f4de54ccf0a7fd14f38999b9c066e46bb"
-    },
-    {
       "path": "src/assets/fonts/Montserrat-Medium.ttf",
       "sha1": "4656e40419da86a5fec473ea8e7fc0efef183f05"
     },
@@ -14,20 +10,8 @@
       "sha1": "c7d907722af4fb845ab97d515bb414f29651f000"
     },
     {
-      "path": "src/assets/fonts/Quicksand-Medium.ttf",
-      "sha1": "04b8198132a4a092b10d0631500268d6a2a0f889"
-    },
-    {
       "path": "src/assets/fonts/Bangers-Regular.ttf",
       "sha1": "16e3bc27f1343b6661711eaacb999be3307790d4"
-    },
-    {
-      "path": "src/assets/fonts/Quicksand-Regular.ttf",
-      "sha1": "61504eaec812663121918199aac7d960229bd306"
-    },
-    {
-      "path": "src/assets/fonts/Quicksand-SemiBold.ttf",
-      "sha1": "339f8d3e09ad271ff12727eef33a99f7a066eee3"
     },
     {
       "path": "src/assets/fonts/Montserrat-Black.ttf",

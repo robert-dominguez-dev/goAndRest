@@ -53,13 +53,9 @@
 	<false/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Quicksand-Bold.ttf</string>
 		<string>Montserrat-Medium.ttf</string>
 		<string>Montserrat-Bold.ttf</string>
-		<string>Quicksand-Medium.ttf</string>
 		<string>Bangers-Regular.ttf</string>
-		<string>Quicksand-Regular.ttf</string>
-		<string>Quicksand-SemiBold.ttf</string>
 		<string>Montserrat-Black.ttf</string>
 		<string>Montserrat-Regular.ttf</string>
 	</array>

@@ -7,8 +7,11 @@ import {
   GO_AND_REST_WORKOUTS_STORAGE_KEY,
   updateAppWorkoutsInStorage,
 } from './helpers/updateAppWorkoutsInStorage.ts';
+import { defaultWorkoutConfig } from './constants.ts';
 
 type AppWorkoutsContextProps = {
+  selectedWorkout: AppWorkout;
+  setSelectedWorkout: (workout: AppWorkout) => void;
   workouts: AppWorkout[];
   addWorkout: (workout: AppWorkout) => void;
   removeWorkout: (workoutId: string) => void;
@@ -21,10 +24,12 @@ const AppWorkoutsContext = createContext<AppWorkoutsContextProps | undefined>(
 export const AppWorkoutsProvider = ({ children }: ChildrenProp) => {
   const [workouts, setWorkouts] = useState<AppWorkout[]>([]);
 
+  const [selectedWorkout, setSelectedWorkout] =
+    useState<AppWorkout>(defaultWorkoutConfig);
+
   useEffect(() => {
     AsyncStorage.getItem(GO_AND_REST_WORKOUTS_STORAGE_KEY).then(
-      storedCurrencyCodes =>
-        setWorkouts(safeParseAppWorkouts(storedCurrencyCodes)),
+      storedWorkouts => setWorkouts(safeParseAppWorkouts(storedWorkouts)),
     );
   }, []);
 
@@ -47,6 +52,8 @@ export const AppWorkoutsProvider = ({ children }: ChildrenProp) => {
   return (
     <AppWorkoutsContext.Provider
       value={{
+        selectedWorkout,
+        setSelectedWorkout,
         workouts,
         addWorkout,
         removeWorkout,

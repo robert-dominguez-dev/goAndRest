@@ -1,53 +1,40 @@
 import { Pressable, PressableProps } from 'react-native';
-import {
-  appButtonStatusToDisabledProps,
-  appButtonStatusToEnabledBackgroundColorStatus,
-} from './constants.ts';
-import { AppButtonDisabledDependentProps } from './types.ts';
+
 import { AppButtonUI, AppButtonUIProps } from './components/AppButtonUI.tsx';
 import { getOnPressWithHapticFeedback } from '../helpers/getOnPressWithHapticFeedback.ts';
+import { ACTIVE_OPACITY } from '../../../constants/ui.ts';
+
+const PRESSED_OPACITY = 0.95;
 
 export type AppButtonProps = Pick<PressableProps, 'onPress' | 'disabled'> &
-  Partial<Pick<AppButtonUIProps, 'status' | 'isPending'>> & {
-    enabledLabel: string;
-    disabledLabel?: string;
-  };
+  Pick<
+    AppButtonUIProps,
+    'label' | 'value' | 'backgroundColorStatus' | 'IconComponent'
+  > & {};
 
 export const AppButton = ({
-  enabledLabel,
-  disabledLabel,
+  label,
+  value,
   onPress,
   disabled,
-  isPending,
-  status = 'primary',
-}: AppButtonProps) => {
-  const {
-    label,
-    textColorStatus,
-    backgroundColorStatus,
-  }: AppButtonDisabledDependentProps = disabled
-    ? {
-        label: disabledLabel ?? enabledLabel,
-        ...appButtonStatusToDisabledProps[status],
-      }
-    : {
-        label: enabledLabel,
-        backgroundColorStatus:
-          appButtonStatusToEnabledBackgroundColorStatus[status],
-        textColorStatus: 'text',
-      };
-
-  return (
-    <Pressable
-      onPress={getOnPressWithHapticFeedback(onPress)}
-      disabled={disabled}>
-      <AppButtonUI
-        label={label}
-        isPending={isPending}
-        status={status}
-        textColorStatus={textColorStatus}
-        backgroundColorStatus={backgroundColorStatus}
-      />
-    </Pressable>
-  );
-};
+  IconComponent,
+  backgroundColorStatus = 'primary',
+}: AppButtonProps) => (
+  <Pressable
+    onPress={getOnPressWithHapticFeedback(onPress)}
+    disabled={disabled}>
+    {({ pressed }) => {
+      const opacity: number = pressed ? PRESSED_OPACITY : ACTIVE_OPACITY;
+      return (
+        <AppButtonUI
+          label={label}
+          value={value}
+          opacity={opacity}
+          backgroundColorStatus={backgroundColorStatus}
+          IconComponent={IconComponent}
+          textColorStatus={'text'}
+        />
+      );
+    }}
+  </Pressable>
+);

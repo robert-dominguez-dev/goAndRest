@@ -1,32 +1,11 @@
-import { AppButtonDisabledDependentProps } from './types.ts';
 import { AppGradientColorUnion } from '../../../constants/colors.ts';
+import { AppColorUnion } from '../../../types/ui.ts';
 
-export const appButtonStatusToEnabledBackgroundColorStatus: Record<
+export const appButtonStatusToBackgroundColorStatus: Record<
   AppGradientColorUnion,
-  AppButtonDisabledDependentProps['backgroundColorStatus']
+  AppColorUnion
 > = {
   primary: 'primary',
   secondary: 'secondary',
   negative: 'negative',
-};
-
-export const appButtonStatusToDisabledProps: Record<
-  AppGradientColorUnion,
-  Pick<
-    AppButtonDisabledDependentProps,
-    'textColorStatus' | 'backgroundColorStatus'
-  >
-> = {
-  primary: {
-    textColorStatus: 'primary',
-    backgroundColorStatus: 'primaryMuted',
-  },
-  secondary: {
-    textColorStatus: 'secondary',
-    backgroundColorStatus: 'secondaryMuted',
-  },
-  negative: {
-    textColorStatus: 'negative',
-    backgroundColorStatus: 'negativeMuted',
-  },
 };

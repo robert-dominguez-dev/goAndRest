@@ -20,7 +20,7 @@ export type AppPopUpTextProps = {
 export type AppPopUpProps = AppPopUpTextProps & {
   onPrimaryButtonPress: () => void;
   onSecondaryButtonPress?: () => void;
-  secondaryButtonColorStatus?: AppButtonUIProps['status'];
+  secondaryButtonColorStatus?: AppButtonUIProps['gradientBorderStatus'];
 };
 
 export const AppPopUp = ({
@@ -37,8 +37,8 @@ export const AppPopUp = ({
       width={FILL_CONTAINER_DIMENSION}
       shrink>
       <AppButton
-        status={secondaryButtonColorStatus}
-        enabledLabel={secondaryButtonLabel}
+        gradientBorderStatus={secondaryButtonColorStatus}
+        label={secondaryButtonLabel}
         onPress={onSecondaryButtonPress}
       />
     </AppView>
@@ -66,7 +66,7 @@ export const AppPopUp = ({
             shrink>
             <AppButton
               onPress={onPrimaryButtonPress}
-              enabledLabel={primaryButtonLabel}
+              label={primaryButtonLabel}
             />
           </AppView>
         </AppRow>

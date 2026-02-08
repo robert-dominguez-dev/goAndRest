@@ -1,12 +1,14 @@
 import { AppScreenLayout } from '../../../../common/AppScreenLayout.tsx';
 import { AppIllustration } from '../../../../../assets/constants.ts';
 import { AppCardProps } from '../../../../common/AppCards/components/AppCard.tsx';
-import { AppCards } from '../../../../common/AppCards/AppCards.tsx';
 import { useState } from 'react';
 import { useAppTranslation } from '../../../../../locales/hooks/useAppTranslation.ts';
 import { Menu } from 'lucide-react-native';
 import { ScreenProps } from '../../../types.ts';
 import { AppNavigatorScreen, AppNavigatorScreenParams } from '../../types.ts';
+import { WorkoutSettingsButtons } from './components/WorkoutSettingsButtons.tsx';
+import { AppView } from '../../../../common/AppView.tsx';
+import { AppTimeView } from '../../../../common/AppTimeView.tsx';
 
 type LandingScreenProps = ScreenProps<
   AppNavigatorScreenParams,
@@ -64,15 +66,15 @@ export const LandingScreen = ({ navigation }: LandingScreenProps) => {
     <AppScreenLayout
       headerTitle={t('screens.landingScreen.title')}
       HeaderAccessoryLeftIconComponent={Menu}
-      onHeaderAccessoryLeftPress={goToSettings}>
-      <AppCards
-        shouldUseScrollView
-        cards={options}
-        numberOfCardsPerRow={4}
-        gap={'s'}
-        selectedCardValue={selectedWorkoutId}
-        onCardPress={setSelectedWorkoutId}
-      />
+      onHeaderAccessoryLeftPress={goToSettings}
+      footer={<AppView />}>
+      <AppView
+        grow
+        alignItems={'center'}
+        justifyContent={'center'}>
+        <AppTimeView seconds={90} />
+      </AppView>
+      <WorkoutSettingsButtons />
     </AppScreenLayout>
   );
 };

@@ -10,6 +10,7 @@ const _SettingsItemList = () => {
   const settingsItemElements = settingsItems.map(
     ({ titleKey, accessoryRight }) => (
       <SettingsItem
+        key={titleKey}
         title={t(titleKey)}
         accessoryRight={accessoryRight}
       />

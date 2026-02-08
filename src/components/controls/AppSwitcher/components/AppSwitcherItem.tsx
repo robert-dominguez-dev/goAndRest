@@ -55,7 +55,7 @@ export const AppSwitcherItem = <
       style={pressableStyle}>
       <AppButtonUI
         label={label}
-        status={'primary'}
+        gradientBorderStatus={'primary'}
         {...colorProps}
       />
     </Pressable>

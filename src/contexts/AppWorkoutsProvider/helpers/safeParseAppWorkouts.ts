@@ -1,22 +1,21 @@
 import { z } from 'zod';
 import type { AppWorkout } from '../types.ts';
-import { AppWorkoutBlockType } from '../types.ts';
 
 const AppWorkoutSchema: z.ZodType<AppWorkout> = z.object({
   id: z.string(),
-  name: z.string(),
-  description: z.string().optional(),
-  blocks: z
-    .array(
-      z.object({
-        type: z.enum(AppWorkoutBlockType),
-        name: z.string(),
-        rounds: z.int().positive(),
-      }),
-    )
-    .min(1),
-  createdAt: z.coerce.date(),
-  updatedAt: z.coerce.date(),
+  meta: z.object({
+    name: z.string(),
+    description: z.string().optional(),
+    createdAt: z.coerce.date(),
+    updatedAt: z.coerce.date(),
+  }),
+  config: z.object({
+    prep: z.int(),
+    work: z.int(),
+    rest: z.int(),
+    rounds: z.int(),
+    cooldown: z.int(),
+  }),
 });
 
 export const safeParseAppWorkouts = (

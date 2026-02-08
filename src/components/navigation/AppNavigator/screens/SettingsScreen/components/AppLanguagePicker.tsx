@@ -19,6 +19,7 @@ export const AppLanguagePicker = () => {
 
     return (
       <AppEmojiButton
+        key={language}
         emoji={flagEmoji}
         isSelected={isSelected}
         onPress={handlePress}

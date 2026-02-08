@@ -11,11 +11,13 @@ export type AppViewWithGradientBorderProps = Omit<AppViewProps, 'margin'> & {
 export const AppViewWithGradientBorder = ({
   children,
   gradientBorderColorStatus,
+  opacity,
   ...appViewProps
 }: AppViewWithGradientBorderProps) => {
   const appLinearGradientColors = useAppThemedGradientColors();
 
   const linearGradientStyle: ViewStyle = {
+    opacity,
     borderRadius: appViewProps.borderRadius,
   };
 
