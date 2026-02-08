@@ -28,5 +28,8 @@ export const cs = {
         },
       },
     },
+    runningWorkoutScreen: {
+      title: 'Trénink',
+    },
   },
 } as const satisfies AppTranslations;

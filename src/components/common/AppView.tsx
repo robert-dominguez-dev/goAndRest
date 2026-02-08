@@ -24,6 +24,7 @@ export type AppViewProps = Pick<
     | 'flexWrap'
     | 'minHeight'
     | 'maxHeight'
+    | 'minWidth'
     | 'maxWidth'
     | 'zIndex'
     | 'pointerEvents'
@@ -67,6 +68,7 @@ export const AppView = ({
   flexWrap,
   minHeight,
   maxHeight,
+  minWidth,
   maxWidth,
   zIndex,
   pointerEvents,
@@ -113,6 +115,7 @@ export const AppView = ({
     flexWrap,
     minHeight,
     maxHeight,
+    minWidth,
     maxWidth,
     zIndex,
     pointerEvents,

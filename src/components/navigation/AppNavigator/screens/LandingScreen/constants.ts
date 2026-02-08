@@ -1,7 +1,7 @@
 import { AppWorkoutConfig } from '../../../../../contexts/AppWorkoutsProvider/types.ts';
 import { formatTimerTime } from '../../../../common/AppCountdownText/helpers/formatTimerTime.tsx';
 import { AppButtonProps } from '../../../../controls/AppButton/AppButton.tsx';
-import { Dumbbell, Pause, Repeat, Wind, Zap } from 'lucide-react-native';
+import { Coffee, Dumbbell, Repeat, Wind, Zap } from 'lucide-react-native';
 import { TranslateKey } from '../../../../../locales/types.ts';
 
 type AppWorkoutConfigKey = keyof AppWorkoutConfig;
@@ -41,7 +41,7 @@ export const workoutSettingsButtonConfigMap: Record<
   rest: {
     labelKey: 'common.workoutConfig.rest',
     backgroundColorStatus: 'primary',
-    IconComponent: Pause,
+    IconComponent: Coffee,
     valueFormatter: formatTimerTime,
   },
   rounds: {

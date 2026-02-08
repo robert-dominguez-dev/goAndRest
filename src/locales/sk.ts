@@ -28,5 +28,8 @@ export const sk = {
         },
       },
     },
+    runningWorkoutScreen: {
+      title: 'Tréning',
+    },
   },
 } as const satisfies AppTranslations;

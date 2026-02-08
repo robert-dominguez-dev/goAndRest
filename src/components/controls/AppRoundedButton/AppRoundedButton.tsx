@@ -10,6 +10,7 @@ import {
 import {
   AppRoundedButtonSize,
   AppRoundedButtonSizeUnion,
+  gradientToStandardColorStatus,
 } from './constants.ts';
 
 type AppRoundedButtonProps = Pick<PressableProps, 'onPress' | 'disabled'> &
@@ -24,35 +25,36 @@ export const AppRoundedButton = ({
   status,
   size,
   children,
-}: AppRoundedButtonProps) => {
-  return (
-    <Pressable
-      onPress={getOnPressWithHapticFeedback(onPress)}
-      disabled={disabled}>
-      {({ pressed }) => {
-        const opacity: number = pressed ? PRESSED_OPACITY : ACTIVE_OPACITY;
-        const buttonSize = AppRoundedButtonSize[size];
-        const borderRadius = buttonSize / 2;
+}: AppRoundedButtonProps) => (
+  <Pressable
+    onPress={getOnPressWithHapticFeedback(onPress)}
+    disabled={disabled}>
+    {({ pressed }) => {
+      const opacity: number = pressed ? PRESSED_OPACITY : ACTIVE_OPACITY;
 
-        return (
-          <AppViewWithGradientBorder
+      const buttonSize = AppRoundedButtonSize[size];
+      const borderRadius = buttonSize / 2;
+
+      const backgroundColorStatus = gradientToStandardColorStatus[status];
+
+      return (
+        <AppViewWithGradientBorder
+          width={buttonSize}
+          height={buttonSize}
+          borderRadius={borderRadius}
+          opacity={opacity}
+          gradientBorderColorStatus={status}>
+          <AppView
             width={buttonSize}
             height={buttonSize}
             borderRadius={borderRadius}
-            opacity={opacity}
-            gradientBorderColorStatus={status}>
-            <AppView
-              width={buttonSize}
-              height={buttonSize}
-              borderRadius={borderRadius}
-              backgroundColorStatus={'primary'}
-              alignItems={'center'}
-              justifyContent={'center'}>
-              {children}
-            </AppView>
-          </AppViewWithGradientBorder>
-        );
-      }}
-    </Pressable>
-  );
-};
+            backgroundColorStatus={backgroundColorStatus}
+            alignItems={'center'}
+            justifyContent={'center'}>
+            {children}
+          </AppView>
+        </AppViewWithGradientBorder>
+      );
+    }}
+  </Pressable>
+);

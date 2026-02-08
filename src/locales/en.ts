@@ -28,5 +28,8 @@ export const en = {
         },
       },
     },
+    runningWorkoutScreen: {
+      title: 'Workout',
+    },
   },
 } as const satisfies AppTranslations;

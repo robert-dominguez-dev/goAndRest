@@ -3,14 +3,15 @@ import { AppIllustration } from '../../../../../assets/constants.ts';
 import { AppCardProps } from '../../../../common/AppCards/components/AppCard.tsx';
 import { useState } from 'react';
 import { useAppTranslation } from '../../../../../locales/hooks/useAppTranslation.ts';
-import { Menu, Play } from 'lucide-react-native';
+import { Menu } from 'lucide-react-native';
 import { ScreenProps } from '../../../types.ts';
 import { AppNavigatorScreen, AppNavigatorScreenParams } from '../../types.ts';
 import { WorkoutConfigButtons } from './components/WorkoutConfigButtons.tsx';
 import { AppView } from '../../../../common/AppView.tsx';
 import { AppTimeView } from '../../../../common/AppTimeView.tsx';
-import { AppRow } from '../../../../common/AppRow.tsx';
-import { AppRoundedButton } from '../../../../controls/AppRoundedButton/AppRoundedButton.tsx';
+import { LandingScreenFooter } from './components/LandingScreenFooter.tsx';
+
+const footerElement = <LandingScreenFooter />;
 
 type LandingScreenProps = ScreenProps<
   AppNavigatorScreenParams,
@@ -69,27 +70,17 @@ export const LandingScreen = ({ navigation }: LandingScreenProps) => {
       headerTitle={t('screens.landingScreen.title')}
       HeaderAccessoryLeftIconComponent={Menu}
       onHeaderAccessoryLeftPress={goToSettings}
-      footer={<AppView />}>
+      footer={footerElement}>
       <AppView
         grow
-        alignItems={'center'}
-        justifyContent={'center'}>
-        <AppTimeView seconds={90} />
-      </AppView>
-      <AppView gap={'m'}>
-        <WorkoutConfigButtons />
-        <AppRow
+        gap={'l'}>
+        <AppView
+          grow
           alignItems={'center'}
-          justifyContent={'space-around'}>
-          <AppRoundedButton
-            size={'m'}
-            status={'primary'}>
-            <Play
-              size={32}
-              color={'white'}
-            />
-          </AppRoundedButton>
-        </AppRow>
+          justifyContent={'center'}>
+          <AppTimeView seconds={90} />
+        </AppView>
+        <WorkoutConfigButtons />
       </AppView>
     </AppScreenLayout>
   );

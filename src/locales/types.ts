@@ -26,6 +26,9 @@ export type AppTranslations = {
         };
       };
     };
+    runningWorkoutScreen: {
+      title: string;
+    };
   };
 };
 
