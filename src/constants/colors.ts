@@ -14,7 +14,7 @@ type DesignSystemColors = {
   900: HexColor;
 };
 
-const appDesignSystemColors: Record<string, DesignSystemColors> = {
+const appDesignSystemColors = {
   primary: {
     0: '#f3fdfb',
     50: '#E3FFFA',
@@ -27,19 +27,6 @@ const appDesignSystemColors: Record<string, DesignSystemColors> = {
     700: '#0c3a32',
     800: '#04221d',
     900: '#010c0a',
-  },
-  secondary: {
-    0: '#7dbeff',
-    50: '#43a1ff',
-    100: '#1c8dff',
-    200: '#0079f3',
-    300: '#0065cb',
-    400: '#0053a5',
-    500: '#044687',
-    600: '#073a6d',
-    700: '#082e54',
-    800: '#08233d',
-    900: '#071727',
   },
   grayscale: {
     0: '#ffffff',
@@ -67,30 +54,18 @@ const appDesignSystemColors: Record<string, DesignSystemColors> = {
     800: '#6a131c',
     900: '#531219',
   },
-};
+} satisfies Record<string, DesignSystemColors>;
 
 export const appColorsLight = {
   primary: appDesignSystemColors.primary['400'],
   primaryMuted: appDesignSystemColors.primary['400'],
-  secondary: appDesignSystemColors.secondary['600'],
-  secondaryMuted: appDesignSystemColors.secondary['400'],
-  secondaryStrong: appDesignSystemColors.secondary['0'],
-  secondaryDeep: appDesignSystemColors.secondary['50'],
-  negative: appDesignSystemColors.negative['600'],
-  negativeMuted: appDesignSystemColors.negative['400'],
+  negative: appDesignSystemColors.negative['300'],
+  negativeMuted: appDesignSystemColors.negative['200'],
   text: appDesignSystemColors.grayscale['700'],
   background: appDesignSystemColors.grayscale['100'],
   backgroundAlt: appDesignSystemColors.grayscale['200'],
-  pink: '#a50076',
-  pinkDark: '#6a004c',
-  green: '#089146',
-  greenDark: '#055e2e',
-  blue: '#06a7d4',
-  blueDark: '#0084a9',
-  yellow: '#B79B0E',
-  yellowDark: '#E3940B',
-  brown: '#914808',
-  brownDark: '#683406',
+  yellow: '#e6c003',
+  orange: '#E3940B',
   semiTransparentOverlay: '#00000080',
 } as const satisfies Record<string, HexColor>;
 
@@ -100,25 +75,13 @@ export type AppColors = Record<AppColorName, HexColor>;
 export const appColorsDark = {
   primary: appDesignSystemColors.primary['500'],
   primaryMuted: appDesignSystemColors.primary['0'],
-  secondary: appDesignSystemColors.secondary['400'],
-  secondaryMuted: appDesignSystemColors.secondary['0'],
-  secondaryStrong: appDesignSystemColors.secondary['600'],
-  secondaryDeep: appDesignSystemColors.secondary['800'],
   negative: appDesignSystemColors.negative['400'],
-  negativeMuted: appDesignSystemColors.negative['0'],
+  negativeMuted: appDesignSystemColors.negative['50'],
   text: appDesignSystemColors.grayscale['100'],
   background: appDesignSystemColors.grayscale['800'],
   backgroundAlt: appDesignSystemColors.grayscale['600'],
-  pink: appColorsLight.pink,
-  pinkDark: appColorsLight.pinkDark,
-  green: appColorsLight.green,
-  greenDark: appColorsLight.greenDark,
-  blue: appColorsLight.blue,
-  blueDark: appColorsLight.blueDark,
-  yellow: appColorsLight.yellow,
-  yellowDark: appColorsLight.yellowDark,
-  brown: appColorsLight.brown,
-  brownDark: appColorsLight.brownDark,
+  yellow: '#a18703',
+  orange: '#d18707',
   semiTransparentOverlay: appColorsLight.semiTransparentOverlay,
 } as const satisfies AppColors;
 
@@ -129,9 +92,9 @@ export const appLinearGradientColorsLight = {
     appDesignSystemColors.primary['200'],
     appDesignSystemColors.primary['600'],
   ],
-  secondary: [
-    appDesignSystemColors.secondary['100'],
-    appDesignSystemColors.secondary['500'],
+  grayscale: [
+    appDesignSystemColors.grayscale['100'],
+    appDesignSystemColors.grayscale['500'],
   ],
   negative: [
     appDesignSystemColors.negative['200'],
@@ -147,9 +110,9 @@ export const appLinearGradientColorsDark = {
     appDesignSystemColors.primary['200'],
     appDesignSystemColors.primary['600'],
   ],
-  secondary: [
-    appDesignSystemColors.secondary['100'],
-    appDesignSystemColors.secondary['500'],
+  grayscale: [
+    appDesignSystemColors.grayscale['100'],
+    appDesignSystemColors.grayscale['500'],
   ],
   negative: [
     appDesignSystemColors.negative['200'],

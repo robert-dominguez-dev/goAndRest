@@ -11,7 +11,7 @@ type AppWorkoutMetaData = {
   updatedAt: Date;
 };
 
-type AppWorkoutConfig = {
+export type AppWorkoutConfig = {
   prep: number;
   work: number;
   rest: number;

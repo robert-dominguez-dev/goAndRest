@@ -48,6 +48,7 @@ export const GROW_SHRINK_STYLE: ViewStyle = { flexShrink: 1, flexGrow: 1 };
 export const DISABLED_OPACITY = 0;
 export const INACTIVE_OPACITY = 0.5;
 export const ACTIVE_OPACITY = 1;
+export const PRESSED_OPACITY = 0.95;
 
 export const SPACE_ON_ANDROID_TO_PREVENT_TEXT_CUT = IS_ANDROID
   ? EMPTY_SPACE

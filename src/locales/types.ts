@@ -2,7 +2,15 @@ import { NestedKeys } from '../types/magic.ts';
 import { TOptionsBase } from 'i18next';
 
 export type AppTranslations = {
-  common: {};
+  common: {
+    workoutConfig: {
+      prep: string;
+      work: string;
+      rest: string;
+      rounds: string;
+      cooldown: string;
+    };
+  };
   screens: {
     landingScreen: {
       title: string;

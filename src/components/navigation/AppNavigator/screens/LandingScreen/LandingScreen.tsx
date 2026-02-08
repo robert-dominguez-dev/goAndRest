@@ -3,12 +3,14 @@ import { AppIllustration } from '../../../../../assets/constants.ts';
 import { AppCardProps } from '../../../../common/AppCards/components/AppCard.tsx';
 import { useState } from 'react';
 import { useAppTranslation } from '../../../../../locales/hooks/useAppTranslation.ts';
-import { Menu } from 'lucide-react-native';
+import { Menu, Play } from 'lucide-react-native';
 import { ScreenProps } from '../../../types.ts';
 import { AppNavigatorScreen, AppNavigatorScreenParams } from '../../types.ts';
-import { WorkoutSettingsButtons } from './components/WorkoutSettingsButtons.tsx';
+import { WorkoutConfigButtons } from './components/WorkoutConfigButtons.tsx';
 import { AppView } from '../../../../common/AppView.tsx';
 import { AppTimeView } from '../../../../common/AppTimeView.tsx';
+import { AppRow } from '../../../../common/AppRow.tsx';
+import { AppRoundedButton } from '../../../../controls/AppRoundedButton/AppRoundedButton.tsx';
 
 type LandingScreenProps = ScreenProps<
   AppNavigatorScreenParams,
@@ -74,7 +76,21 @@ export const LandingScreen = ({ navigation }: LandingScreenProps) => {
         justifyContent={'center'}>
         <AppTimeView seconds={90} />
       </AppView>
-      <WorkoutSettingsButtons />
+      <AppView gap={'m'}>
+        <WorkoutConfigButtons />
+        <AppRow
+          alignItems={'center'}
+          justifyContent={'space-around'}>
+          <AppRoundedButton
+            size={'m'}
+            status={'primary'}>
+            <Play
+              size={32}
+              color={'white'}
+            />
+          </AppRoundedButton>
+        </AppRow>
+      </AppView>
     </AppScreenLayout>
   );
 };

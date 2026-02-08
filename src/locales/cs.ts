@@ -4,7 +4,15 @@ import { AppTranslations } from './types.ts';
  * You can define params like this: %{param}.
  */
 export const cs = {
-  common: {},
+  common: {
+    workoutConfig: {
+      prep: 'Příprava',
+      work: 'Cvičení',
+      rest: 'Odpočinek',
+      rounds: 'Počet kol',
+      cooldown: 'Relax',
+    },
+  },
   screens: {
     landingScreen: {
       title: 'Tréninky',

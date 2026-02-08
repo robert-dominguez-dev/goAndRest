@@ -2,15 +2,13 @@ import { Pressable, PressableProps } from 'react-native';
 
 import { AppButtonUI, AppButtonUIProps } from './components/AppButtonUI.tsx';
 import { getOnPressWithHapticFeedback } from '../helpers/getOnPressWithHapticFeedback.ts';
-import { ACTIVE_OPACITY } from '../../../constants/ui.ts';
-
-const PRESSED_OPACITY = 0.95;
+import { ACTIVE_OPACITY, PRESSED_OPACITY } from '../../../constants/ui.ts';
 
 export type AppButtonProps = Pick<PressableProps, 'onPress' | 'disabled'> &
   Pick<
     AppButtonUIProps,
     'label' | 'value' | 'backgroundColorStatus' | 'IconComponent'
-  > & {};
+  >;
 
 export const AppButton = ({
   label,
