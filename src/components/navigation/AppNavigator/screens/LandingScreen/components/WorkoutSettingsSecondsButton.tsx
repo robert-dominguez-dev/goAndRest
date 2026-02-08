@@ -2,7 +2,7 @@ import {
   AppButton,
   AppButtonProps,
 } from '../../../../../controls/AppButton/AppButton.tsx';
-import { formatTime } from 'jest-util';
+import { formatTimerTime } from '../../../../../common/AppCountdownText/helpers/formatTimerTime.tsx';
 
 type WorkoutSettingsSecondsButtonProps = Omit<AppButtonProps, 'value'> & {
   seconds: number;
@@ -12,7 +12,7 @@ export const WorkoutSettingsSecondsButton = ({
   seconds,
   ...rest
 }: WorkoutSettingsSecondsButtonProps) => {
-  const timeFormatted = formatTime(seconds);
+  const timeFormatted = formatTimerTime(seconds);
   return (
     <AppButton
       {...rest}
