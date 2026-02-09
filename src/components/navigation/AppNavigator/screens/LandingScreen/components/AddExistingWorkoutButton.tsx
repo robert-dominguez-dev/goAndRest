@@ -21,7 +21,7 @@ export const AddExistingWorkoutButton = () => {
   return (
     <Pressable onPress={getOnPressWithHapticFeedback(handlePress)}>
       {({ pressed }) => {
-        const { width, height, borderRadius, backgroundColorStatus, opacity } =
+        const { width, height, borderRadius, opacity } =
           getAppRoundedButtonUIProps({
             pressed,
             disabled: false,
@@ -38,8 +38,8 @@ export const AddExistingWorkoutButton = () => {
             width={widthEvaluated}
             height={heightEvaluated}
             borderRadius={borderRadius}
-            backgroundColorStatus={backgroundColorStatus}
             opacity={opacity}
+            backgroundColorStatus={'transparent'}
             borderStyle={'dotted'}
             borderColorStatus={'text'}
             alignItems={'center'}

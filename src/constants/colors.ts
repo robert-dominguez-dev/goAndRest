@@ -64,11 +64,12 @@ export const appColorsLight = {
   negative: appDesignSystemColors.negative['300'],
   negativeMuted: appDesignSystemColors.negative['200'],
   text: appDesignSystemColors.grayscale['700'],
-  background: appDesignSystemColors.grayscale['100'],
+  background: appDesignSystemColors.grayscale['50'],
   backgroundAlt: appDesignSystemColors.grayscale['200'],
   yellow: '#e6c003',
   orange: '#E3940B',
   semiTransparentOverlay: '#00000080',
+  transparent: '#00000000',
 } as const satisfies Record<string, HexColor>;
 
 export type AppColorName = keyof typeof appColorsLight;
@@ -85,6 +86,7 @@ export const appColorsDark = {
   yellow: '#a18703',
   orange: '#d18707',
   semiTransparentOverlay: appColorsLight.semiTransparentOverlay,
+  transparent: appColorsLight.transparent,
 } as const satisfies AppColors;
 
 type GradientColor = [HexColor, HexColor];
@@ -92,15 +94,15 @@ type GradientColor = [HexColor, HexColor];
 export const appLinearGradientColorsLight = {
   primary: [
     appDesignSystemColors.primary['200'],
-    appDesignSystemColors.primary['600'],
+    appDesignSystemColors.primary['500'],
   ],
   grayscale: [
     appDesignSystemColors.grayscale['100'],
-    appDesignSystemColors.grayscale['500'],
+    appDesignSystemColors.grayscale['400'],
   ],
   negative: [
-    appDesignSystemColors.negative['200'],
-    appDesignSystemColors.negative['600'],
+    appDesignSystemColors.negative['100'],
+    appDesignSystemColors.negative['500'],
   ],
 } satisfies Record<string, GradientColor>;
 
@@ -113,8 +115,8 @@ export const appLinearGradientColorsDark = {
     appDesignSystemColors.primary['600'],
   ],
   grayscale: [
-    appDesignSystemColors.grayscale['100'],
     appDesignSystemColors.grayscale['500'],
+    appDesignSystemColors.grayscale['700'],
   ],
   negative: [
     appDesignSystemColors.negative['200'],
