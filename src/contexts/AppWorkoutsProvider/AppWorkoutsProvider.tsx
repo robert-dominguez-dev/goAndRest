@@ -38,12 +38,15 @@ export const AppWorkoutsProvider = ({ children }: ChildrenProp) => {
     );
   }, []);
 
-  const addWorkout = (workout: AppWorkout) =>
+  const addWorkout = (workout: AppWorkout) => {
     setWorkouts(prevWorkouts => {
       const currentWorkouts: AppWorkout[] = [workout, ...prevWorkouts];
       void updateAppWorkoutsInStorage(currentWorkouts);
       return currentWorkouts;
     });
+
+    setSelectedWorkout(workout);
+  };
 
   const removeWorkout = (workoutId: string) => {
     setWorkouts(prevWorkouts => {
