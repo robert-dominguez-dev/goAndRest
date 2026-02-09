@@ -6,6 +6,9 @@ import { ScreenProps } from '../../../types.ts';
 import { AppNavigatorScreen, AppNavigatorScreenParams } from '../../types.ts';
 import { useAppWorkouts } from '../../../../../contexts/AppWorkoutsProvider/AppWorkoutsProvider.tsx';
 import { useEffect } from 'react';
+import { AppView } from '../../../../common/AppView.tsx';
+import { AppWorkout } from '../../../../../contexts/AppWorkoutsProvider/types.ts';
+import { defaultWorkoutConfig } from '../../../../../contexts/AppWorkoutsProvider/constants.ts';
 
 type RunningWorkoutScreenProps = ScreenProps<
   AppNavigatorScreenParams,
@@ -19,6 +22,9 @@ export const RunningWorkoutScreen = ({
 
   const { selectedWorkout, startWorkout, isRunning } = useAppWorkouts();
 
+  const selectedWorkoutConfig: AppWorkout =
+    selectedWorkout || defaultWorkoutConfig;
+
   useEffect(() => {
     if (!isRunning) {
       startWorkout();
@@ -26,14 +32,20 @@ export const RunningWorkoutScreen = ({
   }, []);
 
   const headerTitle: string =
-    selectedWorkout?.meta.name || t('screens.runningWorkoutScreen.title');
+    selectedWorkoutConfig.meta.name || t('screens.runningWorkoutScreen.title');
 
   return (
     <AppScreenLayout
       headerTitle={headerTitle}
       HeaderAccessoryLeftIconComponent={X}
       onHeaderAccessoryLeftPress={navigation.goBack}>
-      <AppText>JOJOJOJ</AppText>
+      <AppView>
+        {Object.entries(selectedWorkoutConfig.config).map(([key, value]) => (
+          <AppText key={key}>
+            {key}: {value}
+          </AppText>
+        ))}
+      </AppView>
     </AppScreenLayout>
   );
 };

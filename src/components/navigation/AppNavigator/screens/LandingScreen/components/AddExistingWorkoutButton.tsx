@@ -1,14 +1,15 @@
 import { Pressable } from 'react-native';
 import { getOnPressWithHapticFeedback } from '../../../../../controls/helpers/getOnPressWithHapticFeedback.ts';
 import { AppView } from '../../../../../common/AppView.tsx';
-import {
-  getAppRoundedButtonUIProps
-} from '../../../../../controls/AppRoundedButton/helpers/getAppRoundedButtonUIProps.ts';
+import { getAppRoundedButtonUIProps } from '../../../../../controls/AppRoundedButton/helpers/getAppRoundedButtonUIProps.ts';
 import { Plus } from 'lucide-react-native';
 import { useAppThemedColors } from '../../../../../../hooks/useAppThemedColors.ts';
 import { useAppWorkouts } from '../../../../../../contexts/AppWorkoutsProvider/AppWorkoutsProvider.tsx';
 import { GRADIENT_BORDER_WIDTH } from '../../../../../common/AppViewWithGradientBorder.tsx';
-import { EXISTING_WORKOUT_BUTTON_ICON_SIZE, EXISTING_WORKOUT_BUTTON_SIZE, } from '../constants.ts';
+import {
+  EXISTING_WORKOUT_BUTTON_ICON_SIZE,
+  EXISTING_WORKOUT_BUTTON_SIZE,
+} from '../constants.ts';
 
 export const AddExistingWorkoutButton = () => {
   const { text } = useAppThemedColors();
@@ -23,6 +24,7 @@ export const AddExistingWorkoutButton = () => {
         const { width, height, borderRadius, backgroundColorStatus, opacity } =
           getAppRoundedButtonUIProps({
             pressed,
+            disabled: false,
             status: 'grayscale',
             size: EXISTING_WORKOUT_BUTTON_SIZE,
             borderRadiusLevel: 'small',

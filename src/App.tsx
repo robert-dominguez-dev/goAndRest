@@ -6,6 +6,7 @@ import { AppWorkoutsProvider } from './contexts/AppWorkoutsProvider/AppWorkoutsP
 import { I18nextProvider } from 'react-i18next';
 import { appI18NextConfig } from './locales/constants.ts';
 import { AppLanguageProvider } from './contexts/AppLanguageProvider/AppLanguageProvider.tsx';
+import 'react-native-get-random-values';
 
 export const App = () => (
   <I18nextProvider i18n={appI18NextConfig}>

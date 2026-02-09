@@ -19,6 +19,6 @@ export const checkShouldUseScrollViewForExistingWorkouts = ({
   const allGapsSize = numberOfGaps * gapSize;
 
   const totalSize = allButtonsSize + allGapsSize + allPaddings;
-  console.log({ totalSize, screenWidth });
+
   return totalSize > screenWidth;
 };

@@ -5,20 +5,16 @@ import {
   AppRoundedButtonUIProps,
 } from './AppRoundedButtonUI.tsx';
 
-export type AppRoundedButtonProps = Pick<
-  PressableProps,
-  'onPress' | 'disabled'
-> &
+export type AppRoundedButtonProps = Pick<PressableProps, 'onPress'> &
   Omit<AppRoundedButtonUIProps, 'pressed'>;
 
 export const AppRoundedButton = ({
   onPress,
-  disabled,
   ...props
 }: AppRoundedButtonProps) => (
   <Pressable
     onPress={getOnPressWithHapticFeedback(onPress)}
-    disabled={disabled}>
+    disabled={props.disabled}>
     {({ pressed }) => (
       <AppRoundedButtonUI
         {...props}

@@ -23,7 +23,7 @@ type LandingScreenProps = ScreenProps<
 export const LandingScreen = ({ navigation }: LandingScreenProps) => {
   const t = useAppTranslation();
 
-  const { workouts } = useAppWorkouts();
+  const { workouts, selectedWorkout } = useAppWorkouts();
 
   const [selectedWorkoutId, setSelectedWorkoutId] =
     useState<string>('NKN21212LM1L');
@@ -69,9 +69,12 @@ export const LandingScreen = ({ navigation }: LandingScreenProps) => {
   const goToSettings = () =>
     navigation.navigate(AppNavigatorScreen.SettingsScreen);
 
+  const headerTitle: string =
+    selectedWorkout?.meta.name || t('screens.landingScreen.title');
+
   return (
     <AppScreenLayout
-      headerTitle={t('screens.landingScreen.title')}
+      headerTitle={headerTitle}
       HeaderAccessoryLeftIconComponent={Menu}
       onHeaderAccessoryLeftPress={goToSettings}
       footer={footerElement}>

@@ -7,6 +7,7 @@ import { AppNavigatorScreen } from '../../../types.ts';
 import { AppSize } from '../../../../../../types/ui.ts';
 import { useAppThemedColors } from '../../../../../../hooks/useAppThemedColors.ts';
 import { useAppWorkouts } from '../../../../../../contexts/AppWorkoutsProvider/AppWorkoutsProvider.tsx';
+import { v4 as uuidv4 } from 'uuid';
 
 const _LandingScreenFooter = () => {
   const { text } = useAppThemedColors();
@@ -20,7 +21,7 @@ const _LandingScreenFooter = () => {
 
   const handleAddWorkout = () =>
     addWorkout({
-      id: ' uuidv4()',
+      id: uuidv4(),
       meta: {
         name: 'Robert',
         createdAt: new Date(),
@@ -34,7 +35,7 @@ const _LandingScreenFooter = () => {
       },
     });
 
-  const rightButtonElement: JSX.Element = selectedWorkout ? (
+  const leftButtonElement: JSX.Element | undefined = selectedWorkout ? (
     <AppRoundedButton
       onPress={() => removeWorkout(selectedWorkout.id)}
       size={'s'}
@@ -44,9 +45,12 @@ const _LandingScreenFooter = () => {
         color={text}
       />
     </AppRoundedButton>
-  ) : (
+  ) : undefined;
+
+  const rightButtonElement = (
     <AppRoundedButton
       onPress={handleAddWorkout}
+      disabled={!!selectedWorkout}
       size={'s'}
       status={'grayscale'}>
       <Save
@@ -60,6 +64,7 @@ const _LandingScreenFooter = () => {
     <AppRoundedButtons
       isRunning={false}
       onMainButtonPress={onStartWorkout}
+      leftButton={leftButtonElement}
       rightButton={rightButtonElement}
     />
   );

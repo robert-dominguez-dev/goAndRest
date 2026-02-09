@@ -1,4 +1,8 @@
-import { ACTIVE_OPACITY, PRESSED_OPACITY } from '../../../../constants/ui.ts';
+import {
+  ACTIVE_OPACITY,
+  INACTIVE_OPACITY,
+  PRESSED_OPACITY,
+} from '../../../../constants/ui.ts';
 import {
   AppRoundedButtonBorderRadiusLevel,
   AppRoundedButtonSize,
@@ -18,6 +22,7 @@ const borderRadiusLevelToDivider: Record<
 
 export type GetAppRoundedButtonUIPropsParams = {
   pressed: boolean;
+  disabled?: boolean;
   status: AppViewWithGradientBorderProps['gradientBorderColorStatus'];
   size: AppRoundedButtonSizeUnion;
   borderRadiusLevel?: AppRoundedButtonBorderRadiusLevel;
@@ -25,11 +30,16 @@ export type GetAppRoundedButtonUIPropsParams = {
 
 export const getAppRoundedButtonUIProps = ({
   pressed,
+  disabled,
   status,
   size,
   borderRadiusLevel = 'full',
 }: GetAppRoundedButtonUIPropsParams) => {
-  const opacity: number = pressed ? PRESSED_OPACITY : ACTIVE_OPACITY;
+  const opacity: number = disabled
+    ? INACTIVE_OPACITY
+    : pressed
+    ? PRESSED_OPACITY
+    : ACTIVE_OPACITY;
 
   const buttonSize = AppRoundedButtonSize[size];
 
