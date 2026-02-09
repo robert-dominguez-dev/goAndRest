@@ -6,7 +6,6 @@ export const defaultWorkoutConfig: AppWorkout = {
     name: '',
     description: '',
     createdAt: new Date('2026-02-08T14:23:05.123Z'),
-    updatedAt: new Date('2026-02-08T14:23:05.123Z'),
   },
   config: {
     prep: 10,

@@ -4,22 +4,27 @@ import { Pause, Play } from 'lucide-react-native';
 import { JSX } from 'react';
 import { useAppThemedColors } from '../../../hooks/useAppThemedColors.ts';
 import { AppView } from '../AppView.tsx';
+import {
+  AppRoundedButtonSizeUnion,
+  roundedButtonToIconSize,
+} from '../../controls/AppRoundedButton/constants.ts';
 
-const MAIN_BUTTON_ICON_SIZE = 40;
 const SECONDARY_BUTTON_MIN_WIDTH = 80;
+const MAIN_BUTTON_SIZE: AppRoundedButtonSizeUnion = 'l';
+const MAIN_BUTTON_ICON_SIZE = roundedButtonToIconSize[MAIN_BUTTON_SIZE];
 
 type AppRoundedButtonsProps = {
   leftButton?: JSX.Element;
   rightButton?: JSX.Element;
   onMainButtonPress: () => void;
-  isPlaying: boolean;
+  isRunning: boolean;
 };
 
 export const AppRoundedButtons = ({
   leftButton,
   rightButton,
   onMainButtonPress,
-  isPlaying,
+  isRunning,
 }: AppRoundedButtonsProps) => {
   const { text } = useAppThemedColors();
 
@@ -34,9 +39,9 @@ export const AppRoundedButtons = ({
       </AppView>
       <AppRoundedButton
         onPress={onMainButtonPress}
-        size={'m'}
+        size={MAIN_BUTTON_SIZE}
         status={'primary'}>
-        {isPlaying ? (
+        {isRunning ? (
           <Pause
             size={MAIN_BUTTON_ICON_SIZE}
             color={text}

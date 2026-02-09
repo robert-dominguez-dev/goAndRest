@@ -7,14 +7,16 @@ import {
   GO_AND_REST_WORKOUTS_STORAGE_KEY,
   updateAppWorkoutsInStorage,
 } from './helpers/updateAppWorkoutsInStorage.ts';
-import { defaultWorkoutConfig } from './constants.ts';
 
 type AppWorkoutsContextProps = {
-  selectedWorkout: AppWorkout;
-  setSelectedWorkout: (workout: AppWorkout) => void;
   workouts: AppWorkout[];
   addWorkout: (workout: AppWorkout) => void;
   removeWorkout: (workoutId: string) => void;
+  selectedWorkout: AppWorkout | null;
+  setSelectedWorkout: (workout: AppWorkout | null) => void;
+  isRunning: boolean;
+  startWorkout: () => void;
+  stopWorkout: () => void;
 };
 
 const AppWorkoutsContext = createContext<AppWorkoutsContextProps | undefined>(
@@ -24,8 +26,11 @@ const AppWorkoutsContext = createContext<AppWorkoutsContextProps | undefined>(
 export const AppWorkoutsProvider = ({ children }: ChildrenProp) => {
   const [workouts, setWorkouts] = useState<AppWorkout[]>([]);
 
-  const [selectedWorkout, setSelectedWorkout] =
-    useState<AppWorkout>(defaultWorkoutConfig);
+  const [selectedWorkout, setSelectedWorkout] = useState<AppWorkout | null>(
+    null,
+  );
+
+  const [isRunning, setIsRunning] = useState<boolean>(false);
 
   useEffect(() => {
     AsyncStorage.getItem(GO_AND_REST_WORKOUTS_STORAGE_KEY).then(
@@ -40,7 +45,7 @@ export const AppWorkoutsProvider = ({ children }: ChildrenProp) => {
       return currentWorkouts;
     });
 
-  const removeWorkout = (workoutId: string) =>
+  const removeWorkout = (workoutId: string) => {
     setWorkouts(prevWorkouts => {
       const filteredWorkouts: AppWorkout[] = prevWorkouts.filter(
         workout => workout.id !== workoutId,
@@ -49,14 +54,29 @@ export const AppWorkoutsProvider = ({ children }: ChildrenProp) => {
       return filteredWorkouts;
     });
 
+    setSelectedWorkout(prev => {
+      if (prev?.id === workoutId) {
+        return null;
+      }
+      return prev;
+    });
+  };
+
+  const startWorkout = () => setIsRunning(true);
+
+  const stopWorkout = () => setIsRunning(false);
+
   return (
     <AppWorkoutsContext.Provider
       value={{
-        selectedWorkout,
-        setSelectedWorkout,
         workouts,
         addWorkout,
         removeWorkout,
+        selectedWorkout,
+        setSelectedWorkout,
+        isRunning,
+        startWorkout,
+        stopWorkout,
       }}>
       {children}
     </AppWorkoutsContext.Provider>

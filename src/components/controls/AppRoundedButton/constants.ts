@@ -1,18 +1,20 @@
-import { AppGradientColorUnion } from '../../../constants/colors.ts';
-import { AppColorUnion } from '../../../types/ui.ts';
+import { AppSize } from '../../../types/ui.ts';
 
 export enum AppRoundedButtonSize {
-  m = 100,
+  l = 100,
+  m = 80,
   s = 60,
 }
 
 export type AppRoundedButtonSizeUnion = keyof typeof AppRoundedButtonSize;
 
-export const gradientToStandardColorStatus: Record<
-  AppGradientColorUnion,
-  AppColorUnion
+export type AppRoundedButtonBorderRadiusLevel = 'small' | 'full';
+
+export const roundedButtonToIconSize: Record<
+  AppRoundedButtonSizeUnion,
+  number
 > = {
-  primary: 'primary',
-  negative: 'negative',
-  grayscale: 'backgroundAlt',
+  s: AppSize.ml,
+  m: AppSize.l,
+  l: 40,
 };

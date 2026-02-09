@@ -7,11 +7,16 @@ import {
 import { JSX, memo } from 'react';
 import { AppButton } from '../../../../../controls/AppButton/AppButton.tsx';
 import { useAppTranslation } from '../../../../../../locales/hooks/useAppTranslation.ts';
+import { AppWorkout } from '../../../../../../contexts/AppWorkoutsProvider/types.ts';
+import { defaultWorkoutConfig } from '../../../../../../contexts/AppWorkoutsProvider/constants.ts';
 
 const _WorkoutConfigButtons = () => {
   const t = useAppTranslation();
 
   const { selectedWorkout } = useAppWorkouts();
+
+  const selectedWorkoutConfig: AppWorkout =
+    selectedWorkout || defaultWorkoutConfig;
 
   const workoutConfigButtonElements = appWorkoutConfigKeys.map<JSX.Element>(
     key => {
@@ -19,7 +24,7 @@ const _WorkoutConfigButtons = () => {
         workoutSettingsButtonConfigMap[key];
 
       const label = t(labelKey);
-      const value = valueFormatter(selectedWorkout.config[key]);
+      const value = valueFormatter(selectedWorkoutConfig.config[key]);
 
       const handlePress = () => console.log(key);
 

@@ -29,6 +29,7 @@ export type AppViewProps = Pick<
     | 'zIndex'
     | 'pointerEvents'
     | 'opacity'
+    | 'borderStyle'
   > & {
     backgroundColorStatus?: AppColorUnion;
     borderColorStatus?: AppColorUnion;
@@ -73,6 +74,7 @@ export const AppView = ({
   zIndex,
   pointerEvents,
   opacity,
+  borderStyle,
   backgroundColorStatus,
   borderColorStatus,
   disableBorderBottom,
@@ -120,6 +122,7 @@ export const AppView = ({
     zIndex,
     pointerEvents,
     opacity,
+    borderStyle,
     backgroundColor: backgroundColorStatus
       ? appColors[backgroundColorStatus]
       : undefined,

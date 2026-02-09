@@ -10,6 +10,8 @@ import { WorkoutConfigButtons } from './components/WorkoutConfigButtons.tsx';
 import { AppView } from '../../../../common/AppView.tsx';
 import { AppTimeView } from '../../../../common/AppTimeView.tsx';
 import { LandingScreenFooter } from './components/LandingScreenFooter.tsx';
+import { WorkoutButtons } from './components/WorkoutButtons.tsx';
+import { useAppWorkouts } from '../../../../../contexts/AppWorkoutsProvider/AppWorkoutsProvider.tsx';
 
 const footerElement = <LandingScreenFooter />;
 
@@ -20,6 +22,8 @@ type LandingScreenProps = ScreenProps<
 
 export const LandingScreen = ({ navigation }: LandingScreenProps) => {
   const t = useAppTranslation();
+
+  const { workouts } = useAppWorkouts();
 
   const [selectedWorkoutId, setSelectedWorkoutId] =
     useState<string>('NKN21212LM1L');
@@ -74,6 +78,7 @@ export const LandingScreen = ({ navigation }: LandingScreenProps) => {
       <AppView
         grow
         gap={'l'}>
+        {!!workouts.length && <WorkoutButtons workouts={workouts} />}
         <AppView
           grow
           alignItems={'center'}

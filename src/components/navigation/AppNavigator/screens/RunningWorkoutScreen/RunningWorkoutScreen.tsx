@@ -5,6 +5,7 @@ import { useAppTranslation } from '../../../../../locales/hooks/useAppTranslatio
 import { ScreenProps } from '../../../types.ts';
 import { AppNavigatorScreen, AppNavigatorScreenParams } from '../../types.ts';
 import { useAppWorkouts } from '../../../../../contexts/AppWorkoutsProvider/AppWorkoutsProvider.tsx';
+import { useEffect } from 'react';
 
 type RunningWorkoutScreenProps = ScreenProps<
   AppNavigatorScreenParams,
@@ -16,10 +17,16 @@ export const RunningWorkoutScreen = ({
 }: RunningWorkoutScreenProps) => {
   const t = useAppTranslation();
 
-  const { selectedWorkout } = useAppWorkouts();
+  const { selectedWorkout, startWorkout, isRunning } = useAppWorkouts();
+
+  useEffect(() => {
+    if (!isRunning) {
+      startWorkout();
+    }
+  }, []);
 
   const headerTitle: string =
-    selectedWorkout.meta.name || t('screens.runningWorkoutScreen.title');
+    selectedWorkout?.meta.name || t('screens.runningWorkoutScreen.title');
 
   return (
     <AppScreenLayout

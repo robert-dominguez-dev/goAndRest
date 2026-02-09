@@ -8,7 +8,7 @@ type AppWorkoutMetaData = {
   name: string;
   description?: string;
   createdAt: Date;
-  updatedAt: Date;
+  updatedAt?: Date;
 };
 
 export type AppWorkoutConfig = {

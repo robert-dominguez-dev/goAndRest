@@ -3,6 +3,10 @@ import { formatTimerTime } from '../../../../common/AppCountdownText/helpers/for
 import { AppButtonProps } from '../../../../controls/AppButton/AppButton.tsx';
 import { Coffee, Dumbbell, Repeat, Wind, Zap } from 'lucide-react-native';
 import { TranslateKey } from '../../../../../locales/types.ts';
+import {
+  AppRoundedButtonSizeUnion,
+  roundedButtonToIconSize,
+} from '../../../../controls/AppRoundedButton/constants.ts';
 
 type AppWorkoutConfigKey = keyof AppWorkoutConfig;
 
@@ -57,3 +61,8 @@ export const workoutSettingsButtonConfigMap: Record<
     valueFormatter: formatTimerTime,
   },
 };
+
+export const EXISTING_WORKOUT_BUTTON_SIZE: AppRoundedButtonSizeUnion = 's';
+
+export const EXISTING_WORKOUT_BUTTON_ICON_SIZE =
+  roundedButtonToIconSize[EXISTING_WORKOUT_BUTTON_SIZE];

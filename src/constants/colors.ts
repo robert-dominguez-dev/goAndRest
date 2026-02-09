@@ -1,3 +1,5 @@
+import { AppColorUnion } from '../types/ui.ts';
+
 type HexColor = `#${string}`;
 
 type DesignSystemColors = {
@@ -119,3 +121,12 @@ export const appLinearGradientColorsDark = {
     appDesignSystemColors.negative['600'],
   ],
 } satisfies AppGradientColors;
+
+export const gradientToStandardColorStatus: Record<
+  AppGradientColorUnion,
+  AppColorUnion
+> = {
+  primary: 'primary',
+  negative: 'negative',
+  grayscale: 'backgroundAlt',
+};

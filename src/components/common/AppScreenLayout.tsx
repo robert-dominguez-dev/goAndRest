@@ -9,7 +9,9 @@ import { AppHeader, AppHeaderProps } from './AppHeader/AppHeader.tsx';
 import { ReactNode } from 'react';
 
 import { useAppSafeAreaPadding } from '../../hooks/useAppSafeAreaPadding.ts';
-import { AppSizeUnion } from '../../types/ui.ts';
+import { AppSize, AppSizeUnion } from '../../types/ui.ts';
+
+export const HORIZONTAL_SCREEN_PADDING = AppSize.m;
 
 export type AppScreenLayoutProps = Pick<AppViewProps, 'children'> &
   Pick<AppViewProps, 'backgroundColorStatus'> & {
@@ -68,7 +70,7 @@ export const AppScreenLayout = ({
         <AppScreenBackground illustrationName={backgroundIllustration} />
       )}
       <AppView
-        paddingHorizontal={'m'}
+        paddingHorizontal={HORIZONTAL_SCREEN_PADDING}
         paddingTop={screenPaddingTop}
         paddingBottom={screenPaddingBottom}
         backgroundColorStatus={backgroundColorStatus}

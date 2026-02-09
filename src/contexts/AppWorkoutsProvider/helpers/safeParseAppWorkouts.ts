@@ -7,7 +7,7 @@ const AppWorkoutSchema: z.ZodType<AppWorkout> = z.object({
     name: z.string(),
     description: z.string().optional(),
     createdAt: z.coerce.date(),
-    updatedAt: z.coerce.date(),
+    updatedAt: z.coerce.date().optional(),
   }),
   config: z.object({
     prep: z.int(),
