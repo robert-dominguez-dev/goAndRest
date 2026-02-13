@@ -3,10 +3,8 @@ import { ChildrenProp } from '../../types/common.ts';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { safeParseAppWorkouts } from './helpers/safeParseAppWorkouts.ts';
 import { AppWorkout } from './types.ts';
-import {
-  GO_AND_REST_WORKOUTS_STORAGE_KEY,
-  updateAppWorkoutsInStorage,
-} from './helpers/updateAppWorkoutsInStorage.ts';
+import { GO_AND_REST_WORKOUTS_STORAGE_KEY, updateAppWorkoutsInStorage, } from './helpers/updateAppWorkoutsInStorage.ts';
+import { safeAt } from '../../helpers/safeAt.ts';
 
 type AppWorkoutsContextProps = {
   workouts: AppWorkout[];
@@ -34,7 +32,17 @@ export const AppWorkoutsProvider = ({ children }: ChildrenProp) => {
 
   useEffect(() => {
     AsyncStorage.getItem(GO_AND_REST_WORKOUTS_STORAGE_KEY).then(
-      storedWorkouts => setWorkouts(safeParseAppWorkouts(storedWorkouts)),
+      storedWorkouts => {
+        const storedWorkoutsParsed = safeParseAppWorkouts(storedWorkouts);
+
+        setWorkouts(storedWorkoutsParsed);
+
+        const latestStoredWorkout = safeAt(storedWorkoutsParsed, 0);
+
+        if (latestStoredWorkout) {
+          setSelectedWorkout(latestStoredWorkout);
+        }
+      },
     );
   }, []);
 
