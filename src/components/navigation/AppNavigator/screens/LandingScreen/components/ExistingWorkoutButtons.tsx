@@ -8,12 +8,13 @@ import { EXISTING_WORKOUT_BUTTON_ICON_SIZE } from '../constants.ts';
 const _ExistingWorkoutButtons = () => {
   const { text } = useAppThemedColors();
 
-  const { workouts, selectedWorkout, setSelectedWorkout } = useAppWorkouts();
+  const { storedWorkouts, selectedStoredWorkout, setSelectedStoredWorkout } =
+    useAppWorkouts();
 
-  return workouts.map(workout => {
-    const isSelected = workout.id === selectedWorkout?.id;
+  return storedWorkouts.map(workout => {
+    const isSelected = workout.id === selectedStoredWorkout?.id;
 
-    const handlePress = () => setSelectedWorkout(workout);
+    const handlePress = () => setSelectedStoredWorkout(workout);
 
     return (
       <ExistingWorkoutButton

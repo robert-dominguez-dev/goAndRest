@@ -5,9 +5,8 @@ import { useAppTranslation } from '../../../../../locales/hooks/useAppTranslatio
 import { ScreenProps } from '../../../types.ts';
 import { AppNavigatorScreen, AppNavigatorScreenParams } from '../../types.ts';
 import { useAppWorkouts } from '../../../../../contexts/AppWorkoutsProvider/AppWorkoutsProvider.tsx';
-import { useEffect } from 'react';
 import { AppView } from '../../../../common/AppView.tsx';
-import { AppWorkout } from '../../../../../contexts/AppWorkoutsProvider/types.ts';
+import { AppWorkoutConfig } from '../../../../../contexts/AppWorkoutsProvider/types.ts';
 import { defaultWorkoutConfig } from '../../../../../contexts/AppWorkoutsProvider/constants.ts';
 
 type RunningWorkoutScreenProps = ScreenProps<
@@ -20,19 +19,13 @@ export const RunningWorkoutScreen = ({
 }: RunningWorkoutScreenProps) => {
   const t = useAppTranslation();
 
-  const { selectedWorkout, startWorkout, isRunning } = useAppWorkouts();
+  const { runningWorkout } = useAppWorkouts();
 
-  const selectedWorkoutConfig: AppWorkout =
-    selectedWorkout || defaultWorkoutConfig;
-
-  useEffect(() => {
-    if (!isRunning) {
-      startWorkout();
-    }
-  }, []);
+  const selectedWorkoutConfig: AppWorkoutConfig =
+    runningWorkout || defaultWorkoutConfig;
 
   const headerTitle: string =
-    selectedWorkoutConfig.meta.name || t('screens.runningWorkoutScreen.title');
+    runningWorkout?.name || t('screens.runningWorkoutScreen.title');
 
   return (
     <AppScreenLayout
@@ -40,7 +33,7 @@ export const RunningWorkoutScreen = ({
       HeaderAccessoryLeftIconComponent={X}
       onHeaderAccessoryLeftPress={navigation.goBack}>
       <AppView>
-        {Object.entries(selectedWorkoutConfig.config).map(([key, value]) => (
+        {Object.entries(selectedWorkoutConfig).map(([key, value]) => (
           <AppText key={key}>
             {key}: {value}
           </AppText>

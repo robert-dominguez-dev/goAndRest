@@ -19,8 +19,10 @@ export type AppWorkoutConfig = {
   cooldown: number;
 };
 
-export type AppWorkout = {
+export type AppStoredWorkout = {
   id: string;
   meta: AppWorkoutMetaData;
   config: AppWorkoutConfig;
 };
+
+export type AppWorkout = AppWorkoutConfig & Pick<AppWorkoutMetaData, 'name'>;

@@ -6,11 +6,29 @@ import { AppTranslations } from './types.ts';
 export const cs = {
   common: {
     workoutConfig: {
-      prep: 'Příprava',
-      work: 'Cvičení',
-      rest: 'Odpočinek',
-      rounds: 'Počet kol',
-      cooldown: 'Relax',
+      prep: {
+        label: 'Příprava',
+        description:
+          'Čas před začátkem každého kola. Připrav se na nadcházející interval.',
+      },
+      work: {
+        label: 'Cvičení',
+        description: 'Doba aktivního cvičení v každém kole.',
+      },
+      rest: {
+        label: 'Odpočinek',
+        description: 'Čas na regeneraci po každém intervalu cvičení.',
+      },
+      rounds: {
+        label: 'Počet kol',
+        description:
+          'Tolikrát se zopakuje cyklus přípravy, cvičení a odpočinku.',
+      },
+      cooldown: {
+        label: 'Relax',
+        description:
+          'Čas na uklidnění a snížení tepu po dokončení celého tréninku.',
+      },
     },
   },
   screens: {

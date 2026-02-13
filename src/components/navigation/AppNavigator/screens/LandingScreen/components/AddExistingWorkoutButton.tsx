@@ -14,9 +14,9 @@ import {
 export const AddExistingWorkoutButton = () => {
   const { text } = useAppThemedColors();
 
-  const { setSelectedWorkout } = useAppWorkouts();
+  const { setSelectedStoredWorkout } = useAppWorkouts();
 
-  const handlePress = () => setSelectedWorkout(null);
+  const handlePress = () => setSelectedStoredWorkout(null);
 
   return (
     <Pressable onPress={getOnPressWithHapticFeedback(handlePress)}>

@@ -9,7 +9,7 @@ import { HORIZONTAL_SCREEN_PADDING } from '../../../../../common/AppScreenLayout
 import { useScreenWidth } from '../../../../../../hooks/useScreenWidth.ts';
 import { ReactNode } from 'react';
 import { ExistingWorkoutButtons } from './ExistingWorkoutButtons.tsx';
-import { AppWorkout } from '../../../../../../contexts/AppWorkoutsProvider/types.ts';
+import { AppStoredWorkout } from '../../../../../../contexts/AppWorkoutsProvider/types.ts';
 import { GRADIENT_BORDER_WIDTH } from '../../../../../common/AppViewWithGradientBorder.tsx';
 
 const GAP_SIZE = AppSize.s;
@@ -17,7 +17,7 @@ const GAP_SIZE = AppSize.s;
 const workoutButtons = <ExistingWorkoutButtons />;
 
 type WorkoutButtonsProps = {
-  workouts: AppWorkout[];
+  workouts: AppStoredWorkout[];
 };
 
 export const WorkoutButtons = ({ workouts }: WorkoutButtonsProps) => {

@@ -1,14 +1,19 @@
 import { NestedKeys } from '../types/magic.ts';
 import { TOptionsBase } from 'i18next';
 
+type WorkoutConfigTexts = {
+  label: string;
+  description: string;
+};
+
 export type AppTranslations = {
   common: {
     workoutConfig: {
-      prep: string;
-      work: string;
-      rest: string;
-      rounds: string;
-      cooldown: string;
+      prep: WorkoutConfigTexts;
+      work: WorkoutConfigTexts;
+      rest: WorkoutConfigTexts;
+      rounds: WorkoutConfigTexts;
+      cooldown: WorkoutConfigTexts;
     };
   };
   screens: {

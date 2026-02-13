@@ -7,37 +7,43 @@ import { AppNavigatorScreen } from '../../../types.ts';
 import { AppSize } from '../../../../../../types/ui.ts';
 import { useAppThemedColors } from '../../../../../../hooks/useAppThemedColors.ts';
 import { useAppWorkouts } from '../../../../../../contexts/AppWorkoutsProvider/AppWorkoutsProvider.tsx';
-import { v4 as uuidv4 } from 'uuid';
+import { useFormContext, useFormState } from 'react-hook-form';
+import { AppWorkout } from '../../../../../../contexts/AppWorkoutsProvider/types.ts';
+import { composeWorkoutToStore } from '../helpers/composeWorkoutToStore.ts';
 
 const _LandingScreenFooter = () => {
   const { text } = useAppThemedColors();
 
-  const { selectedWorkout, addWorkout, removeWorkout } = useAppWorkouts();
+  const {
+    selectedStoredWorkout,
+    storeWorkout,
+    removeWorkout,
+    setRunningWorkout,
+  } = useAppWorkouts();
+
+  const { control, handleSubmit, getValues } = useFormContext<AppWorkout>();
+
+  const { isDirty } = useFormState({ control });
 
   const navigation = useRootStackNavigation();
 
-  const onStartWorkout = () =>
+  const onStartWorkout = () => {
+    setRunningWorkout(getValues());
     navigation.navigate(AppNavigatorScreen.RunningWorkoutScreen);
+  };
 
-  const handleAddWorkout = () =>
-    addWorkout({
-      id: uuidv4(),
-      meta: {
-        name: 'Robert',
-        createdAt: new Date(),
-      },
-      config: {
-        prep: 0,
-        work: 60,
-        rest: 15,
-        rounds: 3,
-        cooldown: 30,
-      },
-    });
+  const handleAddWorkout = (workout: AppWorkout) => {
+    const workoutToStore = composeWorkoutToStore(
+      workout,
+      selectedStoredWorkout,
+    );
 
-  const leftButtonElement: JSX.Element | undefined = selectedWorkout ? (
+    storeWorkout(workoutToStore);
+  };
+
+  const deleteButtonElement: JSX.Element | undefined = selectedStoredWorkout ? (
     <AppRoundedButton
-      onPress={() => removeWorkout(selectedWorkout.id)}
+      onPress={() => removeWorkout(selectedStoredWorkout.id)}
       size={'s'}
       status={'negative'}>
       <Trash
@@ -47,10 +53,10 @@ const _LandingScreenFooter = () => {
     </AppRoundedButton>
   ) : undefined;
 
-  const rightButtonElement = (
+  const saveButtonElement = (
     <AppRoundedButton
-      onPress={handleAddWorkout}
-      disabled={!!selectedWorkout}
+      onPress={handleSubmit(handleAddWorkout)}
+      disabled={!isDirty}
       size={'s'}
       status={'grayscale'}>
       <Save
@@ -64,8 +70,8 @@ const _LandingScreenFooter = () => {
     <AppRoundedButtons
       isRunning={false}
       onMainButtonPress={onStartWorkout}
-      leftButton={leftButtonElement}
-      rightButton={rightButtonElement}
+      leftButton={deleteButtonElement}
+      rightButton={saveButtonElement}
     />
   );
 };

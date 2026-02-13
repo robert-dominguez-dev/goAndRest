@@ -1,7 +1,7 @@
 import { z } from 'zod';
-import type { AppWorkout } from '../types.ts';
+import type { AppStoredWorkout } from '../types.ts';
 
-const AppWorkoutSchema: z.ZodType<AppWorkout> = z.object({
+const AppWorkoutSchema: z.ZodType<AppStoredWorkout> = z.object({
   id: z.string(),
   meta: z.object({
     name: z.string(),
@@ -20,7 +20,7 @@ const AppWorkoutSchema: z.ZodType<AppWorkout> = z.object({
 
 export const safeParseAppWorkouts = (
   storedWorkoutsUnsafe: string | null,
-): AppWorkout[] => {
+): AppStoredWorkout[] => {
   if (!storedWorkoutsUnsafe) {
     return [];
   }
@@ -32,7 +32,7 @@ export const safeParseAppWorkouts = (
       return [];
     }
 
-    return parsedWorkouts.reduce<AppWorkout[]>((acc, workout) => {
+    return parsedWorkouts.reduce<AppStoredWorkout[]>((acc, workout) => {
       const result = AppWorkoutSchema.safeParse(workout);
 
       if (result.success) {

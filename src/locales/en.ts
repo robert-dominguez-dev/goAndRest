@@ -6,11 +6,29 @@ import { AppTranslations } from './types.ts';
 export const en = {
   common: {
     workoutConfig: {
-      prep: 'Prep',
-      work: 'Work',
-      rest: 'Rest',
-      rounds: 'Rounds',
-      cooldown: 'Cooldown',
+      prep: {
+        label: 'Preparation',
+        description:
+          'Time before each round starts. Get ready for the upcoming work interval.',
+      },
+      work: {
+        label: 'Work',
+        description: 'Active exercise time in each round.',
+      },
+      rest: {
+        label: 'Rest',
+        description: 'Recovery time after each work interval.',
+      },
+      rounds: {
+        label: 'Rounds',
+        description:
+          'Number of times the preparation, work, and rest cycle repeats.',
+      },
+      cooldown: {
+        label: 'Cooldown',
+        description:
+          'Time to recover and lower your heart rate after the workout.',
+      },
     },
   },
   screens: {
