@@ -3,7 +3,7 @@ import { AppRoundedButton } from '../../controls/AppRoundedButton/AppRoundedButt
 import { Pause, Play } from 'lucide-react-native';
 import { JSX } from 'react';
 import { useAppThemedColors } from '../../../hooks/useAppThemedColors.ts';
-import { AppView } from '../AppView.tsx';
+import { AppView } from '../AppView/AppView.tsx';
 import {
   AppRoundedButtonSizeUnion,
   roundedButtonToIconSize,

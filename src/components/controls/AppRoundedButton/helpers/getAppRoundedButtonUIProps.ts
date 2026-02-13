@@ -10,7 +10,7 @@ import {
 } from '../constants.ts';
 import { gradientToStandardColorStatus } from '../../../../constants/colors.ts';
 import { AppViewWithGradientBorderProps } from '../../../common/AppViewWithGradientBorder.tsx';
-import { AppViewProps } from '../../../common/AppView.tsx';
+import { AppViewProps } from '../../../common/AppView/AppView.tsx';
 
 const borderRadiusLevelToDivider: Record<
   AppRoundedButtonBorderRadiusLevel,

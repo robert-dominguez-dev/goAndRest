@@ -1,6 +1,6 @@
 import { AppHeader, AppHeaderProps } from '../../AppHeader/AppHeader.tsx';
 import { JSX } from 'react';
-import { CircleX } from 'lucide-react-native';
+import { X } from 'lucide-react-native';
 
 export type GetBottomSheetContentHeaderParams = {
   title: string | undefined;
@@ -24,7 +24,7 @@ export const getBottomSheetContentHeader = ({
   }
 
   const AccessoryRightIconComponent: AppHeaderProps['AccessoryRightIconComponent'] =
-    closeable ? CircleX : undefined;
+    closeable ? X : undefined;
 
   return (
     <AppHeader

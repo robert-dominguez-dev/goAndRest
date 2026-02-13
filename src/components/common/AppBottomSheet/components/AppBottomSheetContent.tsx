@@ -1,4 +1,4 @@
-import { AppView } from '../../AppView.tsx';
+import { AppView, AppViewProps } from '../../AppView/AppView.tsx';
 import { useAppSafeAreaPadding } from '../../../../hooks/useAppSafeAreaPadding.ts';
 import { ChildrenProp } from '../../../../types/common.ts';
 import { ScrollView } from 'react-native';
@@ -21,7 +21,8 @@ export type BottomSheetSubmitButtonProps = Omit<
 };
 
 export type AppBottomSheetContentProps = ChildrenProp &
-  GetBottomSheetContentHeaderParams & {
+  GetBottomSheetContentHeaderParams &
+  Pick<AppViewProps, 'backgroundColorStatus'> & {
     bottomSheetSubmitButtonProps?: BottomSheetSubmitButtonProps;
     scrollable?: boolean;
   };
@@ -33,6 +34,7 @@ const _AppBottomSheetContent = ({
   closeable,
   bottomSheetSubmitButtonProps,
   headerOverride,
+  backgroundColorStatus = 'backgroundAlt',
   scrollable = true,
 }: AppBottomSheetContentProps) => {
   const { safeAreaPaddingBottom } = useAppSafeAreaPadding();
@@ -63,12 +65,12 @@ const _AppBottomSheetContent = ({
       grow
       disableBorderBottom
       maxHeight={FILL_CONTAINER_DIMENSION}
-      gap={'l'}
+      gap={'m'}
       paddingTop={'m'}
       paddingHorizontal={'m'}
       paddingBottom={safeAreaPaddingBottom}
-      backgroundColorStatus={'secondaryDeep'}
-      borderColorStatus={'secondaryStrong'}
+      backgroundColorStatus={backgroundColorStatus}
+      borderColorStatus={'background'}
       borderTopLeftRadius={'m'}
       borderTopRightRadius={'m'}>
       {header}

@@ -2,7 +2,7 @@ import { memo } from 'react';
 import { useAppTranslation } from '../../../../../../locales/hooks/useAppTranslation.ts';
 import { SettingsItem } from './SettingsItem.tsx';
 import { settingsItems } from '../constants.tsx';
-import { AppView } from '../../../../../common/AppView.tsx';
+import { AppView } from '../../../../../common/AppView/AppView.tsx';
 
 const _SettingsItemList = () => {
   const t = useAppTranslation();

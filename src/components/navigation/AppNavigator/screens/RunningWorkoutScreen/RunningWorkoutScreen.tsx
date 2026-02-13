@@ -5,7 +5,7 @@ import { useAppTranslation } from '../../../../../locales/hooks/useAppTranslatio
 import { ScreenProps } from '../../../types.ts';
 import { AppNavigatorScreen, AppNavigatorScreenParams } from '../../types.ts';
 import { useAppWorkouts } from '../../../../../contexts/AppWorkoutsProvider/AppWorkoutsProvider.tsx';
-import { AppView } from '../../../../common/AppView.tsx';
+import { AppView } from '../../../../common/AppView/AppView.tsx';
 import { AppWorkoutConfig } from '../../../../../contexts/AppWorkoutsProvider/types.ts';
 import { defaultWorkoutConfig } from '../../../../../contexts/AppWorkoutsProvider/constants.ts';
 

@@ -2,7 +2,7 @@ import { sizes } from '../../../../constants/ui.ts';
 import { AppRow } from '../../../common/AppRow.tsx';
 import { AppText } from '../../../common/AppText/AppText.tsx';
 import { AppColorUnion } from '../../../../types/ui.ts';
-import { AppViewProps } from '../../../common/AppView.tsx';
+import { AppViewProps } from '../../../common/AppView/AppView.tsx';
 import { LucideIcon } from 'lucide-react-native';
 import { useAppThemedColors } from '../../../../hooks/useAppThemedColors.ts';
 

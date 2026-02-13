@@ -1,6 +1,6 @@
 import { AppScreenLayout, AppScreenLayoutProps } from './AppScreenLayout.tsx';
 import { AppLoader } from './AppLoader.tsx';
-import { AppView } from './AppView.tsx';
+import { AppView } from './AppView/AppView.tsx';
 import { AppIllustration } from '../../assets/constants.ts';
 
 type AppFullScreenLoaderProps = Pick<
@@ -21,7 +21,10 @@ export const AppFullScreenLoader = ({
         alignItems={'center'}
         justifyContent={'center'}
         paddingBottom={'xl'}>
-        <AppLoader isPending={true} size={'l'} />
+        <AppLoader
+          isPending={true}
+          size={'l'}
+        />
       </AppView>
     </AppScreenLayout>
   );

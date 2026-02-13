@@ -1,5 +1,5 @@
 import { AppImage, AppImageProps } from '../../AppImage.tsx';
-import { AppView } from '../../AppView.tsx';
+import { AppView } from '../../AppView/AppView.tsx';
 import { sizes } from '../../../../constants/ui.ts';
 import { AppColorUnion } from '../../../../types/ui.ts';
 

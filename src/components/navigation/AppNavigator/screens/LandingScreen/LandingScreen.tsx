@@ -4,7 +4,7 @@ import { Menu } from 'lucide-react-native';
 import { ScreenProps } from '../../../types.ts';
 import { AppNavigatorScreen, AppNavigatorScreenParams } from '../../types.ts';
 import { WorkoutConfigButtons } from './components/WorkoutConfigButtons.tsx';
-import { AppView } from '../../../../common/AppView.tsx';
+import { AppView } from '../../../../common/AppView/AppView.tsx';
 import { AppTimeView } from '../../../../common/AppTimeView.tsx';
 import { LandingScreenFooter } from './components/LandingScreenFooter.tsx';
 import { WorkoutButtons } from './components/WorkoutButtons.tsx';

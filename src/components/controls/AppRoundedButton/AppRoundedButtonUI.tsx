@@ -1,4 +1,4 @@
-import { AppView } from '../../common/AppView.tsx';
+import { AppView } from '../../common/AppView/AppView.tsx';
 import { ChildrenProp } from '../../../types/common.ts';
 import { AppViewWithGradientBorder } from '../../common/AppViewWithGradientBorder.tsx';
 import {

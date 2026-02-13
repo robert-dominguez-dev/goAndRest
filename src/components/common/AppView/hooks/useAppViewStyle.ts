@@ -1,61 +1,55 @@
-import { View, ViewProps, ViewStyle } from 'react-native';
-import { AppColorUnion, AppSizeUnion, BorderProps } from '../../types/ui.ts';
-import { getAppSize } from '../../helpers/getAppSize.ts';
+import { useAppThemedColors } from '../../../../hooks/useAppThemedColors.ts';
+import {
+  AppColorUnion,
+  AppSizeUnion,
+  BorderProps,
+} from '../../../../types/ui.ts';
+import { sizes } from '../../../../constants/ui.ts';
+import { ViewStyle } from 'react-native';
+import { getAppSize } from '../../../../helpers/getAppSize.ts';
 
-import { sizes } from '../../constants/ui.ts';
-import { useAppThemedColors } from '../../hooks/useAppThemedColors.ts';
+export type UseAppViewStyleParams = Pick<
+  ViewStyle,
+  | 'height'
+  | 'width'
+  | 'position'
+  | 'top'
+  | 'bottom'
+  | 'left'
+  | 'alignSelf'
+  | 'alignItems'
+  | 'justifyContent'
+  | 'flexDirection'
+  | 'flexWrap'
+  | 'minHeight'
+  | 'maxHeight'
+  | 'minWidth'
+  | 'maxWidth'
+  | 'zIndex'
+  | 'pointerEvents'
+  | 'opacity'
+  | 'borderStyle'
+> & {
+  backgroundColorStatus?: AppColorUnion;
+  borderColorStatus?: AppColorUnion;
+  disableBorderBottom?: boolean;
+  margin?: AppSizeUnion;
+  padding?: AppSizeUnion;
+  paddingHorizontal?: AppSizeUnion;
+  paddingVertical?: AppSizeUnion;
+  paddingTop?: AppSizeUnion;
+  paddingBottom?: AppSizeUnion;
+  paddingLeft?: AppSizeUnion;
+  paddingRight?: AppSizeUnion;
+  gap?: AppSizeUnion;
+  borderRadius?: AppSizeUnion;
+  borderTopLeftRadius?: AppSizeUnion;
+  borderTopRightRadius?: AppSizeUnion;
+  grow?: boolean;
+  shrink?: boolean;
+};
 
-export type AppViewProps = Pick<
-  ViewProps,
-  'children' | 'onLayout' | 'onTouchEnd' | 'onTouchStart' | 'onTouchMove'
-> &
-  Pick<
-    ViewStyle,
-    | 'height'
-    | 'width'
-    | 'position'
-    | 'top'
-    | 'bottom'
-    | 'left'
-    | 'alignSelf'
-    | 'alignItems'
-    | 'justifyContent'
-    | 'flexDirection'
-    | 'flexWrap'
-    | 'minHeight'
-    | 'maxHeight'
-    | 'minWidth'
-    | 'maxWidth'
-    | 'zIndex'
-    | 'pointerEvents'
-    | 'opacity'
-    | 'borderStyle'
-  > & {
-    backgroundColorStatus?: AppColorUnion;
-    borderColorStatus?: AppColorUnion;
-    disableBorderBottom?: boolean;
-    margin?: AppSizeUnion;
-    padding?: AppSizeUnion;
-    paddingHorizontal?: AppSizeUnion;
-    paddingVertical?: AppSizeUnion;
-    paddingTop?: AppSizeUnion;
-    paddingBottom?: AppSizeUnion;
-    paddingLeft?: AppSizeUnion;
-    paddingRight?: AppSizeUnion;
-    gap?: AppSizeUnion;
-    borderRadius?: AppSizeUnion;
-    borderTopLeftRadius?: AppSizeUnion;
-    borderTopRightRadius?: AppSizeUnion;
-    grow?: boolean;
-    shrink?: boolean;
-  };
-
-export const AppView = ({
-  children,
-  onLayout,
-  onTouchEnd,
-  onTouchStart,
-  onTouchMove,
+export const useAppViewStyle = ({
   width,
   height,
   position,
@@ -92,7 +86,7 @@ export const AppView = ({
   borderTopRightRadius,
   grow,
   shrink,
-}: AppViewProps) => {
+}: UseAppViewStyleParams): ViewStyle => {
   const appColors = useAppThemedColors();
 
   const borderProps: BorderProps | undefined = borderColorStatus
@@ -102,7 +96,7 @@ export const AppView = ({
       }
     : undefined;
 
-  const style: ViewStyle = {
+  return {
     ...borderProps,
     width,
     height,
@@ -142,15 +136,4 @@ export const AppView = ({
     flexGrow: Number(grow),
     flexShrink: Number(shrink),
   };
-
-  return (
-    <View
-      style={style}
-      onLayout={onLayout}
-      onTouchEnd={onTouchEnd}
-      onTouchStart={onTouchStart}
-      onTouchMove={onTouchMove}>
-      {children}
-    </View>
-  );
 };

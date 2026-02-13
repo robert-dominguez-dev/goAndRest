@@ -1,4 +1,4 @@
-import { AppView } from '../AppView.tsx';
+import { AppView } from '../AppView/AppView.tsx';
 import { AppText } from '../AppText/AppText.tsx';
 import { AppRow } from '../AppRow.tsx';
 import { AppButton } from '../../controls/AppButton/AppButton.tsx';
@@ -20,7 +20,7 @@ export type AppPopUpTextProps = {
 export type AppPopUpProps = AppPopUpTextProps & {
   onPrimaryButtonPress: () => void;
   onSecondaryButtonPress?: () => void;
-  secondaryButtonColorStatus?: AppButtonUIProps['gradientBorderStatus'];
+  secondaryButtonColorStatus?: AppButtonUIProps['backgroundColorStatus'];
 };
 
 export const AppPopUp = ({
@@ -30,16 +30,17 @@ export const AppPopUp = ({
   onSecondaryButtonPress,
   primaryButtonLabel,
   secondaryButtonLabel,
-  secondaryButtonColorStatus = 'secondary',
+  secondaryButtonColorStatus = 'primary',
 }: AppPopUpProps) => {
   const maybeSecondaryButton = secondaryButtonLabel ? (
     <AppView
       width={FILL_CONTAINER_DIMENSION}
       shrink>
       <AppButton
-        gradientBorderStatus={secondaryButtonColorStatus}
+        backgroundColorStatus={secondaryButtonColorStatus}
         label={secondaryButtonLabel}
         onPress={onSecondaryButtonPress}
+        value={''}
       />
     </AppView>
   ) : undefined;
@@ -51,8 +52,8 @@ export const AppPopUp = ({
         padding={'m'}
         margin={'m'}
         borderRadius={'s'}
-        backgroundColorStatus={'secondaryDeep'}
-        borderColorStatus={'secondaryStrong'}>
+        backgroundColorStatus={'backgroundAlt'}
+        borderColorStatus={'background'}>
         <AppLink label={popUpTitle} />
         <AppText
           grow
@@ -67,6 +68,7 @@ export const AppPopUp = ({
             <AppButton
               onPress={onPrimaryButtonPress}
               label={primaryButtonLabel}
+              value={''}
             />
           </AppView>
         </AppRow>

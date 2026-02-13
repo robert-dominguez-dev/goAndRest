@@ -1,6 +1,6 @@
 import { memo } from 'react';
 import { Pressable } from 'react-native';
-import { AppView } from './AppView.tsx';
+import { AppView } from './AppView/AppView.tsx';
 import { AppText } from './AppText/AppText.tsx';
 import { ACTIVE_OPACITY, INACTIVE_OPACITY } from '../../constants/ui.ts';
 

@@ -1,4 +1,4 @@
-import { AppView, AppViewProps } from './AppView.tsx';
+import { AppView, AppViewProps } from './AppView/AppView.tsx';
 import LinearGradient from 'react-native-linear-gradient';
 import { ViewStyle } from 'react-native/Libraries/StyleSheet/StyleSheetTypes';
 import { AppGradientColorUnion } from '../../constants/colors.ts';

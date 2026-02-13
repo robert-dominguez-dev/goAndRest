@@ -1,4 +1,4 @@
-import { AppView } from '../AppView.tsx';
+import { AppView } from '../AppView/AppView.tsx';
 import { AppBottomSheetContent } from './components/AppBottomSheetContent.tsx';
 import { AppKeyboardAvoidingView } from '../AppKeyboardAvoidingView.tsx';
 import { AppBottomSheetProps } from './types.ts';

@@ -1,4 +1,4 @@
-import { AppView, AppViewProps } from './AppView.tsx';
+import { AppView, AppViewProps } from './AppView/AppView.tsx';
 
 type AppRowProps = Omit<AppViewProps, 'flexDirection'>;
 

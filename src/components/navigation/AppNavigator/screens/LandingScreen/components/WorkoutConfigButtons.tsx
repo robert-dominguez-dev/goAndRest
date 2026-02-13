@@ -1,4 +1,4 @@
-import { AppView } from '../../../../../common/AppView.tsx';
+import { AppView } from '../../../../../common/AppView/AppView.tsx';
 import { appWorkoutConfigKeys } from '../constants.ts';
 import { JSX, memo } from 'react';
 import { AppWorkout } from '../../../../../../contexts/AppWorkoutsProvider/types.ts';
@@ -11,6 +11,7 @@ const _WorkoutConfigButtons = () => {
   const workoutConfigButtonElements = appWorkoutConfigKeys.map<JSX.Element>(
     key => (
       <WorkoutConfigButton
+        key={key}
         control={control}
         name={key}
       />

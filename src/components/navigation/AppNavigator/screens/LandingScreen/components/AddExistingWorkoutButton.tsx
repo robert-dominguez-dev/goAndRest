@@ -1,6 +1,6 @@
 import { Pressable } from 'react-native';
 import { getOnPressWithHapticFeedback } from '../../../../../controls/helpers/getOnPressWithHapticFeedback.ts';
-import { AppView } from '../../../../../common/AppView.tsx';
+import { AppView } from '../../../../../common/AppView/AppView.tsx';
 import { getAppRoundedButtonUIProps } from '../../../../../controls/AppRoundedButton/helpers/getAppRoundedButtonUIProps.ts';
 import { Plus } from 'lucide-react-native';
 import { useAppThemedColors } from '../../../../../../hooks/useAppThemedColors.ts';

@@ -1,4 +1,4 @@
-import { AppView, AppViewProps } from './AppView.tsx';
+import { AppView, AppViewProps } from './AppView/AppView.tsx';
 import { ScrollView } from 'react-native';
 import { FILL_CONTAINER_DIMENSION } from '../../constants/common.ts';
 import {

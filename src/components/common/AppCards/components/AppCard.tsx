@@ -1,6 +1,6 @@
 import { AppImageProps } from '../../AppImage.tsx';
 import { CardColorProps } from '../types.ts';
-import { AppView } from '../../AppView.tsx';
+import { AppView } from '../../AppView/AppView.tsx';
 import { sizes } from '../../../../constants/ui.ts';
 import { AppText } from '../../AppText/AppText.tsx';
 import { AppRow } from '../../AppRow.tsx';

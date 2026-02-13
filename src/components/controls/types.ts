@@ -1,5 +1,5 @@
 import { AppFormFieldRendererCommonProps } from './AppFormFieldRenderer/AppFormFieldRenderer.tsx';
-import { ControllerProps, FieldValues } from 'react-hook-form';
+import { FieldValues } from 'react-hook-form';
 import { AppRenderHandlerParams } from './AppFormFieldRenderer/types.ts';
 import { PrimitiveValue } from '../../types/common.ts';
 
@@ -19,6 +19,3 @@ export type Option<TOptionValue extends PrimitiveValue> = {
   title: string;
   value: TOptionValue;
 };
-
-export type Rules<TFieldValues extends FieldValues = FieldValues> =
-  ControllerProps<TFieldValues>['rules'];

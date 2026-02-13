@@ -24,7 +24,6 @@ export const AppThemeProvider = ({ children }: ChildrenProp) => {
   useEffect(() => {
     AsyncStorage.getItem(APP_THEME_STORAGE_KEY).then(storedTheme => {
       const isAppTheme = checkIsAppTheme(storedTheme);
-      console.log({ storedTheme });
       if (isAppTheme) {
         setTheme(storedTheme);
       }

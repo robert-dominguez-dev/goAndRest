@@ -15,7 +15,10 @@ type BottomSheetHeaderProps =
 
 export type AppBottomSheetProps = Pick<
   AppBottomSheetContentProps,
-  'onClose' | 'bottomSheetSubmitButtonProps' | 'scrollable'
+  | 'onClose'
+  | 'bottomSheetSubmitButtonProps'
+  | 'scrollable'
+  | 'backgroundColorStatus'
 > &
   BottomSheetHeaderProps & {
     isVisible: boolean;

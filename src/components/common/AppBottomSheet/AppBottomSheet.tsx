@@ -1,5 +1,5 @@
 import { Modal } from 'react-native';
-import { AppView } from '../AppView.tsx';
+import { AppView } from '../AppView/AppView.tsx';
 import { AppBottomSheetContent } from './components/AppBottomSheetContent.tsx';
 import { AppKeyboardAvoidingView } from '../AppKeyboardAvoidingView.tsx';
 import { useIsFocused } from '@react-navigation/native';
@@ -14,6 +14,7 @@ export const AppBottomSheet = ({
   bottomSheetContent,
   bottomSheetSubmitButtonProps,
   scrollable,
+  backgroundColorStatus,
 }: AppBottomSheetProps) => {
   const isFocused = useIsFocused();
 
@@ -35,7 +36,8 @@ export const AppBottomSheet = ({
             closeable={closeable}
             bottomSheetSubmitButtonProps={bottomSheetSubmitButtonProps}
             onClose={onClose}
-            scrollable={scrollable}>
+            scrollable={scrollable}
+            backgroundColorStatus={backgroundColorStatus}>
             {bottomSheetContent}
           </AppBottomSheetContent>
         </AppKeyboardAvoidingView>

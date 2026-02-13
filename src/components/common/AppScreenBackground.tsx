@@ -1,4 +1,4 @@
-import { AppView } from './AppView.tsx';
+import { AppView } from './AppView/AppView.tsx';
 import { FILL_CONTAINER_DIMENSION } from '../../constants/common.ts';
 import { AppImage } from './AppImage.tsx';
 import { AppIllustration } from '../../assets/constants.ts';

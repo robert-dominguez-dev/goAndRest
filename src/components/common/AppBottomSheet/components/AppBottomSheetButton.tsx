@@ -1,4 +1,4 @@
-import { AppView } from '../../AppView.tsx';
+import { AppView } from '../../AppView/AppView.tsx';
 import {
   AppButton,
   AppButtonProps,

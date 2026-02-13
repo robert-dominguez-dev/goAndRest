@@ -1,15 +1,8 @@
-import { AppView } from '../../common/AppView.tsx';
+import { AppView } from '../../common/AppView/AppView.tsx';
 import { AppText } from '../../common/AppText/AppText.tsx';
-import {
-  Controller,
-  ControllerProps,
-  FieldErrors,
-  FieldValues,
-} from 'react-hook-form';
-import { getFormFieldErrorMessage } from '../helpers/getFormFieldErrorMessage.ts';
+import { Controller, ControllerProps, FieldValues } from 'react-hook-form';
 import { useCallback } from 'react';
 import { AppRenderHandler } from './types.ts';
-import { AppInputErrorMessage } from '../AppInputErrorMessage.tsx';
 
 export type AppFormFieldRendererCommonProps<TFieldValues extends FieldValues> =
   Pick<
@@ -17,7 +10,6 @@ export type AppFormFieldRendererCommonProps<TFieldValues extends FieldValues> =
     'control' | 'name' | 'rules' | 'disabled'
   > & {
     label?: string;
-    errors: FieldErrors<TFieldValues>;
   };
 
 export type AppFormFieldRendererProps<TFieldValues extends FieldValues> =
@@ -32,14 +24,7 @@ export const AppFormFieldRenderer = <TFieldValues extends FieldValues>({
   disabled,
   render,
   label,
-  errors,
 }: AppFormFieldRendererProps<TFieldValues>) => {
-  const errorMessage = getFormFieldErrorMessage(errors, name);
-
-  const maybeErrorMessageElement = errorMessage ? (
-    <AppInputErrorMessage errorMessage={errorMessage} />
-  ) : undefined;
-
   const maybeLabelElement = label ? (
     <AppText category={'title'}>{label}</AppText>
   ) : undefined;
@@ -49,10 +34,9 @@ export const AppFormFieldRenderer = <TFieldValues extends FieldValues>({
       render({
         value,
         onChange,
-        isInvalid: !!errorMessage,
         disabled: fieldDisabled || formState.disabled,
       }),
-    [errorMessage, render],
+    [render],
   );
 
   return (
@@ -65,7 +49,6 @@ export const AppFormFieldRenderer = <TFieldValues extends FieldValues>({
         disabled={disabled}
         render={renderField}
       />
-      {maybeErrorMessageElement}
     </AppView>
   );
 };
