@@ -13,7 +13,10 @@ import { AppSize } from '../../../types/ui.ts';
 import { AppView } from '../../common/AppView/AppView.tsx';
 import { useLayout } from '../../../hooks/useLayout.ts';
 import { scheduleOnRN } from 'react-native-worklets';
-import { useAppThemedColors } from '../../../hooks/useAppThemedColors.ts';
+import {
+  AppCircularSliderTicks,
+  AppCircularSliderTicksProps,
+} from './components/AppCircularSliderTicks.tsx';
 
 const fallbackThumbElement = (
   <AppView
@@ -24,16 +27,19 @@ const fallbackThumbElement = (
   />
 );
 
-type AppCircularSliderProps = Partial<ChildrenProp> & {
-  radius: number;
-  strokeWidth: number;
-  minValue: number;
-  maxValue: number;
-  step: number;
-  value: number;
-  onChange: (value: number) => void;
-  thumbElement: JSX.Element;
-};
+type AppCircularSliderProps = Partial<ChildrenProp> &
+  Pick<
+    AppCircularSliderTicksProps,
+    'radius' | 'strokeWidth' | 'step' | 'labelEveryNSteps' | 'valueFormatter'
+  > & {
+    minValue: number;
+    maxValue: number;
+    value: number;
+    onChange: (value: number) => void;
+    thumbElement: JSX.Element;
+    filledTrackColor?: string;
+    trackColor?: string;
+  };
 
 const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 
@@ -47,9 +53,11 @@ export const AppCircularSlider = ({
   onChange,
   thumbElement,
   children,
+  labelEveryNSteps,
+  valueFormatter,
+  filledTrackColor = 'black',
+  trackColor = '#00000060',
 }: AppCircularSliderProps) => {
-  const { text, backgroundAlt } = useAppThemedColors();
-
   /**
    * Total component size (diameter + line thickness + thumb offset)...
    */
@@ -58,9 +66,13 @@ export const AppCircularSlider = ({
   const center = size / 2;
   const circumference = radius * 2 * Math.PI;
 
+  /**
+   * VISUAL CALCULATION
+   * Percentage is calculated against 0 -> maxValue so the visual start is always 0.
+   */
   const valueToAngle = (val: number) => {
     'worklet';
-    const percentage = (val - minValue) / (maxValue - minValue);
+    const percentage = val / maxValue;
     return percentage * 2 * Math.PI;
   };
 
@@ -90,36 +102,27 @@ export const AppCircularSlider = ({
 
     /**
      * FIXED STOP LOGIC
-     * When in the upper section (near the 12 o'clock position), we monitor for
-     * drastic changes in angle to prevent "flipping" between min and max values.
-     * One full rotation equals 2*PI (~6.28) radians. If the delta between the
-     * current and new angle exceeds PI (~3.14), the user is attempting to
-     * cross the mechanical stop.
      */
     const diff = angle - currentAngle;
 
     if (Math.abs(diff) > Math.PI) {
-      /**
-       * MAX to MIN stop...
-       */
       if (currentAngle > Math.PI && angle < Math.PI) {
-        /**
-         * Stays at the end...
-         */
         angle = 2 * Math.PI;
       } else if (currentAngle < Math.PI && angle > Math.PI) {
-        /**
-         * MIN to MAX stop, stays at the start...
-         */
         angle = 0;
       }
     }
 
-    const totalSteps = (maxValue - minValue) / step;
+    /**
+     * LOGICAL BOUNDARIES
+     * We calculate steps based on 0 -> maxValue, but clamp the result to [minValue, maxValue].
+     */
+    const totalSteps = maxValue / step;
     const currentStep = Math.round((angle / (2 * Math.PI)) * totalSteps);
+
     const normalizedValue = Math.min(
       maxValue,
-      Math.max(minValue, minValue + currentStep * step),
+      Math.max(minValue, currentStep * step),
     );
 
     const steppedAngle = valueToAngle(normalizedValue);
@@ -161,15 +164,23 @@ export const AppCircularSlider = ({
           <Svg
             width={size}
             height={size}>
-            <G
-              rotation={'-90'}
-              origin={`${center}, ${center}`}>
+            <AppCircularSliderTicks
+              center={center}
+              totalRange={maxValue}
+              step={step}
+              trackColor={trackColor}
+              strokeWidth={strokeWidth}
+              radius={radius}
+              labelEveryNSteps={labelEveryNSteps}
+              valueFormatter={valueFormatter}
+            />
+            <G transform={`rotate(-90, ${center}, ${center})`}>
               {/* Track background */}
               <Circle
                 cx={center}
                 cy={center}
                 r={radius}
-                stroke={text}
+                stroke={trackColor}
                 strokeWidth={strokeWidth}
                 fill={'none'}
               />
@@ -178,7 +189,7 @@ export const AppCircularSlider = ({
                 cx={center}
                 cy={center}
                 r={radius}
-                stroke={backgroundAlt}
+                stroke={filledTrackColor}
                 strokeWidth={strokeWidth}
                 strokeDasharray={`${circumference} ${circumference}`}
                 animatedProps={animatedCircleProps}

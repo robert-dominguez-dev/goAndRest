@@ -18,6 +18,7 @@ import { AppRoundedButton } from '../../../../../controls/AppRoundedButton/AppRo
 import { Check, X } from 'lucide-react-native';
 import { useAppThemedColors } from '../../../../../../hooks/useAppThemedColors.ts';
 import { AppSize } from '../../../../../../types/ui.ts';
+import { roundedButtonToIconSize } from '../../../../../controls/AppRoundedButton/constants.ts';
 
 const SLIDER_RADIUS = 160;
 
@@ -29,7 +30,7 @@ type WorkoutConfigButtonProps = {
 const _WorkoutConfigButton = ({ name, control }: WorkoutConfigButtonProps) => {
   const t = useAppTranslation();
 
-  const { text } = useAppThemedColors();
+  const { text, backgroundAlt } = useAppThemedColors();
 
   const { isVisible, handleOpen, handleClose } = useIsVisible();
 
@@ -46,6 +47,7 @@ const _WorkoutConfigButton = ({ name, control }: WorkoutConfigButtonProps) => {
     min,
     max,
     step,
+    labelEveryNSteps,
     valueFormatter,
   } = workoutSettingsButtonConfigMap[name];
 
@@ -78,6 +80,9 @@ const _WorkoutConfigButton = ({ name, control }: WorkoutConfigButtonProps) => {
                 minValue={min}
                 maxValue={max}
                 step={step}
+                filledTrackColor={backgroundAlt}
+                labelEveryNSteps={labelEveryNSteps}
+                valueFormatter={valueFormatter}
                 value={field.value}
                 onChange={getOnPressWithHapticFeedback(field.onChange)}
                 thumbElement={
@@ -92,7 +97,7 @@ const _WorkoutConfigButton = ({ name, control }: WorkoutConfigButtonProps) => {
                   status={'primary'}
                   size={'m'}>
                   <Check
-                    size={40}
+                    size={roundedButtonToIconSize.m}
                     color={text}
                   />
                 </AppRoundedButton>

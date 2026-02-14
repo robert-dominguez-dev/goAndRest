@@ -25,6 +25,7 @@ type WorkoutSettingsButtonConfig = Pick<
   min: number;
   max: number;
   step: number;
+  labelEveryNSteps: number;
   labelKey: TranslateKey;
   descriptionKey: TranslateKey;
   valueFormatter: (value: number) => string;
@@ -32,6 +33,7 @@ type WorkoutSettingsButtonConfig = Pick<
 
 const FIVE_MINUTES_SECONDS = 300;
 const TIME_STEP = 5;
+const TIME_STEP_LABEL_MULTIPLIER = 6;
 
 export const workoutSettingsButtonConfigMap: Record<
   AppWorkoutConfigKey,
@@ -45,6 +47,7 @@ export const workoutSettingsButtonConfigMap: Record<
     min: 0,
     max: FIVE_MINUTES_SECONDS,
     step: TIME_STEP,
+    labelEveryNSteps: TIME_STEP_LABEL_MULTIPLIER,
     valueFormatter: formatTimerTime,
   },
   work: {
@@ -55,6 +58,7 @@ export const workoutSettingsButtonConfigMap: Record<
     min: 5,
     max: FIVE_MINUTES_SECONDS,
     step: TIME_STEP,
+    labelEveryNSteps: TIME_STEP_LABEL_MULTIPLIER,
     valueFormatter: formatTimerTime,
   },
   rest: {
@@ -65,6 +69,7 @@ export const workoutSettingsButtonConfigMap: Record<
     min: 0,
     max: FIVE_MINUTES_SECONDS,
     step: TIME_STEP,
+    labelEveryNSteps: TIME_STEP_LABEL_MULTIPLIER,
     valueFormatter: formatTimerTime,
   },
   rounds: {
@@ -75,6 +80,7 @@ export const workoutSettingsButtonConfigMap: Record<
     min: 1,
     max: 30,
     step: 1,
+    labelEveryNSteps: 2,
     valueFormatter: rounds => `${rounds}x`,
   },
   cooldown: {
@@ -85,6 +91,7 @@ export const workoutSettingsButtonConfigMap: Record<
     min: 0,
     max: FIVE_MINUTES_SECONDS,
     step: TIME_STEP,
+    labelEveryNSteps: TIME_STEP_LABEL_MULTIPLIER,
     valueFormatter: formatTimerTime,
   },
 };
