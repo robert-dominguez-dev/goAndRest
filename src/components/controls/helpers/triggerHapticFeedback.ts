@@ -8,5 +8,6 @@ const options: HapticOptions = {
   ignoreAndroidSystemSettings: true,
 };
 
-export const triggerHapticFeedback = () =>
-  ReactNativeHapticFeedback.trigger(HapticFeedbackTypes.clockTick, options);
+export const triggerHapticFeedback = (
+  feedbackType: HapticFeedbackTypes = HapticFeedbackTypes.clockTick,
+) => ReactNativeHapticFeedback.trigger(feedbackType, options);

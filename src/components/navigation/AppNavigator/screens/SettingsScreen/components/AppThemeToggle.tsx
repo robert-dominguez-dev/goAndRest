@@ -1,6 +1,8 @@
 import { AppTheme } from '../../../../../../types/common.ts';
 import { useAppTheme } from '../../../../../../contexts/AppThemeProvider.tsx';
 import { AppToggle } from '../../../../../common/AppToggle.tsx';
+import { getOnPressWithHapticFeedback } from '../../../../../controls/helpers/getOnPressWithHapticFeedback.ts';
+import { HapticFeedbackTypes } from 'react-native-haptic-feedback';
 
 export const AppThemeToggle = () => {
   const { theme, changeTheme } = useAppTheme();
@@ -13,7 +15,10 @@ export const AppThemeToggle = () => {
   return (
     <AppToggle
       value={isDarkMode}
-      onValueChange={toggleTheme}
+      onValueChange={getOnPressWithHapticFeedback(
+        toggleTheme,
+        HapticFeedbackTypes.selection,
+      )}
     />
   );
 };

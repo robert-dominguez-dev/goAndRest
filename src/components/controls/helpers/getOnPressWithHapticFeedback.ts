@@ -1,10 +1,14 @@
 import { triggerHapticFeedback } from './triggerHapticFeedback.ts';
+import { HapticFeedbackTypes } from 'react-native-haptic-feedback';
 
 export type OnPressHandler<TParams> = (params: TParams) => void;
 
 export const getOnPressWithHapticFeedback =
-  <TParams>(onPress: OnPressHandler<TParams>) =>
+  <TParams>(
+    onPress: OnPressHandler<TParams>,
+    feedbackType?: HapticFeedbackTypes,
+  ) =>
   (params: TParams) => {
-    triggerHapticFeedback();
+    triggerHapticFeedback(feedbackType);
     onPress(params);
   };

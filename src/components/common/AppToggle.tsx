@@ -13,6 +13,7 @@ export const AppToggle = ({ value, onValueChange }: AppToggleProps) => {
         false: backgroundAlt,
         true: primary,
       }}
+      ios_backgroundColor={backgroundAlt}
       thumbColor={background}
     />
   );
