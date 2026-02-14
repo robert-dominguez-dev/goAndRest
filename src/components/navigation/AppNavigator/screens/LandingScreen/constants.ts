@@ -42,7 +42,7 @@ export const workoutSettingsButtonConfigMap: Record<
   prep: {
     labelKey: 'common.workoutConfig.prep.label',
     descriptionKey: 'common.workoutConfig.prep.description',
-    backgroundColorStatus: 'yellow',
+    backgroundColorStatus: 'prep',
     IconComponent: Zap,
     min: 0,
     max: FIVE_MINUTES_SECONDS,
@@ -53,7 +53,7 @@ export const workoutSettingsButtonConfigMap: Record<
   work: {
     labelKey: 'common.workoutConfig.work.label',
     descriptionKey: 'common.workoutConfig.work.description',
-    backgroundColorStatus: 'negative',
+    backgroundColorStatus: 'work',
     IconComponent: Dumbbell,
     min: 5,
     max: FIVE_MINUTES_SECONDS,
@@ -64,7 +64,7 @@ export const workoutSettingsButtonConfigMap: Record<
   rest: {
     labelKey: 'common.workoutConfig.rest.label',
     descriptionKey: 'common.workoutConfig.rest.description',
-    backgroundColorStatus: 'primary',
+    backgroundColorStatus: 'rest',
     IconComponent: Coffee,
     min: 0,
     max: FIVE_MINUTES_SECONDS,
@@ -75,7 +75,7 @@ export const workoutSettingsButtonConfigMap: Record<
   rounds: {
     labelKey: 'common.workoutConfig.rounds.label',
     descriptionKey: 'common.workoutConfig.rounds.description',
-    backgroundColorStatus: 'backgroundAlt',
+    backgroundColorStatus: 'rounds',
     IconComponent: Repeat,
     min: 1,
     max: 30,
@@ -86,7 +86,7 @@ export const workoutSettingsButtonConfigMap: Record<
   cooldown: {
     labelKey: 'common.workoutConfig.cooldown.label',
     descriptionKey: 'common.workoutConfig.cooldown.description',
-    backgroundColorStatus: 'orange',
+    backgroundColorStatus: 'cooldown',
     IconComponent: Wind,
     min: 0,
     max: FIVE_MINUTES_SECONDS,

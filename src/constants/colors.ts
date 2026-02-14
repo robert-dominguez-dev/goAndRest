@@ -66,8 +66,12 @@ export const appColorsLight = {
   text: appDesignSystemColors.grayscale['700'],
   background: appDesignSystemColors.grayscale['50'],
   backgroundAlt: appDesignSystemColors.grayscale['200'],
-  yellow: '#e6c003',
-  orange: '#E3940B',
+  slider: appDesignSystemColors.grayscale['700'],
+  prep: '#e6c003',
+  work: appDesignSystemColors.negative['300'],
+  rest: appDesignSystemColors.primary['300'],
+  rounds: appDesignSystemColors.grayscale['300'],
+  cooldown: '#E3940B',
   semiTransparentOverlay: '#00000080',
   transparent: '#00000000',
 } as const satisfies Record<string, HexColor>;
@@ -83,8 +87,12 @@ export const appColorsDark = {
   text: appDesignSystemColors.grayscale['100'],
   background: appDesignSystemColors.grayscale['800'],
   backgroundAlt: appDesignSystemColors.grayscale['600'],
-  yellow: '#a18703',
-  orange: '#d18707',
+  slider: appDesignSystemColors.grayscale['100'],
+  prep: '#a18703',
+  work: '#c50824',
+  rest: '#10a590',
+  rounds: appDesignSystemColors.grayscale['500'],
+  cooldown: '#d18707',
   semiTransparentOverlay: appColorsLight.semiTransparentOverlay,
   transparent: appColorsLight.transparent,
 } as const satisfies AppColors;
@@ -104,6 +112,10 @@ export const appLinearGradientColorsLight = {
     appDesignSystemColors.negative['100'],
     appDesignSystemColors.negative['500'],
   ],
+  slider: [
+    appDesignSystemColors.grayscale['500'],
+    appDesignSystemColors.grayscale['900'],
+  ],
 } satisfies Record<string, GradientColor>;
 
 export type AppGradientColorUnion = keyof typeof appLinearGradientColorsLight;
@@ -122,6 +134,10 @@ export const appLinearGradientColorsDark = {
     appDesignSystemColors.negative['200'],
     appDesignSystemColors.negative['600'],
   ],
+  slider: [
+    appDesignSystemColors.grayscale['0'],
+    appDesignSystemColors.grayscale['300'],
+  ],
 } satisfies AppGradientColors;
 
 export const gradientToStandardColorStatus: Record<
@@ -131,4 +147,5 @@ export const gradientToStandardColorStatus: Record<
   primary: 'primary',
   negative: 'negative',
   grayscale: 'backgroundAlt',
+  slider: 'slider',
 };

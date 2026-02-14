@@ -30,7 +30,7 @@ type WorkoutConfigButtonProps = {
 const _WorkoutConfigButton = ({ name, control }: WorkoutConfigButtonProps) => {
   const t = useAppTranslation();
 
-  const { text, backgroundAlt } = useAppThemedColors();
+  const { text, slider } = useAppThemedColors();
 
   const { isVisible, handleOpen, handleClose } = useIsVisible();
 
@@ -80,7 +80,7 @@ const _WorkoutConfigButton = ({ name, control }: WorkoutConfigButtonProps) => {
                 minValue={min}
                 maxValue={max}
                 step={step}
-                filledTrackColor={backgroundAlt}
+                filledTrackColor={slider}
                 labelEveryNSteps={labelEveryNSteps}
                 valueFormatter={valueFormatter}
                 value={field.value}
@@ -88,7 +88,7 @@ const _WorkoutConfigButton = ({ name, control }: WorkoutConfigButtonProps) => {
                 thumbElement={
                   <AppRoundedButton
                     size={'xs'}
-                    status={'grayscale'}>
+                    status={'slider'}>
                     <AppView />
                   </AppRoundedButton>
                 }>
