@@ -6,7 +6,7 @@ import { useFormContext } from 'react-hook-form';
 import { WorkoutConfigButton } from './WorkoutConfigButton.tsx';
 
 const _WorkoutConfigButtons = () => {
-  const { control, resetField } = useFormContext<AppWorkout>();
+  const { control } = useFormContext<AppWorkout>();
 
   const workoutConfigButtonElements = appWorkoutConfigKeys.map<JSX.Element>(
     key => (
@@ -14,7 +14,6 @@ const _WorkoutConfigButtons = () => {
         key={key}
         name={key}
         control={control}
-        resetField={resetField}
       />
     ),
   );

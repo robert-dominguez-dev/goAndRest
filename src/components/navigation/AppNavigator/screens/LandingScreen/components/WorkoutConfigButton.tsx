@@ -6,12 +6,7 @@ import { memo } from 'react';
 import { AppButton } from '../../../../../controls/AppButton/AppButton.tsx';
 import { useAppTranslation } from '../../../../../../locales/hooks/useAppTranslation.ts';
 import { AppWorkout } from '../../../../../../contexts/AppWorkoutsProvider/types.ts';
-import {
-  Control,
-  Controller,
-  UseFormResetField,
-  useWatch,
-} from 'react-hook-form';
+import { Control, Controller, useWatch } from 'react-hook-form';
 import { AppBottomSheet } from '../../../../../common/AppBottomSheet/AppBottomSheet.tsx';
 import { useIsVisible } from '../../../../../common/AppBottomSheet/hooks/useIsVisible.ts';
 import { AppText } from '../../../../../common/AppText/AppText.tsx';
@@ -20,21 +15,18 @@ import { AppCircularSlider } from '../../../../../controls/AppCircularSlider/App
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { getOnPressWithHapticFeedback } from '../../../../../controls/helpers/getOnPressWithHapticFeedback.ts';
 import { AppRoundedButton } from '../../../../../controls/AppRoundedButton/AppRoundedButton.tsx';
-import { Check, RotateCcw } from 'lucide-react-native';
+import { Check, X } from 'lucide-react-native';
 import { useAppThemedColors } from '../../../../../../hooks/useAppThemedColors.ts';
 import { AppSize } from '../../../../../../types/ui.ts';
+
+const SLIDER_RADIUS = 160;
 
 type WorkoutConfigButtonProps = {
   name: AppWorkoutConfigKey;
   control: Control<AppWorkout>;
-  resetField: UseFormResetField<AppWorkout>;
 };
 
-const _WorkoutConfigButton = ({
-  name,
-  control,
-  resetField,
-}: WorkoutConfigButtonProps) => {
+const _WorkoutConfigButton = ({ name, control }: WorkoutConfigButtonProps) => {
   const t = useAppTranslation();
 
   const { text } = useAppThemedColors();
@@ -81,7 +73,7 @@ const _WorkoutConfigButton = ({
           render={({ field }) => {
             return (
               <AppCircularSlider
-                radius={150}
+                radius={SLIDER_RADIUS}
                 strokeWidth={AppSize.l}
                 minValue={min}
                 maxValue={max}
@@ -112,11 +104,6 @@ const _WorkoutConfigButton = ({
     </AppView>
   );
 
-  const handleReset = () => {
-    handleClose();
-    resetField(name);
-  };
-
   return (
     <>
       <AppButton
@@ -133,8 +120,8 @@ const _WorkoutConfigButton = ({
         bottomSheetTitle={label}
         bottomSheetContent={bottomSheetContent}
         backgroundColorStatus={backgroundColorStatus}
-        AccessoryRightIconComponent={RotateCcw}
-        onClose={handleReset}
+        AccessoryRightIconComponent={X}
+        onClose={handleClose}
       />
     </>
   );

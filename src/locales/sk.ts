@@ -32,7 +32,7 @@ export const sk = {
   },
   screens: {
     landingScreen: {
-      title: 'Tréningy',
+      title: 'Predvolený tréning',
     },
     settingsScreen: {
       title: 'Nastavenia',
@@ -46,7 +46,7 @@ export const sk = {
       },
     },
     runningWorkoutScreen: {
-      title: 'Tréning',
+      title: 'Predvolený tréning',
     },
   },
 } as const satisfies AppTranslations;

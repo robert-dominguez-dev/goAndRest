@@ -33,7 +33,7 @@ export const en = {
   },
   screens: {
     landingScreen: {
-      title: 'Workouts',
+      title: 'Default workout',
     },
     settingsScreen: {
       title: 'Settings',
@@ -47,7 +47,7 @@ export const en = {
       },
     },
     runningWorkoutScreen: {
-      title: 'Workout',
+      title: 'Default workout',
     },
   },
 } as const satisfies AppTranslations;

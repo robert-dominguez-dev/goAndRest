@@ -31,8 +31,6 @@ type WorkoutSettingsButtonConfig = Pick<
 };
 
 const FIVE_MINUTES_SECONDS = 300;
-const TEN_MINUTES_SECONDS = 600;
-
 const TIME_STEP = 5;
 
 export const workoutSettingsButtonConfigMap: Record<
@@ -55,7 +53,7 @@ export const workoutSettingsButtonConfigMap: Record<
     backgroundColorStatus: 'negative',
     IconComponent: Dumbbell,
     min: 5,
-    max: TEN_MINUTES_SECONDS,
+    max: FIVE_MINUTES_SECONDS,
     step: TIME_STEP,
     valueFormatter: formatTimerTime,
   },
@@ -75,7 +73,7 @@ export const workoutSettingsButtonConfigMap: Record<
     backgroundColorStatus: 'backgroundAlt',
     IconComponent: Repeat,
     min: 1,
-    max: 99,
+    max: 30,
     step: 1,
     valueFormatter: rounds => `${rounds}x`,
   },
@@ -85,7 +83,7 @@ export const workoutSettingsButtonConfigMap: Record<
     backgroundColorStatus: 'orange',
     IconComponent: Wind,
     min: 0,
-    max: TEN_MINUTES_SECONDS,
+    max: FIVE_MINUTES_SECONDS,
     step: TIME_STEP,
     valueFormatter: formatTimerTime,
   },
