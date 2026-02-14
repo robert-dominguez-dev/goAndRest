@@ -1,5 +1,5 @@
 import { Pressable, PressableProps } from 'react-native';
-import { getOnPressWithHapticFeedback } from '../helpers/getOnPressWithHapticFeedback.ts';
+import { getOnPressWithHapticFeedbackConditionally } from '../helpers/getOnPressWithHapticFeedbackConditionally.ts';
 import {
   AppRoundedButtonUI,
   AppRoundedButtonUIProps,
@@ -13,7 +13,7 @@ export const AppRoundedButton = ({
   ...props
 }: AppRoundedButtonProps) => (
   <Pressable
-    onPress={getOnPressWithHapticFeedback(onPress)}
+    onPress={getOnPressWithHapticFeedbackConditionally(onPress)}
     disabled={props.disabled}>
     {({ pressed }) => (
       <AppRoundedButtonUI

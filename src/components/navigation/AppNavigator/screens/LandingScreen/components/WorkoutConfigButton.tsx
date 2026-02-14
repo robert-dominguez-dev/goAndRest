@@ -6,20 +6,38 @@ import { memo } from 'react';
 import { AppButton } from '../../../../../controls/AppButton/AppButton.tsx';
 import { useAppTranslation } from '../../../../../../locales/hooks/useAppTranslation.ts';
 import { AppWorkout } from '../../../../../../contexts/AppWorkoutsProvider/types.ts';
-import { Control, useWatch } from 'react-hook-form';
+import {
+  Control,
+  Controller,
+  UseFormResetField,
+  useWatch,
+} from 'react-hook-form';
 import { AppBottomSheet } from '../../../../../common/AppBottomSheet/AppBottomSheet.tsx';
 import { useIsVisible } from '../../../../../common/AppBottomSheet/hooks/useIsVisible.ts';
 import { AppText } from '../../../../../common/AppText/AppText.tsx';
 import { AppView } from '../../../../../common/AppView/AppView.tsx';
-import { BottomSheetSubmitButtonProps } from '../../../../../common/AppBottomSheet/components/AppBottomSheetContent.tsx';
+import { AppCircularSlider } from '../../../../../controls/AppCircularSlider/AppCircularSlider.tsx';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { getOnPressWithHapticFeedback } from '../../../../../controls/helpers/getOnPressWithHapticFeedback.ts';
+import { AppRoundedButton } from '../../../../../controls/AppRoundedButton/AppRoundedButton.tsx';
+import { Check } from 'lucide-react-native';
+import { useAppThemedColors } from '../../../../../../hooks/useAppThemedColors.ts';
+import { AppSize } from '../../../../../../types/ui.ts';
 
 type WorkoutConfigButtonProps = {
-  control: Control<AppWorkout>;
   name: AppWorkoutConfigKey;
+  control: Control<AppWorkout>;
+  resetField: UseFormResetField<AppWorkout>;
 };
 
-const _WorkoutConfigButton = ({ control, name }: WorkoutConfigButtonProps) => {
+const _WorkoutConfigButton = ({
+  name,
+  control,
+  resetField,
+}: WorkoutConfigButtonProps) => {
   const t = useAppTranslation();
+
+  const { text } = useAppThemedColors();
 
   const { isVisible, handleOpen, handleClose } = useIsVisible();
 
@@ -35,6 +53,7 @@ const _WorkoutConfigButton = ({ control, name }: WorkoutConfigButtonProps) => {
     IconComponent,
     min,
     max,
+    step,
     valueFormatter,
   } = workoutSettingsButtonConfigMap[name];
 
@@ -44,16 +63,59 @@ const _WorkoutConfigButton = ({ control, name }: WorkoutConfigButtonProps) => {
   const valueFormatted = valueFormatter(value);
 
   const bottomSheetContent = (
-    <AppView>
+    <AppView
+      gap={'l'}
+      paddingBottom={'m'}
+      alignItems={'center'}>
       <AppText numberOfLines={0}>{description}</AppText>
+      <AppText
+        category={'header'}
+        textAlign={'center'}
+        fontSizeOverride={'xxl'}>
+        {valueFormatted}
+      </AppText>
+      <GestureHandlerRootView>
+        <Controller
+          control={control}
+          name={name}
+          render={({ field, fieldState }) => {
+            return (
+              <AppCircularSlider
+                radius={150}
+                strokeWidth={AppSize.l}
+                minValue={min}
+                maxValue={max}
+                step={step}
+                value={field.value}
+                onChange={getOnPressWithHapticFeedback(field.onChange)}
+                thumbElement={
+                  <AppRoundedButton
+                    size={'xs'}
+                    status={'grayscale'}>
+                    <AppView />
+                  </AppRoundedButton>
+                }>
+                <AppRoundedButton
+                  onPress={handleClose}
+                  status={'primary'}
+                  size={'m'}
+                  disabled={!fieldState.isDirty}>
+                  <Check
+                    size={40}
+                    color={text}
+                  />
+                </AppRoundedButton>
+              </AppCircularSlider>
+            );
+          }}
+        />
+      </GestureHandlerRootView>
     </AppView>
   );
 
-  const bottomSheetSubmitButtonProps: BottomSheetSubmitButtonProps = {
-    label: 'Potvrdit',
-    backgroundColorStatus: 'primary',
-    onPress: handleClose,
-    value: valueFormatted,
+  const handleReset = () => {
+    handleClose();
+    resetField(name);
   };
 
   return (
@@ -72,8 +134,7 @@ const _WorkoutConfigButton = ({ control, name }: WorkoutConfigButtonProps) => {
         bottomSheetTitle={label}
         bottomSheetContent={bottomSheetContent}
         backgroundColorStatus={backgroundColorStatus}
-        bottomSheetSubmitButtonProps={bottomSheetSubmitButtonProps}
-        onClose={handleClose}
+        onClose={handleReset}
       />
     </>
   );

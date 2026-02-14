@@ -24,6 +24,7 @@ type WorkoutSettingsButtonConfig = Pick<
 > & {
   min: number;
   max: number;
+  step: number;
   labelKey: TranslateKey;
   descriptionKey: TranslateKey;
   valueFormatter: (value: number) => string;
@@ -43,6 +44,7 @@ export const workoutSettingsButtonConfigMap: Record<
     IconComponent: Zap,
     min: 0,
     max: FIVE_MINUTES_SECONDS,
+    step: 1,
     valueFormatter: formatTimerTime,
   },
   work: {
@@ -50,8 +52,9 @@ export const workoutSettingsButtonConfigMap: Record<
     descriptionKey: 'common.workoutConfig.work.description',
     backgroundColorStatus: 'negative',
     IconComponent: Dumbbell,
-    min: 1,
+    min: 5,
     max: TEN_MINUTES_SECONDS,
+    step: 5,
     valueFormatter: formatTimerTime,
   },
   rest: {
@@ -61,6 +64,7 @@ export const workoutSettingsButtonConfigMap: Record<
     IconComponent: Coffee,
     min: 0,
     max: FIVE_MINUTES_SECONDS,
+    step: 1,
     valueFormatter: formatTimerTime,
   },
   rounds: {
@@ -70,6 +74,7 @@ export const workoutSettingsButtonConfigMap: Record<
     IconComponent: Repeat,
     min: 1,
     max: 99,
+    step: 1,
     valueFormatter: rounds => `${rounds}x`,
   },
   cooldown: {
@@ -79,6 +84,7 @@ export const workoutSettingsButtonConfigMap: Record<
     IconComponent: Wind,
     min: 0,
     max: TEN_MINUTES_SECONDS,
+    step: 5,
     valueFormatter: formatTimerTime,
   },
 };

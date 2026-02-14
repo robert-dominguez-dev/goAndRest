@@ -8,10 +8,7 @@ import {
   getBottomSheetContentHeader,
   GetBottomSheetContentHeaderParams,
 } from '../helpers/getBottomSheetContentHeader.tsx';
-import {
-  AppBottomSheetButton,
-  AppBottomSheetButtonProps,
-} from './AppBottomSheetButton.tsx';
+import { AppBottomSheetButtonProps } from './AppBottomSheetButton.tsx';
 
 export type BottomSheetSubmitButtonProps = Omit<
   AppBottomSheetButtonProps,
@@ -23,7 +20,6 @@ export type BottomSheetSubmitButtonProps = Omit<
 export type AppBottomSheetContentProps = ChildrenProp &
   GetBottomSheetContentHeaderParams &
   Pick<AppViewProps, 'backgroundColorStatus'> & {
-    bottomSheetSubmitButtonProps?: BottomSheetSubmitButtonProps;
     scrollable?: boolean;
   };
 
@@ -32,26 +28,11 @@ const _AppBottomSheetContent = ({
   title,
   onClose,
   closeable,
-  bottomSheetSubmitButtonProps,
   headerOverride,
   backgroundColorStatus = 'backgroundAlt',
   scrollable = true,
 }: AppBottomSheetContentProps) => {
   const { safeAreaPaddingBottom } = useAppSafeAreaPadding();
-
-  const maybeInnerBottomSheetButton = bottomSheetSubmitButtonProps ? (
-    <AppBottomSheetButton
-      {...bottomSheetSubmitButtonProps}
-      onPress={() => bottomSheetSubmitButtonProps.onPress(onClose)}
-    />
-  ) : undefined;
-
-  const maybeBottomSheetContent =
-    scrollable && children ? (
-      <ScrollView keyboardShouldPersistTaps={'handled'}>{children}</ScrollView>
-    ) : (
-      children
-    );
 
   const header = getBottomSheetContentHeader({
     title,
@@ -74,8 +55,13 @@ const _AppBottomSheetContent = ({
       borderTopLeftRadius={'m'}
       borderTopRightRadius={'m'}>
       {header}
-      {maybeBottomSheetContent}
-      {maybeInnerBottomSheetButton}
+      {!!children && (
+        <ScrollView
+          keyboardShouldPersistTaps={'handled'}
+          scrollEnabled={scrollable}>
+          {children}
+        </ScrollView>
+      )}
     </AppView>
   );
 };

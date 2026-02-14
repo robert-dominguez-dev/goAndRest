@@ -12,7 +12,6 @@ export const AppBottomSheet = ({
   bottomSheetTitle,
   bottomSheetHeaderOverride,
   bottomSheetContent,
-  bottomSheetSubmitButtonProps,
   scrollable,
   backgroundColorStatus,
 }: AppBottomSheetProps) => {
@@ -34,7 +33,6 @@ export const AppBottomSheet = ({
             title={bottomSheetTitle}
             headerOverride={bottomSheetHeaderOverride}
             closeable={closeable}
-            bottomSheetSubmitButtonProps={bottomSheetSubmitButtonProps}
             onClose={onClose}
             scrollable={scrollable}
             backgroundColorStatus={backgroundColorStatus}>

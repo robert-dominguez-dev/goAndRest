@@ -1,7 +1,7 @@
 import { AppView, AppViewProps } from '../../AppView/AppView.tsx';
 import { sizes } from '../../../../constants/ui.ts';
 import { Pressable, PressableProps } from 'react-native';
-import { getOnPressWithHapticFeedback } from '../../../controls/helpers/getOnPressWithHapticFeedback.ts';
+import { getOnPressWithHapticFeedbackConditionally } from '../../../controls/helpers/getOnPressWithHapticFeedbackConditionally.ts';
 
 export type AppHeaderAccessoryContainerProps = Pick<
   AppViewProps,
@@ -14,7 +14,7 @@ export const AppHeaderAccessoryContainer = ({
   alignItems,
   onPress,
 }: AppHeaderAccessoryContainerProps) => (
-  <Pressable onPress={getOnPressWithHapticFeedback(onPress)}>
+  <Pressable onPress={getOnPressWithHapticFeedbackConditionally(onPress)}>
     <AppView
       grow
       width={sizes.headerAccessoryWidth}

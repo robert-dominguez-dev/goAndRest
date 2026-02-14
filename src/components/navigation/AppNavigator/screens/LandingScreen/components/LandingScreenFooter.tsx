@@ -21,7 +21,8 @@ const _LandingScreenFooter = () => {
     setRunningWorkout,
   } = useAppWorkouts();
 
-  const { control, handleSubmit, getValues } = useFormContext<AppWorkout>();
+  const { control, handleSubmit, getValues, reset } =
+    useFormContext<AppWorkout>();
 
   const { isDirty } = useFormState({ control });
 
@@ -39,6 +40,7 @@ const _LandingScreenFooter = () => {
     );
 
     storeWorkout(workoutToStore);
+    reset(workout);
   };
 
   const deleteButtonElement: JSX.Element | undefined = selectedStoredWorkout ? (

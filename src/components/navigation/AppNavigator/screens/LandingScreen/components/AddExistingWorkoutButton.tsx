@@ -1,5 +1,4 @@
 import { Pressable } from 'react-native';
-import { getOnPressWithHapticFeedback } from '../../../../../controls/helpers/getOnPressWithHapticFeedback.ts';
 import { AppView } from '../../../../../common/AppView/AppView.tsx';
 import { getAppRoundedButtonUIProps } from '../../../../../controls/AppRoundedButton/helpers/getAppRoundedButtonUIProps.ts';
 import { Plus } from 'lucide-react-native';
@@ -10,13 +9,22 @@ import {
   EXISTING_WORKOUT_BUTTON_ICON_SIZE,
   EXISTING_WORKOUT_BUTTON_SIZE,
 } from '../constants.ts';
+import { useFormContext } from 'react-hook-form';
+import { AppWorkout } from '../../../../../../contexts/AppWorkoutsProvider/types.ts';
+import { defaultWorkoutConfig } from '../../../../../../contexts/AppWorkoutsProvider/constants.ts';
+import { getOnPressWithHapticFeedback } from '../../../../../controls/helpers/getOnPressWithHapticFeedback.ts';
 
 export const AddExistingWorkoutButton = () => {
   const { text } = useAppThemedColors();
 
   const { setSelectedStoredWorkout } = useAppWorkouts();
 
-  const handlePress = () => setSelectedStoredWorkout(null);
+  const { reset } = useFormContext<AppWorkout>();
+
+  const handlePress = () => {
+    setSelectedStoredWorkout(null);
+    reset(defaultWorkoutConfig);
+  };
 
   return (
     <Pressable onPress={getOnPressWithHapticFeedback(handlePress)}>

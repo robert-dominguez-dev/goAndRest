@@ -7,7 +7,7 @@ import {
   GROW_SHRINK_STYLE,
   SPACE_ON_ANDROID_TO_PREVENT_TEXT_CUT,
 } from '../../constants/ui.ts';
-import { getOnPressWithHapticFeedback } from '../controls/helpers/getOnPressWithHapticFeedback.ts';
+import { getOnPressWithHapticFeedbackConditionally } from '../controls/helpers/getOnPressWithHapticFeedbackConditionally.ts';
 
 export type AppLinkProps = Pick<PressableProps, 'onPress' | 'disabled'> & {
   label: string;
@@ -23,7 +23,7 @@ export const AppLink = ({
   status = 'text',
 }: AppLinkProps) => (
   <Pressable
-    onPress={getOnPressWithHapticFeedback(onPress)}
+    onPress={getOnPressWithHapticFeedbackConditionally(onPress)}
     disabled={disabled}
     style={GROW_SHRINK_STYLE}>
     <AppRow
