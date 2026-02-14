@@ -1,6 +1,9 @@
-import { AppScreenLayout } from '../../../../common/AppScreenLayout.tsx';
+import {
+  AppScreenLayout,
+  AppScreenLayoutProps,
+} from '../../../../common/AppScreenLayout.tsx';
 import { useAppTranslation } from '../../../../../locales/hooks/useAppTranslation.ts';
-import { Menu } from 'lucide-react-native';
+import { Menu, RotateCcw } from 'lucide-react-native';
 import { ScreenProps } from '../../../types.ts';
 import { AppNavigatorScreen, AppNavigatorScreenParams } from '../../types.ts';
 import { WorkoutConfigButtons } from './components/WorkoutConfigButtons.tsx';
@@ -9,7 +12,7 @@ import { AppTimeView } from '../../../../common/AppTimeView.tsx';
 import { LandingScreenFooter } from './components/LandingScreenFooter.tsx';
 import { WorkoutButtons } from './components/WorkoutButtons.tsx';
 import { useAppWorkouts } from '../../../../../contexts/AppWorkoutsProvider/AppWorkoutsProvider.tsx';
-import { FormProvider, useForm } from 'react-hook-form';
+import { FormProvider, useForm, useFormState } from 'react-hook-form';
 import { useEffect } from 'react';
 import { AppWorkout } from '../../../../../contexts/AppWorkoutsProvider/types.ts';
 import { defaultWorkoutConfig } from '../../../../../contexts/AppWorkoutsProvider/constants.ts';
@@ -30,6 +33,15 @@ export const LandingScreen = ({ navigation }: LandingScreenProps) => {
   const formProps = useForm<AppWorkout>({
     defaultValues: defaultWorkoutConfig,
   });
+
+  const { isDirty } = useFormState({
+    control: formProps.control,
+  });
+
+  const HeaderAccessoryRightIconComponent: AppScreenLayoutProps['HeaderAccessoryRightIconComponent'] =
+    isDirty ? RotateCcw : undefined;
+
+  const onHeaderAccessoryRightPress = () => formProps.reset();
 
   useEffect(() => {
     if (!selectedStoredWorkout?.config) {
@@ -60,6 +72,8 @@ export const LandingScreen = ({ navigation }: LandingScreenProps) => {
         headerTitle={headerTitle}
         HeaderAccessoryLeftIconComponent={Menu}
         onHeaderAccessoryLeftPress={goToSettings}
+        HeaderAccessoryRightIconComponent={HeaderAccessoryRightIconComponent}
+        onHeaderAccessoryRightPress={onHeaderAccessoryRightPress}
         footer={footerElement}>
         <AppView
           grow

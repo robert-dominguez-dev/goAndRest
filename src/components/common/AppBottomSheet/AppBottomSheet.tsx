@@ -14,6 +14,7 @@ export const AppBottomSheet = ({
   bottomSheetContent,
   scrollable,
   backgroundColorStatus,
+  AccessoryRightIconComponent,
 }: AppBottomSheetProps) => {
   const isFocused = useIsFocused();
 
@@ -35,7 +36,8 @@ export const AppBottomSheet = ({
             closeable={closeable}
             onClose={onClose}
             scrollable={scrollable}
-            backgroundColorStatus={backgroundColorStatus}>
+            backgroundColorStatus={backgroundColorStatus}
+            AccessoryRightIconComponent={AccessoryRightIconComponent}>
             {bottomSheetContent}
           </AppBottomSheetContent>
         </AppKeyboardAvoidingView>

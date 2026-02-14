@@ -20,7 +20,7 @@ import { AppCircularSlider } from '../../../../../controls/AppCircularSlider/App
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { getOnPressWithHapticFeedback } from '../../../../../controls/helpers/getOnPressWithHapticFeedback.ts';
 import { AppRoundedButton } from '../../../../../controls/AppRoundedButton/AppRoundedButton.tsx';
-import { Check } from 'lucide-react-native';
+import { Check, RotateCcw } from 'lucide-react-native';
 import { useAppThemedColors } from '../../../../../../hooks/useAppThemedColors.ts';
 import { AppSize } from '../../../../../../types/ui.ts';
 
@@ -78,7 +78,7 @@ const _WorkoutConfigButton = ({
         <Controller
           control={control}
           name={name}
-          render={({ field, fieldState }) => {
+          render={({ field }) => {
             return (
               <AppCircularSlider
                 radius={150}
@@ -98,8 +98,7 @@ const _WorkoutConfigButton = ({
                 <AppRoundedButton
                   onPress={handleClose}
                   status={'primary'}
-                  size={'m'}
-                  disabled={!fieldState.isDirty}>
+                  size={'m'}>
                   <Check
                     size={40}
                     color={text}
@@ -134,6 +133,7 @@ const _WorkoutConfigButton = ({
         bottomSheetTitle={label}
         bottomSheetContent={bottomSheetContent}
         backgroundColorStatus={backgroundColorStatus}
+        AccessoryRightIconComponent={RotateCcw}
         onClose={handleReset}
       />
     </>
