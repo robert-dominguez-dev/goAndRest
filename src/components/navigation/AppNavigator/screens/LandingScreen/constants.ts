@@ -33,6 +33,8 @@ type WorkoutSettingsButtonConfig = Pick<
 const FIVE_MINUTES_SECONDS = 300;
 const TEN_MINUTES_SECONDS = 600;
 
+const TIME_STEP = 5;
+
 export const workoutSettingsButtonConfigMap: Record<
   AppWorkoutConfigKey,
   WorkoutSettingsButtonConfig
@@ -44,7 +46,7 @@ export const workoutSettingsButtonConfigMap: Record<
     IconComponent: Zap,
     min: 0,
     max: FIVE_MINUTES_SECONDS,
-    step: 1,
+    step: TIME_STEP,
     valueFormatter: formatTimerTime,
   },
   work: {
@@ -54,7 +56,7 @@ export const workoutSettingsButtonConfigMap: Record<
     IconComponent: Dumbbell,
     min: 5,
     max: TEN_MINUTES_SECONDS,
-    step: 5,
+    step: TIME_STEP,
     valueFormatter: formatTimerTime,
   },
   rest: {
@@ -64,7 +66,7 @@ export const workoutSettingsButtonConfigMap: Record<
     IconComponent: Coffee,
     min: 0,
     max: FIVE_MINUTES_SECONDS,
-    step: 1,
+    step: TIME_STEP,
     valueFormatter: formatTimerTime,
   },
   rounds: {
@@ -84,7 +86,7 @@ export const workoutSettingsButtonConfigMap: Record<
     IconComponent: Wind,
     min: 0,
     max: TEN_MINUTES_SECONDS,
-    step: 5,
+    step: TIME_STEP,
     valueFormatter: formatTimerTime,
   },
 };
