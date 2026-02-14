@@ -13,10 +13,9 @@ import { LandingScreenFooter } from './components/LandingScreenFooter.tsx';
 import { WorkoutButtons } from './components/WorkoutButtons.tsx';
 import { useAppWorkouts } from '../../../../../contexts/AppWorkoutsProvider/AppWorkoutsProvider.tsx';
 import { FormProvider, useForm, useFormState } from 'react-hook-form';
-import { useEffect } from 'react';
 import { AppWorkout } from '../../../../../contexts/AppWorkoutsProvider/types.ts';
 import { defaultWorkoutConfig } from '../../../../../contexts/AppWorkoutsProvider/constants.ts';
-import { isEqual } from 'lodash';
+import { useUpdateFormBySelectedWorkout } from './hooks/useUpdateFormBySelectedWorkout.ts';
 
 const footerElement = <LandingScreenFooter />;
 
@@ -34,6 +33,12 @@ export const LandingScreen = ({ navigation }: LandingScreenProps) => {
     defaultValues: defaultWorkoutConfig,
   });
 
+  useUpdateFormBySelectedWorkout({
+    selectedStoredWorkout,
+    getValues: formProps.getValues,
+    reset: formProps.reset,
+  });
+
   const { isDirty } = useFormState({
     control: formProps.control,
   });
@@ -42,23 +47,6 @@ export const LandingScreen = ({ navigation }: LandingScreenProps) => {
     isDirty ? RotateCcw : undefined;
 
   const onHeaderAccessoryRightPress = () => formProps.reset();
-
-  useEffect(() => {
-    if (!selectedStoredWorkout?.config) {
-      return undefined;
-    }
-
-    const currentFormConfig = formProps.getValues();
-
-    const isFormUpToDate = isEqual(
-      currentFormConfig,
-      selectedStoredWorkout.config,
-    );
-
-    if (!isFormUpToDate) {
-      formProps.reset(selectedStoredWorkout.config);
-    }
-  }, [selectedStoredWorkout]);
 
   const goToSettings = () =>
     navigation.navigate(AppNavigatorScreen.SettingsScreen);
