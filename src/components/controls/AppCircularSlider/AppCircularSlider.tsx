@@ -15,6 +15,15 @@ import { useLayout } from '../../../hooks/useLayout.ts';
 import { scheduleOnRN } from 'react-native-worklets';
 import { useAppThemedColors } from '../../../hooks/useAppThemedColors.ts';
 
+const fallbackThumbElement = (
+  <AppView
+    width={40}
+    height={40}
+    borderRadius={20}
+    backgroundColorStatus={'backgroundAlt'}
+  />
+);
+
 type AppCircularSliderProps = Partial<ChildrenProp> & {
   radius: number;
   strokeWidth: number;
@@ -41,7 +50,9 @@ export const AppCircularSlider = ({
 }: AppCircularSliderProps) => {
   const { text, backgroundAlt } = useAppThemedColors();
 
-  // Celková velikost komponenty (průměr + tloušťka čáry + rezerva na knob)
+  /**
+   * Total component size (diameter + line thickness + thumb offset)...
+   */
   const knobSize = strokeWidth + AppSize.m;
   const size = radius * 2 + Math.max(strokeWidth, knobSize);
   const center = size / 2;
@@ -55,7 +66,9 @@ export const AppCircularSlider = ({
 
   const theta = useSharedValue(valueToAngle(value));
 
-  // Synchronizace s externí hodnotou (controlled component)
+  /**
+   * Sync with external `value` prop...
+   */
   useAnimatedReaction(
     () => value,
     nextValue => {
@@ -67,31 +80,40 @@ export const AppCircularSlider = ({
     const x = event.x - center;
     const y = event.y - center;
 
-    // Výpočet úhlu (0 až 2*PI)
     let angle = Math.atan2(y, x) + Math.PI / 2;
-    if (angle < 0) angle += 2 * Math.PI;
+
+    if (angle < 0) {
+      angle += 2 * Math.PI;
+    }
 
     const currentAngle = theta.value;
 
-    // --- LOGIKA PEVNÉ ZARÁŽKY ---
-    // Pokud jsme v horní části (kolem 12. hodiny), kontrolujeme drastické změny úhlu.
-    // Jedna otočka má 6.28 (2*PI) radiánů.
-    // Pokud je rozdíl mezi starým a novým úhlem větší než PI (3.14),
-    // znamená to, že se uživatel snaží přeskočit zarážku.
-
+    /**
+     * FIXED STOP LOGIC
+     * When in the upper section (near the 12 o'clock position), we monitor for
+     * drastic changes in angle to prevent "flipping" between min and max values.
+     * One full rotation equals 2*PI (~6.28) radians. If the delta between the
+     * current and new angle exceeds PI (~3.14), the user is attempting to
+     * cross the mechanical stop.
+     */
     const diff = angle - currentAngle;
 
     if (Math.abs(diff) > Math.PI) {
-      // Pokud se snažíme přeskočit z MAX do MIN (pohyb vpřed přes zarážku)
+      /**
+       * MAX to MIN stop...
+       */
       if (currentAngle > Math.PI && angle < Math.PI) {
-        angle = 2 * Math.PI; // Zůstaň na konci
-      }
-      // Pokud se snažíme přeskočit z MIN do MAX (pohyb vzad přes zarážku)
-      else if (currentAngle < Math.PI && angle > Math.PI) {
-        angle = 0; // Zůstaň na začátku
+        /**
+         * Stays at the end...
+         */
+        angle = 2 * Math.PI;
+      } else if (currentAngle < Math.PI && angle > Math.PI) {
+        /**
+         * MIN to MAX stop, stays at the start...
+         */
+        angle = 0;
       }
     }
-    // ----------------------------
 
     const totalSteps = (maxValue - minValue) / step;
     const currentStep = Math.round((angle / (2 * Math.PI)) * totalSteps);
@@ -100,11 +122,10 @@ export const AppCircularSlider = ({
       Math.max(minValue, minValue + currentStep * step),
     );
 
-    // Výpočet úhlu odpovídajícího přesné krokované hodnotě pro plynulé zarážky
     const steppedAngle = valueToAngle(normalizedValue);
 
     if (normalizedValue !== value) {
-      theta.value = steppedAngle; // Aktualizujeme sharedValue pro plynulost
+      theta.value = steppedAngle;
       scheduleOnRN(onChange, normalizedValue);
     }
   });
@@ -121,8 +142,8 @@ export const AppCircularSlider = ({
     const y = center - radius * Math.cos(theta.value);
 
     return {
-      left: x - (layout?.width ?? 0) / 2, // polovina šířky tvojí komponenty
-      top: y - (layout?.height ?? 0) / 2, // polovina výšky tvojí komponenty
+      left: x - (layout?.width ?? 0) / 2,
+      top: y - (layout?.height ?? 0) / 2,
     };
   });
 
@@ -143,7 +164,7 @@ export const AppCircularSlider = ({
             <G
               rotation={'-90'}
               origin={`${center}, ${center}`}>
-              {/* Pozadí stopy */}
+              {/* Track background */}
               <Circle
                 cx={center}
                 cy={center}
@@ -152,7 +173,7 @@ export const AppCircularSlider = ({
                 strokeWidth={strokeWidth}
                 fill={'none'}
               />
-              {/* Aktivní část */}
+              {/* Active track part */}
               <AnimatedCircle
                 cx={center}
                 cy={center}
@@ -165,10 +186,10 @@ export const AppCircularSlider = ({
                 fill={'none'}
               />
             </G>
-            {/* Knoflík (Táhlo) */}
           </Svg>
         </View>
       </GestureDetector>
+      {/* Center content */}
       <View
         style={{
           ...StyleSheet.absoluteFill,
@@ -179,6 +200,7 @@ export const AppCircularSlider = ({
         }}>
         {children}
       </View>
+      {/* Thumb with wrapper */}
       <Animated.View
         style={[
           animatedStyles,
@@ -190,16 +212,7 @@ export const AppCircularSlider = ({
         ]}
         pointerEvents={'none'}>
         <AppView onLayout={handleLayout}>
-          {thumbElement ? (
-            thumbElement
-          ) : (
-            <AppView
-              width={40}
-              height={40}
-              borderRadius={20}
-              backgroundColorStatus={'backgroundAlt'}
-            />
-          )}
+          {thumbElement ? thumbElement : fallbackThumbElement}
         </AppView>
       </Animated.View>
     </View>
