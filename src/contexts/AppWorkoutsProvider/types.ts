@@ -1,9 +1,3 @@
-export enum AppWorkoutBlockType {
-  WORK = 'WORK',
-  REST = 'REST',
-  PREP = 'PREP',
-}
-
 type AppWorkoutMetaData = {
   name: string;
   description?: string;
@@ -12,11 +6,11 @@ type AppWorkoutMetaData = {
 };
 
 export type AppWorkoutConfig = {
-  prep: number;
   work: number;
   rest: number;
+  series: number;
   rounds: number;
-  cooldown: number;
+  brake: number;
 };
 
 export type AppStoredWorkout = {

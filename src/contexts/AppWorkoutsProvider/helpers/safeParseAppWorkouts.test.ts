@@ -1,4 +1,5 @@
 import { safeParseAppWorkouts } from './safeParseAppWorkouts';
+import { AppStoredWorkout } from '../types.ts';
 
 type TestCase = {
   description: string;
@@ -6,20 +7,20 @@ type TestCase = {
   expectedOutputLength: number;
 };
 
-const validWorkout = {
+const validWorkout: AppStoredWorkout = {
   id: '1',
   meta: {
     name: 'Workout',
     description: 'Desc',
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
+    createdAt: new Date(),
+    updatedAt: new Date(),
   },
   config: {
-    prep: 10,
     work: 20,
-    rest: 30,
-    rounds: 4,
-    cooldown: 5,
+    rest: 10,
+    series: 3,
+    rounds: 2,
+    brake: 15,
   },
 };
 

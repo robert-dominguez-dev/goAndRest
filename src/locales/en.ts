@@ -7,28 +7,27 @@ export const en = {
   common: {
     ok: 'Ok',
     workoutConfig: {
-      prep: {
-        label: 'Preparation',
-        description:
-          'Time before each round starts. Get ready for the upcoming work interval.',
-      },
       work: {
         label: 'Work',
-        description: 'Active exercise time in each round.',
+        description: 'Active exercise duration in each series.',
       },
       rest: {
         label: 'Rest',
-        description: 'Recovery time after each work interval.',
+        description: 'Short recovery time between series.',
+      },
+      series: {
+        label: 'Series',
+        description: 'Number of work/rest repetitions within one round.',
       },
       rounds: {
         label: 'Rounds',
         description:
-          'Number of times the preparation, work, and rest cycle repeats.',
+          'Total number of completed rounds. Each round can have several series.',
       },
-      cooldown: {
-        label: 'Cooldown',
+      brake: {
+        label: 'Break',
         description:
-          'Time to recover and lower your heart rate after the workout.',
+          'Longer rest period after completing all series in a round.',
       },
     },
   },

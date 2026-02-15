@@ -19,11 +19,11 @@ const workoutA: AppStoredWorkout = {
     createdAt: baseDate,
   },
   config: {
-    prep: 10,
     work: 20,
     rest: 5,
+    series: 3,
     rounds: 3,
-    cooldown: 15,
+    brake: 15,
   },
 };
 
@@ -34,11 +34,11 @@ const workoutB: AppStoredWorkout = {
     createdAt: baseDate,
   },
   config: {
-    prep: 5,
     work: 30,
     rest: 10,
+    series: 4,
     rounds: 4,
-    cooldown: 10,
+    brake: 10,
   },
 };
 
@@ -50,11 +50,11 @@ const updatedWorkoutA: AppStoredWorkout = {
     updatedAt: baseDate,
   },
   config: {
-    prep: 15,
     work: 25,
     rest: 5,
+    series: 5,
     rounds: 5,
-    cooldown: 20,
+    brake: 20,
   },
 };
 

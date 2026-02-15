@@ -2,7 +2,11 @@ import { Pressable, PressableProps } from 'react-native';
 
 import { AppButtonUI, AppButtonUIProps } from './components/AppButtonUI.tsx';
 import { getOnPressWithHapticFeedbackConditionally } from '../helpers/getOnPressWithHapticFeedbackConditionally.ts';
-import { ACTIVE_OPACITY, PRESSED_OPACITY } from '../../../constants/ui.ts';
+import {
+  ACTIVE_OPACITY,
+  INACTIVE_OPACITY,
+  PRESSED_OPACITY,
+} from '../../../constants/ui.ts';
 import { HapticFeedbackTypes } from 'react-native-haptic-feedback';
 
 export type AppButtonProps = Pick<PressableProps, 'onPress' | 'disabled'> &
@@ -26,7 +30,12 @@ export const AppButton = ({
     )}
     disabled={disabled}>
     {({ pressed }) => {
-      const opacity: number = pressed ? PRESSED_OPACITY : ACTIVE_OPACITY;
+      const opacity: number = disabled
+        ? INACTIVE_OPACITY
+        : pressed
+        ? PRESSED_OPACITY
+        : ACTIVE_OPACITY;
+
       return (
         <AppButtonUI
           label={label}

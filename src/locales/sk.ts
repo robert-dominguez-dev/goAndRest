@@ -7,27 +7,28 @@ export const sk = {
   common: {
     ok: 'Ok',
     workoutConfig: {
-      prep: {
-        label: 'Príprava',
-        description:
-          'Čas pred začiatkom každého kola. Priprav sa na nadchádzajúci interval.',
-      },
       work: {
         label: 'Cvičenie',
-        description: 'Doba aktívneho cvičenia v každom kole.',
+        description: 'Doba aktívneho cvičenia v každej sérii.',
       },
       rest: {
-        label: 'Oddych',
-        description: 'Čas na regeneráciu po každom intervale cvičenia.',
+        label: 'Odpočinok',
+        description: 'Krátky čas na regeneráciu medzi sériami.',
+      },
+      series: {
+        label: 'Počet sérií',
+        description:
+          'Počet opakovaní dvojice cvičenie/odpočinok v rámci jedného kola.',
       },
       rounds: {
         label: 'Počet kôl',
         description:
-          'Toľkokrát sa zopakuje cyklus prípravy, cvičenia a oddychu.',
+          'Celkový počet dokončených kol v tréninku. Každé kolo může mít několik sérií.',
       },
-      cooldown: {
-        label: 'Relax',
-        description: 'Čas na upokojenie a zníženie tepu po tréningu.',
+      brake: {
+        label: 'Pauza medzi kolami',
+        description:
+          'Dlhšia doba odpočinku po dokončení všetkých sérií v kole.',
       },
     },
   },

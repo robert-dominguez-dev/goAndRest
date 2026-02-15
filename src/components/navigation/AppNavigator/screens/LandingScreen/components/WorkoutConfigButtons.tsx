@@ -1,19 +1,27 @@
 import { AppView } from '../../../../../common/AppView/AppView.tsx';
-import { appWorkoutConfigKeys } from '../constants.ts';
-import { JSX, memo } from 'react';
+import { memo } from 'react';
 import { WorkoutConfigButtonWithSheet } from './WorkoutConfigButtonWithSheet.tsx';
+import { useIsWithoutPauses } from '../hooks/useIsWithoutPauses.ts';
 
 const WorkoutConfigButtonsComponent = () => {
-  const workoutConfigButtonElements = appWorkoutConfigKeys.map<JSX.Element>(
-    key => (
-      <WorkoutConfigButtonWithSheet
-        key={key}
-        name={key}
-      />
-    ),
-  );
+  const isWithoutRest = useIsWithoutPauses('series', 'rest');
+  const isWithoutBrake = useIsWithoutPauses('rounds', 'brake');
 
-  return <AppView gap={'s'}>{workoutConfigButtonElements}</AppView>;
+  return (
+    <AppView gap={'s'}>
+      <WorkoutConfigButtonWithSheet name={'work'} />
+      <WorkoutConfigButtonWithSheet name={'series'} />
+      <WorkoutConfigButtonWithSheet
+        name={'rest'}
+        disabled={isWithoutRest}
+      />
+      <WorkoutConfigButtonWithSheet name={'rounds'} />
+      <WorkoutConfigButtonWithSheet
+        name={'brake'}
+        disabled={isWithoutBrake}
+      />
+    </AppView>
+  );
 };
 
 export const WorkoutConfigButtons = memo(WorkoutConfigButtonsComponent);

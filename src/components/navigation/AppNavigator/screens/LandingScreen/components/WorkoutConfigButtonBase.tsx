@@ -3,12 +3,15 @@ import {
   workoutSettingsButtonConfigMap,
 } from '../constants.ts';
 import { memo } from 'react';
-import { AppButton } from '../../../../../controls/AppButton/AppButton.tsx';
+import {
+  AppButton,
+  AppButtonProps,
+} from '../../../../../controls/AppButton/AppButton.tsx';
 import { useAppTranslation } from '../../../../../../locales/hooks/useAppTranslation.ts';
 import { Control, useWatch } from 'react-hook-form';
 import { AppWorkout } from '../../../../../../contexts/AppWorkoutsProvider/types.ts';
 
-export type WorkoutConfigButtonBaseProps = {
+export type WorkoutConfigButtonBaseProps = Pick<AppButtonProps, 'disabled'> & {
   control: Control<AppWorkout>;
   name: AppWorkoutConfigKey;
   onPress: () => void;
@@ -18,6 +21,7 @@ const WorkoutConfigButtonBaseComponent = ({
   control,
   name,
   onPress,
+  disabled,
 }: WorkoutConfigButtonBaseProps) => {
   const t = useAppTranslation();
 
@@ -38,6 +42,7 @@ const WorkoutConfigButtonBaseComponent = ({
       backgroundColorStatus={backgroundColorStatus}
       IconComponent={IconComponent}
       onPress={onPress}
+      disabled={disabled}
     />
   );
 };

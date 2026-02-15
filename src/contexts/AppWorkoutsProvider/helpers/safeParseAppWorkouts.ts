@@ -10,11 +10,11 @@ const AppWorkoutSchema: z.ZodType<AppStoredWorkout> = z.object({
     updatedAt: z.coerce.date().optional(),
   }),
   config: z.object({
-    prep: z.int(),
     work: z.int(),
     rest: z.int(),
+    series: z.int(),
     rounds: z.int(),
-    cooldown: z.int(),
+    brake: z.int(),
   }),
 });
 

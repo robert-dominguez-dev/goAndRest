@@ -1,21 +1,18 @@
 import { NestedKeys } from '../types/magic.ts';
 import { TOptionsBase } from 'i18next';
+import { AppWorkoutConfigKey } from '../components/navigation/AppNavigator/screens/LandingScreen/constants.ts';
 
-type WorkoutConfigTexts = {
+type WorkoutConfigItemTexts = {
   label: string;
   description: string;
 };
 
+type WorkoutConfigTexts = Record<AppWorkoutConfigKey, WorkoutConfigItemTexts>;
+
 export type AppTranslations = {
   common: {
     ok: string;
-    workoutConfig: {
-      prep: WorkoutConfigTexts;
-      work: WorkoutConfigTexts;
-      rest: WorkoutConfigTexts;
-      rounds: WorkoutConfigTexts;
-      cooldown: WorkoutConfigTexts;
-    };
+    workoutConfig: WorkoutConfigTexts;
   };
   screens: {
     landingScreen: {

@@ -32,11 +32,11 @@ describe('composeWorkoutToStore function', () => {
   });
 
   const baseConfig = {
-    prep: 10,
     work: 20,
     rest: 5,
+    series: 3,
     rounds: 3,
-    cooldown: 15,
+    brake: 15,
   };
 
   const runningWorkout: AppWorkout = {
@@ -52,11 +52,11 @@ describe('composeWorkoutToStore function', () => {
       createdAt: new Date('2023-01-01T00:00:00.000Z'),
     },
     config: {
-      prep: 1,
       work: 1,
       rest: 1,
+      series: 1,
       rounds: 1,
-      cooldown: 1,
+      brake: 1,
     },
   };
 
@@ -97,7 +97,7 @@ describe('composeWorkoutToStore function', () => {
 
     const result = composeWorkoutToStore(
       input.runningWorkout,
-      input.selectedStoredWorkout as AppStoredWorkout,
+      input.selectedStoredWorkout,
     );
 
     expected(result);

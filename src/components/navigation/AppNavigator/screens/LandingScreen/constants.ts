@@ -1,27 +1,19 @@
 import { AppWorkoutConfig } from '../../../../../contexts/AppWorkoutsProvider/types.ts';
 import { formatTimerTime } from '../../../../common/AppCountdownText/helpers/formatTimerTime.tsx';
 import { AppButtonProps } from '../../../../controls/AppButton/AppButton.tsx';
-import { Coffee, Dumbbell, Repeat, Wind, Zap } from 'lucide-react-native';
+import { BatteryCharging, Coffee, Dumbbell, Repeat } from 'lucide-react-native';
 import { TranslateKey } from '../../../../../locales/types.ts';
 import {
   AppRoundedButtonSizeUnion,
   roundedButtonToIconSize,
 } from '../../../../controls/AppRoundedButton/constants.ts';
+import { formatRounds } from '../../../../common/AppCountdownText/helpers/formatRounds.ts';
 
 export type AppWorkoutConfigKey = keyof AppWorkoutConfig;
 
-export const appWorkoutConfigKeys: AppWorkoutConfigKey[] = [
-  'prep',
-  'work',
-  'rest',
-  'rounds',
-  'cooldown',
-];
-
-export type WorkoutSettingsButtonConfig = Required<Pick<
-  AppButtonProps,
-  'backgroundColorStatus' | 'IconComponent'
->> & {
+export type WorkoutSettingsButtonConfig = Required<
+  Pick<AppButtonProps, 'backgroundColorStatus' | 'IconComponent'>
+> & {
   min: number;
   max: number;
   step: number;
@@ -39,17 +31,6 @@ export const workoutSettingsButtonConfigMap: Record<
   AppWorkoutConfigKey,
   WorkoutSettingsButtonConfig
 > = {
-  prep: {
-    labelKey: 'common.workoutConfig.prep.label',
-    descriptionKey: 'common.workoutConfig.prep.description',
-    backgroundColorStatus: 'prep',
-    IconComponent: Zap,
-    min: 0,
-    max: FIVE_MINUTES_SECONDS,
-    step: TIME_STEP,
-    labelEveryNSteps: TIME_STEP_LABEL_MULTIPLIER,
-    valueFormatter: formatTimerTime,
-  },
   work: {
     labelKey: 'common.workoutConfig.work.label',
     descriptionKey: 'common.workoutConfig.work.description',
@@ -65,12 +46,23 @@ export const workoutSettingsButtonConfigMap: Record<
     labelKey: 'common.workoutConfig.rest.label',
     descriptionKey: 'common.workoutConfig.rest.description',
     backgroundColorStatus: 'rest',
-    IconComponent: Coffee,
+    IconComponent: BatteryCharging,
     min: 0,
     max: FIVE_MINUTES_SECONDS,
     step: TIME_STEP,
     labelEveryNSteps: TIME_STEP_LABEL_MULTIPLIER,
     valueFormatter: formatTimerTime,
+  },
+  series: {
+    labelKey: 'common.workoutConfig.series.label',
+    descriptionKey: 'common.workoutConfig.series.description',
+    backgroundColorStatus: 'series',
+    IconComponent: Repeat,
+    min: 1,
+    max: 30,
+    step: 1,
+    labelEveryNSteps: 2,
+    valueFormatter: formatRounds,
   },
   rounds: {
     labelKey: 'common.workoutConfig.rounds.label',
@@ -81,13 +73,13 @@ export const workoutSettingsButtonConfigMap: Record<
     max: 30,
     step: 1,
     labelEveryNSteps: 2,
-    valueFormatter: rounds => `${rounds}x`,
+    valueFormatter: formatRounds,
   },
-  cooldown: {
-    labelKey: 'common.workoutConfig.cooldown.label',
-    descriptionKey: 'common.workoutConfig.cooldown.description',
-    backgroundColorStatus: 'cooldown',
-    IconComponent: Wind,
+  brake: {
+    labelKey: 'common.workoutConfig.brake.label',
+    descriptionKey: 'common.workoutConfig.brake.description',
+    backgroundColorStatus: 'brake',
+    IconComponent: Coffee,
     min: 0,
     max: FIVE_MINUTES_SECONDS,
     step: TIME_STEP,

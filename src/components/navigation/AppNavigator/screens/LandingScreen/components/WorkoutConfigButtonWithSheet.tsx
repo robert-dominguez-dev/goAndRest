@@ -1,20 +1,18 @@
 import { memo, useRef } from 'react';
 import { useIsVisible } from '../../../../../common/AppBottomSheet/hooks/useIsVisible.ts';
 import { WorkoutConfigBottomSheet } from './WorkoutConfigBottomSheet.tsx';
-import {
-  WorkoutConfigButtonBase,
-  WorkoutConfigButtonBaseProps,
-} from './WorkoutConfigButtonBase.tsx';
+import { WorkoutConfigButtonBase, WorkoutConfigButtonBaseProps, } from './WorkoutConfigButtonBase.tsx';
 import { useFormContext } from 'react-hook-form';
 import { AppWorkout } from '../../../../../../contexts/AppWorkoutsProvider/types.ts';
 
 export type WorkoutConfigButtonWithSheetProps = Pick<
   WorkoutConfigButtonBaseProps,
-  'name'
+  'name' | 'disabled'
 >;
 
 const WorkoutConfigButtonWithSheetComponent = ({
   name,
+  disabled,
 }: WorkoutConfigButtonWithSheetProps) => {
   const { isVisible, onOpen, onClose } = useIsVisible();
 
@@ -44,6 +42,7 @@ const WorkoutConfigButtonWithSheetComponent = ({
       <WorkoutConfigButtonBase
         name={name}
         control={control}
+        disabled={disabled}
         onPress={handleOpenBottomSheet}
       />
       <WorkoutConfigBottomSheet

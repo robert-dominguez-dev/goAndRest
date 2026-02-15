@@ -1,8 +1,6 @@
 import { memo } from 'react';
 import { AppView } from '../../../../../common/AppView/AppView.tsx';
-import {
-  getAppRoundedButtonUIProps
-} from '../../../../../controls/AppRoundedButton/helpers/getAppRoundedButtonUIProps.ts';
+import { getAppRoundedButtonUIProps } from '../../../../../controls/AppRoundedButton/helpers/getAppRoundedButtonUIProps.ts';
 import { Pressable } from 'react-native';
 import { Save } from 'lucide-react-native';
 import {
