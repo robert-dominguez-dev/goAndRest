@@ -8,7 +8,12 @@ import { getOnPressWithHapticFeedback } from '../../../../../controls/helpers/ge
 import { AppRoundedButton } from '../../../../../controls/AppRoundedButton/AppRoundedButton.tsx';
 import { useAppThemedColors } from '../../../../../../hooks/useAppThemedColors.ts';
 import { AppSize } from '../../../../../../types/ui.ts';
-import { WorkoutConfigCircularSliderConfirmButton } from './WorkoutConfigCircularSliderConfirmButton.tsx';
+import { Save } from 'lucide-react-native';
+import { Pressable } from 'react-native';
+import {
+  ACTIVE_OPACITY,
+  PRESSED_OPACITY,
+} from '../../../../../../constants/ui.ts';
 
 const SLIDER_RADIUS = 160;
 
@@ -41,7 +46,7 @@ const WorkoutConfigCircularSliderComponent = ({
   valueFormatter,
   onConfirm,
 }: WorkoutConfigCircularSliderProps) => {
-  const { slider } = useAppThemedColors();
+  const { slider, text } = useAppThemedColors();
 
   return (
     <AppCircularSlider
@@ -56,7 +61,25 @@ const WorkoutConfigCircularSliderComponent = ({
       value={value}
       onChange={getOnPressWithHapticFeedback(onChange)}
       thumbElement={thumbElement}>
-      <WorkoutConfigCircularSliderConfirmButton onPress={onConfirm} />
+      <Pressable onPress={onConfirm}>
+        {({ pressed }) => {
+          const opacity: number = pressed ? PRESSED_OPACITY : ACTIVE_OPACITY;
+          return (
+            <AppView
+              width={SLIDER_RADIUS}
+              height={SLIDER_RADIUS}
+              borderRadius={SLIDER_RADIUS / 2}
+              justifyContent={'center'}
+              alignItems={'center'}>
+              <Save
+                opacity={opacity}
+                color={text}
+                size={AppSize.xxl}
+              />
+            </AppView>
+          );
+        }}
+      </Pressable>
     </AppCircularSlider>
   );
 };
