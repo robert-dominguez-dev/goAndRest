@@ -17,12 +17,13 @@ export const en = {
       },
       series: {
         label: 'Series',
-        description: 'Number of work/rest repetitions within one round.',
+        description:
+          'Number of exercise repetitions (and rests between them) in one round.',
       },
       rounds: {
         label: 'Rounds',
         description:
-          'Total number of completed rounds. Each round can have several series.',
+          'Total number of rounds in the workout. Each round can include several series.',
       },
       brake: {
         label: 'Break',

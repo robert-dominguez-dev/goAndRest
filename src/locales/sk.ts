@@ -18,12 +18,12 @@ export const sk = {
       series: {
         label: 'Počet sérií',
         description:
-          'Počet opakovaní dvojice cvičenie/odpočinok v rámci jedného kola.',
+          'Počet opakovaní cvičení (a prestávok medzi nimi) v jednom kole.',
       },
       rounds: {
         label: 'Počet kôl',
         description:
-          'Celkový počet dokončených kol v tréninku. Každé kolo může mít několik sérií.',
+          'Celkový počet kôl v tréningu. Každé kolo môže obsahovať niekoľko sérií.',
       },
       brake: {
         label: 'Pauza medzi kolami',
