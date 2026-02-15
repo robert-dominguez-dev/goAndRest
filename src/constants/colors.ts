@@ -61,17 +61,17 @@ const appDesignSystemColors = {
 export const appColorsLight = {
   primary: appDesignSystemColors.primary['400'],
   primaryMuted: appDesignSystemColors.primary['400'],
-  negative: appDesignSystemColors.negative['300'],
+  negative: appDesignSystemColors.negative['200'],
   negativeMuted: appDesignSystemColors.negative['200'],
   text: appDesignSystemColors.grayscale['700'],
   background: appDesignSystemColors.grayscale['50'],
   backgroundAlt: appDesignSystemColors.grayscale['200'],
   slider: appDesignSystemColors.grayscale['700'],
-  work: appDesignSystemColors.negative['300'],
+  work: appDesignSystemColors.negative['100'],
   rest: appDesignSystemColors.primary['300'],
-  series: appDesignSystemColors.grayscale['300'],
-  rounds: appDesignSystemColors.grayscale['300'],
-  brake: '#e6c003',
+  series: appDesignSystemColors.grayscale['200'],
+  rounds: appDesignSystemColors.grayscale['200'],
+  brake: '#e3c547',
   semiTransparentOverlay: '#00000080',
   transparent: '#00000000',
 } as const satisfies Record<string, HexColor>;
@@ -109,8 +109,8 @@ export const appLinearGradientColorsLight = {
     appDesignSystemColors.grayscale['400'],
   ],
   negative: [
-    appDesignSystemColors.negative['100'],
-    appDesignSystemColors.negative['500'],
+    appDesignSystemColors.negative['50'],
+    appDesignSystemColors.negative['400'],
   ],
   slider: [
     appDesignSystemColors.grayscale['500'],
