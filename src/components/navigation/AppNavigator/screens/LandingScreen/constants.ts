@@ -18,7 +18,7 @@ export const appWorkoutConfigKeys: AppWorkoutConfigKey[] = [
   'cooldown',
 ];
 
-type WorkoutSettingsButtonConfig = Pick<
+export type WorkoutSettingsButtonConfig = Pick<
   AppButtonProps,
   'backgroundColorStatus' | 'IconComponent'
 > & {

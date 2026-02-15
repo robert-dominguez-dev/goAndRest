@@ -8,17 +8,17 @@ export const useAppPopUp = ({
   onSecondaryButtonPress,
   ...props
 }: UsePopUpProps) => {
-  const { isVisible, handleOpen, handleClose } = useIsVisible();
+  const { isVisible, onOpen, onClose } = useIsVisible();
 
   const handlePrimaryButtonPress = () => {
     onPrimaryButtonPress();
-    handleClose();
+    onClose();
   };
 
   const handleSecondaryButtonPress = props.secondaryButtonLabel
     ? () => {
         onSecondaryButtonPress?.();
-        handleClose();
+        onClose();
       }
     : undefined;
 
@@ -30,5 +30,5 @@ export const useAppPopUp = ({
     />
   ) : undefined;
 
-  return { popUpElement, handleOpen };
+  return { popUpElement, handleOpen: onOpen };
 };

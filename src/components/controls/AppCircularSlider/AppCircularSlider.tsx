@@ -27,7 +27,7 @@ const fallbackThumbElement = (
   />
 );
 
-type AppCircularSliderProps = Partial<ChildrenProp> &
+export type AppCircularSliderProps = Partial<ChildrenProp> &
   Pick<
     AppCircularSliderTicksProps,
     'radius' | 'strokeWidth' | 'step' | 'labelEveryNSteps' | 'valueFormatter'

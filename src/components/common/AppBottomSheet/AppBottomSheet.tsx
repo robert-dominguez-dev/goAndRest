@@ -10,7 +10,6 @@ export const AppBottomSheet = ({
   onClose,
   closeable,
   bottomSheetTitle,
-  bottomSheetHeaderOverride,
   bottomSheetContent,
   scrollable,
   backgroundColorStatus,
@@ -32,7 +31,6 @@ export const AppBottomSheet = ({
         <AppKeyboardAvoidingView>
           <AppBottomSheetContent
             title={bottomSheetTitle}
-            headerOverride={bottomSheetHeaderOverride}
             closeable={closeable}
             onClose={onClose}
             scrollable={scrollable}

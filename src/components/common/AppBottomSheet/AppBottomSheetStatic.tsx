@@ -8,9 +8,7 @@ export const AppBottomSheetStatic = ({
   onClose,
   closeable,
   bottomSheetTitle,
-  bottomSheetHeaderOverride,
   bottomSheetContent,
-  bottomSheetSubmitButtonProps,
   scrollable,
 }: Omit<AppBottomSheetProps, 'isVisible'>) => (
   <AppView
@@ -21,9 +19,7 @@ export const AppBottomSheetStatic = ({
     <AppKeyboardAvoidingView>
       <AppBottomSheetContent
         title={bottomSheetTitle}
-        headerOverride={bottomSheetHeaderOverride}
         closeable={closeable}
-        bottomSheetSubmitButtonProps={bottomSheetSubmitButtonProps}
         onClose={onClose}
         scrollable={scrollable}>
         {bottomSheetContent}

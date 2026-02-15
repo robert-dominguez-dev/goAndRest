@@ -3,9 +3,8 @@ import { JSX } from 'react';
 
 export type GetBottomSheetContentHeaderParams = Pick<
   AppHeaderProps,
-  'AccessoryRightIconComponent'
+  'AccessoryRightIconComponent' | 'title'
 > & {
-  title: string | undefined;
   headerOverride?: JSX.Element;
   closeable?: boolean;
   onClose: () => void;
