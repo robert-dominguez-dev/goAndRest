@@ -8,6 +8,7 @@ type WorkoutConfigTexts = {
 
 export type AppTranslations = {
   common: {
+    ok: string;
     workoutConfig: {
       prep: WorkoutConfigTexts;
       work: WorkoutConfigTexts;

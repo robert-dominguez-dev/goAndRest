@@ -5,6 +5,7 @@ import { AppTranslations } from './types.ts';
  */
 export const sk = {
   common: {
+    ok: 'Ok',
     workoutConfig: {
       prep: {
         label: 'Príprava',

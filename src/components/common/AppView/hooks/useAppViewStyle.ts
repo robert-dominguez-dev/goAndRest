@@ -30,6 +30,7 @@ export type UseAppViewStyleParams = Pick<
   | 'opacity'
   | 'borderStyle'
 > & {
+  borderWidthOverride?: AppSizeUnion;
   backgroundColorStatus?: AppColorUnion;
   borderColorStatus?: AppColorUnion;
   disableBorderBottom?: boolean;
@@ -69,6 +70,7 @@ export const useAppViewStyle = ({
   pointerEvents,
   opacity,
   borderStyle,
+  borderWidthOverride,
   backgroundColorStatus,
   borderColorStatus,
   disableBorderBottom,
@@ -92,7 +94,8 @@ export const useAppViewStyle = ({
   const borderProps: BorderProps | undefined = borderColorStatus
     ? {
         borderColor: appColors[borderColorStatus],
-        borderWidth: sizes.defaultBorderWidth,
+        borderWidth:
+          getAppSize(borderWidthOverride) ?? sizes.defaultBorderWidth,
       }
     : undefined;
 
