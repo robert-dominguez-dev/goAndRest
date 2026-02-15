@@ -10,10 +10,8 @@ import { useAppThemedColors } from '../../../../../../hooks/useAppThemedColors.t
 import { AppSize } from '../../../../../../types/ui.ts';
 import { Save } from 'lucide-react-native';
 import { Pressable } from 'react-native';
-import {
-  ACTIVE_OPACITY,
-  PRESSED_OPACITY,
-} from '../../../../../../constants/ui.ts';
+import { ACTIVE_OPACITY, PRESSED_OPACITY, } from '../../../../../../constants/ui.ts';
+import { HapticFeedbackTypes } from 'react-native-haptic-feedback';
 
 const SLIDER_RADIUS = 160;
 
@@ -61,7 +59,11 @@ const WorkoutConfigCircularSliderComponent = ({
       value={value}
       onChange={getOnPressWithHapticFeedback(onChange)}
       thumbElement={thumbElement}>
-      <Pressable onPress={onConfirm}>
+      <Pressable
+        onPress={getOnPressWithHapticFeedback(
+          onConfirm,
+          HapticFeedbackTypes.selection,
+        )}>
         {({ pressed }) => {
           const opacity: number = pressed ? PRESSED_OPACITY : ACTIVE_OPACITY;
           return (
@@ -74,7 +76,7 @@ const WorkoutConfigCircularSliderComponent = ({
               <Save
                 opacity={opacity}
                 color={text}
-                size={AppSize.xxl}
+                size={AppSize.xl}
               />
             </AppView>
           );
