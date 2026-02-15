@@ -4,7 +4,7 @@ import { SettingsItem } from './SettingsItem.tsx';
 import { settingsItems } from '../constants.tsx';
 import { AppView } from '../../../../../common/AppView/AppView.tsx';
 
-const _SettingsItemList = () => {
+const SettingsItemListComponent = () => {
   const t = useAppTranslation();
 
   const settingsItemElements = settingsItems.map(
@@ -20,4 +20,4 @@ const _SettingsItemList = () => {
   return <AppView gap={'s'}>{settingsItemElements}</AppView>;
 };
 
-export const SettingsItemList = memo(_SettingsItemList);
+export const SettingsItemList = memo(SettingsItemListComponent);

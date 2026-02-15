@@ -13,7 +13,7 @@ export type WorkoutConfigButtonWithSheetProps = Pick<
   'name'
 >;
 
-const _WorkoutConfigButtonWithSheet = ({
+const WorkoutConfigButtonWithSheetComponent = ({
   name,
 }: WorkoutConfigButtonWithSheetProps) => {
   const { isVisible, onOpen, onClose } = useIsVisible();
@@ -57,4 +57,6 @@ const _WorkoutConfigButtonWithSheet = ({
   );
 };
 
-export const WorkoutConfigButtonWithSheet = memo(_WorkoutConfigButtonWithSheet);
+export const WorkoutConfigButtonWithSheet = memo(
+  WorkoutConfigButtonWithSheetComponent,
+);

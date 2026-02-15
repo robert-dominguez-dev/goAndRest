@@ -11,7 +11,7 @@ import { useFormContext, useFormState } from 'react-hook-form';
 import { AppWorkout } from '../../../../../../contexts/AppWorkoutsProvider/types.ts';
 import { composeWorkoutToStore } from '../helpers/composeWorkoutToStore.ts';
 
-const _LandingScreenFooter = () => {
+const LandingScreenFooterComponent = () => {
   const { text } = useAppThemedColors();
 
   const {
@@ -78,4 +78,4 @@ const _LandingScreenFooter = () => {
   );
 };
 
-export const LandingScreenFooter = memo(_LandingScreenFooter);
+export const LandingScreenFooter = memo(LandingScreenFooterComponent);

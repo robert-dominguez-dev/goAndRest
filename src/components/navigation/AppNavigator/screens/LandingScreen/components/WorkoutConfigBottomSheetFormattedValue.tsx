@@ -15,7 +15,7 @@ export type WorkoutConfigBottomSheetFormattedValueProps = Pick<
   control: Control<AppWorkout>;
 };
 
-const _WorkoutConfigBottomSheetFormattedValue = ({
+const WorkoutConfigBottomSheetFormattedValueComponent = ({
   name,
   control,
   valueFormatter,
@@ -38,5 +38,5 @@ const _WorkoutConfigBottomSheetFormattedValue = ({
 };
 
 export const WorkoutConfigBottomSheetFormattedValue = memo(
-  _WorkoutConfigBottomSheetFormattedValue,
+  WorkoutConfigBottomSheetFormattedValueComponent,
 );

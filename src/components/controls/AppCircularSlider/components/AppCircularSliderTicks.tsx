@@ -18,7 +18,7 @@ export type AppCircularSliderTicksProps = {
   valueFormatter?: (value: number) => string;
 };
 
-const _AppCircularSliderTicks = ({
+const AppCircularSliderTicksComponent = ({
   center,
   radius,
   strokeWidth,
@@ -119,4 +119,4 @@ const _AppCircularSliderTicks = ({
   return <G>{elements}</G>;
 };
 
-export const AppCircularSliderTicks = memo(_AppCircularSliderTicks);
+export const AppCircularSliderTicks = memo(AppCircularSliderTicksComponent);

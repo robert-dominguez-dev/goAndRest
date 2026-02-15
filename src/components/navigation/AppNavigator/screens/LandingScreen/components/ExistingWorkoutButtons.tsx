@@ -5,7 +5,7 @@ import { memo } from 'react';
 import { useAppThemedColors } from '../../../../../../hooks/useAppThemedColors.ts';
 import { EXISTING_WORKOUT_BUTTON_ICON_SIZE } from '../constants.ts';
 
-const _ExistingWorkoutButtons = () => {
+const ExistingWorkoutButtonsComponent = () => {
   const { text } = useAppThemedColors();
 
   const { storedWorkouts, selectedStoredWorkout, setSelectedStoredWorkout } =
@@ -30,4 +30,4 @@ const _ExistingWorkoutButtons = () => {
   });
 };
 
-export const ExistingWorkoutButtons = memo(_ExistingWorkoutButtons);
+export const ExistingWorkoutButtons = memo(ExistingWorkoutButtonsComponent);

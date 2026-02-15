@@ -32,7 +32,7 @@ export type WorkoutConfigCircularSliderProps = Pick<
   | 'valueFormatter'
 > & { onConfirm: () => void };
 
-const _WorkoutConfigCircularSlider = ({
+const WorkoutConfigCircularSliderComponent = ({
   value,
   onChange,
   minValue,
@@ -70,4 +70,6 @@ const _WorkoutConfigCircularSlider = ({
   );
 };
 
-export const WorkoutConfigCircularSlider = memo(_WorkoutConfigCircularSlider);
+export const WorkoutConfigCircularSlider = memo(
+  WorkoutConfigCircularSliderComponent,
+);

@@ -10,7 +10,7 @@ type AppLanguageButtonProps = {
   onPress: () => void;
 };
 
-const _AppEmojiButton = ({
+const AppEmojiButtonComponent = ({
   emoji,
   isSelected,
   onPress,
@@ -25,4 +25,4 @@ const _AppEmojiButton = ({
   );
 };
 
-export const AppEmojiButton = memo(_AppEmojiButton);
+export const AppEmojiButton = memo(AppEmojiButtonComponent);

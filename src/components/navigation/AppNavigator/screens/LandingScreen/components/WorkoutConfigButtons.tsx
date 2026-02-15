@@ -3,7 +3,7 @@ import { appWorkoutConfigKeys } from '../constants.ts';
 import { JSX, memo } from 'react';
 import { WorkoutConfigButtonWithSheet } from './WorkoutConfigButtonWithSheet.tsx';
 
-const _WorkoutConfigButtons = () => {
+const WorkoutConfigButtonsComponent = () => {
   const workoutConfigButtonElements = appWorkoutConfigKeys.map<JSX.Element>(
     key => (
       <WorkoutConfigButtonWithSheet
@@ -16,4 +16,4 @@ const _WorkoutConfigButtons = () => {
   return <AppView gap={'s'}>{workoutConfigButtonElements}</AppView>;
 };
 
-export const WorkoutConfigButtons = memo(_WorkoutConfigButtons);
+export const WorkoutConfigButtons = memo(WorkoutConfigButtonsComponent);

@@ -23,7 +23,7 @@ export type AppBottomSheetContentProps = ChildrenProp &
     scrollable?: boolean;
   };
 
-const _AppBottomSheetContent = ({
+const AppBottomSheetContentComponent = ({
   children,
   title,
   onClose,
@@ -68,4 +68,4 @@ const _AppBottomSheetContent = ({
   );
 };
 
-export const AppBottomSheetContent = memo(_AppBottomSheetContent);
+export const AppBottomSheetContent = memo(AppBottomSheetContentComponent);

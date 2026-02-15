@@ -29,7 +29,7 @@ type WorkoutConfigBottomSheetProps = Pick<
   onClose: () => void;
 };
 
-const _WorkoutConfigBottomSheet = ({
+const WorkoutConfigBottomSheetComponent = ({
   name,
   control,
   isVisible,
@@ -109,4 +109,4 @@ const _WorkoutConfigBottomSheet = ({
   );
 };
 
-export const WorkoutConfigBottomSheet = memo(_WorkoutConfigBottomSheet);
+export const WorkoutConfigBottomSheet = memo(WorkoutConfigBottomSheetComponent);

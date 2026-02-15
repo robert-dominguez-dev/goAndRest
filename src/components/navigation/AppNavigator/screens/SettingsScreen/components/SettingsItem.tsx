@@ -7,7 +7,10 @@ export type SettingsItemProps = {
   accessoryRight: JSX.Element;
 };
 
-const _SettingsItem = ({ title, accessoryRight }: SettingsItemProps) => (
+const SettingsItemComponent = ({
+  title,
+  accessoryRight,
+}: SettingsItemProps) => (
   <AppRow
     alignItems={'center'}
     justifyContent={'space-between'}>
@@ -16,4 +19,4 @@ const _SettingsItem = ({ title, accessoryRight }: SettingsItemProps) => (
   </AppRow>
 );
 
-export const SettingsItem = memo(_SettingsItem);
+export const SettingsItem = memo(SettingsItemComponent);

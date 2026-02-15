@@ -12,7 +12,7 @@ export type AppCountdownTextProps = {
   onTimeout: () => void;
 };
 
-const _AppCountdownText = ({
+const AppCountdownTextComponent = ({
   minutes,
   seconds,
   onTimeout,
@@ -55,4 +55,4 @@ const _AppCountdownText = ({
   );
 };
 
-export const AppCountdownText = memo(_AppCountdownText);
+export const AppCountdownText = memo(AppCountdownTextComponent);

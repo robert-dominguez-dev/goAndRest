@@ -14,7 +14,7 @@ export type WorkoutConfigButtonBaseProps = {
   onPress: () => void;
 };
 
-const _WorkoutConfigButtonBase = ({
+const WorkoutConfigButtonBaseComponent = ({
   control,
   name,
   onPress,
@@ -42,4 +42,4 @@ const _WorkoutConfigButtonBase = ({
   );
 };
 
-export const WorkoutConfigButtonBase = memo(_WorkoutConfigButtonBase);
+export const WorkoutConfigButtonBase = memo(WorkoutConfigButtonBaseComponent);

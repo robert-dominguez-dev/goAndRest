@@ -24,7 +24,7 @@ export type AppImageProps = AppImageDimensions &
     borderRadius?: AppSizeUnion;
   };
 
-const _AppImage = ({
+const AppImageComponent = ({
   illustrationName,
   opacity,
   borderRadius,
@@ -57,4 +57,4 @@ const _AppImage = ({
   );
 };
 
-export const AppImage = memo(_AppImage);
+export const AppImage = memo(AppImageComponent);

@@ -13,7 +13,7 @@ import { SettingsScreen } from './screens/SettingsScreen/SettingsScreen.tsx';
 
 const Stack = createNativeStackNavigator<AppNavigatorScreenParams, string>();
 
-const _AppNavigator = () => (
+const AppNavigatorComponent = () => (
   <Stack.Navigator
     id={ROOT_STACK_NAVIGATOR_ID}
     screenOptions={commonAppNavigationOptions}>
@@ -44,4 +44,4 @@ const _AppNavigator = () => (
   </Stack.Navigator>
 );
 
-export const AppNavigator = memo(_AppNavigator);
+export const AppNavigator = memo(AppNavigatorComponent);
