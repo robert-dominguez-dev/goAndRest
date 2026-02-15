@@ -4,8 +4,8 @@ import { EMPTY_SPACE, IS_ANDROID } from './common.ts';
 
 export const sizes = {
   headerAccessoryWidth: 50,
-  buttonHeight: 56,
-  buttonBorderRadius: AppSize.s,
+  configButtonSize: 56,
+  configButtonBorderRadius: AppSize.s,
   inputHeight: AppSize.xl,
   pickerItemSize: AppSize['3xl'],
   formFieldBorderRadius: AppSize.xs,

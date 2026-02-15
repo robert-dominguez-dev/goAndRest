@@ -1,28 +1,16 @@
-import {
-  AppWorkoutConfigKey,
-  workoutSettingsButtonConfigMap,
-} from '../constants.ts';
+import { workoutSettingsButtonConfigMap } from '../constants.ts';
 import { memo } from 'react';
-import {
-  AppButton,
-  AppButtonProps,
-} from '../../../../../controls/AppButton/AppButton.tsx';
+import { AppButton } from '../../../../../controls/AppButton/AppButton.tsx';
 import { useAppTranslation } from '../../../../../../locales/hooks/useAppTranslation.ts';
-import { Control, useWatch } from 'react-hook-form';
-import { AppWorkout } from '../../../../../../contexts/AppWorkoutsProvider/types.ts';
+import { useWatch } from 'react-hook-form';
+import { WorkoutConfigButtonProps } from '../types.ts';
 
-export type WorkoutConfigButtonBaseProps = Pick<AppButtonProps, 'disabled'> & {
-  control: Control<AppWorkout>;
-  name: AppWorkoutConfigKey;
-  onPress: () => void;
-};
-
-const WorkoutConfigButtonBaseComponent = ({
+const WorkoutConfigButtonComponent = ({
   control,
   name,
   onPress,
   disabled,
-}: WorkoutConfigButtonBaseProps) => {
+}: WorkoutConfigButtonProps) => {
   const t = useAppTranslation();
 
   const value = useWatch({
@@ -47,4 +35,4 @@ const WorkoutConfigButtonBaseComponent = ({
   );
 };
 
-export const WorkoutConfigButtonBase = memo(WorkoutConfigButtonBaseComponent);
+export const WorkoutConfigButton = memo(WorkoutConfigButtonComponent);

@@ -12,13 +12,13 @@ export const sk = {
         description: 'Doba aktívneho cvičenia v každej sérii.',
       },
       rest: {
-        label: 'Odpočinok',
+        label: 'Pauza',
         description: 'Krátky čas na regeneráciu medzi sériami.',
       },
       series: {
         label: 'Počet sérií',
         description:
-          'Počet opakovaní cvičení (a prestávok medzi nimi) v jednom kole.',
+          'Počet opakovaní cvičenia (a páuz medzi nimi) v jednom kole.',
       },
       rounds: {
         label: 'Počet kôl',

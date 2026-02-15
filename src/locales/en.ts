@@ -18,7 +18,7 @@ export const en = {
       series: {
         label: 'Series',
         description:
-          'Number of exercise repetitions (and rests between them) in one round.',
+          'Number of exercise repetitions (and breaks between them) within one round.',
       },
       rounds: {
         label: 'Rounds',
@@ -26,7 +26,7 @@ export const en = {
           'Total number of rounds in the workout. Each round can include several series.',
       },
       brake: {
-        label: 'Break',
+        label: 'Rest between rounds',
         description:
           'Longer rest period after completing all series in a round.',
       },

@@ -2,7 +2,7 @@ import { memo } from 'react';
 import { AppView } from '../../../../../common/AppView/AppView.tsx';
 import { getAppRoundedButtonUIProps } from '../../../../../controls/AppRoundedButton/helpers/getAppRoundedButtonUIProps.ts';
 import { Pressable } from 'react-native';
-import { Save } from 'lucide-react-native';
+import { Check } from 'lucide-react-native';
 import {
   AppRoundedButtonSizeUnion,
   roundedButtonToIconSize,
@@ -42,11 +42,10 @@ const WorkoutConfigCircularSliderConfirmButtonComponent = ({
             width={width}
             height={height}
             borderRadius={borderRadius}
-            borderStyle={'dotted'}
             borderColorStatus={'text'}
             alignItems={'center'}
             justifyContent={'center'}>
-            <Save
+            <Check
               color={text}
               size={roundedButtonToIconSize[ROUNDED_BUTTON_SIZE]}
             />

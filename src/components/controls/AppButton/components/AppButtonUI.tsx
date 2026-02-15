@@ -7,7 +7,7 @@ import {
   AppButtonIconAndLabelProps,
 } from './AppButtonIconAndLabel.tsx';
 
-const { buttonHeight, buttonBorderRadius } = sizes;
+const { configButtonSize, configButtonBorderRadius } = sizes;
 
 export type AppButtonUIProps = AppButtonIconAndLabelProps &
   Pick<AppViewProps, 'opacity' | 'backgroundColorStatus'> & {
@@ -28,8 +28,8 @@ export const AppButtonUI = ({
     alignItems={'center'}
     justifyContent={'space-between'}
     backgroundColorStatus={backgroundColorStatus}
-    height={buttonHeight}
-    borderRadius={buttonBorderRadius}
+    height={configButtonSize}
+    borderRadius={configButtonBorderRadius}
     opacity={opacity}>
     <AppButtonIconAndLabel
       label={label}

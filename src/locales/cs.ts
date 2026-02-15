@@ -12,13 +12,13 @@ export const cs = {
         description: 'Doba aktivní části každé série.',
       },
       rest: {
-        label: 'Odpočinek',
+        label: 'Pauza',
         description: 'Krátká přestávka pro regeneraci mezi sériemi.',
       },
       series: {
         label: 'Počet sérií',
         description:
-          'Počet opakování cvičení (a odpočinků mezi nimi) v jednom kole.',
+          'Počet opakování cvičení (a pauz mezi nimi) v jednom kole.',
       },
       rounds: {
         label: 'Počet kol',
@@ -27,7 +27,7 @@ export const cs = {
       },
       brake: {
         label: 'Pauza mezi koly',
-        description: 'Delší odpočinek po dokončení všech sérií v kole.',
+        description: 'Delší přestávka po dokončení všech sérií v kole.',
       },
     },
   },
