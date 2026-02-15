@@ -8,10 +8,7 @@ import { getOnPressWithHapticFeedback } from '../../../../../controls/helpers/ge
 import { AppRoundedButton } from '../../../../../controls/AppRoundedButton/AppRoundedButton.tsx';
 import { useAppThemedColors } from '../../../../../../hooks/useAppThemedColors.ts';
 import { AppSize } from '../../../../../../types/ui.ts';
-import { Save } from 'lucide-react-native';
-import { Pressable } from 'react-native';
-import { ACTIVE_OPACITY, PRESSED_OPACITY, } from '../../../../../../constants/ui.ts';
-import { HapticFeedbackTypes } from 'react-native-haptic-feedback';
+import { WorkoutConfigCircularSliderConfirmButton } from './WorkoutConfigCircularSliderConfirmButton.tsx';
 
 const SLIDER_RADIUS = 160;
 
@@ -44,7 +41,7 @@ const WorkoutConfigCircularSliderComponent = ({
   valueFormatter,
   onConfirm,
 }: WorkoutConfigCircularSliderProps) => {
-  const { slider, text } = useAppThemedColors();
+  const { slider } = useAppThemedColors();
 
   return (
     <AppCircularSlider
@@ -59,29 +56,7 @@ const WorkoutConfigCircularSliderComponent = ({
       value={value}
       onChange={getOnPressWithHapticFeedback(onChange)}
       thumbElement={thumbElement}>
-      <Pressable
-        onPress={getOnPressWithHapticFeedback(
-          onConfirm,
-          HapticFeedbackTypes.selection,
-        )}>
-        {({ pressed }) => {
-          const opacity: number = pressed ? PRESSED_OPACITY : ACTIVE_OPACITY;
-          return (
-            <AppView
-              width={SLIDER_RADIUS}
-              height={SLIDER_RADIUS}
-              borderRadius={SLIDER_RADIUS / 2}
-              justifyContent={'center'}
-              alignItems={'center'}>
-              <Save
-                opacity={opacity}
-                color={text}
-                size={AppSize.xl}
-              />
-            </AppView>
-          );
-        }}
-      </Pressable>
+      <WorkoutConfigCircularSliderConfirmButton onPress={onConfirm} />
     </AppCircularSlider>
   );
 };
