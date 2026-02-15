@@ -8,7 +8,6 @@ import { ScreenProps } from '../../../types.ts';
 import { AppNavigatorScreen, AppNavigatorScreenParams } from '../../types.ts';
 import { WorkoutConfigButtons } from './components/WorkoutConfigButtons.tsx';
 import { AppView } from '../../../../common/AppView/AppView.tsx';
-import { AppTimeView } from '../../../../common/AppTimeView.tsx';
 import { LandingScreenFooter } from './components/LandingScreenFooter.tsx';
 import { WorkoutButtons } from './components/WorkoutButtons.tsx';
 import { useAppWorkouts } from '../../../../../contexts/AppWorkoutsProvider/AppWorkoutsProvider.tsx';
@@ -16,6 +15,7 @@ import { FormProvider, useForm, useFormState } from 'react-hook-form';
 import { AppWorkout } from '../../../../../contexts/AppWorkoutsProvider/types.ts';
 import { defaultWorkoutConfig } from '../../../../../contexts/AppWorkoutsProvider/constants.ts';
 import { useUpdateFormBySelectedWorkout } from './hooks/useUpdateFormBySelectedWorkout.ts';
+import { WorkoutConfigTimeView } from './components/WorkoutConfigTimeView.tsx';
 
 const footerElement = <LandingScreenFooter />;
 
@@ -69,12 +69,7 @@ export const LandingScreen = ({ navigation }: LandingScreenProps) => {
           {!!storedWorkouts.length && (
             <WorkoutButtons workouts={storedWorkouts} />
           )}
-          <AppView
-            grow
-            alignItems={'center'}
-            justifyContent={'center'}>
-            <AppTimeView seconds={90} />
-          </AppView>
+          <WorkoutConfigTimeView control={formProps.control} />
           <WorkoutConfigButtons />
         </AppView>
       </AppScreenLayout>
