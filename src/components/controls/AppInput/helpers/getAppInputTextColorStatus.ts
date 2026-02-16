@@ -14,8 +14,8 @@ export const getAppInputTextColorStatus = ({
   }
 
   if (disabled) {
-    return 'backgroundAlt';
+    return 'inputTextMuted';
   }
 
-  return 'background';
+  return 'inputText';
 };

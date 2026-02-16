@@ -3,7 +3,7 @@ import { TextInput } from 'react-native';
 import { TextStyle } from 'react-native/Libraries/StyleSheet/StyleSheetTypes';
 import { getAppInputTextColorStatus } from '../helpers/getAppInputTextColorStatus.ts';
 import { AppRow } from '../../../common/AppRow.tsx';
-import { AppSize } from '../../../../types/ui.ts';
+import { AppColorUnion, AppSize } from '../../../../types/ui.ts';
 
 import { useAppTextStyle } from '../../../common/AppText/hooks/useAppTextStyle.ts';
 import { AppInputSpecificProps } from '../types.ts';
@@ -13,6 +13,9 @@ import { getAppInputKeyboardType } from '../helpers/getAppInputKeyboardType.ts';
 import { getAppInputMultilineDependentProps } from '../helpers/getAppInputMultilineDependentProps.ts';
 import { normalizeNumberInputText } from '../../../../helpers/normalizeNumberInputText.ts';
 import { CircleX } from 'lucide-react-native';
+import { JSX } from 'react';
+import { sizes } from '../../../../constants/ui.ts';
+import { useAppThemedColors } from '../../../../hooks/useAppThemedColors.ts';
 
 export const AppInputRender = <TFieldValues extends FieldValues>({
   placeholder,
@@ -25,6 +28,8 @@ export const AppInputRender = <TFieldValues extends FieldValues>({
   disabled,
   autoFocus,
 }: AppFormRenderProps<TFieldValues, AppInputSpecificProps>) => {
+  const { inputText } = useAppThemedColors();
+
   const commonTextStyle = useAppTextStyle({
     category: 'content',
     colorStatus: getAppInputTextColorStatus({
@@ -43,8 +48,13 @@ export const AppInputRender = <TFieldValues extends FieldValues>({
 
   const handleReset = () => onChange('');
 
-  const maybeResetIcon =
-    value && !disabled ? <CircleX onPress={handleReset} /> : undefined;
+  const maybeResetIcon: JSX.Element | undefined =
+    value && !disabled ? (
+      <CircleX
+        color={inputText}
+        onPress={handleReset}
+      />
+    ) : undefined;
 
   const keyboardType = getAppInputKeyboardType(numeric);
 
@@ -59,15 +69,20 @@ export const AppInputRender = <TFieldValues extends FieldValues>({
 
   const { height, minHeight, numberOfLines } =
     getAppInputMultilineDependentProps(multiline);
-  console.log(autoFocus);
+
+  const borderColorStatus: AppColorUnion = isInvalid ? 'negative' : 'border';
+
   return (
     <AppRow
       minHeight={minHeight}
       height={height}
-      gap={'s'}
-      alignItems={'center'}
+      borderRadius={sizes.formFieldBorderRadius}
       borderWidthOverride={1}
-      borderColorStatus={'border'}>
+      borderColorStatus={borderColorStatus}
+      backgroundColorStatus={'inputBackground'}
+      gap={'s'}
+      paddingHorizontal={'s'}
+      alignItems={'center'}>
       <TextInput
         autoFocus={autoFocus}
         multiline={multiline}
@@ -82,6 +97,8 @@ export const AppInputRender = <TFieldValues extends FieldValues>({
         autoCorrect={false}
         autoCapitalize={'none'}
         autoComplete={'off'}
+        cursorColor={inputText}
+        selectionColor={inputText}
       />
       {maybeResetIcon}
     </AppRow>
