@@ -1,10 +1,10 @@
 import { ComponentType, memo, useRef } from 'react';
-import { useIsVisible } from '../../../../../common/AppBottomSheet/hooks/useIsVisible.ts';
+import { useIsVisible } from '../../../../../../../common/AppBottomSheet/hooks/useIsVisible.ts';
 import { WorkoutConfigBottomSheet } from './WorkoutConfigBottomSheet.tsx';
 
 import { useFormContext } from 'react-hook-form';
-import { AppWorkout } from '../../../../../../contexts/AppWorkoutsProvider/types.ts';
-import { WorkoutConfigButtonProps } from '../types.ts';
+import { AppWorkout } from '../../../../../../../../contexts/AppWorkoutsProvider/types.ts';
+import { WorkoutConfigButtonProps } from '../../../types.ts';
 
 export type WorkoutConfigButtonWithSheetProps = Pick<
   WorkoutConfigButtonProps,

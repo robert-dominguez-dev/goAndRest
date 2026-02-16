@@ -1,15 +1,15 @@
-import { workoutSettingsButtonConfigMap } from '../constants.ts';
+import { workoutSettingsButtonConfigMap } from '../../../constants.ts';
 import { memo } from 'react';
 import { useWatch } from 'react-hook-form';
-import { WorkoutConfigButtonProps } from '../types.ts';
+import { WorkoutConfigButtonProps } from '../../../types.ts';
 import { Pressable } from 'react-native';
-import { getOnPressWithHapticFeedbackConditionally } from '../../../../../controls/helpers/getOnPressWithHapticFeedbackConditionally.ts';
+import { getOnPressWithHapticFeedbackConditionally } from '../../../../../../../controls/helpers/getOnPressWithHapticFeedbackConditionally.ts';
 import { HapticFeedbackTypes } from 'react-native-haptic-feedback';
-import { getPressableOpacity } from '../../../../../controls/helpers/getPressableOpacity.ts';
-import { sizes } from '../../../../../../constants/ui.ts';
-import { AppView } from '../../../../../common/AppView/AppView.tsx';
-import { AppText } from '../../../../../common/AppText/AppText.tsx';
-import { AppRow } from '../../../../../common/AppRow.tsx';
+import { getPressableOpacity } from '../../../../../../../controls/helpers/getPressableOpacity.ts';
+import { sizes } from '../../../../../../../../constants/ui.ts';
+import { AppView } from '../../../../../../../common/AppView/AppView.tsx';
+import { AppText } from '../../../../../../../common/AppText/AppText.tsx';
+import { AppRow } from '../../../../../../../common/AppRow.tsx';
 
 const { configButtonSize, configButtonBorderRadius } = sizes;
 

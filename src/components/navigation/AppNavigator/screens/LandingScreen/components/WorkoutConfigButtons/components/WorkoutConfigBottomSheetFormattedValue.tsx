@@ -1,11 +1,11 @@
 import {
   AppWorkoutConfigKey,
   WorkoutSettingsButtonConfig,
-} from '../constants.ts';
+} from '../../../constants.ts';
 import { memo } from 'react';
-import { AppWorkout } from '../../../../../../contexts/AppWorkoutsProvider/types.ts';
+import { AppWorkout } from '../../../../../../../../contexts/AppWorkoutsProvider/types.ts';
 import { Control, useWatch } from 'react-hook-form';
-import { AppText } from '../../../../../common/AppText/AppText.tsx';
+import { AppText } from '../../../../../../../common/AppText/AppText.tsx';
 
 export type WorkoutConfigBottomSheetFormattedValueProps = Pick<
   WorkoutSettingsButtonConfig,

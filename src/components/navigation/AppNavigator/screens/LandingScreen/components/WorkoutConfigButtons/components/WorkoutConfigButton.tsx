@@ -1,9 +1,9 @@
-import { workoutSettingsButtonConfigMap } from '../constants.ts';
+import { workoutSettingsButtonConfigMap } from '../../../constants.ts';
 import { memo } from 'react';
-import { AppButton } from '../../../../../controls/AppButton/AppButton.tsx';
-import { useAppTranslation } from '../../../../../../locales/hooks/useAppTranslation.ts';
+import { AppButton } from '../../../../../../../controls/AppButton/AppButton.tsx';
+import { useAppTranslation } from '../../../../../../../../locales/hooks/useAppTranslation.ts';
 import { useWatch } from 'react-hook-form';
-import { WorkoutConfigButtonProps } from '../types.ts';
+import { WorkoutConfigButtonProps } from '../../../types.ts';
 
 const WorkoutConfigButtonComponent = ({
   control,

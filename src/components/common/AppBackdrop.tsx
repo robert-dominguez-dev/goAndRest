@@ -1,26 +1,23 @@
-import { Animated, ViewStyle } from 'react-native';
+import { Modal } from 'react-native';
 
-import {
-  FILL_CONTAINER_DIMENSION,
-  POP_UP_Z_INDEX,
-} from '../../constants/common.ts';
-import { appColorsLight } from '../../constants/colors.ts';
+import { FILL_CONTAINER_DIMENSION, POP_UP_Z_INDEX, } from '../../constants/common.ts';
 import { ChildrenProp } from '../../types/common.ts';
+import { AppView } from './AppView/AppView.tsx';
 
-type AppBackdropProps = ChildrenProp & Pick<ViewStyle, 'justifyContent'>;
-
-export const AppBackdrop = ({
-  children,
-  justifyContent = 'center',
-}: AppBackdropProps) => {
-  const backdropStyle: ViewStyle = {
-    justifyContent,
-    position: 'absolute',
-    backgroundColor: appColorsLight.semiTransparentOverlay,
-    width: FILL_CONTAINER_DIMENSION,
-    height: FILL_CONTAINER_DIMENSION,
-    zIndex: POP_UP_Z_INDEX,
-  };
-
-  return <Animated.View style={backdropStyle}>{children}</Animated.View>;
-};
+export const AppBackdrop = ({ children }: ChildrenProp) => (
+  <Modal
+    transparent
+    statusBarTranslucent>
+    <AppView
+      grow
+      backgroundColorStatus={'semiTransparentOverlay'}
+      justifyContent={'center'}
+      alignItems={'center'}
+      padding={'m'}
+      height={FILL_CONTAINER_DIMENSION}
+      width={FILL_CONTAINER_DIMENSION}
+      zIndex={POP_UP_Z_INDEX}>
+      {children}
+    </AppView>
+  </Modal>
+);

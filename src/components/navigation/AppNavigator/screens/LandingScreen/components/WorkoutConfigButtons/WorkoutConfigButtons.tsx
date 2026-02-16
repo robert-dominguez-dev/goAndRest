@@ -1,11 +1,11 @@
-import { AppView } from '../../../../../common/AppView/AppView.tsx';
+import { AppView } from '../../../../../../common/AppView/AppView.tsx';
 import { memo } from 'react';
-import { WorkoutConfigButtonWithSheet } from './WorkoutConfigButtonWithSheet.tsx';
-import { useIsWithoutPauses } from '../hooks/useIsWithoutPauses.ts';
-import { WorkoutConfigButton } from './WorkoutConfigButton.tsx';
-import { WorkoutConfigVerticalButton } from './WorkoutConfigVerticalButton.tsx';
-import { AppRow } from '../../../../../common/AppRow.tsx';
-import { AppSizeUnion } from '../../../../../../types/ui.ts';
+import { WorkoutConfigButtonWithSheet } from './components/WorkoutConfigButtonWithSheet.tsx';
+import { useIsWithoutPauses } from '../../hooks/useIsWithoutPauses.ts';
+import { WorkoutConfigButton } from './components/WorkoutConfigButton.tsx';
+import { WorkoutConfigVerticalButton } from './components/WorkoutConfigVerticalButton.tsx';
+import { AppRow } from '../../../../../../common/AppRow.tsx';
+import { AppSizeUnion } from '../../../../../../../types/ui.ts';
 
 const GAP: AppSizeUnion = 's';
 

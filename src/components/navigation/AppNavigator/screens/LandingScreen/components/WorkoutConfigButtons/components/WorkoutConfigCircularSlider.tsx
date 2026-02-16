@@ -1,13 +1,13 @@
 import { memo } from 'react';
-import { AppView } from '../../../../../common/AppView/AppView.tsx';
+import { AppView } from '../../../../../../../common/AppView/AppView.tsx';
 import {
   AppCircularSlider,
   AppCircularSliderProps,
-} from '../../../../../controls/AppCircularSlider/AppCircularSlider.tsx';
-import { getOnPressWithHapticFeedback } from '../../../../../controls/helpers/getOnPressWithHapticFeedback.ts';
-import { AppRoundedButton } from '../../../../../controls/AppRoundedButton/AppRoundedButton.tsx';
-import { useAppThemedColors } from '../../../../../../hooks/useAppThemedColors.ts';
-import { AppSize } from '../../../../../../types/ui.ts';
+} from '../../../../../../../controls/AppCircularSlider/AppCircularSlider.tsx';
+import { getOnPressWithHapticFeedback } from '../../../../../../../controls/helpers/getOnPressWithHapticFeedback.ts';
+import { AppRoundedButton } from '../../../../../../../controls/AppRoundedButton/AppRoundedButton.tsx';
+import { useAppThemedColors } from '../../../../../../../../hooks/useAppThemedColors.ts';
+import { AppSize } from '../../../../../../../../types/ui.ts';
 import { WorkoutConfigCircularSliderConfirmButton } from './WorkoutConfigCircularSliderConfirmButton.tsx';
 
 const SLIDER_RADIUS = 160;

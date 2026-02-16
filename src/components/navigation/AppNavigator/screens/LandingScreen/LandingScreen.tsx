@@ -6,16 +6,16 @@ import { useAppTranslation } from '../../../../../locales/hooks/useAppTranslatio
 import { Menu, RotateCcw } from 'lucide-react-native';
 import { ScreenProps } from '../../../types.ts';
 import { AppNavigatorScreen, AppNavigatorScreenParams } from '../../types.ts';
-import { WorkoutConfigButtons } from './components/WorkoutConfigButtons.tsx';
+import { WorkoutConfigButtons } from './components/WorkoutConfigButtons/WorkoutConfigButtons.tsx';
 import { AppView } from '../../../../common/AppView/AppView.tsx';
-import { LandingScreenFooter } from './components/LandingScreenFooter.tsx';
-import { WorkoutButtons } from './components/WorkoutButtons.tsx';
+import { LandingScreenFooter } from './components/LandingScreenFooter/LandingScreenFooter.tsx';
+import { ExistingWorkoutButtonsRow } from './components/ExistingWorkoutButtonsRow/ExistingWorkoutButtonsRow.tsx';
 import { useAppWorkouts } from '../../../../../contexts/AppWorkoutsProvider/AppWorkoutsProvider.tsx';
 import { FormProvider, useForm, useFormState } from 'react-hook-form';
 import { AppWorkout } from '../../../../../contexts/AppWorkoutsProvider/types.ts';
 import { defaultWorkoutConfig } from '../../../../../contexts/AppWorkoutsProvider/constants.ts';
 import { useUpdateFormBySelectedWorkout } from './hooks/useUpdateFormBySelectedWorkout.ts';
-import { WorkoutConfigTimeView } from './components/WorkoutConfigTimeView.tsx';
+import { WorkoutConfigTimeView } from './components/WorkoutConfigButtons/components/WorkoutConfigTimeView.tsx';
 
 const footerElement = <LandingScreenFooter />;
 
@@ -67,7 +67,7 @@ export const LandingScreen = ({ navigation }: LandingScreenProps) => {
           grow
           gap={'l'}>
           {!!storedWorkouts.length && (
-            <WorkoutButtons workouts={storedWorkouts} />
+            <ExistingWorkoutButtonsRow workouts={storedWorkouts} />
           )}
           <WorkoutConfigTimeView control={formProps.control} />
           <WorkoutConfigButtons />

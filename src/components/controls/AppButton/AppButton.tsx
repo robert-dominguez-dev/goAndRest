@@ -1,15 +1,14 @@
-import { Pressable, PressableProps } from 'react-native';
+import { Pressable } from 'react-native';
 
 import { AppButtonUI, AppButtonUIProps } from './components/AppButtonUI.tsx';
 import { getOnPressWithHapticFeedbackConditionally } from '../helpers/getOnPressWithHapticFeedbackConditionally.ts';
 import { HapticFeedbackTypes } from 'react-native-haptic-feedback';
 import { getPressableOpacity } from '../helpers/getPressableOpacity.ts';
 
-export type AppButtonProps = Pick<PressableProps, 'onPress'> &
-  Pick<
-    AppButtonUIProps,
-    'label' | 'value' | 'backgroundColorStatus' | 'IconComponent'
-  > & { disabled?: boolean };
+export type AppButtonProps = Pick<
+  AppButtonUIProps,
+  'label' | 'value' | 'backgroundColorStatus' | 'IconComponent'
+> & { onPress?: () => void; disabled?: boolean };
 
 export const AppButton = ({
   label,

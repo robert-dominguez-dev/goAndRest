@@ -1,9 +1,9 @@
 import {
   AppRoundedButton,
   AppRoundedButtonProps,
-} from '../../../../../controls/AppRoundedButton/AppRoundedButton.tsx';
-import { AppGradientColorUnion } from '../../../../../../constants/colors.ts';
-import { ChildrenProp } from '../../../../../../types/common.ts';
+} from '../../../../../../../controls/AppRoundedButton/AppRoundedButton.tsx';
+import { AppGradientColorUnion } from '../../../../../../../../constants/colors.ts';
+import { ChildrenProp } from '../../../../../../../../types/common.ts';
 
 type ExistingWorkoutButtonProps = ChildrenProp &
   Pick<AppRoundedButtonProps, 'onPress'> & {

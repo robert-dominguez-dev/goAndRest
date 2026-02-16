@@ -1,14 +1,14 @@
 import {
   AppWorkoutConfigKey,
   workoutSettingsButtonConfigMap,
-} from '../constants.ts';
+} from '../../../constants.ts';
 import { memo } from 'react';
-import { useAppTranslation } from '../../../../../../locales/hooks/useAppTranslation.ts';
-import { AppWorkout } from '../../../../../../contexts/AppWorkoutsProvider/types.ts';
+import { useAppTranslation } from '../../../../../../../../locales/hooks/useAppTranslation.ts';
+import { AppWorkout } from '../../../../../../../../contexts/AppWorkoutsProvider/types.ts';
 import { Control, Controller } from 'react-hook-form';
-import { AppBottomSheet } from '../../../../../common/AppBottomSheet/AppBottomSheet.tsx';
-import { AppText } from '../../../../../common/AppText/AppText.tsx';
-import { AppView } from '../../../../../common/AppView/AppView.tsx';
+import { AppBottomSheet } from '../../../../../../../common/AppBottomSheet/AppBottomSheet.tsx';
+import { AppText } from '../../../../../../../common/AppText/AppText.tsx';
+import { AppView } from '../../../../../../../common/AppView/AppView.tsx';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { X } from 'lucide-react-native';
 import {
@@ -16,8 +16,9 @@ import {
   WorkoutConfigCircularSliderProps,
 } from './WorkoutConfigCircularSlider.tsx';
 import { WorkoutConfigBottomSheetFormattedValue } from './WorkoutConfigBottomSheetFormattedValue.tsx';
-import { AppButtonIconAndLabel } from '../../../../../controls/AppButton/components/AppButtonIconAndLabel.tsx';
-import { AppRow } from '../../../../../common/AppRow.tsx';
+import { AppButtonIconAndLabel } from '../../../../../../../controls/AppButton/components/AppButtonIconAndLabel.tsx';
+import { AppRow } from '../../../../../../../common/AppRow.tsx';
+import { UNLIMITED_NUMBER_OF_LINES } from '../../../../../../../../constants/common.ts';
 
 type WorkoutConfigBottomSheetProps = Pick<
   WorkoutConfigCircularSliderProps,
@@ -55,7 +56,9 @@ const WorkoutConfigBottomSheetComponent = ({
       gap={'l'}
       paddingBottom={'m'}
       alignItems={'center'}>
-      <AppText numberOfLines={0}>{t(descriptionKey)}</AppText>
+      <AppText numberOfLines={UNLIMITED_NUMBER_OF_LINES}>
+        {t(descriptionKey)}
+      </AppText>
       <WorkoutConfigBottomSheetFormattedValue
         control={control}
         name={name}

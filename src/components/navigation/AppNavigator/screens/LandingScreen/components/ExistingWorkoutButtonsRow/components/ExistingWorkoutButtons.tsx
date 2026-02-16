@@ -1,9 +1,9 @@
 import { Dumbbell } from 'lucide-react-native';
-import { useAppWorkouts } from '../../../../../../contexts/AppWorkoutsProvider/AppWorkoutsProvider.tsx';
+import { useAppWorkouts } from '../../../../../../../../contexts/AppWorkoutsProvider/AppWorkoutsProvider.tsx';
 import { ExistingWorkoutButton } from './ExistingWorkoutButton.tsx';
 import { memo } from 'react';
-import { useAppThemedColors } from '../../../../../../hooks/useAppThemedColors.ts';
-import { EXISTING_WORKOUT_BUTTON_ICON_SIZE } from '../constants.ts';
+import { useAppThemedColors } from '../../../../../../../../hooks/useAppThemedColors.ts';
+import { EXISTING_WORKOUT_BUTTON_ICON_SIZE } from '../../../constants.ts';
 
 const ExistingWorkoutButtonsComponent = () => {
   const { text } = useAppThemedColors();

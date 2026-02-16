@@ -1,11 +1,11 @@
-import { AppText } from '../../../common/AppText/AppText.tsx';
+import { AppText, AppTextProps } from '../../../common/AppText/AppText.tsx';
 import { AppColorUnion } from '../../../../types/ui.ts';
 import { LucideIcon } from 'lucide-react-native';
 import { useAppThemedColors } from '../../../../hooks/useAppThemedColors.ts';
 
 const ICON_SIZE = 28;
 
-export type AppButtonIconAndLabelProps = {
+export type AppButtonIconAndLabelProps = Pick<AppTextProps, 'textAlign'> & {
   label: string;
   textColorStatus?: AppColorUnion;
   IconComponent?: LucideIcon;
@@ -14,6 +14,7 @@ export type AppButtonIconAndLabelProps = {
 export const AppButtonIconAndLabel = ({
   label,
   IconComponent,
+  textAlign,
   textColorStatus = 'text',
 }: AppButtonIconAndLabelProps) => {
   const appColors = useAppThemedColors();
@@ -27,6 +28,7 @@ export const AppButtonIconAndLabel = ({
       )}
       <AppText
         category={'header'}
+        textAlign={textAlign}
         colorStatus={textColorStatus}
         numberOfLines={1}>
         {label}

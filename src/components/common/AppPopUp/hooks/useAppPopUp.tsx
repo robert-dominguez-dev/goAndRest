@@ -1,34 +1,17 @@
 import { useIsVisible } from '../../AppBottomSheet/hooks/useIsVisible.ts';
 import { AppPopUp, AppPopUpProps } from '../AppPopUp.tsx';
 
-type UsePopUpProps = Omit<AppPopUpProps, 'isVisible' | 'onClose'>;
+type UsePopUpProps = Omit<AppPopUpProps, 'onClose'>;
 
-export const useAppPopUp = ({
-  onPrimaryButtonPress,
-  onSecondaryButtonPress,
-  ...props
-}: UsePopUpProps) => {
+export const useAppPopUp = (params: UsePopUpProps) => {
   const { isVisible, onOpen, onClose } = useIsVisible();
-
-  const handlePrimaryButtonPress = () => {
-    onPrimaryButtonPress();
-    onClose();
-  };
-
-  const handleSecondaryButtonPress = props.secondaryButtonLabel
-    ? () => {
-        onSecondaryButtonPress?.();
-        onClose();
-      }
-    : undefined;
 
   const popUpElement = isVisible ? (
     <AppPopUp
-      {...props}
-      onPrimaryButtonPress={handlePrimaryButtonPress}
-      onSecondaryButtonPress={handleSecondaryButtonPress}
+      {...params}
+      onClose={onClose}
     />
   ) : undefined;
 
-  return { popUpElement, handleOpen: onOpen };
+  return { popUpElement, onOpen };
 };
