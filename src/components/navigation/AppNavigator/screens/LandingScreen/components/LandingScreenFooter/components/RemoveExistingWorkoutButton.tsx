@@ -3,26 +3,38 @@ import { AppRoundedButton } from '../../../../../../../controls/AppRoundedButton
 import { AppSize } from '../../../../../../../../types/ui.ts';
 import { useAppThemedColors } from '../../../../../../../../hooks/useAppThemedColors.ts';
 import { useAppPopUp } from '../../../../../../../common/AppPopUp/hooks/useAppPopUp.tsx';
+import { useAppTranslation } from '../../../../../../../../locales/hooks/useAppTranslation.ts';
 
 type DeleteExistingWorkoutButtonProps = {
   onRemove: () => void;
+  workoutName: string;
 };
 
 export const RemoveExistingWorkoutButton = ({
   onRemove,
+  workoutName,
 }: DeleteExistingWorkoutButtonProps) => {
+  const t = useAppTranslation();
+
   const { text } = useAppThemedColors();
 
   const { popUpElement, onOpen } = useAppPopUp({
-    title: 'Smazat?',
-    description: 'Opravdu jdeme mazat?',
+    title: t('screens.landingScreen.removeStoredWorkoutPopUp.title'),
+    description: t(
+      'screens.landingScreen.removeStoredWorkoutPopUp.description',
+      { value: workoutName },
+    ),
     primaryButtonProps: {
-      label: 'Smazat',
+      label: t(
+        'screens.landingScreen.removeStoredWorkoutPopUp.positiveButtonLabel',
+      ),
       onPress: onRemove,
       backgroundColorStatus: 'negative',
     },
     secondaryButtonProps: {
-      label: 'Zrušit',
+      label: t(
+        'screens.landingScreen.removeStoredWorkoutPopUp.negativeButtonLabel',
+      ),
       backgroundColorStatus: 'backgroundAlt',
     },
   });

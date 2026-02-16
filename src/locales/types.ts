@@ -9,6 +9,13 @@ type WorkoutConfigItemTexts = {
 
 type WorkoutConfigTexts = Record<AppWorkoutConfigKey, WorkoutConfigItemTexts>;
 
+type PopUpTexts = {
+  title: string;
+  description: string;
+  positiveButtonLabel: string;
+  negativeButtonLabel: string;
+};
+
 export type AppTranslations = {
   common: {
     ok: string;
@@ -17,6 +24,7 @@ export type AppTranslations = {
   screens: {
     landingScreen: {
       title: string;
+      removeStoredWorkoutPopUp: PopUpTexts;
     };
     settingsScreen: {
       title: string;

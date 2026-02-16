@@ -47,6 +47,7 @@ const LandingScreenFooterComponent = () => {
   const deleteButtonElement: JSX.Element | undefined = selectedStoredWorkout ? (
     <RemoveExistingWorkoutButton
       onRemove={() => removeWorkout(selectedStoredWorkout.id)}
+      workoutName={selectedStoredWorkout.meta.name}
     />
   ) : undefined;
 

@@ -35,6 +35,13 @@ export const sk = {
   screens: {
     landingScreen: {
       title: 'Predvolený tréning',
+      removeStoredWorkoutPopUp: {
+        title: 'Vymazať',
+        description:
+          'Naozaj chceš vymazať konfiguráciu "{{value}}"? Táto akcia sa nedá vrátiť späť.',
+        positiveButtonLabel: 'Vymazať',
+        negativeButtonLabel: 'Zrušiť',
+      },
     },
     settingsScreen: {
       title: 'Nastavenia',

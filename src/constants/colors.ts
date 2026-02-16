@@ -66,6 +66,7 @@ export const appColorsLight = {
   text: appDesignSystemColors.grayscale['700'],
   background: appDesignSystemColors.grayscale['50'],
   backgroundAlt: appDesignSystemColors.grayscale['200'],
+  border: appDesignSystemColors.grayscale['100'],
   slider: appDesignSystemColors.grayscale['700'],
   work: appDesignSystemColors.negative['100'],
   rest: appDesignSystemColors.primary['300'],
@@ -86,7 +87,8 @@ export const appColorsDark = {
   negativeMuted: appDesignSystemColors.negative['50'],
   text: appDesignSystemColors.grayscale['100'],
   background: appDesignSystemColors.grayscale['800'],
-  backgroundAlt: appDesignSystemColors.grayscale['600'],
+  backgroundAlt: appDesignSystemColors.grayscale['700'],
+  border: appDesignSystemColors.grayscale['600'],
   slider: appDesignSystemColors.grayscale['100'],
   work: '#c50824',
   rest: '#10a590',
@@ -105,8 +107,8 @@ export const appLinearGradientColorsLight = {
     appDesignSystemColors.primary['500'],
   ],
   grayscale: [
-    appDesignSystemColors.grayscale['100'],
-    appDesignSystemColors.grayscale['400'],
+    appDesignSystemColors.grayscale['0'],
+    appDesignSystemColors.grayscale['200'],
   ],
   negative: [
     appDesignSystemColors.negative['50'],
@@ -127,8 +129,8 @@ export const appLinearGradientColorsDark = {
     appDesignSystemColors.primary['600'],
   ],
   grayscale: [
-    appDesignSystemColors.grayscale['500'],
-    appDesignSystemColors.grayscale['700'],
+    appDesignSystemColors.grayscale['600'],
+    appDesignSystemColors.grayscale['800'],
   ],
   negative: [
     appDesignSystemColors.negative['200'],

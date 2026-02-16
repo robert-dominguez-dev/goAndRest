@@ -1,4 +1,7 @@
-import { AppWorkoutConfigKey, workoutSettingsButtonConfigMap, } from '../../../constants.ts';
+import {
+  AppWorkoutConfigKey,
+  workoutSettingsButtonConfigMap,
+} from '../../../constants.ts';
 import { memo } from 'react';
 import { useAppTranslation } from '../../../../../../../../locales/hooks/useAppTranslation.ts';
 import { AppWorkout } from '../../../../../../../../contexts/AppWorkoutsProvider/types.ts';
@@ -8,7 +11,10 @@ import { AppText } from '../../../../../../../common/AppText/AppText.tsx';
 import { AppView } from '../../../../../../../common/AppView/AppView.tsx';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { X } from 'lucide-react-native';
-import { WorkoutConfigCircularSlider, WorkoutConfigCircularSliderProps, } from './WorkoutConfigCircularSlider.tsx';
+import {
+  WorkoutConfigCircularSlider,
+  WorkoutConfigCircularSliderProps,
+} from './WorkoutConfigCircularSlider.tsx';
 import { WorkoutConfigBottomSheetFormattedValue } from './WorkoutConfigBottomSheetFormattedValue.tsx';
 import { AppButtonIconAndLabel } from '../../../../../../../controls/AppButton/components/AppButtonIconAndLabel.tsx';
 import { AppRow } from '../../../../../../../common/AppRow.tsx';

@@ -35,6 +35,13 @@ export const en = {
   screens: {
     landingScreen: {
       title: 'Default workout',
+      removeStoredWorkoutPopUp: {
+        title: 'Delete Workout',
+        description:
+          'Are you sure you want to delete the "{{value}}" configuration? This action cannot be undone.',
+        positiveButtonLabel: 'Delete',
+        negativeButtonLabel: 'Cancel',
+      },
     },
     settingsScreen: {
       title: 'Settings',
