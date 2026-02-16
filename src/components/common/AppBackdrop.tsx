@@ -1,6 +1,9 @@
 import { Modal } from 'react-native';
 
-import { FILL_CONTAINER_DIMENSION, POP_UP_Z_INDEX, } from '../../constants/common.ts';
+import {
+  FILL_CONTAINER_DIMENSION,
+  POP_UP_Z_INDEX,
+} from '../../constants/common.ts';
 import { ChildrenProp } from '../../types/common.ts';
 import { AppView } from './AppView/AppView.tsx';
 

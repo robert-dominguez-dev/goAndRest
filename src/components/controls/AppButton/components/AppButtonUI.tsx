@@ -21,6 +21,7 @@ export const AppButtonUI = ({
   textColorStatus,
   backgroundColorStatus,
   IconComponent,
+  category = 'header',
 }: AppButtonUIProps) => {
   const labelTextAlign: AppTextProps['textAlign'] =
     !value && !IconComponent ? 'center' : undefined;
@@ -40,11 +41,12 @@ export const AppButtonUI = ({
         textColorStatus={textColorStatus}
         IconComponent={IconComponent}
         textAlign={labelTextAlign}
+        category={category}
       />
       {!!value && (
         <AppText
           textAlign={'right'}
-          category={'header'}
+          category={category}
           colorStatus={textColorStatus}
           numberOfLines={1}>
           {value}

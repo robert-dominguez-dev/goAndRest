@@ -31,6 +31,7 @@ const WorkoutConfigButtonComponent = ({
       IconComponent={IconComponent}
       onPress={onPress}
       disabled={disabled}
+      category={'subHeader'}
     />
   );
 };

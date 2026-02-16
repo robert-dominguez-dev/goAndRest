@@ -9,7 +9,9 @@ import { getPressableOpacity } from '../../../../../../../controls/helpers/getPr
 import { sizes } from '../../../../../../../../constants/ui.ts';
 import { AppView } from '../../../../../../../common/AppView/AppView.tsx';
 import { AppText } from '../../../../../../../common/AppText/AppText.tsx';
+import { useAppTranslation } from '../../../../../../../../locales/hooks/useAppTranslation.ts';
 import { AppRow } from '../../../../../../../common/AppRow.tsx';
+import { UNLIMITED_NUMBER_OF_LINES } from '../../../../../../../../constants/common.ts';
 
 const { configButtonSize, configButtonBorderRadius } = sizes;
 
@@ -19,12 +21,14 @@ const WorkoutConfigVerticalButtonComponent = ({
   onPress,
   disabled,
 }: WorkoutConfigButtonProps) => {
+  const t = useAppTranslation();
+
   const value = useWatch({
     control,
     name,
   });
 
-  const { backgroundColorStatus, valueFormatter } =
+  const { labelKey, backgroundColorStatus, valueFormatter } =
     workoutSettingsButtonConfigMap[name];
 
   const formattedValue = valueFormatter(value);
@@ -49,8 +53,19 @@ const WorkoutConfigVerticalButtonComponent = ({
             width={configButtonSize}
             borderRadius={configButtonBorderRadius}
             backgroundColorStatus={backgroundColorStatus}
-            justifyContent={'center'}
+            paddingHorizontal={'xs'}
+            paddingTop={'s'}
+            paddingBottom={'xs'}
+            justifyContent={'space-between'}
             alignItems={'center'}>
+            <AppRow>
+              <AppText
+                textAlign={'center'}
+                category={'title'}
+                numberOfLines={UNLIMITED_NUMBER_OF_LINES}>
+                {t(labelKey)}
+              </AppText>
+            </AppRow>
             <AppRow>
               <AppText
                 textAlign={'center'}

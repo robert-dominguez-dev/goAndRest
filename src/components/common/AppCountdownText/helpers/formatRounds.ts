@@ -1,1 +1,1 @@
-export const formatRounds = (rounds: number) => `${rounds}x`;
+export const formatRounds = (rounds: number): string => String(rounds);

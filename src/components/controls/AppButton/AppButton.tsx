@@ -7,7 +7,7 @@ import { getPressableOpacity } from '../helpers/getPressableOpacity.ts';
 
 export type AppButtonProps = Pick<
   AppButtonUIProps,
-  'label' | 'value' | 'backgroundColorStatus' | 'IconComponent'
+  'label' | 'value' | 'backgroundColorStatus' | 'IconComponent' | 'category'
 > & { onPress?: () => void; disabled?: boolean };
 
 export const AppButton = ({
@@ -16,6 +16,7 @@ export const AppButton = ({
   onPress,
   disabled,
   IconComponent,
+  category,
   backgroundColorStatus = 'primary',
 }: AppButtonProps) => (
   <Pressable
@@ -37,6 +38,7 @@ export const AppButton = ({
           opacity={opacity}
           backgroundColorStatus={backgroundColorStatus}
           IconComponent={IconComponent}
+          category={category}
           textColorStatus={'text'}
         />
       );
