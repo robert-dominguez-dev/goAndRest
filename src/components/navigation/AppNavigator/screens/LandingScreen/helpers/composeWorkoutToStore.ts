@@ -13,7 +13,6 @@ export const composeWorkoutToStore = (
         ...selectedStoredWorkout,
         meta: {
           ...selectedStoredWorkout.meta,
-          name,
           updatedAt: new Date(),
         },
         config: workoutConfig,
