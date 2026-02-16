@@ -41,6 +41,18 @@ export const cs = {
         positiveButtonLabel: 'Smazat',
         negativeButtonLabel: 'Zrušit',
       },
+      saveWorkoutBottomSheet: {
+        title: 'Uložení tréninku',
+        description: 'Pojmenuj svůj trénink a vyber ikonu.',
+        inputLabel: 'Název tréninku',
+        positiveButtonLabel: 'Uložit trénink',
+        invalidButtonLabel: 'Nejprve vyplň',
+      },
+      rules: {
+        required: 'Jméno musíš vyplnit...',
+        minLength: 'Jméno musí obsahovat alespoň {{value}} znaky.',
+        maxLength: 'Jméno nesmí obsahovat více než {{value}} znaků.',
+      },
     },
     settingsScreen: {
       title: 'Nastavení',

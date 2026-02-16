@@ -25,6 +25,15 @@ export type AppTranslations = {
     landingScreen: {
       title: string;
       removeStoredWorkoutPopUp: PopUpTexts;
+      saveWorkoutBottomSheet: Omit<PopUpTexts, 'negativeButtonLabel'> & {
+        inputLabel: string;
+        invalidButtonLabel: string;
+      };
+      rules: {
+        required: string;
+        minLength: string;
+        maxLength: string;
+      };
     };
     settingsScreen: {
       title: string;

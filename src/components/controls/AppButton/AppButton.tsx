@@ -16,7 +16,7 @@ export const AppButton = ({
   onPress,
   disabled,
   IconComponent,
-  category,
+  category = 'subHeader',
   backgroundColorStatus = 'primary',
 }: AppButtonProps) => (
   <Pressable

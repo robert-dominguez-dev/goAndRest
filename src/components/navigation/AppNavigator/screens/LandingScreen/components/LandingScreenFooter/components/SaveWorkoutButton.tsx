@@ -5,9 +5,10 @@ import { useAppThemedColors } from '../../../../../../../../hooks/useAppThemedCo
 import { useAppWorkouts } from '../../../../../../../../contexts/AppWorkoutsProvider/AppWorkoutsProvider.tsx';
 import { useFormContext, useFormState } from 'react-hook-form';
 import { AppWorkout } from '../../../../../../../../contexts/AppWorkoutsProvider/types.ts';
-import { composeWorkoutToStore } from '../../../helpers/composeWorkoutToStore.ts';
 import { SaveWorkoutBottomSheet } from './SaveWorkoutBottomSheet.tsx';
 import { useIsVisible } from '../../../../../../../common/AppBottomSheet/hooks/useIsVisible.ts';
+import { composeWorkoutToStore } from '../../../helpers/composeWorkoutToStore.ts';
+import { useAppPopUp } from '../../../../../../../common/AppPopUp/hooks/useAppPopUp.tsx';
 
 export const SaveWorkoutButton = () => {
   const { text } = useAppThemedColors();
@@ -16,11 +17,12 @@ export const SaveWorkoutButton = () => {
 
   const { selectedStoredWorkout, storeWorkout } = useAppWorkouts();
 
-  const { control, handleSubmit, reset } = useFormContext<AppWorkout>();
+  const { control, handleSubmit, reset, resetField } =
+    useFormContext<AppWorkout>();
 
   const { isDirty } = useFormState({ control });
 
-  const handleAddWorkout = (workout: AppWorkout) => {
+  const handleSaveWorkout = (workout: AppWorkout) => {
     const workoutToStore = composeWorkoutToStore(
       workout,
       selectedStoredWorkout,
@@ -31,10 +33,32 @@ export const SaveWorkoutButton = () => {
     onClose();
   };
 
+  const handleCloseAndRevertChanges = () => {
+    resetField('name');
+    onClose();
+  };
+
+  const handleSave = handleSubmit(handleSaveWorkout);
+
+  const { onOpen: openPopUp, popUpElement } = useAppPopUp({
+    title: 'Uložení změn',
+    description: 'Chcete uložit provedené změny do stávajícího tréninku?',
+    primaryButtonProps: {
+      label: 'Uložit',
+      onPress: handleSave,
+    },
+    secondaryButtonProps: {
+      label: 'Zavřít',
+      backgroundColorStatus: 'transparent',
+    },
+  });
+
+  const handlePress = selectedStoredWorkout ? openPopUp : onOpen;
+
   return (
     <>
       <AppRoundedButton
-        onPress={onOpen}
+        onPress={handlePress}
         disabled={!isDirty}
         size={'s'}
         status={'grayscale'}>
@@ -46,9 +70,10 @@ export const SaveWorkoutButton = () => {
       <SaveWorkoutBottomSheet
         control={control}
         isVisible={isVisible}
-        onClose={onClose}
-        onConfirm={handleSubmit(handleAddWorkout)}
+        onClose={handleCloseAndRevertChanges}
+        onSave={handleSave}
       />
+      {popUpElement}
     </>
   );
 };

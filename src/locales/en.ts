@@ -42,6 +42,18 @@ export const en = {
         positiveButtonLabel: 'Delete',
         negativeButtonLabel: 'Cancel',
       },
+      saveWorkoutBottomSheet: {
+        title: 'Save Workout',
+        description: 'Name your workout and choose an icon.',
+        inputLabel: 'Workout name',
+        positiveButtonLabel: 'Save workout',
+        invalidButtonLabel: 'Fill in first',
+      },
+      rules: {
+        required: 'Name is required...',
+        minLength: 'Name must be at least {{value}} characters long.',
+        maxLength: 'Name cannot exceed {{value}} characters.',
+      },
     },
     settingsScreen: {
       title: 'Settings',

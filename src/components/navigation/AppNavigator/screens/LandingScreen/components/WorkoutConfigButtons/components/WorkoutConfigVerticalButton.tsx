@@ -3,7 +3,9 @@ import { memo } from 'react';
 import { useWatch } from 'react-hook-form';
 import { WorkoutConfigButtonProps } from '../../../types.ts';
 import { Pressable } from 'react-native';
-import { getOnPressWithHapticFeedbackConditionally } from '../../../../../../../controls/helpers/getOnPressWithHapticFeedbackConditionally.ts';
+import {
+  getOnPressWithHapticFeedbackConditionally
+} from '../../../../../../../controls/helpers/getOnPressWithHapticFeedbackConditionally.ts';
 import { HapticFeedbackTypes } from 'react-native-haptic-feedback';
 import { getPressableOpacity } from '../../../../../../../controls/helpers/getPressableOpacity.ts';
 import { sizes } from '../../../../../../../../constants/ui.ts';
@@ -54,8 +56,7 @@ const WorkoutConfigVerticalButtonComponent = ({
             borderRadius={configButtonBorderRadius}
             backgroundColorStatus={backgroundColorStatus}
             paddingHorizontal={'xs'}
-            paddingTop={'s'}
-            paddingBottom={'xs'}
+            paddingVertical={'sm'}
             justifyContent={'space-between'}
             alignItems={'center'}>
             <AppRow>
@@ -69,7 +70,7 @@ const WorkoutConfigVerticalButtonComponent = ({
             <AppRow>
               <AppText
                 textAlign={'center'}
-                category={'header'}
+                category={'subHeader'}
                 numberOfLines={1}>
                 {formattedValue}
               </AppText>

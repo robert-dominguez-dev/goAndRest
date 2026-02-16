@@ -1,41 +1,58 @@
 import { X } from 'lucide-react-native';
-import { Control } from 'react-hook-form';
+import { Control, useFormState } from 'react-hook-form';
 import { AppWorkout } from '../../../../../../../../contexts/AppWorkoutsProvider/types.ts';
 import { AppBottomSheet } from '../../../../../../../common/AppBottomSheet/AppBottomSheet.tsx';
-import { WorkoutConfigCircularSliderProps } from '../../WorkoutConfigButtons/components/WorkoutConfigCircularSlider.tsx';
 import { AppView } from '../../../../../../../common/AppView/AppView.tsx';
 import { AppInput } from '../../../../../../../controls/AppInput/AppInput.tsx';
 import { AppText } from '../../../../../../../common/AppText/AppText.tsx';
 import { AppButton } from '../../../../../../../controls/AppButton/AppButton.tsx';
+import { useAppTranslation } from '../../../../../../../../locales/hooks/useAppTranslation.ts';
+import { getWorkoutNameRules } from '../../../../../../../controls/helpers/getWorkoutNameRules.ts';
+import { TranslateKey } from '../../../../../../../../locales/types.ts';
 
-type SaveWorkoutButtonProps = Pick<
-  WorkoutConfigCircularSliderProps,
-  'onConfirm'
-> & {
+type SaveWorkoutButtonProps = {
   control: Control<AppWorkout>;
   isVisible: boolean;
   onClose: () => void;
+  onSave: () => void;
 };
 
 export const SaveWorkoutBottomSheet = ({
   control,
   isVisible,
   onClose,
-  onConfirm,
+  onSave,
 }: SaveWorkoutButtonProps) => {
+  const t = useAppTranslation();
+
+  const rules = getWorkoutNameRules(t);
+
+  const { isValid } = useFormState<AppWorkout>({
+    control,
+    name: 'name',
+  });
+
+  const buttonLabelTranslateKey: TranslateKey = isValid
+    ? 'screens.landingScreen.saveWorkoutBottomSheet.positiveButtonLabel'
+    : 'screens.landingScreen.saveWorkoutBottomSheet.invalidButtonLabel';
+
   const bottomSheetContent = (
     <AppView gap={'l'}>
-      <AppText>Pojmenuj sou konfiguraci tréninku a vyber ikonu.</AppText>
+      <AppText>
+        {t('screens.landingScreen.saveWorkoutBottomSheet.description')}
+      </AppText>
       <AppInput
         name={'name'}
+        label={t('screens.landingScreen.saveWorkoutBottomSheet.inputLabel')}
         control={control}
-        label={'Název konfigurace'}
+        rules={rules}
         autoFocus
       />
       <AppButton
-        label={'Uložit'}
-        onPress={onConfirm}
+        label={t(buttonLabelTranslateKey)}
+        onPress={onSave}
         backgroundColorStatus={'primary'}
+        disabled={!isValid}
       />
     </AppView>
   );
@@ -44,7 +61,7 @@ export const SaveWorkoutBottomSheet = ({
     <AppBottomSheet
       closeable
       scrollable={false}
-      bottomSheetTitle={'Uložení konfigurace'}
+      bottomSheetTitle={t('screens.landingScreen.saveWorkoutBottomSheet.title')}
       isVisible={isVisible}
       bottomSheetContent={bottomSheetContent}
       backgroundColorStatus={'backgroundAlt'}
