@@ -38,7 +38,7 @@ export const sk = {
       removeStoredWorkoutPopUp: {
         title: 'Vymazať',
         description:
-          'Naozaj chceš vymazať konfiguráciu "{{value}}"? Táto akcia sa nedá vrátiť späť.',
+          'Naozaj chceš vymazať tréning "{{value}}"? Táto akcia sa nedá vrátiť späť.',
         positiveButtonLabel: 'Vymazať',
         negativeButtonLabel: 'Zrušiť',
       },

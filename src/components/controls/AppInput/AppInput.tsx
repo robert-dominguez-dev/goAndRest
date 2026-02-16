@@ -12,6 +12,7 @@ export const AppInput = <TFieldValues extends FieldValues>({
   secureTextEntry,
   multiline,
   numeric,
+  autoFocus,
   /**
    * Editable false only disables input,
    * but keeps value in the form for submitting in contrast to disabled prop,
@@ -32,6 +33,7 @@ export const AppInput = <TFieldValues extends FieldValues>({
           secureTextEntry={secureTextEntry}
           multiline={multiline}
           numeric={numeric}
+          autoFocus={autoFocus}
         />
       );
     },

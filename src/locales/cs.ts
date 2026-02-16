@@ -37,7 +37,7 @@ export const cs = {
       removeStoredWorkoutPopUp: {
         title: 'Smazání',
         description:
-          'Opravdu chceš smazat konfiguraci "{{value}}"? Tuto akci nelze vzít zpět.',
+          'Opravdu chceš smazat trénink "{{value}}"? Tuto akci nelze vzít zpět.',
         positiveButtonLabel: 'Smazat',
         negativeButtonLabel: 'Zrušit',
       },

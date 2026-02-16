@@ -6,7 +6,6 @@ import { AppRow } from '../../../common/AppRow.tsx';
 import { AppSize } from '../../../../types/ui.ts';
 
 import { useAppTextStyle } from '../../../common/AppText/hooks/useAppTextStyle.ts';
-import { AppViewWithGradientBorderForInput } from '../../AppViewWithGradientBorderForInput.tsx';
 import { AppInputSpecificProps } from '../types.ts';
 import { AppFormRenderProps } from '../../types.ts';
 import { getAppInputStringValue } from '../helpers/getAppInputStringValue.ts';
@@ -24,6 +23,7 @@ export const AppInputRender = <TFieldValues extends FieldValues>({
   onChange,
   isInvalid,
   disabled,
+  autoFocus,
 }: AppFormRenderProps<TFieldValues, AppInputSpecificProps>) => {
   const commonTextStyle = useAppTextStyle({
     category: 'content',
@@ -59,32 +59,31 @@ export const AppInputRender = <TFieldValues extends FieldValues>({
 
   const { height, minHeight, numberOfLines } =
     getAppInputMultilineDependentProps(multiline);
-
+  console.log(autoFocus);
   return (
-    <AppViewWithGradientBorderForInput
-      isInvalid={isInvalid}
-      backgroundColorStatus={'text'}
+    <AppRow
       minHeight={minHeight}
-      height={height}>
-      <AppRow
-        gap={'s'}
-        alignItems={'center'}>
-        <TextInput
-          multiline={multiline}
-          numberOfLines={numberOfLines}
-          editable={!disabled}
-          placeholder={placeholder}
-          secureTextEntry={secureTextEntry}
-          onChangeText={handleChange}
-          value={stringValue}
-          style={inputTextStyle}
-          keyboardType={keyboardType}
-          autoCorrect={false}
-          autoCapitalize={'none'}
-          autoComplete={'off'}
-        />
-        {maybeResetIcon}
-      </AppRow>
-    </AppViewWithGradientBorderForInput>
+      height={height}
+      gap={'s'}
+      alignItems={'center'}
+      borderWidthOverride={1}
+      borderColorStatus={'border'}>
+      <TextInput
+        autoFocus={autoFocus}
+        multiline={multiline}
+        numberOfLines={numberOfLines}
+        editable={!disabled}
+        placeholder={placeholder}
+        secureTextEntry={secureTextEntry}
+        onChangeText={handleChange}
+        value={stringValue}
+        style={inputTextStyle}
+        keyboardType={keyboardType}
+        autoCorrect={false}
+        autoCapitalize={'none'}
+        autoComplete={'off'}
+      />
+      {maybeResetIcon}
+    </AppRow>
   );
 };

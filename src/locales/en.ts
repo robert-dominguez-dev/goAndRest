@@ -38,7 +38,7 @@ export const en = {
       removeStoredWorkoutPopUp: {
         title: 'Delete Workout',
         description:
-          'Are you sure you want to delete the "{{value}}" configuration? This action cannot be undone.',
+          'Are you sure you want to delete the "{{value}}" workout? This action cannot be undone.',
         positiveButtonLabel: 'Delete',
         negativeButtonLabel: 'Cancel',
       },

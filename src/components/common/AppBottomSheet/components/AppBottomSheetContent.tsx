@@ -53,9 +53,10 @@ const AppBottomSheetContentComponent = ({
       paddingHorizontal={'m'}
       paddingBottom={safeAreaPaddingBottom}
       backgroundColorStatus={backgroundColorStatus}
-      borderColorStatus={'background'}
       borderTopLeftRadius={'m'}
-      borderTopRightRadius={'m'}>
+      borderTopRightRadius={'m'}
+      borderColorStatus={'border'}
+      borderWidthOverride={1}>
       {header}
       {!!children && (
         <ScrollView
