@@ -5,8 +5,11 @@ import { useRootStackNavigation } from '../../../../../../hooks/useRootStackNavi
 import { AppNavigatorScreen } from '../../../../../types.ts';
 import { useAppThemedColors } from '../../../../../../../../hooks/useAppThemedColors.ts';
 import { categoryToIconSize } from '../../../../../../../controls/AppButton/components/AppButtonIconAndLabel.tsx';
+import { useAppTranslation } from '../../../../../../../../locales/hooks/useAppTranslation.ts';
 
 const SavedWorkoutsButtonComponent = () => {
+  const t = useAppTranslation();
+
   const { text } = useAppThemedColors();
 
   const navigation = useRootStackNavigation();
@@ -16,7 +19,7 @@ const SavedWorkoutsButtonComponent = () => {
 
   return (
     <AppButton
-      label={'Vybrat uložený trénink'}
+      label={t('screens.landingScreen.selectStoredWorkoutButtonLabel')}
       backgroundColorStatus={'transparent'}
       borderColorStatus={'text'}
       borderStyle={'dotted'}

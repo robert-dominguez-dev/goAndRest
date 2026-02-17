@@ -35,6 +35,7 @@ export const en = {
   screens: {
     landingScreen: {
       title: 'New Workout',
+      selectStoredWorkoutButtonLabel: 'Select Stored Workout',
       removeStoredWorkoutPopUp: {
         title: 'Delete Workout',
         description:
@@ -79,6 +80,11 @@ export const en = {
     },
     savedWorkoutsScreen: {
       title: 'Saved Workouts',
+      existingWorkoutItem: {
+        totalTime: 'Total Time',
+        startButtonLabel: 'Start',
+        deleteButtonLabel: 'Delete',
+      },
     },
   },
 } as const satisfies AppTranslations;

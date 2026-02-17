@@ -29,6 +29,7 @@ export type AppTranslations = {
   screens: {
     landingScreen: {
       title: string;
+      selectStoredWorkoutButtonLabel: string;
       removeStoredWorkoutPopUp: PopUpTexts;
       resetWorkoutPopUp: PopUpTexts;
       saveWorkoutBottomSheet: SaveWorkoutBottomSheetTexts;
@@ -54,6 +55,11 @@ export type AppTranslations = {
     };
     savedWorkoutsScreen: {
       title: string;
+      existingWorkoutItem: {
+        totalTime: string;
+        startButtonLabel: string;
+        deleteButtonLabel: string;
+      };
     };
   };
 };

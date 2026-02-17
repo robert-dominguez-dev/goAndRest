@@ -34,6 +34,7 @@ export const cs = {
   screens: {
     landingScreen: {
       title: 'Nový trénink',
+      selectStoredWorkoutButtonLabel: 'Vybrat uložený trénink',
       removeStoredWorkoutPopUp: {
         title: 'Smazání',
         description:
@@ -78,6 +79,11 @@ export const cs = {
     },
     savedWorkoutsScreen: {
       title: 'Uložené tréninky',
+      existingWorkoutItem: {
+        totalTime: 'Celkový čas',
+        startButtonLabel: 'Start',
+        deleteButtonLabel: 'Smazat',
+      },
     },
   },
 } as const satisfies AppTranslations;
