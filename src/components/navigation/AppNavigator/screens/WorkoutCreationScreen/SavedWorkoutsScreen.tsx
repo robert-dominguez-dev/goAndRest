@@ -34,7 +34,12 @@ export const SavedWorkoutsScreen = ({
         label: t(
           'screens.landingScreen.removeStoredWorkoutPopUp.positiveButtonLabel',
         ),
-        onPress: () => removeWorkout(workout.id),
+        onPress: () => {
+          removeWorkout(workout.id);
+          if (storedWorkouts.length <= 1) {
+            navigation.goBack();
+          }
+        },
         backgroundColorStatus: 'negative',
       },
       secondaryButtonProps: {

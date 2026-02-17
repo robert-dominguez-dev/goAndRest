@@ -32,7 +32,7 @@ export const SavedWorkoutItemFooterButton = ({
         onPress,
         HapticFeedbackTypes.selection,
       )}
-      style={{ flexGrow: 1 }}>
+      style={{ flex: 1, flexBasis: 0 }}>
       {({ pressed }) => {
         const opacity = getPressableOpacity({
           pressed,
