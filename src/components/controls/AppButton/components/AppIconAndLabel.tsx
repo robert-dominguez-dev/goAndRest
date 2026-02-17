@@ -7,24 +7,26 @@ export const categoryToIconSize: Partial<Record<AppTextCategoryUnion, number>> =
   {
     header: 28,
     subHeader: 24,
+    title: 16,
   };
 
-export type AppButtonIconAndLabelProps = Pick<
+export type AppIconAndLabelProps = Pick<
   AppTextProps,
-  'textAlign' | 'category'
+  'textAlign' | 'category' | 'grow'
 > & {
   label: string;
   textColorStatus?: AppColorUnion;
   IconComponent?: LucideIcon;
 };
 
-export const AppButtonIconAndLabel = ({
+export const AppIconAndLabel = ({
   label,
   IconComponent,
   textAlign,
   category,
+  grow,
   textColorStatus = 'text',
-}: AppButtonIconAndLabelProps) => {
+}: AppIconAndLabelProps) => {
   const appColors = useAppThemedColors();
 
   const iconSize: number | undefined = category
@@ -39,11 +41,12 @@ export const AppButtonIconAndLabel = ({
           size={iconSize}
         />
       )}
+
       <AppText
+        grow={grow}
         category={category}
         textAlign={textAlign}
-        colorStatus={textColorStatus}
-        numberOfLines={1}>
+        colorStatus={textColorStatus}>
         {label}
       </AppText>
     </>

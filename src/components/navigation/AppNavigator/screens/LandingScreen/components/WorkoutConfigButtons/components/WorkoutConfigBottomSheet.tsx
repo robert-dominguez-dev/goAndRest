@@ -16,7 +16,7 @@ import {
   WorkoutConfigCircularSliderProps,
 } from './WorkoutConfigCircularSlider.tsx';
 import { WorkoutConfigBottomSheetFormattedValue } from './WorkoutConfigBottomSheetFormattedValue.tsx';
-import { AppButtonIconAndLabel } from '../../../../../../../controls/AppButton/components/AppButtonIconAndLabel.tsx';
+import { AppIconAndLabel } from '../../../../../../../controls/AppButton/components/AppIconAndLabel.tsx';
 import { AppRow } from '../../../../../../../common/AppRow.tsx';
 import { UNLIMITED_NUMBER_OF_LINES } from '../../../../../../../../constants/common.ts';
 
@@ -90,7 +90,7 @@ const WorkoutConfigBottomSheetComponent = ({
       <AppRow
         gap={'s'}
         alignItems={'center'}>
-        <AppButtonIconAndLabel
+        <AppIconAndLabel
           label={t(labelKey)}
           IconComponent={IconComponent}
           category={'header'}

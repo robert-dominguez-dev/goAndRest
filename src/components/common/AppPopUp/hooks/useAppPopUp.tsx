@@ -1,17 +1,18 @@
-import { useIsVisible } from '../../AppBottomSheet/hooks/useIsVisible.ts';
 import { AppPopUp, AppPopUpProps } from '../AppPopUp.tsx';
+import { JSX, useState } from 'react';
 
 type UsePopUpProps = Omit<AppPopUpProps, 'onClose'>;
 
-export const useAppPopUp = (params: UsePopUpProps) => {
-  const { isVisible, onOpen, onClose } = useIsVisible();
+export const useAppPopUp = () => {
+  const [popUp, setPopUp] = useState<JSX.Element | null>(null);
 
-  const popUpElement = isVisible ? (
-    <AppPopUp
-      {...params}
-      onClose={onClose}
-    />
-  ) : undefined;
+  const handleOpen = (params: UsePopUpProps) =>
+    setPopUp(
+      <AppPopUp
+        {...params}
+        onClose={() => setPopUp(null)}
+      />,
+    );
 
-  return { popUpElement, onOpen };
+  return { popUp, handleOpen };
 };

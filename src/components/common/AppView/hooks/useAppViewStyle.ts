@@ -1,9 +1,5 @@
 import { useAppThemedColors } from '../../../../hooks/useAppThemedColors.ts';
-import {
-  AppColorUnion,
-  AppSizeUnion,
-  BorderProps,
-} from '../../../../types/ui.ts';
+import { AppColorUnion, AppSizeUnion, BorderProps, } from '../../../../types/ui.ts';
 import { sizes } from '../../../../constants/ui.ts';
 import { ViewStyle } from 'react-native';
 import { getAppSize } from '../../../../helpers/getAppSize.ts';
@@ -21,6 +17,7 @@ export type UseAppViewStyleParams = Pick<
   | 'justifyContent'
   | 'flexDirection'
   | 'flexWrap'
+  | 'flexBasis'
   | 'minHeight'
   | 'maxHeight'
   | 'minWidth'
@@ -29,6 +26,7 @@ export type UseAppViewStyleParams = Pick<
   | 'pointerEvents'
   | 'opacity'
   | 'borderStyle'
+  | 'overflow'
 > & {
   borderWidthOverride?: AppSizeUnion;
   backgroundColorStatus?: AppColorUnion;
@@ -62,6 +60,7 @@ export const useAppViewStyle = ({
   justifyContent,
   flexDirection,
   flexWrap,
+  flexBasis,
   minHeight,
   maxHeight,
   minWidth,
@@ -70,6 +69,7 @@ export const useAppViewStyle = ({
   pointerEvents,
   opacity,
   borderStyle,
+  overflow,
   borderWidthOverride,
   backgroundColorStatus,
   borderColorStatus,
@@ -112,6 +112,7 @@ export const useAppViewStyle = ({
     justifyContent,
     flexDirection,
     flexWrap,
+    flexBasis,
     minHeight,
     maxHeight,
     minWidth,
@@ -120,6 +121,7 @@ export const useAppViewStyle = ({
     pointerEvents,
     opacity,
     borderStyle,
+    overflow,
     backgroundColor: backgroundColorStatus
       ? appColors[backgroundColorStatus]
       : undefined,

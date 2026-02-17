@@ -4,7 +4,7 @@ import { ArrowRight, SaveAll } from 'lucide-react-native';
 import { useRootStackNavigation } from '../../../../../../hooks/useRootStackNavigation.ts';
 import { AppNavigatorScreen } from '../../../../../types.ts';
 import { useAppThemedColors } from '../../../../../../../../hooks/useAppThemedColors.ts';
-import { categoryToIconSize } from '../../../../../../../controls/AppButton/components/AppButtonIconAndLabel.tsx';
+import { categoryToIconSize } from '../../../../../../../controls/AppButton/components/AppIconAndLabel.tsx';
 import { useAppTranslation } from '../../../../../../../../locales/hooks/useAppTranslation.ts';
 
 const SavedWorkoutsButtonComponent = () => {

@@ -2,15 +2,12 @@ import { sizes } from '../../../../constants/ui.ts';
 import { AppRow } from '../../../common/AppRow.tsx';
 import { AppText, AppTextProps } from '../../../common/AppText/AppText.tsx';
 import { AppViewProps } from '../../../common/AppView/AppView.tsx';
-import {
-  AppButtonIconAndLabel,
-  AppButtonIconAndLabelProps,
-} from './AppButtonIconAndLabel.tsx';
+import { AppIconAndLabel, AppIconAndLabelProps } from './AppIconAndLabel.tsx';
 import { JSX } from 'react';
 
 const { configButtonSize, configButtonBorderRadius } = sizes;
 
-export type AppButtonUIProps = AppButtonIconAndLabelProps &
+export type AppButtonUIProps = AppIconAndLabelProps &
   Pick<
     AppViewProps,
     'opacity' | 'backgroundColorStatus' | 'borderColorStatus' | 'borderStyle'
@@ -57,7 +54,7 @@ export const AppButtonUI = ({
       height={configButtonSize}
       borderRadius={configButtonBorderRadius}
       opacity={opacity}>
-      <AppButtonIconAndLabel
+      <AppIconAndLabel
         label={label}
         textColorStatus={textColorStatus}
         IconComponent={IconComponent}

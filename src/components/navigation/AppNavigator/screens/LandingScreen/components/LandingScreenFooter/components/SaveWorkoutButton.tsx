@@ -18,6 +18,11 @@ export const SaveWorkoutButton = () => {
 
   const { control, handleSubmit, resetField } = useFormContext<AppWorkout>();
 
+  const handleCloseAndClearName = () => {
+    resetField('name');
+    onClose();
+  };
+
   const handleSaveWorkout = ({ name, ...workoutConfig }: AppWorkout) => {
     storeWorkout({
       id: uuidv4(),
@@ -27,12 +32,8 @@ export const SaveWorkoutButton = () => {
       },
       config: workoutConfig,
     });
-    onClose();
-  };
 
-  const handleCloseAndRevertChanges = () => {
-    resetField('name');
-    onClose();
+    handleCloseAndClearName();
   };
 
   const handleSave = handleSubmit(handleSaveWorkout);
@@ -51,7 +52,7 @@ export const SaveWorkoutButton = () => {
       <SaveWorkoutBottomSheet
         control={control}
         isVisible={isVisible}
-        onClose={handleCloseAndRevertChanges}
+        onClose={handleCloseAndClearName}
         onSave={handleSave}
       />
     </>
