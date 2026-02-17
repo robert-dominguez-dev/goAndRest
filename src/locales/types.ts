@@ -16,6 +16,11 @@ type PopUpTexts = {
   negativeButtonLabel: string;
 };
 
+type SaveWorkoutBottomSheetTexts = Omit<PopUpTexts, 'negativeButtonLabel'> & {
+  inputLabel: string;
+  invalidButtonLabel: string;
+};
+
 export type AppTranslations = {
   common: {
     ok: string;
@@ -25,10 +30,8 @@ export type AppTranslations = {
     landingScreen: {
       title: string;
       removeStoredWorkoutPopUp: PopUpTexts;
-      saveWorkoutBottomSheet: Omit<PopUpTexts, 'negativeButtonLabel'> & {
-        inputLabel: string;
-        invalidButtonLabel: string;
-      };
+      resetWorkoutPopUp: PopUpTexts;
+      saveWorkoutBottomSheet: SaveWorkoutBottomSheetTexts;
       rules: {
         required: string;
         minLength: string;
@@ -47,6 +50,9 @@ export type AppTranslations = {
       };
     };
     runningWorkoutScreen: {
+      title: string;
+    };
+    savedWorkoutsScreen: {
       title: string;
     };
   };

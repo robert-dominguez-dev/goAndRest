@@ -7,7 +7,7 @@ import {
   ROOT_STACK_NAVIGATOR_ID,
 } from '../constants.ts';
 import { LandingScreen } from './screens/LandingScreen/LandingScreen.tsx';
-import { WorkoutCreationScreen } from './screens/WorkoutCreationScreen/WorkoutCreationScreen.tsx';
+import { SavedWorkoutsScreen } from './screens/WorkoutCreationScreen/SavedWorkoutsScreen.tsx';
 import { RunningWorkoutScreen } from './screens/RunningWorkoutScreen/RunningWorkoutScreen.tsx';
 import { SettingsScreen } from './screens/SettingsScreen/SettingsScreen.tsx';
 
@@ -30,16 +30,12 @@ const AppNavigatorComponent = () => (
       }}
     />
     <Stack.Screen
-      name={AppNavigatorScreen.WorkoutCreationScreen}
-      component={WorkoutCreationScreen}
-      options={{
-        presentation: 'pageSheet',
-        sheetGrabberVisible: false,
-      }}
-    />
-    <Stack.Screen
       name={AppNavigatorScreen.RunningWorkoutScreen}
       component={RunningWorkoutScreen}
+    />
+    <Stack.Screen
+      name={AppNavigatorScreen.SavedWorkoutsScreen}
+      component={SavedWorkoutsScreen}
     />
   </Stack.Navigator>
 );

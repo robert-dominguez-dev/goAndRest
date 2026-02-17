@@ -2,12 +2,12 @@ export enum AppNavigatorScreen {
   LandingScreen = 'LandingScreen',
   SettingsScreen = 'SettingsScreen',
   RunningWorkoutScreen = 'RunningWorkoutScreen',
-  WorkoutCreationScreen = 'WorkoutCreationScreen',
+  SavedWorkoutsScreen = 'SavedWorkoutsScreen',
 }
 
 export type AppNavigatorScreenParams = {
   [AppNavigatorScreen.LandingScreen]: undefined;
   [AppNavigatorScreen.SettingsScreen]: undefined;
   [AppNavigatorScreen.RunningWorkoutScreen]: undefined;
-  [AppNavigatorScreen.WorkoutCreationScreen]: undefined;
+  [AppNavigatorScreen.SavedWorkoutsScreen]: undefined;
 };

@@ -9,6 +9,7 @@ import { AppButton } from '../../../../../../../controls/AppButton/AppButton.tsx
 import { useAppTranslation } from '../../../../../../../../locales/hooks/useAppTranslation.ts';
 import { getWorkoutNameRules } from '../../../../../../../controls/helpers/getWorkoutNameRules.ts';
 import { TranslateKey } from '../../../../../../../../locales/types.ts';
+import { memo } from 'react';
 
 type SaveWorkoutButtonProps = {
   control: Control<AppWorkout>;
@@ -17,7 +18,7 @@ type SaveWorkoutButtonProps = {
   onSave: () => void;
 };
 
-export const SaveWorkoutBottomSheet = ({
+const SaveWorkoutBottomSheetComponent = ({
   control,
   isVisible,
   onClose,
@@ -70,3 +71,5 @@ export const SaveWorkoutBottomSheet = ({
     />
   );
 };
+
+export const SaveWorkoutBottomSheet = memo(SaveWorkoutBottomSheetComponent);

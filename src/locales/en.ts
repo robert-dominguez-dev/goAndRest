@@ -42,9 +42,16 @@ export const en = {
         positiveButtonLabel: 'Delete',
         negativeButtonLabel: 'Cancel',
       },
+      resetWorkoutPopUp: {
+        title: 'Discard Changes',
+        description:
+          'Are you sure you want to discard your changes and reset all values to default?',
+        positiveButtonLabel: 'Yes',
+        negativeButtonLabel: 'No',
+      },
       saveWorkoutBottomSheet: {
         title: 'Save Workout',
-        description: 'Name your workout and choose an icon.',
+        description: 'Name your workout.',
         inputLabel: 'Workout name',
         positiveButtonLabel: 'Save workout',
         invalidButtonLabel: 'Fill in first',
@@ -68,6 +75,9 @@ export const en = {
     },
     runningWorkoutScreen: {
       title: 'Default workout',
+    },
+    savedWorkoutsScreen: {
+      title: 'Saved Workouts',
     },
   },
 } as const satisfies AppTranslations;

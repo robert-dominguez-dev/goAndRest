@@ -3,10 +3,11 @@ import { AppColorUnion, AppTextCategoryUnion } from '../../../../types/ui.ts';
 import { LucideIcon } from 'lucide-react-native';
 import { useAppThemedColors } from '../../../../hooks/useAppThemedColors.ts';
 
-const categoryToIconSize: Partial<Record<AppTextCategoryUnion, number>> = {
-  header: 28,
-  subHeader: 24,
-};
+export const categoryToIconSize: Partial<Record<AppTextCategoryUnion, number>> =
+  {
+    header: 28,
+    subHeader: 24,
+  };
 
 export type AppButtonIconAndLabelProps = Pick<
   AppTextProps,

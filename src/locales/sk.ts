@@ -42,9 +42,16 @@ export const sk = {
         positiveButtonLabel: 'Vymazať',
         negativeButtonLabel: 'Zrušiť',
       },
+      resetWorkoutPopUp: {
+        title: 'Zrušenie zmien',
+        description:
+          'Naozaj chceš zrušiť vykonané zmeny a vrátiť hodnoty do východiskového nastavenia?',
+        positiveButtonLabel: 'Áno',
+        negativeButtonLabel: 'Nie',
+      },
       saveWorkoutBottomSheet: {
         title: 'Uloženie tréningu',
-        description: 'Pomenuj svoj tréning a vyber ikonu.',
+        description: 'Pomenuj svoj tréning.',
         inputLabel: 'Názov tréningu',
         positiveButtonLabel: 'Uložiť tréning',
         invalidButtonLabel: 'Najprv vyplň',
@@ -68,6 +75,9 @@ export const sk = {
     },
     runningWorkoutScreen: {
       title: 'Predvolený tréning',
+    },
+    savedWorkoutsScreen: {
+      title: 'Uložené tréningy',
     },
   },
 } as const satisfies AppTranslations;
