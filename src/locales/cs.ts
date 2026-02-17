@@ -75,7 +75,7 @@ export const cs = {
       },
     },
     runningWorkoutScreen: {
-      title: 'Výchozí trénink',
+      title: 'Trénink',
     },
     savedWorkoutsScreen: {
       title: 'Uložené tréninky',

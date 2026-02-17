@@ -76,7 +76,7 @@ export const en = {
       },
     },
     runningWorkoutScreen: {
-      title: 'Default workout',
+      title: 'Workout',
     },
     savedWorkoutsScreen: {
       title: 'Saved Workouts',
