@@ -34,7 +34,7 @@ export const sk = {
   },
   screens: {
     landingScreen: {
-      title: 'Predvolený tréning',
+      title: 'Nový tréning',
       removeStoredWorkoutPopUp: {
         title: 'Vymazať',
         description:
@@ -51,7 +51,8 @@ export const sk = {
       },
       saveWorkoutBottomSheet: {
         title: 'Uloženie tréningu',
-        description: 'Pomenuj svoj tréning.',
+        description:
+          'Pomenuj svoj tréning. Pod týmto názvom ho neskôr nájdeš medzi uloženými tréningami.',
         inputLabel: 'Názov tréningu',
         positiveButtonLabel: 'Uložiť tréning',
         invalidButtonLabel: 'Najprv vyplň',

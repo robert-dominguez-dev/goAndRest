@@ -6,7 +6,6 @@ import { AppNavigatorScreen, AppNavigatorScreenParams } from '../../types.ts';
 import { WorkoutConfigButtons } from './components/WorkoutConfigButtons/WorkoutConfigButtons.tsx';
 import { AppView } from '../../../../common/AppView/AppView.tsx';
 import { LandingScreenFooter } from './components/LandingScreenFooter/LandingScreenFooter.tsx';
-import { useAppWorkouts } from '../../../../../contexts/AppWorkoutsProvider/AppWorkoutsProvider.tsx';
 import { FormProvider, useForm } from 'react-hook-form';
 import { AppWorkout } from '../../../../../contexts/AppWorkoutsProvider/types.ts';
 import { defaultWorkoutConfig } from '../../../../../contexts/AppWorkoutsProvider/constants.ts';
@@ -22,8 +21,6 @@ type LandingScreenProps = ScreenProps<
 export const LandingScreen = ({ navigation }: LandingScreenProps) => {
   const t = useAppTranslation();
 
-  const { selectedStoredWorkout } = useAppWorkouts();
-
   const formProps = useForm<AppWorkout>({
     defaultValues: defaultWorkoutConfig,
   });
@@ -31,13 +28,10 @@ export const LandingScreen = ({ navigation }: LandingScreenProps) => {
   const goToSettings = () =>
     navigation.navigate(AppNavigatorScreen.SettingsScreen);
 
-  const headerTitle: string =
-    selectedStoredWorkout?.meta.name || t('screens.landingScreen.title');
-
   return (
     <FormProvider {...formProps}>
       <AppScreenLayout
-        headerTitle={headerTitle}
+        headerTitle={t('screens.landingScreen.title')}
         HeaderAccessoryLeftIconComponent={Menu}
         onHeaderAccessoryLeftPress={goToSettings}
         footer={footerElement}>

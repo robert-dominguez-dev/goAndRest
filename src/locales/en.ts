@@ -34,7 +34,7 @@ export const en = {
   },
   screens: {
     landingScreen: {
-      title: 'Default workout',
+      title: 'New Workout',
       removeStoredWorkoutPopUp: {
         title: 'Delete Workout',
         description:
@@ -51,7 +51,8 @@ export const en = {
       },
       saveWorkoutBottomSheet: {
         title: 'Save Workout',
-        description: 'Name your workout.',
+        description:
+          'Name your workout. You can find it under this name later among your saved workouts.',
         inputLabel: 'Workout name',
         positiveButtonLabel: 'Save workout',
         invalidButtonLabel: 'Fill in first',

@@ -10,6 +10,7 @@ import { useAppTranslation } from '../../../../../../../../locales/hooks/useAppT
 import { getWorkoutNameRules } from '../../../../../../../controls/helpers/getWorkoutNameRules.ts';
 import { TranslateKey } from '../../../../../../../../locales/types.ts';
 import { memo } from 'react';
+import { UNLIMITED_NUMBER_OF_LINES } from '../../../../../../../../constants/common.ts';
 
 type SaveWorkoutButtonProps = {
   control: Control<AppWorkout>;
@@ -39,7 +40,7 @@ const SaveWorkoutBottomSheetComponent = ({
 
   const bottomSheetContent = (
     <AppView gap={'l'}>
-      <AppText>
+      <AppText numberOfLines={UNLIMITED_NUMBER_OF_LINES}>
         {t('screens.landingScreen.saveWorkoutBottomSheet.description')}
       </AppText>
       <AppInput
