@@ -38,7 +38,7 @@ export const SavedWorkoutItemHeader = ({
           alignItems={'center'}>
           <AppText
             category={'title'}
-            colorStatus={'rounds'}>
+            colorStatus={'textMuted'}>
             {t('screens.savedWorkoutsScreen.existingWorkoutItem.totalTime')}
           </AppText>
           <AppText category={'subHeader'}>

@@ -64,6 +64,7 @@ export const appColorsLight = {
   negative: appDesignSystemColors.negative['200'],
   negativeMuted: appDesignSystemColors.negative['200'],
   text: appDesignSystemColors.grayscale['700'],
+  textMuted: appDesignSystemColors.grayscale['500'],
   background: appDesignSystemColors.grayscale['50'],
   backgroundAlt: appDesignSystemColors.grayscale['100'],
   border: appDesignSystemColors.grayscale['200'],
@@ -76,6 +77,7 @@ export const appColorsLight = {
   series: appDesignSystemColors.grayscale['200'],
   rounds: appDesignSystemColors.grayscale['200'],
   brake: '#e3c547',
+  brakeStrong: '#c8a40e',
   semiTransparentOverlay: '#00000080',
   transparent: '#00000000',
 } as const satisfies Record<string, HexColor>;
@@ -89,6 +91,7 @@ export const appColorsDark = {
   negative: appDesignSystemColors.negative['400'],
   negativeMuted: appDesignSystemColors.negative['50'],
   text: appDesignSystemColors.grayscale['100'],
+  textMuted: appDesignSystemColors.grayscale['300'],
   background: appDesignSystemColors.grayscale['800'],
   backgroundAlt: appDesignSystemColors.grayscale['700'],
   border: appDesignSystemColors.grayscale['600'],
@@ -101,6 +104,7 @@ export const appColorsDark = {
   series: appDesignSystemColors.grayscale['500'],
   rounds: appDesignSystemColors.grayscale['500'],
   brake: '#a18703',
+  brakeStrong: '#cfaf0c',
   semiTransparentOverlay: appColorsLight.semiTransparentOverlay,
   transparent: appColorsLight.transparent,
 } as const satisfies AppColors;

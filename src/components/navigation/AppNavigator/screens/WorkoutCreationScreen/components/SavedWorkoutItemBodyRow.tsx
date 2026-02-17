@@ -6,15 +6,18 @@ import {
 } from '../../LandingScreen/constants.ts';
 import { AppText } from '../../../../../common/AppText/AppText.tsx';
 import { AppView } from '../../../../../common/AppView/AppView.tsx';
+import { AppColorUnion } from '../../../../../../types/ui.ts';
 
 export type SavedWorkoutItemBodyRowProps = {
   name: AppWorkoutConfigKey;
   value: number;
+  backgroundColorStatusOverride?: AppColorUnion;
 };
 
 export const SavedWorkoutItemBodyRow = ({
   name,
   value,
+  backgroundColorStatusOverride,
 }: SavedWorkoutItemBodyRowProps) => {
   const t = useAppTranslation();
 
@@ -22,6 +25,9 @@ export const SavedWorkoutItemBodyRow = ({
     workoutSettingsButtonConfigMap[name];
 
   const formattedValue = valueFormatter(value);
+
+  const colorStatus: AppColorUnion =
+    backgroundColorStatusOverride || backgroundColorStatus;
 
   return (
     <AppRow
@@ -35,7 +41,7 @@ export const SavedWorkoutItemBodyRow = ({
           alignItems={'center'}>
           <AppText
             category={'title'}
-            colorStatus={backgroundColorStatus}>
+            colorStatus={colorStatus}>
             {t(labelKey)}
           </AppText>
         </AppRow>

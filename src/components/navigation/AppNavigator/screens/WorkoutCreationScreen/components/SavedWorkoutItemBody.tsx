@@ -35,6 +35,7 @@ export const SavedWorkoutItemBody = ({ config }: SavedWorkoutItemBodyProps) => (
         <SavedWorkoutItemBodyRow
           name={'series'}
           value={config.series}
+          backgroundColorStatusOverride={'textMuted'}
         />
       </AppView>
     </AppRow>
@@ -47,6 +48,7 @@ export const SavedWorkoutItemBody = ({ config }: SavedWorkoutItemBodyProps) => (
         <SavedWorkoutItemBodyRow
           name={'brake'}
           value={config.brake}
+          backgroundColorStatusOverride={'brakeStrong'}
         />
       </AppView>
       <AppDivider isVertical />
@@ -57,6 +59,7 @@ export const SavedWorkoutItemBody = ({ config }: SavedWorkoutItemBodyProps) => (
         <SavedWorkoutItemBodyRow
           name={'rounds'}
           value={config.rounds}
+          backgroundColorStatusOverride={'textMuted'}
         />
       </AppView>
     </AppRow>
