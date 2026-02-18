@@ -33,6 +33,10 @@ export const fontCategoryStyles: Record<
     fontFamily: FontName.BarlowCondensedBlack,
     fontSize: 18,
   },
+  contentBold: {
+    fontFamily: FontName.BarlowCondensedSemiBold,
+    fontSize: 18,
+  },
   content: {
     fontFamily: FontName.BarlowCondensedRegular,
     fontSize: 18,

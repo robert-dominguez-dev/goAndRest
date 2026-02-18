@@ -2,10 +2,11 @@ import { AppStoredWorkout } from '../../../../../../contexts/AppWorkoutsProvider
 import { AppView } from '../../../../../common/AppView/AppView.tsx';
 import { AppRow } from '../../../../../common/AppRow.tsx';
 import { AppText } from '../../../../../common/AppText/AppText.tsx';
-import { useAppTranslation } from '../../../../../../locales/hooks/useAppTranslation.ts';
 import { countTotalWorkoutTime } from '../../LandingScreen/helpers/countTotalWorkoutTime.ts';
 import { formatTimerTime } from '../../../../../common/AppCountdownText/helpers/formatTimerTime.tsx';
 import { SAVED_WORKOUT_HEADER_AND_FOOTER_HEIGHT } from './SavedWorkoutItemFooter.tsx';
+import { Clock } from 'lucide-react-native';
+import { AppIconAndLabel } from '../../../../../controls/AppButton/components/AppIconAndLabel.tsx';
 
 type SavedWorkoutItemHeaderProps = {
   workout: AppStoredWorkout;
@@ -17,8 +18,6 @@ export const SavedWorkoutItemHeader = ({
     meta: { name },
   },
 }: SavedWorkoutItemHeaderProps) => {
-  const t = useAppTranslation();
-
   const totalWorkoutTime = countTotalWorkoutTime(config);
 
   return (
@@ -34,14 +33,11 @@ export const SavedWorkoutItemHeader = ({
           shrink
           gap={'sm'}
           alignItems={'center'}>
-          <AppText
-            category={'title'}
-            colorStatus={'textMuted'}>
-            {t('screens.savedWorkoutsScreen.existingWorkoutItem.totalTime')}
-          </AppText>
-          <AppText category={'subHeader'}>
-            {formatTimerTime(totalWorkoutTime)}
-          </AppText>
+          <AppIconAndLabel
+            category={'header'}
+            IconComponent={Clock}
+            label={formatTimerTime(totalWorkoutTime)}
+          />
         </AppRow>
       </AppView>
     </AppRow>

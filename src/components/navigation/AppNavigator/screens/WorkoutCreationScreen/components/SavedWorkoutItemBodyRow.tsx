@@ -41,7 +41,7 @@ export const SavedWorkoutItemBodyRow = ({
           gap={'xs'}
           alignItems={'center'}>
           <AppText
-            category={'title'}
+            category={'contentBold'}
             colorStatus={colorStatus}>
             {t(labelKey)}
           </AppText>
