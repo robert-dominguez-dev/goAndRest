@@ -31,7 +31,7 @@ export const SavedWorkoutItemHeader = ({
       <AppView>
         <AppRow
           shrink
-          gap={'sm'}
+          gap={'s'}
           alignItems={'center'}>
           <AppIconAndLabel
             category={'header'}
