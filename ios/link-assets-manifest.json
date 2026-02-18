@@ -2,24 +2,32 @@
   "migIndex": 1,
   "data": [
     {
-      "path": "src/assets/fonts/Montserrat-Medium.ttf",
-      "sha1": "4656e40419da86a5fec473ea8e7fc0efef183f05"
+      "path": "src/assets/fonts/BarlowCondensed-Bold.ttf",
+      "sha1": "6262bcb13860d998f4f0ef6f24955015ba5c9fc8"
     },
     {
-      "path": "src/assets/fonts/Montserrat-Bold.ttf",
-      "sha1": "c7d907722af4fb845ab97d515bb414f29651f000"
+      "path": "src/assets/fonts/BarlowCondensed-Light.ttf",
+      "sha1": "0cf1be176df23c03d28c8b2e8123afa34e30a09f"
     },
     {
-      "path": "src/assets/fonts/Bangers-Regular.ttf",
-      "sha1": "16e3bc27f1343b6661711eaacb999be3307790d4"
+      "path": "src/assets/fonts/BarlowCondensed-Medium.ttf",
+      "sha1": "97ca26fcb390d83da8a008d5bf085fd1277d4999"
     },
     {
-      "path": "src/assets/fonts/Montserrat-Black.ttf",
-      "sha1": "ea4feb16f3d8cb3f1cbc8e3a7af7388cc01ce32e"
+      "path": "src/assets/fonts/BarlowCondensed-Black.ttf",
+      "sha1": "ca766f76ce5a40120b6e7d0e2f0d534699f57bb8"
     },
     {
-      "path": "src/assets/fonts/Montserrat-Regular.ttf",
-      "sha1": "1c8119b38eef1914a4fbd9f6cfdedf198445ab97"
+      "path": "src/assets/fonts/BarlowCondensed-Regular.ttf",
+      "sha1": "341759b9be0c543c624a7dfbd0b0063aa4b8480a"
+    },
+    {
+      "path": "src/assets/fonts/BarlowCondensed-SemiBold.ttf",
+      "sha1": "465591c65008579e7b03792dc5598f384ca3cfd4"
+    },
+    {
+      "path": "src/assets/fonts/BarlowCondensed-ExtraBold.ttf",
+      "sha1": "ad26fc581156fee4f83113df5189016ac72a484b"
     },
     {
       "path": "src/assets/images/backgrounds/ancient_pillars_at_night.png",

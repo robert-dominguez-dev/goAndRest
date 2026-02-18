@@ -1,6 +1,5 @@
 import { AppSize } from '../types/ui.ts';
 import { ViewStyle } from 'react-native';
-import { EMPTY_SPACE, IS_ANDROID } from './common.ts';
 
 export const sizes = {
   headerAccessoryWidth: 50,
@@ -49,7 +48,3 @@ export const DISABLED_OPACITY = 0;
 export const INACTIVE_OPACITY = 0.5;
 export const ACTIVE_OPACITY = 1;
 export const PRESSED_OPACITY = 0.95;
-
-export const SPACE_ON_ANDROID_TO_PREVENT_TEXT_CUT = IS_ANDROID
-  ? EMPTY_SPACE
-  : undefined;

@@ -3,10 +3,7 @@ import { AppText } from './AppText/AppText.tsx';
 import { AppRow } from './AppRow.tsx';
 import { AppColorUnion, AppSize } from '../../types/ui.ts';
 import { AppLoader } from './AppLoader.tsx';
-import {
-  GROW_SHRINK_STYLE,
-  SPACE_ON_ANDROID_TO_PREVENT_TEXT_CUT,
-} from '../../constants/ui.ts';
+import { GROW_SHRINK_STYLE } from '../../constants/ui.ts';
 import { getOnPressWithHapticFeedbackConditionally } from '../controls/helpers/getOnPressWithHapticFeedbackConditionally.ts';
 
 export type AppLinkProps = Pick<PressableProps, 'onPress' | 'disabled'> & {
@@ -36,7 +33,6 @@ export const AppLink = ({
         category={'header'}
         textAlign={'center'}>
         {label}
-        {SPACE_ON_ANDROID_TO_PREVENT_TEXT_CUT}
       </AppText>
       <AppLoader isPending={isPending} />
     </AppRow>

@@ -1,7 +1,6 @@
 import { AppText } from '../AppText/AppText.tsx';
 
 import { memo, useRef, useState } from 'react';
-import { SPACE_ON_ANDROID_TO_PREVENT_TEXT_CUT } from '../../../constants/ui.ts';
 import { usePreciseInterval } from '../../../hooks/usePreciseInterval.ts';
 import { ONE_MINUTE_SECONDS } from '../../../constants/common.ts';
 import { formatTimerTime } from './helpers/formatTimerTime.tsx';
@@ -50,7 +49,6 @@ const AppCountdownTextComponent = ({
       shrink={false}
       category={'header'}>
       {timeFormatted}
-      {SPACE_ON_ANDROID_TO_PREVENT_TEXT_CUT}
     </AppText>
   );
 };

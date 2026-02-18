@@ -1,5 +1,9 @@
 import { useAppThemedColors } from '../../../../hooks/useAppThemedColors.ts';
-import { AppColorUnion, AppSizeUnion, BorderProps, } from '../../../../types/ui.ts';
+import {
+  AppColorUnion,
+  AppSizeUnion,
+  BorderProps,
+} from '../../../../types/ui.ts';
 import { sizes } from '../../../../constants/ui.ts';
 import { ViewStyle } from 'react-native';
 import { getAppSize } from '../../../../helpers/getAppSize.ts';

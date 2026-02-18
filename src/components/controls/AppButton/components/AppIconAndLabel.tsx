@@ -47,7 +47,7 @@ export const AppIconAndLabel = ({
         category={category}
         textAlign={textAlign}
         colorStatus={textColorStatus}>
-        {label}
+        {label.toUpperCase()}
       </AppText>
     </>
   );

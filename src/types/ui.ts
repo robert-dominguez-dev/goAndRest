@@ -18,13 +18,7 @@ export type AppSizeUnion = keyof typeof AppSize | number;
 
 export type AppColorUnion = keyof typeof appColorsLight;
 
-export type AppTextCategoryUnion =
-  | 'header'
-  | 'subHeader'
-  | 'title'
-  | 'log'
-  | 'content'
-  | 'contentBold';
+export type AppTextCategoryUnion = 'header' | 'subHeader' | 'title' | 'content';
 
 export type BorderProps = Pick<ViewStyle, 'borderColor' | 'borderWidth'>;
 
