@@ -4,6 +4,7 @@ import { AppButton } from '../../../../../../../controls/AppButton/AppButton.tsx
 import { useAppTranslation } from '../../../../../../../../locales/hooks/useAppTranslation.ts';
 import { useWatch } from 'react-hook-form';
 import { WorkoutConfigButtonProps } from '../../../types.ts';
+import { WorkoutConfigButtonValue } from './WorkoutConfigButtonValue.tsx';
 
 const WorkoutConfigButtonComponent = ({
   control,
@@ -23,10 +24,17 @@ const WorkoutConfigButtonComponent = ({
 
   const formattedValue = valueFormatter(value);
 
+  const valueElement = (
+    <WorkoutConfigButtonValue
+      value={formattedValue}
+      textAlign={'right'}
+    />
+  );
+
   return (
     <AppButton
       label={t(labelKey)}
-      value={formattedValue}
+      value={valueElement}
       backgroundColorStatus={backgroundColorStatus}
       IconComponent={IconComponent}
       onPress={onPress}

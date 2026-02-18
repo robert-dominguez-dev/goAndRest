@@ -31,7 +31,7 @@ const WorkoutConfigBottomSheetFormattedValueComponent = ({
     <AppText
       category={'header'}
       textAlign={'center'}
-      fontSizeOverride={'xxl'}>
+      fontSizeOverride={'3xl'}>
       {valueFormatted}
     </AppText>
   );

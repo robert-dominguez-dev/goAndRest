@@ -12,6 +12,7 @@ import { AppText } from '../../../../../../../common/AppText/AppText.tsx';
 import { useAppTranslation } from '../../../../../../../../locales/hooks/useAppTranslation.ts';
 import { AppRow } from '../../../../../../../common/AppRow.tsx';
 import { UNLIMITED_NUMBER_OF_LINES } from '../../../../../../../../constants/common.ts';
+import { WorkoutConfigButtonValue } from './WorkoutConfigButtonValue.tsx';
 
 const { configButtonSize, configButtonBorderRadius } = sizes;
 
@@ -54,24 +55,21 @@ const WorkoutConfigVerticalButtonComponent = ({
             borderRadius={configButtonBorderRadius}
             backgroundColorStatus={backgroundColorStatus}
             paddingHorizontal={'xs'}
-            paddingVertical={'sm'}
+            paddingTop={'s'}
+            paddingBottom={'xs'}
             justifyContent={'space-between'}
             alignItems={'center'}>
             <AppRow>
               <AppText
                 textAlign={'center'}
                 category={'title'}
+                fontSizeOverride={16}
                 numberOfLines={UNLIMITED_NUMBER_OF_LINES}>
-                {t(labelKey)}
+                {t(labelKey).toUpperCase()}
               </AppText>
             </AppRow>
             <AppRow>
-              <AppText
-                textAlign={'center'}
-                category={'subHeader'}
-                numberOfLines={1}>
-                {formattedValue}
-              </AppText>
+              <WorkoutConfigButtonValue value={formattedValue} />
             </AppRow>
           </AppView>
         );

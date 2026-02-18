@@ -34,7 +34,7 @@ export const AppLink = ({
         textAlign={'center'}>
         {label}
       </AppText>
-      <AppLoader isPending={isPending} />
+      <AppLoader isPending={!!isPending} />
     </AppRow>
   </Pressable>
 );

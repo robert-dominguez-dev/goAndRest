@@ -31,7 +31,7 @@ const SaveWorkoutBottomSheetComponent = ({
 
   const { isValid } = useFormState<AppWorkout>({
     control,
-    name: 'name',
+    name: 'workoutName',
   });
 
   const buttonLabelTranslateKey: TranslateKey = isValid
@@ -44,7 +44,7 @@ const SaveWorkoutBottomSheetComponent = ({
         {t('screens.landingScreen.saveWorkoutBottomSheet.description')}
       </AppText>
       <AppInput
-        name={'name'}
+        name={'workoutName'}
         label={t('screens.landingScreen.saveWorkoutBottomSheet.inputLabel')}
         control={control}
         rules={rules}

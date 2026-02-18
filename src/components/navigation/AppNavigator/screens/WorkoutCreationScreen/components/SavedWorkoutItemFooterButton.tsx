@@ -60,7 +60,7 @@ export const SavedWorkoutItemFooterButton = ({
                   grow={false}
                   category={'subHeader'}
                   IconComponent={IconComponent}
-                  label={label}
+                  label={label.toUpperCase()}
                 />
               </AppRow>
             </AppView>

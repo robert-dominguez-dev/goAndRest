@@ -19,4 +19,4 @@ export type AppStoredWorkout = {
   config: AppWorkoutConfig;
 };
 
-export type AppWorkout = AppWorkoutConfig & Pick<AppWorkoutMetaData, 'name'>;
+export type AppWorkout = AppWorkoutConfig & { workoutName: string };

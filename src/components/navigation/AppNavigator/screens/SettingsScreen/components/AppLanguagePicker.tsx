@@ -33,5 +33,5 @@ export const AppLanguagePicker = () => {
     );
   });
 
-  return <AppRow gap={'s'}>{flags}</AppRow>;
+  return <AppRow gap={'sm'}>{flags}</AppRow>;
 };

@@ -1,6 +1,6 @@
 import { AppScreenLayout } from '../../../../common/AppScreenLayout.tsx';
 import { useAppTranslation } from '../../../../../locales/hooks/useAppTranslation.ts';
-import { ArrowLeft } from 'lucide-react-native';
+import { X } from 'lucide-react-native';
 import { ScreenProps } from '../../../types.ts';
 import { AppNavigatorScreen, AppNavigatorScreenParams } from '../../types.ts';
 import { SettingsItemList } from './components/SettingsItemList.tsx';
@@ -16,7 +16,7 @@ export const SettingsScreen = ({ navigation }: SettingsScreenProps) => {
   return (
     <AppScreenLayout
       headerTitle={t('screens.settingsScreen.title')}
-      HeaderAccessoryLeftIconComponent={ArrowLeft}
+      HeaderAccessoryLeftIconComponent={X}
       onHeaderAccessoryLeftPress={navigation.goBack}
       screenPaddingTopOverride={'ml'}>
       <SettingsItemList />

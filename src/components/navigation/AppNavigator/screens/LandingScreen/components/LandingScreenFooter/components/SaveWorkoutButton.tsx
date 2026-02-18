@@ -19,15 +19,15 @@ export const SaveWorkoutButton = () => {
   const { control, handleSubmit, resetField } = useFormContext<AppWorkout>();
 
   const handleCloseAndClearName = () => {
-    resetField('name');
+    resetField('workoutName');
     onClose();
   };
 
-  const handleSaveWorkout = ({ name, ...workoutConfig }: AppWorkout) => {
+  const handleSaveWorkout = ({ workoutName, ...workoutConfig }: AppWorkout) => {
     storeWorkout({
       id: uuidv4(),
       meta: {
-        name,
+        name: workoutName,
         createdAt: new Date(),
       },
       config: workoutConfig,

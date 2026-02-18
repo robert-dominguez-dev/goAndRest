@@ -3,8 +3,9 @@ import { AppRow } from '../../../../../common/AppRow.tsx';
 import { useAppTranslation } from '../../../../../../locales/hooks/useAppTranslation.ts';
 import { Play, Trash2 } from 'lucide-react-native';
 import { AppDivider } from '../../../../../common/AppDivider.tsx';
-import { AppSize } from '../../../../../../types/ui.ts';
 import { SavedWorkoutItemFooterButton } from './SavedWorkoutItemFooterButton.tsx';
+
+export const SAVED_WORKOUT_HEADER_AND_FOOTER_HEIGHT = 56;
 
 export type SavedWorkoutItemFooterProps = {
   workout: AppStoredWorkout;
@@ -20,7 +21,7 @@ export const SavedWorkoutItemFooter = ({
   const t = useAppTranslation();
 
   return (
-    <AppRow height={AppSize.xl}>
+    <AppRow height={SAVED_WORKOUT_HEADER_AND_FOOTER_HEIGHT}>
       <SavedWorkoutItemFooterButton
         label={t(
           'screens.savedWorkoutsScreen.existingWorkoutItem.deleteButtonLabel',

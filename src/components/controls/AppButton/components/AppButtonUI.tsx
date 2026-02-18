@@ -55,7 +55,7 @@ export const AppButtonUI = ({
       borderRadius={configButtonBorderRadius}
       opacity={opacity}>
       <AppIconAndLabel
-        label={label}
+        label={label.toUpperCase()}
         textColorStatus={textColorStatus}
         IconComponent={IconComponent}
         textAlign={labelTextAlign}

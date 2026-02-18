@@ -4,9 +4,9 @@ import {
   AppWorkoutConfigKey,
   workoutSettingsButtonConfigMap,
 } from '../../LandingScreen/constants.ts';
-import { AppText } from '../../../../../common/AppText/AppText.tsx';
-import { AppView } from '../../../../../common/AppView/AppView.tsx';
 import { AppColorUnion } from '../../../../../../types/ui.ts';
+import { AppView } from '../../../../../common/AppView/AppView.tsx';
+import { AppText } from '../../../../../common/AppText/AppText.tsx';
 
 export type SavedWorkoutItemBodyRowProps = {
   name: AppWorkoutConfigKey;
@@ -32,6 +32,7 @@ export const SavedWorkoutItemBodyRow = ({
   return (
     <AppRow
       grow
+      paddingVertical={'s'}
       alignItems={'center'}
       justifyContent={'space-between'}>
       <AppView grow>

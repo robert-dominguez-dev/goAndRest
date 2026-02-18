@@ -25,7 +25,7 @@ export const RunningWorkoutScreen = ({
     runningWorkout || defaultWorkoutConfig;
 
   const headerTitle: string =
-    runningWorkout?.name || t('screens.runningWorkoutScreen.title');
+    runningWorkout?.workoutName || t('screens.runningWorkoutScreen.title');
 
   return (
     <AppScreenLayout

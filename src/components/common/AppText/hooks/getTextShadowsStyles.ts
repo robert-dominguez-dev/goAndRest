@@ -1,5 +1,9 @@
 import { ColorValue } from 'react-native/Libraries/StyleSheet/StyleSheet';
-import { AppColorUnion, AppDimensions, AppTextCategoryUnion, } from '../../../../types/ui.ts';
+import {
+  AppColorUnion,
+  AppDimensions,
+  AppTextCategoryUnion,
+} from '../../../../types/ui.ts';
 import { useAppThemedColors } from '../../../../hooks/useAppThemedColors.ts';
 import { sizes } from '../../../../constants/ui.ts';
 

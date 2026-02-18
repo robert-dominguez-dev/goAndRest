@@ -14,7 +14,7 @@ export const AppTimeView = ({ seconds }: AppTimeViewProps) => {
       <AppText
         category={'header'}
         textAlign={'center'}
-        fontSizeOverride={'3xl'}>
+        fontSizeOverride={100}>
         {timeFormatted}
       </AppText>
     </AppRow>

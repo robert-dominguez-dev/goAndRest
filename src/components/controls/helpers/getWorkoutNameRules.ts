@@ -2,7 +2,7 @@ import { RegisterOptions } from 'react-hook-form';
 import { TranslateFN } from '../../../locales/hooks/useAppTranslation.ts';
 
 const MIN_LENGTH = 3;
-const MAX_LENGTH = 30;
+const MAX_LENGTH = 20;
 
 export const getWorkoutNameRules = (t: TranslateFN) =>
   ({

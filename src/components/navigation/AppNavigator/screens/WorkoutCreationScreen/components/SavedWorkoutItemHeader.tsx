@@ -5,6 +5,7 @@ import { AppText } from '../../../../../common/AppText/AppText.tsx';
 import { useAppTranslation } from '../../../../../../locales/hooks/useAppTranslation.ts';
 import { countTotalWorkoutTime } from '../../LandingScreen/helpers/countTotalWorkoutTime.ts';
 import { formatTimerTime } from '../../../../../common/AppCountdownText/helpers/formatTimerTime.tsx';
+import { SAVED_WORKOUT_HEADER_AND_FOOTER_HEIGHT } from './SavedWorkoutItemFooter.tsx';
 
 type SavedWorkoutItemHeaderProps = {
   workout: AppStoredWorkout;
@@ -22,19 +23,16 @@ export const SavedWorkoutItemHeader = ({
 
   return (
     <AppRow
-      grow
       gap={'m'}
       paddingHorizontal={'m'}
-      paddingVertical={'xs'}
       alignItems={'center'}
-      justifyContent={'space-between'}>
-      <AppView alignItems={'center'}>
-        <AppText category={'header'}>{name}</AppText>
-      </AppView>
+      justifyContent={'space-between'}
+      height={SAVED_WORKOUT_HEADER_AND_FOOTER_HEIGHT}>
+      <AppText category={'subHeader'}>{name}</AppText>
       <AppView>
         <AppRow
           shrink
-          gap={'s'}
+          gap={'sm'}
           alignItems={'center'}>
           <AppText
             category={'title'}

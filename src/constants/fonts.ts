@@ -1,5 +1,4 @@
 import { AppSize, AppTextCategoryUnion } from '../types/ui.ts';
-import { IS_ANDROID } from './common.ts';
 
 enum FontName {
   BarlowCondensedLight = 'BarlowCondensed-Light',
@@ -14,9 +13,6 @@ enum FontName {
 type FontCategoryStyle = {
   fontFamily: FontName;
   fontSize: number;
-  lineHeight?: AppSize;
-  minHeight?: AppSize;
-  paddingRight?: AppSize;
 };
 
 export const fontCategoryStyles: Record<
@@ -24,28 +20,19 @@ export const fontCategoryStyles: Record<
   FontCategoryStyle
 > = {
   header: {
-    fontFamily: FontName.BarlowCondensedExtraBold,
+    fontFamily: FontName.BarlowCondensedBlack,
     fontSize: 36,
-    lineHeight: AppSize.xl,
-    minHeight: AppSize.xl,
-    paddingRight: IS_ANDROID ? undefined : AppSize.xs,
   },
   subHeader: {
-    fontFamily: FontName.BarlowCondensedBold,
+    fontFamily: FontName.BarlowCondensedBlack,
     fontSize: AppSize.ml,
-    lineHeight: AppSize.l,
-    minHeight: AppSize.l,
-    paddingRight: IS_ANDROID ? undefined : AppSize.xs,
   },
   title: {
-    fontFamily: FontName.BarlowCondensedSemiBold,
-    fontSize: AppSize.m,
-    lineHeight: AppSize.ml,
-    minHeight: AppSize.ml,
-    paddingRight: IS_ANDROID ? undefined : AppSize.xxs,
+    fontFamily: FontName.BarlowCondensedBlack,
+    fontSize: 18,
   },
   content: {
     fontFamily: FontName.BarlowCondensedRegular,
-    fontSize: 20,
+    fontSize: 18,
   },
 };

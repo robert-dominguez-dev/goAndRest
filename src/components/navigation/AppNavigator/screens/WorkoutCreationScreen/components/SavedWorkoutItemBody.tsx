@@ -3,20 +3,19 @@ import { AppView } from '../../../../../common/AppView/AppView.tsx';
 import { AppRow } from '../../../../../common/AppRow.tsx';
 import { SavedWorkoutItemBodyRow } from './SavedWorkoutItemBodyRow.tsx';
 import { AppDivider } from '../../../../../common/AppDivider.tsx';
+import { AppSizeUnion } from '../../../../../../types/ui.ts';
+
+const DIVIDERS_SPACING: AppSizeUnion = 's';
 
 export type SavedWorkoutItemBodyProps = {
   config: AppWorkoutConfig;
 };
 
 export const SavedWorkoutItemBody = ({ config }: SavedWorkoutItemBodyProps) => (
-  <AppView
-    gap={'xs'}
-    paddingHorizontal={'m'}
-    paddingVertical={'s'}>
-    <AppRow gap={'s'}>
+  <AppView paddingHorizontal={'m'}>
+    <AppRow gap={DIVIDERS_SPACING}>
       <AppView
         grow
-        gap={'xs'}
         flexBasis={0}>
         <SavedWorkoutItemBodyRow
           name={'work'}
@@ -28,7 +27,9 @@ export const SavedWorkoutItemBody = ({ config }: SavedWorkoutItemBodyProps) => (
           value={config.rest}
         />
       </AppView>
-      <AppDivider isVertical />
+      <AppRow paddingVertical={DIVIDERS_SPACING}>
+        <AppDivider isVertical />
+      </AppRow>
       <AppView
         grow
         flexBasis={0}>
@@ -40,10 +41,9 @@ export const SavedWorkoutItemBody = ({ config }: SavedWorkoutItemBodyProps) => (
       </AppView>
     </AppRow>
     <AppDivider />
-    <AppRow gap={'s'}>
+    <AppRow gap={DIVIDERS_SPACING}>
       <AppView
         grow
-        shrink
         flexBasis={0}>
         <SavedWorkoutItemBodyRow
           name={'brake'}
@@ -51,7 +51,9 @@ export const SavedWorkoutItemBody = ({ config }: SavedWorkoutItemBodyProps) => (
           backgroundColorStatusOverride={'brakeStrong'}
         />
       </AppView>
-      <AppDivider isVertical />
+      <AppRow paddingVertical={DIVIDERS_SPACING}>
+        <AppDivider isVertical />
+      </AppRow>
       <AppView
         grow
         shrink

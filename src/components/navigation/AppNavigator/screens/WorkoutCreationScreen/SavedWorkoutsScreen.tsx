@@ -6,8 +6,8 @@ import { AppNavigatorScreen, AppNavigatorScreenParams } from '../../types.ts';
 import { useAppWorkouts } from '../../../../../contexts/AppWorkoutsProvider/AppWorkoutsProvider.tsx';
 import { SavedWorkoutItem } from './components/SavedWorkoutItem.tsx';
 import { AppView } from '../../../../common/AppView/AppView.tsx';
-import { useAppPopUp } from '../../../../common/AppPopUp/hooks/useAppPopUp.tsx';
 import { AppStoredWorkout } from '../../../../../contexts/AppWorkoutsProvider/types.ts';
+import { useDeleteWorkoutPopUp } from './hooks/useDeleteWorkoutPopUp.ts';
 
 type SavedWorkoutsScreenProps = ScreenProps<
   AppNavigatorScreenParams,
@@ -19,39 +19,12 @@ export const SavedWorkoutsScreen = ({
 }: SavedWorkoutsScreenProps) => {
   const t = useAppTranslation();
 
-  const { storedWorkouts, removeWorkout, setRunningWorkout } = useAppWorkouts();
+  const { storedWorkouts, setRunningWorkout } = useAppWorkouts();
 
-  const { popUp, handleOpen } = useAppPopUp();
-
-  const handleDeleteWorkout = (workout: AppStoredWorkout): void =>
-    handleOpen({
-      title: t('screens.landingScreen.removeStoredWorkoutPopUp.title'),
-      description: t(
-        'screens.landingScreen.removeStoredWorkoutPopUp.description',
-        { value: workout.meta.name },
-      ),
-      primaryButtonProps: {
-        label: t(
-          'screens.landingScreen.removeStoredWorkoutPopUp.positiveButtonLabel',
-        ),
-        onPress: () => {
-          removeWorkout(workout.id);
-          if (storedWorkouts.length <= 1) {
-            navigation.goBack();
-          }
-        },
-        backgroundColorStatus: 'negative',
-      },
-      secondaryButtonProps: {
-        label: t(
-          'screens.landingScreen.removeStoredWorkoutPopUp.negativeButtonLabel',
-        ),
-        backgroundColorStatus: 'backgroundAlt',
-      },
-    });
+  const { popUp, handleDeleteWorkout } = useDeleteWorkoutPopUp();
 
   const handleStartWorkout = ({ config, meta: { name } }: AppStoredWorkout) => {
-    setRunningWorkout({ name, ...config });
+    setRunningWorkout({ workoutName: name, ...config });
     navigation.navigate(AppNavigatorScreen.RunningWorkoutScreen);
   };
 
