@@ -1,5 +1,8 @@
 import { memo } from 'react';
-import { AppText, AppTextProps, } from '../../../../../../../common/AppText/AppText.tsx';
+import {
+  AppText,
+  AppTextProps,
+} from '../../../../../../../common/AppText/AppText.tsx';
 import { AppSize } from '../../../../../../../../types/ui.ts';
 
 type WorkoutConfigButtonValueProps = Pick<AppTextProps, 'textAlign'> & {

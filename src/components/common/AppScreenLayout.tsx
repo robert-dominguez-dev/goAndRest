@@ -1,10 +1,7 @@
 import { AppView, AppViewProps } from './AppView/AppView.tsx';
 import { ScrollView } from 'react-native';
 import { FILL_CONTAINER_DIMENSION } from '../../constants/common.ts';
-import {
-  AppScreenBackground,
-  AppScreenBackgroundProps,
-} from './AppScreenBackground.tsx';
+import { AppScreenBackground, AppScreenBackgroundProps, } from './AppScreenBackground.tsx';
 import { AppHeader, AppHeaderProps } from './AppHeader/AppHeader.tsx';
 import { ReactNode } from 'react';
 
@@ -79,7 +76,7 @@ export const AppScreenLayout = ({
         <AppView
           grow
           shrink
-          paddingTop={'m'}
+          paddingTop={'l'}
           paddingBottom={contentPaddingBottom}>
           {content}
         </AppView>
