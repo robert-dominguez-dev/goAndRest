@@ -3,7 +3,6 @@ import { AppRoundedButton } from '../../../../../../../controls/AppRoundedButton
 import { AppSize } from '../../../../../../../../types/ui.ts';
 import { useAppThemedColors } from '../../../../../../../../hooks/useAppThemedColors.ts';
 import { useAppWorkouts } from '../../../../../../../../contexts/AppWorkoutsProvider/AppWorkoutsProvider.tsx';
-import { useFormContext } from 'react-hook-form';
 import { AppWorkout } from '../../../../../../../../contexts/AppWorkoutsProvider/types.ts';
 import { SaveWorkoutBottomSheet } from './SaveWorkoutBottomSheet.tsx';
 import { useIsVisible } from '../../../../../../../common/AppBottomSheet/hooks/useIsVisible.ts';
@@ -16,14 +15,7 @@ export const SaveWorkoutButton = () => {
 
   const { storeWorkout } = useAppWorkouts();
 
-  const { control, handleSubmit, resetField } = useFormContext<AppWorkout>();
-
-  const handleCloseAndClearName = () => {
-    resetField('workoutName');
-    onClose();
-  };
-
-  const handleSaveWorkout = ({ workoutName, ...workoutConfig }: AppWorkout) => {
+  const handleSave = ({ workoutName, ...workoutConfig }: AppWorkout) => {
     storeWorkout({
       id: uuidv4(),
       meta: {
@@ -33,10 +25,8 @@ export const SaveWorkoutButton = () => {
       config: workoutConfig,
     });
 
-    handleCloseAndClearName();
+    onClose();
   };
-
-  const handleSave = handleSubmit(handleSaveWorkout);
 
   return (
     <>
@@ -50,9 +40,8 @@ export const SaveWorkoutButton = () => {
         />
       </AppRoundedButton>
       <SaveWorkoutBottomSheet
-        control={control}
         isVisible={isVisible}
-        onClose={handleCloseAndClearName}
+        onClose={onClose}
         onSave={handleSave}
       />
     </>

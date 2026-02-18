@@ -1,5 +1,5 @@
 import { X } from 'lucide-react-native';
-import { Control, useFormState } from 'react-hook-form';
+import { useFormContext, useFormState } from 'react-hook-form';
 import { AppWorkout } from '../../../../../../../../contexts/AppWorkoutsProvider/types.ts';
 import { AppBottomSheet } from '../../../../../../../common/AppBottomSheet/AppBottomSheet.tsx';
 import { AppView } from '../../../../../../../common/AppView/AppView.tsx';
@@ -9,18 +9,16 @@ import { AppButton } from '../../../../../../../controls/AppButton/AppButton.tsx
 import { useAppTranslation } from '../../../../../../../../locales/hooks/useAppTranslation.ts';
 import { getWorkoutNameRules } from '../../../../../../../controls/helpers/getWorkoutNameRules.ts';
 import { TranslateKey } from '../../../../../../../../locales/types.ts';
-import { memo } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 import { UNLIMITED_NUMBER_OF_LINES } from '../../../../../../../../constants/common.ts';
 
 type SaveWorkoutButtonProps = {
-  control: Control<AppWorkout>;
   isVisible: boolean;
   onClose: () => void;
-  onSave: () => void;
+  onSave: (workout: AppWorkout) => void;
 };
 
 const SaveWorkoutBottomSheetComponent = ({
-  control,
   isVisible,
   onClose,
   onSave,
@@ -29,10 +27,27 @@ const SaveWorkoutBottomSheetComponent = ({
 
   const rules = getWorkoutNameRules(t);
 
-  const { isValid } = useFormState<AppWorkout>({
+  const { control, handleSubmit, trigger } = useFormContext<AppWorkout>();
+
+  const { isValid, errors } = useFormState<AppWorkout>({
     control,
     name: 'workoutName',
   });
+
+  const errorMessage = errors.workoutName?.message;
+
+  const triggerValidation = useCallback(
+    () => void trigger('workoutName'),
+    [trigger],
+  );
+
+  useEffect(() => {
+    const hasStaleErrorMessage: boolean = isValid && !!errorMessage;
+
+    if (hasStaleErrorMessage) {
+      triggerValidation();
+    }
+  }, [isValid, errorMessage, triggerValidation]);
 
   const buttonLabelTranslateKey: TranslateKey = isValid
     ? 'screens.landingScreen.saveWorkoutBottomSheet.positiveButtonLabel'
@@ -49,10 +64,12 @@ const SaveWorkoutBottomSheetComponent = ({
         control={control}
         rules={rules}
         autoFocus
+        shouldUnregister
       />
       <AppButton
         label={t(buttonLabelTranslateKey)}
-        onPress={onSave}
+        onPress={handleSubmit(onSave)}
+        onDisabledPress={triggerValidation}
         backgroundColorStatus={'primary'}
         disabled={!isValid}
       />

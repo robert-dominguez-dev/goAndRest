@@ -3,6 +3,7 @@ import {
   AppColorUnion,
   AppSizeUnion,
   BorderProps,
+  ShadowProps,
 } from '../../../../types/ui.ts';
 import { sizes } from '../../../../constants/ui.ts';
 import { ViewStyle } from 'react-native';
@@ -35,6 +36,7 @@ export type UseAppViewStyleParams = Pick<
   borderWidthOverride?: AppSizeUnion;
   backgroundColorStatus?: AppColorUnion;
   borderColorStatus?: AppColorUnion;
+  shadowColorStatus?: AppColorUnion;
   disableBorderBottom?: boolean;
   margin?: AppSizeUnion;
   padding?: AppSizeUnion;
@@ -77,6 +79,7 @@ export const useAppViewStyle = ({
   borderWidthOverride,
   backgroundColorStatus,
   borderColorStatus,
+  shadowColorStatus,
   disableBorderBottom,
   margin,
   padding,
@@ -103,8 +106,19 @@ export const useAppViewStyle = ({
       }
     : undefined;
 
+  const shadowProps: ShadowProps | undefined = shadowColorStatus
+    ? {
+        shadowColor: appColors[shadowColorStatus],
+        shadowOffset: { width: 2, height: 2 },
+        shadowOpacity: 0.2,
+        shadowRadius: 2.5,
+        elevation: 3,
+      }
+    : undefined;
+
   return {
     ...borderProps,
+    ...shadowProps,
     width,
     height,
     position,

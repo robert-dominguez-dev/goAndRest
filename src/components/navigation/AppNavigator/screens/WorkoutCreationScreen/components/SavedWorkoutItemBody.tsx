@@ -12,7 +12,9 @@ export type SavedWorkoutItemBodyProps = {
 };
 
 export const SavedWorkoutItemBody = ({ config }: SavedWorkoutItemBodyProps) => (
-  <AppView paddingHorizontal={'m'}>
+  <AppView
+    paddingHorizontal={'m'}
+    paddingBottom={'xxs'}>
     <AppRow gap={DIVIDERS_SPACING}>
       <AppView
         grow

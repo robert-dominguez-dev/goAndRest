@@ -9,7 +9,7 @@ import { AppView } from '../../common/AppView/AppView.tsx';
 export type AppFormFieldRendererCommonProps<TFieldValues extends FieldValues> =
   Pick<
     ControllerProps<TFieldValues>,
-    'control' | 'name' | 'rules' | 'disabled'
+    'control' | 'name' | 'rules' | 'disabled' | 'shouldUnregister'
   > & {
     label?: string;
   };
@@ -26,6 +26,7 @@ export const AppFormFieldRenderer = <TFieldValues extends FieldValues>({
   disabled,
   render,
   label,
+  shouldUnregister,
 }: AppFormFieldRendererProps<TFieldValues>) => {
   const renderField: ControllerProps<TFieldValues>['render'] = useCallback(
     ({ field: { value, onChange, disabled: fieldDisabled }, formState }) => {
@@ -64,6 +65,7 @@ export const AppFormFieldRenderer = <TFieldValues extends FieldValues>({
       rules={rules}
       disabled={disabled}
       render={renderField}
+      shouldUnregister={shouldUnregister}
     />
   );
 };

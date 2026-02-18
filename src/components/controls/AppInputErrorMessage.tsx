@@ -7,7 +7,7 @@ export const AppInputErrorMessage = ({
   errorMessage,
 }: AppInputErrorMessageProps) => (
   <AppText
-    category={'title'}
+    category={'content'}
     colorStatus={'negative'}
     numberOfLines={UNLIMITED_NUMBER_OF_LINES}>
     {errorMessage}

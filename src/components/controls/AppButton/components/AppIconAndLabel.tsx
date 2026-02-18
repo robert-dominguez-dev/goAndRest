@@ -5,7 +5,7 @@ import { useAppThemedColors } from '../../../../hooks/useAppThemedColors.ts';
 
 export const categoryToIconSize: Partial<Record<AppTextCategoryUnion, number>> =
   {
-    header: 28,
+    header: 32,
     subHeader: 24,
     title: 16,
   };
@@ -41,7 +41,6 @@ export const AppIconAndLabel = ({
           size={iconSize}
         />
       )}
-
       <AppText
         grow={grow}
         category={category}

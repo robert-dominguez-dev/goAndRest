@@ -23,6 +23,7 @@ export const LandingScreen = ({ navigation }: LandingScreenProps) => {
 
   const formProps = useForm<AppWorkout>({
     defaultValues: defaultWorkoutConfig,
+    reValidateMode: 'onBlur',
   });
 
   const goToSettings = () =>

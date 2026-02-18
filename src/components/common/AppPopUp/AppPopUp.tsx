@@ -60,6 +60,7 @@ export const AppPopUp = ({
         borderRadius={'s'}
         backgroundColorStatus={'backgroundAlt'}
         borderColorStatus={'border'}
+        shadowColorStatus={'border'}
         borderWidthOverride={1}>
         <AppText
           category={'header'}

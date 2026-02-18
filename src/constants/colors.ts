@@ -78,7 +78,7 @@ export const appColorsLight = {
   rounds: appDesignSystemColors.grayscale['200'],
   brake: '#e3c547',
   brakeStrong: '#c8a40e',
-  semiTransparentOverlay: '#00000080',
+  semiTransparentOverlay: '#000000BB',
   transparent: '#00000000',
 } as const satisfies Record<string, HexColor>;
 

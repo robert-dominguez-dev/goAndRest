@@ -44,7 +44,7 @@ export const SavedWorkoutsScreen = ({
         headerTitle={t('screens.savedWorkoutsScreen.title')}
         HeaderAccessoryLeftIconComponent={ArrowLeft}
         onHeaderAccessoryLeftPress={navigation.goBack}>
-        <AppView gap={'sm'}>{storedWorkoutItemElements}</AppView>
+        <AppView gap={'m'}>{storedWorkoutItemElements}</AppView>
       </AppScreenLayout>
       {popUp}
     </>

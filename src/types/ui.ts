@@ -22,6 +22,15 @@ export type AppTextCategoryUnion = 'header' | 'subHeader' | 'title' | 'content';
 
 export type BorderProps = Pick<ViewStyle, 'borderColor' | 'borderWidth'>;
 
+export type ShadowProps = Pick<
+  ViewStyle,
+  | 'shadowColor'
+  | 'shadowOpacity'
+  | 'shadowOffset'
+  | 'shadowRadius'
+  | 'elevation'
+>;
+
 export type AppDimensions = {
   width: number;
   height: number;

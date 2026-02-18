@@ -13,6 +13,7 @@ enum FontName {
 type FontCategoryStyle = {
   fontFamily: FontName;
   fontSize: number;
+  lineHeight?: number;
 };
 
 export const fontCategoryStyles: Record<
@@ -22,6 +23,7 @@ export const fontCategoryStyles: Record<
   header: {
     fontFamily: FontName.BarlowCondensedBlack,
     fontSize: 36,
+    lineHeight: 40,
   },
   subHeader: {
     fontFamily: FontName.BarlowCondensedBlack,
