@@ -121,6 +121,12 @@ export const sk = {
     },
     runningWorkoutScreen: {
       title: 'Tréning',
+      endWorkoutPopUp: {
+        title: 'Ukončenie tréningu',
+        description: 'Naozaj chceš ukončiť tréning?',
+        positiveButtonLabel: 'Ukončiť',
+        negativeButtonLabel: 'Pokračovať',
+      },
     },
     savedWorkoutsScreen: {
       title: 'Uložené tréningy',

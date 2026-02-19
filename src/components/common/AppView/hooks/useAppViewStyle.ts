@@ -17,6 +17,7 @@ export type UseAppViewStyleParams = Pick<
   | 'top'
   | 'bottom'
   | 'left'
+  | 'right'
   | 'alignSelf'
   | 'alignItems'
   | 'justifyContent'
@@ -61,6 +62,7 @@ export const useAppViewStyle = ({
   top,
   bottom,
   left,
+  right,
   alignSelf,
   alignItems,
   justifyContent,
@@ -125,6 +127,7 @@ export const useAppViewStyle = ({
     top,
     bottom,
     left,
+    right,
     alignSelf,
     alignItems,
     justifyContent,

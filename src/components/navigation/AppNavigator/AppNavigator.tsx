@@ -7,7 +7,7 @@ import {
   ROOT_STACK_NAVIGATOR_ID,
 } from '../constants.ts';
 import { LandingScreen } from './screens/LandingScreen/LandingScreen.tsx';
-import { SavedWorkoutsScreen } from './screens/WorkoutCreationScreen/SavedWorkoutsScreen.tsx';
+import { SavedWorkoutsScreen } from './screens/SavedWorkoutsScreen/SavedWorkoutsScreen.tsx';
 import { RunningWorkoutScreen } from './screens/RunningWorkoutScreen/RunningWorkoutScreen.tsx';
 import { SettingsScreen } from './screens/SettingsScreen/SettingsScreen.tsx';
 

@@ -122,6 +122,12 @@ export const en = {
     },
     runningWorkoutScreen: {
       title: 'Workout',
+      endWorkoutPopUp: {
+        title: 'Finish Workout',
+        description: 'Are you sure you want to end your workout?',
+        positiveButtonLabel: 'End Workout',
+        negativeButtonLabel: 'Continue',
+      },
     },
     savedWorkoutsScreen: {
       title: 'Saved Workouts',

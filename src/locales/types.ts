@@ -74,6 +74,7 @@ export type AppTranslations = {
     };
     runningWorkoutScreen: {
       title: string;
+      endWorkoutPopUp: PopUpTexts;
     };
     savedWorkoutsScreen: {
       title: string;

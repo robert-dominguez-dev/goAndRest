@@ -120,6 +120,12 @@ export const cs = {
     },
     runningWorkoutScreen: {
       title: 'Trénink',
+      endWorkoutPopUp: {
+        title: 'Ukončení tréninku',
+        description: 'Opravdu chceš ukončit trénink?',
+        positiveButtonLabel: 'Ukončit',
+        negativeButtonLabel: 'Pokračovat',
+      },
     },
     savedWorkoutsScreen: {
       title: 'Uložené tréninky',

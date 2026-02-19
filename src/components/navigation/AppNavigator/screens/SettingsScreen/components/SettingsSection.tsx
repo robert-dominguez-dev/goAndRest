@@ -1,4 +1,7 @@
-import { SettingsItemList, SettingsItemListProps, } from './SettingsItemList.tsx';
+import {
+  SettingsItemList,
+  SettingsItemListProps,
+} from './SettingsItemList.tsx';
 import { AppView } from '../../../../../common/AppView/AppView.tsx';
 import { AppRow } from '../../../../../common/AppRow.tsx';
 import { AppDivider } from '../../../../../common/AppDivider.tsx';
