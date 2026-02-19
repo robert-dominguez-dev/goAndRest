@@ -60,6 +60,7 @@ const AppBottomSheetContentComponent = ({
       {header}
       {!!children && (
         <ScrollView
+          showsVerticalScrollIndicator={false}
           keyboardShouldPersistTaps={'handled'}
           scrollEnabled={scrollable}>
           {children}
