@@ -1,7 +1,4 @@
-import {
-  SettingsItemList,
-  SettingsItemListProps,
-} from './SettingsItemList.tsx';
+import { SettingsItemList, SettingsItemListProps, } from './SettingsItemList.tsx';
 import { AppView } from '../../../../../common/AppView/AppView.tsx';
 import { AppRow } from '../../../../../common/AppRow.tsx';
 import { AppDivider } from '../../../../../common/AppDivider.tsx';
@@ -18,14 +15,14 @@ export const SettingsSection = ({
   items,
   IconComponent,
 }: SettingsSectionProps) => (
-  <AppView gap={'ml'}>
+  <AppView gap={'m'}>
     <AppRow gap={'m'}>
       <AppRow
         gap={'s'}
         alignItems={'center'}>
         <AppIconAndLabel
           IconComponent={IconComponent}
-          label={label}
+          label={label.toUpperCase()}
           category={'subHeader'}
           textColorStatus={'textMuted'}
           grow={false}

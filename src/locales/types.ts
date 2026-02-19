@@ -1,6 +1,7 @@
 import { NestedKeys } from '../types/magic.ts';
 import { TOptionsBase } from 'i18next';
 import { AppWorkoutConfigKey } from '../components/navigation/AppNavigator/screens/LandingScreen/constants.ts';
+import { SupportedLanguageCode } from '../contexts/AppLanguageProvider/types.ts';
 
 type WorkoutConfigItemTexts = {
   label: string;
@@ -8,6 +9,12 @@ type WorkoutConfigItemTexts = {
 };
 
 type WorkoutConfigTexts = Record<AppWorkoutConfigKey, WorkoutConfigItemTexts>;
+
+type SettingsItemTexts = WorkoutConfigItemTexts;
+
+type SettingsItemSubItems<TItemsKey extends string> = {
+  items: Record<TItemsKey, string>;
+};
 
 type PopUpTexts = {
   title: string;
@@ -41,12 +48,27 @@ export type AppTranslations = {
     };
     settingsScreen: {
       title: string;
-      items: {
-        languagePicker: {
-          title: string;
+      appearanceSection: {
+        label: string;
+        items: {
+          language: SettingsItemTexts &
+            SettingsItemSubItems<SupportedLanguageCode>;
+          theme: SettingsItemTexts;
         };
-        themePicker: {
-          title: string;
+      };
+      workoutSection: {
+        label: string;
+        items: {
+          keepTimerInBackground: SettingsItemTexts;
+          warmup: SettingsItemTexts;
+          cooldown: SettingsItemTexts;
+        };
+      };
+      feedbackSection: {
+        label: string;
+        items: {
+          sounds: SettingsItemTexts;
+          vibrations: SettingsItemTexts;
         };
       };
     };

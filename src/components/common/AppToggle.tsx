@@ -7,6 +7,8 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 import { useAppThemedColors } from '../../hooks/useAppThemedColors.ts';
+import { getOnPressWithHapticFeedback } from '../controls/helpers/getOnPressWithHapticFeedback.ts';
+import { HapticFeedbackTypes } from 'react-native-haptic-feedback';
 
 const TRACK_WIDTH = 64;
 const TRACK_HEIGHT = 30;
@@ -70,7 +72,11 @@ export const AppToggle = ({ value, onValueChange }: AppToggleProps) => {
   };
 
   return (
-    <Pressable onPress={() => onValueChange(!value)}>
+    <Pressable
+      onPress={getOnPressWithHapticFeedback(
+        () => onValueChange(!value),
+        HapticFeedbackTypes.selection,
+      )}>
       <Animated.View style={[trackStyle, animatedTrackStyle]}>
         <Animated.View style={[thumbStyle, animatedThumbStyle]} />
       </Animated.View>

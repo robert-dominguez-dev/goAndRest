@@ -66,12 +66,56 @@ export const sk = {
     },
     settingsScreen: {
       title: 'Nastavenia',
-      items: {
-        languagePicker: {
-          title: 'Jazyk',
+      appearanceSection: {
+        label: 'Vzhľad',
+        items: {
+          language: {
+            label: 'Jazyk',
+            description:
+              'V tomto jazyku budú zobrazované texty a prehrávané zvuky.',
+            items: {
+              cs: 'Čeština',
+              en: 'Angličtina',
+              sk: 'Slovenčina',
+            },
+          },
+          theme: {
+            label: 'Tmavý režim',
+            description:
+              'Prepne vzhľad aplikácie do tmavých farieb šetriacich oči aj batériu.',
+          },
         },
-        themePicker: {
-          title: 'Tmavý režim',
+      },
+      workoutSection: {
+        label: 'Tréning',
+        items: {
+          keepTimerInBackground: {
+            label: 'Beh časovača na pozadí',
+            description: 'Časovač zostane aktívny aj po opustení aplikácie',
+          },
+          warmup: {
+            label: 'Rozohriatie',
+            description: 'Čas pred začiatkom tréningu určený na rozcvičku.',
+          },
+          cooldown: {
+            label: 'Vydýchanie',
+            description:
+              'Čas po skončení tréningu určený na upokojenie svalov a dychu.',
+          },
+        },
+      },
+      feedbackSection: {
+        label: 'Zvuky a vibrácie',
+        items: {
+          sounds: {
+            label: 'Zvuková odozva',
+            description:
+              'Nastavenie zvukov počas tréningu. Vybrať si môžete rôzne hlasy, zvuky (napr. pípanie), alebo zvuky úplne vypnúť.',
+          },
+          vibrations: {
+            label: 'Vibrácie',
+            description: 'Používať vibrácie v rámci celej aplikácie.',
+          },
         },
       },
     },

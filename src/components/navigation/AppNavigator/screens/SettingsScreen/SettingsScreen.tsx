@@ -26,20 +26,22 @@ export const SettingsScreen = ({ navigation }: SettingsScreenProps) => {
       HeaderAccessoryLeftIconComponent={X}
       onHeaderAccessoryLeftPress={navigation.goBack}
       screenPaddingTopOverride={'ml'}>
-      <AppView gap={'xl'}>
+      <AppView
+        gap={'xl'}
+        paddingBottom={'3xl'}>
         <SettingsSection
           IconComponent={Palette}
-          label={'VZHLED'}
+          label={t('screens.settingsScreen.appearanceSection.label')}
           items={appearanceSettingsItems}
         />
         <SettingsSection
           IconComponent={Zap}
-          label={'TRÉNINK'}
+          label={t('screens.settingsScreen.workoutSection.label')}
           items={workoutSettingsItems}
         />
         <SettingsSection
           IconComponent={Volume2}
-          label={'ZVUKY A VIBRACE'}
+          label={t('screens.settingsScreen.feedbackSection.label')}
           items={feedbackSettingsItems}
         />
       </AppView>

@@ -11,15 +11,18 @@ export type SettingsItemListProps = {
 const SettingsItemListComponent = ({ items }: SettingsItemListProps) => {
   const t = useAppTranslation();
 
-  const settingsItemElements = items.map(({ titleKey, accessoryRight }) => (
-    <SettingsItem
-      key={titleKey}
-      title={t(titleKey)}
-      accessoryRight={accessoryRight}
-    />
-  ));
+  const settingsItemElements = items.map(
+    ({ titleKey, descriptionKey, accessoryRight }) => (
+      <SettingsItem
+        key={titleKey}
+        title={t(titleKey)}
+        description={t(descriptionKey)}
+        accessoryRight={accessoryRight}
+      />
+    ),
+  );
 
-  return <AppView gap={'sm'}>{settingsItemElements}</AppView>;
+  return <AppView gap={'m'}>{settingsItemElements}</AppView>;
 };
 
 export const SettingsItemList = memo(SettingsItemListComponent);
