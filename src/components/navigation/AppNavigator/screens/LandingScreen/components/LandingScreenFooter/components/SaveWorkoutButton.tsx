@@ -7,6 +7,8 @@ import { AppWorkout } from '../../../../../../../../contexts/AppWorkoutsProvider
 import { SaveWorkoutBottomSheet } from './SaveWorkoutBottomSheet.tsx';
 import { useIsVisible } from '../../../../../../../common/AppBottomSheet/hooks/useIsVisible.ts';
 import { v4 as uuidv4 } from 'uuid';
+import { useRootStackNavigation } from '../../../../../../hooks/useRootStackNavigation.ts';
+import { AppNavigatorScreen } from '../../../../../types.ts';
 
 export const SaveWorkoutButton = () => {
   const { text } = useAppThemedColors();
@@ -14,6 +16,8 @@ export const SaveWorkoutButton = () => {
   const { isVisible, onOpen, onClose } = useIsVisible();
 
   const { storeWorkout } = useAppWorkouts();
+
+  const navigation = useRootStackNavigation();
 
   const handleSave = ({ workoutName, ...workoutConfig }: AppWorkout) => {
     storeWorkout({
@@ -24,6 +28,8 @@ export const SaveWorkoutButton = () => {
       },
       config: workoutConfig,
     });
+
+    navigation.navigate(AppNavigatorScreen.SavedWorkoutsScreen);
 
     onClose();
   };

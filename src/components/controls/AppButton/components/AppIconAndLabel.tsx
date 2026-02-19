@@ -5,7 +5,7 @@ import { useAppThemedColors } from '../../../../hooks/useAppThemedColors.ts';
 
 export const categoryToIconSize: Partial<Record<AppTextCategoryUnion, number>> =
   {
-    header: 32,
+    header: 28,
     subHeader: 24,
     title: 16,
   };
