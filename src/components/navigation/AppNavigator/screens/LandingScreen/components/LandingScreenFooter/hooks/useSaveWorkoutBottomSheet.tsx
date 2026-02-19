@@ -81,8 +81,6 @@ export const useSaveWorkoutBottomSheet = (
   const openSaveWorkoutBottomSheet = () =>
     handleOpen({
       renderContent,
-      closeable: true,
-      scrollable: false,
       title: t('screens.landingScreen.saveWorkoutBottomSheet.title'),
       backgroundColorStatus: 'backgroundAlt',
       AccessoryRightIconComponent: X,

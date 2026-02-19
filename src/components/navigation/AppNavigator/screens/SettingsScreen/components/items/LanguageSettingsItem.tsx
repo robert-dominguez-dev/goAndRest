@@ -7,6 +7,7 @@ import { HapticFeedbackTypes } from 'react-native-haptic-feedback';
 import { AppEmojiButton } from '../../../../../../common/AppEmojiButton.tsx';
 import { AppRow } from '../../../../../../common/AppRow.tsx';
 import { memo } from 'react';
+import { useAppSelectionBottomSheet } from '../../../../../../common/AppSelectionBottomSheet/hooks/useAppSelectionBottomSheet.tsx';
 
 const appLanguageCodeToFlagEmoji: Record<SupportedLanguageCode, string> = {
   [SupportedLanguageCode.cs]: '🇨🇿',
@@ -39,6 +40,8 @@ const LanguageSettingsItemComponent = () => {
   });
 
   const accessoryRight = <AppRow gap={'sm'}>{flags}</AppRow>;
+
+  const { bottomSheet, handleOpen } = useAppSelectionBottomSheet();
 
   return (
     <SettingsItem

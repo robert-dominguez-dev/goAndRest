@@ -8,14 +8,6 @@ import {
   getBottomSheetContentHeader,
   GetBottomSheetContentHeaderParams,
 } from '../helpers/getBottomSheetContentHeader.tsx';
-import { AppBottomSheetButtonProps } from './AppBottomSheetButton.tsx';
-
-export type BottomSheetSubmitButtonProps = Omit<
-  AppBottomSheetButtonProps,
-  'onPress'
-> & {
-  onPress: (closeBottomSheet: () => void) => void;
-};
 
 export type AppBottomSheetContentProps = ChildrenProp &
   GetBottomSheetContentHeaderParams &
@@ -27,19 +19,17 @@ const AppBottomSheetContentComponent = ({
   children,
   title,
   onClose,
-  closeable,
   headerOverride,
   AccessoryRightIconComponent,
   onAccessoryRightPress,
   backgroundColorStatus = 'backgroundAlt',
-  scrollable = true,
+  scrollable = false,
 }: AppBottomSheetContentProps) => {
   const { safeAreaPaddingBottom } = useAppSafeAreaPadding();
 
   const header = getBottomSheetContentHeader({
     title,
     headerOverride,
-    closeable,
     onClose,
     AccessoryRightIconComponent,
     onAccessoryRightPress,

@@ -6,7 +6,6 @@ export type GetBottomSheetContentHeaderParams = Pick<
   'AccessoryRightIconComponent' | 'title' | 'onAccessoryRightPress'
 > & {
   headerOverride?: JSX.Element;
-  closeable?: boolean;
   onClose: () => void;
 };
 

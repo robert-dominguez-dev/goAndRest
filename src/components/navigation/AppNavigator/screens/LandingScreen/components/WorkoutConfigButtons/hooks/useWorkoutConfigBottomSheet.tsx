@@ -110,8 +110,6 @@ export const useWorkoutConfigBottomSheet = (name: AppWorkoutConfigKey) => {
     handleTakeLastValueSnapshot();
     handleOpen({
       renderContent,
-      closeable: true,
-      scrollable: false,
       title: iconAndTitleElement,
       backgroundColorStatus,
       AccessoryRightIconComponent: X,
