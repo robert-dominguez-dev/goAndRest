@@ -5,10 +5,9 @@ import {
   AppBottomSheetContentProps,
 } from './components/AppBottomSheetContent.tsx';
 import { AppKeyboardAvoidingView } from '../AppKeyboardAvoidingView.tsx';
-import { useIsFocused } from '@react-navigation/native';
 import { JSX } from 'react';
 
-type AppBottomSheetRenderContentParams = Pick<
+export type AppBottomSheetRenderContentProps = Pick<
   AppBottomSheetContentProps,
   'onClose'
 >;
@@ -22,7 +21,7 @@ export type AppBottomSheetProps = Pick<
   | 'AccessoryRightIconComponent'
   | 'onAccessoryRightPress'
 > & {
-  renderContent: (params: AppBottomSheetRenderContentParams) => JSX.Element;
+  renderContent: (params: AppBottomSheetRenderContentProps) => JSX.Element;
 };
 
 export const AppBottomSheet = ({
@@ -34,15 +33,12 @@ export const AppBottomSheet = ({
   AccessoryRightIconComponent,
   onAccessoryRightPress,
 }: AppBottomSheetProps) => {
-  const isFocused = useIsFocused();
-
   const contentElement = renderContent({ onClose });
 
   return (
     <Modal
       transparent
       statusBarTranslucent
-      visible={isFocused}
       animationType={'slide'}>
       <AppView
         grow

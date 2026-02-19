@@ -2,14 +2,11 @@ import {
   AppBottomSheet,
   AppBottomSheetProps,
 } from '../AppBottomSheet/AppBottomSheet.tsx';
-import { AppView } from '../AppView/AppView.tsx';
 import {
-  AppSelectionBottomSheetItem,
   AppSelectionBottomSheetItemData,
   AppSelectionBottomSheetItemProps,
 } from './components/AppSelectionBottomSheetItem.tsx';
-import { checkIsLast } from '../../../helpers/checkIsLast.ts';
-import { AppDivider } from '../AppDivider.tsx';
+import { AppSelectionBottomSheetContent } from './components/AppSelectionBottomSheetContent.tsx';
 
 export type AppSelectionBottomSheetProps<TValue> = Omit<
   AppBottomSheetProps,
@@ -24,32 +21,13 @@ export const AppSelectionBottomSheet = <TValue,>({
   onSelect,
   ...props
 }: AppSelectionBottomSheetProps<TValue>) => {
-  const renderContent: AppBottomSheetProps['renderContent'] = ({ onClose }) => {
-    const handleSelect: AppSelectionBottomSheetItemProps<TValue>['onSelect'] =
-      value => {
-        onSelect(value);
-        onClose();
-      };
-
-    return (
-      <AppView>
-        {items.map((item, index) => {
-          const withDivider = checkIsLast(items, index);
-
-          return (
-            <>
-              <AppSelectionBottomSheetItem
-                key={item.label}
-                {...item}
-                onSelect={handleSelect}
-              />
-              {withDivider && <AppDivider />}
-            </>
-          );
-        })}
-      </AppView>
-    );
-  };
+  const renderContent: AppBottomSheetProps['renderContent'] = ({ onClose }) => (
+    <AppSelectionBottomSheetContent
+      items={items}
+      onSelect={onSelect}
+      onClose={onClose}
+    />
+  );
 
   return (
     <AppBottomSheet
