@@ -7,6 +7,7 @@ import {
 import { checkIsLast } from '../../../../helpers/checkIsLast.ts';
 import { AppDivider } from '../../AppDivider.tsx';
 import { AppBottomSheetRenderContentProps } from '../../AppBottomSheet/AppBottomSheet.tsx';
+import { Fragment } from 'react';
 
 export type AppSelectionBottomSheetContentProps<TValue> =
   AppBottomSheetRenderContentProps &
@@ -28,17 +29,16 @@ export const AppSelectionBottomSheetContent = <TValue,>({
   return (
     <AppView>
       {items.map((item, index) => {
-        const withDivider = checkIsLast(items, index);
+        const withDivider = !checkIsLast(items, index);
 
         return (
-          <>
+          <Fragment key={item.label}>
             <AppSelectionBottomSheetItem
-              key={item.label}
               {...item}
               onSelect={handleSelect}
             />
             {withDivider && <AppDivider />}
-          </>
+          </Fragment>
         );
       })}
     </AppView>

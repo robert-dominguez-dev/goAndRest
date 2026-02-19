@@ -39,6 +39,7 @@ const AppBottomSheetContentComponent = ({
     <AppView
       grow
       disableBorderBottom
+      onTouchEnd={e => e.stopPropagation()}
       maxHeight={FILL_CONTAINER_DIMENSION}
       gap={'m'}
       paddingTop={'m'}

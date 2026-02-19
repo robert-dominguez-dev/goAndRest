@@ -10,15 +10,17 @@ import { AppSelectionBottomSheetContent } from './components/AppSelectionBottomS
 
 export type AppSelectionBottomSheetProps<TValue> = Omit<
   AppBottomSheetProps,
-  'renderContent'
+  'renderContent' | 'title'
 > &
   Pick<AppSelectionBottomSheetItemProps<TValue>, 'onSelect'> & {
     items: AppSelectionBottomSheetItemData<TValue>[];
+    title?: string;
   };
 
 export const AppSelectionBottomSheet = <TValue,>({
   items,
   onSelect,
+  title = '',
   ...props
 }: AppSelectionBottomSheetProps<TValue>) => {
   const renderContent: AppBottomSheetProps['renderContent'] = ({ onClose }) => (
@@ -32,6 +34,7 @@ export const AppSelectionBottomSheet = <TValue,>({
   return (
     <AppBottomSheet
       {...props}
+      title={title}
       renderContent={renderContent}
     />
   );

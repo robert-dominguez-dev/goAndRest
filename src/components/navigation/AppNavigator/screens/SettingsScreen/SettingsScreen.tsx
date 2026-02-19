@@ -1,10 +1,14 @@
 import { AppScreenLayout } from '../../../../common/AppScreenLayout.tsx';
 import { useAppTranslation } from '../../../../../locales/hooks/useAppTranslation.ts';
-import { Palette, X } from 'lucide-react-native';
+import { Palette, Volume2, X, Zap } from 'lucide-react-native';
 import { ScreenProps } from '../../../types.ts';
 import { AppNavigatorScreen, AppNavigatorScreenParams } from '../../types.ts';
 import { SettingsSection } from './components/SettingsSection.tsx';
-import { appearanceSettingsItems } from './constants.tsx';
+import {
+  appearanceSettingsItems,
+  feedbackSettingsItems,
+  workoutSettingsItems,
+} from './constants.tsx';
 import { AppView } from '../../../../common/AppView/AppView.tsx';
 
 type SettingsScreenProps = ScreenProps<
@@ -30,7 +34,6 @@ export const SettingsScreen = ({ navigation }: SettingsScreenProps) => {
           label={t('screens.settingsScreen.appearanceSection.label')}
           items={appearanceSettingsItems}
         />
-        {/*
         <SettingsSection
           IconComponent={Zap}
           label={t('screens.settingsScreen.workoutSection.label')}
@@ -40,7 +43,7 @@ export const SettingsScreen = ({ navigation }: SettingsScreenProps) => {
           IconComponent={Volume2}
           label={t('screens.settingsScreen.feedbackSection.label')}
           items={feedbackSettingsItems}
-        />*/}
+        />
       </AppView>
     </AppScreenLayout>
   );

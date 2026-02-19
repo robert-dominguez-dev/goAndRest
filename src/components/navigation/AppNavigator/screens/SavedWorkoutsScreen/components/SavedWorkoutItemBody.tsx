@@ -23,11 +23,13 @@ export const SavedWorkoutItemBody = ({ config }: SavedWorkoutItemBodyProps) => (
         <SavedWorkoutItemBodyRow
           name={'work'}
           value={config.work}
+          backgroundColorStatusOverride={'workStrong'}
         />
         <AppDivider />
         <SavedWorkoutItemBodyRow
           name={'rest'}
           value={config.rest}
+          backgroundColorStatusOverride={'restStrong'}
         />
       </AppView>
       <AppRow paddingVertical={VERTICAL_DIVIDERS_SPACING}>

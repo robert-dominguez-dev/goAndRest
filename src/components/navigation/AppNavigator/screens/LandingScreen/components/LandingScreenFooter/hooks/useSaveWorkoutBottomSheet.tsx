@@ -1,4 +1,3 @@
-import { X } from 'lucide-react-native';
 import { useAppTranslation } from '../../../../../../../../locales/hooks/useAppTranslation.ts';
 import { useAppBottomSheet } from '../../../../../../../common/AppBottomSheet/hooks/useAppBottomSheet.tsx';
 import { AppBottomSheetProps } from '../../../../../../../common/AppBottomSheet/AppBottomSheet.tsx';
@@ -18,7 +17,6 @@ export const useSaveWorkoutBottomSheet = () => {
       renderContent,
       title: t('screens.landingScreen.saveWorkoutBottomSheet.title'),
       backgroundColorStatus: 'backgroundAlt',
-      AccessoryRightIconComponent: X,
     });
 
   return { bottomSheet, openSaveWorkoutBottomSheet };

@@ -1,10 +1,39 @@
 import { TranslateKey } from '../../../../../locales/types.ts';
 import { SettingsItemProps } from './components/SettingsItem.tsx';
-import { AppText } from '../../../../common/AppText/AppText.tsx';
 import { AppToggle } from '../../../../common/AppToggle/AppToggle.tsx';
 import { JSX } from 'react';
 import { LanguageSettingsItem } from './components/items/LanguageSettingsItem.tsx';
 import { ThemeSettingsItem } from './components/items/ThemeSettingsItem.tsx';
+import { SupportedLanguageCode } from '../../../../../contexts/AppLanguageProvider/types.ts';
+import { KeepTimerInBackgroundSettingsItem } from './components/items/KeepTimerInBackgroundSettingsItem.tsx';
+import { VibrationsSettingsItem } from './components/items/VibrationsSettingsItem.tsx';
+import { WarmupSettingsItem } from './components/items/WarmupSettingsItem.tsx';
+import { CooldownSettingsItem } from './components/items/CooldownSettingsItem.tsx';
+
+export const appLanguages: SupportedLanguageCode[] = [
+  SupportedLanguageCode.cs,
+  SupportedLanguageCode.en,
+  SupportedLanguageCode.sk,
+];
+
+export const appLanguageCodeToFlagEmoji: Record<SupportedLanguageCode, string> =
+  {
+    [SupportedLanguageCode.cs]: '🇨🇿',
+    [SupportedLanguageCode.sk]: '🇸🇰',
+    [SupportedLanguageCode.en]: '🇬🇧',
+  };
+
+export const appLanguageCodeToLabelTranslateKey: Record<
+  SupportedLanguageCode,
+  TranslateKey
+> = {
+  [SupportedLanguageCode.cs]:
+    'screens.settingsScreen.appearanceSection.items.language.items.cs',
+  [SupportedLanguageCode.sk]:
+    'screens.settingsScreen.appearanceSection.items.language.items.sk',
+  [SupportedLanguageCode.en]:
+    'screens.settingsScreen.appearanceSection.items.language.items.en',
+};
 
 export type SettingsItemConfig = Pick<SettingsItemProps, 'accessoryRight'> & {
   titleKey: TranslateKey;
@@ -16,48 +45,17 @@ export const appearanceSettingsItems: JSX.Element[] = [
   <ThemeSettingsItem key={'theme'} />,
 ];
 
-export const workoutSettingsItems: SettingsItemConfig[] = [
-  {
-    titleKey:
-      'screens.settingsScreen.workoutSection.items.keepTimerInBackground.label',
-    descriptionKey:
-      'screens.settingsScreen.workoutSection.items.keepTimerInBackground.description',
-    accessoryRight: (
-      <AppToggle
-        value={true}
-        onValueChange={value => console.log(value)}
-      />
-    ),
-  },
-  {
-    titleKey: 'screens.settingsScreen.workoutSection.items.warmup.label',
-    descriptionKey:
-      'screens.settingsScreen.workoutSection.items.warmup.description',
-    accessoryRight: (
-      <AppText
-        grow={false}
-        textAlign={'right'}
-        category={'subHeader'}>
-        0:10
-      </AppText>
-    ),
-  },
-  {
-    titleKey: 'screens.settingsScreen.workoutSection.items.cooldown.label',
-    descriptionKey:
-      'screens.settingsScreen.workoutSection.items.cooldown.description',
-    accessoryRight: (
-      <AppText
-        grow={false}
-        textAlign={'right'}
-        category={'subHeader'}>
-        0:10
-      </AppText>
-    ),
-  },
+export const workoutSettingsItems: JSX.Element[] = [
+  <KeepTimerInBackgroundSettingsItem key={'timer_in_background'} />,
+  <WarmupSettingsItem key={'warmup'} />,
+  <CooldownSettingsItem key={'cooldown'} />,
 ];
 
-export const feedbackSettingsItems: SettingsItemConfig[] = [
+export const feedbackSettingsItems: JSX.Element[] = [
+  <VibrationsSettingsItem key={'vibrations'} />,
+];
+
+export const feedbackSettingsItems2: SettingsItemConfig[] = [
   {
     titleKey: 'screens.settingsScreen.feedbackSection.items.sounds.label',
     descriptionKey:
@@ -65,17 +63,6 @@ export const feedbackSettingsItems: SettingsItemConfig[] = [
     accessoryRight: (
       <AppToggle
         value={false}
-        onValueChange={value => console.log(value)}
-      />
-    ),
-  },
-  {
-    titleKey: 'screens.settingsScreen.feedbackSection.items.vibrations.label',
-    descriptionKey:
-      'screens.settingsScreen.feedbackSection.items.vibrations.description',
-    accessoryRight: (
-      <AppToggle
-        value={true}
         onValueChange={value => console.log(value)}
       />
     ),

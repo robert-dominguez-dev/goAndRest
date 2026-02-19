@@ -11,7 +11,7 @@ import { AppText } from '../AppText/AppText.tsx';
 import { useAppThemedColors } from '../../../hooks/useAppThemedColors.ts';
 
 export type AppHeaderProps = {
-  title: string | JSX.Element;
+  title?: string | JSX.Element;
   AccessoryLeftIconComponent?: LucideIcon;
   onAccessoryLeftPress?: AppHeaderAccessoryContainerProps['onPress'];
   AccessoryRightIconComponent?: LucideIcon;

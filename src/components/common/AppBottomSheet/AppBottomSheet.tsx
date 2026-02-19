@@ -22,6 +22,7 @@ export type AppBottomSheetProps = Pick<
   | 'onAccessoryRightPress'
 > & {
   renderContent: (params: AppBottomSheetRenderContentProps) => JSX.Element;
+  shouldCloseOnOverlayPress?: boolean;
 };
 
 export const AppBottomSheet = ({
@@ -32,6 +33,7 @@ export const AppBottomSheet = ({
   backgroundColorStatus,
   AccessoryRightIconComponent,
   onAccessoryRightPress,
+  shouldCloseOnOverlayPress = !title,
 }: AppBottomSheetProps) => {
   const contentElement = renderContent({ onClose });
 
@@ -41,6 +43,7 @@ export const AppBottomSheet = ({
       statusBarTranslucent
       animationType={'slide'}>
       <AppView
+        onTouchEnd={shouldCloseOnOverlayPress ? onClose : undefined}
         grow
         justifyContent={'flex-end'}>
         <AppKeyboardAvoidingView>

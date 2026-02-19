@@ -1,13 +1,19 @@
 import { JSX } from 'react';
 import { AppRow } from '../../AppRow.tsx';
-import { AppText } from '../../AppText/AppText.tsx';
 import { Pressable } from 'react-native';
 import { getPressableOpacity } from '../../../controls/helpers/getPressableOpacity.ts';
+import { getOnPressWithHapticFeedback } from '../../../controls/helpers/getOnPressWithHapticFeedback.ts';
+import { HapticFeedbackTypes } from 'react-native-haptic-feedback';
+import { AppSelectionBottomSheetItemText } from './AppSelectionBottomSheetItemTextProps.tsx';
+import { Check } from 'lucide-react-native';
+import { useAppThemedColors } from '../../../../hooks/useAppThemedColors.ts';
+import { categoryToIconSize } from '../../../controls/AppButton/components/AppIconAndLabel.tsx';
 
 export type AppSelectionBottomSheetItemData<TValue> = {
   label: string;
   value: TValue;
   accessoryLeft?: JSX.Element;
+  selected?: boolean;
   disabled?: boolean;
 };
 
@@ -21,14 +27,22 @@ export const AppSelectionBottomSheetItem = <TValue,>({
   value,
   onSelect,
   accessoryLeft,
+  selected,
   disabled,
 }: AppSelectionBottomSheetItemProps<TValue>) => {
+  const { text } = useAppThemedColors();
+
   const handlePress = () => onSelect(value);
+
+  const isPressDisabled: boolean = !!disabled || !!selected;
 
   return (
     <Pressable
-      onPress={handlePress}
-      disabled>
+      onPress={getOnPressWithHapticFeedback(
+        handlePress,
+        HapticFeedbackTypes.selection,
+      )}
+      disabled={isPressDisabled}>
       {({ pressed }) => {
         const opacity = getPressableOpacity({
           pressed,
@@ -38,10 +52,23 @@ export const AppSelectionBottomSheetItem = <TValue,>({
         return (
           <AppRow
             opacity={opacity}
-            gap={'s'}
-            alignItems={'center'}>
-            {accessoryLeft}
-            <AppText grow={false}>{label}</AppText>
+            paddingVertical={'m'}
+            alignItems={'center'}
+            justifyContent={'space-between'}>
+            <AppRow
+              gap={'sm'}
+              alignItems={'center'}>
+              {accessoryLeft}
+              <AppSelectionBottomSheetItemText>
+                {label}
+              </AppSelectionBottomSheetItemText>
+            </AppRow>
+            {!!selected && (
+              <Check
+                color={text}
+                size={categoryToIconSize.subHeader}
+              />
+            )}
           </AppRow>
         );
       }}
