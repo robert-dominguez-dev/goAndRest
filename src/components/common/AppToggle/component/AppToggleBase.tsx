@@ -1,14 +1,12 @@
 import React, { useEffect } from 'react';
-import { Pressable, ViewStyle } from 'react-native';
+import { ViewStyle } from 'react-native';
 import Animated, {
   interpolateColor,
   useAnimatedStyle,
   useSharedValue,
   withTiming,
 } from 'react-native-reanimated';
-import { useAppThemedColors } from '../../hooks/useAppThemedColors.ts';
-import { getOnPressWithHapticFeedback } from '../controls/helpers/getOnPressWithHapticFeedback.ts';
-import { HapticFeedbackTypes } from 'react-native-haptic-feedback';
+import { useAppThemedColors } from '../../../../hooks/useAppThemedColors.ts';
 
 const TRACK_WIDTH = 64;
 const TRACK_HEIGHT = 30;
@@ -21,12 +19,11 @@ const THUMB_HEIGHT = TRACK_HEIGHT - BOTH_SIDES_PADDING;
 
 const SLIDE_WIDTH = TRACK_WIDTH - THUMB_WIDTH - BOTH_SIDES_PADDING;
 
-type AppToggleProps = {
+export type AppToggleBaseProps = {
   value: boolean;
-  onValueChange: (value: boolean) => void;
 };
 
-export const AppToggle = ({ value, onValueChange }: AppToggleProps) => {
+export const AppToggleBase = ({ value }: AppToggleBaseProps) => {
   const { backgroundAlt, background, primary } = useAppThemedColors();
 
   const progress = useSharedValue(value ? 1 : 0);
@@ -72,14 +69,8 @@ export const AppToggle = ({ value, onValueChange }: AppToggleProps) => {
   };
 
   return (
-    <Pressable
-      onPress={getOnPressWithHapticFeedback(
-        () => onValueChange(!value),
-        HapticFeedbackTypes.selection,
-      )}>
-      <Animated.View style={[trackStyle, animatedTrackStyle]}>
-        <Animated.View style={[thumbStyle, animatedThumbStyle]} />
-      </Animated.View>
-    </Pressable>
+    <Animated.View style={[trackStyle, animatedTrackStyle]}>
+      <Animated.View style={[thumbStyle, animatedThumbStyle]} />
+    </Animated.View>
   );
 };

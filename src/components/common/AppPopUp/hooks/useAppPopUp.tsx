@@ -1,12 +1,12 @@
 import { AppPopUp, AppPopUpProps } from '../AppPopUp.tsx';
 import { JSX, useState } from 'react';
 
-type UsePopUpProps = Omit<AppPopUpProps, 'onClose'>;
+type OpenPopUpParams = Omit<AppPopUpProps, 'onClose'>;
 
 export const useAppPopUp = () => {
   const [popUp, setPopUp] = useState<JSX.Element | null>(null);
 
-  const handleOpen = (params: UsePopUpProps) =>
+  const handleOpen = (params: OpenPopUpParams) =>
     setPopUp(
       <AppPopUp
         {...params}

@@ -4,16 +4,13 @@ import { AppSize } from '../../../../../../../../types/ui.ts';
 import { useAppThemedColors } from '../../../../../../../../hooks/useAppThemedColors.ts';
 import { useAppWorkouts } from '../../../../../../../../contexts/AppWorkoutsProvider/AppWorkoutsProvider.tsx';
 import { AppWorkout } from '../../../../../../../../contexts/AppWorkoutsProvider/types.ts';
-import { SaveWorkoutBottomSheet } from './SaveWorkoutBottomSheet.tsx';
-import { useIsVisible } from '../../../../../../../common/AppBottomSheet/hooks/useIsVisible.ts';
 import { v4 as uuidv4 } from 'uuid';
 import { useRootStackNavigation } from '../../../../../../hooks/useRootStackNavigation.ts';
 import { AppNavigatorScreen } from '../../../../../types.ts';
+import { useSaveWorkoutBottomSheet } from '../hooks/useSaveWorkoutBottomSheet.tsx';
 
 export const SaveWorkoutButton = () => {
   const { text } = useAppThemedColors();
-
-  const { isVisible, onOpen, onClose } = useIsVisible();
 
   const { storeWorkout } = useAppWorkouts();
 
@@ -30,14 +27,15 @@ export const SaveWorkoutButton = () => {
     });
 
     navigation.navigate(AppNavigatorScreen.SavedWorkoutsScreen);
-
-    onClose();
   };
+
+  const { bottomSheet, openSaveWorkoutBottomSheet } =
+    useSaveWorkoutBottomSheet(handleSave);
 
   return (
     <>
       <AppRoundedButton
-        onPress={onOpen}
+        onPress={openSaveWorkoutBottomSheet}
         size={'s'}
         status={'grayscale'}>
         <Save
@@ -45,11 +43,7 @@ export const SaveWorkoutButton = () => {
           color={text}
         />
       </AppRoundedButton>
-      <SaveWorkoutBottomSheet
-        isVisible={isVisible}
-        onClose={onClose}
-        onSave={handleSave}
-      />
+      {bottomSheet}
     </>
   );
 };

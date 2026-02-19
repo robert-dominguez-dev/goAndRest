@@ -1,42 +1,61 @@
 import { Modal } from 'react-native';
 import { AppView } from '../AppView/AppView.tsx';
-import { AppBottomSheetContent } from './components/AppBottomSheetContent.tsx';
+import {
+  AppBottomSheetContent,
+  AppBottomSheetContentProps,
+} from './components/AppBottomSheetContent.tsx';
 import { AppKeyboardAvoidingView } from '../AppKeyboardAvoidingView.tsx';
 import { useIsFocused } from '@react-navigation/native';
-import { AppBottomSheetProps } from './types.ts';
+import { JSX } from 'react';
+
+type AppBottomSheetRenderContentParams = Pick<
+  AppBottomSheetContentProps,
+  'onClose'
+>;
+
+export type AppBottomSheetProps = Pick<
+  AppBottomSheetContentProps,
+  | 'title'
+  | 'onClose'
+  | 'scrollable'
+  | 'backgroundColorStatus'
+  | 'AccessoryRightIconComponent'
+> & {
+  closeable?: boolean;
+  renderContent: (params: AppBottomSheetRenderContentParams) => JSX.Element;
+};
 
 export const AppBottomSheet = ({
-  isVisible,
   onClose,
+  renderContent,
   closeable,
-  bottomSheetTitle,
-  bottomSheetContent,
+  title,
   scrollable,
   backgroundColorStatus,
   AccessoryRightIconComponent,
 }: AppBottomSheetProps) => {
   const isFocused = useIsFocused();
 
-  const visible = isVisible && isFocused;
+  const contentElement = renderContent({ onClose });
 
   return (
     <Modal
       transparent
       statusBarTranslucent
-      visible={visible}
+      visible={isFocused}
       animationType={'slide'}>
       <AppView
         grow
         justifyContent={'flex-end'}>
         <AppKeyboardAvoidingView>
           <AppBottomSheetContent
-            title={bottomSheetTitle}
+            title={title}
             closeable={closeable}
             onClose={onClose}
             scrollable={scrollable}
             backgroundColorStatus={backgroundColorStatus}
             AccessoryRightIconComponent={AccessoryRightIconComponent}>
-            {bottomSheetContent}
+            {contentElement}
           </AppBottomSheetContent>
         </AppKeyboardAvoidingView>
       </AppView>

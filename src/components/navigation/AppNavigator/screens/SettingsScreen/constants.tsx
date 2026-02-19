@@ -1,28 +1,19 @@
 import { TranslateKey } from '../../../../../locales/types.ts';
 import { SettingsItemProps } from './components/SettingsItem.tsx';
-import { AppLanguagePicker } from './components/AppLanguagePicker.tsx';
-import { AppThemeToggle } from './components/AppThemeToggle.tsx';
 import { AppText } from '../../../../common/AppText/AppText.tsx';
-import { AppToggle } from '../../../../common/AppToggle.tsx';
+import { AppToggle } from '../../../../common/AppToggle/AppToggle.tsx';
+import { JSX } from 'react';
+import { LanguageSettingsItem } from './components/items/LanguageSettingsItem.tsx';
+import { ThemeSettingsItem } from './components/items/ThemeSettingsItem.tsx';
 
 export type SettingsItemConfig = Pick<SettingsItemProps, 'accessoryRight'> & {
   titleKey: TranslateKey;
   descriptionKey: TranslateKey;
 };
 
-export const appearanceSettingsItems: SettingsItemConfig[] = [
-  {
-    titleKey: 'screens.settingsScreen.appearanceSection.items.language.label',
-    descriptionKey:
-      'screens.settingsScreen.appearanceSection.items.language.description',
-    accessoryRight: <AppLanguagePicker />,
-  },
-  {
-    titleKey: 'screens.settingsScreen.appearanceSection.items.theme.label',
-    descriptionKey:
-      'screens.settingsScreen.appearanceSection.items.theme.description',
-    accessoryRight: <AppThemeToggle />,
-  },
+export const appearanceSettingsItems: JSX.Element[] = [
+  <LanguageSettingsItem key={'language'} />,
+  <ThemeSettingsItem key={'theme'} />,
 ];
 
 export const workoutSettingsItems: SettingsItemConfig[] = [

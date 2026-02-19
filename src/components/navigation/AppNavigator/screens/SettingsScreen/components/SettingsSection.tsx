@@ -1,7 +1,3 @@
-import {
-  SettingsItemList,
-  SettingsItemListProps,
-} from './SettingsItemList.tsx';
 import { AppView } from '../../../../../common/AppView/AppView.tsx';
 import { AppRow } from '../../../../../common/AppRow.tsx';
 import { AppDivider } from '../../../../../common/AppDivider.tsx';
@@ -9,14 +5,19 @@ import {
   AppIconAndLabel,
   AppIconAndLabelProps,
 } from '../../../../../controls/AppButton/components/AppIconAndLabel.tsx';
+import { JSX } from 'react';
 
-type SettingsSectionProps = SettingsItemListProps &
-  Pick<AppIconAndLabelProps, 'label' | 'IconComponent'>;
+type SettingsSectionProps = Pick<
+  AppIconAndLabelProps,
+  'label' | 'IconComponent'
+> & {
+  items: JSX.Element[];
+};
 
 export const SettingsSection = ({
   label,
-  items,
   IconComponent,
+  items,
 }: SettingsSectionProps) => (
   <AppView gap={'m'}>
     <AppRow gap={'m'}>
@@ -37,6 +38,6 @@ export const SettingsSection = ({
         <AppDivider />
       </AppView>
     </AppRow>
-    <SettingsItemList items={items} />
+    <AppView gap={'m'}>{items}</AppView>
   </AppView>
 );

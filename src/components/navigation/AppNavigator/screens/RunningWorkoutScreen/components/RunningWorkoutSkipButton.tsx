@@ -3,7 +3,10 @@ import { AppRoundedButton } from '../../../../../controls/AppRoundedButton/AppRo
 import { LucideIcon, Redo2, Undo2 } from 'lucide-react-native';
 import { AppSize } from '../../../../../../types/ui.ts';
 import { useAppThemedColors } from '../../../../../../hooks/useAppThemedColors.ts';
-import { AppView, AppViewProps, } from '../../../../../common/AppView/AppView.tsx';
+import {
+  AppView,
+  AppViewProps,
+} from '../../../../../common/AppView/AppView.tsx';
 import { AppText } from '../../../../../common/AppText/AppText.tsx';
 import { FILL_CONTAINER_DIMENSION } from '../../../../../../constants/common.ts';
 
