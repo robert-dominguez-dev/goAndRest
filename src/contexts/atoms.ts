@@ -28,3 +28,11 @@ export const vibrationsSettingsAtom = atomWithStorage<boolean>(
   true,
   booleanAsyncStorage,
 );
+
+const stringAsyncStorage = createJSONStorage<string>(() => AsyncStorage);
+
+export const soundsSettingsAtom = atomWithStorage<string>(
+  'SOUNDS_SETTINGS_DURATION',
+  'Karel',
+  stringAsyncStorage,
+);

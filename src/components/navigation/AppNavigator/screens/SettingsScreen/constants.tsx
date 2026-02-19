@@ -1,6 +1,4 @@
 import { TranslateKey } from '../../../../../locales/types.ts';
-import { SettingsItemProps } from './components/SettingsItem.tsx';
-import { AppToggle } from '../../../../common/AppToggle/AppToggle.tsx';
 import { JSX } from 'react';
 import { LanguageSettingsItem } from './components/items/LanguageSettingsItem.tsx';
 import { ThemeSettingsItem } from './components/items/ThemeSettingsItem.tsx';
@@ -9,6 +7,7 @@ import { KeepTimerInBackgroundSettingsItem } from './components/items/KeepTimerI
 import { VibrationsSettingsItem } from './components/items/VibrationsSettingsItem.tsx';
 import { WarmupSettingsItem } from './components/items/WarmupSettingsItem.tsx';
 import { CooldownSettingsItem } from './components/items/CooldownSettingsItem.tsx';
+import { SoundsSettingsItem } from './components/items/SoundsSettingsItem.tsx';
 
 export const appLanguages: SupportedLanguageCode[] = [
   SupportedLanguageCode.cs,
@@ -35,11 +34,6 @@ export const appLanguageCodeToLabelTranslateKey: Record<
     'screens.settingsScreen.appearanceSection.items.language.items.en',
 };
 
-export type SettingsItemConfig = Pick<SettingsItemProps, 'accessoryRight'> & {
-  titleKey: TranslateKey;
-  descriptionKey: TranslateKey;
-};
-
 export const appearanceSettingsItems: JSX.Element[] = [
   <LanguageSettingsItem key={'language'} />,
   <ThemeSettingsItem key={'theme'} />,
@@ -52,19 +46,6 @@ export const workoutSettingsItems: JSX.Element[] = [
 ];
 
 export const feedbackSettingsItems: JSX.Element[] = [
+  <SoundsSettingsItem key={'sounds'} />,
   <VibrationsSettingsItem key={'vibrations'} />,
-];
-
-export const feedbackSettingsItems2: SettingsItemConfig[] = [
-  {
-    titleKey: 'screens.settingsScreen.feedbackSection.items.sounds.label',
-    descriptionKey:
-      'screens.settingsScreen.feedbackSection.items.sounds.description',
-    accessoryRight: (
-      <AppToggle
-        value={false}
-        onValueChange={value => console.log(value)}
-      />
-    ),
-  },
 ];
