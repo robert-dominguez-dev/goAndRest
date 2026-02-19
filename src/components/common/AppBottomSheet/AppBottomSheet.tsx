@@ -20,6 +20,7 @@ export type AppBottomSheetProps = Pick<
   | 'scrollable'
   | 'backgroundColorStatus'
   | 'AccessoryRightIconComponent'
+  | 'onAccessoryRightPress'
 > & {
   closeable?: boolean;
   renderContent: (params: AppBottomSheetRenderContentParams) => JSX.Element;
@@ -33,6 +34,7 @@ export const AppBottomSheet = ({
   scrollable,
   backgroundColorStatus,
   AccessoryRightIconComponent,
+  onAccessoryRightPress,
 }: AppBottomSheetProps) => {
   const isFocused = useIsFocused();
 
@@ -54,7 +56,8 @@ export const AppBottomSheet = ({
             onClose={onClose}
             scrollable={scrollable}
             backgroundColorStatus={backgroundColorStatus}
-            AccessoryRightIconComponent={AccessoryRightIconComponent}>
+            AccessoryRightIconComponent={AccessoryRightIconComponent}
+            onAccessoryRightPress={onAccessoryRightPress}>
             {contentElement}
           </AppBottomSheetContent>
         </AppKeyboardAvoidingView>

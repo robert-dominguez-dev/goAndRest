@@ -3,7 +3,7 @@ import { JSX } from 'react';
 
 export type GetBottomSheetContentHeaderParams = Pick<
   AppHeaderProps,
-  'AccessoryRightIconComponent' | 'title'
+  'AccessoryRightIconComponent' | 'title' | 'onAccessoryRightPress'
 > & {
   headerOverride?: JSX.Element;
   closeable?: boolean;
@@ -14,6 +14,7 @@ export const getBottomSheetContentHeader = ({
   title,
   headerOverride,
   onClose,
+  onAccessoryRightPress,
   AccessoryRightIconComponent,
 }: GetBottomSheetContentHeaderParams) => {
   if (headerOverride) {
@@ -24,11 +25,16 @@ export const getBottomSheetContentHeader = ({
     return undefined;
   }
 
+  const handleAccessoryRightPress = () => {
+    onAccessoryRightPress?.();
+    onClose();
+  };
+
   return (
     <AppHeader
       title={title}
       AccessoryRightIconComponent={AccessoryRightIconComponent}
-      onAccessoryRightPress={onClose}
+      onAccessoryRightPress={handleAccessoryRightPress}
     />
   );
 };

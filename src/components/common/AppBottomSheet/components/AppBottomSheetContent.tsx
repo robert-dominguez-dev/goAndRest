@@ -30,6 +30,7 @@ const AppBottomSheetContentComponent = ({
   closeable,
   headerOverride,
   AccessoryRightIconComponent,
+  onAccessoryRightPress,
   backgroundColorStatus = 'backgroundAlt',
   scrollable = true,
 }: AppBottomSheetContentProps) => {
@@ -41,6 +42,7 @@ const AppBottomSheetContentComponent = ({
     closeable,
     onClose,
     AccessoryRightIconComponent,
+    onAccessoryRightPress,
   });
 
   return (

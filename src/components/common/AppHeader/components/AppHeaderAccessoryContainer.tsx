@@ -1,13 +1,12 @@
 import { AppView, AppViewProps } from '../../AppView/AppView.tsx';
 import { sizes } from '../../../../constants/ui.ts';
-import { Pressable, PressableProps } from 'react-native';
+import { Pressable } from 'react-native';
 import { getOnPressWithHapticFeedbackConditionally } from '../../../controls/helpers/getOnPressWithHapticFeedbackConditionally.ts';
 
 export type AppHeaderAccessoryContainerProps = Pick<
   AppViewProps,
   'children' | 'alignItems'
-> &
-  Pick<PressableProps, 'onPress'>;
+> & { onPress?: () => void };
 
 export const AppHeaderAccessoryContainer = ({
   children,
