@@ -1,19 +1,21 @@
 import { getSplitTranslateKey } from '../../../../../../locales/helpers/getSplitTranslateKey.ts';
 import { WorkoutSoundVariant } from '../constants.tsx';
 import {
-  BellRing,
+  Bell,
+  Drum,
+  HandFist,
   LucideIcon,
   Radio,
   Shell,
-  Sparkles,
 } from 'lucide-react-native';
 import { SettingValueProps } from '../types.ts';
 
 const soundVariantToEmoji: Record<WorkoutSoundVariant, LucideIcon> = {
   [WorkoutSoundVariant.beep]: Radio,
-  [WorkoutSoundVariant.bell]: BellRing,
+  [WorkoutSoundVariant.bell]: Bell,
   [WorkoutSoundVariant.whistle]: Shell,
-  [WorkoutSoundVariant.chime]: Sparkles,
+  [WorkoutSoundVariant.drum]: Drum,
+  [WorkoutSoundVariant.snap]: HandFist,
 };
 
 export const getSoundVariantSettingValueProps = (

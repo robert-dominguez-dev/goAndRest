@@ -150,7 +150,8 @@ export const en = {
               beep: 'Beep',
               bell: 'Bell',
               whistle: 'Whistle',
-              chime: 'Chime',
+              drum: 'Drum',
+              snap: 'Snap',
             },
           },
           vibrations: {

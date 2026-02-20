@@ -144,9 +144,10 @@ export const cs = {
               'Zvuk, který uslyšíš při startu, odpočtu a dalších událostech během tréninku.',
             items: {
               beep: 'Pípnutí',
-              bell: 'Zvonek',
-              whistle: 'Píšťalka',
-              chime: 'Zvonkohra',
+              bell: 'Zvon',
+              whistle: 'Hvizd',
+              drum: 'Buben',
+              snap: 'Lusknutí',
             },
           },
           vibrations: {
