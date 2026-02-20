@@ -1,14 +1,14 @@
 import { useAtom, WritableAtom } from 'jotai';
 import { useEffect, useState } from 'react';
 
-export type DebouncedAtom<TValue> = WritableAtom<
+export type AppAtom<TValue> = WritableAtom<
   TValue | Promise<TValue>,
   [TValue],
   unknown
 >;
 
 export const useDebouncedAtom = <TValue>(
-  atom: DebouncedAtom<TValue>,
+  atom: AppAtom<TValue>,
   delay = 200,
 ): [TValue, (value: TValue) => void] => {
   const [storedValue, setStoredValue] = useAtom(atom);

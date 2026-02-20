@@ -5,7 +5,7 @@ import {
 } from '../../LandingScreen/components/WorkoutConfigButtons/components/WorkoutConfigBottomSheetContentBase.tsx';
 import { workoutSettingsButtonConfigMap } from '../../LandingScreen/constants.ts';
 import {
-  DebouncedAtom,
+  AppAtom,
   useDebouncedAtom,
 } from '../../../../../../contexts/hooks/useDebouncedAtom.ts';
 
@@ -15,7 +15,7 @@ const { min, max, step, labelEveryNSteps, valueFormatter } =
 export type WorkoutSettingsBottomSheetContentProps = Pick<
   WorkoutConfigBottomSheetContentBaseProps,
   'description' | 'onConfirm' | 'onClose'
-> & { durationAtom: DebouncedAtom<number> };
+> & { durationAtom: AppAtom<number> };
 
 const WorkoutSettingsBottomSheetContentComponent = ({
   description,

@@ -4,17 +4,37 @@ import { Palette, Volume2, X, Zap } from 'lucide-react-native';
 import { ScreenProps } from '../../../types.ts';
 import { AppNavigatorScreen, AppNavigatorScreenParams } from '../../types.ts';
 import { SettingsSection } from './components/SettingsSection.tsx';
-import {
-  appearanceSettingsItems,
-  feedbackSettingsItems,
-  workoutSettingsItems,
-} from './constants.tsx';
+
 import { AppView } from '../../../../common/AppView/AppView.tsx';
+import { JSX } from 'react';
+import { LanguageSettingItem } from './components/items/LanguageSettingItem.tsx';
+import { ThemeSettingItem } from './components/items/ThemeSettingItem.tsx';
+import { KeepTimerInBackgroundSettingItem } from './components/items/KeepTimerInBackgroundSettingItem.tsx';
+import { WarmupSettingItem } from './components/items/WarmupSettingItem.tsx';
+import { CooldownSettingItem } from './components/items/CooldownSettingItem.tsx';
+import { SoundFeedbackSettingItem } from './components/items/SoundFeedbackSettingItem.tsx';
+import { VibrationsSettingItem } from './components/items/VibrationsSettingItem.tsx';
 
 type SettingsScreenProps = ScreenProps<
   AppNavigatorScreenParams,
   AppNavigatorScreen.SettingsScreen
 >;
+
+const appearanceSettingsItems: JSX.Element[] = [
+  <LanguageSettingItem key={'language'} />,
+  <ThemeSettingItem key={'theme'} />,
+];
+
+const workoutSettingsItems: JSX.Element[] = [
+  <KeepTimerInBackgroundSettingItem key={'timer_in_background'} />,
+  <WarmupSettingItem key={'warmup'} />,
+  <CooldownSettingItem key={'cooldown'} />,
+];
+
+const feedbackSettingsItems: JSX.Element[] = [
+  <SoundFeedbackSettingItem key={'sounds'} />,
+  <VibrationsSettingItem key={'vibrations'} />,
+];
 
 export const SettingsScreen = ({ navigation }: SettingsScreenProps) => {
   const t = useAppTranslation();

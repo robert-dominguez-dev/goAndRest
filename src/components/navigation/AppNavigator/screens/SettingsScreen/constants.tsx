@@ -1,12 +1,3 @@
-import { JSX } from 'react';
-import { LanguageSettingItem } from './components/items/LanguageSettingItem.tsx';
-import { ThemeSettingItem } from './components/items/ThemeSettingItem.tsx';
-import { KeepTimerInBackgroundSettingItem } from './components/items/KeepTimerInBackgroundSettingItem.tsx';
-import { VibrationsSettingItem } from './components/items/VibrationsSettingItem.tsx';
-import { WarmupSettingItem } from './components/items/WarmupSettingItem.tsx';
-import { CooldownSettingItem } from './components/items/CooldownSettingItem.tsx';
-import { SoundsSettingItem } from './components/items/SoundsSettingItem.tsx';
-
 export enum WorkoutSoundFeedback {
   voice = 'voice',
   character = 'character',
@@ -63,20 +54,4 @@ export const workoutSoundVariants: WorkoutSoundVariant[] = [
   WorkoutSoundVariant.bell,
   WorkoutSoundVariant.whistle,
   WorkoutSoundVariant.chime,
-];
-
-export const appearanceSettingsItems: JSX.Element[] = [
-  <LanguageSettingItem key={'language'} />,
-  <ThemeSettingItem key={'theme'} />,
-];
-
-export const workoutSettingsItems: JSX.Element[] = [
-  <KeepTimerInBackgroundSettingItem key={'timer_in_background'} />,
-  <WarmupSettingItem key={'warmup'} />,
-  <CooldownSettingItem key={'cooldown'} />,
-];
-
-export const feedbackSettingsItems: JSX.Element[] = [
-  <SoundsSettingItem key={'sounds'} />,
-  <VibrationsSettingItem key={'vibrations'} />,
 ];
