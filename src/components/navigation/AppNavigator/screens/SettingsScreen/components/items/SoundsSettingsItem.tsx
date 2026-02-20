@@ -22,9 +22,7 @@ const SoundsSettingsItemComponent = () => {
           'screens.settingsScreen.feedbackSection.items.sounds.description',
         )}
         onPress={openLanguageSettingsBottomSheet}
-        accessoryRight={
-          <SettingsItemValueText>{selectedValue}</SettingsItemValueText>
-        }
+        accessoryRight={<SettingsItemValueText label={selectedValue} />}
       />
       {bottomSheet}
     </>

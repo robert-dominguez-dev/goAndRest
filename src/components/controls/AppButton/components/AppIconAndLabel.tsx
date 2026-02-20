@@ -16,6 +16,7 @@ export type AppIconAndLabelProps = Pick<
 > & {
   label: string;
   textColorStatus?: AppColorUnion;
+  iconColorStatus?: AppColorUnion;
   IconComponent?: LucideIcon;
 };
 
@@ -26,6 +27,7 @@ export const AppIconAndLabel = ({
   category,
   grow,
   textColorStatus = 'text',
+  iconColorStatus = textColorStatus,
 }: AppIconAndLabelProps) => {
   const appColors = useAppThemedColors();
 
@@ -37,7 +39,7 @@ export const AppIconAndLabel = ({
     <>
       {IconComponent && (
         <IconComponent
-          color={appColors[textColorStatus]}
+          color={appColors[iconColorStatus]}
           size={iconSize}
         />
       )}

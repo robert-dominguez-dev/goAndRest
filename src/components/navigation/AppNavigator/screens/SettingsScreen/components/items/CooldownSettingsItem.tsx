@@ -6,6 +6,10 @@ import { formatTimerTime } from '../../../../../../common/AppCountdownText/helpe
 import { useWorkoutSettingsBottomSheet } from '../../hooks/useWorkoutSettingsBottomSheet.tsx';
 import { Wind } from 'lucide-react-native';
 import { cooldownSettingsAtom } from '../../../../../../../contexts/atoms.ts';
+import { AppColorUnion } from '../../../../../../../types/ui.ts';
+
+const IconComponent = Wind;
+const backgroundColorStatus: AppColorUnion = 'cooldown';
 
 const CooldownSettingsItemComponent = () => {
   const t = useAppTranslation();
@@ -20,13 +24,17 @@ const CooldownSettingsItemComponent = () => {
     useWorkoutSettingsBottomSheet({
       title,
       description,
-      backgroundColorStatus: 'cooldown',
-      IconComponent: Wind,
+      IconComponent,
+      backgroundColorStatus,
       durationAtom: cooldownSettingsAtom,
     });
 
   const accessoryRight = (
-    <SettingsItemValueText>{formatTimerTime(duration)}</SettingsItemValueText>
+    <SettingsItemValueText
+      IconComponent={IconComponent}
+      iconColorStatus={backgroundColorStatus}
+      label={formatTimerTime(duration)}
+    />
   );
 
   return (

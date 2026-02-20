@@ -6,6 +6,10 @@ import { formatTimerTime } from '../../../../../../common/AppCountdownText/helpe
 import { useWorkoutSettingsBottomSheet } from '../../hooks/useWorkoutSettingsBottomSheet.tsx';
 import { Flame } from 'lucide-react-native';
 import { warmupSettingsAtom } from '../../../../../../../contexts/atoms.ts';
+import { AppColorUnion } from '../../../../../../../types/ui.ts';
+
+const IconComponent = Flame;
+const backgroundColorStatus: AppColorUnion = 'warmup';
 
 const WarmupSettingsItemComponent = () => {
   const t = useAppTranslation();
@@ -20,13 +24,17 @@ const WarmupSettingsItemComponent = () => {
     useWorkoutSettingsBottomSheet({
       title,
       description,
-      backgroundColorStatus: 'warmup',
-      IconComponent: Flame,
+      IconComponent,
+      backgroundColorStatus,
       durationAtom: warmupSettingsAtom,
     });
 
   const accessoryRight = (
-    <SettingsItemValueText>{formatTimerTime(duration)}</SettingsItemValueText>
+    <SettingsItemValueText
+      IconComponent={IconComponent}
+      iconColorStatus={backgroundColorStatus}
+      label={formatTimerTime(duration)}
+    />
   );
 
   return (
