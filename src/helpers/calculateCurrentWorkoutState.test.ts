@@ -58,9 +58,6 @@ const createPersistedState = (
 });
 
 const testCases: TestCase[] = [
-  /**
-   * Test case descriptions are kept in English for JSDoc/Test reporting consistency
-   */
   {
     description: 'should be in WARMUP phase (5s elapsed)',
     input: createPersistedState(5),
@@ -69,6 +66,7 @@ const testCases: TestCase[] = [
       currentRound: 0,
       currentSeries: 0,
       phaseRemainingSeconds: 5,
+      phaseElapsedSeconds: 5,
       totalElapsedSeconds: 5,
       totalDurationSeconds: 150,
       isFinished: false,
@@ -82,6 +80,7 @@ const testCases: TestCase[] = [
       currentRound: 1,
       currentSeries: 1,
       phaseRemainingSeconds: 15,
+      phaseElapsedSeconds: 5,
       totalElapsedSeconds: 15,
       totalDurationSeconds: 150,
       isFinished: false,
@@ -95,6 +94,7 @@ const testCases: TestCase[] = [
       currentRound: 1,
       currentSeries: 1,
       phaseRemainingSeconds: 5,
+      phaseElapsedSeconds: 5,
       totalElapsedSeconds: 35,
       totalDurationSeconds: 150,
       isFinished: false,
@@ -109,6 +109,7 @@ const testCases: TestCase[] = [
       currentRound: 2,
       currentSeries: 2,
       phaseRemainingSeconds: 0,
+      phaseElapsedSeconds: 10,
       totalElapsedSeconds: 150,
       totalDurationSeconds: 150,
       isFinished: true,
@@ -130,6 +131,7 @@ const testCases: TestCase[] = [
       currentRound: 1,
       currentSeries: 1,
       phaseRemainingSeconds: 20,
+      phaseElapsedSeconds: 0,
       totalElapsedSeconds: 0,
       totalDurationSeconds: 140,
       isFinished: false,
@@ -151,6 +153,7 @@ const testCases: TestCase[] = [
       currentRound: 1,
       currentSeries: 1,
       phaseRemainingSeconds: 10,
+      phaseElapsedSeconds: 10,
       totalElapsedSeconds: 10,
       totalDurationSeconds: 140,
       isFinished: false,
@@ -172,6 +175,7 @@ const testCases: TestCase[] = [
       currentRound: 2,
       currentSeries: 2,
       phaseRemainingSeconds: 0,
+      phaseElapsedSeconds: 20,
       totalElapsedSeconds: 140,
       totalDurationSeconds: 140,
       isFinished: true,

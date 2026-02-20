@@ -23,23 +23,25 @@ export const calculateCurrentWorkoutState = ({
 
   const totalDuration = countTotalWorkoutTime(workoutConfig);
 
-  let remaining = totalElapsedSeconds;
+  let phaseElapsedSeconds = totalElapsedSeconds;
 
   /**
    * Handle Warmup Phase
    */
-  if (remaining < warmup) {
+  if (phaseElapsedSeconds < warmup) {
     return {
       currentPhase: RunningWorkoutPhase.WARMUP,
       currentRound: 0,
       currentSeries: 0,
-      phaseRemainingSeconds: warmup - remaining,
+      phaseRemainingSeconds: warmup - phaseElapsedSeconds,
+      phaseElapsedSeconds,
       totalElapsedSeconds,
       totalDurationSeconds: totalDuration,
       isFinished: false,
     };
   }
-  remaining -= warmup;
+
+  phaseElapsedSeconds -= warmup;
 
   /**
    * Iterate through Rounds and Series
@@ -49,35 +51,37 @@ export const calculateCurrentWorkoutState = ({
       /**
        * Handle Work Phase
        */
-      if (remaining < work) {
+      if (phaseElapsedSeconds < work) {
         return {
           currentPhase: RunningWorkoutPhase.WORK,
           currentRound: round,
           currentSeries: serie,
-          phaseRemainingSeconds: work - remaining,
+          phaseRemainingSeconds: work - phaseElapsedSeconds,
+          phaseElapsedSeconds,
           totalElapsedSeconds,
           totalDurationSeconds: totalDuration,
           isFinished: false,
         };
       }
-      remaining -= work;
+      phaseElapsedSeconds -= work;
 
       /**
        * Handle Rest Phase (only if it's not the last series in the round)
        */
       if (serie < series) {
-        if (remaining < rest) {
+        if (phaseElapsedSeconds < rest) {
           return {
             currentPhase: RunningWorkoutPhase.REST,
             currentRound: round,
             currentSeries: serie,
-            phaseRemainingSeconds: rest - remaining,
+            phaseRemainingSeconds: rest - phaseElapsedSeconds,
+            phaseElapsedSeconds,
             totalElapsedSeconds,
             totalDurationSeconds: totalDuration,
             isFinished: false,
           };
         }
-        remaining -= rest;
+        phaseElapsedSeconds -= rest;
       }
     }
 
@@ -85,30 +89,32 @@ export const calculateCurrentWorkoutState = ({
      * Handle Brake Phase (only if it's not the last round)
      */
     if (round < rounds) {
-      if (remaining < brake) {
+      if (phaseElapsedSeconds < brake) {
         return {
           currentPhase: RunningWorkoutPhase.BREAK,
           currentRound: round,
           currentSeries: series,
-          phaseRemainingSeconds: brake - remaining,
+          phaseRemainingSeconds: brake - phaseElapsedSeconds,
+          phaseElapsedSeconds,
           totalElapsedSeconds,
           totalDurationSeconds: totalDuration,
           isFinished: false,
         };
       }
-      remaining -= brake;
+      phaseElapsedSeconds -= brake;
     }
   }
 
   /**
    * Handle Cooldown Phase
    */
-  if (remaining < cooldown) {
+  if (phaseElapsedSeconds < cooldown) {
     return {
       currentPhase: RunningWorkoutPhase.COOLDOWN,
       currentRound: rounds,
       currentSeries: series,
-      phaseRemainingSeconds: cooldown - remaining,
+      phaseRemainingSeconds: cooldown - phaseElapsedSeconds,
+      phaseElapsedSeconds,
       totalElapsedSeconds,
       totalDurationSeconds: totalDuration,
       isFinished: false,
@@ -116,16 +122,27 @@ export const calculateCurrentWorkoutState = ({
   }
 
   /**
-   * Determine the final phase: if cooldown was 0, we stay on WORK.
+   * Determine the final phase props: if cooldown was 0, we stay on WORK.
    */
-  const finalPhase =
-    cooldown > 0 ? RunningWorkoutPhase.COOLDOWN : RunningWorkoutPhase.WORK;
+  const finalPhaseDependentProps: Pick<
+    WorkoutTimerComputedState,
+    'currentPhase' | 'phaseElapsedSeconds'
+  > =
+    cooldown > 0
+      ? {
+          currentPhase: RunningWorkoutPhase.COOLDOWN,
+          phaseElapsedSeconds: cooldown,
+        }
+      : {
+          currentPhase: RunningWorkoutPhase.WORK,
+          phaseElapsedSeconds: work,
+        };
 
   /**
    * Workout Finished
    */
   return {
-    currentPhase: finalPhase,
+    ...finalPhaseDependentProps,
     currentRound: rounds,
     currentSeries: series,
     phaseRemainingSeconds: 0,
