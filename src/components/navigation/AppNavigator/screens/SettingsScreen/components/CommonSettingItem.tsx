@@ -30,12 +30,14 @@ export const CommonSettingItem = <TValue,>({
     getProps,
   });
 
-  const { labelTranslateKey, IconComponent } = getProps(selectedValue);
+  const { labelTranslateKey, IconComponent, iconColorStatus } =
+    getProps(selectedValue);
 
   const accessoryRight = (
     <AppSelectionBottomSheetItemText
       label={t(labelTranslateKey)}
       IconComponent={IconComponent}
+      iconColorStatus={iconColorStatus}
     />
   );
 

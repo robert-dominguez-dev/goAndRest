@@ -1,7 +1,5 @@
 import { useAppSelectionBottomSheet } from '../../../../../common/AppSelectionBottomSheet/hooks/useAppSelectionBottomSheet.tsx';
 import { AppSelectionBottomSheetItemData } from '../../../../../common/AppSelectionBottomSheet/components/AppSelectionBottomSheetItem.tsx';
-import { useAppThemedColors } from '../../../../../../hooks/useAppThemedColors.ts';
-import { categoryToIconSize } from '../../../../../controls/AppButton/components/AppIconAndLabel.tsx';
 import { useAtom } from 'jotai';
 import { useAppTranslation } from '../../../../../../locales/hooks/useAppTranslation.ts';
 import { AppAtom } from '../../../../../../contexts/hooks/useDebouncedAtom.ts';
@@ -20,26 +18,21 @@ export const useCommonSettingBottomSheet = <TValue,>({
 }: UseSettingBottomSheetParams<TValue>) => {
   const t = useAppTranslation();
 
-  const { text } = useAppThemedColors();
-
   const [selectedValue, setSelectedValue] = useAtom(atom);
 
   const { bottomSheet, handleOpen } = useAppSelectionBottomSheet();
 
   const items = itemValues.map<AppSelectionBottomSheetItemData<TValue>>(
     value => {
-      const { labelTranslateKey, IconComponent } = getProps(value);
+      const { labelTranslateKey, IconComponent, iconColorStatus } =
+        getProps(value);
 
       return {
         value,
         label: t(labelTranslateKey),
         selected: value === selectedValue,
-        accessoryLeft: (
-          <IconComponent
-            color={text}
-            size={categoryToIconSize.subHeader}
-          />
-        ),
+        AccessoryLeftIconComponent: IconComponent,
+        accessoryLeftIconStatus: iconColorStatus,
       };
     },
   );

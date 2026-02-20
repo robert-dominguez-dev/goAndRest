@@ -80,6 +80,8 @@ export const appColorsLight = {
   brakeStrong: '#a68705',
   warmup: '#e69d6c',
   cooldown: '#a1d9e4',
+  male: '#0197d6',
+  female: '#ea11dd',
   semiTransparentOverlay: '#000000BB',
   transparent: '#00000000',
 } as const satisfies Record<string, HexColor>;
@@ -109,6 +111,8 @@ export const appColorsDark = {
   brakeStrong: '#cfaf0c',
   warmup: '#c86d25',
   cooldown: '#2699ae',
+  male: '#00b4ff',
+  female: '#ea11dd',
   semiTransparentOverlay: appColorsLight.semiTransparentOverlay,
   transparent: appColorsLight.transparent,
 } as const satisfies AppColors;
