@@ -2,18 +2,18 @@ import { SettingsItem } from '../SettingsItem.tsx';
 import { useAppTranslation } from '../../../../../../../locales/hooks/useAppTranslation.ts';
 import { memo } from 'react';
 import { AppSelectionBottomSheetItemText } from '../../../../../../common/AppSelectionBottomSheet/components/AppSelectionBottomSheetItemText.tsx';
-import { useSoundsSettingsBottomSheet } from '../../hooks/useSoundsSettingsBottomSheet.tsx';
+import { useSoundFeedbackSettingBottomSheet } from '../../hooks/useSoundFeedbackSettingBottomSheet.tsx';
 import { useAtomValue } from 'jotai';
 import { soundFeedbackSettingAtom } from '../../../../../../../contexts/atoms.ts';
 import { getSoundFeedbackSettingValueProps } from '../../helpers/getSoundFeedbackSettingValueProps.ts';
 
-const SoundsSettingsItemComponent = () => {
+const SoundsSettingItemComponent = () => {
   const t = useAppTranslation();
 
   const selectedValue = useAtomValue(soundFeedbackSettingAtom);
 
   const { bottomSheet, openLanguageSettingsBottomSheet } =
-    useSoundsSettingsBottomSheet();
+    useSoundFeedbackSettingBottomSheet();
 
   const { labelTranslateKey, IconComponent } =
     getSoundFeedbackSettingValueProps(selectedValue);
@@ -42,4 +42,4 @@ const SoundsSettingsItemComponent = () => {
   );
 };
 
-export const SoundsSettingsItem = memo(SoundsSettingsItemComponent);
+export const SoundsSettingItem = memo(SoundsSettingItemComponent);

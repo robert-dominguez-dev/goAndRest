@@ -11,7 +11,7 @@ import {
 } from '../components/WorkoutSettingsBottomSheetContent.tsx';
 import { useAtom } from 'jotai';
 
-type UseWorkoutSettingsBottomSheetParams = Pick<
+type UseWorkoutSettingBottomSheetParams = Pick<
   WorkoutConfigBottomSheetIconAndTitleProps,
   'IconComponent'
 > &
@@ -23,13 +23,13 @@ type UseWorkoutSettingsBottomSheetParams = Pick<
     title: string;
   };
 
-export const useWorkoutSettingsBottomSheet = ({
+export const useWorkoutSettingBottomSheet = ({
   title,
   description,
   IconComponent,
   backgroundColorStatus,
   durationAtom,
-}: UseWorkoutSettingsBottomSheetParams) => {
+}: UseWorkoutSettingBottomSheetParams) => {
   const [duration, setDuration] = useAtom(durationAtom);
 
   const { takeSnapshot, clearSnapshot, revertChanges } =

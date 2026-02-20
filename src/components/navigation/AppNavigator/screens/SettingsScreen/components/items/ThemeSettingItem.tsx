@@ -5,7 +5,7 @@ import { useAppTheme } from '../../../../../../../contexts/AppThemeProvider.tsx'
 import { AppTheme } from '../../../../../../../types/common.ts';
 import { AppToggleBase } from '../../../../../../common/AppToggle/component/AppToggleBase.tsx';
 
-const ThemeSettingsItemComponent = () => {
+const ThemeSettingItemComponent = () => {
   const t = useAppTranslation();
 
   const { theme, changeTheme } = useAppTheme();
@@ -29,4 +29,4 @@ const ThemeSettingsItemComponent = () => {
   );
 };
 
-export const ThemeSettingsItem = memo(ThemeSettingsItemComponent);
+export const ThemeSettingItem = memo(ThemeSettingItemComponent);

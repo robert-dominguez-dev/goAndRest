@@ -2,7 +2,7 @@ import { SettingsItem } from '../SettingsItem.tsx';
 import { useAppTranslation } from '../../../../../../../locales/hooks/useAppTranslation.ts';
 import { useAppLanguage } from '../../../../../../../contexts/AppLanguageProvider/AppLanguageProvider.tsx';
 import { memo } from 'react';
-import { useLanguageSettingsBottomSheet } from '../../hooks/useLanguageSettingsBottomSheet.tsx';
+import { useLanguageSettingBottomSheet } from '../../hooks/useLanguageSettingBottomSheet.tsx';
 import {
   APP_BOTTOM_SHEET_ICON_LABEL_GAP_UNION,
   AppSelectionBottomSheetItemText,
@@ -10,7 +10,7 @@ import {
 import { AppRow } from '../../../../../../common/AppRow.tsx';
 import { getAppLanguageSettingValueProps } from '../../helpers/getAppLanguageSettingValueProps.ts';
 
-const LanguageSettingsItemComponent = () => {
+const LanguageSettingItemComponent = () => {
   const t = useAppTranslation();
 
   const { language } = useAppLanguage();
@@ -19,7 +19,7 @@ const LanguageSettingsItemComponent = () => {
     getAppLanguageSettingValueProps(language);
 
   const { bottomSheet, openLanguageSettingsBottomSheet } =
-    useLanguageSettingsBottomSheet();
+    useLanguageSettingBottomSheet();
 
   const accessoryRight = (
     <AppRow
@@ -47,4 +47,4 @@ const LanguageSettingsItemComponent = () => {
   );
 };
 
-export const LanguageSettingsItem = memo(LanguageSettingsItemComponent);
+export const LanguageSettingItem = memo(LanguageSettingItemComponent);

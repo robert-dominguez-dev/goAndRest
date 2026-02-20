@@ -3,30 +3,30 @@ import { useAppTranslation } from '../../../../../../../locales/hooks/useAppTran
 import { memo } from 'react';
 import { AppSelectionBottomSheetItemText } from '../../../../../../common/AppSelectionBottomSheet/components/AppSelectionBottomSheetItemText.tsx';
 import { formatTimerTime } from '../../../../../../common/AppCountdownText/helpers/formatTimerTime.tsx';
-import { useWorkoutSettingsBottomSheet } from '../../hooks/useWorkoutSettingsBottomSheet.tsx';
-import { Flame } from 'lucide-react-native';
-import { warmupSettingAtom } from '../../../../../../../contexts/atoms.ts';
+import { useWorkoutSettingBottomSheet } from '../../hooks/useWorkoutSettingBottomSheet.tsx';
+import { Wind } from 'lucide-react-native';
+import { cooldownSettingAtom } from '../../../../../../../contexts/atoms.ts';
 import { AppColorUnion } from '../../../../../../../types/ui.ts';
 
-const IconComponent = Flame;
-const backgroundColorStatus: AppColorUnion = 'warmup';
+const IconComponent = Wind;
+const backgroundColorStatus: AppColorUnion = 'cooldown';
 
-const WarmupSettingsItemComponent = () => {
+const CooldownSettingItemComponent = () => {
   const t = useAppTranslation();
 
-  const title = t('screens.settingsScreen.workoutSection.items.warmup.label');
+  const title = t('screens.settingsScreen.workoutSection.items.cooldown.label');
 
   const description = t(
-    'screens.settingsScreen.workoutSection.items.warmup.description',
+    'screens.settingsScreen.workoutSection.items.cooldown.description',
   );
 
   const { bottomSheet, openWorkoutSettingsBottomSheet, duration } =
-    useWorkoutSettingsBottomSheet({
+    useWorkoutSettingBottomSheet({
       title,
       description,
       IconComponent,
       backgroundColorStatus,
-      durationAtom: warmupSettingAtom,
+      durationAtom: cooldownSettingAtom,
     });
 
   const accessoryRight = (
@@ -50,4 +50,4 @@ const WarmupSettingsItemComponent = () => {
   );
 };
 
-export const WarmupSettingsItem = memo(WarmupSettingsItemComponent);
+export const CooldownSettingItem = memo(CooldownSettingItemComponent);

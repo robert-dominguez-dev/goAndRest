@@ -5,7 +5,7 @@ import { AppToggleBase } from '../../../../../../common/AppToggle/component/AppT
 import { useAtom } from 'jotai';
 import { keepTimerInBackgroundSettingAtom } from '../../../../../../../contexts/atoms.ts';
 
-const KeepTimerInBackgroundSettingsItemComponent = () => {
+const KeepTimerInBackgroundSettingItemComponent = () => {
   const t = useAppTranslation();
 
   const [shouldKeepInBackground, setShouldKeepInBackground] = useAtom(
@@ -31,6 +31,6 @@ const KeepTimerInBackgroundSettingsItemComponent = () => {
   );
 };
 
-export const KeepTimerInBackgroundSettingsItem = memo(
-  KeepTimerInBackgroundSettingsItemComponent,
+export const KeepTimerInBackgroundSettingItem = memo(
+  KeepTimerInBackgroundSettingItemComponent,
 );

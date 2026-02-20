@@ -8,7 +8,7 @@ import { WorkoutSoundFeedback, workoutSoundFeedbacks } from '../constants.tsx';
 import { useAppTranslation } from '../../../../../../locales/hooks/useAppTranslation.ts';
 import { getSoundFeedbackSettingValueProps } from '../helpers/getSoundFeedbackSettingValueProps.ts';
 
-export const useSoundsSettingsBottomSheet = () => {
+export const useSoundFeedbackSettingBottomSheet = () => {
   const t = useAppTranslation();
 
   const { text } = useAppThemedColors();

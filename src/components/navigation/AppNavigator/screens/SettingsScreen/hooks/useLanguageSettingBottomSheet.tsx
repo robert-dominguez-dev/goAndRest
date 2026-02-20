@@ -9,7 +9,7 @@ import { useAppTranslation } from '../../../../../../locales/hooks/useAppTransla
 import { getAppLanguageSettingValueProps } from '../helpers/getAppLanguageSettingValueProps.ts';
 import { AppSelectionBottomSheetItemText } from '../../../../../common/AppSelectionBottomSheet/components/AppSelectionBottomSheetItemText.tsx';
 
-export const useLanguageSettingsBottomSheet = () => {
+export const useLanguageSettingBottomSheet = () => {
   const t = useAppTranslation();
 
   const { bottomSheet, handleOpen } = useAppSelectionBottomSheet();

@@ -5,7 +5,7 @@ import { AppToggleBase } from '../../../../../../common/AppToggle/component/AppT
 import { useAtom } from 'jotai';
 import { vibrationsSettingAtom } from '../../../../../../../contexts/atoms.ts';
 
-const VibrationsSettingsItemComponent = () => {
+const VibrationsSettingItemComponent = () => {
   const t = useAppTranslation();
 
   const [vibrationsEnabled, setVibrationsEnabled] = useAtom(
@@ -28,4 +28,4 @@ const VibrationsSettingsItemComponent = () => {
   );
 };
 
-export const VibrationsSettingsItem = memo(VibrationsSettingsItemComponent);
+export const VibrationsSettingItem = memo(VibrationsSettingItemComponent);

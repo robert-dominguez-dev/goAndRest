@@ -1,11 +1,11 @@
 import { JSX } from 'react';
-import { LanguageSettingsItem } from './components/items/LanguageSettingsItem.tsx';
-import { ThemeSettingsItem } from './components/items/ThemeSettingsItem.tsx';
-import { KeepTimerInBackgroundSettingsItem } from './components/items/KeepTimerInBackgroundSettingsItem.tsx';
-import { VibrationsSettingsItem } from './components/items/VibrationsSettingsItem.tsx';
-import { WarmupSettingsItem } from './components/items/WarmupSettingsItem.tsx';
-import { CooldownSettingsItem } from './components/items/CooldownSettingsItem.tsx';
-import { SoundsSettingsItem } from './components/items/SoundsSettingsItem.tsx';
+import { LanguageSettingItem } from './components/items/LanguageSettingItem.tsx';
+import { ThemeSettingItem } from './components/items/ThemeSettingItem.tsx';
+import { KeepTimerInBackgroundSettingItem } from './components/items/KeepTimerInBackgroundSettingItem.tsx';
+import { VibrationsSettingItem } from './components/items/VibrationsSettingItem.tsx';
+import { WarmupSettingItem } from './components/items/WarmupSettingItem.tsx';
+import { CooldownSettingItem } from './components/items/CooldownSettingItem.tsx';
+import { SoundsSettingItem } from './components/items/SoundsSettingItem.tsx';
 
 export enum WorkoutSoundFeedback {
   voice = 'voice',
@@ -66,17 +66,17 @@ export const workoutSoundVariants: WorkoutSoundVariant[] = [
 ];
 
 export const appearanceSettingsItems: JSX.Element[] = [
-  <LanguageSettingsItem key={'language'} />,
-  <ThemeSettingsItem key={'theme'} />,
+  <LanguageSettingItem key={'language'} />,
+  <ThemeSettingItem key={'theme'} />,
 ];
 
 export const workoutSettingsItems: JSX.Element[] = [
-  <KeepTimerInBackgroundSettingsItem key={'timer_in_background'} />,
-  <WarmupSettingsItem key={'warmup'} />,
-  <CooldownSettingsItem key={'cooldown'} />,
+  <KeepTimerInBackgroundSettingItem key={'timer_in_background'} />,
+  <WarmupSettingItem key={'warmup'} />,
+  <CooldownSettingItem key={'cooldown'} />,
 ];
 
 export const feedbackSettingsItems: JSX.Element[] = [
-  <SoundsSettingsItem key={'sounds'} />,
-  <VibrationsSettingsItem key={'vibrations'} />,
+  <SoundsSettingItem key={'sounds'} />,
+  <VibrationsSettingItem key={'vibrations'} />,
 ];

@@ -3,30 +3,30 @@ import { useAppTranslation } from '../../../../../../../locales/hooks/useAppTran
 import { memo } from 'react';
 import { AppSelectionBottomSheetItemText } from '../../../../../../common/AppSelectionBottomSheet/components/AppSelectionBottomSheetItemText.tsx';
 import { formatTimerTime } from '../../../../../../common/AppCountdownText/helpers/formatTimerTime.tsx';
-import { useWorkoutSettingsBottomSheet } from '../../hooks/useWorkoutSettingsBottomSheet.tsx';
-import { Wind } from 'lucide-react-native';
-import { cooldownSettingAtom } from '../../../../../../../contexts/atoms.ts';
+import { useWorkoutSettingBottomSheet } from '../../hooks/useWorkoutSettingBottomSheet.tsx';
+import { Flame } from 'lucide-react-native';
+import { warmupSettingAtom } from '../../../../../../../contexts/atoms.ts';
 import { AppColorUnion } from '../../../../../../../types/ui.ts';
 
-const IconComponent = Wind;
-const backgroundColorStatus: AppColorUnion = 'cooldown';
+const IconComponent = Flame;
+const backgroundColorStatus: AppColorUnion = 'warmup';
 
-const CooldownSettingsItemComponent = () => {
+const WarmupSettingItemComponent = () => {
   const t = useAppTranslation();
 
-  const title = t('screens.settingsScreen.workoutSection.items.cooldown.label');
+  const title = t('screens.settingsScreen.workoutSection.items.warmup.label');
 
   const description = t(
-    'screens.settingsScreen.workoutSection.items.cooldown.description',
+    'screens.settingsScreen.workoutSection.items.warmup.description',
   );
 
   const { bottomSheet, openWorkoutSettingsBottomSheet, duration } =
-    useWorkoutSettingsBottomSheet({
+    useWorkoutSettingBottomSheet({
       title,
       description,
       IconComponent,
       backgroundColorStatus,
-      durationAtom: cooldownSettingAtom,
+      durationAtom: warmupSettingAtom,
     });
 
   const accessoryRight = (
@@ -50,4 +50,4 @@ const CooldownSettingsItemComponent = () => {
   );
 };
 
-export const CooldownSettingsItem = memo(CooldownSettingsItemComponent);
+export const WarmupSettingItem = memo(WarmupSettingItemComponent);
