@@ -107,10 +107,48 @@ export const sk = {
       feedbackSection: {
         label: 'Zvuky a vibrácie',
         items: {
-          sounds: {
-            label: 'Zvuková odozva',
+          soundFeedback: {
+            label: 'Zvuková odezva',
             description:
-              'Nastavenie zvukov počas tréningu. Vybrať si môžete rôzne hlasy, zvuky (napr. pípanie), alebo zvuky úplne vypnúť.',
+              'Spôsob, akým ťa bude aplikácia upozorňovať počas tréningu (napr. oznámenie o polovici, odpočet, začiatok novej fázy)',
+            items: {
+              voice: 'Štandardné hlasy',
+              character: 'Zábavné hlasy',
+              sound: 'Zvukové signály',
+              none: 'Bez zvuku',
+            },
+          },
+          voiceVariant: {
+            label: 'Typ hlasu',
+            description: 'Vyber si hlas, ktorý ťa bude sprevádzať tréningom',
+            items: {
+              coachMale: 'Marek (tréner)',
+              coachFemale: 'Lucia (trénerka)',
+              friendMale: 'Jano (kamarát)',
+              friendFemale: 'Zuzka (kamarátka)',
+              calmMale: 'Adam (pokojný)',
+              calmFemale: 'Nina (pokojná)',
+            },
+          },
+          characterVariant: {
+            label: 'Postava',
+            description: 'Vyber si postavu, ktorá ťa bude sprevádzať tréningom',
+            items: {
+              warrior: 'Bojovník',
+              cyborg: 'Kyborg',
+              wizard: 'Čarodejník',
+            },
+          },
+          soundVariant: {
+            label: 'Typ signálu',
+            description:
+              'Zvuk, ktorý počuješ pri štarte, odpočte a ďalších udalostiach počas tréningu.',
+            items: {
+              beep: 'Pípnutie',
+              bell: 'Zvonček',
+              whistle: 'Píšťalka',
+              chime: 'Zvonkohra',
+            },
           },
           vibrations: {
             label: 'Vibrácie',

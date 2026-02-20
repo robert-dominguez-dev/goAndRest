@@ -3,8 +3,7 @@ import { AppTheme, ChildrenProp } from '../types/common.ts';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Appearance } from 'react-native';
 import { checkIsAppTheme } from '../helpers/checkIsAppTheme.ts';
-
-const APP_THEME_STORAGE_KEY = 'APP_THEME';
+import { AsyncStorageKey } from './constants.ts';
 
 type AppThemeContextProps = {
   theme: AppTheme;
@@ -22,7 +21,7 @@ export const AppThemeProvider = ({ children }: ChildrenProp) => {
   const [theme, setTheme] = useState<AppTheme>(systemTheme);
 
   useEffect(() => {
-    AsyncStorage.getItem(APP_THEME_STORAGE_KEY).then(storedTheme => {
+    AsyncStorage.getItem(AsyncStorageKey.APP_THEME).then(storedTheme => {
       const isAppTheme = checkIsAppTheme(storedTheme);
       if (isAppTheme) {
         setTheme(storedTheme);
@@ -31,7 +30,7 @@ export const AppThemeProvider = ({ children }: ChildrenProp) => {
   }, []);
 
   const changeTheme = (themeToChange: AppTheme) => {
-    void AsyncStorage.setItem(APP_THEME_STORAGE_KEY, themeToChange);
+    void AsyncStorage.setItem(AsyncStorageKey.APP_THEME, themeToChange);
     setTheme(themeToChange);
   };
 

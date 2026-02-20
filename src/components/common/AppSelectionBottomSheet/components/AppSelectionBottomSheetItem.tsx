@@ -4,15 +4,22 @@ import { Pressable } from 'react-native';
 import { getPressableOpacity } from '../../../controls/helpers/getPressableOpacity.ts';
 import { getOnPressWithHapticFeedback } from '../../../controls/helpers/getOnPressWithHapticFeedback.ts';
 import { HapticFeedbackTypes } from 'react-native-haptic-feedback';
-import { AppSelectionBottomSheetItemText } from './AppSelectionBottomSheetItemTextProps.tsx';
-import { Check } from 'lucide-react-native';
+
+import { Check, LucideIcon } from 'lucide-react-native';
 import { useAppThemedColors } from '../../../../hooks/useAppThemedColors.ts';
 import { categoryToIconSize } from '../../../controls/AppButton/components/AppIconAndLabel.tsx';
+import {
+  APP_BOTTOM_SHEET_ICON_LABEL_GAP_UNION,
+  AppSelectionBottomSheetItemText,
+} from './AppSelectionBottomSheetItemText.tsx';
+import { AppColorUnion } from '../../../../types/ui.ts';
 
 export type AppSelectionBottomSheetItemData<TValue> = {
   label: string;
   value: TValue;
   accessoryLeft?: JSX.Element;
+  AccessoryLeftIconComponent?: LucideIcon;
+  accessoryLeftIconStatus?: AppColorUnion;
   selected?: boolean;
   disabled?: boolean;
 };
@@ -26,9 +33,11 @@ export const AppSelectionBottomSheetItem = <TValue,>({
   label,
   value,
   onSelect,
-  accessoryLeft,
   selected,
   disabled,
+  accessoryLeft,
+  AccessoryLeftIconComponent,
+  accessoryLeftIconStatus,
 }: AppSelectionBottomSheetItemProps<TValue>) => {
   const { text } = useAppThemedColors();
 
@@ -56,12 +65,15 @@ export const AppSelectionBottomSheetItem = <TValue,>({
             alignItems={'center'}
             justifyContent={'space-between'}>
             <AppRow
-              gap={'sm'}
+              gap={APP_BOTTOM_SHEET_ICON_LABEL_GAP_UNION}
               alignItems={'center'}>
               {accessoryLeft}
-              <AppSelectionBottomSheetItemText>
-                {label}
-              </AppSelectionBottomSheetItemText>
+              <AppSelectionBottomSheetItemText
+                label={label}
+                IconComponent={AccessoryLeftIconComponent}
+                iconColorStatus={accessoryLeftIconStatus}
+                textColorStatus={'text'}
+              />
             </AppRow>
             {!!selected && (
               <Check

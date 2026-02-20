@@ -108,10 +108,50 @@ export const en = {
       feedbackSection: {
         label: 'Sounds and Vibrations',
         items: {
-          sounds: {
-            label: 'Sound Feedback',
+          soundFeedback: {
+            label: 'Audio Feedback',
             description:
-              'Settings for sounds during workout. Choose different voices, alert sounds, or disable completely.',
+              'How the app will notify you during workout (e.g. halfway point, countdown, new phase).',
+            items: {
+              voice: 'Standard Voices',
+              character: 'Fun Voices',
+              sound: 'Sound Signals',
+              none: 'No Sound',
+            },
+          },
+          voiceVariant: {
+            label: 'Voice Type',
+            description:
+              'Choose the voice that will guide you through the workout.',
+            items: {
+              coachMale: 'Marcus (coach)',
+              coachFemale: 'Sarah (coach)',
+              friendMale: 'Jake (buddy)',
+              friendFemale: 'Emma (buddy)',
+              calmMale: 'Noah (calm)',
+              calmFemale: 'Olivia (calm)',
+            },
+          },
+          characterVariant: {
+            label: 'Character',
+            description:
+              'Choose the character that will guide you through the workout.',
+            items: {
+              warrior: 'Warrior',
+              cyborg: 'Cyborg',
+              wizard: 'Wizard',
+            },
+          },
+          soundVariant: {
+            label: 'Signal Type',
+            description:
+              "Sound you'll hear at start, countdown and other events during workout.",
+            items: {
+              beep: 'Beep',
+              bell: 'Bell',
+              whistle: 'Whistle',
+              chime: 'Chime',
+            },
           },
           vibrations: {
             label: 'Vibrations',

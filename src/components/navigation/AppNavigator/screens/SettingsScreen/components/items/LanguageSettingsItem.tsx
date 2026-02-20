@@ -3,27 +3,30 @@ import { useAppTranslation } from '../../../../../../../locales/hooks/useAppTran
 import { useAppLanguage } from '../../../../../../../contexts/AppLanguageProvider/AppLanguageProvider.tsx';
 import { memo } from 'react';
 import { useLanguageSettingsBottomSheet } from '../../hooks/useLanguageSettingsBottomSheet.tsx';
-import { appLanguageCodeToFlagEmoji, appLanguageCodeToLabelTranslateKey, } from '../../constants.tsx';
-import { SettingsItemValueText } from '../SettingsItemValueText.tsx';
+import {
+  APP_BOTTOM_SHEET_ICON_LABEL_GAP_UNION,
+  AppSelectionBottomSheetItemText,
+} from '../../../../../../common/AppSelectionBottomSheet/components/AppSelectionBottomSheetItemText.tsx';
 import { AppRow } from '../../../../../../common/AppRow.tsx';
+import { getAppLanguageSettingValueProps } from '../../helpers/getAppLanguageSettingValueProps.ts';
 
 const LanguageSettingsItemComponent = () => {
   const t = useAppTranslation();
 
   const { language } = useAppLanguage();
 
-  const flagEmoji = appLanguageCodeToFlagEmoji[language];
-  const labelTranslateKey = appLanguageCodeToLabelTranslateKey[language];
+  const { labelTranslateKey, flagEmoji } =
+    getAppLanguageSettingValueProps(language);
 
   const { bottomSheet, openLanguageSettingsBottomSheet } =
     useLanguageSettingsBottomSheet();
 
   const accessoryRight = (
     <AppRow
-      gap={'sm'}
+      gap={APP_BOTTOM_SHEET_ICON_LABEL_GAP_UNION}
       alignItems={'center'}>
-      <SettingsItemValueText label={flagEmoji} />
-      <SettingsItemValueText label={t(labelTranslateKey)} />
+      <AppSelectionBottomSheetItemText label={flagEmoji} />
+      <AppSelectionBottomSheetItemText label={t(labelTranslateKey)} />
     </AppRow>
   );
 

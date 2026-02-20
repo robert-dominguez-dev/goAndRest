@@ -1,7 +1,13 @@
 import { NestedKeys } from '../types/magic.ts';
 import { TOptionsBase } from 'i18next';
 import { AppWorkoutConfigKey } from '../components/navigation/AppNavigator/screens/LandingScreen/constants.ts';
-import { SupportedLanguageCode } from '../contexts/AppLanguageProvider/types.ts';
+import { SupportedLanguageCode } from '../contexts/AppLanguageProvider/constants.ts';
+import {
+  WorkoutCharacterVariant,
+  WorkoutSoundFeedback,
+  WorkoutSoundVariant,
+  WorkoutVoiceVariant,
+} from '../components/navigation/AppNavigator/screens/SettingsScreen/constants.tsx';
 
 type WorkoutConfigItemTexts = {
   label: string;
@@ -67,7 +73,14 @@ export type AppTranslations = {
       feedbackSection: {
         label: string;
         items: {
-          sounds: SettingsItemTexts;
+          soundFeedback: SettingsItemTexts &
+            SettingsItemSubItems<WorkoutSoundFeedback>;
+          voiceVariant: SettingsItemTexts &
+            SettingsItemSubItems<WorkoutVoiceVariant>;
+          characterVariant: SettingsItemTexts &
+            SettingsItemSubItems<WorkoutCharacterVariant>;
+          soundVariant: SettingsItemTexts &
+            SettingsItemSubItems<WorkoutSoundVariant>;
           vibrations: SettingsItemTexts;
         };
       };

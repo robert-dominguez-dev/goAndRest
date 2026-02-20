@@ -1,38 +1,57 @@
 import { atomWithStorage, createJSONStorage } from 'jotai/utils';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import {
+  WorkoutCharacterVariant,
+  WorkoutSoundFeedback,
+  WorkoutSoundVariant,
+  WorkoutVoiceVariant,
+} from '../components/navigation/AppNavigator/screens/SettingsScreen/constants.tsx';
+import { AsyncStorageKey } from './constants.ts';
 
-const numberAsyncStorage = createJSONStorage<number>(() => AsyncStorage);
+const createAsyncAtom = <T>(key: string, defaultValue: T) =>
+  atomWithStorage(
+    key,
+    defaultValue,
+    createJSONStorage<T>(() => AsyncStorage),
+  );
 
-export const warmupSettingsAtom = atomWithStorage<number>(
-  'WARMUP_SETTINGS_DURATION',
+export const warmupSettingAtom = createAsyncAtom<number>(
+  AsyncStorageKey.WARMUP_DURATION_SETTING,
   0,
-  numberAsyncStorage,
 );
 
-export const cooldownSettingsAtom = atomWithStorage<number>(
-  'COOLDOWN_SETTINGS_DURATION',
+export const cooldownSettingAtom = createAsyncAtom<number>(
+  AsyncStorageKey.COOLDOWN_DURATION_SETTING,
   0,
-  numberAsyncStorage,
 );
 
-const booleanAsyncStorage = createJSONStorage<boolean>(() => AsyncStorage);
-
-export const keepTimerInBackgroundSettingsAtom = atomWithStorage<boolean>(
-  'TIMER_IN_BACKGROUND_SETTINGS_DURATION',
+export const keepTimerInBackgroundSettingAtom = createAsyncAtom<boolean>(
+  AsyncStorageKey.TIMER_IN_BACKGROUND_SETTING,
   true,
-  booleanAsyncStorage,
 );
 
-export const vibrationsSettingsAtom = atomWithStorage<boolean>(
-  'VIBRATIONS_SETTINGS_DURATION',
+export const vibrationsSettingAtom = createAsyncAtom<boolean>(
+  AsyncStorageKey.VIBRATIONS_SETTING,
   true,
-  booleanAsyncStorage,
 );
 
-const stringAsyncStorage = createJSONStorage<string>(() => AsyncStorage);
+export const soundFeedbackSettingAtom = createAsyncAtom<WorkoutSoundFeedback>(
+  AsyncStorageKey.SOUND_FEEDBACK_SETTING,
+  WorkoutSoundFeedback.character,
+);
 
-export const soundsSettingsAtom = atomWithStorage<string>(
-  'SOUNDS_SETTINGS_DURATION',
-  'Karel',
-  stringAsyncStorage,
+export const voiceVariantSettingAtom = createAsyncAtom<WorkoutVoiceVariant>(
+  AsyncStorageKey.VOICE_VARIANT_SETTING,
+  WorkoutVoiceVariant.coachFemale,
+);
+
+export const characterVariantSettingAtom =
+  createAsyncAtom<WorkoutCharacterVariant>(
+    AsyncStorageKey.CHARACTER_VARIANT_SETTING,
+    WorkoutCharacterVariant.warrior,
+  );
+
+export const soundVariantSettingAtom = createAsyncAtom<WorkoutSoundVariant>(
+  AsyncStorageKey.SOUND_VARIANT_SETTING,
+  WorkoutSoundVariant.beep,
 );

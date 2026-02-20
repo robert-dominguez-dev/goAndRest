@@ -1,14 +1,13 @@
 import { useAppSelectionBottomSheet } from '../../../../../common/AppSelectionBottomSheet/hooks/useAppSelectionBottomSheet.tsx';
 import { useAppLanguage } from '../../../../../../contexts/AppLanguageProvider/AppLanguageProvider.tsx';
-import { SupportedLanguageCode } from '../../../../../../contexts/AppLanguageProvider/types.ts';
+import {
+  appLanguages,
+  SupportedLanguageCode,
+} from '../../../../../../contexts/AppLanguageProvider/constants.ts';
 import { AppSelectionBottomSheetItemData } from '../../../../../common/AppSelectionBottomSheet/components/AppSelectionBottomSheetItem.tsx';
 import { useAppTranslation } from '../../../../../../locales/hooks/useAppTranslation.ts';
-import { AppSelectionBottomSheetItemText } from '../../../../../common/AppSelectionBottomSheet/components/AppSelectionBottomSheetItemTextProps.tsx';
-import {
-  appLanguageCodeToFlagEmoji,
-  appLanguageCodeToLabelTranslateKey,
-  appLanguages,
-} from '../constants.tsx';
+import { getAppLanguageSettingValueProps } from '../helpers/getAppLanguageSettingValueProps.ts';
+import { AppSelectionBottomSheetItemText } from '../../../../../common/AppSelectionBottomSheet/components/AppSelectionBottomSheetItemText.tsx';
 
 export const useLanguageSettingsBottomSheet = () => {
   const t = useAppTranslation();
@@ -17,25 +16,19 @@ export const useLanguageSettingsBottomSheet = () => {
 
   const { language: selectedLanguage, changeLanguage } = useAppLanguage();
 
-  const items = appLanguages.reduce<
-    AppSelectionBottomSheetItemData<SupportedLanguageCode>[]
-  >((acc, language) => {
-    const flagEmoji = appLanguageCodeToFlagEmoji[language];
-    const labelTranslateKey = appLanguageCodeToLabelTranslateKey[language];
+  const items = appLanguages.map<
+    AppSelectionBottomSheetItemData<SupportedLanguageCode>
+  >(language => {
+    const { labelTranslateKey, flagEmoji } =
+      getAppLanguageSettingValueProps(language);
 
-    acc.push({
+    return {
       label: t(labelTranslateKey),
       value: language,
       selected: language === selectedLanguage,
-      accessoryLeft: (
-        <AppSelectionBottomSheetItemText>
-          {flagEmoji}
-        </AppSelectionBottomSheetItemText>
-      ),
-    });
-
-    return acc;
-  }, []);
+      accessoryLeft: <AppSelectionBottomSheetItemText label={flagEmoji} />,
+    };
+  });
 
   const openLanguageSettingsBottomSheet = () =>
     handleOpen({

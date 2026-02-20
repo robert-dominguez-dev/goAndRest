@@ -1,4 +1,4 @@
-import { SupportedLanguageCode } from '../../contexts/AppLanguageProvider/types.ts';
+import { SupportedLanguageCode } from '../../contexts/AppLanguageProvider/constants.ts';
 
 const supportedLanguageCodes = new Set<string>(
   Object.values(SupportedLanguageCode),

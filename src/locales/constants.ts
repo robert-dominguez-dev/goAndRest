@@ -8,7 +8,7 @@ import { cs } from './cs.ts';
 import { sk } from './sk.ts';
 
 import { getDeviceLanguageCode } from './helpers/getDeviceLanguageCode.ts';
-import { SupportedLanguageCode } from '../contexts/AppLanguageProvider/types.ts';
+import { SupportedLanguageCode } from '../contexts/AppLanguageProvider/constants.ts';
 
 const resources: Record<
   SupportedLanguageCode,

@@ -1,11 +1,11 @@
 import { SettingsItem } from '../SettingsItem.tsx';
 import { useAppTranslation } from '../../../../../../../locales/hooks/useAppTranslation.ts';
 import { memo } from 'react';
-import { SettingsItemValueText } from '../SettingsItemValueText.tsx';
+import { AppSelectionBottomSheetItemText } from '../../../../../../common/AppSelectionBottomSheet/components/AppSelectionBottomSheetItemText.tsx';
 import { formatTimerTime } from '../../../../../../common/AppCountdownText/helpers/formatTimerTime.tsx';
 import { useWorkoutSettingsBottomSheet } from '../../hooks/useWorkoutSettingsBottomSheet.tsx';
 import { Wind } from 'lucide-react-native';
-import { cooldownSettingsAtom } from '../../../../../../../contexts/atoms.ts';
+import { cooldownSettingAtom } from '../../../../../../../contexts/atoms.ts';
 import { AppColorUnion } from '../../../../../../../types/ui.ts';
 
 const IconComponent = Wind;
@@ -26,11 +26,11 @@ const CooldownSettingsItemComponent = () => {
       description,
       IconComponent,
       backgroundColorStatus,
-      durationAtom: cooldownSettingsAtom,
+      durationAtom: cooldownSettingAtom,
     });
 
   const accessoryRight = (
-    <SettingsItemValueText
+    <AppSelectionBottomSheetItemText
       IconComponent={IconComponent}
       iconColorStatus={backgroundColorStatus}
       label={formatTimerTime(duration)}

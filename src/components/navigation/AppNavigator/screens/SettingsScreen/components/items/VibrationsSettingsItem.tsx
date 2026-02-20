@@ -3,13 +3,13 @@ import { useAppTranslation } from '../../../../../../../locales/hooks/useAppTran
 import { memo } from 'react';
 import { AppToggleBase } from '../../../../../../common/AppToggle/component/AppToggleBase.tsx';
 import { useAtom } from 'jotai';
-import { vibrationsSettingsAtom } from '../../../../../../../contexts/atoms.ts';
+import { vibrationsSettingAtom } from '../../../../../../../contexts/atoms.ts';
 
 const VibrationsSettingsItemComponent = () => {
   const t = useAppTranslation();
 
   const [vibrationsEnabled, setVibrationsEnabled] = useAtom(
-    vibrationsSettingsAtom,
+    vibrationsSettingAtom,
   );
 
   const toggleVibrations = () => setVibrationsEnabled(prev => !prev);

@@ -3,13 +3,13 @@ import { useAppTranslation } from '../../../../../../../locales/hooks/useAppTran
 import { memo } from 'react';
 import { AppToggleBase } from '../../../../../../common/AppToggle/component/AppToggleBase.tsx';
 import { useAtom } from 'jotai';
-import { keepTimerInBackgroundSettingsAtom } from '../../../../../../../contexts/atoms.ts';
+import { keepTimerInBackgroundSettingAtom } from '../../../../../../../contexts/atoms.ts';
 
 const KeepTimerInBackgroundSettingsItemComponent = () => {
   const t = useAppTranslation();
 
   const [shouldKeepInBackground, setShouldKeepInBackground] = useAtom(
-    keepTimerInBackgroundSettingsAtom,
+    keepTimerInBackgroundSettingAtom,
   );
 
   const toggleShouldKeepInBackground = () =>

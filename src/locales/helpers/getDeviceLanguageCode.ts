@@ -1,6 +1,6 @@
 import { getLocales } from 'react-native-localize';
 import { checkIsSupportedAppLanguage } from './checkIsSupportedAppLanguage.ts';
-import { SupportedLanguageCode } from '../../contexts/AppLanguageProvider/types.ts';
+import { SupportedLanguageCode } from '../../contexts/AppLanguageProvider/constants.ts';
 
 export const getDeviceLanguageCode = (): SupportedLanguageCode => {
   const locales = getLocales();
