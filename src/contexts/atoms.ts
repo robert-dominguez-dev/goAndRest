@@ -7,6 +7,7 @@ import {
   WorkoutVoiceVariant,
 } from '../components/navigation/AppNavigator/screens/SettingsScreen/constants.tsx';
 import { AsyncStorageKey } from './constants.ts';
+import { WorkoutTimerPersistedState } from '../components/navigation/AppNavigator/screens/RunningWorkoutScreen/types.ts';
 
 const createAsyncAtom = <T>(key: string, defaultValue: T) =>
   atomWithStorage(
@@ -55,3 +56,9 @@ export const soundVariantSettingAtom = createAsyncAtom<WorkoutSoundVariant>(
   AsyncStorageKey.SOUND_VARIANT_SETTING,
   WorkoutSoundVariant.beep,
 );
+
+export const runningWorkoutStateAtom =
+  createAsyncAtom<WorkoutTimerPersistedState | null>(
+    AsyncStorageKey.APP_RUNNING_WORKOUT_STATE,
+    null,
+  );

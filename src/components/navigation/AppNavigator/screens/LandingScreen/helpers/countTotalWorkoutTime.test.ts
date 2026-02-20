@@ -1,14 +1,9 @@
 import { countTotalWorkoutTime } from './countTotalWorkoutTime.ts';
+import { AppRunningWorkoutConfig } from '../../RunningWorkoutScreen/types.ts';
 
 type TestCase = {
   description: string;
-  input: {
-    work?: number;
-    rest?: number;
-    series?: number;
-    rounds?: number;
-    brake?: number;
-  };
+  input: Partial<AppRunningWorkoutConfig>;
   expectedOutput: number;
 };
 
@@ -47,6 +42,19 @@ const testCases: TestCase[] = [
     description: 'three series three rounds with brake',
     input: { work: 10, rest: 5, series: 3, rounds: 3, brake: 15 },
     expectedOutput: 150,
+  },
+  {
+    description: 'three series three rounds with brake',
+    input: {
+      warmup: 15,
+      work: 10,
+      rest: 5,
+      series: 3,
+      rounds: 3,
+      brake: 15,
+      cooldown: 60,
+    },
+    expectedOutput: 225,
   },
   {
     description: 'empty input fallback',

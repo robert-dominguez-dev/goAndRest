@@ -1,26 +1,22 @@
-import { AppText } from '../../../../common/AppText/AppText.tsx';
 import { AppScreenLayout } from '../../../../common/AppScreenLayout.tsx';
 import { X } from 'lucide-react-native';
 import { useAppTranslation } from '../../../../../locales/hooks/useAppTranslation.ts';
-import { useAppWorkouts } from '../../../../../contexts/AppWorkoutsProvider/AppWorkoutsProvider.tsx';
-import { AppView } from '../../../../common/AppView/AppView.tsx';
-import { AppWorkoutConfig } from '../../../../../contexts/AppWorkoutsProvider/types.ts';
-import { defaultWorkoutConfig } from '../../../../../contexts/AppWorkoutsProvider/constants.ts';
 import { RunningWorkoutScreenFooter } from './components/RunningWorkoutScreenFooter.tsx';
 import { useEndRunningWorkoutPopUp } from './hooks/useEndRunningWorkoutPopUp.tsx';
+import { useWorkoutTimer } from '../../../../../hooks/useWorkoutTimer.ts';
+import { getNumber } from '../../../../../helpers/getNumber.ts';
+import { AppTimeView } from '../../../../common/AppTimeView.tsx';
+import { AppText } from '../../../../common/AppText/AppText.tsx';
 
 const footerElement = <RunningWorkoutScreenFooter />;
 
 export const RunningWorkoutScreen = () => {
   const t = useAppTranslation();
 
-  const { runningWorkout } = useAppWorkouts();
-
-  const selectedWorkoutConfig: AppWorkoutConfig =
-    runningWorkout || defaultWorkoutConfig;
+  const { currentState } = useWorkoutTimer();
 
   const headerTitle: string =
-    runningWorkout?.workoutName || t('screens.runningWorkoutScreen.title');
+    currentState?.workoutName || t('screens.runningWorkoutScreen.title');
 
   const { popUp, handleEndWorkout } = useEndRunningWorkoutPopUp();
 
@@ -31,13 +27,8 @@ export const RunningWorkoutScreen = () => {
         footer={footerElement}
         HeaderAccessoryLeftIconComponent={X}
         onHeaderAccessoryLeftPress={handleEndWorkout}>
-        <AppView>
-          {Object.entries(selectedWorkoutConfig).map(([key, value]) => (
-            <AppText key={key}>
-              {key}: {value}
-            </AppText>
-          ))}
-        </AppView>
+        <AppText category={'header'}>{currentState?.currentPhase}</AppText>
+        <AppTimeView seconds={getNumber(currentState?.phaseRemainingSeconds)} />
       </AppScreenLayout>
       {popUp}
     </>

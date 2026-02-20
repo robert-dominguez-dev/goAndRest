@@ -1,6 +1,6 @@
-import { AppWorkout } from './types.ts';
+import { AppWorkoutFieldValues } from './types.ts';
 
-export const defaultWorkoutConfig: AppWorkout = {
+export const defaultWorkoutConfig: AppWorkoutFieldValues = {
   workoutName: '',
   work: 90,
   rest: 30,

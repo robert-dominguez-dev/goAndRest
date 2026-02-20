@@ -1,16 +1,22 @@
-import { AppWorkoutConfig } from '../../../../../../contexts/AppWorkoutsProvider/types.ts';
 import { getNumber } from '../../../../../../helpers/getNumber.ts';
+import { AppRunningWorkoutConfig } from '../../RunningWorkoutScreen/types.ts';
 
 export const countTotalWorkoutTime = ({
+  warmup,
   work,
   rest,
   series,
   rounds,
   brake,
-}: Partial<AppWorkoutConfig>): number => {
+  cooldown,
+}: Partial<AppRunningWorkoutConfig>): number => {
+  const warmupSafe = getNumber(warmup);
   const workSafe = getNumber(work);
   const seriesSafe = getNumber(series);
   const roundsSafe = getNumber(rounds);
+  const restSafe = getNumber(rest);
+  const breakSafe = getNumber(brake);
+  const cooldownSafe = getNumber(cooldown);
 
   const isInvalidConfig: boolean =
     workSafe <= 0 || seriesSafe <= 0 || roundsSafe <= 0;
@@ -20,12 +26,12 @@ export const countTotalWorkoutTime = ({
   }
 
   const totalWorkTime = workSafe * seriesSafe;
-  const totalRestTime = getNumber(rest) * (seriesSafe - 1);
+  const totalRestTime = restSafe * (seriesSafe - 1);
 
   const totalRoundTime = totalWorkTime + totalRestTime;
 
   const totalRoundsTime = totalRoundTime * roundsSafe;
-  const totalBrakesTime = getNumber(brake) * (roundsSafe - 1);
+  const totalBrakesTime = breakSafe * (roundsSafe - 1);
 
-  return totalRoundsTime + totalBrakesTime;
+  return warmupSafe + totalRoundsTime + totalBrakesTime + cooldownSafe;
 };

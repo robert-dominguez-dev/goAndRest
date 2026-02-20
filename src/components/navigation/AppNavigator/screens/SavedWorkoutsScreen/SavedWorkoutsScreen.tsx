@@ -8,6 +8,7 @@ import { SavedWorkoutItem } from './components/SavedWorkoutItem.tsx';
 import { AppView } from '../../../../common/AppView/AppView.tsx';
 import { AppStoredWorkout } from '../../../../../contexts/AppWorkoutsProvider/types.ts';
 import { useDeleteWorkoutPopUp } from './hooks/useDeleteWorkoutPopUp.ts';
+import { useWorkoutTimer } from '../../../../../hooks/useWorkoutTimer.ts';
 
 type SavedWorkoutsScreenProps = ScreenProps<
   AppNavigatorScreenParams,
@@ -19,12 +20,14 @@ export const SavedWorkoutsScreen = ({
 }: SavedWorkoutsScreenProps) => {
   const t = useAppTranslation();
 
-  const { storedWorkouts, setRunningWorkout } = useAppWorkouts();
+  const { storedWorkouts } = useAppWorkouts();
+
+  const { start } = useWorkoutTimer();
 
   const { popUp, handleDeleteWorkout } = useDeleteWorkoutPopUp();
 
   const handleStartWorkout = ({ config, meta: { name } }: AppStoredWorkout) => {
-    setRunningWorkout({ workoutName: name, ...config });
+    start({ workoutName: name, ...config });
     navigation.replace(AppNavigatorScreen.RunningWorkoutScreen);
   };
 

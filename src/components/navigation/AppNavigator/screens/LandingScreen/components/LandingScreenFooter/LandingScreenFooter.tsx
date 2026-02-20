@@ -2,22 +2,22 @@ import { memo } from 'react';
 import { AppRoundedButtons } from '../../../../../../common/AppRoundedButtons/AppRoundedButtons.tsx';
 import { useRootStackNavigation } from '../../../../../hooks/useRootStackNavigation.ts';
 import { AppNavigatorScreen } from '../../../../types.ts';
-import { useAppWorkouts } from '../../../../../../../contexts/AppWorkoutsProvider/AppWorkoutsProvider.tsx';
 import { useFormContext } from 'react-hook-form';
-import { AppWorkout } from '../../../../../../../contexts/AppWorkoutsProvider/types.ts';
+import { AppWorkoutFieldValues } from '../../../../../../../contexts/AppWorkoutsProvider/types.ts';
 import { SaveWorkoutButton } from './components/SaveWorkoutButton.tsx';
+import { useWorkoutTimer } from '../../../../../../../hooks/useWorkoutTimer.ts';
 
 const saveButtonElement = <SaveWorkoutButton />;
 
 const LandingScreenFooterComponent = () => {
-  const { setRunningWorkout } = useAppWorkouts();
+  const { start } = useWorkoutTimer();
 
-  const { getValues } = useFormContext<AppWorkout>();
+  const { getValues } = useFormContext<AppWorkoutFieldValues>();
 
   const navigation = useRootStackNavigation();
 
   const onStartWorkout = () => {
-    setRunningWorkout(getValues());
+    start(getValues());
     navigation.navigate(AppNavigatorScreen.RunningWorkoutScreen);
   };
 

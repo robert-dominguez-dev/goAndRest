@@ -1,7 +1,7 @@
 import { ComponentType, memo } from 'react';
 
 import { useFormContext } from 'react-hook-form';
-import { AppWorkout } from '../../../../../../../../contexts/AppWorkoutsProvider/types.ts';
+import { AppWorkoutFieldValues } from '../../../../../../../../contexts/AppWorkoutsProvider/types.ts';
 import { WorkoutConfigButtonProps } from '../../../types.ts';
 import { useWorkoutConfigBottomSheet } from '../hooks/useWorkoutConfigBottomSheet.tsx';
 
@@ -17,7 +17,7 @@ const WorkoutConfigButtonWithSheetComponent = ({
   disabled,
   ButtonComponent,
 }: WorkoutConfigButtonWithSheetProps) => {
-  const { control } = useFormContext<AppWorkout>();
+  const { control } = useFormContext<AppWorkoutFieldValues>();
 
   const { bottomSheet, openWorkoutConfigBottomSheet } =
     useWorkoutConfigBottomSheet(name);

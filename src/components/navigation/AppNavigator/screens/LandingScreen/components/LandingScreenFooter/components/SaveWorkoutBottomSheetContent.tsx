@@ -1,5 +1,5 @@
 import { useFormContext, useFormState } from 'react-hook-form';
-import { AppWorkout } from '../../../../../../../../contexts/AppWorkoutsProvider/types.ts';
+import { AppWorkoutFieldValues } from '../../../../../../../../contexts/AppWorkoutsProvider/types.ts';
 import { AppView } from '../../../../../../../common/AppView/AppView.tsx';
 import { AppInput } from '../../../../../../../controls/AppInput/AppInput.tsx';
 import { AppText } from '../../../../../../../common/AppText/AppText.tsx';
@@ -24,7 +24,10 @@ const SaveWorkoutBottomSheetContentComponent = ({
 
   const navigation = useRootStackNavigation();
 
-  const handleSaveWorkout = ({ workoutName, ...workoutConfig }: AppWorkout) => {
+  const handleSaveWorkout = ({
+    workoutName,
+    ...workoutConfig
+  }: AppWorkoutFieldValues) => {
     storeWorkout({
       id: uuidv4(),
       meta: {
@@ -39,9 +42,10 @@ const SaveWorkoutBottomSheetContentComponent = ({
 
   const rules = getWorkoutNameRules(t);
 
-  const { control, handleSubmit, trigger } = useFormContext<AppWorkout>();
+  const { control, handleSubmit, trigger } =
+    useFormContext<AppWorkoutFieldValues>();
 
-  const { isValid, errors } = useFormState<AppWorkout>({
+  const { isValid, errors } = useFormState<AppWorkoutFieldValues>({
     control,
     name: 'workoutName',
   });

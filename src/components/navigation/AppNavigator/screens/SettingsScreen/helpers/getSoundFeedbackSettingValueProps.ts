@@ -1,7 +1,13 @@
 import { getSplitTranslateKey } from '../../../../../../locales/helpers/getSplitTranslateKey.ts';
 import { WorkoutSoundFeedback } from '../constants.tsx';
 import { SettingValueProps } from '../types.ts';
-import { Drama, LucideIcon, Music4, Speech, VolumeOff, } from 'lucide-react-native';
+import {
+  Drama,
+  LucideIcon,
+  Music4,
+  Speech,
+  VolumeOff,
+} from 'lucide-react-native';
 
 const soundFeedbackToEmoji: Record<WorkoutSoundFeedback, LucideIcon> = {
   [WorkoutSoundFeedback.voice]: Speech,

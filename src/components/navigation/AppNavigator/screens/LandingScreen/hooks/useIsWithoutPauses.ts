@@ -1,16 +1,17 @@
 import { useEffect } from 'react';
 import { AppWorkoutConfigKey } from '../constants.ts';
 import { useFormContext, useWatch } from 'react-hook-form';
-import { AppWorkout } from '../../../../../../contexts/AppWorkoutsProvider/types.ts';
+import { AppWorkoutFieldValues } from '../../../../../../contexts/AppWorkoutsProvider/types.ts';
 import { getNumber } from '../../../../../../helpers/getNumber.ts';
 
 export const useIsWithoutPauses = (
   roundsFieldName: Extract<AppWorkoutConfigKey, 'series' | 'rounds'>,
   pauseFieldName: Extract<AppWorkoutConfigKey, 'rest' | 'brake'>,
 ) => {
-  const { control, getValues, setValue } = useFormContext<AppWorkout>();
+  const { control, getValues, setValue } =
+    useFormContext<AppWorkoutFieldValues>();
 
-  const roundsFieldValue = useWatch<AppWorkout>({
+  const roundsFieldValue = useWatch<AppWorkoutFieldValues>({
     control,
     name: roundsFieldName,
   });

@@ -3,7 +3,7 @@ import {
   workoutSettingsButtonConfigMap,
 } from '../../../constants.ts';
 import { useAppTranslation } from '../../../../../../../../locales/hooks/useAppTranslation.ts';
-import { AppWorkout } from '../../../../../../../../contexts/AppWorkoutsProvider/types.ts';
+import { AppWorkoutFieldValues } from '../../../../../../../../contexts/AppWorkoutsProvider/types.ts';
 import { useFormContext } from 'react-hook-form';
 import { AppBottomSheetProps } from '../../../../../../../common/AppBottomSheet/AppBottomSheet.tsx';
 import { useAppBottomSheet } from '../../../../../../../common/AppBottomSheet/hooks/useAppBottomSheet.tsx';
@@ -14,7 +14,8 @@ import { useLastValueSnapshot } from './useLastValueSnapshot.tsx';
 export const useWorkoutConfigBottomSheet = (name: AppWorkoutConfigKey) => {
   const t = useAppTranslation();
 
-  const { control, getValues, setValue } = useFormContext<AppWorkout>();
+  const { control, getValues, setValue } =
+    useFormContext<AppWorkoutFieldValues>();
 
   const { takeSnapshot, clearSnapshot, revertChanges } = useLastValueSnapshot(
     value => setValue(name, value),

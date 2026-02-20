@@ -3,7 +3,7 @@ import {
   workoutSettingsButtonConfigMap,
 } from '../../../constants.ts';
 import { useAppTranslation } from '../../../../../../../../locales/hooks/useAppTranslation.ts';
-import { AppWorkout } from '../../../../../../../../contexts/AppWorkoutsProvider/types.ts';
+import { AppWorkoutFieldValues } from '../../../../../../../../contexts/AppWorkoutsProvider/types.ts';
 import { Control, Controller } from 'react-hook-form';
 import { AppBottomSheetRenderContentProps } from '../../../../../../../common/AppBottomSheet/AppBottomSheet.tsx';
 import { memo } from 'react';
@@ -11,7 +11,7 @@ import { WorkoutConfigBottomSheetContentBase } from './WorkoutConfigBottomSheetC
 
 type WorkoutConfigBottomSheetContentProps = AppBottomSheetRenderContentProps & {
   name: AppWorkoutConfigKey;
-  control: Control<AppWorkout>;
+  control: Control<AppWorkoutFieldValues>;
   onConfirm: () => void;
 };
 
