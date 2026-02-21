@@ -10,7 +10,6 @@ import { workoutPhaseToColorStatus } from './constants.ts';
 import { AppColorUnion } from '../../../../../types/ui.ts';
 import { AppCircularSliderBase } from '../../../../controls/AppCircularSlider/components/AppCircularSliderBase.tsx';
 import { useCircularSliderGeometry } from '../../../../controls/AppCircularSlider/hooks/useCircularSliderGeometry.ts';
-import { RunningWorkoutPhase } from './types.ts';
 import { formatTimerTime } from '../../../../../helpers/formatTimerTime.tsx';
 import { checkIsWorkoutTimerRunning } from './hooks/checkIsWorkoutTimerRunning.ts';
 
@@ -36,9 +35,7 @@ export const RunningWorkoutScreen = () => {
 
   const phaseRemainingMs = getNumber(currentState?.phaseRemainingMs);
   const phaseElapsedMs = getNumber(currentState?.phaseElapsedMs);
-  const currentPhase: RunningWorkoutPhase =
-    currentState?.currentPhase || RunningWorkoutPhase.WORK;
-  console.log(currentState?.workoutConfig);
+
   const maxValue = phaseRemainingMs + phaseElapsedMs;
 
   const { size, center, circumference, theta } = useCircularSliderGeometry({

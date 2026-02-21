@@ -6,8 +6,9 @@ type CountValueToAngleWorkletParams = {
 export const countValueToAngleWorklet = ({
   value,
   maxValue,
-}: CountValueToAngleWorkletParams) => {
+}: CountValueToAngleWorkletParams): number => {
   'worklet';
+  const fullCircle = 2 * Math.PI;
   const percentage = value / maxValue;
-  return percentage * 2 * Math.PI;
+  return percentage * fullCircle;
 };

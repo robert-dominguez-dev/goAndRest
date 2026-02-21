@@ -103,13 +103,16 @@ export const useWorkoutTimer = () => {
 
   const skip = useCallback(
     (msToSkip: number) => {
-      if (!persistedState || !computedState) {
+      if (!persistedState) {
         return undefined;
       }
 
+      const freshPrevComputedState =
+        calculateCurrentWorkoutState(persistedState);
+
       const nextPersistedState = calculateSkipState(
         persistedState,
-        computedState,
+        freshPrevComputedState,
         msToSkip,
       );
 

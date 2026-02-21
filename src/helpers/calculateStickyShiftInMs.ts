@@ -19,7 +19,7 @@ export const calculateStickyShiftInMs = ({
   const isSkippingForward = msToSkip > 0;
 
   if (isSkippingForward) {
-    return phaseRemainingMs === 0
+    return phaseRemainingMs < ONE_SECOND_MS
       ? msToSkip
       : Math.min(msToSkip, phaseRemainingMs);
   }

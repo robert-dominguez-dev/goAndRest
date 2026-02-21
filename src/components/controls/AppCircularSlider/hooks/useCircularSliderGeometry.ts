@@ -34,61 +34,34 @@ export const useCircularSliderGeometry = ({
   const theta = useSharedValue(countValueToAngleWorklet({ value, maxValue }));
 
   useAnimatedReaction(
-    /**
-     * Watch value, running state, AND maxValue to detect phase changes.
-     */
     () => ({ v: value, running: isRunning, max: maxValue }),
     (next, prev) => {
       const targetAngle = 2 * Math.PI;
+
       const currentAngle = countValueToAngleWorklet({
         value: next.v,
         maxValue: next.max,
       });
 
-      const remainingTimeMs: number = next.max - next.v;
+      cancelAnimation(theta);
 
-      if (next.running) {
-        /**
-         * 1. Detect manual skip (> 1s)
-         * 2. Detect phase change (maxValue changed)
-         * 3. Detect the start of new phase (v === 0)
-         * 4. Detect resume (!prev.running)
-         */
-        const hasSkipped: boolean = !!prev && Math.abs(next.v - prev.v) > 1;
-        const hasPhaseChanged: boolean = !!prev && next.max !== prev.max;
-        const isNewPhase: boolean = next.v === 0;
-        const isResuming: boolean = !!prev && !prev.running;
+      const hasChanged = prev?.v !== next.v || prev?.max !== next.max;
 
-        if (isNewPhase || hasSkipped || hasPhaseChanged || isResuming) {
-          cancelAnimation(theta);
+      if (hasChanged) {
+        theta.value = currentAngle;
+      }
 
-          /**
-           * We only snap to currentAngle if it's a hard jump or new phase.
-           * On RESUME, we leave `theta.value` where it is visually to prevent jumping back.
-           */
-          if (isNewPhase || hasSkipped || hasPhaseChanged) {
-            theta.value = currentAngle;
-          }
-
-          if (next.v < next.max) {
-            theta.value = withTiming(targetAngle, {
-              duration: remainingTimeMs,
-              easing: Easing.linear,
-            });
-          }
-        }
-      } else {
-        /**
-         * MANUAL SYNC FOR PAUSE STATE:
-         * Stop animation and snap to exact position for scrubbing/skipping.
-         */
-        cancelAnimation(theta);
-        if (next.v !== prev?.v || next.max !== prev?.max) {
-          theta.value = currentAngle;
-        }
+      /**
+       * Animating only from 0 to max...
+       */
+      if (next.running && next.v < next.max) {
+        theta.value = withTiming(targetAngle, {
+          duration: next.max - next.v,
+          easing: Easing.linear,
+        });
       }
     },
-    [isRunning, maxValue, value],
+    [value, isRunning, maxValue],
   );
 
   return {

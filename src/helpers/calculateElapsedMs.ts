@@ -11,9 +11,7 @@ export const calculateElapsedMs = ({
   isPaused,
   pausedAt,
 }: CalculateElapsedMsParams): number => {
-  const now = Date.now();
-
-  return isPaused && pausedAt
-    ? pausedAt - startedAt - totalPausedTime
-    : now - startedAt - totalPausedTime;
+  const referenceTime: number = isPaused && pausedAt ? pausedAt : Date.now();
+  const elapsed: number = referenceTime - startedAt - totalPausedTime;
+  return Math.max(0, elapsed);
 };
