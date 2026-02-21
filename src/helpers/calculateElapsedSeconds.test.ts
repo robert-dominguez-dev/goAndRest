@@ -1,11 +1,11 @@
 import {
-  calculateElapsedSeconds,
-  CalculateElapsedSecondsParams,
-} from './calculateElapsedSeconds.ts';
+  calculateElapsedMs,
+  CalculateElapsedMsParams,
+} from './calculateElapsedMs.ts';
 
 type TestCase = {
   description: string;
-  input: CalculateElapsedSecondsParams;
+  input: CalculateElapsedMsParams;
   expectedOutput: number;
 };
 
@@ -77,7 +77,7 @@ const testCases: TestCase[] = [
 
 describe('calculateElapsedSeconds', () => {
   it.each(testCases)('$description', ({ input, expectedOutput }) => {
-    const result = calculateElapsedSeconds(input);
+    const result = calculateElapsedMs(input);
     expect(result).toBeGreaterThanOrEqual(expectedOutput);
     expect(result).toBeLessThanOrEqual(expectedOutput + 1);
   });

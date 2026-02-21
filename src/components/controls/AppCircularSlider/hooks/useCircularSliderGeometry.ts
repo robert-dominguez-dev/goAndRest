@@ -1,6 +1,11 @@
-import { cancelAnimation, Easing, useAnimatedReaction, useSharedValue, withTiming, } from 'react-native-reanimated';
+import {
+  cancelAnimation,
+  Easing,
+  useAnimatedReaction,
+  useSharedValue,
+  withTiming,
+} from 'react-native-reanimated';
 import { countValueToAngleWorklet } from '../helpers/countValueToAngleWorklet.ts';
-import { ONE_SECOND_MS } from '../../../../constants/common.ts';
 
 type UseCircularSliderGeometryParams = {
   value: number;
@@ -40,7 +45,7 @@ export const useCircularSliderGeometry = ({
         maxValue: next.max,
       });
 
-      const remainingTimeMs: number = (next.max - next.v) * ONE_SECOND_MS;
+      const remainingTimeMs: number = next.max - next.v;
 
       if (next.running) {
         /**

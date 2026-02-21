@@ -1,37 +1,27 @@
 import { clamp } from 'lodash';
-import { ONE_SECOND_MS } from '../constants/common.ts';
 import {
   WorkoutTimerComputedState,
   WorkoutTimerPersistedState,
 } from '../components/navigation/AppNavigator/screens/RunningWorkoutScreen/types.ts';
-import { calculateStickyShiftInSeconds } from './calculateStickyShiftInSeconds.ts';
+import { calculateStickyShiftInMs } from './calculateStickyShiftInMs.ts';
 
 export const calculateSkipState = (
   persistedState: WorkoutTimerPersistedState,
   computedState: WorkoutTimerComputedState,
-  secondsToSkip: number,
+  msToSkip: number,
 ): WorkoutTimerPersistedState => {
-  const {
-    totalElapsedSeconds,
-    totalDurationSeconds,
-    phaseRemainingSeconds,
-    phaseElapsedSeconds,
-  } = computedState;
+  const { totalElapsedMs, totalDurationMs, phaseRemainingMs, phaseElapsedMs } =
+    computedState;
 
-  const secondsToShift = calculateStickyShiftInSeconds({
-    secondsToSkip,
-    phaseRemainingSeconds,
-    phaseElapsedSeconds,
+  const msToShift = calculateStickyShiftInMs({
+    msToSkip,
+    phaseRemainingMs,
+    phaseElapsedMs,
   });
 
-  const targetElapsed = clamp(
-    totalElapsedSeconds + secondsToShift,
-    0,
-    totalDurationSeconds,
-  );
+  const targetElapsed = clamp(totalElapsedMs + msToShift, 0, totalDurationMs);
 
-  const actualShiftMs: number =
-    (targetElapsed - totalElapsedSeconds) * ONE_SECOND_MS;
+  const actualShiftMs: number = targetElapsed - totalElapsedMs;
 
   return {
     ...persistedState,

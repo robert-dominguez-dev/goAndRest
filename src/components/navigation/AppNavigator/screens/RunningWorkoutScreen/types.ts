@@ -32,10 +32,10 @@ export type WorkoutTimerComputedState = {
   currentPhase: RunningWorkoutPhase;
   currentRound: number;
   currentSeries: number;
-  phaseRemainingSeconds: number;
-  phaseElapsedSeconds: number;
-  totalElapsedSeconds: number;
-  totalDurationSeconds: number;
+  phaseRemainingMs: number;
+  phaseElapsedMs: number;
+  totalElapsedMs: number;
+  totalDurationMs: number;
   isFinished: boolean;
 };
 
