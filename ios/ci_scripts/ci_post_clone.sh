@@ -1,15 +1,19 @@
-# Navigate to the project directory
-cd "$CI_PRIMARY_REPOSITORY_PATH" || exit 1
-echo "CURRENT DIRECTORY: $(pwd)"
+#!/bin/bash
 
-# Install Node.js and CocoaPods
-echo "NODE INSTALLATION..."
-brew install node
-echo "COCOAPODS INSTALLATION..."
-brew install cocoapods
+echo "🚀 CI_POST_CLONE STARTING..."
 
-# Install npm dependencies
-echo "NPM DEPENDENCIES AND PODS INSTALLATION..."
-npm run deps
+# Najít kořen projektu
+cd "$(dirname "$0")/../.." || exit 1
+echo "📍 Current dir: $(pwd)"
 
+# Instalace závislostí
+echo "📦 Installing npm dependencies..."
+npm install --frozen-lockfile || npm install
+
+# Instalace Podů
+echo "🍎 Installing CocoaPods..."
+cd ios || exit 1
+pod install
+
+echo "✅ CI_POST_CLONE FINISHED!"
 exit 0
