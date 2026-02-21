@@ -35,6 +35,10 @@ export const RunningWorkoutScreen = () => {
         HeaderAccessoryLeftIconComponent={X}
         onHeaderAccessoryLeftPress={openEndWorkoutPopUp}>
         <AppTimeView seconds={getNumber(currentState?.phaseRemainingSeconds)} />
+        <AppTimeView
+          fontSizeOverride={20}
+          seconds={getNumber(currentState?.totalElapsedSeconds)}
+        />
       </AppScreenLayout>
       {popUp}
     </>

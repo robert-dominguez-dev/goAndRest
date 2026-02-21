@@ -1,12 +1,6 @@
 import React, { JSX } from 'react';
 import { StyleSheet, View } from 'react-native';
-import Svg, { Circle, G } from 'react-native-svg';
-import Animated, {
-  useAnimatedProps,
-  useAnimatedReaction,
-  useAnimatedStyle,
-  useSharedValue,
-} from 'react-native-reanimated';
+import Animated, { useAnimatedStyle } from 'react-native-reanimated';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import { ChildrenProp } from '../../../types/common.ts';
 import { AppSize } from '../../../types/ui.ts';
@@ -14,9 +8,13 @@ import { AppView } from '../../common/AppView/AppView.tsx';
 import { useLayout } from '../../../hooks/useLayout.ts';
 import { scheduleOnRN } from 'react-native-worklets';
 import {
-  AppCircularSliderTicks,
-  AppCircularSliderTicksProps,
-} from './components/AppCircularSliderTicks.tsx';
+  AppCircularSliderBase,
+  AppCircularSliderTicksCommonProps,
+} from './components/AppCircularSliderBase.tsx';
+import { useCircularSliderGeometry } from './hooks/useCircularSliderGeometry.ts';
+import { countValueToAngleWorklet } from './helpers/countValueToAngleWorklet.ts';
+
+const THUMB_OFFSET = AppSize.m;
 
 const fallbackThumbElement = (
   <AppView
@@ -27,11 +25,8 @@ const fallbackThumbElement = (
   />
 );
 
-export type AppCircularSliderProps = Partial<ChildrenProp> &
-  Pick<
-    AppCircularSliderTicksProps,
-    'radius' | 'strokeWidth' | 'step' | 'labelEveryNSteps' | 'valueFormatter'
-  > & {
+export type AppCircularSliderProps = AppCircularSliderTicksCommonProps &
+  Partial<ChildrenProp> & {
     minValue: number;
     maxValue: number;
     value: number;
@@ -40,8 +35,6 @@ export type AppCircularSliderProps = Partial<ChildrenProp> &
     filledTrackColor?: string;
     trackColor?: string;
   };
-
-const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 
 export const AppCircularSlider = ({
   radius,
@@ -58,35 +51,13 @@ export const AppCircularSlider = ({
   filledTrackColor = 'black',
   trackColor = '#00000060',
 }: AppCircularSliderProps) => {
-  /**
-   * Total component size (diameter + line thickness + thumb offset)...
-   */
-  const knobSize = strokeWidth + AppSize.m;
-  const size = radius * 2 + Math.max(strokeWidth, knobSize);
-  const center = size / 2;
-  const circumference = radius * 2 * Math.PI;
-
-  /**
-   * VISUAL CALCULATION
-   * Percentage is calculated against 0 -> maxValue so the visual start is always 0.
-   */
-  const valueToAngle = (val: number) => {
-    'worklet';
-    const percentage = val / maxValue;
-    return percentage * 2 * Math.PI;
-  };
-
-  const theta = useSharedValue(valueToAngle(value));
-
-  /**
-   * Sync with external `value` prop...
-   */
-  useAnimatedReaction(
-    () => value,
-    nextValue => {
-      theta.value = valueToAngle(nextValue);
-    },
-  );
+  const { size, center, circumference, theta } = useCircularSliderGeometry({
+    value,
+    radius,
+    strokeWidth,
+    maxValue,
+    padding: THUMB_OFFSET * 2,
+  });
 
   const panGesture = Gesture.Pan().onUpdate(event => {
     const x = event.x - center;
@@ -125,18 +96,16 @@ export const AppCircularSlider = ({
       Math.max(minValue, currentStep * step),
     );
 
-    const steppedAngle = valueToAngle(normalizedValue);
+    const steppedAngle = countValueToAngleWorklet({
+      value: normalizedValue,
+      maxValue,
+    });
 
     if (normalizedValue !== value) {
       theta.value = steppedAngle;
       scheduleOnRN(onChange, normalizedValue);
     }
   });
-
-  const animatedCircleProps = useAnimatedProps(() => ({
-    strokeDashoffset:
-      circumference - (theta.value / (2 * Math.PI)) * circumference,
-  }));
 
   const { handleLayout, layout } = useLayout();
 
@@ -160,45 +129,20 @@ export const AppCircularSlider = ({
         alignItems: 'center',
       }}>
       <GestureDetector gesture={panGesture}>
-        <View style={{ width: size, height: size }}>
-          <Svg
-            width={size}
-            height={size}>
-            <AppCircularSliderTicks
-              center={center}
-              totalRange={maxValue}
-              step={step}
-              trackColor={trackColor}
-              strokeWidth={strokeWidth}
-              radius={radius}
-              labelEveryNSteps={labelEveryNSteps}
-              valueFormatter={valueFormatter}
-            />
-            <G transform={`rotate(-90, ${center}, ${center})`}>
-              {/* Track background */}
-              <Circle
-                cx={center}
-                cy={center}
-                r={radius}
-                stroke={trackColor}
-                strokeWidth={strokeWidth}
-                fill={'none'}
-              />
-              {/* Active track part */}
-              <AnimatedCircle
-                cx={center}
-                cy={center}
-                r={radius}
-                stroke={filledTrackColor}
-                strokeWidth={strokeWidth}
-                strokeDasharray={`${circumference} ${circumference}`}
-                animatedProps={animatedCircleProps}
-                strokeLinecap={'round'}
-                fill={'none'}
-              />
-            </G>
-          </Svg>
-        </View>
+        <AppCircularSliderBase
+          size={size}
+          circumference={circumference}
+          radius={radius}
+          center={center}
+          maxValue={maxValue}
+          step={step}
+          theta={theta}
+          labelEveryNSteps={labelEveryNSteps}
+          strokeWidth={strokeWidth}
+          valueFormatter={valueFormatter}
+          trackColor={trackColor}
+          filledTrackColor={filledTrackColor}
+        />
       </GestureDetector>
       {/* Center content */}
       <View
