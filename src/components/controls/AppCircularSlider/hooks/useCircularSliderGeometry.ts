@@ -43,17 +43,16 @@ export const useCircularSliderGeometry = ({
         maxValue: next.max,
       });
 
-      cancelAnimation(theta);
-
       const hasChanged = prev?.v !== next.v || prev?.max !== next.max;
 
       if (hasChanged) {
         theta.value = currentAngle;
       }
 
-      /**
-       * Animating only from 0 to max...
-       */
+      if (!next.running) {
+        cancelAnimation(theta);
+      }
+
       if (next.running && next.v < next.max) {
         theta.value = withTiming(targetAngle, {
           duration: next.max - next.v,
