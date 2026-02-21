@@ -10,6 +10,6 @@ brew install cocoapods
 
 # Install npm dependencies
 echo "NPM DEPENDENCIES AND PODS INSTALLATION..."
-npm run setup
+npm run ios:ci
 
 exit 0

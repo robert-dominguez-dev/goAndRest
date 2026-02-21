@@ -10,6 +10,7 @@
     "ios": "react-native run-ios",
     "ios:build:release": "react-native build-ios --mode=Release",
     "ios:version": "node scripts/ios_version_increment.mjs",
+    "ios:ci": "npm install && npx pod-install && react-native-asset",
     "lint": "eslint .",
     "start": "react-native start --reset-cache",
     "test": "jest",
