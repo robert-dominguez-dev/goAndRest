@@ -1,26 +1,15 @@
-#!/bin/bash
+# Navigate to the project directory
+cd "$CI_PRIMARY_REPOSITORY_PATH" || exit 1
+echo "CURRENT DIRECTORY: $(pwd)"
 
-echo "🚀 CI_POST_CLONE STARTING..."
-
-# 1. Install Node.js and CocoaPods using Homebrew
-# Since the environment is missing these tools, we must install them manually
-echo "🍺 Installing Node and CocoaPods via Homebrew..."
+# Install Node.js and CocoaPods
+echo "NODE INSTALLATION..."
 brew install node
+echo "COCOAPODS INSTALLATION..."
 brew install cocoapods
 
-# 2. Navigate to the project root directory
-cd "$(dirname "$0")/../.." || exit 1
-echo "📍 Current dir: $(pwd)"
+# Install npm dependencies
+echo "NPM DEPENDENCIES AND PODS INSTALLATION..."
+npm run setup
 
-# 3. Install npm dependencies
-echo "📦 Installing npm dependencies..."
-# Using --legacy-peer-deps to handle potential version conflicts
-npm install --legacy-peer-deps
-
-# 4. Install CocoaPods
-echo "🍎 Installing CocoaPods..."
-cd ios || exit 1
-pod install
-
-echo "✅ CI_POST_CLONE FINISHED!"
 exit 0
