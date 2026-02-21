@@ -8,6 +8,14 @@ import { getNumber } from '../../../../../helpers/getNumber.ts';
 import { AppTimeView } from '../../../../common/AppTimeView.tsx';
 import { workoutPhaseToColorStatus } from './constants.ts';
 import { AppColorUnion } from '../../../../../types/ui.ts';
+import { AppCircularSliderBase } from '../../../../controls/AppCircularSlider/components/AppCircularSliderBase.tsx';
+import { useCircularSliderGeometry } from '../../../../controls/AppCircularSlider/hooks/useCircularSliderGeometry.ts';
+import { RunningWorkoutPhase } from './types.ts';
+import { formatTimerTime } from '../../../../common/AppCountdownText/helpers/formatTimerTime.tsx';
+import { checkIsWorkoutTimerRunning } from './hooks/checkIsWorkoutTimerRunning.ts';
+
+const INDICATOR_RADIUS = 160;
+const INDICATOR_STROKE_WIDTH = 16;
 
 const footerElement = <RunningWorkoutScreenFooter />;
 
@@ -26,6 +34,21 @@ export const RunningWorkoutScreen = () => {
       ? workoutPhaseToColorStatus[currentState.currentPhase]
       : undefined;
 
+  const phaseRemainingSeconds = getNumber(currentState?.phaseRemainingSeconds);
+  const phaseElapsedSeconds = getNumber(currentState?.phaseElapsedSeconds);
+  const currentPhase: RunningWorkoutPhase =
+    currentState?.currentPhase || RunningWorkoutPhase.WORK;
+
+  const maxValue = phaseRemainingSeconds + phaseElapsedSeconds;
+
+  const { size, center, circumference, theta } = useCircularSliderGeometry({
+    value: phaseElapsedSeconds,
+    radius: INDICATOR_RADIUS,
+    strokeWidth: INDICATOR_STROKE_WIDTH,
+    isRunning: checkIsWorkoutTimerRunning(currentState),
+    maxValue,
+  });
+
   return (
     <>
       <AppScreenLayout
@@ -34,7 +57,20 @@ export const RunningWorkoutScreen = () => {
         footer={footerElement}
         HeaderAccessoryLeftIconComponent={X}
         onHeaderAccessoryLeftPress={openEndWorkoutPopUp}>
-        <AppTimeView seconds={getNumber(currentState?.phaseRemainingSeconds)} />
+        <AppCircularSliderBase
+          size={size}
+          center={center}
+          circumference={circumference}
+          theta={theta}
+          trackColor={'#FFFFFF'}
+          filledTrackColor={'#444444'}
+          radius={INDICATOR_RADIUS}
+          strokeWidth={INDICATOR_STROKE_WIDTH}
+          maxValue={maxValue}
+          step={1}
+          valueFormatter={formatTimerTime}
+        />
+        <AppTimeView seconds={phaseRemainingSeconds} />
         <AppTimeView
           fontSizeOverride={20}
           seconds={getNumber(currentState?.totalElapsedSeconds)}

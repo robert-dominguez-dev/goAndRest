@@ -15,7 +15,7 @@ export type AppCircularSliderTicksCommonProps = Pick<
   'radius' | 'strokeWidth' | 'step' | 'valueFormatter'
 >;
 
-type AppCircularSliderBaseProps = AppCircularSliderTicksCommonProps & {
+export type AppCircularSliderBaseProps = AppCircularSliderTicksCommonProps & {
   maxValue: number;
   theta: SharedValue<number>;
   size: number;

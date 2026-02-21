@@ -9,6 +9,7 @@ import { useLayout } from '../../../hooks/useLayout.ts';
 import { scheduleOnRN } from 'react-native-worklets';
 import {
   AppCircularSliderBase,
+  AppCircularSliderBaseProps,
   AppCircularSliderTicksCommonProps,
 } from './components/AppCircularSliderBase.tsx';
 import { useCircularSliderGeometry } from './hooks/useCircularSliderGeometry.ts';
@@ -26,6 +27,7 @@ const fallbackThumbElement = (
 );
 
 export type AppCircularSliderProps = AppCircularSliderTicksCommonProps &
+  Pick<AppCircularSliderBaseProps, 'labelEveryNSteps'> &
   Partial<ChildrenProp> & {
     minValue: number;
     maxValue: number;
@@ -57,6 +59,7 @@ export const AppCircularSlider = ({
     strokeWidth,
     maxValue,
     padding: THUMB_OFFSET * 2,
+    isRunning: false,
   });
 
   const panGesture = Gesture.Pan().onUpdate(event => {
