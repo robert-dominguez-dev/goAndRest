@@ -24,7 +24,7 @@ export type AppToggleBaseProps = {
 };
 
 export const AppToggleBase = ({ value }: AppToggleBaseProps) => {
-  const { backgroundAlt, background, primary } = useAppThemedColors();
+  const { border, background, primary } = useAppThemedColors();
 
   const progress = useSharedValue(value ? 1 : 0);
 
@@ -36,7 +36,7 @@ export const AppToggleBase = ({ value }: AppToggleBaseProps) => {
     const backgroundColor = interpolateColor(
       progress.value,
       [0, 1],
-      [backgroundAlt, primary],
+      [border, primary],
     );
     return { backgroundColor };
   });
