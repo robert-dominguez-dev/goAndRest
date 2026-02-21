@@ -38,7 +38,7 @@ export const RunningWorkoutScreen = () => {
   const phaseElapsedMs = getNumber(currentState?.phaseElapsedMs);
   const currentPhase: RunningWorkoutPhase =
     currentState?.currentPhase || RunningWorkoutPhase.WORK;
-
+  console.log(currentState?.workoutConfig);
   const maxValue = phaseRemainingMs + phaseElapsedMs;
 
   const { size, center, circumference, theta } = useCircularSliderGeometry({
