@@ -1,21 +1,28 @@
 import { memo } from 'react';
-import { useRootStackNavigation } from '../../../../hooks/useRootStackNavigation.ts';
-import { AppNavigatorScreen } from '../../../types.ts';
-import { AppRoundedButtons } from '../../../../../common/AppRoundedButtons/AppRoundedButtons.tsx';
+import {
+  AppRoundedButtons,
+  AppRoundedButtonsProps,
+} from '../../../../../common/AppRoundedButtons/AppRoundedButtons.tsx';
 import { RunningWorkoutSkipButton } from './RunningWorkoutSkipButton.tsx';
 
 const SKIP_SECONDS = 15;
 
-const RunningWorkoutScreenFooterComponent = () => {
-  const navigation = useRootStackNavigation();
+type RunningWorkoutScreenFooterProps = Pick<
+  AppRoundedButtonsProps,
+  'isRunning' | 'onPlay' | 'onPause'
+> & {
+  onSkip: (seconds: number) => void;
+};
 
-  const onStartWorkout = () => {
-    navigation.navigate(AppNavigatorScreen.RunningWorkoutScreen);
-  };
-
+const RunningWorkoutScreenFooterComponent = ({
+  isRunning,
+  onPlay,
+  onPause,
+  onSkip,
+}: RunningWorkoutScreenFooterProps) => {
   const prevButtonElement = (
     <RunningWorkoutSkipButton
-      onPress={() => console.log('PREV')}
+      onPress={() => onSkip(-SKIP_SECONDS)}
       direction={'left'}
       value={SKIP_SECONDS}
     />
@@ -23,7 +30,7 @@ const RunningWorkoutScreenFooterComponent = () => {
 
   const nextButtonElement = (
     <RunningWorkoutSkipButton
-      onPress={() => console.log('NEXT')}
+      onPress={() => onSkip(SKIP_SECONDS)}
       direction={'right'}
       value={SKIP_SECONDS}
     />
@@ -31,8 +38,9 @@ const RunningWorkoutScreenFooterComponent = () => {
 
   return (
     <AppRoundedButtons
-      isRunning={true}
-      onMainButtonPress={onStartWorkout}
+      isRunning={isRunning}
+      onPlay={onPlay}
+      onPause={onPause}
       leftButton={prevButtonElement}
       rightButton={nextButtonElement}
     />

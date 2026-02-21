@@ -6,28 +6,44 @@ import { useEndRunningWorkoutPopUp } from './hooks/useEndRunningWorkoutPopUp.tsx
 import { useWorkoutTimer } from '../../../../../hooks/useWorkoutTimer.ts';
 import { getNumber } from '../../../../../helpers/getNumber.ts';
 import { AppTimeView } from '../../../../common/AppTimeView.tsx';
-import { AppText } from '../../../../common/AppText/AppText.tsx';
-
-const footerElement = <RunningWorkoutScreenFooter />;
+import { workoutPhaseToColorStatus } from './constants.ts';
+import { AppColorUnion } from '../../../../../types/ui.ts';
 
 export const RunningWorkoutScreen = () => {
   const t = useAppTranslation();
 
-  const { currentState } = useWorkoutTimer();
+  const { popUp, handleEndWorkout } = useEndRunningWorkoutPopUp();
+
+  const { resume, pause, skip, currentState } = useWorkoutTimer();
+
+  const isRunning: boolean =
+    !!currentState && !currentState?.isPaused && !currentState?.isFinished;
+
+  const footerElement = (
+    <RunningWorkoutScreenFooter
+      isRunning={isRunning}
+      onPlay={resume}
+      onPause={pause}
+      onSkip={skip}
+    />
+  );
 
   const headerTitle: string =
     currentState?.workoutName || t('screens.runningWorkoutScreen.title');
 
-  const { popUp, handleEndWorkout } = useEndRunningWorkoutPopUp();
+  const backgroundColorStatus: AppColorUnion | undefined =
+    currentState?.currentPhase
+      ? workoutPhaseToColorStatus[currentState.currentPhase]
+      : undefined;
 
   return (
     <>
       <AppScreenLayout
+        backgroundColorStatus={backgroundColorStatus}
         headerTitle={headerTitle}
         footer={footerElement}
         HeaderAccessoryLeftIconComponent={X}
         onHeaderAccessoryLeftPress={handleEndWorkout}>
-        <AppText category={'header'}>{currentState?.currentPhase}</AppText>
         <AppTimeView seconds={getNumber(currentState?.phaseRemainingSeconds)} />
       </AppScreenLayout>
       {popUp}

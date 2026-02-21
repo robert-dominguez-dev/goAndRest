@@ -19,7 +19,8 @@ export const calculateCurrentWorkoutState = ({
 }: WorkoutTimerPersistedState): WorkoutTimerComputedState => {
   const totalElapsedSeconds = calculateElapsedSeconds(params);
 
-  const { warmup, work, rest, series, brake, rounds, cooldown } = workoutConfig;
+  const { warmup, work, rest, series, recovery, rounds, cooldown } =
+    workoutConfig;
 
   const totalDuration = countTotalWorkoutTime(workoutConfig);
 
@@ -89,19 +90,19 @@ export const calculateCurrentWorkoutState = ({
      * Handle Brake Phase (only if it's not the last round)
      */
     if (round < rounds) {
-      if (phaseElapsedSeconds < brake) {
+      if (phaseElapsedSeconds < recovery) {
         return {
-          currentPhase: RunningWorkoutPhase.BREAK,
+          currentPhase: RunningWorkoutPhase.RECOVERY,
           currentRound: round,
           currentSeries: series,
-          phaseRemainingSeconds: brake - phaseElapsedSeconds,
+          phaseRemainingSeconds: recovery - phaseElapsedSeconds,
           phaseElapsedSeconds,
           totalElapsedSeconds,
           totalDurationSeconds: totalDuration,
           isFinished: false,
         };
       }
-      phaseElapsedSeconds -= brake;
+      phaseElapsedSeconds -= recovery;
     }
   }
 

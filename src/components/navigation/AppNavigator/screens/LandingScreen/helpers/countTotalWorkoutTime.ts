@@ -7,7 +7,7 @@ export const countTotalWorkoutTime = ({
   rest,
   series,
   rounds,
-  brake,
+  recovery,
   cooldown,
 }: Partial<AppRunningWorkoutConfig>): number => {
   const warmupSafe = getNumber(warmup);
@@ -15,7 +15,7 @@ export const countTotalWorkoutTime = ({
   const seriesSafe = getNumber(series);
   const roundsSafe = getNumber(rounds);
   const restSafe = getNumber(rest);
-  const breakSafe = getNumber(brake);
+  const recoverySafe = getNumber(recovery);
   const cooldownSafe = getNumber(cooldown);
 
   const isInvalidConfig: boolean =
@@ -31,7 +31,7 @@ export const countTotalWorkoutTime = ({
   const totalRoundTime = totalWorkTime + totalRestTime;
 
   const totalRoundsTime = totalRoundTime * roundsSafe;
-  const totalBrakesTime = breakSafe * (roundsSafe - 1);
+  const totalRecoveryTime = recoverySafe * (roundsSafe - 1);
 
-  return warmupSafe + totalRoundsTime + totalBrakesTime + cooldownSafe;
+  return warmupSafe + totalRoundsTime + totalRecoveryTime + cooldownSafe;
 };

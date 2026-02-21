@@ -22,7 +22,7 @@ const basicWorkout: AppRunningWorkoutConfig = {
   rest: 10,
   series: 2,
   rounds: 2,
-  brake: 30,
+  recovery: 30,
   cooldown: 10,
 };
 
@@ -32,7 +32,7 @@ const workoutWithoutWarmup: AppRunningWorkoutConfig = {
   rest: 10,
   series: 2,
   rounds: 2,
-  brake: 30,
+  recovery: 30,
   cooldown: 10,
 };
 
@@ -42,7 +42,7 @@ const workoutWithoutCooldown: AppRunningWorkoutConfig = {
   rest: 10,
   series: 2,
   rounds: 2,
-  brake: 30,
+  recovery: 30,
   cooldown: 0,
 };
 

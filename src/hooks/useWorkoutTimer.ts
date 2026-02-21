@@ -1,7 +1,11 @@
 import { useCallback, useState } from 'react';
 import { useAtom, useAtomValue } from 'jotai';
 import { usePreciseInterval } from './usePreciseInterval';
-import { cooldownSettingAtom, runningWorkoutStateAtom, warmupSettingAtom, } from '../contexts/atoms.ts';
+import {
+  cooldownSettingAtom,
+  runningWorkoutStateAtom,
+  warmupSettingAtom,
+} from '../contexts/atoms.ts';
 import {
   WorkoutTimerComputedState,
   WorkoutTimerPersistedState,
@@ -11,6 +15,7 @@ import { calculateCurrentWorkoutState } from '../helpers/calculateCurrentWorkout
 import { getNumber } from '../helpers/getNumber.ts';
 import { useWorkoutBackgroundHandler } from './useWorkoutBackgroundHandler.ts';
 import { AppWorkoutFieldValues } from '../contexts/AppWorkoutsProvider/types.ts';
+import { calculateSkipState } from '../helpers/calculateSkipState.ts';
 
 export const useWorkoutTimer = () => {
   const warmupSetting = useAtomValue(warmupSettingAtom);
@@ -20,6 +25,11 @@ export const useWorkoutTimer = () => {
 
   const [computedState, setComputedState] =
     useState<WorkoutTimerComputedState | null>(null);
+
+  const stop = useCallback(() => {
+    void setPersistedState(null);
+    setComputedState(null);
+  }, [setPersistedState]);
 
   const updateComputedState = useCallback(() => {
     if (!persistedState) {
@@ -31,9 +41,9 @@ export const useWorkoutTimer = () => {
     setComputedState(newComputedState);
 
     if (newComputedState.isFinished) {
-      void setPersistedState(null);
+      stop();
     }
-  }, [persistedState, setPersistedState]);
+  }, [persistedState, setPersistedState, stop]);
 
   const isTimerRunning: boolean =
     !!persistedState && !persistedState.isPaused && !computedState?.isFinished;
@@ -93,10 +103,28 @@ export const useWorkoutTimer = () => {
     });
   }, [persistedState, setPersistedState]);
 
-  const stop = useCallback(() => {
-    void setPersistedState(null);
-    setComputedState(null);
-  }, [setPersistedState]);
+  const skip = useCallback(
+    (seconds: number) => {
+      console.log({
+        seconds,
+        persistedState,
+        computedState,
+      });
+      if (!persistedState || !computedState) {
+        return undefined;
+      }
+
+      const nextPersistedState = calculateSkipState(
+        persistedState,
+        computedState,
+        seconds,
+      );
+
+      void setPersistedState(nextPersistedState);
+      setComputedState(calculateCurrentWorkoutState(nextPersistedState));
+    },
+    [persistedState, computedState, setPersistedState],
+  );
 
   const currentState: WorkoutTimerState | null =
     persistedState && computedState
@@ -111,5 +139,6 @@ export const useWorkoutTimer = () => {
     pause,
     resume,
     stop,
+    skip,
   };
 };

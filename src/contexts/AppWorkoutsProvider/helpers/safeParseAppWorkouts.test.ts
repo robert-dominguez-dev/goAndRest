@@ -20,7 +20,7 @@ const validWorkout: AppStoredWorkout = {
     rest: 10,
     series: 3,
     rounds: 2,
-    brake: 15,
+    recovery: 15,
   },
 };
 

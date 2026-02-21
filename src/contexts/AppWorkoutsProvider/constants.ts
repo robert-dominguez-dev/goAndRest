@@ -6,5 +6,5 @@ export const defaultWorkoutConfig: AppWorkoutFieldValues = {
   rest: 30,
   series: 2,
   rounds: 1,
-  brake: 0,
+  recovery: 0,
 };

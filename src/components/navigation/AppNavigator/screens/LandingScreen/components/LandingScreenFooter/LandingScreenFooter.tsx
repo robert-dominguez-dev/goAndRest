@@ -24,7 +24,7 @@ const LandingScreenFooterComponent = () => {
   return (
     <AppRoundedButtons
       isRunning={false}
-      onMainButtonPress={onStartWorkout}
+      onPlay={onStartWorkout}
       rightButton={saveButtonElement}
     />
   );

@@ -3,10 +3,6 @@ import { formatTimerTime } from '../../../../common/AppCountdownText/helpers/for
 import { AppButtonProps } from '../../../../controls/AppButton/AppButton.tsx';
 import { BatteryCharging, Coffee, Dumbbell, Repeat } from 'lucide-react-native';
 import { TranslateKey } from '../../../../../locales/types.ts';
-import {
-  AppRoundedButtonSizeUnion,
-  roundedButtonToIconSize,
-} from '../../../../controls/AppRoundedButton/constants.ts';
 import { formatRounds } from '../../../../common/AppCountdownText/helpers/formatRounds.ts';
 
 export type AppWorkoutConfigKey = keyof AppWorkoutConfig;
@@ -75,10 +71,10 @@ export const workoutSettingsButtonConfigMap: Record<
     labelEveryNSteps: 2,
     valueFormatter: formatRounds,
   },
-  brake: {
-    labelKey: 'common.workoutConfig.brake.label',
-    descriptionKey: 'common.workoutConfig.brake.description',
-    backgroundColorStatus: 'brake',
+  recovery: {
+    labelKey: 'common.workoutConfig.recovery.label',
+    descriptionKey: 'common.workoutConfig.recovery.description',
+    backgroundColorStatus: 'recovery',
     IconComponent: Coffee,
     min: 0,
     max: FIVE_MINUTES_SECONDS,
@@ -87,8 +83,3 @@ export const workoutSettingsButtonConfigMap: Record<
     valueFormatter: formatTimerTime,
   },
 };
-
-export const EXISTING_WORKOUT_BUTTON_SIZE: AppRoundedButtonSizeUnion = 's';
-
-export const EXISTING_WORKOUT_BUTTON_ICON_SIZE =
-  roundedButtonToIconSize[EXISTING_WORKOUT_BUTTON_SIZE];

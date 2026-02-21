@@ -4,7 +4,7 @@ export enum RunningWorkoutPhase {
   WARMUP = 'WARMUP',
   WORK = 'WORK',
   REST = 'REST',
-  BREAK = 'BREAK',
+  RECOVERY = 'RECOVERY',
   COOLDOWN = 'COOLDOWN',
 }
 
@@ -33,6 +33,7 @@ export type WorkoutTimerComputedState = {
   currentRound: number;
   currentSeries: number;
   phaseRemainingSeconds: number;
+  phaseElapsedSeconds: number;
   totalElapsedSeconds: number;
   totalDurationSeconds: number;
   isFinished: boolean;

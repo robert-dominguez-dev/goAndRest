@@ -52,7 +52,7 @@ export const SavedWorkoutItemBody = ({ config }: SavedWorkoutItemBodyProps) => (
         flexBasis={0}>
         <SavedWorkoutItemBodyRow
           name={'brake'}
-          value={config.brake}
+          value={config.recovery}
           backgroundColorStatusOverride={'brakeStrong'}
         />
       </AppView>

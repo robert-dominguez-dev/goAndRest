@@ -6,7 +6,7 @@ import { getNumber } from '../../../../../../helpers/getNumber.ts';
 
 export const useIsWithoutPauses = (
   roundsFieldName: Extract<AppWorkoutConfigKey, 'series' | 'rounds'>,
-  pauseFieldName: Extract<AppWorkoutConfigKey, 'rest' | 'brake'>,
+  pauseFieldName: Extract<AppWorkoutConfigKey, 'rest' | 'recovery'>,
 ) => {
   const { control, getValues, setValue } =
     useFormContext<AppWorkoutFieldValues>();

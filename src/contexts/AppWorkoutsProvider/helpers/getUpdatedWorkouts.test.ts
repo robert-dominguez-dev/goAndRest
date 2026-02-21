@@ -23,7 +23,7 @@ const workoutA: AppStoredWorkout = {
     rest: 5,
     series: 3,
     rounds: 3,
-    brake: 15,
+    recovery: 15,
   },
 };
 
@@ -38,7 +38,7 @@ const workoutB: AppStoredWorkout = {
     rest: 10,
     series: 4,
     rounds: 4,
-    brake: 10,
+    recovery: 10,
   },
 };
 
@@ -54,7 +54,7 @@ const updatedWorkoutA: AppStoredWorkout = {
     rest: 5,
     series: 5,
     rounds: 5,
-    brake: 20,
+    recovery: 20,
   },
 };
 

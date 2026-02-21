@@ -10,7 +10,7 @@ export type AppWorkoutConfig = {
   rest: number;
   series: number;
   rounds: number;
-  brake: number;
+  recovery: number;
 };
 
 export type AppStoredWorkout = {
