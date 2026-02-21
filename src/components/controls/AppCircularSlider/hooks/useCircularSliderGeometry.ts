@@ -1,10 +1,6 @@
-import {
-  cancelAnimation,
-  Easing,
-  useAnimatedReaction,
-  useSharedValue,
-  withTiming,
-} from 'react-native-reanimated';
+import { cancelAnimation, Easing, useAnimatedReaction, useSharedValue, withTiming, } from 'react-native-reanimated';
+import { countValueToAngleWorklet } from '../helpers/countValueToAngleWorklet.ts';
+import { ONE_SECOND_MS } from '../../../../constants/common.ts';
 
 type UseCircularSliderGeometryParams = {
   value: number;
@@ -30,47 +26,59 @@ export const useCircularSliderGeometry = ({
   const center = size / 2;
   const circumference = radius * 2 * Math.PI;
 
-  const theta = useSharedValue(0);
+  const theta = useSharedValue(countValueToAngleWorklet({ value, maxValue }));
 
   useAnimatedReaction(
-    () => ({ running: isRunning, v: value }),
+    () => ({ v: value, running: isRunning }),
     (next, prev) => {
-      // 1. VÝPOČET CÍLE
       const targetAngle = 2 * Math.PI;
-      const currentAngle = (next.v / maxValue) * (2 * Math.PI);
-      const remainingTimeMs = (maxValue - next.v) * 1000;
 
-      // 2. DETEKCE SKOKU (Tlačítko Skip nebo Reset)
-      // Pokud se hodnota změnila o víc než 0.5s oproti předchozí,
-      // znamená to, že se s timerem pohnulo manuálně.
-      const hasJumped = prev && Math.abs(next.v - prev.v) > 0.5;
+      const currentAngle = countValueToAngleWorklet({
+        value: next.v,
+        maxValue,
+      });
 
-      if (next.v === 0 || hasJumped) {
-        cancelAnimation(theta);
-        theta.value = currentAngle; // Okamžitě skočíme na novou pozici
+      const remainingTimeMs: number = (maxValue - next.v) * ONE_SECOND_MS;
 
-        if (next.running) {
-          // A hned odpálíme novou animaci do konce z téhle pozice
-          theta.value = withTiming(targetAngle, {
-            duration: remainingTimeMs,
-            easing: Easing.linear,
-          });
+      if (next.running) {
+        /**
+         * Detect a time users skip greater than 1s or the start of a new phase (v === 0).
+         */
+        const hasSkippedOrStartedNewPhase: boolean =
+          !!prev && Math.abs(next.v - prev.v) > 1;
+
+        const isNewPhase = next.v === 0;
+
+        if (isNewPhase || hasSkippedOrStartedNewPhase || !prev?.running) {
+          /**
+           * If the timer just started, a phase changed, or a manual skip occurred,
+           * reset the animation and restart the smooth transition to the end.
+           */
+          cancelAnimation(theta);
+          theta.value = currentAngle;
+
+          if (next.v < maxValue) {
+            theta.value = withTiming(targetAngle, {
+              duration: remainingTimeMs,
+              easing: Easing.linear,
+            });
+          }
         }
-        return;
-      }
 
-      // 3. START PŘI PAUZE -> RUN
-      if (next.running && !prev?.running) {
-        theta.value = withTiming(targetAngle, {
-          duration: remainingTimeMs,
-          easing: Easing.linear,
-        });
-      }
-
-      // 4. STOP PŘI RUN -> PAUZA
-      if (!next.running && prev?.running) {
+        /**
+         * For regular ticks (hasSkippedOrStartedNewPhase === false), we do nothing.
+         * This allows the existing withTiming animation to run smoothly without interruption.
+         */
+      } else {
+        /**
+         * MANUAL SYNC FOR PAUSE STATE:
+         * When the timer is paused, we bypass the animation and sync theta
+         * directly with the external value (useful for manual scrubbing/skipping).
+         */
         cancelAnimation(theta);
-        theta.value = currentAngle; // Ukotvíme to na přesné hodnotě z JS
+        if (next.v !== prev?.v) {
+          theta.value = currentAngle;
+        }
       }
     },
     [isRunning, maxValue, value],
