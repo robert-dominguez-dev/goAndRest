@@ -16,7 +16,6 @@ export const useDebouncedAtom = <TValue>(
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      console.log('DEBOUNCE');
       setStoredValue(localValue);
     }, delay);
 

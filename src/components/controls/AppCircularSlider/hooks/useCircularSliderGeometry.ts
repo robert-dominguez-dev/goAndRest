@@ -29,54 +29,56 @@ export const useCircularSliderGeometry = ({
   const theta = useSharedValue(countValueToAngleWorklet({ value, maxValue }));
 
   useAnimatedReaction(
-    () => ({ v: value, running: isRunning }),
+    /**
+     * Watch value, running state, AND maxValue to detect phase changes.
+     */
+    () => ({ v: value, running: isRunning, max: maxValue }),
     (next, prev) => {
       const targetAngle = 2 * Math.PI;
-
       const currentAngle = countValueToAngleWorklet({
         value: next.v,
-        maxValue,
+        maxValue: next.max,
       });
 
-      const remainingTimeMs: number = (maxValue - next.v) * ONE_SECOND_MS;
+      const remainingTimeMs: number = (next.max - next.v) * ONE_SECOND_MS;
 
       if (next.running) {
         /**
-         * Detect a time users skip greater than 1s or the start of a new phase (v === 0).
+         * 1. Detect manual skip (> 1s)
+         * 2. Detect phase change (maxValue changed)
+         * 3. Detect the start of new phase (v === 0)
+         * 4. Detect resume (!prev.running)
          */
-        const hasSkippedOrStartedNewPhase: boolean =
-          !!prev && Math.abs(next.v - prev.v) > 1;
+        const hasSkipped: boolean = !!prev && Math.abs(next.v - prev.v) > 1;
+        const hasPhaseChanged: boolean = !!prev && next.max !== prev.max;
+        const isNewPhase: boolean = next.v === 0;
+        const isResuming: boolean = !!prev && !prev.running;
 
-        const isNewPhase = next.v === 0;
-
-        if (isNewPhase || hasSkippedOrStartedNewPhase || !prev?.running) {
-          /**
-           * If the timer just started, a phase changed, or a manual skip occurred,
-           * reset the animation and restart the smooth transition to the end.
-           */
+        if (isNewPhase || hasSkipped || hasPhaseChanged || isResuming) {
           cancelAnimation(theta);
-          theta.value = currentAngle;
 
-          if (next.v < maxValue) {
+          /**
+           * We only snap to currentAngle if it's a hard jump or new phase.
+           * On RESUME, we leave `theta.value` where it is visually to prevent jumping back.
+           */
+          if (isNewPhase || hasSkipped || hasPhaseChanged) {
+            theta.value = currentAngle;
+          }
+
+          if (next.v < next.max) {
             theta.value = withTiming(targetAngle, {
               duration: remainingTimeMs,
               easing: Easing.linear,
             });
           }
         }
-
-        /**
-         * For regular ticks (hasSkippedOrStartedNewPhase === false), we do nothing.
-         * This allows the existing withTiming animation to run smoothly without interruption.
-         */
       } else {
         /**
          * MANUAL SYNC FOR PAUSE STATE:
-         * When the timer is paused, we bypass the animation and sync theta
-         * directly with the external value (useful for manual scrubbing/skipping).
+         * Stop animation and snap to exact position for scrubbing/skipping.
          */
         cancelAnimation(theta);
-        if (next.v !== prev?.v) {
+        if (next.v !== prev?.v || next.max !== prev?.max) {
           theta.value = currentAngle;
         }
       }

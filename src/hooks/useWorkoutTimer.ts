@@ -103,11 +103,6 @@ export const useWorkoutTimer = () => {
 
   const skip = useCallback(
     (seconds: number) => {
-      console.log({
-        seconds,
-        persistedState,
-        computedState,
-      });
       if (!persistedState || !computedState) {
         return undefined;
       }
