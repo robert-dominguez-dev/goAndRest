@@ -2,27 +2,24 @@
 
 echo "🚀 CI_POST_CLONE STARTING..."
 
-# 1. Přidání cest k Homebrew a Node (Tohle ti chybí!)
-export PATH=/usr/local/bin:/opt/homebrew/bin:$PATH
+# 1. Install Node.js and CocoaPods using Homebrew
+# Since the environment is missing these tools, we must install them manually
+echo "🍺 Installing Node and CocoaPods via Homebrew..."
+brew install node
+brew install cocoapods
 
-# Kontrola, jestli už node vidíme
-echo "📍 Node version: $(node -v)"
-echo "📍 NPM version: $(npm -v)"
-
-# 2. Najít kořen projektu
+# 2. Navigate to the project root directory
 cd "$(dirname "$0")/../.." || exit 1
 echo "📍 Current dir: $(pwd)"
 
-# 3. Instalace závislostí
+# 3. Install npm dependencies
 echo "📦 Installing npm dependencies..."
-# Použijeme --legacy-peer-deps pro jistotu
+# Using --legacy-peer-deps to handle potential version conflicts
 npm install --legacy-peer-deps
 
-# 4. Instalace Podů
+# 4. Install CocoaPods
 echo "🍎 Installing CocoaPods..."
 cd ios || exit 1
-
-# V Xcode Cloudu je někdy potřeba použít bundle exec nebo specifikovat cestu
 pod install
 
 echo "✅ CI_POST_CLONE FINISHED!"
