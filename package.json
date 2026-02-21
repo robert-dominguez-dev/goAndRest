@@ -4,7 +4,12 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
+    "android:bundle": "npm run android:version && cd android && ./gradlew bundleRelease",
+    "android:assemble": "cd android && ./gradlew assembleRelease",
+    "android:version": "node scripts/android_version_increment.mjs",
     "ios": "react-native run-ios",
+    "ios:build:release": "react-native build-ios --mode=Release",
+    "ios:version": "node scripts/ios_version_increment.mjs",
     "lint": "eslint .",
     "start": "react-native start --reset-cache",
     "test": "jest",
