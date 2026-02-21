@@ -87,7 +87,7 @@ export const calculateCurrentWorkoutState = ({
     }
 
     /**
-     * Handle Brake Phase (only if it's not the last round)
+     * Handle Recovery Phase (only if it's not the last round)
      */
     if (round < rounds) {
       if (phaseElapsedSeconds < recovery) {

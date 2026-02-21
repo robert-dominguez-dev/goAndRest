@@ -25,7 +25,7 @@ export const sk = {
         description:
           'Celkový počet kôl v tréningu. Každé kolo môže obsahovať niekoľko sérií.',
       },
-      brake: {
+      recovery: {
         label: 'Pauza medzi kolami',
         description:
           'Dlhšia doba odpočinku po dokončení všetkých sérií v kole.',

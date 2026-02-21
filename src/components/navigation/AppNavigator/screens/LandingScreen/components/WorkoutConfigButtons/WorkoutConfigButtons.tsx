@@ -15,7 +15,7 @@ const WorkoutConfigButtonsComponent = () => {
   const { storedWorkouts } = useAppWorkouts();
 
   const isWithoutRest = useIsWithoutPauses('series', 'rest');
-  const isWithoutBrake = useIsWithoutPauses('rounds', 'recovery');
+  const isWithoutRecovery = useIsWithoutPauses('rounds', 'recovery');
 
   return (
     <AppView gap={GAP}>
@@ -45,7 +45,7 @@ const WorkoutConfigButtonsComponent = () => {
           </AppRow>
           <WorkoutConfigButtonWithSheet
             name={'recovery'}
-            disabled={isWithoutBrake}
+            disabled={isWithoutRecovery}
             ButtonComponent={WorkoutConfigButton}
           />
         </AppView>

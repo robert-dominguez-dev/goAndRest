@@ -51,9 +51,9 @@ export const SavedWorkoutItemBody = ({ config }: SavedWorkoutItemBodyProps) => (
         grow
         flexBasis={0}>
         <SavedWorkoutItemBodyRow
-          name={'brake'}
+          name={'recovery'}
           value={config.recovery}
-          backgroundColorStatusOverride={'brakeStrong'}
+          backgroundColorStatusOverride={'recoveryStrong'}
         />
       </AppView>
       <AppRow paddingVertical={VERTICAL_DIVIDERS_SPACING}>

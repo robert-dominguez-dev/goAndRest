@@ -14,7 +14,7 @@ const AppWorkoutSchema: z.ZodType<AppStoredWorkout> = z.object({
     rest: z.int(),
     series: z.int(),
     rounds: z.int(),
-    brake: z.int(),
+    recovery: z.int(),
   }),
 });
 

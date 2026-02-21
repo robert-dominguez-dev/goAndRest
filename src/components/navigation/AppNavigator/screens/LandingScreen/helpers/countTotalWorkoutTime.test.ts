@@ -34,17 +34,17 @@ const testCases: TestCase[] = [
     expectedOutput: 25,
   },
   {
-    description: 'two series two rounds with brake',
+    description: 'two series two rounds with recovery',
     input: { work: 10, rest: 5, series: 2, rounds: 2, recovery: 20 },
     expectedOutput: 70,
   },
   {
-    description: 'three series three rounds with brake',
+    description: 'three series three rounds with recovery',
     input: { work: 10, rest: 5, series: 3, rounds: 3, recovery: 15 },
     expectedOutput: 150,
   },
   {
-    description: 'three series three rounds with brake',
+    description: 'three series three rounds with recovery',
     input: {
       warmup: 15,
       work: 10,

@@ -25,7 +25,7 @@ export const en = {
         description:
           'Total number of rounds in the workout. Each round can include several series.',
       },
-      brake: {
+      recovery: {
         label: 'Rest after round',
         description:
           'Longer rest period after completing all series in a round.',
