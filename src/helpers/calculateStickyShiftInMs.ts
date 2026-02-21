@@ -7,7 +7,7 @@ type CalculateStickyShiftInMsParams = {
 };
 
 /**
- * Calculates how many seconds to shift with a "sticky" behavior at phase boundaries.
+ * Calculates how many ms to shift with a "sticky" behavior at phase boundaries.
  * If not at a boundary, it snaps to the boundary.
  * If already at a boundary, it allows skipping across it.
  */

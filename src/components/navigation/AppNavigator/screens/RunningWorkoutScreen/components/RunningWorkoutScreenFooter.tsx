@@ -3,15 +3,17 @@ import { AppRoundedButtons } from '../../../../../common/AppRoundedButtons/AppRo
 import { RunningWorkoutSkipButton } from './RunningWorkoutSkipButton.tsx';
 import { useWorkoutTimer } from '../../../../../../hooks/useWorkoutTimer.ts';
 import { checkIsWorkoutTimerRunning } from '../hooks/checkIsWorkoutTimerRunning.ts';
+import { ONE_SECOND_MS } from '../../../../../../constants/common.ts';
 
 const SKIP_SECONDS = 15;
+const SKIP_MS = SKIP_SECONDS * ONE_SECOND_MS;
 
 const RunningWorkoutScreenFooterComponent = () => {
   const { resume, pause, skip, currentState } = useWorkoutTimer();
 
   const prevButtonElement = (
     <RunningWorkoutSkipButton
-      onPress={() => skip(-SKIP_SECONDS)}
+      onPress={() => skip(-SKIP_MS)}
       direction={'left'}
       value={SKIP_SECONDS}
     />
@@ -19,7 +21,7 @@ const RunningWorkoutScreenFooterComponent = () => {
 
   const nextButtonElement = (
     <RunningWorkoutSkipButton
-      onPress={() => skip(SKIP_SECONDS)}
+      onPress={() => skip(SKIP_MS)}
       direction={'right'}
       value={SKIP_SECONDS}
     />

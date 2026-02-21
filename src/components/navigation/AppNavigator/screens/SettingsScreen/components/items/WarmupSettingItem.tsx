@@ -2,7 +2,7 @@ import { SettingsItem } from '../SettingsItem.tsx';
 import { useAppTranslation } from '../../../../../../../locales/hooks/useAppTranslation.ts';
 import { memo } from 'react';
 import { AppSelectionBottomSheetItemText } from '../../../../../../common/AppSelectionBottomSheet/components/AppSelectionBottomSheetItemText.tsx';
-import { formatTimerTime } from '../../../../../../common/AppCountdownText/helpers/formatTimerTime.tsx';
+import { formatTimerTime } from '../../../../../../../helpers/formatTimerTime.tsx';
 import { useWorkoutSettingBottomSheet } from '../../hooks/useWorkoutSettingBottomSheet.tsx';
 import { Flame } from 'lucide-react-native';
 import { warmupSettingAtom } from '../../../../../../../contexts/atoms.ts';

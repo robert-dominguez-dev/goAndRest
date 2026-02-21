@@ -2,7 +2,7 @@ import { AppStoredWorkout } from '../../../../../../contexts/AppWorkoutsProvider
 import { AppRow } from '../../../../../common/AppRow.tsx';
 import { AppText } from '../../../../../common/AppText/AppText.tsx';
 import { countTotalWorkoutTime } from '../../LandingScreen/helpers/countTotalWorkoutTime.ts';
-import { formatTimerTime } from '../../../../../common/AppCountdownText/helpers/formatTimerTime.tsx';
+import { formatTimerTime } from '../../../../../../helpers/formatTimerTime.tsx';
 import { SAVED_WORKOUT_HEADER_AND_FOOTER_HEIGHT } from './SavedWorkoutItemFooter.tsx';
 import { Clock } from 'lucide-react-native';
 import { AppIconAndLabel } from '../../../../../controls/AppButton/components/AppIconAndLabel.tsx';

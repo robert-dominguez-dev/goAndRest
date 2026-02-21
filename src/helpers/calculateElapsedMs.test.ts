@@ -6,79 +6,82 @@ import {
 type TestCase = {
   description: string;
   input: CalculateElapsedMsParams;
-  expectedOutput: number;
+  expectedOutputMs: number;
 };
 
-const MINUTE = 60 * 1000;
 const SECOND = 1000;
+const MINUTE = 60 * SECOND;
+
+const MOCK_NOW = 1000000;
+
+jest.spyOn(Date, 'now').mockReturnValue(MOCK_NOW);
 
 const testCases: TestCase[] = [
   {
-    description: 'should calculate elapsed seconds when not paused',
+    description: 'should calculate elapsed ms when not paused',
     input: {
-      startedAt: Date.now() - 10 * SECOND,
+      startedAt: MOCK_NOW - 10 * SECOND,
       totalPausedTime: 0,
       isPaused: false,
       pausedAt: null,
     },
-    expectedOutput: 10,
+    expectedOutputMs: 10 * SECOND,
   },
   {
-    description: 'should calculate elapsed seconds when paused',
+    description: 'should calculate elapsed ms when paused',
     input: {
-      startedAt: Date.now() - 20 * SECOND,
+      startedAt: MOCK_NOW - 20 * SECOND,
       totalPausedTime: 0,
       isPaused: true,
-      pausedAt: Date.now() - 5 * SECOND,
+      pausedAt: MOCK_NOW - 5 * SECOND,
     },
-    expectedOutput: 15,
+    expectedOutputMs: 15 * SECOND,
   },
   {
     description: 'should subtract total paused time when not paused',
     input: {
-      startedAt: Date.now() - 30 * SECOND,
+      startedAt: MOCK_NOW - 30 * SECOND,
       totalPausedTime: 10 * SECOND,
       isPaused: false,
       pausedAt: null,
     },
-    expectedOutput: 20,
+    expectedOutputMs: 20 * SECOND,
   },
   {
     description: 'should subtract total paused time when paused',
     input: {
-      startedAt: Date.now() - 40 * SECOND,
+      startedAt: MOCK_NOW - 40 * SECOND,
       totalPausedTime: 10 * SECOND,
       isPaused: true,
-      pausedAt: Date.now() - 5 * SECOND,
+      pausedAt: MOCK_NOW - 5 * SECOND,
     },
-    expectedOutput: 25,
+    expectedOutputMs: 25 * SECOND,
   },
   {
     description: 'should handle multiple pause/resume cycles',
     input: {
-      startedAt: Date.now() - MINUTE,
+      startedAt: MOCK_NOW - MINUTE,
       totalPausedTime: 20 * SECOND,
       isPaused: false,
       pausedAt: null,
     },
-    expectedOutput: 40,
+    expectedOutputMs: 40 * SECOND,
   },
   {
     description: 'should return 0 when just started',
     input: {
-      startedAt: Date.now(),
+      startedAt: MOCK_NOW,
       totalPausedTime: 0,
       isPaused: false,
       pausedAt: null,
     },
-    expectedOutput: 0,
+    expectedOutputMs: 0,
   },
 ];
 
-describe('calculateElapsedSeconds', () => {
-  it.each(testCases)('$description', ({ input, expectedOutput }) => {
+describe('calculateElapsedMs', () => {
+  it.each(testCases)('$description', ({ input, expectedOutputMs }) => {
     const result = calculateElapsedMs(input);
-    expect(result).toBeGreaterThanOrEqual(expectedOutput);
-    expect(result).toBeLessThanOrEqual(expectedOutput + 1);
+    expect(result).toBe(expectedOutputMs);
   });
 });

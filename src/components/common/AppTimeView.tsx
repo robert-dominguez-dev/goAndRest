@@ -1,16 +1,16 @@
 import { AppRow } from './AppRow.tsx';
-import { formatTimerTime } from './AppCountdownText/helpers/formatTimerTime.tsx';
+import { formatTimerTime } from '../../helpers/formatTimerTime.tsx';
 import { AppText, AppTextProps } from './AppText/AppText.tsx';
 
 type AppTimeViewProps = Pick<AppTextProps, 'fontSizeOverride'> & {
-  seconds: number;
+  msLeft: number;
 };
 
 export const AppTimeView = ({
-  seconds,
+  msLeft,
   fontSizeOverride = 100,
 }: AppTimeViewProps) => {
-  const timeFormatted = formatTimerTime(seconds);
+  const timeFormatted = formatTimerTime(msLeft);
 
   return (
     <AppRow justifyContent={'center'}>

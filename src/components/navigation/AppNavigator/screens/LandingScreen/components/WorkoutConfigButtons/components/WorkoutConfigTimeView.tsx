@@ -22,7 +22,7 @@ export const WorkoutConfigTimeView = ({
       grow
       alignItems={'center'}
       justifyContent={'center'}>
-      <AppTimeView seconds={totalWorkoutTime} />
+      <AppTimeView msLeft={totalWorkoutTime} />
     </AppView>
   );
 };

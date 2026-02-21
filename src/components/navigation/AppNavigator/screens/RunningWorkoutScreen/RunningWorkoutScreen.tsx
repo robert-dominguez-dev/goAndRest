@@ -11,7 +11,7 @@ import { AppColorUnion } from '../../../../../types/ui.ts';
 import { AppCircularSliderBase } from '../../../../controls/AppCircularSlider/components/AppCircularSliderBase.tsx';
 import { useCircularSliderGeometry } from '../../../../controls/AppCircularSlider/hooks/useCircularSliderGeometry.ts';
 import { RunningWorkoutPhase } from './types.ts';
-import { formatTimerTime } from '../../../../common/AppCountdownText/helpers/formatTimerTime.tsx';
+import { formatTimerTime } from '../../../../../helpers/formatTimerTime.tsx';
 import { checkIsWorkoutTimerRunning } from './hooks/checkIsWorkoutTimerRunning.ts';
 
 const INDICATOR_RADIUS = 160;
@@ -34,15 +34,15 @@ export const RunningWorkoutScreen = () => {
       ? workoutPhaseToColorStatus[currentState.currentPhase]
       : undefined;
 
-  const phaseRemainingSeconds = getNumber(currentState?.phaseRemainingSeconds);
-  const phaseElapsedSeconds = getNumber(currentState?.phaseElapsedSeconds);
+  const phaseRemainingMs = getNumber(currentState?.phaseRemainingMs);
+  const phaseElapsedMs = getNumber(currentState?.phaseElapsedMs);
   const currentPhase: RunningWorkoutPhase =
     currentState?.currentPhase || RunningWorkoutPhase.WORK;
 
-  const maxValue = phaseRemainingSeconds + phaseElapsedSeconds;
+  const maxValue = phaseRemainingMs + phaseElapsedMs;
 
   const { size, center, circumference, theta } = useCircularSliderGeometry({
-    value: phaseElapsedSeconds,
+    value: phaseElapsedMs,
     radius: INDICATOR_RADIUS,
     strokeWidth: INDICATOR_STROKE_WIDTH,
     isRunning: checkIsWorkoutTimerRunning(currentState),
@@ -70,10 +70,10 @@ export const RunningWorkoutScreen = () => {
           step={1}
           valueFormatter={formatTimerTime}
         />
-        <AppTimeView seconds={phaseRemainingSeconds} />
+        <AppTimeView msLeft={phaseRemainingMs} />
         <AppTimeView
           fontSizeOverride={20}
-          seconds={getNumber(currentState?.totalElapsedSeconds)}
+          msLeft={getNumber(currentState?.totalElapsedMs)}
         />
       </AppScreenLayout>
       {popUp}

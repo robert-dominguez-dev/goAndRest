@@ -102,7 +102,7 @@ export const useWorkoutTimer = () => {
   }, [persistedState, setPersistedState]);
 
   const skip = useCallback(
-    (seconds: number) => {
+    (msToSkip: number) => {
       if (!persistedState || !computedState) {
         return undefined;
       }
@@ -110,7 +110,7 @@ export const useWorkoutTimer = () => {
       const nextPersistedState = calculateSkipState(
         persistedState,
         computedState,
-        seconds,
+        msToSkip,
       );
 
       void setPersistedState(nextPersistedState);

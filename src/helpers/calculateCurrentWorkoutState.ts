@@ -17,32 +17,32 @@ export const calculateCurrentWorkoutState = ({
   workoutConfig,
   ...params
 }: WorkoutTimerPersistedState): WorkoutTimerComputedState => {
-  const totalElapsedSeconds = calculateElapsedMs(params);
+  const totalElapsedMs = calculateElapsedMs(params);
 
   const { warmup, work, rest, series, recovery, rounds, cooldown } =
     workoutConfig;
 
-  const totalDuration = countTotalWorkoutTime(workoutConfig);
+  const totalDurationMs = countTotalWorkoutTime(workoutConfig);
 
-  let phaseElapsedSeconds = totalElapsedSeconds;
+  let phaseElapsedMs = totalElapsedMs;
 
   /**
    * Handle Warmup Phase
    */
-  if (phaseElapsedSeconds < warmup) {
+  if (phaseElapsedMs < warmup) {
     return {
       currentPhase: RunningWorkoutPhase.WARMUP,
       currentRound: 0,
       currentSeries: 0,
-      phaseRemainingMs: warmup - phaseElapsedSeconds,
-      phaseElapsedMs: phaseElapsedSeconds,
-      totalElapsedMs: totalElapsedSeconds,
-      totalDurationMs: totalDuration,
+      phaseRemainingMs: warmup - phaseElapsedMs,
+      phaseElapsedMs,
+      totalElapsedMs,
+      totalDurationMs,
       isFinished: false,
     };
   }
 
-  phaseElapsedSeconds -= warmup;
+  phaseElapsedMs -= warmup;
 
   /**
    * Iterate through Rounds and Series
@@ -52,37 +52,37 @@ export const calculateCurrentWorkoutState = ({
       /**
        * Handle Work Phase
        */
-      if (phaseElapsedSeconds < work) {
+      if (phaseElapsedMs < work) {
         return {
           currentPhase: RunningWorkoutPhase.WORK,
           currentRound: round,
           currentSeries: serie,
-          phaseRemainingMs: work - phaseElapsedSeconds,
-          phaseElapsedMs: phaseElapsedSeconds,
-          totalElapsedMs: totalElapsedSeconds,
-          totalDurationMs: totalDuration,
+          phaseRemainingMs: work - phaseElapsedMs,
+          phaseElapsedMs,
+          totalElapsedMs,
+          totalDurationMs,
           isFinished: false,
         };
       }
-      phaseElapsedSeconds -= work;
+      phaseElapsedMs -= work;
 
       /**
        * Handle Rest Phase (only if it's not the last series in the round)
        */
       if (serie < series) {
-        if (phaseElapsedSeconds < rest) {
+        if (phaseElapsedMs < rest) {
           return {
             currentPhase: RunningWorkoutPhase.REST,
             currentRound: round,
             currentSeries: serie,
-            phaseRemainingMs: rest - phaseElapsedSeconds,
-            phaseElapsedMs: phaseElapsedSeconds,
-            totalElapsedMs: totalElapsedSeconds,
-            totalDurationMs: totalDuration,
+            phaseRemainingMs: rest - phaseElapsedMs,
+            phaseElapsedMs,
+            totalElapsedMs,
+            totalDurationMs,
             isFinished: false,
           };
         }
-        phaseElapsedSeconds -= rest;
+        phaseElapsedMs -= rest;
       }
     }
 
@@ -90,34 +90,34 @@ export const calculateCurrentWorkoutState = ({
      * Handle Recovery Phase (only if it's not the last round)
      */
     if (round < rounds) {
-      if (phaseElapsedSeconds < recovery) {
+      if (phaseElapsedMs < recovery) {
         return {
           currentPhase: RunningWorkoutPhase.RECOVERY,
           currentRound: round,
           currentSeries: series,
-          phaseRemainingMs: recovery - phaseElapsedSeconds,
-          phaseElapsedMs: phaseElapsedSeconds,
-          totalElapsedMs: totalElapsedSeconds,
-          totalDurationMs: totalDuration,
+          phaseRemainingMs: recovery - phaseElapsedMs,
+          phaseElapsedMs,
+          totalElapsedMs,
+          totalDurationMs,
           isFinished: false,
         };
       }
-      phaseElapsedSeconds -= recovery;
+      phaseElapsedMs -= recovery;
     }
   }
 
   /**
    * Handle Cooldown Phase
    */
-  if (phaseElapsedSeconds < cooldown) {
+  if (phaseElapsedMs < cooldown) {
     return {
       currentPhase: RunningWorkoutPhase.COOLDOWN,
       currentRound: rounds,
       currentSeries: series,
-      phaseRemainingMs: cooldown - phaseElapsedSeconds,
-      phaseElapsedMs: phaseElapsedSeconds,
-      totalElapsedMs: totalElapsedSeconds,
-      totalDurationMs: totalDuration,
+      phaseRemainingMs: cooldown - phaseElapsedMs,
+      phaseElapsedMs,
+      totalElapsedMs,
+      totalDurationMs,
       isFinished: false,
     };
   }
@@ -147,8 +147,8 @@ export const calculateCurrentWorkoutState = ({
     currentRound: rounds,
     currentSeries: series,
     phaseRemainingMs: 0,
-    totalElapsedMs: Math.min(totalElapsedSeconds, totalDuration),
-    totalDurationMs: totalDuration,
+    totalElapsedMs: Math.min(totalElapsedMs, totalDurationMs),
+    totalDurationMs,
     isFinished: true,
   };
 };

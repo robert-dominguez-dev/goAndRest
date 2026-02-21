@@ -1,9 +1,10 @@
 import { AppWorkoutConfig } from '../../../../../contexts/AppWorkoutsProvider/types.ts';
-import { formatTimerTime } from '../../../../common/AppCountdownText/helpers/formatTimerTime.tsx';
+import { formatTimerTime } from '../../../../../helpers/formatTimerTime.tsx';
 import { AppButtonProps } from '../../../../controls/AppButton/AppButton.tsx';
 import { BatteryCharging, Coffee, Dumbbell, Repeat } from 'lucide-react-native';
 import { TranslateKey } from '../../../../../locales/types.ts';
-import { formatRounds } from '../../../../common/AppCountdownText/helpers/formatRounds.ts';
+import { formatRounds } from '../../../../../helpers/formatRounds.ts';
+import { ONE_SECOND_MS } from '../../../../../constants/common.ts';
 
 export type AppWorkoutConfigKey = keyof AppWorkoutConfig;
 
@@ -19,8 +20,9 @@ export type WorkoutSettingsButtonConfig = Required<
   valueFormatter: (value: number) => string;
 };
 
-const FIVE_MINUTES_SECONDS = 300;
-const TIME_STEP = 5;
+const FIVE_MINUTES_MS = 300 * ONE_SECOND_MS;
+const FIVE_SECONDS_MS = 5 * ONE_SECOND_MS;
+const TIME_STEP = 5 * ONE_SECOND_MS;
 const TIME_STEP_LABEL_MULTIPLIER = 6;
 
 export const workoutSettingsButtonConfigMap: Record<
@@ -32,8 +34,8 @@ export const workoutSettingsButtonConfigMap: Record<
     descriptionKey: 'common.workoutConfig.work.description',
     backgroundColorStatus: 'work',
     IconComponent: Dumbbell,
-    min: 5,
-    max: FIVE_MINUTES_SECONDS,
+    min: FIVE_SECONDS_MS,
+    max: FIVE_MINUTES_MS,
     step: TIME_STEP,
     labelEveryNSteps: TIME_STEP_LABEL_MULTIPLIER,
     valueFormatter: formatTimerTime,
@@ -44,7 +46,7 @@ export const workoutSettingsButtonConfigMap: Record<
     backgroundColorStatus: 'rest',
     IconComponent: BatteryCharging,
     min: 0,
-    max: FIVE_MINUTES_SECONDS,
+    max: FIVE_MINUTES_MS,
     step: TIME_STEP,
     labelEveryNSteps: TIME_STEP_LABEL_MULTIPLIER,
     valueFormatter: formatTimerTime,
@@ -77,7 +79,7 @@ export const workoutSettingsButtonConfigMap: Record<
     backgroundColorStatus: 'recovery',
     IconComponent: Coffee,
     min: 0,
-    max: FIVE_MINUTES_SECONDS,
+    max: FIVE_MINUTES_MS,
     step: TIME_STEP,
     labelEveryNSteps: TIME_STEP_LABEL_MULTIPLIER,
     valueFormatter: formatTimerTime,
