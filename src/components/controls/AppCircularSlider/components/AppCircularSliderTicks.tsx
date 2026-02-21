@@ -14,7 +14,7 @@ export type AppCircularSliderTicksProps = {
   step: number;
   trackColor: string;
   fontFamily?: string;
-  labelEveryNSteps?: number;
+  labelEveryNSteps: number;
   valueFormatter?: (value: number) => string;
 };
 
@@ -27,7 +27,7 @@ const AppCircularSliderTicksComponent = ({
   trackColor,
   fontFamily,
   valueFormatter,
-  labelEveryNSteps = 1,
+  labelEveryNSteps,
 }: AppCircularSliderTicksProps) => {
   const elements = [];
 

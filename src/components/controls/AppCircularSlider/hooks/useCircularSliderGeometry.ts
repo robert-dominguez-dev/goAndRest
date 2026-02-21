@@ -6,7 +6,7 @@ type UseCircularSliderGeometryParams = {
   maxValue: number;
   radius: number;
   strokeWidth: number;
-  padding: number;
+  padding?: number;
 };
 
 export const useCircularSliderGeometry = ({
@@ -14,7 +14,7 @@ export const useCircularSliderGeometry = ({
   maxValue,
   radius,
   strokeWidth,
-  padding,
+  padding = 0,
 }: UseCircularSliderGeometryParams) => {
   /**
    * Total component size (diameter + line thickness + thumb offset)...

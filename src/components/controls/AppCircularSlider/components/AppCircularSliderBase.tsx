@@ -1,12 +1,18 @@
 import React, { memo } from 'react';
 import { View } from 'react-native';
 import Svg, { Circle, G } from 'react-native-svg';
-import Animated, { SharedValue, useAnimatedProps, } from 'react-native-reanimated';
-import { AppCircularSliderTicks, AppCircularSliderTicksProps, } from './AppCircularSliderTicks.tsx';
+import Animated, {
+  SharedValue,
+  useAnimatedProps,
+} from 'react-native-reanimated';
+import {
+  AppCircularSliderTicks,
+  AppCircularSliderTicksProps,
+} from './AppCircularSliderTicks.tsx';
 
 export type AppCircularSliderTicksCommonProps = Pick<
   AppCircularSliderTicksProps,
-  'radius' | 'strokeWidth' | 'step' | 'labelEveryNSteps' | 'valueFormatter'
+  'radius' | 'strokeWidth' | 'step' | 'valueFormatter'
 >;
 
 type AppCircularSliderBaseProps = AppCircularSliderTicksCommonProps & {
@@ -17,6 +23,7 @@ type AppCircularSliderBaseProps = AppCircularSliderTicksCommonProps & {
   circumference: number;
   trackColor: string;
   filledTrackColor: string;
+  labelEveryNSteps?: number;
 };
 
 const AnimatedCircle = Animated.createAnimatedComponent(Circle);
@@ -47,16 +54,18 @@ const AppCircularSliderBaseComponent = ({
       <Svg
         width={size}
         height={size}>
-        <AppCircularSliderTicks
-          center={center}
-          totalRange={maxValue}
-          step={step}
-          trackColor={trackColor}
-          strokeWidth={strokeWidth}
-          radius={radius}
-          labelEveryNSteps={labelEveryNSteps}
-          valueFormatter={valueFormatter}
-        />
+        {!!labelEveryNSteps && (
+          <AppCircularSliderTicks
+            center={center}
+            totalRange={maxValue}
+            step={step}
+            trackColor={trackColor}
+            strokeWidth={strokeWidth}
+            radius={radius}
+            labelEveryNSteps={labelEveryNSteps}
+            valueFormatter={valueFormatter}
+          />
+        )}
         <G transform={`rotate(-90, ${center}, ${center})`}>
           {/* Track background */}
           <Circle

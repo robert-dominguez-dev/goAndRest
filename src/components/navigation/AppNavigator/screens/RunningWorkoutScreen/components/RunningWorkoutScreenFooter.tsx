@@ -2,6 +2,7 @@ import { memo } from 'react';
 import { AppRoundedButtons } from '../../../../../common/AppRoundedButtons/AppRoundedButtons.tsx';
 import { RunningWorkoutSkipButton } from './RunningWorkoutSkipButton.tsx';
 import { useWorkoutTimer } from '../../../../../../hooks/useWorkoutTimer.ts';
+import { checkIsWorkoutTimerRunning } from '../hooks/checkIsWorkoutTimerRunning.ts';
 
 const SKIP_SECONDS = 15;
 
@@ -24,8 +25,7 @@ const RunningWorkoutScreenFooterComponent = () => {
     />
   );
 
-  const isRunning: boolean =
-    !!currentState && !currentState?.isPaused && !currentState?.isFinished;
+  const isRunning = checkIsWorkoutTimerRunning(currentState);
 
   return (
     <AppRoundedButtons

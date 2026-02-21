@@ -1,4 +1,5 @@
 import { DependencyList, useEffect, useRef } from 'react';
+import { ONE_SECOND_MS } from '../constants/common.ts';
 
 export const usePreciseInterval = (
   onTick: () => void,
@@ -19,7 +20,7 @@ export const usePreciseInterval = (
     const tick = () => {
       onTick();
       const elapsedMsInCurrentSecond = new Date().getMilliseconds();
-      const msToNextSecond = 1000 - elapsedMsInCurrentSecond;
+      const msToNextSecond = ONE_SECOND_MS - elapsedMsInCurrentSecond;
       timeoutIdRef.current = setTimeout(tick, msToNextSecond);
     };
 
