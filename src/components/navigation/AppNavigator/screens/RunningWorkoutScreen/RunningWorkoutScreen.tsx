@@ -9,24 +9,14 @@ import { AppTimeView } from '../../../../common/AppTimeView.tsx';
 import { workoutPhaseToColorStatus } from './constants.ts';
 import { AppColorUnion } from '../../../../../types/ui.ts';
 
+const footerElement = <RunningWorkoutScreenFooter />;
+
 export const RunningWorkoutScreen = () => {
   const t = useAppTranslation();
 
-  const { popUp, handleEndWorkout } = useEndRunningWorkoutPopUp();
+  const { currentState } = useWorkoutTimer();
 
-  const { resume, pause, skip, currentState } = useWorkoutTimer();
-
-  const isRunning: boolean =
-    !!currentState && !currentState?.isPaused && !currentState?.isFinished;
-
-  const footerElement = (
-    <RunningWorkoutScreenFooter
-      isRunning={isRunning}
-      onPlay={resume}
-      onPause={pause}
-      onSkip={skip}
-    />
-  );
+  const { popUp, openEndWorkoutPopUp } = useEndRunningWorkoutPopUp();
 
   const headerTitle: string =
     currentState?.workoutName || t('screens.runningWorkoutScreen.title');
@@ -43,7 +33,7 @@ export const RunningWorkoutScreen = () => {
         headerTitle={headerTitle}
         footer={footerElement}
         HeaderAccessoryLeftIconComponent={X}
-        onHeaderAccessoryLeftPress={handleEndWorkout}>
+        onHeaderAccessoryLeftPress={openEndWorkoutPopUp}>
         <AppTimeView seconds={getNumber(currentState?.phaseRemainingSeconds)} />
       </AppScreenLayout>
       {popUp}

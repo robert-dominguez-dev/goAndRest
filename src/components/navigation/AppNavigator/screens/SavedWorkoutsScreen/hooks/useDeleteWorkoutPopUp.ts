@@ -3,42 +3,52 @@ import { AppStoredWorkout } from '../../../../../../contexts/AppWorkoutsProvider
 import { useAppWorkouts } from '../../../../../../contexts/AppWorkoutsProvider/AppWorkoutsProvider.tsx';
 import { useAppTranslation } from '../../../../../../locales/hooks/useAppTranslation.ts';
 import { useRootStackNavigation } from '../../../../hooks/useRootStackNavigation.ts';
+import { useState } from 'react';
 
 export const useDeleteWorkoutPopUp = () => {
   const t = useAppTranslation();
+
+  const [workoutToDelete, setWorkoutToDelete] = useState<
+    AppStoredWorkout | undefined
+  >(undefined);
 
   const navigation = useRootStackNavigation();
 
   const { storedWorkouts, removeWorkout } = useAppWorkouts();
 
-  const { popUp, handleOpen } = useAppPopUp();
-
-  const handleDeleteWorkout = (workout: AppStoredWorkout): void =>
-    handleOpen({
-      title: t('screens.landingScreen.removeStoredWorkoutPopUp.title'),
-      description: t(
-        'screens.landingScreen.removeStoredWorkoutPopUp.description',
-        { value: workout.meta.name },
+  const { popUp, onOpen } = useAppPopUp({
+    title: t('screens.landingScreen.removeStoredWorkoutPopUp.title'),
+    description: t(
+      'screens.landingScreen.removeStoredWorkoutPopUp.description',
+      { value: workoutToDelete?.meta.name ?? '' },
+    ),
+    primaryButtonProps: {
+      label: t(
+        'screens.landingScreen.removeStoredWorkoutPopUp.positiveButtonLabel',
       ),
-      primaryButtonProps: {
-        label: t(
-          'screens.landingScreen.removeStoredWorkoutPopUp.positiveButtonLabel',
-        ),
-        onPress: () => {
-          removeWorkout(workout.id);
-          if (storedWorkouts.length <= 1) {
-            navigation.goBack();
-          }
-        },
-        backgroundColorStatus: 'negative',
+      onPress: () => {
+        if (workoutToDelete) {
+          removeWorkout(workoutToDelete.id);
+        }
+
+        if (storedWorkouts.length <= 1) {
+          navigation.goBack();
+        }
       },
-      secondaryButtonProps: {
-        label: t(
-          'screens.landingScreen.removeStoredWorkoutPopUp.negativeButtonLabel',
-        ),
-        backgroundColorStatus: 'backgroundAlt',
-      },
-    });
+      backgroundColorStatus: 'negative',
+    },
+    secondaryButtonProps: {
+      label: t(
+        'screens.landingScreen.removeStoredWorkoutPopUp.negativeButtonLabel',
+      ),
+      backgroundColorStatus: 'backgroundAlt',
+    },
+  });
+
+  const handleDeleteWorkout = (workout: AppStoredWorkout) => {
+    setWorkoutToDelete(workout);
+    onOpen();
+  };
 
   return {
     popUp,

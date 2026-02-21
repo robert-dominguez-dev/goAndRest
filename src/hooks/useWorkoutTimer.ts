@@ -1,13 +1,13 @@
-import { useCallback, useState } from 'react';
+import { useCallback } from 'react';
 import { useAtom, useAtomValue } from 'jotai';
 import { usePreciseInterval } from './usePreciseInterval';
 import {
+  computedWorkoutStateAtom,
   cooldownSettingAtom,
   runningWorkoutStateAtom,
   warmupSettingAtom,
 } from '../contexts/atoms.ts';
 import {
-  WorkoutTimerComputedState,
   WorkoutTimerPersistedState,
   WorkoutTimerState,
 } from '../components/navigation/AppNavigator/screens/RunningWorkoutScreen/types.ts';
@@ -22,9 +22,7 @@ export const useWorkoutTimer = () => {
   const cooldownSetting = useAtomValue(cooldownSettingAtom);
 
   const [persistedState, setPersistedState] = useAtom(runningWorkoutStateAtom);
-
-  const [computedState, setComputedState] =
-    useState<WorkoutTimerComputedState | null>(null);
+  const [computedState, setComputedState] = useAtom(computedWorkoutStateAtom);
 
   const stop = useCallback(() => {
     void setPersistedState(null);

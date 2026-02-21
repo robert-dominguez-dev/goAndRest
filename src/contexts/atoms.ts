@@ -7,7 +7,11 @@ import {
   WorkoutVoiceVariant,
 } from '../components/navigation/AppNavigator/screens/SettingsScreen/constants.tsx';
 import { AsyncStorageKey } from './constants.ts';
-import { WorkoutTimerPersistedState } from '../components/navigation/AppNavigator/screens/RunningWorkoutScreen/types.ts';
+import {
+  WorkoutTimerComputedState,
+  WorkoutTimerPersistedState,
+} from '../components/navigation/AppNavigator/screens/RunningWorkoutScreen/types.ts';
+import { atom } from 'jotai';
 
 const createAsyncAtom = <T>(key: string, defaultValue: T) =>
   atomWithStorage(
@@ -62,3 +66,7 @@ export const runningWorkoutStateAtom =
     AsyncStorageKey.APP_RUNNING_WORKOUT_STATE,
     null,
   );
+
+export const computedWorkoutStateAtom = atom<WorkoutTimerComputedState | null>(
+  null,
+);

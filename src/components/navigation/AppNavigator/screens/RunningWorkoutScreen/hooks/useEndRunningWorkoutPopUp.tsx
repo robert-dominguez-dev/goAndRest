@@ -8,35 +8,36 @@ export const useEndRunningWorkoutPopUp = () => {
 
   const navigation = useRootStackNavigation();
 
-  const { stop } = useWorkoutTimer();
-
-  const { popUp, handleOpen } = useAppPopUp();
+  const { resume, pause, stop } = useWorkoutTimer();
 
   const handleStop = () => {
     navigation.goBack();
     stop();
   };
 
-  const handleEndWorkout = () =>
-    handleOpen({
-      title: t('screens.runningWorkoutScreen.endWorkoutPopUp.title'),
-      description: t(
-        'screens.runningWorkoutScreen.endWorkoutPopUp.description',
+  const { popUp, onOpen } = useAppPopUp({
+    title: t('screens.runningWorkoutScreen.endWorkoutPopUp.title'),
+    description: t('screens.runningWorkoutScreen.endWorkoutPopUp.description'),
+    primaryButtonProps: {
+      label: t(
+        'screens.runningWorkoutScreen.endWorkoutPopUp.positiveButtonLabel',
       ),
-      primaryButtonProps: {
-        label: t(
-          'screens.runningWorkoutScreen.endWorkoutPopUp.positiveButtonLabel',
-        ),
-        onPress: handleStop,
-        backgroundColorStatus: 'negative',
-      },
-      secondaryButtonProps: {
-        label: t(
-          'screens.runningWorkoutScreen.endWorkoutPopUp.negativeButtonLabel',
-        ),
-        backgroundColorStatus: 'backgroundAlt',
-      },
-    });
+      onPress: handleStop,
+      backgroundColorStatus: 'negative',
+    },
+    secondaryButtonProps: {
+      label: t(
+        'screens.runningWorkoutScreen.endWorkoutPopUp.negativeButtonLabel',
+      ),
+      backgroundColorStatus: 'backgroundAlt',
+      onPress: resume,
+    },
+  });
 
-  return { popUp, handleEndWorkout };
+  const openEndWorkoutPopUp = () => {
+    pause();
+    onOpen();
+  };
+
+  return { popUp, openEndWorkoutPopUp };
 };
