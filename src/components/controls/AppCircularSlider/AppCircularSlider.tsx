@@ -1,8 +1,6 @@
 import React, { JSX } from 'react';
-import { StyleSheet, View } from 'react-native';
 import Animated, { useAnimatedStyle } from 'react-native-reanimated';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
-import { ChildrenProp } from '../../../types/common.ts';
 import { AppSize } from '../../../types/ui.ts';
 import { AppView } from '../../common/AppView/AppView.tsx';
 import { useLayout } from '../../../hooks/useLayout.ts';
@@ -27,8 +25,7 @@ const fallbackThumbElement = (
 );
 
 export type AppCircularSliderProps = AppCircularSliderTicksCommonProps &
-  Pick<AppCircularSliderBaseProps, 'labelEveryNSteps'> &
-  Partial<ChildrenProp> & {
+  Pick<AppCircularSliderBaseProps, 'labelEveryNSteps' | 'children'> & {
     minValue: number;
     maxValue: number;
     value: number;
@@ -123,56 +120,37 @@ export const AppCircularSlider = ({
   });
 
   return (
-    <View
-      style={{
-        width: size,
-        height: size,
-        flexShrink: 0,
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}>
-      <GestureDetector gesture={panGesture}>
-        <AppCircularSliderBase
-          size={size}
-          circumference={circumference}
-          radius={radius}
-          center={center}
-          maxValue={maxValue}
-          step={step}
-          theta={theta}
-          labelEveryNSteps={labelEveryNSteps}
-          strokeWidth={strokeWidth}
-          valueFormatter={valueFormatter}
-          trackColor={trackColor}
-          filledTrackColor={filledTrackColor}
-        />
-      </GestureDetector>
-      {/* Center content */}
-      <View
-        style={{
-          ...StyleSheet.absoluteFill,
-          pointerEvents: 'box-none',
-          justifyContent: 'center',
-          alignItems: 'center',
-          zIndex: 0,
-        }}>
+    <GestureDetector gesture={panGesture}>
+      <AppCircularSliderBase
+        size={size}
+        circumference={circumference}
+        radius={radius}
+        center={center}
+        maxValue={maxValue}
+        step={step}
+        theta={theta}
+        labelEveryNSteps={labelEveryNSteps}
+        strokeWidth={strokeWidth}
+        valueFormatter={valueFormatter}
+        trackColor={trackColor}
+        filledTrackColor={filledTrackColor}>
+        {/* Thumb with wrapper */}
+        <Animated.View
+          style={[
+            animatedStyles,
+            {
+              position: 'absolute',
+              alignItems: 'center',
+              justifyContent: 'center',
+            },
+          ]}
+          pointerEvents={'none'}>
+          <AppView onLayout={handleLayout}>
+            {thumbElement ? thumbElement : fallbackThumbElement}
+          </AppView>
+        </Animated.View>
         {children}
-      </View>
-      {/* Thumb with wrapper */}
-      <Animated.View
-        style={[
-          animatedStyles,
-          {
-            position: 'absolute',
-            alignItems: 'center',
-            justifyContent: 'center',
-          },
-        ]}
-        pointerEvents={'none'}>
-        <AppView onLayout={handleLayout}>
-          {thumbElement ? thumbElement : fallbackThumbElement}
-        </AppView>
-      </Animated.View>
-    </View>
+      </AppCircularSliderBase>
+    </GestureDetector>
   );
 };

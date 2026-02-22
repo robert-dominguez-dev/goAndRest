@@ -12,6 +12,8 @@ import { AppCircularSliderBase } from '../../../../controls/AppCircularSlider/co
 import { useCircularSliderGeometry } from '../../../../controls/AppCircularSlider/hooks/useCircularSliderGeometry.ts';
 import { formatTimerTime } from '../../../../../helpers/formatTimerTime.tsx';
 import { checkIsWorkoutTimerRunning } from './hooks/checkIsWorkoutTimerRunning.ts';
+import { AppView } from '../../../../common/AppView/AppView.tsx';
+import { AppText } from '../../../../common/AppText/AppText.tsx';
 
 const INDICATOR_RADIUS = 160;
 const INDICATOR_STROKE_WIDTH = 16;
@@ -49,29 +51,45 @@ export const RunningWorkoutScreen = () => {
   return (
     <>
       <AppScreenLayout
-        backgroundColorStatus={backgroundColorStatus}
         headerTitle={headerTitle}
         footer={footerElement}
         HeaderAccessoryLeftIconComponent={X}
         onHeaderAccessoryLeftPress={openEndWorkoutPopUp}>
-        <AppCircularSliderBase
-          size={size}
-          center={center}
-          circumference={circumference}
-          theta={theta}
-          trackColor={'#FFFFFF'}
-          filledTrackColor={'#444444'}
-          radius={INDICATOR_RADIUS}
-          strokeWidth={INDICATOR_STROKE_WIDTH}
-          maxValue={maxValue}
-          step={1}
-          valueFormatter={formatTimerTime}
-        />
-        <AppTimeView msLeft={phaseRemainingMs} />
-        <AppTimeView
-          fontSizeOverride={20}
-          msLeft={getNumber(currentState?.totalElapsedMs)}
-        />
+        <AppView
+          alignItems={'center'}
+          justifyContent={'center'}>
+          <AppCircularSliderBase
+            size={size}
+            center={center}
+            circumference={circumference}
+            theta={theta}
+            trackColor={'#FFFFFF'}
+            filledTrackColor={'#444444'}
+            radius={INDICATOR_RADIUS}
+            strokeWidth={INDICATOR_STROKE_WIDTH}
+            maxValue={maxValue}
+            step={1}
+            valueFormatter={formatTimerTime}>
+            <AppView
+              width={size - INDICATOR_STROKE_WIDTH * 4}
+              height={size - INDICATOR_STROKE_WIDTH * 4}
+              backgroundColorStatus={backgroundColorStatus}
+              borderRadius={size / 2}
+              alignItems={'center'}
+              justifyContent={'center'}>
+              <AppText
+                grow={false}
+                category={'header'}>
+                {currentState?.currentPhase}
+              </AppText>
+              <AppTimeView msLeft={phaseRemainingMs} />
+              <AppTimeView
+                fontSizeOverride={20}
+                msLeft={getNumber(currentState?.totalElapsedMs)}
+              />
+            </AppView>
+          </AppCircularSliderBase>
+        </AppView>
       </AppScreenLayout>
       {popUp}
     </>
