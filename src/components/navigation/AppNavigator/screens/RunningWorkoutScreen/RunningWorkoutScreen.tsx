@@ -12,6 +12,7 @@ import { RunningWorkoutPulsingBackground } from './components/RunningWorkoutPuls
 import { ScreenProps } from '../../../types.ts';
 import { AppNavigatorScreen, AppNavigatorScreenParams } from '../../types.ts';
 import { RunningWorkoutIndicatorsContent } from './components/RunningWorkoutIndicatorsContent.tsx';
+import { useWorkoutFeedback } from '../../../../../hooks/useWorkoutFeedback.ts';
 
 const INDICATOR_STROKE_WIDTH = 16;
 
@@ -40,6 +41,13 @@ export const RunningWorkoutScreen = ({
   const { currentState, isRunning } = useWorkoutTimer(() =>
     navigation.replace(AppNavigatorScreen.LandingScreen),
   );
+
+  useWorkoutFeedback({
+    isRunning,
+    currentPhase: currentState?.currentPhase,
+    phaseRemainingMs: currentState?.phaseRemainingMs,
+    phaseElapsedMs: currentState?.phaseElapsedMs,
+  });
 
   if (!currentState) {
     /**
