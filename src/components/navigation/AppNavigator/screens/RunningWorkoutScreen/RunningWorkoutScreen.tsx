@@ -8,46 +8,69 @@ import { getNumber } from '../../../../../helpers/getNumber.ts';
 import { AppTimeView } from '../../../../common/AppTimeView.tsx';
 import { workoutPhaseToColorStatus } from './constants.ts';
 import { AppColorUnion } from '../../../../../types/ui.ts';
-import { AppCircularSliderBase } from '../../../../controls/AppCircularSlider/components/AppCircularSliderBase.tsx';
-import { useCircularSliderGeometry } from '../../../../controls/AppCircularSlider/hooks/useCircularSliderGeometry.ts';
-import { formatTimerTime } from '../../../../../helpers/formatTimerTime.tsx';
 import { AppView } from '../../../../common/AppView/AppView.tsx';
 import { AppText } from '../../../../common/AppText/AppText.tsx';
+import { AppCircularIndicator } from '../../../../controls/AppCircularSlider/components/AppCircularIndicator.tsx';
+import { WorkoutTimerState } from './types.ts';
+import { useAppThemedColors } from '../../../../../hooks/useAppThemedColors.ts';
+import { RunningWorkoutPulsingBackground } from './components/RunningWorkoutPulsingBackground.tsx';
+import { JSX } from 'react';
 
-const INDICATOR_RADIUS = 160;
 const INDICATOR_STROKE_WIDTH = 16;
+
+const OUTER_INDICATOR_RADIUS = 160;
+const INNER_INDICATOR_RADIUS = 136;
+
+const PULSING_BACKGROUND_SIZE =
+  (INNER_INDICATOR_RADIUS - INDICATOR_STROKE_WIDTH) * 2;
 
 const footerElement = <RunningWorkoutScreenFooter />;
 
 export const RunningWorkoutScreen = () => {
   const t = useAppTranslation();
 
+  const appColors = useAppThemedColors();
+
   const { currentState, isRunning } = useWorkoutTimer(() =>
     console.log('FINISH'),
   );
 
+  const {
+    workoutName,
+    currentPhase,
+    totalElapsedMs: totalElapsedMsUnsafe,
+    totalDurationMs: totalDurationMsUnsafe,
+    phaseRemainingMs: phaseRemainingMsUnsafe,
+    phaseElapsedMs: phaseElapsedMsUnsafe,
+  }: Partial<WorkoutTimerState> = currentState || {};
+
   const { popUp, openEndWorkoutPopUp } = useEndRunningWorkoutPopUp();
 
   const headerTitle: string =
-    currentState?.workoutName || t('screens.runningWorkoutScreen.title');
+    workoutName || t('screens.runningWorkoutScreen.title');
 
-  const backgroundColorStatus: AppColorUnion | undefined =
-    currentState?.currentPhase
-      ? workoutPhaseToColorStatus[currentState.currentPhase]
-      : undefined;
+  const phaseColorStatus: AppColorUnion | undefined = currentPhase
+    ? workoutPhaseToColorStatus[currentPhase]
+    : undefined;
 
-  const phaseRemainingMs = getNumber(currentState?.phaseRemainingMs);
-  const phaseElapsedMs = getNumber(currentState?.phaseElapsedMs);
+  const phaseColor: string = phaseColorStatus
+    ? appColors[phaseColorStatus]
+    : appColors.border;
+
+  const totalElapsedMs = getNumber(totalElapsedMsUnsafe);
+  const totalDurationMs = getNumber(totalDurationMsUnsafe);
+  const phaseRemainingMs = getNumber(phaseRemainingMsUnsafe);
+  const phaseElapsedMs = getNumber(phaseElapsedMsUnsafe);
 
   const maxValue = phaseRemainingMs + phaseElapsedMs;
 
-  const { size, center, circumference, theta } = useCircularSliderGeometry({
-    value: phaseElapsedMs,
-    radius: INDICATOR_RADIUS,
-    strokeWidth: INDICATOR_STROKE_WIDTH,
-    isRunning,
-    maxValue,
-  });
+  const backgroundOverlayElement: JSX.Element | undefined = currentPhase ? (
+    <RunningWorkoutPulsingBackground
+      size={PULSING_BACKGROUND_SIZE}
+      workoutPhase={currentPhase}
+      enabled={isRunning}
+    />
+  ) : undefined;
 
   return (
     <>
@@ -59,37 +82,36 @@ export const RunningWorkoutScreen = () => {
         <AppView
           alignItems={'center'}
           justifyContent={'center'}>
-          <AppCircularSliderBase
-            size={size}
-            center={center}
-            circumference={circumference}
-            theta={theta}
-            trackColor={'#FFFFFF'}
-            filledTrackColor={'#444444'}
-            radius={INDICATOR_RADIUS}
+          <AppCircularIndicator
+            isRunning={isRunning}
+            value={totalElapsedMs}
+            filledTrackColor={appColors.text}
+            radius={OUTER_INDICATOR_RADIUS}
             strokeWidth={INDICATOR_STROKE_WIDTH}
-            maxValue={maxValue}
-            step={1}
-            valueFormatter={formatTimerTime}>
-            <AppView
-              width={size - INDICATOR_STROKE_WIDTH * 4}
-              height={size - INDICATOR_STROKE_WIDTH * 4}
-              backgroundColorStatus={backgroundColorStatus}
-              borderRadius={size / 2}
-              alignItems={'center'}
-              justifyContent={'center'}>
+            maxValue={totalDurationMs}>
+            <AppCircularIndicator
+              isRunning={isRunning}
+              value={phaseElapsedMs}
+              filledTrackColor={phaseColor}
+              radius={INNER_INDICATOR_RADIUS}
+              strokeWidth={INDICATOR_STROKE_WIDTH}
+              maxValue={maxValue}>
+              {backgroundOverlayElement}
               <AppText
                 grow={false}
                 category={'header'}>
                 {currentState?.currentPhase}
               </AppText>
-              <AppTimeView msLeft={phaseRemainingMs} />
               <AppTimeView
-                fontSizeOverride={20}
+                fontSizeOverride={80}
+                msLeft={phaseRemainingMs}
+              />
+              <AppTimeView
+                fontSizeOverride={32}
                 msLeft={getNumber(currentState?.totalElapsedMs)}
               />
-            </AppView>
-          </AppCircularSliderBase>
+            </AppCircularIndicator>
+          </AppCircularIndicator>
         </AppView>
       </AppScreenLayout>
       {popUp}

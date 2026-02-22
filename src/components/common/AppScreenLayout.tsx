@@ -1,9 +1,8 @@
 import { AppView, AppViewProps } from './AppView/AppView.tsx';
 import { ScrollView } from 'react-native';
 import { FILL_CONTAINER_DIMENSION } from '../../constants/common.ts';
-import { AppScreenBackground, AppScreenBackgroundProps, } from './AppScreenBackground.tsx';
 import { AppHeader, AppHeaderProps } from './AppHeader/AppHeader.tsx';
-import { ReactNode } from 'react';
+import { JSX, ReactNode } from 'react';
 
 import { useAppSafeAreaPadding } from '../../hooks/useAppSafeAreaPadding.ts';
 import { AppSize, AppSizeUnion } from '../../types/ui.ts';
@@ -19,7 +18,7 @@ export type AppScreenLayoutProps = Pick<AppViewProps, 'children'> &
     onHeaderAccessoryLeftPress?: AppHeaderProps['onAccessoryLeftPress'];
     footer?: ReactNode;
     scrollable?: boolean;
-    backgroundIllustration?: AppScreenBackgroundProps['illustrationName'];
+    backgroundOverlayElement?: JSX.Element;
     screenPaddingTopOverride?: AppSizeUnion;
   };
 
@@ -32,7 +31,7 @@ export const AppScreenLayout = ({
   onHeaderAccessoryRightPress,
   footer,
   scrollable,
-  backgroundIllustration,
+  backgroundOverlayElement,
   screenPaddingTopOverride,
   backgroundColorStatus = 'background',
 }: AppScreenLayoutProps) => {
@@ -62,15 +61,12 @@ export const AppScreenLayout = ({
   );
 
   return (
-    <AppView>
-      {backgroundIllustration && (
-        <AppScreenBackground illustrationName={backgroundIllustration} />
-      )}
+    <AppView backgroundColorStatus={backgroundColorStatus}>
+      {backgroundOverlayElement}
       <AppView
         paddingHorizontal={HORIZONTAL_SCREEN_PADDING}
         paddingTop={screenPaddingTop}
         paddingBottom={screenPaddingBottom}
-        backgroundColorStatus={backgroundColorStatus}
         height={FILL_CONTAINER_DIMENSION}>
         {maybeHeader}
         <AppView

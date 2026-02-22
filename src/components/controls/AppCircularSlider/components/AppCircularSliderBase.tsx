@@ -13,7 +13,7 @@ import { ChildrenProp } from '../../../../types/common.ts';
 
 export type AppCircularSliderTicksCommonProps = Pick<
   AppCircularSliderTicksProps,
-  'radius' | 'strokeWidth' | 'step' | 'valueFormatter'
+  'radius' | 'strokeWidth' | 'valueFormatter'
 >;
 
 export type AppCircularSliderBaseProps = AppCircularSliderTicksCommonProps &
@@ -23,9 +23,10 @@ export type AppCircularSliderBaseProps = AppCircularSliderTicksCommonProps &
     size: number;
     center: number;
     circumference: number;
-    trackColor: string;
+    trackColor?: string;
     filledTrackColor: string;
     labelEveryNSteps?: number;
+    step?: number;
   };
 
 const AnimatedCircle = Animated.createAnimatedComponent(Circle);
@@ -50,6 +51,12 @@ const AppCircularSliderBaseComponent = ({
       circumference - (theta.value / (2 * Math.PI)) * circumference,
   }));
 
+  const trackColorEvaluated: string = trackColor
+    ? trackColor
+    : filledTrackColor;
+
+  const trackBackgroundOpacity: number = trackColor ? 1 : 0.3;
+
   return (
     <View
       style={{
@@ -64,12 +71,12 @@ const AppCircularSliderBaseComponent = ({
         <Svg
           width={size}
           height={size}>
-          {!!labelEveryNSteps && (
+          {!!labelEveryNSteps && !!step && (
             <AppCircularSliderTicks
               center={center}
               totalRange={maxValue}
               step={step}
-              trackColor={trackColor}
+              trackColor={trackColorEvaluated}
               strokeWidth={strokeWidth}
               radius={radius}
               labelEveryNSteps={labelEveryNSteps}
@@ -79,10 +86,11 @@ const AppCircularSliderBaseComponent = ({
           <G transform={`rotate(-90, ${center}, ${center})`}>
             {/* Track background */}
             <Circle
+              opacity={trackBackgroundOpacity}
               cx={center}
               cy={center}
               r={radius}
-              stroke={trackColor}
+              stroke={trackColorEvaluated}
               strokeWidth={strokeWidth}
               fill={'none'}
             />

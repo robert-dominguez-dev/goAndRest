@@ -40,7 +40,7 @@ export const useAppTextStyle = ({
     fontSizeOverrideEvaluated
       ? {
           fontSize: fontSizeOverrideEvaluated,
-          lineHeight: fontSizeOverrideEvaluated * 1.5,
+          lineHeight: fontSizeOverrideEvaluated * 1,
         }
       : {};
 

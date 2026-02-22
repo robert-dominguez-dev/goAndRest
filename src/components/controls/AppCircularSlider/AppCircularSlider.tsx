@@ -25,7 +25,7 @@ const fallbackThumbElement = (
 );
 
 export type AppCircularSliderProps = AppCircularSliderTicksCommonProps &
-  Pick<AppCircularSliderBaseProps, 'labelEveryNSteps' | 'children'> & {
+  Pick<AppCircularSliderBaseProps, 'labelEveryNSteps' | 'children' | 'step'> & {
     minValue: number;
     maxValue: number;
     value: number;
@@ -40,13 +40,13 @@ export const AppCircularSlider = ({
   strokeWidth,
   minValue,
   maxValue,
-  step,
   value,
   onChange,
   thumbElement,
   children,
   labelEveryNSteps,
   valueFormatter,
+  step = 1,
   filledTrackColor = 'black',
   trackColor = '#00000060',
 }: AppCircularSliderProps) => {

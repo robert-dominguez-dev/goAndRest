@@ -7,7 +7,7 @@ import {
 } from 'react-native-reanimated';
 import { countValueToAngleWorklet } from '../helpers/countValueToAngleWorklet.ts';
 
-type UseCircularSliderGeometryParams = {
+export type UseCircularSliderGeometryParams = {
   value: number;
   maxValue: number;
   radius: number;
