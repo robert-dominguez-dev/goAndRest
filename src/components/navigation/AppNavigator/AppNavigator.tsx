@@ -11,24 +11,19 @@ import { SavedWorkoutsScreen } from './screens/SavedWorkoutsScreen/SavedWorkouts
 import { RunningWorkoutScreen } from './screens/RunningWorkoutScreen/RunningWorkoutScreen.tsx';
 import { SettingsScreen } from './screens/SettingsScreen/SettingsScreen.tsx';
 import { useAtomValue } from 'jotai';
-import {
-  computedWorkoutStateAtom,
-  runningWorkoutStateAtom,
-} from '../../../contexts/atoms.ts';
-import { checkIsWorkoutTimerRunningFromSplitState } from './screens/RunningWorkoutScreen/hooks/checkIsWorkoutTimerRunningFromSplitState.ts';
+import { runningWorkoutStateAtom } from '../../../contexts/atoms.ts';
+import { calculateCurrentWorkoutState } from '../../../helpers/calculateCurrentWorkoutState.ts';
 
 const Stack = createNativeStackNavigator<AppNavigatorScreenParams, string>();
 
 const AppNavigatorComponent = () => {
   const persistedState = useAtomValue(runningWorkoutStateAtom);
-  const computedState = useAtomValue(computedWorkoutStateAtom);
 
-  const isTimerRunning = checkIsWorkoutTimerRunningFromSplitState(
-    persistedState,
-    computedState,
-  );
+  const isTimerExisting: boolean =
+    !!persistedState &&
+    !calculateCurrentWorkoutState(persistedState).isFinished;
 
-  const initialRouteName: AppNavigatorScreen = isTimerRunning
+  const initialRouteName: AppNavigatorScreen = isTimerExisting
     ? AppNavigatorScreen.RunningWorkoutScreen
     : AppNavigatorScreen.LandingScreen;
 

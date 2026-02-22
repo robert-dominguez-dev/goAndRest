@@ -7,17 +7,20 @@ import { I18nextProvider } from 'react-i18next';
 import { appI18NextConfig } from './locales/constants.ts';
 import { AppLanguageProvider } from './contexts/AppLanguageProvider/AppLanguageProvider.tsx';
 import 'react-native-get-random-values';
+import { Suspense } from 'react';
 
 export const App = () => (
   <I18nextProvider i18n={appI18NextConfig}>
     <AppLanguageProvider>
       <NavigationContainer>
         <SafeAreaProvider>
-          <AppThemeProvider>
-            <AppWorkoutsProvider>
-              <AppNavigator />
-            </AppWorkoutsProvider>
-          </AppThemeProvider>
+          <Suspense fallback={null}>
+            <AppThemeProvider>
+              <AppWorkoutsProvider>
+                <AppNavigator />
+              </AppWorkoutsProvider>
+            </AppThemeProvider>
+          </Suspense>
         </SafeAreaProvider>
       </NavigationContainer>
     </AppLanguageProvider>

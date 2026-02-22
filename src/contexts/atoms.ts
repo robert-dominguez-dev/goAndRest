@@ -18,6 +18,7 @@ const createAsyncAtom = <T>(key: string, defaultValue: T) =>
     key,
     defaultValue,
     createJSONStorage<T>(() => AsyncStorage),
+    { getOnInit: true },
   );
 
 export const warmupSettingAtom = createAsyncAtom<number>(

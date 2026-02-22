@@ -11,7 +11,6 @@ import { AppColorUnion } from '../../../../../types/ui.ts';
 import { AppCircularSliderBase } from '../../../../controls/AppCircularSlider/components/AppCircularSliderBase.tsx';
 import { useCircularSliderGeometry } from '../../../../controls/AppCircularSlider/hooks/useCircularSliderGeometry.ts';
 import { formatTimerTime } from '../../../../../helpers/formatTimerTime.tsx';
-import { checkIsWorkoutTimerRunning } from './hooks/checkIsWorkoutTimerRunning.ts';
 import { AppView } from '../../../../common/AppView/AppView.tsx';
 import { AppText } from '../../../../common/AppText/AppText.tsx';
 
@@ -23,7 +22,9 @@ const footerElement = <RunningWorkoutScreenFooter />;
 export const RunningWorkoutScreen = () => {
   const t = useAppTranslation();
 
-  const { currentState } = useWorkoutTimer();
+  const { currentState, isRunning } = useWorkoutTimer(() =>
+    console.log('FINISH'),
+  );
 
   const { popUp, openEndWorkoutPopUp } = useEndRunningWorkoutPopUp();
 
@@ -44,7 +45,7 @@ export const RunningWorkoutScreen = () => {
     value: phaseElapsedMs,
     radius: INDICATOR_RADIUS,
     strokeWidth: INDICATOR_STROKE_WIDTH,
-    isRunning: checkIsWorkoutTimerRunning(currentState),
+    isRunning,
     maxValue,
   });
 

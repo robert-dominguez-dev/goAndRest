@@ -16,11 +16,8 @@ import { getNumber } from '../helpers/getNumber.ts';
 import { useWorkoutBackgroundHandler } from './useWorkoutBackgroundHandler.ts';
 import { AppWorkoutFieldValues } from '../contexts/AppWorkoutsProvider/types.ts';
 import { calculateSkipState } from '../helpers/calculateSkipState.ts';
-import {
-  checkIsWorkoutTimerRunningFromSplitState
-} from '../components/navigation/AppNavigator/screens/RunningWorkoutScreen/hooks/checkIsWorkoutTimerRunningFromSplitState.ts';
 
-export const useWorkoutTimer = () => {
+export const useWorkoutTimer = (onFinish?: () => void) => {
   const warmupSetting = useAtomValue(warmupSettingAtom);
   const cooldownSetting = useAtomValue(cooldownSettingAtom);
 
@@ -43,17 +40,14 @@ export const useWorkoutTimer = () => {
 
     if (newComputedState.isFinished) {
       stop();
+      onFinish?.();
     }
   }, [persistedState, setPersistedState, stop]);
 
-  const isTimerRunning = checkIsWorkoutTimerRunningFromSplitState(
-    persistedState,
-    computedState,
-  );
+  const isRunning: boolean =
+    !!persistedState && !persistedState?.isPaused && !computedState?.isFinished;
 
-  usePreciseInterval(updateComputedState, isTimerRunning, [
-    updateComputedState,
-  ]);
+  usePreciseInterval(updateComputedState, isRunning, [updateComputedState]);
 
   const start = useCallback(
     ({ workoutName, ...workoutConfig }: AppWorkoutFieldValues) => {
@@ -78,7 +72,7 @@ export const useWorkoutTimer = () => {
   );
 
   const pause = useCallback(() => {
-    if (!persistedState) {
+    if (!persistedState || persistedState.isPaused) {
       return undefined;
     }
 
@@ -92,7 +86,11 @@ export const useWorkoutTimer = () => {
   }, [persistedState, setPersistedState]);
 
   const resume = useCallback(() => {
-    if (!persistedState || !persistedState.pausedAt) {
+    if (
+      !persistedState ||
+      !persistedState.isPaused ||
+      !persistedState.pausedAt
+    ) {
       return undefined;
     }
 
@@ -124,7 +122,7 @@ export const useWorkoutTimer = () => {
       void setPersistedState(nextPersistedState);
       setComputedState(calculateCurrentWorkoutState(nextPersistedState));
     },
-    [persistedState, computedState, setPersistedState],
+    [persistedState, setPersistedState],
   );
 
   const currentState: WorkoutTimerState | null =
@@ -136,6 +134,7 @@ export const useWorkoutTimer = () => {
 
   return {
     currentState,
+    isRunning,
     start,
     pause,
     resume,
