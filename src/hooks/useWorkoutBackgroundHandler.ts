@@ -4,30 +4,14 @@ import { useAtomValue } from 'jotai';
 import { keepTimerInBackgroundSettingAtom } from '../contexts/atoms';
 import { noop } from '../helpers/noop.ts';
 
-type UseWorkoutBackgroundHandlerParams = {
-  pause: (isPausedBySystem: boolean) => void;
-  resume: () => void;
-};
-
 /**
  * Hook to handle application state changes (background/foreground).
  * Automatically pauses the workout if background execution is disabled in settings.
  */
-export const useWorkoutBackgroundHandler = ({
-  pause,
-  resume,
-}: UseWorkoutBackgroundHandlerParams) => {
+export const useWorkoutBackgroundHandler = (pause: () => void) => {
   const keepTimerInBackground = useAtomValue(keepTimerInBackgroundSettingAtom);
 
   useEffect(() => {
-    if (keepTimerInBackground) {
-      return undefined;
-    }
-
-    if (AppState.currentState === 'active' && isPausedBySystem) {
-      resume();
-    }
-
     /**
      * Handles app state changes.
      * Logic: If the background timer is disabled and the app moves to background, pause the workout.
@@ -38,9 +22,9 @@ export const useWorkoutBackgroundHandler = ({
       }
 
       const appStatusToHandler: Record<AppStateStatus, () => void> = {
-        active: resume,
-        background: () => pause(true),
-        inactive: () => pause(true),
+        active: noop,
+        background: () => pause(),
+        inactive: () => pause(),
         unknown: noop,
         extension: noop,
       };
@@ -56,5 +40,5 @@ export const useWorkoutBackgroundHandler = ({
     return () => {
       subscription.remove();
     };
-  }, [pause, resume, keepTimerInBackground]);
+  }, [pause, keepTimerInBackground]);
 };
