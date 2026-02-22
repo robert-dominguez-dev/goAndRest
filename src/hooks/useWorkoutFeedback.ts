@@ -4,23 +4,23 @@ import {
   WorkoutTimerState,
 } from '../components/navigation/AppNavigator/screens/RunningWorkoutScreen/types.ts';
 import { ONE_SECOND_MS } from '../constants/common.ts';
-import { triggerHapticFeedback } from '../components/controls/helpers/triggerHapticFeedback.ts';
-import { HapticFeedbackTypes } from 'react-native-haptic-feedback';
+import { Vibration } from 'react-native';
 
-const COUNTDOWN_THRESHOLD_SECONDS = 5;
+const COUNTDOWN_THRESHOLD_SECONDS = 10;
 
 const MIDDLE_PHASE_HAPTIC_FEEDBACK_THRESHOLD_SECONDS =
   COUNTDOWN_THRESHOLD_SECONDS * 3;
 
-const workoutPhaseToHapticFeedback: Record<
-  RunningWorkoutPhase,
-  HapticFeedbackTypes
-> = {
-  [RunningWorkoutPhase.WARMUP]: HapticFeedbackTypes.impactMedium,
-  [RunningWorkoutPhase.WORK]: HapticFeedbackTypes.impactHeavy,
-  [RunningWorkoutPhase.REST]: HapticFeedbackTypes.impactLight,
-  [RunningWorkoutPhase.RECOVERY]: HapticFeedbackTypes.impactLight,
-  [RunningWorkoutPhase.COOLDOWN]: HapticFeedbackTypes.impactLight,
+const LONG_VIBRATION_DURATION = 800;
+const MIDDLE_VIBRATION_DURATION = 500;
+const SHORT_VIBRATION_DURATION = 200;
+
+const workoutPhaseToVibrationDuration: Record<RunningWorkoutPhase, number> = {
+  [RunningWorkoutPhase.WARMUP]: MIDDLE_VIBRATION_DURATION,
+  [RunningWorkoutPhase.WORK]: LONG_VIBRATION_DURATION,
+  [RunningWorkoutPhase.REST]: MIDDLE_VIBRATION_DURATION,
+  [RunningWorkoutPhase.RECOVERY]: MIDDLE_VIBRATION_DURATION,
+  [RunningWorkoutPhase.COOLDOWN]: MIDDLE_VIBRATION_DURATION,
 };
 
 type UseWorkoutFeedbackParams = Partial<
@@ -52,7 +52,7 @@ export const useWorkoutFeedback = ({
     }
 
     if (currentPhase !== lastPhaseRef.current) {
-      triggerHapticFeedback(workoutPhaseToHapticFeedback[currentPhase]);
+      Vibration.vibrate(workoutPhaseToVibrationDuration[currentPhase]);
       lastPhaseRef.current = currentPhase;
     }
 
@@ -74,12 +74,11 @@ export const useWorkoutFeedback = ({
         remainingSeconds !== lastSecondRef.current;
 
       if (isFirstFeedbackInCurrentSecond) {
-        const hapticFeedback: HapticFeedbackTypes = isInTheMiddle
-          ? HapticFeedbackTypes.impactMedium
-          : HapticFeedbackTypes.impactLight;
+        const vibrationDuration: number = isInTheMiddle
+          ? MIDDLE_VIBRATION_DURATION
+          : SHORT_VIBRATION_DURATION;
 
-        triggerHapticFeedback(hapticFeedback);
-
+        Vibration.vibrate(vibrationDuration);
         lastSecondRef.current = remainingSeconds;
       }
     } else {
