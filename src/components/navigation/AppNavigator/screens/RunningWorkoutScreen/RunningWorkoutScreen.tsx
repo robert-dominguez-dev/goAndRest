@@ -28,7 +28,9 @@ type RunningWorkoutScreenProps = ScreenProps<
   AppNavigatorScreen.RunningWorkoutScreen
 >;
 
-export const RunningWorkoutScreen = ({}: RunningWorkoutScreenProps) => {
+export const RunningWorkoutScreen = ({
+  navigation,
+}: RunningWorkoutScreenProps) => {
   const t = useAppTranslation();
 
   const appColors = useAppThemedColors();
@@ -36,7 +38,7 @@ export const RunningWorkoutScreen = ({}: RunningWorkoutScreenProps) => {
   const { popUp, openEndWorkoutPopUp } = useEndRunningWorkoutPopUp();
 
   const { currentState, isRunning } = useWorkoutTimer(() =>
-    console.log('FINISH'),
+    navigation.replace(AppNavigatorScreen.LandingScreen),
   );
 
   if (!currentState) {

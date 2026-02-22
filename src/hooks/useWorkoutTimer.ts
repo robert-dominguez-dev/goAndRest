@@ -44,12 +44,19 @@ export const useWorkoutTimer = (onFinish?: () => void) => {
     }
   }, [persistedState, setPersistedState, stop]);
 
+  const isFinished = !!computedState?.isFinished;
+
+  /**
+   * This is important at least for two reasons:
+   * 1) To start the timer when the app returning from background...
+   * 2) When finishing manually by skipping to the end...
+   */
+  useEffect(updateComputedState, [isFinished]);
+
   const isRunning: boolean =
-    !!persistedState && !persistedState?.isPaused && !computedState?.isFinished;
+    !!persistedState && !persistedState?.isPaused && !isFinished;
 
   usePreciseInterval(updateComputedState, isRunning, [updateComputedState]);
-
-  useEffect(updateComputedState, []);
 
   const start = useCallback(
     ({ workoutName, ...workoutConfig }: AppWorkoutFieldValues) => {
