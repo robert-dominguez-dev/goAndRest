@@ -16,6 +16,9 @@ import { getNumber } from '../helpers/getNumber.ts';
 import { useWorkoutBackgroundHandler } from './useWorkoutBackgroundHandler.ts';
 import { AppWorkoutFieldValues } from '../contexts/AppWorkoutsProvider/types.ts';
 import { calculateSkipState } from '../helpers/calculateSkipState.ts';
+import {
+  checkIsWorkoutTimerRunningFromSplitState
+} from '../components/navigation/AppNavigator/screens/RunningWorkoutScreen/hooks/checkIsWorkoutTimerRunningFromSplitState.ts';
 
 export const useWorkoutTimer = () => {
   const warmupSetting = useAtomValue(warmupSettingAtom);
@@ -43,8 +46,10 @@ export const useWorkoutTimer = () => {
     }
   }, [persistedState, setPersistedState, stop]);
 
-  const isTimerRunning: boolean =
-    !!persistedState && !persistedState.isPaused && !computedState?.isFinished;
+  const isTimerRunning = checkIsWorkoutTimerRunningFromSplitState(
+    persistedState,
+    computedState,
+  );
 
   usePreciseInterval(updateComputedState, isTimerRunning, [
     updateComputedState,

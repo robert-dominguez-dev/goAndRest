@@ -1,12 +1,12 @@
 import { useNavigation } from '@react-navigation/native';
-import { NavigationProp } from '@react-navigation/core';
 import {
   AppNavigatorScreen,
   AppNavigatorScreenParams,
 } from '../AppNavigator/types.ts';
 import { ROOT_STACK_NAVIGATOR_ID } from '../constants.ts';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
-type RootNavigation = NavigationProp<
+type RootNavigation = NativeStackNavigationProp<
   AppNavigatorScreenParams,
   AppNavigatorScreen,
   string

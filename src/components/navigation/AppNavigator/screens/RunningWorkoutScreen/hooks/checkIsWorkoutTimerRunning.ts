@@ -1,6 +1,6 @@
 import { WorkoutTimerState } from '../types.ts';
 
 export const checkIsWorkoutTimerRunning = (
-  currentState: WorkoutTimerState | null,
+  currentState: Pick<WorkoutTimerState, 'isPaused' | 'isFinished'> | null,
 ): boolean =>
   !!currentState && !currentState?.isPaused && !currentState?.isFinished;

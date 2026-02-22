@@ -2,6 +2,7 @@ import { useAppTranslation } from '../../../../../../locales/hooks/useAppTransla
 import { useAppPopUp } from '../../../../../common/AppPopUp/hooks/useAppPopUp.tsx';
 import { useRootStackNavigation } from '../../../../hooks/useRootStackNavigation.ts';
 import { useWorkoutTimer } from '../../../../../../hooks/useWorkoutTimer.ts';
+import { AppNavigatorScreen } from '../../../types.ts';
 
 export const useEndRunningWorkoutPopUp = () => {
   const t = useAppTranslation();
@@ -11,8 +12,13 @@ export const useEndRunningWorkoutPopUp = () => {
   const { resume, pause, stop } = useWorkoutTimer();
 
   const handleStop = () => {
-    navigation.goBack();
     stop();
+
+    if (navigation.canGoBack()) {
+      return navigation.goBack();
+    }
+
+    navigation.replace(AppNavigatorScreen.LandingScreen);
   };
 
   const { popUp, onOpen } = useAppPopUp({

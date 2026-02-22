@@ -1,8 +1,14 @@
 import React, { memo } from 'react';
 import { StyleSheet, View } from 'react-native';
 import Svg, { Circle, G } from 'react-native-svg';
-import Animated, { SharedValue, useAnimatedProps, } from 'react-native-reanimated';
-import { AppCircularSliderTicks, AppCircularSliderTicksProps, } from './AppCircularSliderTicks.tsx';
+import Animated, {
+  SharedValue,
+  useAnimatedProps,
+} from 'react-native-reanimated';
+import {
+  AppCircularSliderTicks,
+  AppCircularSliderTicksProps,
+} from './AppCircularSliderTicks.tsx';
 import { ChildrenProp } from '../../../../types/common.ts';
 
 export type AppCircularSliderTicksCommonProps = Pick<
