@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
 import { useAtom, useAtomValue } from 'jotai';
 import { usePreciseInterval } from './usePreciseInterval';
 import {
@@ -48,6 +48,8 @@ export const useWorkoutTimer = (onFinish?: () => void) => {
     !!persistedState && !persistedState?.isPaused && !computedState?.isFinished;
 
   usePreciseInterval(updateComputedState, isRunning, [updateComputedState]);
+
+  useEffect(updateComputedState, []);
 
   const start = useCallback(
     ({ workoutName, ...workoutConfig }: AppWorkoutFieldValues) => {
