@@ -27,8 +27,8 @@ export const RunningWorkoutPulsingBackground = ({
   const pulsingOpacity = useWorkoutPhasePulsingValue({
     workoutPhase,
     enabled,
-    from: 0.1,
-    to: 0.4,
+    from: 0.05,
+    to: 0.3,
   });
 
   const animatedStyle = useAnimatedStyle(() => ({

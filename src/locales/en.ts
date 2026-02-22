@@ -169,6 +169,7 @@ export const en = {
         positiveButtonLabel: 'End Workout',
         negativeButtonLabel: 'Continue',
       },
+      totalElapsedTime: 'Total',
     },
     savedWorkoutsScreen: {
       title: 'Saved Workouts',

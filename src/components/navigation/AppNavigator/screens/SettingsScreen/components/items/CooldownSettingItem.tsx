@@ -4,12 +4,14 @@ import { memo } from 'react';
 import { AppSelectionBottomSheetItemText } from '../../../../../../common/AppSelectionBottomSheet/components/AppSelectionBottomSheetItemText.tsx';
 import { formatTimerTime } from '../../../../../../../helpers/formatTimerTime.tsx';
 import { useWorkoutSettingBottomSheet } from '../../hooks/useWorkoutSettingBottomSheet.tsx';
-import { Wind } from 'lucide-react-native';
 import { cooldownSettingAtom } from '../../../../../../../contexts/atoms.ts';
-import { AppColorUnion } from '../../../../../../../types/ui.ts';
+import {
+  workoutPhaseToColorStatus,
+  workoutPhaseToIconComponent,
+} from '../../../RunningWorkoutScreen/constants.ts';
 
-const IconComponent = Wind;
-const backgroundColorStatus: AppColorUnion = 'cooldown';
+const IconComponent = workoutPhaseToIconComponent.COOLDOWN;
+const backgroundColorStatus = workoutPhaseToColorStatus.COOLDOWN;
 
 const CooldownSettingItemComponent = () => {
   const t = useAppTranslation();

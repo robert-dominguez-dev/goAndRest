@@ -165,6 +165,7 @@ export const cs = {
         positiveButtonLabel: 'Ukončit',
         negativeButtonLabel: 'Pokračovat',
       },
+      totalElapsedTime: 'Celkem',
     },
     savedWorkoutsScreen: {
       title: 'Uložené tréninky',

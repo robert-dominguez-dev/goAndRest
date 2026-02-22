@@ -3,6 +3,7 @@ import { AppColorUnion } from '../../../../../types/ui.ts';
 import { Easing, WithTimingConfig } from 'react-native-reanimated';
 import { TranslateKey } from '../../../../../locales/types.ts';
 import { workoutSettingsButtonConfigMap } from '../LandingScreen/constants.ts';
+import { Flame, LucideIcon, Wind } from 'lucide-react-native';
 
 export const workoutPhaseToColorStatus: Record<
   RunningWorkoutPhase,
@@ -15,7 +16,7 @@ export const workoutPhaseToColorStatus: Record<
   [RunningWorkoutPhase.COOLDOWN]: 'cooldown',
 };
 
-export const workoutPhaseToPhaseNameTranslateKey: Record<
+export const workoutPhaseToNameTranslateKey: Record<
   RunningWorkoutPhase,
   TranslateKey
 > = {
@@ -27,6 +28,18 @@ export const workoutPhaseToPhaseNameTranslateKey: Record<
     workoutSettingsButtonConfigMap.recovery.labelKey,
   [RunningWorkoutPhase.COOLDOWN]:
     'screens.settingsScreen.workoutSection.items.cooldown.label',
+};
+
+export const workoutPhaseToIconComponent: Record<
+  RunningWorkoutPhase,
+  LucideIcon
+> = {
+  [RunningWorkoutPhase.WARMUP]: Flame,
+  [RunningWorkoutPhase.WORK]: workoutSettingsButtonConfigMap.work.IconComponent,
+  [RunningWorkoutPhase.REST]: workoutSettingsButtonConfigMap.rest.IconComponent,
+  [RunningWorkoutPhase.RECOVERY]:
+    workoutSettingsButtonConfigMap.recovery.IconComponent,
+  [RunningWorkoutPhase.COOLDOWN]: Wind,
 };
 
 export const workoutPhaseToPulsingAnimationConfig: Record<

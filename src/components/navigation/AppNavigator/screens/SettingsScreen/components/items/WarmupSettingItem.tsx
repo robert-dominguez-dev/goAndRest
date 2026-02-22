@@ -4,12 +4,15 @@ import { memo } from 'react';
 import { AppSelectionBottomSheetItemText } from '../../../../../../common/AppSelectionBottomSheet/components/AppSelectionBottomSheetItemText.tsx';
 import { formatTimerTime } from '../../../../../../../helpers/formatTimerTime.tsx';
 import { useWorkoutSettingBottomSheet } from '../../hooks/useWorkoutSettingBottomSheet.tsx';
-import { Flame } from 'lucide-react-native';
 import { warmupSettingAtom } from '../../../../../../../contexts/atoms.ts';
 import { AppColorUnion } from '../../../../../../../types/ui.ts';
+import {
+  workoutPhaseToColorStatus,
+  workoutPhaseToIconComponent,
+} from '../../../RunningWorkoutScreen/constants.ts';
 
-const IconComponent = Flame;
-const backgroundColorStatus: AppColorUnion = 'warmup';
+const IconComponent = workoutPhaseToIconComponent.WARMUP;
+const backgroundColorStatus: AppColorUnion = workoutPhaseToColorStatus.WARMUP;
 
 const WarmupSettingItemComponent = () => {
   const t = useAppTranslation();

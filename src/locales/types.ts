@@ -88,6 +88,7 @@ export type AppTranslations = {
     runningWorkoutScreen: {
       title: string;
       endWorkoutPopUp: PopUpTexts;
+      totalElapsedTime: string;
     };
     savedWorkoutsScreen: {
       title: string;
