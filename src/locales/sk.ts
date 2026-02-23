@@ -230,7 +230,7 @@ export const sk = {
           },
           byCharacter: {
             warrior: 'Celkový čas dnešnej bitky',
-            cyborg: 'Celková doba údržby',
+            cyborg: 'Celková dĺžka procesu',
             wizard: 'Celková doba námahy v časopriestore',
           },
         },

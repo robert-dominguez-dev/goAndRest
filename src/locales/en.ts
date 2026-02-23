@@ -231,7 +231,7 @@ export const en = {
           },
           byCharacter: {
             warrior: "Total time of today's battle",
-            cyborg: 'Total maintenance duration',
+            cyborg: 'Total process length',
             wizard: 'Total duration of effort in space-time',
           },
         },
