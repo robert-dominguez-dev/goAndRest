@@ -176,5 +176,80 @@ export const sk = {
         deleteButtonLabel: 'Zmazať',
       },
     },
+    finishedWorkoutScreen: {
+      title: {
+        default: 'Tréning dokončený!',
+        byVoice: {
+          coachMale: 'Výborne! Je to tam!',
+          coachFemale: 'Výborne! Je to tam!',
+          friendMale: 'Pecka! Máme hotovo!',
+          friendFemale: 'Pecka! Máme hotovo!',
+          calmMale: 'Pekne! Krásna práca.',
+          calmFemale: 'Pekne! Krásna práca.',
+        },
+        byCharacter: {
+          warrior: 'Bitka vybojovaná!',
+          cyborg: 'Proces dokončený.',
+          wizard: 'Dobrá práca, dieťa!',
+        },
+      },
+      description: {
+        default: 'Skvelá práca. Máš za sebou ďalší kvalitný tréning.',
+        byVoice: {
+          coachMale: 'Dnes to bol špičkový výkon. Len tak ďalej!',
+          coachFemale: 'Dnes to bol špičkový výkon. Len tak ďalej!',
+          friendMale:
+            'Dobre ty! Máš to za sebou, teraz si choď poriadne oddýchnuť.',
+          friendFemale:
+            'Dobre ty! Máš to za sebou, teraz si choď poriadne oddýchnuť.',
+          calmMale:
+            'Uži si ten pokoj a dojem z celého cvičenia. Bol to dobre využitý čas.',
+          calmFemale:
+            'Uži si ten pokoj a dojem z celého cvičenia. Bol to dobre využitý čas.',
+        },
+        byCharacter: {
+          warrior:
+            'Tak to bola rež. Niet nad poriadny nárez! Len tak ďalej, bojovník!',
+          cyborg:
+            'Hardvérové limity posunuté. Systémová integrita na maxime. Softvér aktualizovaný na novú verziu.',
+          wizard:
+            'Múdra voľba. Táto úprimná námaha tela upevnila tvojho ducha i schránku mocnejšie, než by to zmohli akékoľvek čary.',
+        },
+      },
+      stats: {
+        totalTime: {
+          default: 'Celkový čas',
+          byVoice: {
+            coachMale: 'Celkový čas dnešnej driny',
+            coachFemale: 'Celkový čas dnešnej driny',
+            friendMale: 'Celkovo odmakané',
+            friendFemale: 'Celkovo odmakané',
+            calmMale: 'Celkový čas v pohybe',
+            calmFemale: 'Celkový čas v pohybu',
+          },
+          byCharacter: {
+            warrior: 'Celkový čas dnešnej bitky',
+            cyborg: 'Celková doba údržby',
+            wizard: 'Celková doba námahy v časopriestore',
+          },
+        },
+      },
+      buttonLabel: {
+        default: 'Hotovo',
+        byVoice: {
+          coachMale: 'Hotovo',
+          coachFemale: 'Hotovo',
+          friendMale: 'Idem si oddýchnuť',
+          friendFemale: 'Idem si oddýchnuť',
+          calmMale: 'Uvoľniť sa',
+          calmFemale: 'Uvoľniť sa',
+        },
+        byCharacter: {
+          warrior: 'K hodovnému stolu!',
+          cyborg: 'Idem sa nabiť',
+          wizard: 'Budiž!',
+        },
+      },
+    },
   },
 } as const satisfies AppTranslations;

@@ -22,6 +22,12 @@ type SettingsItemSubItems<TItemsKey extends string> = {
   items: Record<TItemsKey, string>;
 };
 
+type TextsByCoachVariant = {
+  default: string;
+  byVoice: Record<WorkoutVoiceVariant, string>;
+  byCharacter: Record<WorkoutCharacterVariant, string>;
+};
+
 type PopUpTexts = {
   title: string;
   description: string;
@@ -97,6 +103,14 @@ export type AppTranslations = {
         startButtonLabel: string;
         deleteButtonLabel: string;
       };
+    };
+    finishedWorkoutScreen: {
+      title: TextsByCoachVariant;
+      description: TextsByCoachVariant;
+      stats: {
+        totalTime: TextsByCoachVariant;
+      };
+      buttonLabel: TextsByCoachVariant;
     };
   };
 };

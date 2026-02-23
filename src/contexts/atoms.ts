@@ -71,3 +71,7 @@ export const runningWorkoutStateAtom =
 export const computedWorkoutStateAtom = atom<WorkoutTimerComputedState | null>(
   null,
 );
+
+export const finishedWorkoutStatsAtom = atom<WorkoutTimerPersistedState | null>(
+  null,
+);

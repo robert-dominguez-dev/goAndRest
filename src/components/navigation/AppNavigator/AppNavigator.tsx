@@ -13,6 +13,7 @@ import { SettingsScreen } from './screens/SettingsScreen/SettingsScreen.tsx';
 import { useAtomValue } from 'jotai';
 import { runningWorkoutStateAtom } from '../../../contexts/atoms.ts';
 import { calculateCurrentWorkoutState } from '../../../helpers/calculateCurrentWorkoutState.ts';
+import { FinishedWorkoutScreen } from './screens/FinishedWorkoutScreen/FinishedWorkoutScreen.tsx';
 
 const Stack = createNativeStackNavigator<AppNavigatorScreenParams, string>();
 
@@ -47,6 +48,10 @@ const AppNavigatorComponent = () => {
       <Stack.Screen
         name={AppNavigatorScreen.RunningWorkoutScreen}
         component={RunningWorkoutScreen}
+      />
+      <Stack.Screen
+        name={AppNavigatorScreen.FinishedWorkoutScreen}
+        component={FinishedWorkoutScreen}
       />
       <Stack.Screen
         name={AppNavigatorScreen.SavedWorkoutsScreen}

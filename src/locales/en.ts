@@ -179,5 +179,78 @@ export const en = {
         deleteButtonLabel: 'Delete',
       },
     },
+    finishedWorkoutScreen: {
+      title: {
+        default: 'Workout Complete!',
+        byVoice: {
+          coachMale: "Great! It's done!",
+          coachFemale: "Great! It's done!",
+          friendMale: 'Top! We did it!',
+          friendFemale: 'Top! We did it!',
+          calmMale: 'Nice! Beautiful work.',
+          calmFemale: 'Nice! Beautiful work.',
+        },
+        byCharacter: {
+          warrior: 'Battle Fought!',
+          cyborg: 'Process Complete.',
+          wizard: 'Well done, child!',
+        },
+      },
+      description: {
+        default: "Great job. You've finished another solid workout.",
+        byVoice: {
+          coachMale: 'That was a top-tier performance today. Keep it up!',
+          coachFemale: 'That was a top-tier performance today. Keep it up!',
+          friendMale: "Nice! You're done, now go get some proper rest.",
+          friendFemale: "Nice! You're done, now go get some proper rest.",
+          calmMale:
+            'Enjoy the stillness and the feeling of the session. It was time well spent.',
+          calmFemale:
+            'Enjoy the stillness and the feeling of the session. It was time well spent.',
+        },
+        byCharacter: {
+          warrior:
+            'That was a brawl! Nothing beats a good thrashing. Keep it up, warrior!',
+          cyborg:
+            'Hardware limits pushed. System integrity at maximum. Software updated to new version.',
+          wizard:
+            'A wise choice. This honest labor of the body has fortified your spirit and vessel more powerfully than any magic could.',
+        },
+      },
+      stats: {
+        totalTime: {
+          default: 'Total Time',
+          byVoice: {
+            coachMale: "Total time of today's grind",
+            coachFemale: "Total time of today's grind",
+            friendMale: 'Total time crushed',
+            friendFemale: 'Total time crushed',
+            calmMale: 'Total time in motion',
+            calmFemale: 'Total time in motion',
+          },
+          byCharacter: {
+            warrior: "Total time of today's battle",
+            cyborg: 'Total maintenance duration',
+            wizard: 'Total duration of effort in space-time',
+          },
+        },
+      },
+      buttonLabel: {
+        default: 'Done',
+        byVoice: {
+          coachMale: 'Done',
+          coachFemale: 'Done',
+          friendMale: 'Time to chill',
+          friendFemale: 'Time to chill',
+          calmMale: 'Release',
+          calmFemale: 'Release',
+        },
+        byCharacter: {
+          warrior: 'To the Great Hall!',
+          cyborg: 'Recharge mode',
+          wizard: 'So mote it be!',
+        },
+      },
+    },
   },
 } as const satisfies AppTranslations;

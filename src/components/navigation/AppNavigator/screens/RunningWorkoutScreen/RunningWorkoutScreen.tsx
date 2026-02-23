@@ -13,6 +13,7 @@ import { ScreenProps } from '../../../types.ts';
 import { AppNavigatorScreen, AppNavigatorScreenParams } from '../../types.ts';
 import { RunningWorkoutIndicatorsContent } from './components/RunningWorkoutIndicatorsContent.tsx';
 import { useWorkoutFeedback } from '../../../../../hooks/useWorkoutFeedback.ts';
+import { FinishedWorkoutScreen } from '../FinishedWorkoutScreen/FinishedWorkoutScreen.tsx';
 
 const INDICATOR_STROKE_WIDTH = 16;
 
@@ -38,9 +39,16 @@ export const RunningWorkoutScreen = ({
 
   const { popUp, openEndWorkoutPopUp } = useEndRunningWorkoutPopUp();
 
-  const { currentState, isRunning } = useWorkoutTimer(() =>
-    navigation.replace(AppNavigatorScreen.LandingScreen),
-  );
+  const handleFinish = () =>
+    navigation.reset({
+      routes: [
+        {
+          name: AppNavigatorScreen.FinishedWorkoutScreen,
+        },
+      ],
+    });
+
+  const { currentState, isRunning } = useWorkoutTimer(handleFinish);
 
   useWorkoutFeedback({
     isRunning,
@@ -50,10 +58,7 @@ export const RunningWorkoutScreen = ({
   });
 
   if (!currentState) {
-    /**
-     * To be implemented: Button to navigate back...
-     */
-    return null;
+    return <FinishedWorkoutScreen />;
   }
 
   const {

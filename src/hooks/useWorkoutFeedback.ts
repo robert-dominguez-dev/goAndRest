@@ -6,21 +6,24 @@ import {
 import { ONE_SECOND_MS } from '../constants/common.ts';
 import { Vibration } from 'react-native';
 
-const COUNTDOWN_THRESHOLD_SECONDS = 10;
+const COUNTDOWN_THRESHOLD_SECONDS = 5;
 
-const MIDDLE_PHASE_HAPTIC_FEEDBACK_THRESHOLD_SECONDS =
-  COUNTDOWN_THRESHOLD_SECONDS * 3;
+const MIDDLE_PHASE_HAPTIC_FEEDBACK_THRESHOLD_SECONDS = Math.max(
+  30,
+  COUNTDOWN_THRESHOLD_SECONDS * 3,
+);
 
-const LONG_VIBRATION_DURATION = 800;
-const MIDDLE_VIBRATION_DURATION = 500;
+const LONG_VIBRATION_DURATION = 1600;
+const MEDIUM_VIBRATION_DURATION = 1200;
+const SHORT_MEDIUM_VIBRATION_DURATION = 800;
 const SHORT_VIBRATION_DURATION = 200;
 
 const workoutPhaseToVibrationDuration: Record<RunningWorkoutPhase, number> = {
-  [RunningWorkoutPhase.WARMUP]: MIDDLE_VIBRATION_DURATION,
+  [RunningWorkoutPhase.WARMUP]: MEDIUM_VIBRATION_DURATION,
   [RunningWorkoutPhase.WORK]: LONG_VIBRATION_DURATION,
-  [RunningWorkoutPhase.REST]: MIDDLE_VIBRATION_DURATION,
-  [RunningWorkoutPhase.RECOVERY]: MIDDLE_VIBRATION_DURATION,
-  [RunningWorkoutPhase.COOLDOWN]: MIDDLE_VIBRATION_DURATION,
+  [RunningWorkoutPhase.REST]: MEDIUM_VIBRATION_DURATION,
+  [RunningWorkoutPhase.RECOVERY]: MEDIUM_VIBRATION_DURATION,
+  [RunningWorkoutPhase.COOLDOWN]: MEDIUM_VIBRATION_DURATION,
 };
 
 type UseWorkoutFeedbackParams = Partial<
@@ -75,7 +78,7 @@ export const useWorkoutFeedback = ({
 
       if (isFirstFeedbackInCurrentSecond) {
         const vibrationDuration: number = isInTheMiddle
-          ? MIDDLE_VIBRATION_DURATION
+          ? SHORT_MEDIUM_VIBRATION_DURATION
           : SHORT_VIBRATION_DURATION;
 
         Vibration.vibrate(vibrationDuration);

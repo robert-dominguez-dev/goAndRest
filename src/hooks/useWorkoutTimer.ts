@@ -1,9 +1,10 @@
 import { useCallback, useEffect } from 'react';
-import { useAtom, useAtomValue } from 'jotai';
+import { useAtom, useAtomValue, useSetAtom } from 'jotai';
 import { usePreciseInterval } from './usePreciseInterval';
 import {
   computedWorkoutStateAtom,
   cooldownSettingAtom,
+  finishedWorkoutStatsAtom,
   runningWorkoutStateAtom,
   warmupSettingAtom,
 } from '../contexts/atoms.ts';
@@ -13,7 +14,7 @@ import {
 } from '../components/navigation/AppNavigator/screens/RunningWorkoutScreen/types.ts';
 import { calculateCurrentWorkoutState } from '../helpers/calculateCurrentWorkoutState.ts';
 import { getNumber } from '../helpers/getNumber.ts';
-import { useWorkoutBackgroundHandler } from './useWorkoutBackgroundHandler.ts';
+import { usePauseWorkoutInBackgroundConditionally } from './usePauseWorkoutInBackgroundConditionally.ts';
 import { AppWorkoutFieldValues } from '../contexts/AppWorkoutsProvider/types.ts';
 import { calculateSkipState } from '../helpers/calculateSkipState.ts';
 
@@ -21,12 +22,13 @@ export const useWorkoutTimer = (onFinish?: () => void) => {
   const warmupSetting = useAtomValue(warmupSettingAtom);
   const cooldownSetting = useAtomValue(cooldownSettingAtom);
 
+  const setFinishedWorkoutStats = useSetAtom(finishedWorkoutStatsAtom);
+
   const [persistedState, setPersistedState] = useAtom(runningWorkoutStateAtom);
   const [computedState, setComputedState] = useAtom(computedWorkoutStateAtom);
 
   const stop = useCallback(() => {
     void setPersistedState(null);
-    setComputedState(null);
   }, [setPersistedState]);
 
   const updateComputedState = useCallback(() => {
@@ -39,6 +41,7 @@ export const useWorkoutTimer = (onFinish?: () => void) => {
     setComputedState(newComputedState);
 
     if (newComputedState.isFinished) {
+      setFinishedWorkoutStats(persistedState);
       stop();
       onFinish?.();
     }
@@ -139,7 +142,7 @@ export const useWorkoutTimer = (onFinish?: () => void) => {
       ? { ...persistedState, ...computedState }
       : null;
 
-  useWorkoutBackgroundHandler(pause);
+  usePauseWorkoutInBackgroundConditionally(pause);
 
   return {
     currentState,

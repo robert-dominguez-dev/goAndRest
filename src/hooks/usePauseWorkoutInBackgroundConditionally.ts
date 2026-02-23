@@ -8,7 +8,7 @@ import { noop } from '../helpers/noop.ts';
  * Hook to handle application state changes (background/foreground).
  * Automatically pauses the workout if background execution is disabled in settings.
  */
-export const useWorkoutBackgroundHandler = (pause: () => void) => {
+export const usePauseWorkoutInBackgroundConditionally = (pause: () => void) => {
   const keepTimerInBackground = useAtomValue(keepTimerInBackgroundSettingAtom);
 
   useEffect(() => {
