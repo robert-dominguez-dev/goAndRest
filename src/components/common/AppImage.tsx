@@ -1,10 +1,9 @@
-import { ImageResizeMode, StyleProp } from 'react-native';
+import { Image, ImageResizeMode, ImageStyle } from 'react-native';
 import { FILL_CONTAINER_DIMENSION } from '../../constants/common.ts';
 import { AppIllustration, appIllustrations } from '../../assets/constants.ts';
 import { AppSizeUnion } from '../../types/ui.ts';
 import { getAppSize } from '../../helpers/getAppSize.ts';
 import { memo } from 'react';
-import FastImage, { ImageStyle } from 'react-native-fast-image';
 
 const FILL_CONTAINER_STYLE: ImageStyle = {
   flex: 1,
@@ -43,16 +42,17 @@ const AppImageComponent = ({
       }
     : FILL_CONTAINER_STYLE;
 
-  const imageStyle: StyleProp<ImageStyle> = {
+  const imageStyle: ImageStyle = {
     ...imageDimensionsStyle,
     opacity,
     borderRadius: getAppSize(borderRadius),
   };
 
   return (
-    <FastImage
+    <Image
       source={appIllustrations[illustrationName]}
-      resizeMode={FastImage.resizeMode[resizeMode]}
+      resizeMode={resizeMode}
+      fadeDuration={0}
       style={imageStyle}
     />
   );
