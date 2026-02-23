@@ -155,9 +155,9 @@ export const en = {
             },
           },
           vibrations: {
-            label: 'Workout vibrations',
+            label: 'Vibrations',
             description:
-              'Enable vibration alerts for key moments (e.g., halfway mark, countdown, start of a new phase).',
+              'Enable vibration alerts for key moments during a workout (e.g., halfway mark, countdown, start of a new phase).',
           },
         },
       },

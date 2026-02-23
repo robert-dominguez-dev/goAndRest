@@ -152,9 +152,9 @@ export const sk = {
             },
           },
           vibrations: {
-            label: 'Vibrácie počas tréningu',
+            label: 'Vibrácie',
             description:
-              'Aktivácia vibračných signálov pre kľúčové momenty (napr. oznámenie o polovici, odpočet, začiatok novej fázy).',
+              'Aktivácia vibračných signálov pre kľúčové momenty počas tréningu (napr. oznámenie o polovici, odpočet, začiatok novej fázy).',
           },
         },
       },

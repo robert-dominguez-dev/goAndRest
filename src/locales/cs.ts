@@ -151,9 +151,9 @@ export const cs = {
             },
           },
           vibrations: {
-            label: 'Vibrace během tréninku',
+            label: 'Vibrace',
             description:
-              'Aktivace vibračních signálů pro klíčové momenty (např. oznámení o polovině, odpočet, začátek nové fáze).',
+              'Aktivace vibračních signálů pro klíčové momenty během tréninku (např. oznámení o polovině, odpočet, začátek nové fáze).',
           },
         },
       },
