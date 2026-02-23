@@ -50,7 +50,7 @@ const AppImageComponent = ({
 
   return (
     <Image
-      source={appIllustrations[illustrationName]}
+      source={{ uri: appIllustrations[illustrationName] }}
       resizeMode={resizeMode}
       fadeDuration={0}
       style={imageStyle}

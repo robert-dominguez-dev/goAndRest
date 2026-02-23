@@ -14,13 +14,10 @@ import { useAtomValue } from 'jotai';
 import { runningWorkoutStateAtom } from '../../../contexts/atoms.ts';
 import { calculateCurrentWorkoutState } from '../../../helpers/calculateCurrentWorkoutState.ts';
 import { FinishedWorkoutScreen } from './screens/FinishedWorkoutScreen/FinishedWorkoutScreen.tsx';
-import { usePreloadImagesOnMount } from '../../../hooks/usePreloadImagesOnMount.ts';
 
 const Stack = createNativeStackNavigator<AppNavigatorScreenParams, string>();
 
 const AppNavigatorComponent = () => {
-  usePreloadImagesOnMount();
-
   const persistedState = useAtomValue(runningWorkoutStateAtom);
 
   const isTimerExisting: boolean =
