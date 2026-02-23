@@ -11,6 +11,7 @@ import { categoryToIconSize } from '../../../controls/AppButton/components/AppIc
 import {
   APP_BOTTOM_SHEET_ICON_LABEL_GAP_UNION,
   AppSelectionBottomSheetItemText,
+  AppSelectionBottomSheetItemTextProps,
 } from './AppSelectionBottomSheetItemText.tsx';
 import { AppColorUnion } from '../../../../types/ui.ts';
 
@@ -20,6 +21,7 @@ export type AppSelectionBottomSheetItemData<TValue> = {
   accessoryLeft?: JSX.Element;
   AccessoryLeftIconComponent?: LucideIcon;
   accessoryLeftIconStatus?: AppColorUnion;
+  accessoryLeftImageProps?: AppSelectionBottomSheetItemTextProps['imageProps'];
   selected?: boolean;
   disabled?: boolean;
 };
@@ -38,6 +40,7 @@ export const AppSelectionBottomSheetItem = <TValue,>({
   accessoryLeft,
   AccessoryLeftIconComponent,
   accessoryLeftIconStatus,
+  accessoryLeftImageProps,
 }: AppSelectionBottomSheetItemProps<TValue>) => {
   const { text } = useAppThemedColors();
 
@@ -72,6 +75,7 @@ export const AppSelectionBottomSheetItem = <TValue,>({
                 label={label}
                 IconComponent={AccessoryLeftIconComponent}
                 iconColorStatus={accessoryLeftIconStatus}
+                imageProps={accessoryLeftImageProps}
                 textColorStatus={'text'}
               />
             </AppRow>

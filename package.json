@@ -14,7 +14,7 @@
     "lint": "eslint .",
     "start": "react-native start --reset-cache",
     "test": "jest",
-    "setup": "npm install && bundle install --verbose && cd ios && bundle exec pod install --repo-update && cd ..",
+    "setup": "npm install --legacy-peer-deps && bundle install --verbose && cd ios && bundle exec pod install --repo-update && cd ..",
     "link": "npx react-native-asset",
     "type": "npx tsc --noEmit"
   },
@@ -33,6 +33,7 @@
     "react-hook-form": "^7.71.1",
     "react-i18next": "^16.5.4",
     "react-native": "0.83.1",
+    "react-native-fast-image": "^8.6.3",
     "react-native-gesture-handler": "^2.30.0",
     "react-native-get-random-values": "^2.0.0",
     "react-native-gifted-charts": "^1.4.71",

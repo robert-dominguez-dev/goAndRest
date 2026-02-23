@@ -22,15 +22,15 @@
 		ED837E99D1D84D6284B6D0EA /* BarlowCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F35558F7F9F141358037BB32 /* BarlowCondensed-Light.ttf */; };
 		F795EBC6558A426FAAE915D4 /* loader.riv in Resources */ = {isa = PBXBuildFile; fileRef = 75D6891E9BCF4AFE9E55D8E3 /* loader.riv */; };
 		FB52F62E67ED45939EEFE273 /* confetti.riv in Resources */ = {isa = PBXBuildFile; fileRef = 276BDF320A7942F4874F858D /* confetti.riv */; };
-		D1E0EED1E1C04E6ABBBAF6A4 /* calmFemale.png in Resources */ = {isa = PBXBuildFile; fileRef = A424D17C3D77467F9CE9A8DE /* calmFemale.png */; };
-		2DA29C65B5E54DE0A22CBBA4 /* coachFemale.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CDBAEFE72A4D6BB73C8C31 /* coachFemale.png */; };
-		78036246471F4322B6B9517A /* calmMale.png in Resources */ = {isa = PBXBuildFile; fileRef = 08BBD1CCAF2F44DC9CD46A99 /* calmMale.png */; };
-		06A247D32BDE40C1A0ED498D /* coachMale.png in Resources */ = {isa = PBXBuildFile; fileRef = E6AA03FE15B14D7486A2E836 /* coachMale.png */; };
-		2CD4AE782AA442328D4181A9 /* friendMale.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EE321119E754839B0832D55 /* friendMale.png */; };
-		2ED8D1C05807405594232A53 /* friendFemale.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AF89D4E13AB42B0AB7BBC9C /* friendFemale.png */; };
-		57021F61D75B412998E03BEA /* wizard.png in Resources */ = {isa = PBXBuildFile; fileRef = 34A686AE34BA4A34B70267CD /* wizard.png */; };
-		4C9FFC3639A048498C3F8FD1 /* warrior.png in Resources */ = {isa = PBXBuildFile; fileRef = 35E19F8B210145FBA47EF871 /* warrior.png */; };
-		4188F7EC53B447ECB4CF1DC5 /* cyborg.png in Resources */ = {isa = PBXBuildFile; fileRef = 30BD01276A2E4798B3918AE5 /* cyborg.png */; };
+		649FF3418F064C2B8C964B7A /* calmFemale.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8A7A96CBDB4861B2649BA5 /* calmFemale.png */; };
+		B1FE19644198494190C4F68F /* coachFemale.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B221670B98A4562A99C263B /* coachFemale.png */; };
+		445FF20DD2AB4490AEFB2775 /* calmMale.png in Resources */ = {isa = PBXBuildFile; fileRef = F49933DC7E8D4FB5B897D274 /* calmMale.png */; };
+		E595FC77569549208EE6F002 /* coachMale.png in Resources */ = {isa = PBXBuildFile; fileRef = 783F231A02D443979974227B /* coachMale.png */; };
+		AB080A22EECF42FCA2F9A473 /* friendMale.png in Resources */ = {isa = PBXBuildFile; fileRef = 761AA847482D4A69981A1E28 /* friendMale.png */; };
+		E3F87B5237EA4C7493B01406 /* friendFemale.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E50690FB7FF4A59817FEF89 /* friendFemale.png */; };
+		D5C392C85466463F8D699F79 /* wizard.png in Resources */ = {isa = PBXBuildFile; fileRef = 7116D3E7E1E44BF3939EC99D /* wizard.png */; };
+		185FE1B5E98F419EAFFA2CEE /* warrior.png in Resources */ = {isa = PBXBuildFile; fileRef = 31830EC721B94ED1A0679433 /* warrior.png */; };
+		CC02132E7C1149919146528A /* cyborg.png in Resources */ = {isa = PBXBuildFile; fileRef = FA9131952493487D9AFA8E15 /* cyborg.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,15 +54,15 @@
 		E8108A9A40DD4DF1A98F2286 /* BarlowCondensed-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BarlowCondensed-Bold.ttf"; path = "../src/assets/fonts/BarlowCondensed-Bold.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F35558F7F9F141358037BB32 /* BarlowCondensed-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BarlowCondensed-Light.ttf"; path = "../src/assets/fonts/BarlowCondensed-Light.ttf"; sourceTree = "<group>"; };
-		A424D17C3D77467F9CE9A8DE /* calmFemale.png */ = {isa = PBXFileReference; name = "calmFemale.png"; path = "../src/assets/images/voices/calmFemale.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		18CDBAEFE72A4D6BB73C8C31 /* coachFemale.png */ = {isa = PBXFileReference; name = "coachFemale.png"; path = "../src/assets/images/voices/coachFemale.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		08BBD1CCAF2F44DC9CD46A99 /* calmMale.png */ = {isa = PBXFileReference; name = "calmMale.png"; path = "../src/assets/images/voices/calmMale.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		E6AA03FE15B14D7486A2E836 /* coachMale.png */ = {isa = PBXFileReference; name = "coachMale.png"; path = "../src/assets/images/voices/coachMale.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		8EE321119E754839B0832D55 /* friendMale.png */ = {isa = PBXFileReference; name = "friendMale.png"; path = "../src/assets/images/voices/friendMale.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		2AF89D4E13AB42B0AB7BBC9C /* friendFemale.png */ = {isa = PBXFileReference; name = "friendFemale.png"; path = "../src/assets/images/voices/friendFemale.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		34A686AE34BA4A34B70267CD /* wizard.png */ = {isa = PBXFileReference; name = "wizard.png"; path = "../src/assets/images/characters/wizard.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		35E19F8B210145FBA47EF871 /* warrior.png */ = {isa = PBXFileReference; name = "warrior.png"; path = "../src/assets/images/characters/warrior.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		30BD01276A2E4798B3918AE5 /* cyborg.png */ = {isa = PBXFileReference; name = "cyborg.png"; path = "../src/assets/images/characters/cyborg.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9C8A7A96CBDB4861B2649BA5 /* calmFemale.png */ = {isa = PBXFileReference; name = "calmFemale.png"; path = "../src/assets/images/voices/calmFemale.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0B221670B98A4562A99C263B /* coachFemale.png */ = {isa = PBXFileReference; name = "coachFemale.png"; path = "../src/assets/images/voices/coachFemale.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F49933DC7E8D4FB5B897D274 /* calmMale.png */ = {isa = PBXFileReference; name = "calmMale.png"; path = "../src/assets/images/voices/calmMale.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		783F231A02D443979974227B /* coachMale.png */ = {isa = PBXFileReference; name = "coachMale.png"; path = "../src/assets/images/voices/coachMale.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		761AA847482D4A69981A1E28 /* friendMale.png */ = {isa = PBXFileReference; name = "friendMale.png"; path = "../src/assets/images/voices/friendMale.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3E50690FB7FF4A59817FEF89 /* friendFemale.png */ = {isa = PBXFileReference; name = "friendFemale.png"; path = "../src/assets/images/voices/friendFemale.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7116D3E7E1E44BF3939EC99D /* wizard.png */ = {isa = PBXFileReference; name = "wizard.png"; path = "../src/assets/images/characters/wizard.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		31830EC721B94ED1A0679433 /* warrior.png */ = {isa = PBXFileReference; name = "warrior.png"; path = "../src/assets/images/characters/warrior.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FA9131952493487D9AFA8E15 /* cyborg.png */ = {isa = PBXFileReference; name = "cyborg.png"; path = "../src/assets/images/characters/cyborg.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,15 +111,15 @@
 				44A439D5B5A644B59050302F /* BarlowCondensed-SemiBold.ttf */,
 				2F9F99C466A14844B01E887D /* BarlowCondensed-ExtraBold.ttf */,
 				14EADB51CA5A415A8F8F0C5A /* BarlowCondensed-Black.ttf */,
-				A424D17C3D77467F9CE9A8DE /* calmFemale.png */,
-				18CDBAEFE72A4D6BB73C8C31 /* coachFemale.png */,
-				08BBD1CCAF2F44DC9CD46A99 /* calmMale.png */,
-				E6AA03FE15B14D7486A2E836 /* coachMale.png */,
-				8EE321119E754839B0832D55 /* friendMale.png */,
-				2AF89D4E13AB42B0AB7BBC9C /* friendFemale.png */,
-				34A686AE34BA4A34B70267CD /* wizard.png */,
-				35E19F8B210145FBA47EF871 /* warrior.png */,
-				30BD01276A2E4798B3918AE5 /* cyborg.png */,
+				9C8A7A96CBDB4861B2649BA5 /* calmFemale.png */,
+				0B221670B98A4562A99C263B /* coachFemale.png */,
+				F49933DC7E8D4FB5B897D274 /* calmMale.png */,
+				783F231A02D443979974227B /* coachMale.png */,
+				761AA847482D4A69981A1E28 /* friendMale.png */,
+				3E50690FB7FF4A59817FEF89 /* friendFemale.png */,
+				7116D3E7E1E44BF3939EC99D /* wizard.png */,
+				31830EC721B94ED1A0679433 /* warrior.png */,
+				FA9131952493487D9AFA8E15 /* cyborg.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -236,15 +236,15 @@
 				908498F377D947CABEC58655 /* BarlowCondensed-SemiBold.ttf in Resources */,
 				8D4E4EA71A864891B0FDD901 /* BarlowCondensed-ExtraBold.ttf in Resources */,
 				8E18ADF92ABA412C9AE02323 /* BarlowCondensed-Black.ttf in Resources */,
-				D1E0EED1E1C04E6ABBBAF6A4 /* calmFemale.png in Resources */,
-				2DA29C65B5E54DE0A22CBBA4 /* coachFemale.png in Resources */,
-				78036246471F4322B6B9517A /* calmMale.png in Resources */,
-				06A247D32BDE40C1A0ED498D /* coachMale.png in Resources */,
-				2CD4AE782AA442328D4181A9 /* friendMale.png in Resources */,
-				2ED8D1C05807405594232A53 /* friendFemale.png in Resources */,
-				57021F61D75B412998E03BEA /* wizard.png in Resources */,
-				4C9FFC3639A048498C3F8FD1 /* warrior.png in Resources */,
-				4188F7EC53B447ECB4CF1DC5 /* cyborg.png in Resources */,
+				649FF3418F064C2B8C964B7A /* calmFemale.png in Resources */,
+				B1FE19644198494190C4F68F /* coachFemale.png in Resources */,
+				445FF20DD2AB4490AEFB2775 /* calmMale.png in Resources */,
+				E595FC77569549208EE6F002 /* coachMale.png in Resources */,
+				AB080A22EECF42FCA2F9A473 /* friendMale.png in Resources */,
+				E3F87B5237EA4C7493B01406 /* friendFemale.png in Resources */,
+				D5C392C85466463F8D699F79 /* wizard.png in Resources */,
+				185FE1B5E98F419EAFFA2CEE /* warrior.png in Resources */,
+				CC02132E7C1149919146528A /* cyborg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

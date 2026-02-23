@@ -31,39 +31,39 @@
     },
     {
       "path": "src/assets/images/voices/calmFemale.png",
-      "sha1": "815299406c722447c9b27f080b7556c5d569c33e"
+      "sha1": "f1758726dfc34b55a819043cdaab3fba9ed6fd0c"
     },
     {
       "path": "src/assets/images/voices/coachFemale.png",
-      "sha1": "1e651cf4fc262d6a489085225cb07441ee05c0e3"
+      "sha1": "b933e1b63aa7b8ae19a8d9820331a5aae9572f11"
     },
     {
       "path": "src/assets/images/voices/calmMale.png",
-      "sha1": "ee74d45a2be276de076dd7a062cb290e42e17ea9"
+      "sha1": "5b1603e0063b5a5673b4c8d818830d6dc7786aa5"
     },
     {
       "path": "src/assets/images/voices/coachMale.png",
-      "sha1": "45e89bf5b7b2dc4da2de2e8458ca0ed9a4bdf217"
+      "sha1": "4c743fa28c2b382376d26513b98ec4f379c39492"
     },
     {
       "path": "src/assets/images/voices/friendMale.png",
-      "sha1": "3bc99725d7ac206a0b42786581102d3bd680f913"
+      "sha1": "98d268e13c63a13c60997f48ae0fb86d807500f6"
     },
     {
       "path": "src/assets/images/voices/friendFemale.png",
-      "sha1": "6a7a797b52eb685637bfac117139ecf8591823a0"
+      "sha1": "b96e29bd3ff2c9de66e8a25bc42f109da5f05cdb"
     },
     {
       "path": "src/assets/images/characters/wizard.png",
-      "sha1": "cf96d950cbb976272c11fc44f103809df8bab6a2"
+      "sha1": "0e41547c5c3c73f4699a8b9b806f0e461173b890"
     },
     {
       "path": "src/assets/images/characters/warrior.png",
-      "sha1": "37e6577e96b55e16d32c004856be63cdfe961e98"
+      "sha1": "0640b60cab490150ed12e1398ec9e3d6d9ed7b58"
     },
     {
       "path": "src/assets/images/characters/cyborg.png",
-      "sha1": "6b15120e83661ac17ad725fce2c1caa7b7f26884"
+      "sha1": "c6616279442eebf0a1f9576104ab820b4a74c8b4"
     },
     {
       "path": "src/assets/animations/thinking_owl.riv",

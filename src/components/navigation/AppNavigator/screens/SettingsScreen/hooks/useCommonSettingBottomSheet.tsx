@@ -24,7 +24,7 @@ export const useCommonSettingBottomSheet = <TValue,>({
 
   const items = itemValues.map<AppSelectionBottomSheetItemData<TValue>>(
     value => {
-      const { labelTranslateKey, IconComponent, iconColorStatus } =
+      const { labelTranslateKey, IconComponent, iconColorStatus, imageProps } =
         getProps(value);
 
       return {
@@ -33,6 +33,7 @@ export const useCommonSettingBottomSheet = <TValue,>({
         selected: value === selectedValue,
         AccessoryLeftIconComponent: IconComponent,
         accessoryLeftIconStatus: iconColorStatus,
+        accessoryLeftImageProps: imageProps,
       };
     },
   );
