@@ -30,28 +30,40 @@
       "sha1": "ad26fc581156fee4f83113df5189016ac72a484b"
     },
     {
-      "path": "src/assets/images/piece_of_silver.png",
-      "sha1": "239b184d8fc0ce21f5e65880e0c4582c7bc337ea"
+      "path": "src/assets/images/voices/calmFemale.png",
+      "sha1": "815299406c722447c9b27f080b7556c5d569c33e"
     },
     {
-      "path": "src/assets/images/questions/universe.png",
-      "sha1": "0e6bb0aa8216e8dddc7dc4fd005de931300f5e03"
+      "path": "src/assets/images/voices/coachFemale.png",
+      "sha1": "1e651cf4fc262d6a489085225cb07441ee05c0e3"
     },
     {
-      "path": "src/assets/images/questions/hourglass.png",
-      "sha1": "59497e0717337a10277db1d9dabec060fc516595"
+      "path": "src/assets/images/voices/calmMale.png",
+      "sha1": "ee74d45a2be276de076dd7a062cb290e42e17ea9"
     },
     {
-      "path": "src/assets/images/questions/earth.png",
-      "sha1": "c7fdaf8793fdccb08c55e20f6a9b1f7bbc10f59e"
+      "path": "src/assets/images/voices/coachMale.png",
+      "sha1": "45e89bf5b7b2dc4da2de2e8458ca0ed9a4bdf217"
     },
     {
-      "path": "src/assets/images/questions/robotic_arm.png",
-      "sha1": "90cc52de29ee02fff26054e23c962f5f539a9f3f"
+      "path": "src/assets/images/voices/friendMale.png",
+      "sha1": "3bc99725d7ac206a0b42786581102d3bd680f913"
     },
     {
-      "path": "src/assets/images/questions/bible.png",
-      "sha1": "ab8365833114bfe16a38dc99522bacf2e52ed716"
+      "path": "src/assets/images/voices/friendFemale.png",
+      "sha1": "6a7a797b52eb685637bfac117139ecf8591823a0"
+    },
+    {
+      "path": "src/assets/images/characters/wizard.png",
+      "sha1": "cf96d950cbb976272c11fc44f103809df8bab6a2"
+    },
+    {
+      "path": "src/assets/images/characters/warrior.png",
+      "sha1": "37e6577e96b55e16d32c004856be63cdfe961e98"
+    },
+    {
+      "path": "src/assets/images/characters/cyborg.png",
+      "sha1": "6b15120e83661ac17ad725fce2c1caa7b7f26884"
     },
     {
       "path": "src/assets/animations/thinking_owl.riv",
