@@ -13,12 +13,9 @@ export const useEndRunningWorkoutPopUp = () => {
 
   const handleStop = () => {
     stop();
-
-    if (navigation.canGoBack()) {
-      return navigation.goBack();
-    }
-
-    navigation.replace(AppNavigatorScreen.LandingScreen);
+    navigation.reset({
+      routes: [{ name: AppNavigatorScreen.LandingScreen }],
+    });
   };
 
   const { popUp, onOpen } = useAppPopUp({

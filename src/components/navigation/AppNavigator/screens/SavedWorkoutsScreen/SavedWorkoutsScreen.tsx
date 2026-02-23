@@ -28,7 +28,9 @@ export const SavedWorkoutsScreen = ({
 
   const handleStartWorkout = ({ config, meta: { name } }: AppStoredWorkout) => {
     start({ workoutName: name, ...config });
-    navigation.replace(AppNavigatorScreen.RunningWorkoutScreen);
+    navigation.reset({
+      routes: [{ name: AppNavigatorScreen.RunningWorkoutScreen }],
+    });
   };
 
   const storedWorkoutItemElements = storedWorkouts.map(workout => (

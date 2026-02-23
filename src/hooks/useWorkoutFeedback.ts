@@ -4,7 +4,7 @@ import {
   WorkoutTimerState,
 } from '../components/navigation/AppNavigator/screens/RunningWorkoutScreen/types.ts';
 import { ONE_SECOND_MS } from '../constants/common.ts';
-import { Vibration } from 'react-native';
+import { useAppVibrations, VibrationPattern } from './useAppVibrations.ts';
 
 const COUNTDOWN_THRESHOLD_SECONDS = 5;
 
@@ -12,19 +12,6 @@ const MIDDLE_PHASE_HAPTIC_FEEDBACK_THRESHOLD_SECONDS = Math.max(
   30,
   COUNTDOWN_THRESHOLD_SECONDS * 3,
 );
-
-const LONG_VIBRATION_DURATION = 1600;
-const MEDIUM_VIBRATION_DURATION = 1200;
-const SHORT_MEDIUM_VIBRATION_DURATION = 800;
-const SHORT_VIBRATION_DURATION = 200;
-
-const workoutPhaseToVibrationDuration: Record<RunningWorkoutPhase, number> = {
-  [RunningWorkoutPhase.WARMUP]: MEDIUM_VIBRATION_DURATION,
-  [RunningWorkoutPhase.WORK]: LONG_VIBRATION_DURATION,
-  [RunningWorkoutPhase.REST]: MEDIUM_VIBRATION_DURATION,
-  [RunningWorkoutPhase.RECOVERY]: MEDIUM_VIBRATION_DURATION,
-  [RunningWorkoutPhase.COOLDOWN]: MEDIUM_VIBRATION_DURATION,
-};
 
 type UseWorkoutFeedbackParams = Partial<
   Pick<
@@ -41,6 +28,8 @@ export const useWorkoutFeedback = ({
   phaseElapsedMs,
   isRunning,
 }: UseWorkoutFeedbackParams) => {
+  const { vibrate } = useAppVibrations();
+
   const lastPhaseRef = useRef<RunningWorkoutPhase | undefined>(currentPhase);
   const lastSecondRef = useRef<number | undefined>(undefined);
 
@@ -55,7 +44,7 @@ export const useWorkoutFeedback = ({
     }
 
     if (currentPhase !== lastPhaseRef.current) {
-      Vibration.vibrate(workoutPhaseToVibrationDuration[currentPhase]);
+      vibrate('PHASE_START');
       lastPhaseRef.current = currentPhase;
     }
 
@@ -65,23 +54,23 @@ export const useWorkoutFeedback = ({
 
     const secondInTheMiddle = Math.ceil(totalSeconds / 2);
 
-    const isInTheMiddle: boolean =
+    const isInMiddle: boolean =
       totalSeconds >= MIDDLE_PHASE_HAPTIC_FEEDBACK_THRESHOLD_SECONDS &&
       secondInTheMiddle === remainingSeconds;
 
     const isInCountdownRange: boolean =
       remainingSeconds >= 1 && remainingSeconds <= COUNTDOWN_THRESHOLD_SECONDS;
 
-    if (isInCountdownRange || isInTheMiddle) {
+    if (isInCountdownRange || isInMiddle) {
       const isFirstFeedbackInCurrentSecond =
         remainingSeconds !== lastSecondRef.current;
 
       if (isFirstFeedbackInCurrentSecond) {
-        const vibrationDuration: number = isInTheMiddle
-          ? SHORT_MEDIUM_VIBRATION_DURATION
-          : SHORT_VIBRATION_DURATION;
+        const vibrationPattern: VibrationPattern = isInMiddle
+          ? 'HALF_OF_PHASE'
+          : 'COUNTDOWN';
 
-        Vibration.vibrate(vibrationDuration);
+        vibrate(vibrationPattern);
         lastSecondRef.current = remainingSeconds;
       }
     } else {
