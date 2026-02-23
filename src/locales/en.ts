@@ -109,9 +109,9 @@ export const en = {
         label: 'Sounds and Vibrations',
         items: {
           soundFeedback: {
-            label: 'Workout audio feedback',
+            label: 'Audio feedback',
             description:
-              'Select the type of audio signals for key moments (e.g., halfway mark, countdown, start of a new phase).',
+              'Select the type of audio signals for key moments during a workout (e.g., halfway mark, countdown, start of a new phase).',
             items: {
               voice: 'Standard Voices',
               character: 'Fun Voices',

@@ -107,9 +107,9 @@ export const cs = {
         label: 'Zvuky a vibrace',
         items: {
           soundFeedback: {
-            label: 'Zvuková odezva během tréninku',
+            label: 'Zvuková odezva',
             description:
-              'Výběr typu zvukových signálů pro klíčové momenty (např. oznámení o polovině, odpočet, začátek nové fáze).',
+              'Výběr typu zvukových signálů pro klíčové momenty během tréninku (např. oznámení o polovině, odpočet, začátek nové fáze).',
             items: {
               voice: 'Standardní hlasy',
               character: 'Zábavné hlasy',
