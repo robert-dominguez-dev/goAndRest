@@ -2,35 +2,15 @@ import { Vibration } from 'react-native';
 
 import { useAtomValue } from 'jotai';
 import { vibrationsSettingAtom } from '../contexts/atoms.ts';
+import { createVibrationPattern } from '../helpers/createVibrationPattern.ts';
 
-const MINIMAL_PAUSE_MS = 300;
-const MINIMAL_VIBRATION_MS = 200;
-
-const COUNTDOWN: number[] = [0, MINIMAL_VIBRATION_MS];
-
-const HALF_OF_PHASE: number[] = [
-  ...COUNTDOWN,
-  MINIMAL_PAUSE_MS,
-  MINIMAL_VIBRATION_MS,
-];
-
-const PHASE_START: number[] = [
-  ...HALF_OF_PHASE,
-  MINIMAL_PAUSE_MS,
-  MINIMAL_VIBRATION_MS,
-];
-
-const WORKOUT_FINISH: number[] = [
-  ...PHASE_START,
-  MINIMAL_PAUSE_MS,
-  MINIMAL_VIBRATION_MS,
-];
+const TRIPLE_VIBRATION_PATTERN = createVibrationPattern(3);
 
 const vibrationPatterns = {
-  COUNTDOWN,
-  HALF_OF_PHASE,
-  PHASE_START,
-  WORKOUT_FINISH,
+  COUNTDOWN: createVibrationPattern(1),
+  HALF_OF_PHASE: createVibrationPattern(2),
+  PHASE_START: TRIPLE_VIBRATION_PATTERN,
+  WORKOUT_FINISH: TRIPLE_VIBRATION_PATTERN,
 } as const satisfies Record<string, number[]>;
 
 export type VibrationPattern = keyof typeof vibrationPatterns;

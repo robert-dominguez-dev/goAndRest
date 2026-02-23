@@ -109,9 +109,9 @@ export const en = {
         label: 'Sounds and Vibrations',
         items: {
           soundFeedback: {
-            label: 'Audio Feedback',
+            label: 'Workout audio feedback',
             description:
-              'How the app will notify you during workout (e.g. halfway point, countdown, new phase).',
+              'Select the type of audio signals for key moments (e.g., halfway mark, countdown, start of a new phase).',
             items: {
               voice: 'Standard Voices',
               character: 'Fun Voices',
@@ -155,8 +155,9 @@ export const en = {
             },
           },
           vibrations: {
-            label: 'Vibrations',
-            description: 'Enable vibrations throughout the app.',
+            label: 'Workout vibrations',
+            description:
+              'Enable vibration alerts for key moments (e.g., halfway mark, countdown, start of a new phase).',
           },
         },
       },
@@ -187,12 +188,12 @@ export const en = {
           coachFemale: "Great! It's done!",
           friendMale: 'Top! We did it!',
           friendFemale: 'Top! We did it!',
-          calmMale: 'Nice! Beautiful work.',
-          calmFemale: 'Nice! Beautiful work.',
+          calmMale: 'Nice! Beautiful work',
+          calmFemale: 'Nice! Beautiful work',
         },
         byCharacter: {
           warrior: 'Battle Fought!',
-          cyborg: 'Process Complete.',
+          cyborg: 'Process Complete',
           wizard: 'Well done, child!',
         },
       },

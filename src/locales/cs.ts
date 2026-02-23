@@ -107,9 +107,9 @@ export const cs = {
         label: 'Zvuky a vibrace',
         items: {
           soundFeedback: {
-            label: 'Zvuková odezva',
+            label: 'Zvuková odezva během tréninku',
             description:
-              'Způsob, jakým tě bude aplikace upozorňovat během tréninku (např. oznámení o polovině, odpočet, začátek nové fáze).',
+              'Výběr typu zvukových signálů pro klíčové momenty (např. oznámení o polovině, odpočet, začátek nové fáze).',
             items: {
               voice: 'Standardní hlasy',
               character: 'Zábavné hlasy',
@@ -151,8 +151,9 @@ export const cs = {
             },
           },
           vibrations: {
-            label: 'Vibrace',
-            description: 'Používat vibrace v rámci celé aplikace.',
+            label: 'Vibrace během tréninku',
+            description:
+              'Aktivace vibračních signálů pro klíčové momenty (např. oznámení o polovině, odpočet, začátek nové fáze).',
           },
         },
       },
@@ -183,12 +184,12 @@ export const cs = {
           coachFemale: 'Výborně! Je to tam!',
           friendMale: 'Pecka! Máme hotovo!',
           friendFemale: 'Pecka! Máme hotovo!',
-          calmMale: 'Pěkně! Krásná práce.',
-          calmFemale: 'Pěkně! Krásná práce.',
+          calmMale: 'Pěkně! Krásná práce',
+          calmFemale: 'Pěkně! Krásná práce',
         },
         byCharacter: {
           warrior: 'Bitva vybojována!',
-          cyborg: 'Proces dokončen.',
+          cyborg: 'Proces dokončen',
           wizard: 'Dobrá práce, dítě!',
         },
       },
