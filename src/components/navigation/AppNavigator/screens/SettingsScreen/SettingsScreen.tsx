@@ -1,6 +1,6 @@
 import { AppScreenLayout } from '../../../../common/AppScreenLayout.tsx';
 import { useAppTranslation } from '../../../../../locales/hooks/useAppTranslation.ts';
-import { Palette, Volume2, X, Zap } from 'lucide-react-native';
+import { Palette, Timer, Volume2, X } from 'lucide-react-native';
 import { ScreenProps } from '../../../types.ts';
 import { AppNavigatorScreen, AppNavigatorScreenParams } from '../../types.ts';
 import { SettingsSection } from './components/SettingsSection.tsx';
@@ -55,7 +55,7 @@ export const SettingsScreen = ({ navigation }: SettingsScreenProps) => {
           items={appearanceSettingsItems}
         />
         <SettingsSection
-          IconComponent={Zap}
+          IconComponent={Timer}
           label={t('screens.settingsScreen.workoutSection.label')}
           items={workoutSettingsItems}
         />

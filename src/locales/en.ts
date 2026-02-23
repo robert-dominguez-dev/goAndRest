@@ -87,7 +87,7 @@ export const en = {
         },
       },
       workoutSection: {
-        label: 'Workout',
+        label: 'Timer',
         items: {
           keepTimerInBackground: {
             label: 'Background Timer',

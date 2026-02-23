@@ -87,7 +87,7 @@ export const sk = {
         },
       },
       workoutSection: {
-        label: 'Tréning',
+        label: 'Časovač',
         items: {
           keepTimerInBackground: {
             label: 'Beh časovača na pozadí',
