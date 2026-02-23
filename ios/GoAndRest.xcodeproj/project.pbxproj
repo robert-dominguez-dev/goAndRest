@@ -29,8 +29,8 @@
 		AB080A22EECF42FCA2F9A473 /* friendMale.png in Resources */ = {isa = PBXBuildFile; fileRef = 761AA847482D4A69981A1E28 /* friendMale.png */; };
 		E3F87B5237EA4C7493B01406 /* friendFemale.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E50690FB7FF4A59817FEF89 /* friendFemale.png */; };
 		D5C392C85466463F8D699F79 /* wizard.png in Resources */ = {isa = PBXBuildFile; fileRef = 7116D3E7E1E44BF3939EC99D /* wizard.png */; };
-		185FE1B5E98F419EAFFA2CEE /* warrior.png in Resources */ = {isa = PBXBuildFile; fileRef = 31830EC721B94ED1A0679433 /* warrior.png */; };
 		CC02132E7C1149919146528A /* cyborg.png in Resources */ = {isa = PBXBuildFile; fileRef = FA9131952493487D9AFA8E15 /* cyborg.png */; };
+		B7463B2EB8864F3EA0628D81 /* warrior.png in Resources */ = {isa = PBXBuildFile; fileRef = 40D09F744B54461BBDF47B73 /* warrior.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,8 +61,8 @@
 		761AA847482D4A69981A1E28 /* friendMale.png */ = {isa = PBXFileReference; name = "friendMale.png"; path = "../src/assets/images/voices/friendMale.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		3E50690FB7FF4A59817FEF89 /* friendFemale.png */ = {isa = PBXFileReference; name = "friendFemale.png"; path = "../src/assets/images/voices/friendFemale.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		7116D3E7E1E44BF3939EC99D /* wizard.png */ = {isa = PBXFileReference; name = "wizard.png"; path = "../src/assets/images/characters/wizard.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		31830EC721B94ED1A0679433 /* warrior.png */ = {isa = PBXFileReference; name = "warrior.png"; path = "../src/assets/images/characters/warrior.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		FA9131952493487D9AFA8E15 /* cyborg.png */ = {isa = PBXFileReference; name = "cyborg.png"; path = "../src/assets/images/characters/cyborg.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		40D09F744B54461BBDF47B73 /* warrior.png */ = {isa = PBXFileReference; name = "warrior.png"; path = "../src/assets/images/characters/warrior.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,8 +118,8 @@
 				761AA847482D4A69981A1E28 /* friendMale.png */,
 				3E50690FB7FF4A59817FEF89 /* friendFemale.png */,
 				7116D3E7E1E44BF3939EC99D /* wizard.png */,
-				31830EC721B94ED1A0679433 /* warrior.png */,
 				FA9131952493487D9AFA8E15 /* cyborg.png */,
+				40D09F744B54461BBDF47B73 /* warrior.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -243,8 +243,8 @@
 				AB080A22EECF42FCA2F9A473 /* friendMale.png in Resources */,
 				E3F87B5237EA4C7493B01406 /* friendFemale.png in Resources */,
 				D5C392C85466463F8D699F79 /* wizard.png in Resources */,
-				185FE1B5E98F419EAFFA2CEE /* warrior.png in Resources */,
 				CC02132E7C1149919146528A /* cyborg.png in Resources */,
+				B7463B2EB8864F3EA0628D81 /* warrior.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

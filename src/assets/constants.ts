@@ -27,7 +27,7 @@ export const appIllustrationToAspectRatio: Record<AppIllustration, number> = {
   [WorkoutVoiceVariant.friendMale]: 241 / 344,
   [WorkoutVoiceVariant.calmFemale]: 214 / 343,
   [WorkoutVoiceVariant.calmMale]: 251 / 344,
-  [WorkoutCharacterVariant.warrior]: 306 / 373,
+  [WorkoutCharacterVariant.warrior]: 337 / 373,
   [WorkoutCharacterVariant.cyborg]: 282 / 315,
   [WorkoutCharacterVariant.wizard]: 303 / 376,
 };
