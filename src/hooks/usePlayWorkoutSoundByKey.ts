@@ -1,33 +1,34 @@
 import { WorkoutSoundKey } from '../assets/types.ts';
-
+import { useAtomValue } from 'jotai';
+import { workoutSoundFilePathsAtom } from '../contexts/atoms.ts';
 import { sample } from 'lodash';
-import Sound from 'react-native-sound';
-import { useAtom, useAtomValue } from 'jotai';
-import {
-  lastPlayingSoundAtom,
-  workoutLoadedSoundsAtom,
-} from '../contexts/atoms.ts';
+import TrackPlayer from 'react-native-track-player';
 
 export const usePlayWorkoutSoundByKey = () => {
-  const workoutLoadedSounds = useAtomValue(workoutLoadedSoundsAtom);
+  const workoutSoundPaths = useAtomValue(workoutSoundFilePathsAtom);
 
-  const [lastPlayingSound, setLastPlayedSound] = useAtom(lastPlayingSoundAtom);
-
-  return (soundKey: WorkoutSoundKey): Sound | undefined => {
-    if (!workoutLoadedSounds) {
+  return async (soundKey: WorkoutSoundKey) => {
+    if (!workoutSoundPaths) {
       return undefined;
     }
 
-    lastPlayingSound?.stop();
+    const oneOrMoreFilePaths = workoutSoundPaths[soundKey];
 
-    const oneOrMoreSounds = workoutLoadedSounds[soundKey];
+    const filePath: string | undefined = Array.isArray(oneOrMoreFilePaths)
+      ? sample(oneOrMoreFilePaths)
+      : oneOrMoreFilePaths;
 
-    const newSound: Sound | undefined = Array.isArray(oneOrMoreSounds)
-      ? sample(oneOrMoreSounds)
-      : oneOrMoreSounds;
+    if (!filePath) {
+      return undefined;
+    }
 
-    setLastPlayedSound(newSound);
-
-    newSound?.play();
+    await TrackPlayer.reset();
+    await TrackPlayer.add({
+      id: soundKey,
+      url: filePath,
+      title: soundKey.toString(),
+      artist: '',
+    });
+    await TrackPlayer.play();
   };
 };

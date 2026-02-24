@@ -4,35 +4,39 @@ import {
   WorkoutSoundVariant,
   WorkoutVoiceVariant,
 } from '../../../components/navigation/AppNavigator/screens/SettingsScreen/constants.tsx';
-import { WorkoutSoundFileNames } from '../../../assets/types.ts';
+import { WorkoutSoundFilePaths } from '../../../assets/types.ts';
 import { SupportedLanguageCode } from '../../../contexts/AppLanguageProvider/constants.ts';
 import { appFeedbackEntityToSoundFileNamesByLanguage } from '../../../assets/constants.ts';
 
-export const getCurrentWorkoutSoundFileNames = (
+export const getCurrentWorkoutSoundFilePaths = (
   soundFeedback: WorkoutSoundFeedback,
   soundVariant: WorkoutSoundVariant,
   voiceVariant: WorkoutVoiceVariant,
   characterVariant: WorkoutCharacterVariant,
   language: SupportedLanguageCode,
-): WorkoutSoundFileNames | undefined => {
+): WorkoutSoundFilePaths | null => {
   switch (soundFeedback) {
     case WorkoutSoundFeedback.none: {
-      return undefined;
+      return null;
     }
     case WorkoutSoundFeedback.sound: {
-      return appFeedbackEntityToSoundFileNamesByLanguage[soundVariant]?.[
-        language
-      ];
+      return (
+        appFeedbackEntityToSoundFileNamesByLanguage[soundVariant]?.[language] ||
+        null
+      );
     }
     case WorkoutSoundFeedback.voice: {
-      return appFeedbackEntityToSoundFileNamesByLanguage[voiceVariant]?.[
-        language
-      ];
+      return (
+        appFeedbackEntityToSoundFileNamesByLanguage[voiceVariant]?.[language] ||
+        null
+      );
     }
     case WorkoutSoundFeedback.character: {
-      return appFeedbackEntityToSoundFileNamesByLanguage[characterVariant]?.[
-        language
-      ];
+      return (
+        appFeedbackEntityToSoundFileNamesByLanguage[characterVariant]?.[
+          language
+        ] || null
+      );
     }
     default: {
       return soundFeedback satisfies never;

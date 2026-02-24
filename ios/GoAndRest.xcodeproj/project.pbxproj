@@ -39,8 +39,8 @@
 		E58A96EAD8544096A963DE50 /* cyborg_cs_warmup.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BDB08565641044CE840F6297 /* cyborg_cs_warmup.mp3 */; };
 		ED837E99D1D84D6284B6D0EA /* BarlowCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F35558F7F9F141358037BB32 /* BarlowCondensed-Light.ttf */; };
 		F795EBC6558A426FAAE915D4 /* loader.riv in Resources */ = {isa = PBXBuildFile; fileRef = 75D6891E9BCF4AFE9E55D8E3 /* loader.riv */; };
-		FB52F62E67ED45939EEFE273 /* confetti.riv in Resources */ = {isa = PBXBuildFile; fileRef = 276BDF320A7942F4874F858D /* confetti.riv */; };
 		FB1D697FE6C7436F90920A18 /* constants.ts in Resources */ = {isa = PBXBuildFile; fileRef = 899CADB35DCA4025B5B8AF98 /* constants.ts */; };
+		FB52F62E67ED45939EEFE273 /* confetti.riv in Resources */ = {isa = PBXBuildFile; fileRef = 276BDF320A7942F4874F858D /* confetti.riv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +70,7 @@
 		79788391ABF34F1E88F0678D /* cyborg_cs_7.mp3 */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = cyborg_cs_7.mp3; path = ../src/assets/audio/characters/cyborg/cs/cyborg_cs_7.mp3; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = GoAndRest/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		860AE6422B87489EAAEEC364 /* cyborg_cs_9.mp3 */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = cyborg_cs_9.mp3; path = ../src/assets/audio/characters/cyborg/cs/cyborg_cs_9.mp3; sourceTree = "<group>"; };
+		899CADB35DCA4025B5B8AF98 /* constants.ts */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = constants.ts; path = ../src/assets/audio/characters/cyborg/constants.ts; sourceTree = "<group>"; };
 		993E01C54BD6480D9042D867 /* cyborg_cs_5.mp3 */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = cyborg_cs_5.mp3; path = ../src/assets/audio/characters/cyborg/cs/cyborg_cs_5.mp3; sourceTree = "<group>"; };
 		A9277619DDFB42ACA05C54B9 /* cyborg_cs_half.mp3 */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = cyborg_cs_half.mp3; path = ../src/assets/audio/characters/cyborg/cs/cyborg_cs_half.mp3; sourceTree = "<group>"; };
 		B011BE634BA94B0AB3ED13E8 /* cyborg_cs_10.mp3 */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = cyborg_cs_10.mp3; path = ../src/assets/audio/characters/cyborg/cs/cyborg_cs_10.mp3; sourceTree = "<group>"; };
@@ -82,7 +83,6 @@
 		E8108A9A40DD4DF1A98F2286 /* BarlowCondensed-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BarlowCondensed-Bold.ttf"; path = "../src/assets/fonts/BarlowCondensed-Bold.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F35558F7F9F141358037BB32 /* BarlowCondensed-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BarlowCondensed-Light.ttf"; path = "../src/assets/fonts/BarlowCondensed-Light.ttf"; sourceTree = "<group>"; };
-		899CADB35DCA4025B5B8AF98 /* constants.ts */ = {isa = PBXFileReference; name = "constants.ts"; path = "../src/assets/audio/characters/cyborg/constants.ts"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -315,13 +315,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GoAndRest/Pods-GoAndRest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GoAndRest/Pods-GoAndRest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -358,13 +354,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GoAndRest/Pods-GoAndRest-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GoAndRest/Pods-GoAndRest-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

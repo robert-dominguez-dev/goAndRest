@@ -12,8 +12,7 @@ import {
   WorkoutTimerPersistedState,
 } from '../components/navigation/AppNavigator/screens/RunningWorkoutScreen/types.ts';
 import { atom } from 'jotai';
-import { WorkoutSounds } from '../assets/types.ts';
-import Sound from 'react-native-sound';
+import { WorkoutSoundFilePaths } from '../assets/types.ts';
 
 const createAsyncAtom = <T>(key: string, defaultValue: T) =>
   atomWithStorage(
@@ -78,6 +77,6 @@ export const finishedWorkoutStatsAtom = atom<WorkoutTimerPersistedState | null>(
   null,
 );
 
-export const workoutLoadedSoundsAtom = atom<WorkoutSounds | null>(null);
-
-export const lastPlayingSoundAtom = atom<Sound | undefined>(undefined);
+export const workoutSoundFilePathsAtom = atom<WorkoutSoundFilePaths | null>(
+  null,
+);

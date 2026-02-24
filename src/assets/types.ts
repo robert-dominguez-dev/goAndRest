@@ -1,5 +1,4 @@
 import { RunningWorkoutPhase } from '../components/navigation/AppNavigator/screens/RunningWorkoutScreen/types.ts';
-import Sound from 'react-native-sound';
 import { SupportedLanguageCode } from '../contexts/AppLanguageProvider/constants.ts';
 
 export enum Countdown {
@@ -15,19 +14,15 @@ export enum Countdown {
   One = 1,
 }
 
-type WorkoutSoundObject<T> = Record<RunningWorkoutPhase, T[]> &
-  Record<Countdown, T> & {
-    half: T[];
-    finish: T[];
+export type WorkoutSoundFilePaths = Record<RunningWorkoutPhase, string[]> &
+  Record<Countdown, string> & {
+    half: string[];
+    finish: string[];
   };
-
-export type WorkoutSoundFileNames = WorkoutSoundObject<string>;
 
 export type WorkoutSoundPathsByLanguage = Record<
   SupportedLanguageCode,
-  WorkoutSoundFileNames
+  WorkoutSoundFilePaths
 >;
 
-export type WorkoutSounds = WorkoutSoundObject<Sound | undefined>;
-
-export type WorkoutSoundKey = keyof WorkoutSounds;
+export type WorkoutSoundKey = keyof WorkoutSoundFilePaths;
