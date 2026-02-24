@@ -12,6 +12,7 @@ import {
   WorkoutTimerPersistedState,
 } from '../components/navigation/AppNavigator/screens/RunningWorkoutScreen/types.ts';
 import { atom } from 'jotai';
+import { WorkoutSounds } from '../assets/types.ts';
 
 const createAsyncAtom = <T>(key: string, defaultValue: T) =>
   atomWithStorage(
@@ -75,3 +76,5 @@ export const computedWorkoutStateAtom = atom<WorkoutTimerComputedState | null>(
 export const finishedWorkoutStatsAtom = atom<WorkoutTimerPersistedState | null>(
   null,
 );
+
+export const workoutLoadedSoundsAtom = atom<WorkoutSounds | null>(null);

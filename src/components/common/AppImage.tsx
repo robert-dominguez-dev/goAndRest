@@ -1,6 +1,6 @@
 import { Image, ImageResizeMode, ImageStyle } from 'react-native';
 import { FILL_CONTAINER_DIMENSION } from '../../constants/common.ts';
-import { AppIllustration, appIllustrations } from '../../assets/constants.ts';
+import { AppFeedbackEntity, appIllustrations } from '../../assets/constants.ts';
 import { AppSizeUnion } from '../../types/ui.ts';
 import { getAppSize } from '../../helpers/getAppSize.ts';
 import { memo } from 'react';
@@ -20,7 +20,7 @@ type AppImageDimensions =
 
 export type AppImageProps = AppImageDimensions &
   Pick<ImageStyle, 'opacity'> & {
-    illustrationName: AppIllustration;
+    illustrationName: AppFeedbackEntity;
     borderRadius?: AppSizeUnion;
   };
 

@@ -1,9 +1,11 @@
 import { useEffect, useRef } from 'react';
 import { useAppVibrations } from './useAppVibrations.ts';
-import { getWorkoutSoundByKey } from '../helpers/getWorkoutSoundByKey.ts';
+import { useGetWorkoutSoundByKey } from './useGetWorkoutSoundByKey.ts';
 
 export const useFinishedWorkoutFeedbackOnMount = () => {
   const { vibrate, stopVibration } = useAppVibrations();
+
+  const getWorkoutSoundByKey = useGetWorkoutSoundByKey();
 
   const didAlreadyMakeFeedbackRef = useRef<boolean>(false);
 

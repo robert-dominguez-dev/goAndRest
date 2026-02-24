@@ -86,10 +86,6 @@
       "sha1": "4385a01d8ed29424fce3d6f10fe77a9216a3043d"
     },
     {
-      "path": "src/assets/audio/characters/cyborg/cs/constants.ts",
-      "sha1": "5084881e37b5bf270309329daedff9ea06dbcf63"
-    },
-    {
       "path": "src/assets/audio/characters/cyborg/cs/cyborg_cs_half.mp3",
       "sha1": "8b978ce8cff39652e153bc25809851d5c19e693a"
     },
@@ -100,6 +96,10 @@
     {
       "path": "src/assets/audio/characters/cyborg/cs/cyborg_cs_9.mp3",
       "sha1": "432642296b95051054b0bdba207f1e8b32a706f4"
+    },
+    {
+      "path": "src/assets/audio/characters/cyborg/constants.ts",
+      "sha1": "d9ce1b70768bef7ada8513d23e67dd436cc89765"
     },
     {
       "path": "src/assets/animations/thinking_owl.riv",

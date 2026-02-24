@@ -5,7 +5,7 @@ import {
 } from '../components/navigation/AppNavigator/screens/RunningWorkoutScreen/types.ts';
 import { ONE_SECOND_MS } from '../constants/common.ts';
 import { useAppVibrations } from './useAppVibrations.ts';
-import { getWorkoutSoundByKey } from '../helpers/getWorkoutSoundByKey.ts';
+import { useGetWorkoutSoundByKey } from './useGetWorkoutSoundByKey.ts';
 
 const COUNTDOWN_THRESHOLD_SECONDS = 5;
 
@@ -30,6 +30,8 @@ export const useWorkoutFeedback = ({
   isRunning,
 }: UseWorkoutFeedbackParams) => {
   const { vibrate } = useAppVibrations();
+
+  const getWorkoutSoundByKey = useGetWorkoutSoundByKey();
 
   const lastPhaseRef = useRef<RunningWorkoutPhase | undefined>(currentPhase);
   const lastSecondRef = useRef<number | undefined>(undefined);

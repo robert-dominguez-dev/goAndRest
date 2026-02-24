@@ -1,20 +1,26 @@
 import {
   WorkoutCharacterVariant,
+  WorkoutSoundVariant,
   WorkoutVoiceVariant,
 } from '../components/navigation/AppNavigator/screens/SettingsScreen/constants.tsx';
 import { characters } from './base64/characters.ts';
 import { voices } from './base64/voices.ts';
+import { cyborgSoundFileNamesByLanguage } from './audio/characters/cyborg/constants.ts';
+import { WorkoutSoundPathsByLanguage } from './types.ts';
 
-export type AppIllustration =
+export type AppFeedbackEntity =
   | `${WorkoutVoiceVariant}`
   | `${WorkoutCharacterVariant}`;
 
 export const appIllustrations = {
   ...characters,
   ...voices,
-} satisfies Record<AppIllustration, string>;
+} satisfies Record<AppFeedbackEntity, string>;
 
-export const appIllustrationToAspectRatio: Record<AppIllustration, number> = {
+export const appFeedbackEntityToImageAspectRatio: Record<
+  AppFeedbackEntity,
+  number
+> = {
   [WorkoutVoiceVariant.coachFemale]: 216 / 357,
   [WorkoutVoiceVariant.coachMale]: 235 / 339,
   [WorkoutVoiceVariant.friendFemale]: 210 / 356,
@@ -31,3 +37,27 @@ export enum AppAnimation {
   loader = 'loader',
   confetti = 'confetti',
 }
+
+type AppFeedbackEntityWithSoundVariants =
+  | AppFeedbackEntity
+  | `${WorkoutSoundVariant}`;
+
+export const appFeedbackEntityToSoundFileNamesByLanguage: Record<
+  AppFeedbackEntityWithSoundVariants,
+  WorkoutSoundPathsByLanguage | null
+> = {
+  [WorkoutVoiceVariant.coachFemale]: null,
+  [WorkoutVoiceVariant.coachMale]: null,
+  [WorkoutVoiceVariant.friendFemale]: null,
+  [WorkoutVoiceVariant.friendMale]: null,
+  [WorkoutVoiceVariant.calmFemale]: null,
+  [WorkoutVoiceVariant.calmMale]: null,
+  [WorkoutCharacterVariant.warrior]: null,
+  [WorkoutCharacterVariant.cyborg]: cyborgSoundFileNamesByLanguage,
+  [WorkoutCharacterVariant.wizard]: null,
+  [WorkoutSoundVariant.beep]: null,
+  [WorkoutSoundVariant.bell]: null,
+  [WorkoutSoundVariant.drum]: null,
+  [WorkoutSoundVariant.snap]: null,
+  [WorkoutSoundVariant.whistle]: null,
+};

@@ -1,9 +1,10 @@
-import {Countdown, WorkoutSoundFileNames, WorkoutSoundPathsByLanguage} from "../../../../../../src/assets/types";
 import {
-    RunningWorkoutPhase
-} from "../../../../../../src/components/navigation/AppNavigator/screens/RunningWorkoutScreen/types";
-import {SupportedLanguageCode} from "../../../../../../src/contexts/AppLanguageProvider/constants";
-
+  Countdown,
+  WorkoutSoundFileNames,
+  WorkoutSoundPathsByLanguage,
+} from '../../../types.ts';
+import { RunningWorkoutPhase } from '../../../../components/navigation/AppNavigator/screens/RunningWorkoutScreen/types.ts';
+import { SupportedLanguageCode } from '../../../../contexts/AppLanguageProvider/constants.ts';
 
 const cyborgCs: WorkoutSoundFileNames = {
   [RunningWorkoutPhase.WARMUP]: ['cyborg_cs_warmup.mp3'],

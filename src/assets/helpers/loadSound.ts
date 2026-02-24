@@ -2,8 +2,8 @@ import Sound from 'react-native-sound';
 
 Sound.setCategory('Playback');
 
-export const loadSound = (resource: any) =>
-  new Sound(resource, error => {
+export const loadSound = (fileName: string) =>
+  new Sound(fileName, Sound.MAIN_BUNDLE, error => {
     if (error) {
       console.error('Failed to load sound', error);
     }
