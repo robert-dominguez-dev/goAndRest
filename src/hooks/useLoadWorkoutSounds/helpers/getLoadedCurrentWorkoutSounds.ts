@@ -1,4 +1,8 @@
-import { Countdown, WorkoutSoundFileNames, WorkoutSounds, } from '../../../assets/types.ts';
+import {
+  Countdown,
+  WorkoutSoundFileNames,
+  WorkoutSounds,
+} from '../../../assets/types.ts';
 import { RunningWorkoutPhase } from '../../../components/navigation/AppNavigator/screens/RunningWorkoutScreen/types.ts';
 import { loadSound } from '../../../assets/helpers/loadSound.ts';
 

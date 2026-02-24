@@ -63,7 +63,7 @@ export const FinishedWorkoutScreen = () => {
         }>
         <AppView gap={'l'}>
           <AppText
-            category={'contentBold'}
+            category={'content'}
             textAlign={'center'}
             numberOfLines={UNLIMITED_NUMBER_OF_LINES}>
             {t(descriptionKey)}

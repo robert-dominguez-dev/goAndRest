@@ -1,11 +1,11 @@
 import { useEffect, useRef } from 'react';
 import { useAppVibrations } from './useAppVibrations.ts';
-import { useGetWorkoutSoundByKey } from './useGetWorkoutSoundByKey.ts';
+import { usePlayWorkoutSoundByKey } from './usePlayWorkoutSoundByKey.ts';
 
 export const useFinishedWorkoutFeedbackOnMount = () => {
   const { vibrate, stopVibration } = useAppVibrations();
 
-  const getWorkoutSoundByKey = useGetWorkoutSoundByKey();
+  const playWorkoutSoundByKey = usePlayWorkoutSoundByKey();
 
   const didAlreadyMakeFeedbackRef = useRef<boolean>(false);
 
@@ -15,15 +15,12 @@ export const useFinishedWorkoutFeedbackOnMount = () => {
     }
 
     vibrate('WORKOUT_FINISH');
-
-    const halfSound = getWorkoutSoundByKey('finish');
-    halfSound?.play();
+    playWorkoutSoundByKey('finish');
 
     didAlreadyMakeFeedbackRef.current = true;
 
     return () => {
       stopVibration();
-      halfSound?.stop();
     };
   }, []);
 };

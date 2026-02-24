@@ -5,7 +5,7 @@ import {
 } from '../components/navigation/AppNavigator/screens/RunningWorkoutScreen/types.ts';
 import { ONE_SECOND_MS } from '../constants/common.ts';
 import { useAppVibrations } from './useAppVibrations.ts';
-import { useGetWorkoutSoundByKey } from './useGetWorkoutSoundByKey.ts';
+import { usePlayWorkoutSoundByKey } from './usePlayWorkoutSoundByKey.ts';
 
 const COUNTDOWN_THRESHOLD_SECONDS = 5;
 
@@ -31,9 +31,9 @@ export const useWorkoutFeedback = ({
 }: UseWorkoutFeedbackParams) => {
   const { vibrate } = useAppVibrations();
 
-  const getWorkoutSoundByKey = useGetWorkoutSoundByKey();
+  const playWorkoutSoundByKey = usePlayWorkoutSoundByKey();
 
-  const lastPhaseRef = useRef<RunningWorkoutPhase | undefined>(currentPhase);
+  const lastPhaseRef = useRef<RunningWorkoutPhase | undefined>(undefined);
   const lastSecondRef = useRef<number | undefined>(undefined);
 
   useEffect(() => {
@@ -48,8 +48,7 @@ export const useWorkoutFeedback = ({
 
     if (currentPhase !== lastPhaseRef.current) {
       vibrate('PHASE_START');
-      const phaseSound = getWorkoutSoundByKey(currentPhase);
-      phaseSound?.play();
+      playWorkoutSoundByKey(currentPhase);
       lastPhaseRef.current = currentPhase;
     }
 
@@ -73,14 +72,12 @@ export const useWorkoutFeedback = ({
       if (isFirstFeedbackInCurrentSecond) {
         if (isInCountdownRange) {
           vibrate('COUNTDOWN');
-          const countdownSound = getWorkoutSoundByKey(remainingSeconds);
-          countdownSound?.play();
+          playWorkoutSoundByKey(remainingSeconds);
         }
 
         if (isInMiddle) {
           vibrate('HALF_OF_PHASE');
-          const halfSound = getWorkoutSoundByKey('half');
-          halfSound?.play();
+          playWorkoutSoundByKey('half');
         }
 
         lastSecondRef.current = remainingSeconds;
