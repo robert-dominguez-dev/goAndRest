@@ -4,7 +4,7 @@ import { useAppTranslation } from '../../../../../locales/hooks/useAppTranslatio
 import { RunningWorkoutScreenFooter } from './components/RunningWorkoutScreenFooter.tsx';
 import { useEndRunningWorkoutPopUp } from './hooks/useEndRunningWorkoutPopUp.tsx';
 import { useWorkoutTimer } from '../../../../../hooks/useWorkoutTimer.ts';
-import { workoutPhaseToColorStatus } from './constants.ts';
+import { workoutPhaseToTimerColorStatus } from './constants.ts';
 import { AppView } from '../../../../common/AppView/AppView.tsx';
 import { AppCircularIndicator } from '../../../../controls/AppCircularSlider/components/AppCircularIndicator.tsx';
 import { useAppThemedColors } from '../../../../../hooks/useAppThemedColors.ts';
@@ -73,7 +73,7 @@ export const RunningWorkoutScreen = ({
   const headerTitle: string =
     workoutName || t('screens.runningWorkoutScreen.title');
 
-  const phaseColorStatus = workoutPhaseToColorStatus[currentPhase];
+  const phaseColorStatus = workoutPhaseToTimerColorStatus[currentPhase];
   const phaseColor = appColors[phaseColorStatus];
 
   const maxValue = phaseRemainingMs + phaseElapsedMs;

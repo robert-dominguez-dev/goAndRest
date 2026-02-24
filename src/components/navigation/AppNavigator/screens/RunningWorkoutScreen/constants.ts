@@ -5,15 +5,15 @@ import { TranslateKey } from '../../../../../locales/types.ts';
 import { workoutSettingsButtonConfigMap } from '../LandingScreen/constants.ts';
 import { Flame, LucideIcon, Wind } from 'lucide-react-native';
 
-export const workoutPhaseToColorStatus: Record<
+export const workoutPhaseToTimerColorStatus: Record<
   RunningWorkoutPhase,
   AppColorUnion
 > = {
-  [RunningWorkoutPhase.WARMUP]: 'warmup',
-  [RunningWorkoutPhase.WORK]: 'work',
-  [RunningWorkoutPhase.REST]: 'rest',
-  [RunningWorkoutPhase.RECOVERY]: 'recovery',
-  [RunningWorkoutPhase.COOLDOWN]: 'cooldown',
+  [RunningWorkoutPhase.WARMUP]: 'warmupPhase',
+  [RunningWorkoutPhase.WORK]: 'workPhase',
+  [RunningWorkoutPhase.REST]: 'restPhase',
+  [RunningWorkoutPhase.RECOVERY]: 'recoveryPhase',
+  [RunningWorkoutPhase.COOLDOWN]: 'cooldownPhase',
 };
 
 export const workoutPhaseToNameTranslateKey: Record<

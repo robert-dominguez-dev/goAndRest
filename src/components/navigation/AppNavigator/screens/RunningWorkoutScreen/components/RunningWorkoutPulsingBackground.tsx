@@ -6,7 +6,7 @@ import { useAppThemedColors } from '../../../../../../hooks/useAppThemedColors.t
 import { ViewStyle } from 'react-native';
 import Animated, { useAnimatedStyle } from 'react-native-reanimated';
 import { RunningWorkoutPhase } from '../types.ts';
-import { workoutPhaseToColorStatus } from '../constants.ts';
+import { workoutPhaseToTimerColorStatus } from '../constants.ts';
 
 type RunningWorkoutPulsingBackgroundProps = Pick<
   UseWorkoutPhasePulsingValueParams,
@@ -40,7 +40,7 @@ export const RunningWorkoutPulsingBackground = ({
     borderRadius: '50%',
     width: size,
     height: size,
-    backgroundColor: appColors[workoutPhaseToColorStatus[workoutPhase]],
+    backgroundColor: appColors[workoutPhaseToTimerColorStatus[workoutPhase]],
   };
 
   return <Animated.View style={[staticStyle, animatedStyle]} />;

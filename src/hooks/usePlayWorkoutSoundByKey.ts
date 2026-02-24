@@ -22,7 +22,7 @@ export const usePlayWorkoutSoundByKey = () => {
 
     const oneOrMoreSounds = workoutLoadedSounds[soundKey];
 
-    const newSound = Array.isArray(oneOrMoreSounds)
+    const newSound: Sound | undefined = Array.isArray(oneOrMoreSounds)
       ? sample(oneOrMoreSounds)
       : oneOrMoreSounds;
 

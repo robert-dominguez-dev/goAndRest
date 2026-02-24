@@ -5,9 +5,9 @@ import { AppText } from '../../../../../common/AppText/AppText.tsx';
 import { memo } from 'react';
 import { WorkoutTimerState } from '../types.ts';
 import {
-  workoutPhaseToColorStatus,
   workoutPhaseToIconComponent,
   workoutPhaseToNameTranslateKey,
+  workoutPhaseToTimerColorStatus,
 } from '../constants.ts';
 import { useAppThemedColors } from '../../../../../../hooks/useAppThemedColors.ts';
 import { AppSize } from '../../../../../../types/ui.ts';
@@ -25,7 +25,7 @@ const RunningWorkoutIndicatorsContentComponent = ({
   const t = useAppTranslation();
 
   const phaseLabelKey = workoutPhaseToNameTranslateKey[currentPhase];
-  const phaseColorStatus = workoutPhaseToColorStatus[currentPhase];
+  const phaseColorStatus = workoutPhaseToTimerColorStatus[currentPhase];
   const IconComponent = workoutPhaseToIconComponent[currentPhase];
 
   const appColors = useAppThemedColors();
@@ -58,10 +58,12 @@ const RunningWorkoutIndicatorsContentComponent = ({
       <AppView gap={'xxs'}>
         <AppText
           grow={false}
+          colorStatus={'text'}
           category={'title'}>
           {t('screens.runningWorkoutScreen.totalElapsedTime').toUpperCase()}
         </AppText>
         <AppTimeView
+          colorStatus={'text'}
           fontSizeOverride={'l'}
           msLeft={totalElapsedMs}
         />
