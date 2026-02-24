@@ -13,7 +13,6 @@ import TrackPlayer from 'react-native-track-player';
 import { PlaybackService, setupPlayer } from './helpers/setupPlayer.ts';
 
 TrackPlayer.registerPlaybackService(() => PlaybackService);
-
 void setupPlayer();
 
 export const useInitiateWorkoutSounds = () => {
@@ -27,7 +26,7 @@ export const useInitiateWorkoutSounds = () => {
   const setWorkoutSoundFilePaths = useSetAtom(workoutSoundFilePathsAtom);
 
   useEffect(() => {
-    const currentWorkoutSoundFilePaths = getCurrentWorkoutSoundFilePaths(
+    const paths = getCurrentWorkoutSoundFilePaths(
       soundFeedback,
       soundVariant,
       voiceVariant,
@@ -35,6 +34,6 @@ export const useInitiateWorkoutSounds = () => {
       language,
     );
 
-    setWorkoutSoundFilePaths(currentWorkoutSoundFilePaths);
+    setWorkoutSoundFilePaths(paths);
   }, [soundFeedback, soundVariant, voiceVariant, characterVariant, language]);
 };

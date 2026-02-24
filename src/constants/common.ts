@@ -1,5 +1,7 @@
 import { DimensionValue, Platform } from 'react-native';
 
+export const APP_NAME = 'Go&Rest';
+
 export const IS_DEV_MODE = __DEV__;
 
 export const IS_ANDROID = Platform.OS === 'android';

@@ -3,6 +3,9 @@ import { AppRoundedButtons } from '../../../../../common/AppRoundedButtons/AppRo
 import { RunningWorkoutSkipButton } from './RunningWorkoutSkipButton.tsx';
 import { useWorkoutTimer } from '../../../../../../hooks/useWorkoutTimer.ts';
 import { ONE_SECOND_MS } from '../../../../../../constants/common.ts';
+import {
+  clearWorkoutSoundsQueue
+} from '../../../../../../hooks/useInitiateWorkoutSounds/helpers/clearWorkoutSoundsQueue.ts';
 
 const SKIP_SECONDS = 15;
 const SKIP_MS = SKIP_SECONDS * ONE_SECOND_MS;
@@ -10,9 +13,24 @@ const SKIP_MS = SKIP_SECONDS * ONE_SECOND_MS;
 const RunningWorkoutScreenFooterComponent = () => {
   const { resume, pause, skip, isRunning } = useWorkoutTimer();
 
+  const handlePause = async () => {
+    await clearWorkoutSoundsQueue();
+    pause();
+  };
+
+  const skipBackward = async () => {
+    await clearWorkoutSoundsQueue();
+    skip(-SKIP_MS);
+  };
+
+  const skipForward = async () => {
+    await clearWorkoutSoundsQueue();
+    skip(SKIP_MS);
+  };
+
   const prevButtonElement = (
     <RunningWorkoutSkipButton
-      onPress={() => skip(-SKIP_MS)}
+      onPress={skipBackward}
       direction={'left'}
       value={SKIP_SECONDS}
     />
@@ -20,7 +38,7 @@ const RunningWorkoutScreenFooterComponent = () => {
 
   const nextButtonElement = (
     <RunningWorkoutSkipButton
-      onPress={() => skip(SKIP_MS)}
+      onPress={skipForward}
       direction={'right'}
       value={SKIP_SECONDS}
     />
@@ -30,7 +48,7 @@ const RunningWorkoutScreenFooterComponent = () => {
     <AppRoundedButtons
       isRunning={isRunning}
       onPlay={resume}
-      onPause={() => pause()}
+      onPause={handlePause}
       leftButton={prevButtonElement}
       rightButton={nextButtonElement}
     />

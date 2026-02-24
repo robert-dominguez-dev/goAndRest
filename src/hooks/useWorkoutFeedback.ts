@@ -48,7 +48,7 @@ export const useWorkoutFeedback = ({
 
     if (currentPhase !== lastPhaseRef.current) {
       vibrate('PHASE_START');
-      playWorkoutSoundByKey(currentPhase);
+      void playWorkoutSoundByKey(currentPhase);
       lastPhaseRef.current = currentPhase;
     }
 
@@ -72,12 +72,12 @@ export const useWorkoutFeedback = ({
       if (isFirstFeedbackInCurrentSecond) {
         if (isInCountdownRange) {
           vibrate('COUNTDOWN');
-          playWorkoutSoundByKey(remainingSeconds);
+          void playWorkoutSoundByKey(remainingSeconds);
         }
 
         if (isInMiddle) {
           vibrate('HALF_OF_PHASE');
-          playWorkoutSoundByKey('half');
+          void playWorkoutSoundByKey('half');
         }
 
         lastSecondRef.current = remainingSeconds;

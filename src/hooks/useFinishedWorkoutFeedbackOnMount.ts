@@ -15,7 +15,7 @@ export const useFinishedWorkoutFeedbackOnMount = () => {
     }
 
     vibrate('WORKOUT_FINISH');
-    playWorkoutSoundByKey('finish');
+    void playWorkoutSoundByKey('finish');
 
     didAlreadyMakeFeedbackRef.current = true;
 
