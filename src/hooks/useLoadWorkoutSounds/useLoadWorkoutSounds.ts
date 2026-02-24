@@ -11,6 +11,20 @@ import { useAppLanguage } from '../../contexts/AppLanguageProvider/AppLanguagePr
 import { getCurrentWorkoutSoundFileNames } from './helpers/getCurrentWorkoutSoundFileNames.ts';
 import { releaseWorkoutSounds } from './helpers/releaseWorkoutSounds.ts';
 import { getLoadedCurrentWorkoutSounds } from './helpers/getLoadedCurrentWorkoutSounds.ts';
+import { WorkoutSoundFeedback } from '../../components/navigation/AppNavigator/screens/SettingsScreen/constants.tsx';
+import Sound from 'react-native-sound';
+
+type AppAudioSessionMode = 'Default' | 'SpokenAudio';
+
+const soundFeedbackToAudioMode: Record<
+  WorkoutSoundFeedback,
+  AppAudioSessionMode
+> = {
+  [WorkoutSoundFeedback.voice]: 'SpokenAudio',
+  [WorkoutSoundFeedback.character]: 'SpokenAudio',
+  [WorkoutSoundFeedback.sound]: 'Default',
+  [WorkoutSoundFeedback.none]: 'Default',
+};
 
 export const useLoadWorkoutSounds = () => {
   const { language } = useAppLanguage();
@@ -21,6 +35,14 @@ export const useLoadWorkoutSounds = () => {
   const characterVariant = useAtomValue(characterVariantSettingAtom);
 
   const setWorkoutLoadedSounds = useSetAtom(workoutLoadedSoundsAtom);
+
+  useEffect(() => {
+    Sound.setCategory('Ambient', true);
+  }, []);
+
+  useEffect(() => {
+    Sound.setMode(soundFeedbackToAudioMode[soundFeedback]);
+  }, [soundFeedback]);
 
   useEffect(() => {
     setWorkoutLoadedSounds(prevLoadedSounds => {
