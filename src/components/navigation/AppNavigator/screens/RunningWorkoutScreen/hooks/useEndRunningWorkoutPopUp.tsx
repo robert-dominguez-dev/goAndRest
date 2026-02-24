@@ -1,22 +1,14 @@
 import { useAppTranslation } from '../../../../../../locales/hooks/useAppTranslation.ts';
 import { useAppPopUp } from '../../../../../common/AppPopUp/hooks/useAppPopUp.tsx';
-import { useRootStackNavigation } from '../../../../hooks/useRootStackNavigation.ts';
 import { useWorkoutTimer } from '../../../../../../hooks/useWorkoutTimer.ts';
-import { AppNavigatorScreen } from '../../../types.ts';
+import { useFinishWorkout } from '../../../../hooks/useFinishWorkout.ts';
 
 export const useEndRunningWorkoutPopUp = () => {
   const t = useAppTranslation();
 
-  const navigation = useRootStackNavigation();
+  const { resume, pause } = useWorkoutTimer();
 
-  const { resume, pause, stop } = useWorkoutTimer();
-
-  const handleStop = () => {
-    stop();
-    navigation.reset({
-      routes: [{ name: AppNavigatorScreen.LandingScreen }],
-    });
-  };
+  const finishWorkout = useFinishWorkout();
 
   const { popUp, onOpen } = useAppPopUp({
     title: t('screens.runningWorkoutScreen.endWorkoutPopUp.title'),
@@ -25,7 +17,7 @@ export const useEndRunningWorkoutPopUp = () => {
       label: t(
         'screens.runningWorkoutScreen.endWorkoutPopUp.positiveButtonLabel',
       ),
-      onPress: handleStop,
+      onPress: finishWorkout,
       backgroundColorStatus: 'negative',
     },
     secondaryButtonProps: {

@@ -1,8 +1,12 @@
 import { useEffect, useRef } from 'react';
 import { useAppVibrations } from './useAppVibrations.ts';
 import { usePlayWorkoutSoundByKey } from './usePlayWorkoutSoundByKey.ts';
+import { useAtomValue } from 'jotai';
+import { runningWorkoutStateAtom } from '../contexts/atoms.ts';
 
 export const useFinishedWorkoutFeedbackOnMount = () => {
+  const persistedState = useAtomValue(runningWorkoutStateAtom);
+
   const { vibrate, stopVibration } = useAppVibrations();
 
   const playWorkoutSoundByKey = usePlayWorkoutSoundByKey();
@@ -10,7 +14,12 @@ export const useFinishedWorkoutFeedbackOnMount = () => {
   const didAlreadyMakeFeedbackRef = useRef<boolean>(false);
 
   useEffect(() => {
-    if (didAlreadyMakeFeedbackRef.current) {
+    /**
+     * It's mount also on running workout screen,
+     * so we need an additional check,
+     * that the `persistedState` is null...
+     */
+    if (didAlreadyMakeFeedbackRef.current || !!persistedState) {
       return undefined;
     }
 

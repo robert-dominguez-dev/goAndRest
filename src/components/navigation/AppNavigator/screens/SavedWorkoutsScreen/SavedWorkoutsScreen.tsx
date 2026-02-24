@@ -8,7 +8,7 @@ import { SavedWorkoutItem } from './components/SavedWorkoutItem.tsx';
 import { AppView } from '../../../../common/AppView/AppView.tsx';
 import { AppStoredWorkout } from '../../../../../contexts/AppWorkoutsProvider/types.ts';
 import { useDeleteWorkoutPopUp } from './hooks/useDeleteWorkoutPopUp.ts';
-import { useWorkoutTimer } from '../../../../../hooks/useWorkoutTimer.ts';
+import { useStartWorkout } from '../../../hooks/useStartWorkout.ts';
 
 type SavedWorkoutsScreenProps = ScreenProps<
   AppNavigatorScreenParams,
@@ -22,16 +22,14 @@ export const SavedWorkoutsScreen = ({
 
   const { storedWorkouts } = useAppWorkouts();
 
-  const { start } = useWorkoutTimer();
+  const startWorkout = useStartWorkout();
 
   const { popUp, handleDeleteWorkout } = useDeleteWorkoutPopUp();
 
-  const handleStartWorkout = ({ config, meta: { name } }: AppStoredWorkout) => {
-    start({ workoutName: name, ...config });
-    navigation.reset({
-      routes: [{ name: AppNavigatorScreen.RunningWorkoutScreen }],
-    });
-  };
+  const handleStartWorkout = async ({
+    config,
+    meta: { name },
+  }: AppStoredWorkout) => startWorkout({ workoutName: name, ...config });
 
   const storedWorkoutItemElements = storedWorkouts.map(workout => (
     <SavedWorkoutItem

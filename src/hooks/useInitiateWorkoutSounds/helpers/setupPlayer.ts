@@ -5,16 +5,14 @@ import TrackPlayer, {
   IOSCategoryOptions,
 } from 'react-native-track-player';
 import { Event } from 'react-native-track-player/lib/src/constants/Event';
+import { clearAndResetTrackPlayer } from './clearAndResetTrackPlayer.ts';
 
 export const PlaybackService = async function () {
-  TrackPlayer.addEventListener(Event.PlaybackQueueEnded, async () => {
-    try {
-      await TrackPlayer.reset();
-      console.log('Queue reset after playback.');
-    } catch (error) {
-      console.error('Auto-reset error:', error);
-    }
-  });
+  TrackPlayer.addEventListener(Event.PlaybackQueueEnded, () =>
+    clearAndResetTrackPlayer()
+      .then(() => console.log('Queue reset after playback.'))
+      .catch(error => console.error('Auto-reset error:', error)),
+  );
   TrackPlayer.addEventListener(Event.RemotePlay, () => TrackPlayer.play());
   TrackPlayer.addEventListener(Event.RemotePause, () => TrackPlayer.pause());
 };

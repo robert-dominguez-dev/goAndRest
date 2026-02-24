@@ -80,3 +80,5 @@ export const finishedWorkoutStatsAtom = atom<WorkoutTimerPersistedState | null>(
 export const workoutSoundFilePathsAtom = atom<WorkoutSoundFilePaths | null>(
   null,
 );
+
+export const isMutedAtom = atom<boolean>(false);

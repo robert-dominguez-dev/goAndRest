@@ -1,5 +1,5 @@
 import { AppScreenLayout } from '../../../../common/AppScreenLayout.tsx';
-import { X } from 'lucide-react-native';
+import { LucideIcon, Volume2, VolumeX, X } from 'lucide-react-native';
 import { useAppTranslation } from '../../../../../locales/hooks/useAppTranslation.ts';
 import { RunningWorkoutScreenFooter } from './components/RunningWorkoutScreenFooter.tsx';
 import { useEndRunningWorkoutPopUp } from './hooks/useEndRunningWorkoutPopUp.tsx';
@@ -14,6 +14,9 @@ import { AppNavigatorScreen, AppNavigatorScreenParams } from '../../types.ts';
 import { RunningWorkoutIndicatorsContent } from './components/RunningWorkoutIndicatorsContent.tsx';
 import { useWorkoutFeedback } from '../../../../../hooks/useWorkoutFeedback.ts';
 import { FinishedWorkoutScreen } from '../FinishedWorkoutScreen/FinishedWorkoutScreen.tsx';
+import { isMutedAtom } from '../../../../../contexts/atoms.ts';
+import { useAtom } from 'jotai';
+import TrackPlayer from 'react-native-track-player';
 
 const INDICATOR_STROKE_WIDTH = 16;
 
@@ -34,6 +37,8 @@ export const RunningWorkoutScreen = ({
   navigation,
 }: RunningWorkoutScreenProps) => {
   const t = useAppTranslation();
+
+  const [isMuted, setIsMuted] = useAtom(isMutedAtom);
 
   const appColors = useAppThemedColors();
 
@@ -78,13 +83,25 @@ export const RunningWorkoutScreen = ({
 
   const maxValue = phaseRemainingMs + phaseElapsedMs;
 
+  const VolumeIconComponent: LucideIcon = isMuted ? VolumeX : Volume2;
+
+  const toggleMuted = () =>
+    setIsMuted(prev => {
+      const shouldBeMuted = !prev;
+      const volume: number = shouldBeMuted ? 0 : 1;
+      void TrackPlayer.setVolume(volume);
+      return shouldBeMuted;
+    });
+
   return (
     <>
       <AppScreenLayout
         headerTitle={headerTitle}
         footer={footerElement}
         HeaderAccessoryLeftIconComponent={X}
-        onHeaderAccessoryLeftPress={openEndWorkoutPopUp}>
+        onHeaderAccessoryLeftPress={openEndWorkoutPopUp}
+        HeaderAccessoryRightIconComponent={VolumeIconComponent}
+        onHeaderAccessoryRightPress={toggleMuted}>
         <AppView
           alignItems={'center'}
           justifyContent={'center'}>

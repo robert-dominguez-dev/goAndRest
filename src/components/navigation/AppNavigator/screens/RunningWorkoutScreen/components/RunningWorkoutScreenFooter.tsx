@@ -3,15 +3,16 @@ import { AppRoundedButtons } from '../../../../../common/AppRoundedButtons/AppRo
 import { RunningWorkoutSkipButton } from './RunningWorkoutSkipButton.tsx';
 import { useWorkoutTimer } from '../../../../../../hooks/useWorkoutTimer.ts';
 import { ONE_SECOND_MS } from '../../../../../../constants/common.ts';
-import {
-  clearWorkoutSoundsQueue
-} from '../../../../../../hooks/useInitiateWorkoutSounds/helpers/clearWorkoutSoundsQueue.ts';
+import { clearWorkoutSoundsQueue } from '../../../../../../hooks/useInitiateWorkoutSounds/helpers/clearWorkoutSoundsQueue.ts';
+import { useHandleAppInBackgroundDuringWorkout } from '../../../../../../hooks/useHandleAppInBackgroundDuringWorkout.ts';
 
 const SKIP_SECONDS = 15;
 const SKIP_MS = SKIP_SECONDS * ONE_SECOND_MS;
 
 const RunningWorkoutScreenFooterComponent = () => {
   const { resume, pause, skip, isRunning } = useWorkoutTimer();
+
+  useHandleAppInBackgroundDuringWorkout(pause);
 
   const handlePause = async () => {
     await clearWorkoutSoundsQueue();

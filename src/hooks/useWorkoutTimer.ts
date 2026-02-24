@@ -14,7 +14,6 @@ import {
 } from '../components/navigation/AppNavigator/screens/RunningWorkoutScreen/types.ts';
 import { calculateCurrentWorkoutState } from '../helpers/calculateCurrentWorkoutState.ts';
 import { getNumber } from '../helpers/getNumber.ts';
-import { usePauseWorkoutInBackgroundConditionally } from './usePauseWorkoutInBackgroundConditionally.ts';
 import { AppWorkoutFieldValues } from '../contexts/AppWorkoutsProvider/types.ts';
 import { calculateSkipState } from '../helpers/calculateSkipState.ts';
 
@@ -141,8 +140,6 @@ export const useWorkoutTimer = (onFinish?: () => void) => {
     persistedState && computedState
       ? { ...persistedState, ...computedState }
       : null;
-
-  usePauseWorkoutInBackgroundConditionally(pause);
 
   return {
     currentState,

@@ -1,8 +1,6 @@
 import { AppScreenLayout } from '../../../../common/AppScreenLayout.tsx';
 import { AppView } from '../../../../common/AppView/AppView.tsx';
 import { AppButton } from '../../../../controls/AppButton/AppButton.tsx';
-import { AppNavigatorScreen } from '../../types.ts';
-import { useRootStackNavigation } from '../../../hooks/useRootStackNavigation.ts';
 import { useAppTranslation } from '../../../../../locales/hooks/useAppTranslation.ts';
 import { useBySoundFeedbackSettings } from '../../../hooks/useBySoundFeedbackSettings.ts';
 import {
@@ -18,6 +16,7 @@ import { finishedWorkoutStatsAtom } from '../../../../../contexts/atoms.ts';
 import { getNumber } from '../../../../../helpers/getNumber.ts';
 import { FullScreenConfettiAnimation } from '../../../../common/FullScreenConfettiAnimation.tsx';
 import { useFinishedWorkoutFeedbackOnMount } from '../../../../../hooks/useFinishedWorkoutFeedbackOnMount.ts';
+import { useFinishWorkout } from '../../../hooks/useFinishWorkout.ts';
 
 export const FinishedWorkoutScreen = () => {
   useFinishedWorkoutFeedbackOnMount();
@@ -40,16 +39,7 @@ export const FinishedWorkoutScreen = () => {
     ...characterVariantToFinishWorkoutScreenTranslateKeys,
   });
 
-  const navigation = useRootStackNavigation();
-
-  const goToLandingScreen = () =>
-    navigation.reset({
-      routes: [
-        {
-          name: AppNavigatorScreen.LandingScreen,
-        },
-      ],
-    });
+  const finishWorkout = useFinishWorkout();
 
   return (
     <>
@@ -58,7 +48,7 @@ export const FinishedWorkoutScreen = () => {
         footer={
           <AppButton
             label={t(buttonLabelKey)}
-            onPress={goToLandingScreen}
+            onPress={finishWorkout}
           />
         }>
         <AppView gap={'l'}>
