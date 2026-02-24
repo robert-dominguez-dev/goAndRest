@@ -4,7 +4,8 @@ import {
   WorkoutTimerState,
 } from '../components/navigation/AppNavigator/screens/RunningWorkoutScreen/types.ts';
 import { ONE_SECOND_MS } from '../constants/common.ts';
-import { useAppVibrations, VibrationPattern } from './useAppVibrations.ts';
+import { useAppVibrations } from './useAppVibrations.ts';
+import { getWorkoutSoundByKey } from '../helpers/getWorkoutSoundByKey.ts';
 
 const COUNTDOWN_THRESHOLD_SECONDS = 5;
 
@@ -45,6 +46,8 @@ export const useWorkoutFeedback = ({
 
     if (currentPhase !== lastPhaseRef.current) {
       vibrate('PHASE_START');
+      const phaseSound = getWorkoutSoundByKey(currentPhase);
+      phaseSound?.play();
       lastPhaseRef.current = currentPhase;
     }
 
@@ -66,11 +69,18 @@ export const useWorkoutFeedback = ({
         remainingSeconds !== lastSecondRef.current;
 
       if (isFirstFeedbackInCurrentSecond) {
-        const vibrationPattern: VibrationPattern = isInMiddle
-          ? 'HALF_OF_PHASE'
-          : 'COUNTDOWN';
+        if (isInCountdownRange) {
+          vibrate('COUNTDOWN');
+          const countdownSound = getWorkoutSoundByKey(remainingSeconds);
+          countdownSound?.play();
+        }
 
-        vibrate(vibrationPattern);
+        if (isInMiddle) {
+          vibrate('HALF_OF_PHASE');
+          const halfSound = getWorkoutSoundByKey('half');
+          halfSound?.play();
+        }
+
         lastSecondRef.current = remainingSeconds;
       }
     } else {

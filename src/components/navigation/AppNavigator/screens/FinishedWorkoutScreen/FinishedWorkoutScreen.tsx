@@ -17,10 +17,10 @@ import { useAtomValue } from 'jotai';
 import { finishedWorkoutStatsAtom } from '../../../../../contexts/atoms.ts';
 import { getNumber } from '../../../../../helpers/getNumber.ts';
 import { FullScreenConfettiAnimation } from '../../../../common/FullScreenConfettiAnimation.tsx';
-import { useVibrateOnMount } from '../../../../../hooks/useVibrateOnMount.ts';
+import { useFinishedWorkoutFeedbackOnMount } from '../../../../../hooks/useFinishedWorkoutFeedbackOnMount.ts';
 
 export const FinishedWorkoutScreen = () => {
-  useVibrateOnMount('WORKOUT_FINISH');
+  useFinishedWorkoutFeedbackOnMount();
 
   const t = useAppTranslation();
 

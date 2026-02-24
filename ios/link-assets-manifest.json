@@ -30,40 +30,76 @@
       "sha1": "ad26fc581156fee4f83113df5189016ac72a484b"
     },
     {
-      "path": "src/assets/images/voices/calmFemale.png",
-      "sha1": "f1758726dfc34b55a819043cdaab3fba9ed6fd0c"
+      "path": "src/assets/audio/characters/cyborg/cs/cyborg_cs_cooldown.mp3",
+      "sha1": "3420fb3d873679b6cc3f768d3ace55d67c18fd71"
     },
     {
-      "path": "src/assets/images/voices/coachFemale.png",
-      "sha1": "b933e1b63aa7b8ae19a8d9820331a5aae9572f11"
+      "path": "src/assets/audio/characters/cyborg/cs/cyborg_cs_4.mp3",
+      "sha1": "216b83f81c74a20f092b1fb8aeac402167ee2681"
     },
     {
-      "path": "src/assets/images/voices/calmMale.png",
-      "sha1": "5b1603e0063b5a5673b4c8d818830d6dc7786aa5"
+      "path": "src/assets/audio/characters/cyborg/cs/cyborg_cs_5.mp3",
+      "sha1": "ace926d2efab21bf9130c141393c1ff83fe97ecf"
     },
     {
-      "path": "src/assets/images/voices/coachMale.png",
-      "sha1": "4c743fa28c2b382376d26513b98ec4f379c39492"
+      "path": "src/assets/audio/characters/cyborg/cs/cyborg_cs_7.mp3",
+      "sha1": "1a426831d7dcdae36c567d94b97e40e71a064d75"
     },
     {
-      "path": "src/assets/images/voices/friendMale.png",
-      "sha1": "98d268e13c63a13c60997f48ae0fb86d807500f6"
+      "path": "src/assets/audio/characters/cyborg/cs/cyborg_cs_6.mp3",
+      "sha1": "f571511e2ed996c418242f27046e68b011836301"
     },
     {
-      "path": "src/assets/images/voices/friendFemale.png",
-      "sha1": "b96e29bd3ff2c9de66e8a25bc42f109da5f05cdb"
+      "path": "src/assets/audio/characters/cyborg/cs/cyborg_cs_recovery.mp3",
+      "sha1": "b0f0a00c36bd1607ef05151899879f22db33b0e3"
     },
     {
-      "path": "src/assets/images/characters/wizard.png",
-      "sha1": "0e41547c5c3c73f4699a8b9b806f0e461173b890"
+      "path": "src/assets/audio/characters/cyborg/cs/cyborg_cs_2.mp3",
+      "sha1": "1b6c68ff7d127996f2d2eaec9ff3ce38a9290997"
     },
     {
-      "path": "src/assets/images/characters/warrior.png",
-      "sha1": "b4dc091a7df67094ab4f7fce1ea2d2139580b4fe"
+      "path": "src/assets/audio/characters/cyborg/cs/cyborg_cs_3.mp3",
+      "sha1": "94b35248532e21ec4556cc0ad9bc156baea78449"
     },
     {
-      "path": "src/assets/images/characters/cyborg.png",
-      "sha1": "c6616279442eebf0a1f9576104ab820b4a74c8b4"
+      "path": "src/assets/audio/characters/cyborg/cs/cyborg_cs_1.mp3",
+      "sha1": "1aa7cda2b0becbd42d81800b93ae9d16c9106596"
+    },
+    {
+      "path": "src/assets/audio/characters/cyborg/cs/cyborg_cs_work.mp3",
+      "sha1": "47ed6470019f99626891804a760ce8c5c1500c2d"
+    },
+    {
+      "path": "src/assets/audio/characters/cyborg/cs/cyborg_cs_finish.mp3",
+      "sha1": "9f8aedd2b9eff339e36019e4161cfe272c4620f6"
+    },
+    {
+      "path": "src/assets/audio/characters/cyborg/cs/cyborg_cs_warmup.mp3",
+      "sha1": "d8499d226aac6271879f1340661da18cca2efdbf"
+    },
+    {
+      "path": "src/assets/audio/characters/cyborg/cs/cyborg_cs_rest.mp3",
+      "sha1": "0300f3228e1310ef131a9cf90a071c69e63efcce"
+    },
+    {
+      "path": "src/assets/audio/characters/cyborg/cs/cyborg_cs_10.mp3",
+      "sha1": "4385a01d8ed29424fce3d6f10fe77a9216a3043d"
+    },
+    {
+      "path": "src/assets/audio/characters/cyborg/cs/constants.ts",
+      "sha1": "5084881e37b5bf270309329daedff9ea06dbcf63"
+    },
+    {
+      "path": "src/assets/audio/characters/cyborg/cs/cyborg_cs_half.mp3",
+      "sha1": "8b978ce8cff39652e153bc25809851d5c19e693a"
+    },
+    {
+      "path": "src/assets/audio/characters/cyborg/cs/cyborg_cs_8.mp3",
+      "sha1": "8efe2ab68e0895867631e7ae5317d9c238d3aac0"
+    },
+    {
+      "path": "src/assets/audio/characters/cyborg/cs/cyborg_cs_9.mp3",
+      "sha1": "432642296b95051054b0bdba207f1e8b32a706f4"
     },
     {
       "path": "src/assets/animations/thinking_owl.riv",
