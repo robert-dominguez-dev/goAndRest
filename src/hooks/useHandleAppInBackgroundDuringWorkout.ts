@@ -3,7 +3,7 @@ import { AppState, AppStateStatus } from 'react-native';
 import { useAtomValue } from 'jotai';
 import { keepTimerInBackgroundSettingAtom } from '../contexts/atoms';
 import { noop } from '../helpers/noop.ts';
-import { clearAndResetTrackPlayer } from './useInitiateWorkoutSounds/helpers/clearAndResetTrackPlayer.ts';
+import { stopAndResetTrackPlayer } from './useInitiateWorkoutSounds/helpers/stopAndResetTrackPlayer.ts';
 
 /**
  * Hook to handle application state changes (background/foreground).
@@ -19,7 +19,7 @@ export const useHandleAppInBackgroundDuringWorkout = (pause: () => void) => {
      */
     const handleAppStateChange = (nextAppState: AppStateStatus) => {
       const handleInactiveState = () => {
-        void clearAndResetTrackPlayer();
+        void stopAndResetTrackPlayer();
 
         if (!keepTimerInBackground) {
           pause();

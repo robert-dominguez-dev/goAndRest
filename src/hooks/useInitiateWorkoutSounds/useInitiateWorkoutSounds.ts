@@ -11,7 +11,7 @@ import { useAppLanguage } from '../../contexts/AppLanguageProvider/AppLanguagePr
 import { getCurrentWorkoutSoundFilePaths } from './helpers/getCurrentWorkoutSoundFilePaths.ts';
 import TrackPlayer from 'react-native-track-player';
 import { PlaybackService, setupPlayer } from './helpers/setupPlayer.ts';
-import { clearAndResetTrackPlayer } from './helpers/clearAndResetTrackPlayer.ts';
+import { stopAndResetTrackPlayer } from './helpers/stopAndResetTrackPlayer.ts';
 
 TrackPlayer.registerPlaybackService(() => PlaybackService);
 void setupPlayer();
@@ -27,7 +27,7 @@ export const useInitiateWorkoutSounds = () => {
   const setWorkoutSoundFilePaths = useSetAtom(workoutSoundFilePathsAtom);
 
   useEffect(() => {
-    void clearAndResetTrackPlayer();
+    void stopAndResetTrackPlayer();
 
     const paths = getCurrentWorkoutSoundFilePaths(
       soundFeedback,

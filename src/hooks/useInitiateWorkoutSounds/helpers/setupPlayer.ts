@@ -5,11 +5,11 @@ import TrackPlayer, {
   IOSCategoryOptions,
 } from 'react-native-track-player';
 import { Event } from 'react-native-track-player/lib/src/constants/Event';
-import { clearAndResetTrackPlayer } from './clearAndResetTrackPlayer.ts';
+import { stopAndResetTrackPlayer } from './stopAndResetTrackPlayer.ts';
 
 export const PlaybackService = async function () {
   TrackPlayer.addEventListener(Event.PlaybackQueueEnded, () =>
-    clearAndResetTrackPlayer()
+    stopAndResetTrackPlayer()
       .then(() => console.log('Queue reset after playback.'))
       .catch(error => console.error('Auto-reset error:', error)),
   );

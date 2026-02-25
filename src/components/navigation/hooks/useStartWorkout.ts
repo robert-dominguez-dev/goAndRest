@@ -2,7 +2,7 @@ import { useWorkoutTimer } from '../../../hooks/useWorkoutTimer.ts';
 import { AppWorkoutFieldValues } from '../../../contexts/AppWorkoutsProvider/types.ts';
 import { useRootStackNavigation } from './useRootStackNavigation.ts';
 import { AppNavigatorScreen } from '../AppNavigator/types.ts';
-import { clearAndResetTrackPlayer } from '../../../hooks/useInitiateWorkoutSounds/helpers/clearAndResetTrackPlayer.ts';
+import { stopAndResetTrackPlayer } from '../../../hooks/useInitiateWorkoutSounds/helpers/stopAndResetTrackPlayer.ts';
 
 export const useStartWorkout = () => {
   const { start } = useWorkoutTimer();
@@ -10,7 +10,7 @@ export const useStartWorkout = () => {
   const navigation = useRootStackNavigation();
 
   return (appWorkout: AppWorkoutFieldValues) => {
-    void clearAndResetTrackPlayer();
+    void stopAndResetTrackPlayer();
     start(appWorkout);
     navigation.reset({
       routes: [{ name: AppNavigatorScreen.RunningWorkoutScreen }],

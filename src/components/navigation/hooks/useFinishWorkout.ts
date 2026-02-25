@@ -1,7 +1,7 @@
 import { useWorkoutTimer } from '../../../hooks/useWorkoutTimer.ts';
 import { useRootStackNavigation } from './useRootStackNavigation.ts';
 import { AppNavigatorScreen } from '../AppNavigator/types.ts';
-import { clearAndResetTrackPlayer } from '../../../hooks/useInitiateWorkoutSounds/helpers/clearAndResetTrackPlayer.ts';
+import { stopAndResetTrackPlayer } from '../../../hooks/useInitiateWorkoutSounds/helpers/stopAndResetTrackPlayer.ts';
 
 export const useFinishWorkout = () => {
   const { stop } = useWorkoutTimer();
@@ -9,7 +9,7 @@ export const useFinishWorkout = () => {
   const navigation = useRootStackNavigation();
 
   return () => {
-    void clearAndResetTrackPlayer();
+    void stopAndResetTrackPlayer();
     stop();
     navigation.reset({
       routes: [{ name: AppNavigatorScreen.LandingScreen }],
