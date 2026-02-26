@@ -32,6 +32,11 @@ export const cooldownSettingAtom = createAsyncAtom<number>(
   0,
 );
 
+export const countdownSettingAtom = createAsyncAtom<number>(
+  AsyncStorageKey.COUNTDOWN_DURATION_SETTING,
+  5,
+);
+
 export const keepTimerInBackgroundSettingAtom = createAsyncAtom<boolean>(
   AsyncStorageKey.TIMER_IN_BACKGROUND_SETTING,
   true,

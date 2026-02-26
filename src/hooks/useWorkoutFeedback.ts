@@ -6,13 +6,8 @@ import {
 import { ONE_SECOND_MS } from '../constants/common.ts';
 import { useAppVibrations } from './useAppVibrations.ts';
 import { usePlayWorkoutSoundByKey } from './usePlayWorkoutSoundByKey.ts';
-
-const COUNTDOWN_THRESHOLD_SECONDS = 5;
-
-const MIDDLE_PHASE_HAPTIC_FEEDBACK_THRESHOLD_SECONDS = Math.max(
-  30,
-  COUNTDOWN_THRESHOLD_SECONDS * 3,
-);
+import { countdownSettingAtom } from '../contexts/atoms.ts';
+import { useAtomValue } from 'jotai';
 
 type UseWorkoutFeedbackParams = Partial<
   Pick<
@@ -29,6 +24,8 @@ export const useWorkoutFeedback = ({
   phaseElapsedMs,
   isRunning,
 }: UseWorkoutFeedbackParams) => {
+  const countdownFrom = useAtomValue(countdownSettingAtom);
+
   const { vibrate } = useAppVibrations();
 
   const playWorkoutSoundByKey = usePlayWorkoutSoundByKey();
@@ -58,14 +55,16 @@ export const useWorkoutFeedback = ({
 
     const secondInTheMiddle = Math.ceil(totalSeconds / 2);
 
-    const isInMiddle: boolean =
-      totalSeconds >= MIDDLE_PHASE_HAPTIC_FEEDBACK_THRESHOLD_SECONDS &&
+    const phaseInMiddleFeedbackThreshold = Math.max(30, countdownFrom * 3);
+
+    const isEligibleForMiddleFeedback: boolean =
+      totalSeconds >= phaseInMiddleFeedbackThreshold &&
       secondInTheMiddle === remainingSeconds;
 
     const isInCountdownRange: boolean =
-      remainingSeconds >= 1 && remainingSeconds <= COUNTDOWN_THRESHOLD_SECONDS;
+      remainingSeconds >= 1 && remainingSeconds <= countdownFrom;
 
-    if (isInCountdownRange || isInMiddle) {
+    if (isInCountdownRange || isEligibleForMiddleFeedback) {
       const isFirstFeedbackInCurrentSecond =
         remainingSeconds !== lastSecondRef.current;
 
@@ -75,7 +74,7 @@ export const useWorkoutFeedback = ({
           void playWorkoutSoundByKey(remainingSeconds);
         }
 
-        if (isInMiddle) {
+        if (isEligibleForMiddleFeedback) {
           vibrate('HALF_OF_PHASE');
           void playWorkoutSoundByKey('half');
         }
@@ -85,5 +84,5 @@ export const useWorkoutFeedback = ({
     } else {
       lastSecondRef.current = undefined;
     }
-  }, [currentPhase, phaseRemainingMs, isRunning]);
+  }, [currentPhase, phaseRemainingMs, isRunning, countdownFrom]);
 };

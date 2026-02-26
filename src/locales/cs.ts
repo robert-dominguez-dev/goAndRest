@@ -211,9 +211,9 @@ export const cs = {
           warrior:
             'Tak to byla řež. Není nad pořádný nářez! Jen tak dál, bojovníku!',
           cyborg:
-            'Hardwarové limity posunuty. Systémová integrita na maximu. Software aktualizován na novou verzi.',
+            'Hardwarové limity posunuty. Systémová integrita na maximu. Software aktualizován na nejnovější verzi.',
           wizard:
-            'Moudrá volba. Tato upřímná námaha těla upevnila tvého ducha i schránku mocněji, než by to svedly jakékoliv čáry.',
+            'Tvá vůle a vytrvalost dnes potvrdily, že jsi mnohem víc než pouhá hmota.',
         },
       },
       stats: {

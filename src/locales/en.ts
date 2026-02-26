@@ -215,7 +215,7 @@ export const en = {
           cyborg:
             'Hardware limits pushed. System integrity at maximum. Software updated to new version.',
           wizard:
-            'A wise choice. This honest labor of the body has fortified your spirit and vessel more powerfully than any magic could.',
+            'Your will and endurance have proven today that you are much more than mere matter.',
         },
       },
       stats: {

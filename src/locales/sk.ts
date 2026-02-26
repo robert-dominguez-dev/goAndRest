@@ -214,7 +214,7 @@ export const sk = {
           cyborg:
             'Hardvérové limity posunuté. Systémová integrita na maxime. Softvér aktualizovaný na novú verziu.',
           wizard:
-            'Múdra voľba. Táto úprimná námaha tela upevnila tvojho ducha i schránku mocnejšie, než by to zmohli akékoľvek čary.',
+            'Tvoja vôľa a vytrvalosť dnes potvrdili, že si oveľa viac než len pouhá hmota.',
         },
       },
       stats: {
