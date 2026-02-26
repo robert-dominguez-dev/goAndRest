@@ -8,6 +8,11 @@ import { useAppVibrations } from './useAppVibrations.ts';
 import { usePlayWorkoutSoundByKey } from './usePlayWorkoutSoundByKey.ts';
 import { countdownSettingAtom } from '../contexts/atoms.ts';
 import { useAtomValue } from 'jotai';
+import clamp from 'lodash/clamp';
+
+const CONSIDERED_SHORT_PHASE_DURATION_THRESHOLD = 10;
+const PHASE_DURATION_TO_MAX_COUNTDOWN_DURATION_OFFSET = 5;
+const MIN_PHASE_DURATION_TO_HAVE_MIDDLE_FEEDBACK = 30;
 
 type UseWorkoutFeedbackParams = Partial<
   Pick<
@@ -43,26 +48,38 @@ export const useWorkoutFeedback = ({
       return undefined;
     }
 
-    if (currentPhase !== lastPhaseRef.current) {
-      vibrate('PHASE_START');
-      void playWorkoutSoundByKey(currentPhase);
-      lastPhaseRef.current = currentPhase;
-    }
-
     const remainingSeconds = Math.ceil(phaseRemainingMs / ONE_SECOND_MS);
     const elapsedSeconds = Math.ceil(phaseElapsedMs / ONE_SECOND_MS);
     const totalSeconds = remainingSeconds + elapsedSeconds;
 
-    const secondInTheMiddle = Math.ceil(totalSeconds / 2);
+    const isShortPhase =
+      totalSeconds < CONSIDERED_SHORT_PHASE_DURATION_THRESHOLD;
 
-    const phaseInMiddleFeedbackThreshold = Math.max(30, countdownFrom * 3);
+    if (currentPhase !== lastPhaseRef.current) {
+      vibrate('PHASE_START');
+      void playWorkoutSoundByKey(currentPhase, isShortPhase);
+      lastPhaseRef.current = currentPhase;
+    }
+
+    const exactSecondInTheMiddle = Math.ceil(totalSeconds / 2);
+
+    const countdownFromEvaluated = clamp(
+      totalSeconds - PHASE_DURATION_TO_MAX_COUNTDOWN_DURATION_OFFSET,
+      0,
+      countdownFrom,
+    );
+
+    const phaseInMiddleFeedbackThreshold = Math.max(
+      MIN_PHASE_DURATION_TO_HAVE_MIDDLE_FEEDBACK,
+      countdownFromEvaluated * 3,
+    );
 
     const isEligibleForMiddleFeedback: boolean =
       totalSeconds >= phaseInMiddleFeedbackThreshold &&
-      secondInTheMiddle === remainingSeconds;
+      exactSecondInTheMiddle === remainingSeconds;
 
     const isInCountdownRange: boolean =
-      remainingSeconds >= 1 && remainingSeconds <= countdownFrom;
+      remainingSeconds >= 1 && remainingSeconds <= countdownFromEvaluated;
 
     if (isInCountdownRange || isEligibleForMiddleFeedback) {
       const isFirstFeedbackInCurrentSecond =
@@ -71,12 +88,12 @@ export const useWorkoutFeedback = ({
       if (isFirstFeedbackInCurrentSecond) {
         if (isInCountdownRange) {
           vibrate('COUNTDOWN');
-          void playWorkoutSoundByKey(remainingSeconds);
+          void playWorkoutSoundByKey(remainingSeconds, isShortPhase);
         }
 
         if (isEligibleForMiddleFeedback) {
           vibrate('HALF_OF_PHASE');
-          void playWorkoutSoundByKey('half');
+          void playWorkoutSoundByKey('half', isShortPhase);
         }
 
         lastSecondRef.current = remainingSeconds;
@@ -84,5 +101,11 @@ export const useWorkoutFeedback = ({
     } else {
       lastSecondRef.current = undefined;
     }
-  }, [currentPhase, phaseRemainingMs, isRunning, countdownFrom]);
+  }, [
+    currentPhase,
+    phaseRemainingMs,
+    phaseElapsedMs,
+    isRunning,
+    countdownFrom,
+  ]);
 };

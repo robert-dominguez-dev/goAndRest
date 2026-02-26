@@ -39,8 +39,46 @@
 		E58A96EAD8544096A963DE50 /* cyborg_cs_warmup.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BDB08565641044CE840F6297 /* cyborg_cs_warmup.mp3 */; };
 		ED837E99D1D84D6284B6D0EA /* BarlowCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F35558F7F9F141358037BB32 /* BarlowCondensed-Light.ttf */; };
 		F795EBC6558A426FAAE915D4 /* loader.riv in Resources */ = {isa = PBXBuildFile; fileRef = 75D6891E9BCF4AFE9E55D8E3 /* loader.riv */; };
-		FB1D697FE6C7436F90920A18 /* constants.ts in Resources */ = {isa = PBXBuildFile; fileRef = 899CADB35DCA4025B5B8AF98 /* constants.ts */; };
 		FB52F62E67ED45939EEFE273 /* confetti.riv in Resources */ = {isa = PBXBuildFile; fileRef = 276BDF320A7942F4874F858D /* confetti.riv */; };
+		8652D05D0B004AB6B8086DA0 /* coach_female_cs_warmup_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2EF12B6674E543399F443E39 /* coach_female_cs_warmup_short.m4a */; };
+		02A769D63F20405794720ED1 /* coach_female_cs_half_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D21F6D1BB5B1486F928F2E07 /* coach_female_cs_half_v1.m4a */; };
+		C4255AA985744D61992CA472 /* coach_female_cs_half_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 55945B4D05DF43CCA0C19F0A /* coach_female_cs_half_v3.m4a */; };
+		621D51DD61D54BD5AB510308 /* coach_female_cs_half_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 19A6930FA655410884C2D851 /* coach_female_cs_half_v2.m4a */; };
+		3594238A178B4A44830DC876 /* coach_female_cs_3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 28C9982E53E54DA7955B1769 /* coach_female_cs_3.m4a */; };
+		84F46A9F45A144B1BE908CD4 /* coach_female_cs_work_v4.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F72E95FECC094B5A9DA31354 /* coach_female_cs_work_v4.m4a */; };
+		9E242F690A4342DCA8A6A3CA /* coach_female_cs_2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 676C606FB22E4115B2C15763 /* coach_female_cs_2.m4a */; };
+		52436248C44C4E52B146E595 /* coach_female_cs_1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4A3F552EB15A4B358C301D73 /* coach_female_cs_1.m4a */; };
+		D0E004B9BBD54770B06992D9 /* coach_female_cs_5.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3D0668139A1648A180818E88 /* coach_female_cs_5.m4a */; };
+		8069EC1928CF4CEF94C5983B /* coach_female_cs_rest_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CED11D7A39E64804B4B62ED5 /* coach_female_cs_rest_v3.m4a */; };
+		631DF1002B214C4D9C0156B4 /* coach_female_cs_work_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B621C4CB6589428785A3735C /* coach_female_cs_work_v2.m4a */; };
+		321B381ED17B45E6B3B798AA /* coach_female_cs_work_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 63AE47E8401C4EB5ADA631F0 /* coach_female_cs_work_v3.m4a */; };
+		3A716759C7634716B407AC9D /* coach_female_cs_rest_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CD3AE2D84B274F4F8F4F63C3 /* coach_female_cs_rest_v2.m4a */; };
+		718C740FF78A43B1904FA318 /* coach_female_cs_recovery_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 07BC77BFD03A48329872EFBB /* coach_female_cs_recovery_v1.m4a */; };
+		208B0CE37C0B42E5AEECBBFC /* coach_female_cs_4.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F54AFB743AF34F7EB4DFFE02 /* coach_female_cs_4.m4a */; };
+		BBF11068B7204E4398980E19 /* coach_female_cs_6.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F37E3FCF05DC4715BD456678 /* coach_female_cs_6.m4a */; };
+		3995C942515A43E68CD39705 /* coach_female_cs_recovery_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = EF47754B5FEB4B08A3AA5ACF /* coach_female_cs_recovery_v3.m4a */; };
+		7B43737ECD3248B5BA7853D6 /* coach_female_cs_work_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 81951B029A2E4220B49F9645 /* coach_female_cs_work_v1.m4a */; };
+		2BA757B06FE243F18B99F311 /* coach_female_cs_rest_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3C718F161B094A979E554169 /* coach_female_cs_rest_v1.m4a */; };
+		0F6EBD65BF704E1A9185EDD5 /* coach_female_cs_recovery_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 54A266102ED84164BA532CEF /* coach_female_cs_recovery_v2.m4a */; };
+		DB55B0AFB27246519C5CEAC5 /* coach_female_cs_7.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8412893E9CB9455B819A3784 /* coach_female_cs_7.m4a */; };
+		0AD5FE4D12A4427F96E2C872 /* coach_female_cs_9.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0B00BEEB146D45BA8E048B34 /* coach_female_cs_9.m4a */; };
+		B764234D25164863B9D041FD /* coach_female_cs_10.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 51914E87606F4EE2B22C9F7A /* coach_female_cs_10.m4a */; };
+		CE876C79A3AD4D6BB2F69161 /* coach_female_cs_cooldown_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B90273F6459449398AF9482A /* coach_female_cs_cooldown_short.m4a */; };
+		6DFF7BB68E9C43B5A01E2C1E /* coach_female_cs_8.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 10C88692FF2F45A88BF3A89A /* coach_female_cs_8.m4a */; };
+		DECDF700393340B6B0ADD333 /* coach_female_cs_finish_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2EA650F4F2F744EAB738BE2E /* coach_female_cs_finish_v2.m4a */; };
+		99F5A0CE719C40F28EAEE142 /* coach_female_cs_warmup_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 33FE5C1A59064026935E8BF2 /* coach_female_cs_warmup_v2.m4a */; };
+		FFC373A30E994B01A47E97C8 /* coach_female_cs_warmup_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = BCF8A71D4EA94657A9663689 /* coach_female_cs_warmup_v3.m4a */; };
+		26FD1F93A91E4ED4ADFB4262 /* coach_female_cs_finish_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FDE3DEEF57AE4A09A07E3391 /* coach_female_cs_finish_v3.m4a */; };
+		FD3057F9B6E644EAA814E099 /* coach_female_cs_warmup_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 121E8917722E4032B3FD918A /* coach_female_cs_warmup_v1.m4a */; };
+		2767968531864752869FE70B /* coach_female_cs_finish_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 11E81C06A3D746A8827CD3C6 /* coach_female_cs_finish_v1.m4a */; };
+		F91AE516026743228336FA4B /* coach_female_cs_rest_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 832F541791614A528A4A1755 /* coach_female_cs_rest_short.m4a */; };
+		C24AAAABAF0F438D8EFE0A78 /* coach_female_cs_recovery_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8252F20087D24D628C1335E2 /* coach_female_cs_recovery_short.m4a */; };
+		343581311ED34F4CAA866A86 /* coach_female_cs_cooldown_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 288725C78A264B7DAE0E92DF /* coach_female_cs_cooldown_v1.m4a */; };
+		D8D63396CB854F8BAA13C2A8 /* coach_female_cs_work_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 15FE2DA9C8194AAD912B104F /* coach_female_cs_work_short.m4a */; };
+		97FAEA79D05D4E0484497BC8 /* coach_female_cs_cooldown_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FC627FCBA1C644F6A1E17E0F /* coach_female_cs_cooldown_v2.m4a */; };
+		CB46B0EDE3184799B4E1ECBC /* coach_female_cs_cooldown_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4363472D98CA4F6F88A55036 /* coach_female_cs_cooldown_v3.m4a */; };
+		5099CDFCCF014B549AC7C6E3 /* constants.ts in Resources */ = {isa = PBXBuildFile; fileRef = 27D3EA079A4D49D29EAFB268 /* constants.ts */; };
+		03AA05C360284EF3A231CCB7 /* constants.ts in Resources */ = {isa = PBXBuildFile; fileRef = 0671770C38A74400B05A0389 /* constants.ts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,7 +108,6 @@
 		79788391ABF34F1E88F0678D /* cyborg_cs_7.mp3 */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = cyborg_cs_7.mp3; path = ../src/assets/audio/characters/cyborg/cs/cyborg_cs_7.mp3; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = GoAndRest/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		860AE6422B87489EAAEEC364 /* cyborg_cs_9.mp3 */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = cyborg_cs_9.mp3; path = ../src/assets/audio/characters/cyborg/cs/cyborg_cs_9.mp3; sourceTree = "<group>"; };
-		899CADB35DCA4025B5B8AF98 /* constants.ts */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = constants.ts; path = ../src/assets/audio/characters/cyborg/constants.ts; sourceTree = "<group>"; };
 		993E01C54BD6480D9042D867 /* cyborg_cs_5.mp3 */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = cyborg_cs_5.mp3; path = ../src/assets/audio/characters/cyborg/cs/cyborg_cs_5.mp3; sourceTree = "<group>"; };
 		A9277619DDFB42ACA05C54B9 /* cyborg_cs_half.mp3 */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = cyborg_cs_half.mp3; path = ../src/assets/audio/characters/cyborg/cs/cyborg_cs_half.mp3; sourceTree = "<group>"; };
 		B011BE634BA94B0AB3ED13E8 /* cyborg_cs_10.mp3 */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = cyborg_cs_10.mp3; path = ../src/assets/audio/characters/cyborg/cs/cyborg_cs_10.mp3; sourceTree = "<group>"; };
@@ -83,6 +120,45 @@
 		E8108A9A40DD4DF1A98F2286 /* BarlowCondensed-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BarlowCondensed-Bold.ttf"; path = "../src/assets/fonts/BarlowCondensed-Bold.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F35558F7F9F141358037BB32 /* BarlowCondensed-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BarlowCondensed-Light.ttf"; path = "../src/assets/fonts/BarlowCondensed-Light.ttf"; sourceTree = "<group>"; };
+		2EF12B6674E543399F443E39 /* coach_female_cs_warmup_short.m4a */ = {isa = PBXFileReference; name = "coach_female_cs_warmup_short.m4a"; path = "../src/assets/audio/characters/coach/female/cs/coach_female_cs_warmup_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D21F6D1BB5B1486F928F2E07 /* coach_female_cs_half_v1.m4a */ = {isa = PBXFileReference; name = "coach_female_cs_half_v1.m4a"; path = "../src/assets/audio/characters/coach/female/cs/coach_female_cs_half_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		55945B4D05DF43CCA0C19F0A /* coach_female_cs_half_v3.m4a */ = {isa = PBXFileReference; name = "coach_female_cs_half_v3.m4a"; path = "../src/assets/audio/characters/coach/female/cs/coach_female_cs_half_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		19A6930FA655410884C2D851 /* coach_female_cs_half_v2.m4a */ = {isa = PBXFileReference; name = "coach_female_cs_half_v2.m4a"; path = "../src/assets/audio/characters/coach/female/cs/coach_female_cs_half_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		28C9982E53E54DA7955B1769 /* coach_female_cs_3.m4a */ = {isa = PBXFileReference; name = "coach_female_cs_3.m4a"; path = "../src/assets/audio/characters/coach/female/cs/coach_female_cs_3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F72E95FECC094B5A9DA31354 /* coach_female_cs_work_v4.m4a */ = {isa = PBXFileReference; name = "coach_female_cs_work_v4.m4a"; path = "../src/assets/audio/characters/coach/female/cs/coach_female_cs_work_v4.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		676C606FB22E4115B2C15763 /* coach_female_cs_2.m4a */ = {isa = PBXFileReference; name = "coach_female_cs_2.m4a"; path = "../src/assets/audio/characters/coach/female/cs/coach_female_cs_2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4A3F552EB15A4B358C301D73 /* coach_female_cs_1.m4a */ = {isa = PBXFileReference; name = "coach_female_cs_1.m4a"; path = "../src/assets/audio/characters/coach/female/cs/coach_female_cs_1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3D0668139A1648A180818E88 /* coach_female_cs_5.m4a */ = {isa = PBXFileReference; name = "coach_female_cs_5.m4a"; path = "../src/assets/audio/characters/coach/female/cs/coach_female_cs_5.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CED11D7A39E64804B4B62ED5 /* coach_female_cs_rest_v3.m4a */ = {isa = PBXFileReference; name = "coach_female_cs_rest_v3.m4a"; path = "../src/assets/audio/characters/coach/female/cs/coach_female_cs_rest_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B621C4CB6589428785A3735C /* coach_female_cs_work_v2.m4a */ = {isa = PBXFileReference; name = "coach_female_cs_work_v2.m4a"; path = "../src/assets/audio/characters/coach/female/cs/coach_female_cs_work_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		63AE47E8401C4EB5ADA631F0 /* coach_female_cs_work_v3.m4a */ = {isa = PBXFileReference; name = "coach_female_cs_work_v3.m4a"; path = "../src/assets/audio/characters/coach/female/cs/coach_female_cs_work_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CD3AE2D84B274F4F8F4F63C3 /* coach_female_cs_rest_v2.m4a */ = {isa = PBXFileReference; name = "coach_female_cs_rest_v2.m4a"; path = "../src/assets/audio/characters/coach/female/cs/coach_female_cs_rest_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		07BC77BFD03A48329872EFBB /* coach_female_cs_recovery_v1.m4a */ = {isa = PBXFileReference; name = "coach_female_cs_recovery_v1.m4a"; path = "../src/assets/audio/characters/coach/female/cs/coach_female_cs_recovery_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F54AFB743AF34F7EB4DFFE02 /* coach_female_cs_4.m4a */ = {isa = PBXFileReference; name = "coach_female_cs_4.m4a"; path = "../src/assets/audio/characters/coach/female/cs/coach_female_cs_4.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F37E3FCF05DC4715BD456678 /* coach_female_cs_6.m4a */ = {isa = PBXFileReference; name = "coach_female_cs_6.m4a"; path = "../src/assets/audio/characters/coach/female/cs/coach_female_cs_6.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EF47754B5FEB4B08A3AA5ACF /* coach_female_cs_recovery_v3.m4a */ = {isa = PBXFileReference; name = "coach_female_cs_recovery_v3.m4a"; path = "../src/assets/audio/characters/coach/female/cs/coach_female_cs_recovery_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		81951B029A2E4220B49F9645 /* coach_female_cs_work_v1.m4a */ = {isa = PBXFileReference; name = "coach_female_cs_work_v1.m4a"; path = "../src/assets/audio/characters/coach/female/cs/coach_female_cs_work_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3C718F161B094A979E554169 /* coach_female_cs_rest_v1.m4a */ = {isa = PBXFileReference; name = "coach_female_cs_rest_v1.m4a"; path = "../src/assets/audio/characters/coach/female/cs/coach_female_cs_rest_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		54A266102ED84164BA532CEF /* coach_female_cs_recovery_v2.m4a */ = {isa = PBXFileReference; name = "coach_female_cs_recovery_v2.m4a"; path = "../src/assets/audio/characters/coach/female/cs/coach_female_cs_recovery_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8412893E9CB9455B819A3784 /* coach_female_cs_7.m4a */ = {isa = PBXFileReference; name = "coach_female_cs_7.m4a"; path = "../src/assets/audio/characters/coach/female/cs/coach_female_cs_7.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0B00BEEB146D45BA8E048B34 /* coach_female_cs_9.m4a */ = {isa = PBXFileReference; name = "coach_female_cs_9.m4a"; path = "../src/assets/audio/characters/coach/female/cs/coach_female_cs_9.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		51914E87606F4EE2B22C9F7A /* coach_female_cs_10.m4a */ = {isa = PBXFileReference; name = "coach_female_cs_10.m4a"; path = "../src/assets/audio/characters/coach/female/cs/coach_female_cs_10.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B90273F6459449398AF9482A /* coach_female_cs_cooldown_short.m4a */ = {isa = PBXFileReference; name = "coach_female_cs_cooldown_short.m4a"; path = "../src/assets/audio/characters/coach/female/cs/coach_female_cs_cooldown_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		10C88692FF2F45A88BF3A89A /* coach_female_cs_8.m4a */ = {isa = PBXFileReference; name = "coach_female_cs_8.m4a"; path = "../src/assets/audio/characters/coach/female/cs/coach_female_cs_8.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2EA650F4F2F744EAB738BE2E /* coach_female_cs_finish_v2.m4a */ = {isa = PBXFileReference; name = "coach_female_cs_finish_v2.m4a"; path = "../src/assets/audio/characters/coach/female/cs/coach_female_cs_finish_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		33FE5C1A59064026935E8BF2 /* coach_female_cs_warmup_v2.m4a */ = {isa = PBXFileReference; name = "coach_female_cs_warmup_v2.m4a"; path = "../src/assets/audio/characters/coach/female/cs/coach_female_cs_warmup_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BCF8A71D4EA94657A9663689 /* coach_female_cs_warmup_v3.m4a */ = {isa = PBXFileReference; name = "coach_female_cs_warmup_v3.m4a"; path = "../src/assets/audio/characters/coach/female/cs/coach_female_cs_warmup_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FDE3DEEF57AE4A09A07E3391 /* coach_female_cs_finish_v3.m4a */ = {isa = PBXFileReference; name = "coach_female_cs_finish_v3.m4a"; path = "../src/assets/audio/characters/coach/female/cs/coach_female_cs_finish_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		121E8917722E4032B3FD918A /* coach_female_cs_warmup_v1.m4a */ = {isa = PBXFileReference; name = "coach_female_cs_warmup_v1.m4a"; path = "../src/assets/audio/characters/coach/female/cs/coach_female_cs_warmup_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		11E81C06A3D746A8827CD3C6 /* coach_female_cs_finish_v1.m4a */ = {isa = PBXFileReference; name = "coach_female_cs_finish_v1.m4a"; path = "../src/assets/audio/characters/coach/female/cs/coach_female_cs_finish_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		832F541791614A528A4A1755 /* coach_female_cs_rest_short.m4a */ = {isa = PBXFileReference; name = "coach_female_cs_rest_short.m4a"; path = "../src/assets/audio/characters/coach/female/cs/coach_female_cs_rest_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8252F20087D24D628C1335E2 /* coach_female_cs_recovery_short.m4a */ = {isa = PBXFileReference; name = "coach_female_cs_recovery_short.m4a"; path = "../src/assets/audio/characters/coach/female/cs/coach_female_cs_recovery_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		288725C78A264B7DAE0E92DF /* coach_female_cs_cooldown_v1.m4a */ = {isa = PBXFileReference; name = "coach_female_cs_cooldown_v1.m4a"; path = "../src/assets/audio/characters/coach/female/cs/coach_female_cs_cooldown_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		15FE2DA9C8194AAD912B104F /* coach_female_cs_work_short.m4a */ = {isa = PBXFileReference; name = "coach_female_cs_work_short.m4a"; path = "../src/assets/audio/characters/coach/female/cs/coach_female_cs_work_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FC627FCBA1C644F6A1E17E0F /* coach_female_cs_cooldown_v2.m4a */ = {isa = PBXFileReference; name = "coach_female_cs_cooldown_v2.m4a"; path = "../src/assets/audio/characters/coach/female/cs/coach_female_cs_cooldown_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4363472D98CA4F6F88A55036 /* coach_female_cs_cooldown_v3.m4a */ = {isa = PBXFileReference; name = "coach_female_cs_cooldown_v3.m4a"; path = "../src/assets/audio/characters/coach/female/cs/coach_female_cs_cooldown_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		27D3EA079A4D49D29EAFB268 /* constants.ts */ = {isa = PBXFileReference; name = "constants.ts"; path = "../src/assets/audio/characters/coach/female/constants.ts"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0671770C38A74400B05A0389 /* constants.ts */ = {isa = PBXFileReference; name = "constants.ts"; path = "../src/assets/audio/characters/cyborg/constants.ts"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,7 +226,45 @@
 				A9277619DDFB42ACA05C54B9 /* cyborg_cs_half.mp3 */,
 				B284B978388146AF99910238 /* cyborg_cs_8.mp3 */,
 				860AE6422B87489EAAEEC364 /* cyborg_cs_9.mp3 */,
-				899CADB35DCA4025B5B8AF98 /* constants.ts */,
+				2EF12B6674E543399F443E39 /* coach_female_cs_warmup_short.m4a */,
+				D21F6D1BB5B1486F928F2E07 /* coach_female_cs_half_v1.m4a */,
+				55945B4D05DF43CCA0C19F0A /* coach_female_cs_half_v3.m4a */,
+				19A6930FA655410884C2D851 /* coach_female_cs_half_v2.m4a */,
+				28C9982E53E54DA7955B1769 /* coach_female_cs_3.m4a */,
+				F72E95FECC094B5A9DA31354 /* coach_female_cs_work_v4.m4a */,
+				676C606FB22E4115B2C15763 /* coach_female_cs_2.m4a */,
+				4A3F552EB15A4B358C301D73 /* coach_female_cs_1.m4a */,
+				3D0668139A1648A180818E88 /* coach_female_cs_5.m4a */,
+				CED11D7A39E64804B4B62ED5 /* coach_female_cs_rest_v3.m4a */,
+				B621C4CB6589428785A3735C /* coach_female_cs_work_v2.m4a */,
+				63AE47E8401C4EB5ADA631F0 /* coach_female_cs_work_v3.m4a */,
+				CD3AE2D84B274F4F8F4F63C3 /* coach_female_cs_rest_v2.m4a */,
+				07BC77BFD03A48329872EFBB /* coach_female_cs_recovery_v1.m4a */,
+				F54AFB743AF34F7EB4DFFE02 /* coach_female_cs_4.m4a */,
+				F37E3FCF05DC4715BD456678 /* coach_female_cs_6.m4a */,
+				EF47754B5FEB4B08A3AA5ACF /* coach_female_cs_recovery_v3.m4a */,
+				81951B029A2E4220B49F9645 /* coach_female_cs_work_v1.m4a */,
+				3C718F161B094A979E554169 /* coach_female_cs_rest_v1.m4a */,
+				54A266102ED84164BA532CEF /* coach_female_cs_recovery_v2.m4a */,
+				8412893E9CB9455B819A3784 /* coach_female_cs_7.m4a */,
+				0B00BEEB146D45BA8E048B34 /* coach_female_cs_9.m4a */,
+				51914E87606F4EE2B22C9F7A /* coach_female_cs_10.m4a */,
+				B90273F6459449398AF9482A /* coach_female_cs_cooldown_short.m4a */,
+				10C88692FF2F45A88BF3A89A /* coach_female_cs_8.m4a */,
+				2EA650F4F2F744EAB738BE2E /* coach_female_cs_finish_v2.m4a */,
+				33FE5C1A59064026935E8BF2 /* coach_female_cs_warmup_v2.m4a */,
+				BCF8A71D4EA94657A9663689 /* coach_female_cs_warmup_v3.m4a */,
+				FDE3DEEF57AE4A09A07E3391 /* coach_female_cs_finish_v3.m4a */,
+				121E8917722E4032B3FD918A /* coach_female_cs_warmup_v1.m4a */,
+				11E81C06A3D746A8827CD3C6 /* coach_female_cs_finish_v1.m4a */,
+				832F541791614A528A4A1755 /* coach_female_cs_rest_short.m4a */,
+				8252F20087D24D628C1335E2 /* coach_female_cs_recovery_short.m4a */,
+				288725C78A264B7DAE0E92DF /* coach_female_cs_cooldown_v1.m4a */,
+				15FE2DA9C8194AAD912B104F /* coach_female_cs_work_short.m4a */,
+				FC627FCBA1C644F6A1E17E0F /* coach_female_cs_cooldown_v2.m4a */,
+				4363472D98CA4F6F88A55036 /* coach_female_cs_cooldown_v3.m4a */,
+				27D3EA079A4D49D29EAFB268 /* constants.ts */,
+				0671770C38A74400B05A0389 /* constants.ts */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -284,7 +398,45 @@
 				4BAB502572F1443D8103C0A5 /* cyborg_cs_half.mp3 in Resources */,
 				4A885925DF044A998C6CC705 /* cyborg_cs_8.mp3 in Resources */,
 				1AD9318D535C4D8E8EAE39A0 /* cyborg_cs_9.mp3 in Resources */,
-				FB1D697FE6C7436F90920A18 /* constants.ts in Resources */,
+				8652D05D0B004AB6B8086DA0 /* coach_female_cs_warmup_short.m4a in Resources */,
+				02A769D63F20405794720ED1 /* coach_female_cs_half_v1.m4a in Resources */,
+				C4255AA985744D61992CA472 /* coach_female_cs_half_v3.m4a in Resources */,
+				621D51DD61D54BD5AB510308 /* coach_female_cs_half_v2.m4a in Resources */,
+				3594238A178B4A44830DC876 /* coach_female_cs_3.m4a in Resources */,
+				84F46A9F45A144B1BE908CD4 /* coach_female_cs_work_v4.m4a in Resources */,
+				9E242F690A4342DCA8A6A3CA /* coach_female_cs_2.m4a in Resources */,
+				52436248C44C4E52B146E595 /* coach_female_cs_1.m4a in Resources */,
+				D0E004B9BBD54770B06992D9 /* coach_female_cs_5.m4a in Resources */,
+				8069EC1928CF4CEF94C5983B /* coach_female_cs_rest_v3.m4a in Resources */,
+				631DF1002B214C4D9C0156B4 /* coach_female_cs_work_v2.m4a in Resources */,
+				321B381ED17B45E6B3B798AA /* coach_female_cs_work_v3.m4a in Resources */,
+				3A716759C7634716B407AC9D /* coach_female_cs_rest_v2.m4a in Resources */,
+				718C740FF78A43B1904FA318 /* coach_female_cs_recovery_v1.m4a in Resources */,
+				208B0CE37C0B42E5AEECBBFC /* coach_female_cs_4.m4a in Resources */,
+				BBF11068B7204E4398980E19 /* coach_female_cs_6.m4a in Resources */,
+				3995C942515A43E68CD39705 /* coach_female_cs_recovery_v3.m4a in Resources */,
+				7B43737ECD3248B5BA7853D6 /* coach_female_cs_work_v1.m4a in Resources */,
+				2BA757B06FE243F18B99F311 /* coach_female_cs_rest_v1.m4a in Resources */,
+				0F6EBD65BF704E1A9185EDD5 /* coach_female_cs_recovery_v2.m4a in Resources */,
+				DB55B0AFB27246519C5CEAC5 /* coach_female_cs_7.m4a in Resources */,
+				0AD5FE4D12A4427F96E2C872 /* coach_female_cs_9.m4a in Resources */,
+				B764234D25164863B9D041FD /* coach_female_cs_10.m4a in Resources */,
+				CE876C79A3AD4D6BB2F69161 /* coach_female_cs_cooldown_short.m4a in Resources */,
+				6DFF7BB68E9C43B5A01E2C1E /* coach_female_cs_8.m4a in Resources */,
+				DECDF700393340B6B0ADD333 /* coach_female_cs_finish_v2.m4a in Resources */,
+				99F5A0CE719C40F28EAEE142 /* coach_female_cs_warmup_v2.m4a in Resources */,
+				FFC373A30E994B01A47E97C8 /* coach_female_cs_warmup_v3.m4a in Resources */,
+				26FD1F93A91E4ED4ADFB4262 /* coach_female_cs_finish_v3.m4a in Resources */,
+				FD3057F9B6E644EAA814E099 /* coach_female_cs_warmup_v1.m4a in Resources */,
+				2767968531864752869FE70B /* coach_female_cs_finish_v1.m4a in Resources */,
+				F91AE516026743228336FA4B /* coach_female_cs_rest_short.m4a in Resources */,
+				C24AAAABAF0F438D8EFE0A78 /* coach_female_cs_recovery_short.m4a in Resources */,
+				343581311ED34F4CAA866A86 /* coach_female_cs_cooldown_v1.m4a in Resources */,
+				D8D63396CB854F8BAA13C2A8 /* coach_female_cs_work_short.m4a in Resources */,
+				97FAEA79D05D4E0484497BC8 /* coach_female_cs_cooldown_v2.m4a in Resources */,
+				CB46B0EDE3184799B4E1ECBC /* coach_female_cs_cooldown_v3.m4a in Resources */,
+				5099CDFCCF014B549AC7C6E3 /* constants.ts in Resources */,
+				03AA05C360284EF3A231CCB7 /* constants.ts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

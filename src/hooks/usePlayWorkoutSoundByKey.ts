@@ -8,14 +8,14 @@ import { composeAddTrack } from './useInitiateWorkoutSounds/helpers/composeAddTr
 export const usePlayWorkoutSoundByKey = () => {
   const workoutSoundPaths = useAtomValue(workoutSoundFilePathsAtom);
 
-  return async (soundKey: WorkoutSoundKey) => {
+  return async (soundKey: WorkoutSoundKey, isPreferredShort?: boolean) => {
     if (!workoutSoundPaths) {
       return undefined;
     }
 
-    const oneOrMoreFilePaths = workoutSoundPaths[soundKey];
+    const oneOrStructuredFilePaths = workoutSoundPaths[soundKey];
 
-    const url = getSoundTrackUrl(oneOrMoreFilePaths);
+    const url = getSoundTrackUrl(oneOrStructuredFilePaths, isPreferredShort);
 
     if (!url) {
       return undefined;

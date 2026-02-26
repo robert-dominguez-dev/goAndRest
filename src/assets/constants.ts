@@ -7,6 +7,7 @@ import { characters } from './base64/characters.ts';
 import { voices } from './base64/voices.ts';
 import { cyborgSoundFileNamesByLanguage } from './audio/characters/cyborg/constants.ts';
 import { WorkoutSoundPathsByLanguage } from './types.ts';
+import { coachFemaleSoundFileNamesByLanguage } from './audio/characters/coach/female/constants.ts';
 
 export type AppFeedbackEntity =
   | `${WorkoutVoiceVariant}`
@@ -46,7 +47,7 @@ export const appFeedbackEntityToSoundFileNamesByLanguage: Record<
   AppFeedbackEntityWithSoundVariants,
   WorkoutSoundPathsByLanguage | null
 > = {
-  [WorkoutVoiceVariant.coachFemale]: null,
+  [WorkoutVoiceVariant.coachFemale]: coachFemaleSoundFileNamesByLanguage,
   [WorkoutVoiceVariant.coachMale]: null,
   [WorkoutVoiceVariant.friendFemale]: null,
   [WorkoutVoiceVariant.friendMale]: null,

@@ -14,10 +14,18 @@ export enum Countdown {
   One = 1,
 }
 
-export type WorkoutSoundFilePaths = Record<RunningWorkoutPhase, string[]> &
+export type ExtendedWorkoutSoundFilePath = {
+  short?: string;
+  standard: string[];
+};
+
+export type WorkoutSoundFilePaths = Record<
+  RunningWorkoutPhase,
+  ExtendedWorkoutSoundFilePath
+> &
   Record<Countdown, string> & {
-    half: string[];
-    finish: string[];
+    half: ExtendedWorkoutSoundFilePath;
+    finish: ExtendedWorkoutSoundFilePath;
   };
 
 export type WorkoutSoundPathsByLanguage = Record<
