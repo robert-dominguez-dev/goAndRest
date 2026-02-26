@@ -1,0 +1,261 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/BarlowCondensed-Black.ttf",
+      "sha1": "ca766f76ce5a40120b6e7d0e2f0d534699f57bb8"
+    },
+    {
+      "path": "src/assets/fonts/BarlowCondensed-Bold.ttf",
+      "sha1": "6262bcb13860d998f4f0ef6f24955015ba5c9fc8"
+    },
+    {
+      "path": "src/assets/fonts/BarlowCondensed-ExtraBold.ttf",
+      "sha1": "ad26fc581156fee4f83113df5189016ac72a484b"
+    },
+    {
+      "path": "src/assets/fonts/BarlowCondensed-Light.ttf",
+      "sha1": "0cf1be176df23c03d28c8b2e8123afa34e30a09f"
+    },
+    {
+      "path": "src/assets/fonts/BarlowCondensed-Medium.ttf",
+      "sha1": "97ca26fcb390d83da8a008d5bf085fd1277d4999"
+    },
+    {
+      "path": "src/assets/fonts/BarlowCondensed-Regular.ttf",
+      "sha1": "341759b9be0c543c624a7dfbd0b0063aa4b8480a"
+    },
+    {
+      "path": "src/assets/fonts/BarlowCondensed-SemiBold.ttf",
+      "sha1": "465591c65008579e7b03792dc5598f384ca3cfd4"
+    },
+    {
+      "path": "src/assets/audio/characters/cyborg/cs/cyborg_cs_1.mp3",
+      "sha1": "1aa7cda2b0becbd42d81800b93ae9d16c9106596"
+    },
+    {
+      "path": "src/assets/audio/characters/cyborg/cs/cyborg_cs_10.mp3",
+      "sha1": "4385a01d8ed29424fce3d6f10fe77a9216a3043d"
+    },
+    {
+      "path": "src/assets/audio/characters/cyborg/cs/cyborg_cs_2.mp3",
+      "sha1": "1b6c68ff7d127996f2d2eaec9ff3ce38a9290997"
+    },
+    {
+      "path": "src/assets/audio/characters/cyborg/cs/cyborg_cs_3.mp3",
+      "sha1": "94b35248532e21ec4556cc0ad9bc156baea78449"
+    },
+    {
+      "path": "src/assets/audio/characters/cyborg/cs/cyborg_cs_4.mp3",
+      "sha1": "216b83f81c74a20f092b1fb8aeac402167ee2681"
+    },
+    {
+      "path": "src/assets/audio/characters/cyborg/cs/cyborg_cs_5.mp3",
+      "sha1": "ace926d2efab21bf9130c141393c1ff83fe97ecf"
+    },
+    {
+      "path": "src/assets/audio/characters/cyborg/cs/cyborg_cs_6.mp3",
+      "sha1": "f571511e2ed996c418242f27046e68b011836301"
+    },
+    {
+      "path": "src/assets/audio/characters/cyborg/cs/cyborg_cs_7.mp3",
+      "sha1": "1a426831d7dcdae36c567d94b97e40e71a064d75"
+    },
+    {
+      "path": "src/assets/audio/characters/cyborg/cs/cyborg_cs_8.mp3",
+      "sha1": "8efe2ab68e0895867631e7ae5317d9c238d3aac0"
+    },
+    {
+      "path": "src/assets/audio/characters/cyborg/cs/cyborg_cs_9.mp3",
+      "sha1": "432642296b95051054b0bdba207f1e8b32a706f4"
+    },
+    {
+      "path": "src/assets/audio/characters/cyborg/cs/cyborg_cs_cooldown.mp3",
+      "sha1": "3420fb3d873679b6cc3f768d3ace55d67c18fd71"
+    },
+    {
+      "path": "src/assets/audio/characters/cyborg/cs/cyborg_cs_finish.mp3",
+      "sha1": "9f8aedd2b9eff339e36019e4161cfe272c4620f6"
+    },
+    {
+      "path": "src/assets/audio/characters/cyborg/cs/cyborg_cs_half.mp3",
+      "sha1": "8b978ce8cff39652e153bc25809851d5c19e693a"
+    },
+    {
+      "path": "src/assets/audio/characters/cyborg/cs/cyborg_cs_recovery.mp3",
+      "sha1": "b0f0a00c36bd1607ef05151899879f22db33b0e3"
+    },
+    {
+      "path": "src/assets/audio/characters/cyborg/cs/cyborg_cs_rest.mp3",
+      "sha1": "0300f3228e1310ef131a9cf90a071c69e63efcce"
+    },
+    {
+      "path": "src/assets/audio/characters/cyborg/cs/cyborg_cs_warmup.mp3",
+      "sha1": "d8499d226aac6271879f1340661da18cca2efdbf"
+    },
+    {
+      "path": "src/assets/audio/characters/cyborg/cs/cyborg_cs_work.mp3",
+      "sha1": "47ed6470019f99626891804a760ce8c5c1500c2d"
+    },
+    {
+      "path": "src/assets/audio/voices/coach/female/cs/coach_female_cs_1.m4a",
+      "sha1": "aa96f7f4197f95da81c3ef5ac819624a159eae34"
+    },
+    {
+      "path": "src/assets/audio/voices/coach/female/cs/coach_female_cs_10.m4a",
+      "sha1": "7e6186e106734e1f49ab8172bccf9d9058a9ec24"
+    },
+    {
+      "path": "src/assets/audio/voices/coach/female/cs/coach_female_cs_2.m4a",
+      "sha1": "e1e2a91123e6577108e8581314aa10f00f1fe3a2"
+    },
+    {
+      "path": "src/assets/audio/voices/coach/female/cs/coach_female_cs_3.m4a",
+      "sha1": "cdea5f556ce8f43f3c0c60daec92bc44a30ba407"
+    },
+    {
+      "path": "src/assets/audio/voices/coach/female/cs/coach_female_cs_4.m4a",
+      "sha1": "0e0dc065682ed33c9e530cfe729cd465d236554a"
+    },
+    {
+      "path": "src/assets/audio/voices/coach/female/cs/coach_female_cs_5.m4a",
+      "sha1": "4bf0aaaf2b0718a7d3debf30ef434ec61affd3ec"
+    },
+    {
+      "path": "src/assets/audio/voices/coach/female/cs/coach_female_cs_6.m4a",
+      "sha1": "c4237d2800543156819e8cbfbaa82b6aacd9b144"
+    },
+    {
+      "path": "src/assets/audio/voices/coach/female/cs/coach_female_cs_7.m4a",
+      "sha1": "0ae10df434cfc798a9f26fddfdad5f9e37785fea"
+    },
+    {
+      "path": "src/assets/audio/voices/coach/female/cs/coach_female_cs_8.m4a",
+      "sha1": "dab3e5b0c68cee22356e271cbe4716b94cb4227b"
+    },
+    {
+      "path": "src/assets/audio/voices/coach/female/cs/coach_female_cs_9.m4a",
+      "sha1": "5b3d470013c2d5ddee132fca58c56987653f5c02"
+    },
+    {
+      "path": "src/assets/audio/voices/coach/female/cs/coach_female_cs_cooldown_short.m4a",
+      "sha1": "71efc4f296316e199002a2ef76ecf2cfaf6d4fa6"
+    },
+    {
+      "path": "src/assets/audio/voices/coach/female/cs/coach_female_cs_cooldown_v1.m4a",
+      "sha1": "7ca6d934a5065dc29d0c3b763623852473908d44"
+    },
+    {
+      "path": "src/assets/audio/voices/coach/female/cs/coach_female_cs_cooldown_v2.m4a",
+      "sha1": "af775c55306272340ac2529a5e85332d6727218e"
+    },
+    {
+      "path": "src/assets/audio/voices/coach/female/cs/coach_female_cs_cooldown_v3.m4a",
+      "sha1": "a0727fd0974f2276895f7063d734d9545516d0e1"
+    },
+    {
+      "path": "src/assets/audio/voices/coach/female/cs/coach_female_cs_finish_v1.m4a",
+      "sha1": "49ef911b1b74417a7eee425c50293ff22654826b"
+    },
+    {
+      "path": "src/assets/audio/voices/coach/female/cs/coach_female_cs_finish_v2.m4a",
+      "sha1": "428741e88e538586ef11032fc190ccba9a9e7aed"
+    },
+    {
+      "path": "src/assets/audio/voices/coach/female/cs/coach_female_cs_finish_v3.m4a",
+      "sha1": "fcd7ca0621a33de0a64c6a967bebf75b5c7f5009"
+    },
+    {
+      "path": "src/assets/audio/voices/coach/female/cs/coach_female_cs_half_v1.m4a",
+      "sha1": "a8fcc53ff63c1f7428a82206d7abf52522207a3d"
+    },
+    {
+      "path": "src/assets/audio/voices/coach/female/cs/coach_female_cs_half_v2.m4a",
+      "sha1": "1babb68f2bce69fb009699527a9808f3cce61c27"
+    },
+    {
+      "path": "src/assets/audio/voices/coach/female/cs/coach_female_cs_half_v3.m4a",
+      "sha1": "15ccd33437f3302b9d3e8d529e362d462df66c7c"
+    },
+    {
+      "path": "src/assets/audio/voices/coach/female/cs/coach_female_cs_recovery_short.m4a",
+      "sha1": "6827b22c662c3cc7d7777c1a98a72ee351c21b63"
+    },
+    {
+      "path": "src/assets/audio/voices/coach/female/cs/coach_female_cs_recovery_v1.m4a",
+      "sha1": "6c01f7b6f9c1e7d0c232ef839b2a1a981e3fd856"
+    },
+    {
+      "path": "src/assets/audio/voices/coach/female/cs/coach_female_cs_recovery_v2.m4a",
+      "sha1": "fe00b0ffad39220fb36aeaf0fb8dea490694aaa3"
+    },
+    {
+      "path": "src/assets/audio/voices/coach/female/cs/coach_female_cs_recovery_v3.m4a",
+      "sha1": "febf6eb489f231495d204fc45d7a6749d26a38ab"
+    },
+    {
+      "path": "src/assets/audio/voices/coach/female/cs/coach_female_cs_rest_short.m4a",
+      "sha1": "95986416f1be24f113afcbc5777675ed85da3548"
+    },
+    {
+      "path": "src/assets/audio/voices/coach/female/cs/coach_female_cs_rest_v1.m4a",
+      "sha1": "4b136e961f721932e450c50fa11c6a33c8979ddc"
+    },
+    {
+      "path": "src/assets/audio/voices/coach/female/cs/coach_female_cs_rest_v2.m4a",
+      "sha1": "d7197e14e8d6d20cbb68216cd36a08f1baca42a3"
+    },
+    {
+      "path": "src/assets/audio/voices/coach/female/cs/coach_female_cs_rest_v3.m4a",
+      "sha1": "d151c77ba9425121f246026e5b4030d3773e0b44"
+    },
+    {
+      "path": "src/assets/audio/voices/coach/female/cs/coach_female_cs_warmup_short.m4a",
+      "sha1": "4235faa5954a7e7e0b64da38caf5e8b52cc751eb"
+    },
+    {
+      "path": "src/assets/audio/voices/coach/female/cs/coach_female_cs_warmup_v1.m4a",
+      "sha1": "75404b9e285cebc669e463cdc166ac31d72e44cd"
+    },
+    {
+      "path": "src/assets/audio/voices/coach/female/cs/coach_female_cs_warmup_v2.m4a",
+      "sha1": "c49e1388c6e975acdf7b9bf7f56cb76c82247efa"
+    },
+    {
+      "path": "src/assets/audio/voices/coach/female/cs/coach_female_cs_warmup_v3.m4a",
+      "sha1": "9981b111cba69c92263148bafdfbc5f5fc6ac57c"
+    },
+    {
+      "path": "src/assets/audio/voices/coach/female/cs/coach_female_cs_work_short.m4a",
+      "sha1": "a5682193827ad0ab70513a3fb9c893d5d46b0108"
+    },
+    {
+      "path": "src/assets/audio/voices/coach/female/cs/coach_female_cs_work_v1.m4a",
+      "sha1": "43abc6d0be5d4bcf8bf44f46b2951761fdc17967"
+    },
+    {
+      "path": "src/assets/audio/voices/coach/female/cs/coach_female_cs_work_v2.m4a",
+      "sha1": "530e3dfb7f7ce2db9edb13b7e2a61d23a14426da"
+    },
+    {
+      "path": "src/assets/audio/voices/coach/female/cs/coach_female_cs_work_v3.m4a",
+      "sha1": "9e341ed4e6127b3a87d85757cd7d80478e1ac64d"
+    },
+    {
+      "path": "src/assets/audio/voices/coach/female/cs/coach_female_cs_work_v4.m4a",
+      "sha1": "d8e272c963e34619241ebf0c376c1af8103412d1"
+    },
+    {
+      "path": "src/assets/animations/confetti.riv",
+      "sha1": "73dc0c807b4189d2a541f2da313ada296db6ddd0"
+    },
+    {
+      "path": "src/assets/animations/loader.riv",
+      "sha1": "86e7241cc9c47e817a4c155047fd24e9f6374d7f"
+    },
+    {
+      "path": "src/assets/animations/thinking_owl.riv",
+      "sha1": "c6b221b264cb09709961a72436eee1e29384ca42"
+    }
+  ]
+}

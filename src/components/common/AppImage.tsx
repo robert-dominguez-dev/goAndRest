@@ -1,6 +1,6 @@
 import { Image, ImageResizeMode, ImageStyle } from 'react-native';
 import { FILL_CONTAINER_DIMENSION } from '../../constants/common.ts';
-import { AppFeedbackEntity, appIllustrations, } from '../../assets/constants/common.ts';
+import { AppFeedbackEntity, appIllustrations } from '../../assets/constants/common.ts';
 import { AppSizeUnion } from '../../types/ui.ts';
 import { getAppSize } from '../../helpers/getAppSize.ts';
 import { memo } from 'react';
@@ -20,26 +20,26 @@ type AppImageDimensions =
 
 export type AppImageProps = AppImageDimensions &
   Pick<ImageStyle, 'opacity'> & {
-    illustrationName: AppFeedbackEntity;
-    borderRadius?: AppSizeUnion;
-  };
+  illustrationName: AppFeedbackEntity;
+  borderRadius?: AppSizeUnion;
+};
 
 const AppImageComponent = ({
-  illustrationName,
-  opacity,
-  borderRadius,
-  width,
-  height,
-}: AppImageProps) => {
+                             illustrationName,
+                             opacity,
+                             borderRadius,
+                             width,
+                             height,
+                           }: AppImageProps) => {
   const hasDimensionsFilled = width && height;
 
   const resizeMode: ImageResizeMode = hasDimensionsFilled ? 'contain' : 'cover';
 
   const imageDimensionsStyle: ImageStyle = hasDimensionsFilled
     ? {
-        width,
-        height,
-      }
+      width,
+      height,
+    }
     : FILL_CONTAINER_STYLE;
 
   const imageStyle: ImageStyle = {

@@ -15,7 +15,7 @@
     "start": "react-native start --reset-cache",
     "test": "jest",
     "setup": "npm install && bundle install --verbose && cd ios && bundle exec pod install --repo-update && cd ..",
-    "link": "npx react-native-asset",
+    "link": "npx react-native-asset@2.1.1",
     "type": "npx tsc --noEmit"
   },
   "dependencies": {
