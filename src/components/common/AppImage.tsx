@@ -1,6 +1,6 @@
 import { Image, ImageResizeMode, ImageStyle } from 'react-native';
 import { FILL_CONTAINER_DIMENSION } from '../../constants/common.ts';
-import { AppFeedbackEntity, appIllustrations } from '../../assets/constants.ts';
+import { AppFeedbackEntity, appIllustrations, } from '../../assets/constants/common.ts';
 import { AppSizeUnion } from '../../types/ui.ts';
 import { getAppSize } from '../../helpers/getAppSize.ts';
 import { memo } from 'react';

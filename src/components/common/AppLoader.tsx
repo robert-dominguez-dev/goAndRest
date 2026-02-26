@@ -1,5 +1,5 @@
 import { AppAnimationView } from './AppAnimationView.tsx';
-import { AppAnimation } from '../../assets/constants.ts';
+import { AppAnimation } from '../../assets/constants/common.ts';
 import { AppSizeUnion } from '../../types/ui.ts';
 import { getAppSize } from '../../helpers/getAppSize.ts';
 

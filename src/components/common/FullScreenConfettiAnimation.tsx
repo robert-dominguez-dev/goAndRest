@@ -7,7 +7,7 @@ import {
   FILL_CONTAINER_DIMENSION,
   POP_UP_Z_INDEX,
 } from '../../constants/common.ts';
-import { AppAnimation } from '../../assets/constants.ts';
+import { AppAnimation } from '../../assets/constants/common.ts';
 
 export const FullScreenConfettiAnimation = ({
   isPresent,

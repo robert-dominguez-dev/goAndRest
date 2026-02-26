@@ -1,6 +1,6 @@
 import { ViewStyle } from 'react-native';
 
-import { AppAnimation } from '../../assets/constants.ts';
+import { AppAnimation } from '../../assets/constants/common.ts';
 import Rive from 'rive-react-native';
 import { useState } from 'react';
 import {

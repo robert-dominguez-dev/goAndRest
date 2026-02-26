@@ -1,4 +1,4 @@
-import { AppAnimation } from '../constants.ts';
+import { AppAnimation } from '../constants/common.ts';
 
 export const oneShotAppAnimations = [
   AppAnimation.confetti,

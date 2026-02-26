@@ -2,12 +2,13 @@ import {
   WorkoutCharacterVariant,
   WorkoutSoundVariant,
   WorkoutVoiceVariant,
-} from '../components/navigation/AppNavigator/screens/SettingsScreen/constants.tsx';
-import { characters } from './base64/characters.ts';
-import { voices } from './base64/voices.ts';
-import { cyborgSoundFileNamesByLanguage } from './audio/characters/cyborg/constants.ts';
-import { WorkoutSoundPathsByLanguage } from './types.ts';
-import { coachFemaleSoundFileNamesByLanguage } from './audio/characters/coach/female/constants.ts';
+} from '../../components/navigation/AppNavigator/screens/SettingsScreen/constants.tsx';
+import { characters } from '../base64/characters.ts';
+import { voices } from '../base64/voices.ts';
+
+import { WorkoutSoundPathsByLanguage } from '../types.ts';
+import { coachFemaleSoundFileNamesByLanguage } from './audio/voices/coachFemale.ts';
+import { cyborgSoundFileNamesByLanguage } from './audio/characters/cyborg.ts';
 
 export type AppFeedbackEntity =
   | `${WorkoutVoiceVariant}`

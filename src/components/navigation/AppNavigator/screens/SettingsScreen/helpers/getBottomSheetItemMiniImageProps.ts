@@ -2,7 +2,7 @@ import { SettingValueProps } from '../types.ts';
 import {
   AppFeedbackEntity,
   appFeedbackEntityToImageAspectRatio,
-} from '../../../../../../assets/constants.ts';
+} from '../../../../../../assets/constants/common.ts';
 
 const BOTTOM_SHEET_ITEM_ICON_SIZE = 24;
 

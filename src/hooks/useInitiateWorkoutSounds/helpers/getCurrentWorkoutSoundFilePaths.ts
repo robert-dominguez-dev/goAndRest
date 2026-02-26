@@ -6,7 +6,7 @@ import {
 } from '../../../components/navigation/AppNavigator/screens/SettingsScreen/constants.tsx';
 import { WorkoutSoundFilePaths } from '../../../assets/types.ts';
 import { SupportedLanguageCode } from '../../../contexts/AppLanguageProvider/constants.ts';
-import { appFeedbackEntityToSoundFileNamesByLanguage } from '../../../assets/constants.ts';
+import { appFeedbackEntityToSoundFileNamesByLanguage } from '../../../assets/constants/common.ts';
 
 export const getCurrentWorkoutSoundFilePaths = (
   soundFeedback: WorkoutSoundFeedback,
