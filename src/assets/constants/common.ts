@@ -6,17 +6,17 @@ import {
 import { characters } from '../base64/characters.ts';
 import { voices } from '../base64/voices.ts';
 
-import { WorkoutSoundPathsByLanguage } from '../types.ts';
+import { SoundPathByLanguage, WorkoutSoundPathsByLanguage } from '../types.ts';
 import {
-  coachFemalePreviewFileNameByLanguage,
-  coachFemaleSoundFileNamesByLanguage,
+  coachFemalePreviewPathByLanguage,
+  coachFemaleSoundPathsByLanguage,
 } from './audio/voices/coachFemale.ts';
 import {
-  cyborgPreviewFileNameByLanguage,
-  cyborgSoundFileNamesByLanguage,
+  cyborgPreviewPathByLanguage,
+  cyborgSoundPathsByLanguage,
 } from './audio/characters/cyborg.ts';
-import { warriorPreviewFileNameByLanguage } from './audio/characters/warrior.ts';
-import { wizardPreviewFileNameByLanguage } from './audio/characters/wizard.ts';
+import { warriorPreviewPathByLanguage } from './audio/characters/warrior.ts';
+import { wizardPreviewPathByLanguage } from './audio/characters/wizard.ts';
 
 export type AppFeedbackEntity =
   | `${WorkoutVoiceVariant}`
@@ -56,14 +56,14 @@ export const appFeedbackEntityToSoundFileNamesByLanguage: Record<
   AppFeedbackEntityWithSoundVariants,
   WorkoutSoundPathsByLanguage | null
 > = {
-  [WorkoutVoiceVariant.coachFemale]: coachFemaleSoundFileNamesByLanguage,
+  [WorkoutVoiceVariant.coachFemale]: coachFemaleSoundPathsByLanguage,
   [WorkoutVoiceVariant.coachMale]: null,
   [WorkoutVoiceVariant.friendFemale]: null,
   [WorkoutVoiceVariant.friendMale]: null,
   [WorkoutVoiceVariant.calmFemale]: null,
   [WorkoutVoiceVariant.calmMale]: null,
   [WorkoutCharacterVariant.warrior]: null,
-  [WorkoutCharacterVariant.cyborg]: cyborgSoundFileNamesByLanguage,
+  [WorkoutCharacterVariant.cyborg]: cyborgSoundPathsByLanguage,
   [WorkoutCharacterVariant.wizard]: null,
   [WorkoutSoundVariant.beep]: null,
   [WorkoutSoundVariant.bell]: null,
@@ -74,20 +74,20 @@ export const appFeedbackEntityToSoundFileNamesByLanguage: Record<
 
 export const appFeedbackEntityToPreviewFileNameByLanguage: Record<
   AppFeedbackEntityWithSoundVariants,
-  WorkoutSoundPathsByLanguage | null
+  SoundPathByLanguage | undefined
 > = {
-  [WorkoutVoiceVariant.coachFemale]: coachFemalePreviewFileNameByLanguage,
-  [WorkoutVoiceVariant.coachMale]: null,
-  [WorkoutVoiceVariant.friendFemale]: null,
-  [WorkoutVoiceVariant.friendMale]: null,
-  [WorkoutVoiceVariant.calmFemale]: null,
-  [WorkoutVoiceVariant.calmMale]: null,
-  [WorkoutCharacterVariant.warrior]: warriorPreviewFileNameByLanguage,
-  [WorkoutCharacterVariant.cyborg]: cyborgPreviewFileNameByLanguage,
-  [WorkoutCharacterVariant.wizard]: wizardPreviewFileNameByLanguage,
-  [WorkoutSoundVariant.beep]: null,
-  [WorkoutSoundVariant.bell]: null,
-  [WorkoutSoundVariant.drum]: null,
-  [WorkoutSoundVariant.snap]: null,
-  [WorkoutSoundVariant.whistle]: null,
+  [WorkoutVoiceVariant.coachFemale]: coachFemalePreviewPathByLanguage,
+  [WorkoutVoiceVariant.coachMale]: undefined,
+  [WorkoutVoiceVariant.friendFemale]: undefined,
+  [WorkoutVoiceVariant.friendMale]: undefined,
+  [WorkoutVoiceVariant.calmFemale]: undefined,
+  [WorkoutVoiceVariant.calmMale]: undefined,
+  [WorkoutCharacterVariant.warrior]: warriorPreviewPathByLanguage,
+  [WorkoutCharacterVariant.cyborg]: cyborgPreviewPathByLanguage,
+  [WorkoutCharacterVariant.wizard]: wizardPreviewPathByLanguage,
+  [WorkoutSoundVariant.beep]: undefined,
+  [WorkoutSoundVariant.bell]: undefined,
+  [WorkoutSoundVariant.drum]: undefined,
+  [WorkoutSoundVariant.snap]: undefined,
+  [WorkoutSoundVariant.whistle]: undefined,
 };

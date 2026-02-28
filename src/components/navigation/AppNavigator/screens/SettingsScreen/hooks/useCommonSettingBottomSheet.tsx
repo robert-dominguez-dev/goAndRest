@@ -4,6 +4,7 @@ import { useAtom } from 'jotai';
 import { useAppTranslation } from '../../../../../../locales/hooks/useAppTranslation.ts';
 import { AppAtom } from '../../../../../../contexts/hooks/useDebouncedAtom.ts';
 import { SettingValueProps } from '../types.ts';
+import { useAppLanguage } from '../../../../../../contexts/AppLanguageProvider/AppLanguageProvider.tsx';
 
 export type UseSettingBottomSheetParams<TValue> = {
   atom: AppAtom<TValue>;
@@ -18,14 +19,26 @@ export const useCommonSettingBottomSheet = <TValue,>({
 }: UseSettingBottomSheetParams<TValue>) => {
   const t = useAppTranslation();
 
+  const { language } = useAppLanguage();
+
   const [selectedValue, setSelectedValue] = useAtom(atom);
 
   const { bottomSheet, handleOpen } = useAppSelectionBottomSheet();
 
   const items = itemValues.map<AppSelectionBottomSheetItemData<TValue>>(
     value => {
-      const { labelTranslateKey, IconComponent, iconColorStatus, imageProps } =
-        getProps(value);
+      const {
+        labelTranslateKey,
+        IconComponent,
+        iconColorStatus,
+        imageProps,
+        audioPathByLanguage,
+      } = getProps(value);
+
+      const audioParams: AppSelectionBottomSheetItemData<TValue>['audioParams'] =
+        audioPathByLanguage
+          ? { soundKey: 'preview', url: audioPathByLanguage[language] }
+          : undefined;
 
       return {
         value,
@@ -34,6 +47,7 @@ export const useCommonSettingBottomSheet = <TValue,>({
         AccessoryLeftIconComponent: IconComponent,
         accessoryLeftIconStatus: iconColorStatus,
         accessoryLeftImageProps: imageProps,
+        audioParams,
       };
     },
   );

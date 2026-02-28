@@ -33,4 +33,6 @@ export type WorkoutSoundPathsByLanguage = Record<
   WorkoutSoundFilePaths
 >;
 
+export type SoundPathByLanguage = Record<SupportedLanguageCode, string>;
+
 export type WorkoutSoundKey = keyof WorkoutSoundFilePaths;

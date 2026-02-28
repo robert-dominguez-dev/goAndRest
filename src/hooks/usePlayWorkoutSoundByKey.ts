@@ -1,9 +1,8 @@
 import { WorkoutSoundKey } from '../assets/types.ts';
 import { useAtomValue } from 'jotai';
 import { workoutSoundFilePathsAtom } from '../contexts/atoms.ts';
-import TrackPlayer from 'react-native-track-player';
 import { getSoundTrackUrl } from './useInitiateWorkoutSounds/helpers/getSoundTrackUrl.ts';
-import { composeAddTrack } from './useInitiateWorkoutSounds/helpers/composeAddTrack.ts';
+import { playSound } from './playSound.ts';
 
 export const usePlayWorkoutSoundByKey = () => {
   const workoutSoundPaths = useAtomValue(workoutSoundFilePathsAtom);
@@ -21,13 +20,9 @@ export const usePlayWorkoutSoundByKey = () => {
       return undefined;
     }
 
-    const track = composeAddTrack(soundKey, url);
-
-    try {
-      await TrackPlayer.add(track);
-      await TrackPlayer.play();
-    } catch (error) {
-      console.error('Audio playback error:', error);
-    }
+    await playSound({
+      soundKey,
+      url,
+    });
   };
 };

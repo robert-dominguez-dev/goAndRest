@@ -1,5 +1,6 @@
 import {
   Countdown,
+  SoundPathByLanguage,
   WorkoutSoundFilePaths,
   WorkoutSoundPathsByLanguage,
 } from '../../../types.ts';
@@ -54,13 +55,13 @@ const cyborgCs: WorkoutSoundFilePaths = {
   },
 };
 
-export const cyborgSoundFileNamesByLanguage: WorkoutSoundPathsByLanguage = {
+export const cyborgSoundPathsByLanguage: WorkoutSoundPathsByLanguage = {
   [SupportedLanguageCode.cs]: cyborgCs,
   [SupportedLanguageCode.en]: cyborgCs,
   [SupportedLanguageCode.sk]: cyborgCs,
 };
 
-export const cyborgPreviewFileNameByLanguage: WorkoutSoundPathsByLanguage = {
+export const cyborgPreviewPathByLanguage: SoundPathByLanguage = {
   [SupportedLanguageCode.cs]: require('../../../audio/preview/characters/cyborg/cyborg_cs_preview.m4a'),
   [SupportedLanguageCode.en]: require('../../../audio/preview/characters/cyborg/cyborg_cs_preview.m4a'),
   [SupportedLanguageCode.sk]: require('../../../audio/preview/characters/cyborg/cyborg_cs_preview.m4a'),

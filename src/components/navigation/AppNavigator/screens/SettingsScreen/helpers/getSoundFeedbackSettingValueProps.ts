@@ -26,5 +26,8 @@ export const getSoundFeedbackSettingValueProps = (
 
   const IconComponent = soundFeedbackToEmoji[soundFeedback];
 
-  return { labelTranslateKey, IconComponent };
+  return {
+    labelTranslateKey,
+    IconComponent,
+  };
 };

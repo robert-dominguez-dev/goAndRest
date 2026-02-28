@@ -2,6 +2,7 @@ import { getSplitTranslateKey } from '../../../../../../locales/helpers/getSplit
 import { WorkoutCharacterVariant } from '../constants.tsx';
 import { SettingValueProps } from '../types.ts';
 import { getBottomSheetItemMiniImageProps } from './getBottomSheetItemMiniImageProps.ts';
+import { appFeedbackEntityToPreviewFileNameByLanguage } from '../../../../../../assets/constants/common.ts';
 
 export const getCharacterVariantSettingValueProps = (
   characterVariant: WorkoutCharacterVariant,
@@ -14,5 +15,7 @@ export const getCharacterVariantSettingValueProps = (
   return {
     labelTranslateKey,
     imageProps: getBottomSheetItemMiniImageProps(characterVariant),
+    audioPathByLanguage:
+      appFeedbackEntityToPreviewFileNameByLanguage[characterVariant],
   };
 };

@@ -1,5 +1,6 @@
 import {
   Countdown,
+  SoundPathByLanguage,
   WorkoutSoundFilePaths,
   WorkoutSoundPathsByLanguage,
 } from '../../../types.ts';
@@ -74,16 +75,14 @@ const coachFemaleCs: WorkoutSoundFilePaths = {
   },
 };
 
-export const coachFemaleSoundFileNamesByLanguage: WorkoutSoundPathsByLanguage =
-  {
-    [SupportedLanguageCode.cs]: coachFemaleCs,
-    [SupportedLanguageCode.en]: coachFemaleCs,
-    [SupportedLanguageCode.sk]: coachFemaleCs,
-  };
+export const coachFemaleSoundPathsByLanguage: WorkoutSoundPathsByLanguage = {
+  [SupportedLanguageCode.cs]: coachFemaleCs,
+  [SupportedLanguageCode.en]: coachFemaleCs,
+  [SupportedLanguageCode.sk]: coachFemaleCs,
+};
 
-export const coachFemalePreviewFileNameByLanguage: WorkoutSoundPathsByLanguage =
-  {
-    [SupportedLanguageCode.cs]: require('../../../audio/preview/voices/coach/female/coach_female_cs_preview.m4a'),
-    [SupportedLanguageCode.en]: require('../../../audio/preview/voices/coach/female/coach_female_cs_preview.m4a'),
-    [SupportedLanguageCode.sk]: require('../../../audio/preview/voices/coach/female/coach_female_cs_preview.m4a'),
-  };
+export const coachFemalePreviewPathByLanguage: SoundPathByLanguage = {
+  [SupportedLanguageCode.cs]: require('../../../audio/preview/voices/coach/female/coach_female_cs_preview.m4a'),
+  [SupportedLanguageCode.en]: require('../../../audio/preview/voices/coach/female/coach_female_cs_preview.m4a'),
+  [SupportedLanguageCode.sk]: require('../../../audio/preview/voices/coach/female/coach_female_cs_preview.m4a'),
+};

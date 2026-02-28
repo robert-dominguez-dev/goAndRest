@@ -9,6 +9,7 @@ import {
   Shell,
 } from 'lucide-react-native';
 import { SettingValueProps } from '../types.ts';
+import { appFeedbackEntityToPreviewFileNameByLanguage } from '../../../../../../assets/constants/common.ts';
 
 const soundVariantToEmoji: Record<WorkoutSoundVariant, LucideIcon> = {
   [WorkoutSoundVariant.beep]: Radio,
@@ -28,5 +29,10 @@ export const getSoundVariantSettingValueProps = (
 
   const IconComponent = soundVariantToEmoji[soundVariant];
 
-  return { labelTranslateKey, IconComponent };
+  return {
+    labelTranslateKey,
+    IconComponent,
+    audioPathByLanguage:
+      appFeedbackEntityToPreviewFileNameByLanguage[soundVariant],
+  };
 };
