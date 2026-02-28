@@ -12,13 +12,13 @@ import { OrientationLocker } from 'react-native-orientation-locker';
 
 export const App = () => (
   <I18nextProvider i18n={appI18NextConfig}>
+    <OrientationLocker orientation={'PORTRAIT'} />
     <AppLanguageProvider>
       <NavigationContainer>
         <SafeAreaProvider>
           <Suspense fallback={null}>
             <AppThemeProvider>
               <AppWorkoutsProvider>
-                <OrientationLocker orientation={'PORTRAIT'} />
                 <AppNavigator />
               </AppWorkoutsProvider>
             </AppThemeProvider>

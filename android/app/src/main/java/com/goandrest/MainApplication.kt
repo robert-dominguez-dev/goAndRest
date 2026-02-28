@@ -6,6 +6,8 @@ import com.facebook.react.ReactApplication
 import com.facebook.react.ReactHost
 import com.facebook.react.ReactNativeApplicationEntryPoint.loadReactNative
 import com.facebook.react.defaults.DefaultReactHost.getDefaultReactHost
+import org.wonday.orientation.OrientationPackage
+import org.wonday.orientation.OrientationActivityLifecycle
 
 class MainApplication : Application(), ReactApplication {
 
@@ -16,12 +18,14 @@ class MainApplication : Application(), ReactApplication {
         PackageList(this).packages.apply {
           // Packages that cannot be autolinked yet can be added manually here, for example:
           // add(MyReactNativePackage())
+          add(OrientationPackage())
         },
     )
   }
 
   override fun onCreate() {
     super.onCreate()
+    registerActivityLifecycleCallbacks(OrientationActivityLifecycle.getInstance())
     loadReactNative(this)
   }
 }
