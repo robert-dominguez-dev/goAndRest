@@ -7,7 +7,7 @@ import { useAppThemedColors } from '../../../../hooks/useAppThemedColors.ts';
 import { categoryToIconSize } from '../../../controls/AppButton/components/AppIconAndLabel.tsx';
 import { playSound, PlaySoundParams } from '../../../../hooks/playSound.ts';
 import TrackPlayer from 'react-native-track-player';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export type PlaySoundIconProps = {
   audioParams: PlaySoundParams;
@@ -18,16 +18,27 @@ export const PlaySoundIcon = ({ audioParams }: PlaySoundIconProps) => {
 
   const { text } = useAppThemedColors();
 
+  const play = () => {
+    void playSound(audioParams);
+    setIsPlaying(true);
+  };
+
+  const stop = () => {
+    void TrackPlayer.stop();
+    setIsPlaying(false);
+  };
+
+  useEffect(() => {
+    return () => stop();
+  }, []);
+
   const handlePress = async (event: GestureResponderEvent) => {
     event.preventDefault();
 
-    await TrackPlayer.stop();
-
     if (isPlaying) {
-      setIsPlaying(false);
+      stop();
     } else {
-      await playSound(audioParams);
-      setIsPlaying(true);
+      play();
     }
   };
 
