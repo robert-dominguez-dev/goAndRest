@@ -2,7 +2,7 @@ import TrackPlayer, { AddTrack } from 'react-native-track-player';
 
 import { APP_NAME } from '../constants/common.ts';
 
-export type PlaySoundParams = { soundKey: string | number; url: string };
+export type PlaySoundParams = { soundKey: string; url: string };
 
 export const playSound = async ({ soundKey, url }: PlaySoundParams) => {
   const track: AddTrack = {

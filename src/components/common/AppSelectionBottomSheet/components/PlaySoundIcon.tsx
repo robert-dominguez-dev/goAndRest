@@ -6,39 +6,46 @@ import { LucideIcon, PlayCircle, StopCircle } from 'lucide-react-native';
 import { useAppThemedColors } from '../../../../hooks/useAppThemedColors.ts';
 import { categoryToIconSize } from '../../../controls/AppButton/components/AppIconAndLabel.tsx';
 import { playSound, PlaySoundParams } from '../../../../hooks/playSound.ts';
-import TrackPlayer from 'react-native-track-player';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { useAtom } from 'jotai';
+import { playingPreviewAtom } from '../../../../contexts/atoms.ts';
+import { stopAndResetTrackPlayer } from '../../../../hooks/useInitiateWorkoutSounds/helpers/stopAndResetTrackPlayer.ts';
 
 export type PlaySoundIconProps = {
   audioParams: PlaySoundParams;
 };
 
 export const PlaySoundIcon = ({ audioParams }: PlaySoundIconProps) => {
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [playingPreviewKey, setPlayingPreviewKey] = useAtom(playingPreviewAtom);
 
   const { text } = useAppThemedColors();
 
-  const play = () => {
-    void playSound(audioParams);
-    setIsPlaying(true);
+  const play = async () => {
+    await stopAndResetTrackPlayer();
+    await playSound(audioParams);
+    setPlayingPreviewKey(audioParams.soundKey);
   };
 
-  const stop = () => {
-    void TrackPlayer.stop();
-    setIsPlaying(false);
+  const stop = async () => {
+    await stopAndResetTrackPlayer();
+    setPlayingPreviewKey(null);
   };
 
   useEffect(() => {
-    return () => stop();
+    return () => {
+      void stop();
+    };
   }, []);
+
+  const isPlaying = playingPreviewKey === audioParams.soundKey;
 
   const handlePress = async (event: GestureResponderEvent) => {
     event.preventDefault();
 
     if (isPlaying) {
-      stop();
+      await stop();
     } else {
-      play();
+      await play();
     }
   };
 

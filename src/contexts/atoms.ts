@@ -86,4 +86,6 @@ export const workoutSoundFilePathsAtom = atom<WorkoutSoundFilePaths | null>(
   null,
 );
 
+export const playingPreviewAtom = atom<string | null>(null);
+
 export const isMutedAtom = atom<boolean>(false);

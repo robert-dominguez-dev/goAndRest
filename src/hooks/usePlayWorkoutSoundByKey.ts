@@ -21,7 +21,7 @@ export const usePlayWorkoutSoundByKey = () => {
     }
 
     await playSound({
-      soundKey,
+      soundKey: soundKey.toString(),
       url,
     });
   };
