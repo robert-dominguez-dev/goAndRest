@@ -11,7 +11,7 @@ import { useAtomValue } from 'jotai';
 import clamp from 'lodash/clamp';
 
 const CONSIDERED_SHORT_PHASE_DURATION_THRESHOLD = 10;
-const PHASE_DURATION_TO_MAX_COUNTDOWN_DURATION_OFFSET = 5;
+const PHASE_DURATION_TO_MAX_COUNTDOWN_DURATION_OFFSET = 3;
 const MIN_PHASE_DURATION_TO_HAVE_MIDDLE_FEEDBACK = 30;
 
 type UseWorkoutFeedbackParams = Partial<
@@ -75,6 +75,7 @@ export const useWorkoutFeedback = ({
     );
 
     const isEligibleForMiddleFeedback: boolean =
+      currentPhase === RunningWorkoutPhase.WORK &&
       totalSeconds >= phaseInMiddleFeedbackThreshold &&
       exactSecondInTheMiddle === remainingSeconds;
 
