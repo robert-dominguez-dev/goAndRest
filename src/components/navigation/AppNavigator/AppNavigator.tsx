@@ -15,7 +15,6 @@ import { runningWorkoutStateAtom } from '../../../contexts/atoms.ts';
 import { calculateCurrentWorkoutState } from '../../../helpers/calculateCurrentWorkoutState.ts';
 import { FinishedWorkoutScreen } from './screens/FinishedWorkoutScreen/FinishedWorkoutScreen.tsx';
 import { useInitiateWorkoutSounds } from '../../../hooks/useInitiateWorkoutSounds/useInitiateWorkoutSounds.ts';
-import { useOrientationChange } from 'react-native-orientation-locker';
 
 const Stack = createNativeStackNavigator<AppNavigatorScreenParams, string>();
 
@@ -27,8 +26,6 @@ const AppNavigatorComponent = () => {
   const isTimerExisting: boolean =
     !!persistedState &&
     !calculateCurrentWorkoutState(persistedState).isFinished;
-
-  useOrientationChange(types => console.log(types));
 
   const initialRouteName: AppNavigatorScreen = isTimerExisting
     ? AppNavigatorScreen.RunningWorkoutScreen
