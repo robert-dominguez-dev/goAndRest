@@ -26,6 +26,8 @@ const RunningWorkoutCounterComponent = ({
 
   const { textMuted } = useAppThemedColors();
 
+  const shouldDisplayRoundCounter = totalRounds > 1;
+
   return (
     <AppRow alignItems={'flex-end'}>
       <RunningWorkoutCounterText
@@ -33,19 +35,23 @@ const RunningWorkoutCounterComponent = ({
         current={currentSeries}
         total={totalSeries}
       />
-      <AppView
-        paddingHorizontal={'sm'}
-        paddingBottom={'xs'}>
-        <ArrowBigRightDash
-          color={textMuted}
-          size={categoryToIconSize.subHeader}
-        />
-      </AppView>
-      <RunningWorkoutCounterText
-        label={t('screens.runningWorkoutScreen.descriptionTexts.round')}
-        current={currentRound}
-        total={totalRounds}
-      />
+      {shouldDisplayRoundCounter && (
+        <>
+          <AppView
+            paddingHorizontal={'sm'}
+            paddingBottom={'xs'}>
+            <ArrowBigRightDash
+              color={textMuted}
+              size={categoryToIconSize.subHeader}
+            />
+          </AppView>
+          <RunningWorkoutCounterText
+            label={t('screens.runningWorkoutScreen.descriptionTexts.round')}
+            current={currentRound}
+            total={totalRounds}
+          />
+        </>
+      )}
     </AppRow>
   );
 };
