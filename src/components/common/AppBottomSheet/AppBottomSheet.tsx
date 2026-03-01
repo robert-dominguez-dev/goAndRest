@@ -5,6 +5,7 @@ import {
 } from './components/AppBottomSheetContent.tsx';
 import { AppKeyboardAvoidingView } from '../AppKeyboardAvoidingView.tsx';
 import { JSX } from 'react';
+import { getOnPressWithHapticFeedbackConditionally } from '../../controls/helpers/getOnPressWithHapticFeedbackConditionally.ts';
 
 export type AppBottomSheetRenderContentProps = Pick<
   AppBottomSheetContentProps,
@@ -44,7 +45,7 @@ export const AppBottomSheet = ({
       statusBarTranslucent
       animationType={'slide'}>
       <Pressable
-        onPress={onOverlayPress}
+        onPress={getOnPressWithHapticFeedbackConditionally(onOverlayPress)}
         style={{ flex: 1, justifyContent: 'flex-end' }}>
         <AppKeyboardAvoidingView>
           <AppBottomSheetContent
