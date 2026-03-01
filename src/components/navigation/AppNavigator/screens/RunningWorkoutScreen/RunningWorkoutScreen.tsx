@@ -16,8 +16,11 @@ import { useWorkoutFeedback } from '../../../../../hooks/useWorkoutFeedback.ts';
 import { FinishedWorkoutScreen } from '../FinishedWorkoutScreen/FinishedWorkoutScreen.tsx';
 import { isMutedAtom } from '../../../../../contexts/atoms.ts';
 import { useAtom } from 'jotai';
-import TrackPlayer from 'react-native-track-player';
 import { RunningWorkoutCounter } from './components/RunningWorkoutCounter.tsx';
+import {
+  stopAndResetTrackPlayer
+} from '../../../../../hooks/useInitiateWorkoutSounds/helpers/stopAndResetTrackPlayer.ts';
+import { useEffect } from 'react';
 
 const INDICATOR_STROKE_WIDTH = 16;
 
@@ -39,9 +42,11 @@ export const RunningWorkoutScreen = ({
 }: RunningWorkoutScreenProps) => {
   const t = useAppTranslation();
 
+  const appColors = useAppThemedColors();
+
   const [isMuted, setIsMuted] = useAtom(isMutedAtom);
 
-  const appColors = useAppThemedColors();
+  useEffect(() => () => setIsMuted(false), []);
 
   const { popUp, openEndWorkoutPopUp } = useEndRunningWorkoutPopUp();
 
@@ -92,8 +97,11 @@ export const RunningWorkoutScreen = ({
   const toggleMuted = () =>
     setIsMuted(prev => {
       const shouldBeMuted = !prev;
-      const volume: number = shouldBeMuted ? 0 : 1;
-      void TrackPlayer.setVolume(volume);
+
+      if (shouldBeMuted) {
+        void stopAndResetTrackPlayer();
+      }
+
       return shouldBeMuted;
     });
 
