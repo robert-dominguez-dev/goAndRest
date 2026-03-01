@@ -30,6 +30,7 @@ export const cs = {
         description: 'Delší přestávka po dokončení všech sérií v kole.',
       },
     },
+    pressAnywhere: 'Klikni kamkoliv pro potvrzení 👇',
   },
   screens: {
     landingScreen: {

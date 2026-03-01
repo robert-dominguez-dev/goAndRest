@@ -31,6 +31,7 @@ export const en = {
           'Longer rest period after completing all series in a round.',
       },
     },
+    pressAnywhere: 'Click anywhere to confirm 👇',
   },
   screens: {
     landingScreen: {

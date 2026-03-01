@@ -10,10 +10,9 @@ import { AppSize } from '../../../../../../../../types/ui.ts';
 import { AppRoundedButtonUI } from '../../../../../../../controls/AppRoundedButton/AppRoundedButtonUI.tsx';
 import { Pressable } from 'react-native';
 import { preventDefaultHandler } from '../../../../../../../../helpers/preventDefaultHandler.ts';
-import { AppText } from '../../../../../../../common/AppText/AppText.tsx';
 import { HapticFeedbackTypes } from 'react-native-haptic-feedback';
 
-const SLIDER_RADIUS = 160;
+export const WORKOUT_CONFIG_SLIDER_RADIUS = 160;
 
 const thumbElement = (
   <Pressable onPress={preventDefaultHandler}>
@@ -35,7 +34,8 @@ export type WorkoutConfigCircularSliderProps = Pick<
   | 'step'
   | 'labelEveryNSteps'
   | 'valueFormatter'
-> & { onConfirm: () => void };
+  | 'children'
+>;
 
 const WorkoutConfigCircularSliderComponent = ({
   value,
@@ -45,15 +45,13 @@ const WorkoutConfigCircularSliderComponent = ({
   step,
   labelEveryNSteps,
   valueFormatter,
-  onConfirm,
+  children,
 }: WorkoutConfigCircularSliderProps) => {
   const { slider } = useAppThemedColors();
 
-  const valueFormatted: string = valueFormatter?.(value) ?? String(value);
-
   return (
     <AppCircularSlider
-      radius={SLIDER_RADIUS}
+      radius={WORKOUT_CONFIG_SLIDER_RADIUS}
       strokeWidth={AppSize.l}
       minValue={minValue}
       maxValue={maxValue}
@@ -66,15 +64,8 @@ const WorkoutConfigCircularSliderComponent = ({
         onChange,
         HapticFeedbackTypes.clockTick,
       )}
-      onConfirm={onConfirm}
       thumbElement={thumbElement}>
-      <AppText
-        grow={false}
-        category={'header'}
-        textAlign={'center'}
-        fontSizeOverride={'3xl'}>
-        {valueFormatted}
-      </AppText>
+      {children}
     </AppCircularSlider>
   );
 };

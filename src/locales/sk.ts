@@ -31,6 +31,7 @@ export const sk = {
           'Dlhšia doba odpočinku po dokončení všetkých sérií v kole.',
       },
     },
+    pressAnywhere: 'Klikni kamkoľvek pre potvrdenie 👇',
   },
   screens: {
     landingScreen: {

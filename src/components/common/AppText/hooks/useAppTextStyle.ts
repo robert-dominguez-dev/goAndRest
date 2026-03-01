@@ -16,12 +16,14 @@ export type UseAppTextStyleParams = Pick<TextStyle, 'textAlign'> & {
   shrink?: boolean;
   textShadowColorStatus?: AppColorUnion;
   fontSizeOverride?: AppSizeUnion;
+  colorOverride?: string;
 };
 
 export const useAppTextStyle = ({
   textAlign,
   textShadowColorStatus,
   fontSizeOverride,
+  colorOverride,
   category = 'content',
   colorStatus = 'text',
   grow = true,
@@ -49,7 +51,7 @@ export const useAppTextStyle = ({
     ...textShadowStyles,
     ...fontSizeOverrideProps,
     textAlign,
-    color: appColors[colorStatus],
+    color: colorOverride || appColors[colorStatus],
     flexGrow: Number(grow),
     flexShrink: Number(shrink),
   };

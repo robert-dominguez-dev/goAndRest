@@ -44,6 +44,7 @@ export type AppTranslations = {
   common: {
     ok: string;
     workoutConfig: WorkoutConfigTexts;
+    pressAnywhere: string;
   };
   screens: {
     landingScreen: {
