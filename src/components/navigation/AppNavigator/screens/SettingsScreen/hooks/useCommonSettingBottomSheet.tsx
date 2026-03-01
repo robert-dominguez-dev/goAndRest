@@ -1,9 +1,5 @@
-import {
-  useAppSelectionBottomSheet
-} from '../../../../../common/AppSelectionBottomSheet/hooks/useAppSelectionBottomSheet.tsx';
-import {
-  AppSelectionBottomSheetItemData
-} from '../../../../../common/AppSelectionBottomSheet/components/AppSelectionBottomSheetItem.tsx';
+import { useAppSelectionBottomSheet } from '../../../../../common/AppSelectionBottomSheet/hooks/useAppSelectionBottomSheet.tsx';
+import { AppSelectionBottomSheetItemData } from '../../../../../common/AppSelectionBottomSheet/components/AppSelectionBottomSheetItem.tsx';
 import { useAtom } from 'jotai';
 import { useAppTranslation } from '../../../../../../locales/hooks/useAppTranslation.ts';
 import { AppAtom } from '../../../../../../contexts/hooks/useDebouncedAtom.ts';

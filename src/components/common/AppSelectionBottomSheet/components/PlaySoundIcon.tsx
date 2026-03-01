@@ -5,25 +5,28 @@ import { HapticFeedbackTypes } from 'react-native-haptic-feedback';
 import { LucideIcon, PlayCircle, StopCircle } from 'lucide-react-native';
 import { useAppThemedColors } from '../../../../hooks/useAppThemedColors.ts';
 import { categoryToIconSize } from '../../../controls/AppButton/components/AppIconAndLabel.tsx';
-import { playSound, PlaySoundParams } from '../../../../hooks/playSound.ts';
+import { playSound, PlaySoundParams } from '../../../../helpers/playSound.ts';
 import { useEffect } from 'react';
 import { useAtom } from 'jotai';
 import { playingPreviewAtom } from '../../../../contexts/atoms.ts';
 import { stopAndResetTrackPlayer } from '../../../../hooks/useInitiateWorkoutSounds/helpers/stopAndResetTrackPlayer.ts';
+import { useOnTrackFinished } from '../../../../hooks/useOnTrackFinished.ts';
 
 export type PlaySoundIconProps = {
   audioParams: PlaySoundParams;
 };
 
-export const PlaySoundIcon = ({ audioParams }: PlaySoundIconProps) => {
+export const PlaySoundIcon = ({
+  audioParams: { soundKey, url },
+}: PlaySoundIconProps) => {
   const [playingPreviewKey, setPlayingPreviewKey] = useAtom(playingPreviewAtom);
 
   const { text } = useAppThemedColors();
 
   const play = async () => {
     await stopAndResetTrackPlayer();
-    await playSound(audioParams);
-    setPlayingPreviewKey(audioParams.soundKey);
+    await playSound({ soundKey, url });
+    setPlayingPreviewKey(soundKey);
   };
 
   const stop = async () => {
@@ -31,13 +34,19 @@ export const PlaySoundIcon = ({ audioParams }: PlaySoundIconProps) => {
     setPlayingPreviewKey(null);
   };
 
+  useOnTrackFinished(soundKey, () => {
+    if (playingPreviewKey === soundKey) {
+      void stop();
+    }
+  });
+
   useEffect(() => {
     return () => {
       void stop();
     };
   }, []);
 
-  const isPlaying = playingPreviewKey === audioParams.soundKey;
+  const isPlaying = playingPreviewKey === soundKey;
 
   const handlePress = async (event: GestureResponderEvent) => {
     event.preventDefault();

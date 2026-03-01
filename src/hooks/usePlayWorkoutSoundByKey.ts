@@ -2,7 +2,7 @@ import { WorkoutSoundKey } from '../assets/types.ts';
 import { useAtomValue } from 'jotai';
 import { workoutSoundFilePathsAtom } from '../contexts/atoms.ts';
 import { getSoundTrackUrl } from './useInitiateWorkoutSounds/helpers/getSoundTrackUrl.ts';
-import { playSound } from './playSound.ts';
+import { playSound } from '../helpers/playSound.ts';
 
 export const usePlayWorkoutSoundByKey = () => {
   const workoutSoundPaths = useAtomValue(workoutSoundFilePathsAtom);
