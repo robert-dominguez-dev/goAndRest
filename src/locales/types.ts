@@ -96,6 +96,10 @@ export type AppTranslations = {
       title: string;
       endWorkoutPopUp: PopUpTexts;
       totalElapsedTime: string;
+      descriptionTexts: {
+        round: string;
+        set: string;
+      };
     };
     savedWorkoutsScreen: {
       title: string;

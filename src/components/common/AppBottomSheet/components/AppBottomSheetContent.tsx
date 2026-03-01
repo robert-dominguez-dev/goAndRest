@@ -10,9 +10,7 @@ import {
 } from '../helpers/getBottomSheetContentHeader.tsx';
 import { getPressableOpacity } from '../../../controls/helpers/getPressableOpacity.ts';
 import { preventDefaultHandler } from '../../../../helpers/preventDefaultHandler.ts';
-import {
-  getOnPressWithHapticFeedbackConditionally
-} from '../../../controls/helpers/getOnPressWithHapticFeedbackConditionally.ts';
+import { getOnPressWithHapticFeedbackConditionally } from '../../../controls/helpers/getOnPressWithHapticFeedbackConditionally.ts';
 
 export type AppBottomSheetContentProps = ChildrenProp &
   GetBottomSheetContentHeaderParams &

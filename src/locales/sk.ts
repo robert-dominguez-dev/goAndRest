@@ -169,6 +169,10 @@ export const sk = {
         negativeButtonLabel: 'Pokračovať',
       },
       totalElapsedTime: 'Celkom',
+      descriptionTexts: {
+        round: 'Kolo',
+        set: 'Séria',
+      },
     },
     savedWorkoutsScreen: {
       title: 'Uložené tréningy',

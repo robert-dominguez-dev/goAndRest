@@ -9,26 +9,25 @@ export const en = {
     workoutConfig: {
       work: {
         label: 'Work',
-        description: 'Active exercise duration in each series.',
+        description: 'Active exercise duration in each set.',
       },
       rest: {
         label: 'Rest',
-        description: 'Short recovery time between series.',
+        description: 'Short recovery time between sets.',
       },
       series: {
-        label: 'Series',
+        label: 'Sets',
         description:
           'Number of exercise repetitions (and breaks between them) within one round.',
       },
       rounds: {
         label: 'Rounds',
         description:
-          'Total number of rounds in the workout. Each round can include several series.',
+          'Total number of rounds in the workout. Each round can include several sets.',
       },
       recovery: {
         label: 'Rest after round',
-        description:
-          'Longer rest period after completing all series in a round.',
+        description: 'Longer rest period after completing all sets in a round.',
       },
     },
     pressAnywhere: 'Click anywhere to confirm 👇',
@@ -172,6 +171,10 @@ export const en = {
         negativeButtonLabel: 'Continue',
       },
       totalElapsedTime: 'Total',
+      descriptionTexts: {
+        round: 'Round',
+        set: 'Set',
+      },
     },
     savedWorkoutsScreen: {
       title: 'Saved Workouts',

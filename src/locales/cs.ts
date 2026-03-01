@@ -168,6 +168,10 @@ export const cs = {
         negativeButtonLabel: 'Pokračovat',
       },
       totalElapsedTime: 'Celkem',
+      descriptionTexts: {
+        round: 'Kolo',
+        set: 'Série',
+      },
     },
     savedWorkoutsScreen: {
       title: 'Uložené tréninky',

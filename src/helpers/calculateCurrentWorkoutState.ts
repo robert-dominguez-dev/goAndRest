@@ -32,8 +32,8 @@ export const calculateCurrentWorkoutState = ({
   if (phaseElapsedMs < warmup) {
     return {
       currentPhase: RunningWorkoutPhase.WARMUP,
-      currentRound: 0,
-      currentSeries: 0,
+      currentRound: 1,
+      currentSeries: 1,
       phaseRemainingMs: warmup - phaseElapsedMs,
       phaseElapsedMs,
       totalElapsedMs,

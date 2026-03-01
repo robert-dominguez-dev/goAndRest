@@ -17,6 +17,7 @@ import { FinishedWorkoutScreen } from '../FinishedWorkoutScreen/FinishedWorkoutS
 import { isMutedAtom } from '../../../../../contexts/atoms.ts';
 import { useAtom } from 'jotai';
 import TrackPlayer from 'react-native-track-player';
+import { RunningWorkoutCounter } from './components/RunningWorkoutCounter.tsx';
 
 const INDICATOR_STROKE_WIDTH = 16;
 
@@ -73,6 +74,9 @@ export const RunningWorkoutScreen = ({
     totalDurationMs,
     phaseRemainingMs,
     phaseElapsedMs,
+    currentSeries,
+    currentRound,
+    workoutConfig: { series, rounds },
   } = currentState;
 
   const headerTitle: string =
@@ -103,8 +107,15 @@ export const RunningWorkoutScreen = ({
         HeaderAccessoryRightIconComponent={VolumeIconComponent}
         onHeaderAccessoryRightPress={toggleMuted}>
         <AppView
+          gap={'l'}
           alignItems={'center'}
           justifyContent={'center'}>
+          <RunningWorkoutCounter
+            currentSeries={currentSeries}
+            currentRound={currentRound}
+            totalSeries={series}
+            totalRounds={rounds}
+          />
           <AppCircularIndicator
             isRunning={isRunning}
             value={totalElapsedMs}
