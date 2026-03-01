@@ -1,18 +1,21 @@
 import { AppView, AppViewProps } from '../../AppView/AppView.tsx';
 import { useAppSafeAreaPadding } from '../../../../hooks/useAppSafeAreaPadding.ts';
 import { ChildrenProp } from '../../../../types/common.ts';
-import { ScrollView } from 'react-native';
+import { Pressable, ScrollView, StyleSheet } from 'react-native';
 import { FILL_CONTAINER_DIMENSION } from '../../../../constants/common.ts';
 import { memo } from 'react';
 import {
   getBottomSheetContentHeader,
   GetBottomSheetContentHeaderParams,
 } from '../helpers/getBottomSheetContentHeader.tsx';
+import { getPressableOpacity } from '../../../controls/helpers/getPressableOpacity.ts';
+import { preventDefaultHandler } from '../../../../helpers/preventDefaultHandler.ts';
 
 export type AppBottomSheetContentProps = ChildrenProp &
   GetBottomSheetContentHeaderParams &
   Pick<AppViewProps, 'backgroundColorStatus'> & {
     scrollable?: boolean;
+    onBottomSheetPress?: () => void;
   };
 
 const AppBottomSheetContentComponent = ({
@@ -22,6 +25,7 @@ const AppBottomSheetContentComponent = ({
   headerOverride,
   AccessoryRightIconComponent,
   onAccessoryRightPress,
+  onBottomSheetPress,
   backgroundColorStatus = 'backgroundAlt',
   scrollable = false,
 }: AppBottomSheetContentProps) => {
@@ -36,30 +40,53 @@ const AppBottomSheetContentComponent = ({
   });
 
   return (
-    <AppView
-      grow
-      disableBorderBottom
-      onTouchEnd={e => e.stopPropagation()}
-      maxHeight={FILL_CONTAINER_DIMENSION}
-      gap={'m'}
-      paddingTop={'m'}
-      paddingHorizontal={'m'}
-      paddingBottom={safeAreaPaddingBottom}
-      backgroundColorStatus={backgroundColorStatus}
-      borderTopLeftRadius={'m'}
-      borderTopRightRadius={'m'}
-      borderColorStatus={'border'}
-      borderWidthOverride={1}>
-      {header}
-      {!!children && (
-        <ScrollView
-          showsVerticalScrollIndicator={false}
-          keyboardShouldPersistTaps={'handled'}
-          scrollEnabled={scrollable}>
-          {children}
-        </ScrollView>
-      )}
-    </AppView>
+    <Pressable
+      onPress={event => {
+        preventDefaultHandler(event);
+        onBottomSheetPress?.();
+      }}>
+      {({ pressed }) => {
+        const opacity = getPressableOpacity({
+          pressed,
+          disabled: false,
+        });
+
+        const reversedOpacity = 1 - opacity;
+
+        return (
+          <AppView
+            grow
+            disableBorderBottom
+            maxHeight={FILL_CONTAINER_DIMENSION}
+            gap={'m'}
+            paddingTop={'m'}
+            paddingHorizontal={'m'}
+            paddingBottom={safeAreaPaddingBottom}
+            backgroundColorStatus={backgroundColorStatus}
+            borderTopLeftRadius={'m'}
+            borderTopRightRadius={'m'}
+            borderColorStatus={'border'}
+            borderWidthOverride={1}>
+            <AppView
+              {...StyleSheet.absoluteFill}
+              opacity={reversedOpacity}
+              backgroundColorStatus={'backgroundAlt'}
+              borderTopLeftRadius={'m'}
+              borderTopRightRadius={'m'}
+            />
+            {header}
+            {!!children && (
+              <ScrollView
+                showsVerticalScrollIndicator={false}
+                keyboardShouldPersistTaps={'handled'}
+                scrollEnabled={scrollable}>
+                {children}
+              </ScrollView>
+            )}
+          </AppView>
+        );
+      }}
+    </Pressable>
   );
 };
 

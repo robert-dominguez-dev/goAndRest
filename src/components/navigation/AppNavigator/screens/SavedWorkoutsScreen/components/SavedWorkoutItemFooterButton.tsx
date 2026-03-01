@@ -1,4 +1,7 @@
-import { AppView, AppViewProps, } from '../../../../../common/AppView/AppView.tsx';
+import {
+  AppView,
+  AppViewProps,
+} from '../../../../../common/AppView/AppView.tsx';
 import { Pressable } from 'react-native';
 import { AppRow } from '../../../../../common/AppRow.tsx';
 import {

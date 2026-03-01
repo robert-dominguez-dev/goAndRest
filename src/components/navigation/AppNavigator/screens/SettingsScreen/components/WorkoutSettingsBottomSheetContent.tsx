@@ -14,13 +14,11 @@ const { min, max, step, labelEveryNSteps, valueFormatter } =
 
 export type WorkoutSettingsBottomSheetContentProps = Pick<
   WorkoutConfigBottomSheetContentBaseProps,
-  'description' | 'onConfirm' | 'onClose'
+  'description'
 > & { durationAtom: AppAtom<number> };
 
 const WorkoutSettingsBottomSheetContentComponent = ({
   description,
-  onConfirm,
-  onClose,
   durationAtom,
 }: WorkoutSettingsBottomSheetContentProps) => {
   const [duration, setDuration] = useDebouncedAtom(durationAtom);
@@ -35,8 +33,6 @@ const WorkoutSettingsBottomSheetContentComponent = ({
       step={step}
       labelEveryNSteps={labelEveryNSteps}
       valueFormatter={valueFormatter}
-      onConfirm={onConfirm}
-      onClose={onClose}
     />
   );
 };

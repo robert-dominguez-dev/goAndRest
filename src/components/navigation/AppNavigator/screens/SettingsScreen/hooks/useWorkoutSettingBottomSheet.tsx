@@ -1,14 +1,13 @@
-import { useAppBottomSheet } from '../../../../../common/AppBottomSheet/hooks/useAppBottomSheet.tsx';
 import { AppBottomSheetProps } from '../../../../../common/AppBottomSheet/AppBottomSheet.tsx';
 import {
   WorkoutConfigBottomSheetIconAndTitle,
   WorkoutConfigBottomSheetIconAndTitleProps,
 } from '../../LandingScreen/components/WorkoutConfigButtons/components/WorkoutConfigBottomSheetIconAndTitle.tsx';
-import { useLastValueSnapshot } from '../../LandingScreen/components/WorkoutConfigButtons/hooks/useLastValueSnapshot.tsx';
 import {
   WorkoutSettingsBottomSheetContent,
   WorkoutSettingsBottomSheetContentProps,
 } from '../components/WorkoutSettingsBottomSheetContent.tsx';
+import { useSliderBottomSheet } from '../../../../../../hooks/useSliderBottomSheet.tsx';
 import { useAtom } from 'jotai';
 
 type UseWorkoutSettingBottomSheetParams = Pick<
@@ -32,26 +31,24 @@ export const useWorkoutSettingBottomSheet = ({
 }: UseWorkoutSettingBottomSheetParams) => {
   const [duration, setDuration] = useAtom(durationAtom);
 
-  const { takeSnapshot, clearSnapshot, revertChanges } =
-    useLastValueSnapshot(setDuration);
+  const { bottomSheet, open, confirm, revert } = useSliderBottomSheet({
+    getDuration: () => duration,
+    setDuration,
+  });
 
-  const { bottomSheet, handleOpen } = useAppBottomSheet();
-
-  const renderContent: AppBottomSheetProps['renderContent'] = ({ onClose }) => (
+  const renderContent = () => (
     <WorkoutSettingsBottomSheetContent
       description={description}
-      onConfirm={clearSnapshot}
-      onClose={onClose}
       durationAtom={durationAtom}
     />
   );
 
-  const openWorkoutSettingsBottomSheet = () => {
-    takeSnapshot(duration);
-    handleOpen({
+  const openWorkoutSettingsBottomSheet = () =>
+    open({
       renderContent,
       backgroundColorStatus,
-      onAccessoryRightPress: revertChanges,
+      onBottomSheetPress: confirm,
+      onOverlayPress: revert,
       title: (
         <WorkoutConfigBottomSheetIconAndTitle
           label={title}
@@ -59,7 +56,6 @@ export const useWorkoutSettingBottomSheet = ({
         />
       ),
     });
-  };
 
   return { bottomSheet, openWorkoutSettingsBottomSheet, duration };
 };

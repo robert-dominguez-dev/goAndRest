@@ -12,13 +12,16 @@ type UseAppSelectionBottomSheetParams<TValue> = Omit<
 export const useAppSelectionBottomSheet = () => {
   const [bottomSheet, setBottomSheet] = useState<JSX.Element | null>(null);
 
+  const handleClose = () => setBottomSheet(null);
+
   const handleOpen = <TValue,>(
     params: UseAppSelectionBottomSheetParams<TValue>,
   ) =>
     setBottomSheet(
       <AppSelectionBottomSheet
         {...params}
-        onClose={() => setBottomSheet(null)}
+        onClose={handleClose}
+        onOverlayPress={handleClose}
       />,
     );
 

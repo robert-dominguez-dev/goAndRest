@@ -5,21 +5,17 @@ import {
 import { useAppTranslation } from '../../../../../../../../locales/hooks/useAppTranslation.ts';
 import { AppWorkoutFieldValues } from '../../../../../../../../contexts/AppWorkoutsProvider/types.ts';
 import { Control, Controller } from 'react-hook-form';
-import { AppBottomSheetRenderContentProps } from '../../../../../../../common/AppBottomSheet/AppBottomSheet.tsx';
 import { memo } from 'react';
 import { WorkoutConfigBottomSheetContentBase } from './WorkoutConfigBottomSheetContentBase.tsx';
 
-type WorkoutConfigBottomSheetContentProps = AppBottomSheetRenderContentProps & {
+type WorkoutConfigBottomSheetContentProps = {
   name: AppWorkoutConfigKey;
   control: Control<AppWorkoutFieldValues>;
-  onConfirm: () => void;
 };
 
 const WorkoutConfigBottomSheetContentComponent = ({
   name,
   control,
-  onConfirm,
-  onClose,
 }: WorkoutConfigBottomSheetContentProps) => {
   const t = useAppTranslation();
 
@@ -40,8 +36,6 @@ const WorkoutConfigBottomSheetContentComponent = ({
           step={step}
           labelEveryNSteps={labelEveryNSteps}
           valueFormatter={valueFormatter}
-          onConfirm={onConfirm}
-          onClose={onClose}
         />
       )}
     />

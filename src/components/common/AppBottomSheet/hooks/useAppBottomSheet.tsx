@@ -1,7 +1,7 @@
 import { JSX, useState } from 'react';
 import { AppBottomSheet, AppBottomSheetProps } from '../AppBottomSheet.tsx';
 
-type OpenAppBottomSheetParams = Omit<AppBottomSheetProps, 'onClose'>;
+export type OpenAppBottomSheetParams = Omit<AppBottomSheetProps, 'onClose'>;
 
 export const useAppBottomSheet = () => {
   const [bottomSheet, setBottomSheet] = useState<JSX.Element | null>(null);

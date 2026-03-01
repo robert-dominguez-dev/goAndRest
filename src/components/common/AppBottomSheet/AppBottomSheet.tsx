@@ -1,5 +1,4 @@
-import { Modal } from 'react-native';
-import { AppView } from '../AppView/AppView.tsx';
+import { Modal, Pressable } from 'react-native';
 import {
   AppBottomSheetContent,
   AppBottomSheetContentProps,
@@ -20,9 +19,10 @@ export type AppBottomSheetProps = Pick<
   | 'backgroundColorStatus'
   | 'AccessoryRightIconComponent'
   | 'onAccessoryRightPress'
+  | 'onBottomSheetPress'
 > & {
   renderContent: (params: AppBottomSheetRenderContentProps) => JSX.Element;
-  shouldCloseOnOverlayPress?: boolean;
+  onOverlayPress?: () => void;
 };
 
 export const AppBottomSheet = ({
@@ -33,7 +33,8 @@ export const AppBottomSheet = ({
   backgroundColorStatus,
   AccessoryRightIconComponent,
   onAccessoryRightPress,
-  shouldCloseOnOverlayPress = !title,
+  onOverlayPress,
+  onBottomSheetPress,
 }: AppBottomSheetProps) => {
   const contentElement = renderContent({ onClose });
 
@@ -42,14 +43,14 @@ export const AppBottomSheet = ({
       transparent
       statusBarTranslucent
       animationType={'slide'}>
-      <AppView
-        onTouchEnd={shouldCloseOnOverlayPress ? onClose : undefined}
-        grow
-        justifyContent={'flex-end'}>
+      <Pressable
+        onPress={onOverlayPress}
+        style={{ flex: 1, justifyContent: 'flex-end' }}>
         <AppKeyboardAvoidingView>
           <AppBottomSheetContent
             title={title}
             onClose={onClose}
+            onBottomSheetPress={onBottomSheetPress}
             scrollable={scrollable}
             backgroundColorStatus={backgroundColorStatus}
             AccessoryRightIconComponent={AccessoryRightIconComponent}
@@ -57,7 +58,7 @@ export const AppBottomSheet = ({
             {contentElement}
           </AppBottomSheetContent>
         </AppKeyboardAvoidingView>
-      </AppView>
+      </Pressable>
     </Modal>
   );
 };

@@ -1,6 +1,5 @@
 import { AppHeader, AppHeaderProps } from '../../AppHeader/AppHeader.tsx';
 import { JSX } from 'react';
-import { X } from 'lucide-react-native';
 
 export type GetBottomSheetContentHeaderParams = Pick<
   AppHeaderProps,
@@ -15,7 +14,7 @@ export const getBottomSheetContentHeader = ({
   headerOverride,
   onClose,
   onAccessoryRightPress,
-  AccessoryRightIconComponent = X,
+  AccessoryRightIconComponent,
 }: GetBottomSheetContentHeaderParams) => {
   if (headerOverride) {
     return headerOverride;
@@ -25,10 +24,13 @@ export const getBottomSheetContentHeader = ({
     return undefined;
   }
 
-  const handleAccessoryRightPress = () => {
-    onAccessoryRightPress?.();
-    onClose();
-  };
+  const handleAccessoryRightPress: AppHeaderProps['onAccessoryRightPress'] =
+    onAccessoryRightPress
+      ? () => {
+          onAccessoryRightPress();
+          onClose();
+        }
+      : undefined;
 
   return (
     <AppHeader

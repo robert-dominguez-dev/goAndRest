@@ -5,11 +5,9 @@ import {
 import { useAppTranslation } from '../../../../../../../../locales/hooks/useAppTranslation.ts';
 import { AppWorkoutFieldValues } from '../../../../../../../../contexts/AppWorkoutsProvider/types.ts';
 import { useFormContext } from 'react-hook-form';
-import { AppBottomSheetProps } from '../../../../../../../common/AppBottomSheet/AppBottomSheet.tsx';
-import { useAppBottomSheet } from '../../../../../../../common/AppBottomSheet/hooks/useAppBottomSheet.tsx';
 import { WorkoutConfigBottomSheetContent } from '../components/WorkoutConfigBottomSheetContent.tsx';
 import { WorkoutConfigBottomSheetIconAndTitle } from '../components/WorkoutConfigBottomSheetIconAndTitle.tsx';
-import { useLastValueSnapshot } from './useLastValueSnapshot.tsx';
+import { useSliderBottomSheet } from '../../../../../../../../hooks/useSliderBottomSheet.tsx';
 
 export const useWorkoutConfigBottomSheet = (name: AppWorkoutConfigKey) => {
   const t = useAppTranslation();
@@ -17,30 +15,26 @@ export const useWorkoutConfigBottomSheet = (name: AppWorkoutConfigKey) => {
   const { control, getValues, setValue } =
     useFormContext<AppWorkoutFieldValues>();
 
-  const { takeSnapshot, clearSnapshot, revertChanges } = useLastValueSnapshot(
-    value => setValue(name, value),
-  );
+  const { bottomSheet, open, confirm, revert } = useSliderBottomSheet({
+    getDuration: () => getValues(name),
+    setDuration: value => setValue(name, value),
+  });
 
   const { labelKey, backgroundColorStatus, IconComponent } =
     workoutSettingsButtonConfigMap[name];
 
-  const renderContent: AppBottomSheetProps['renderContent'] = ({ onClose }) => (
+  const renderContent = () => (
     <WorkoutConfigBottomSheetContent
       name={name}
       control={control}
-      onConfirm={clearSnapshot}
-      onClose={onClose}
     />
   );
-
-  const { bottomSheet, handleOpen } = useAppBottomSheet();
-
-  const openWorkoutConfigBottomSheet = () => {
-    takeSnapshot(getValues(name));
-    handleOpen({
+  const openWorkoutConfigBottomSheet = () =>
+    open({
       renderContent,
       backgroundColorStatus,
-      onAccessoryRightPress: revertChanges,
+      onBottomSheetPress: confirm,
+      onOverlayPress: revert,
       title: (
         <WorkoutConfigBottomSheetIconAndTitle
           label={t(labelKey)}
@@ -48,7 +42,6 @@ export const useWorkoutConfigBottomSheet = (name: AppWorkoutConfigKey) => {
         />
       ),
     });
-  };
 
   return { bottomSheet, openWorkoutConfigBottomSheet };
 };
