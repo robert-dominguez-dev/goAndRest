@@ -6,7 +6,6 @@ import { UNLIMITED_NUMBER_OF_LINES } from '../../../../../../constants/common.ts
 import { Pressable } from 'react-native';
 import { getPressableOpacity } from '../../../../../controls/helpers/getPressableOpacity.ts';
 import { getOnPressWithHapticFeedback } from '../../../../../controls/helpers/getOnPressWithHapticFeedback.ts';
-import { HapticFeedbackTypes } from 'react-native-haptic-feedback';
 
 const SETTINGS_ITEM_HEIGHT = 40;
 
@@ -23,11 +22,7 @@ const SettingsItemComponent = ({
   accessoryRight,
   onPress,
 }: SettingsItemProps) => (
-  <Pressable
-    onPress={getOnPressWithHapticFeedback(
-      onPress,
-      HapticFeedbackTypes.selection,
-    )}>
+  <Pressable onPress={getOnPressWithHapticFeedback(onPress)}>
     {({ pressed }) => {
       const opacity = getPressableOpacity({
         pressed,

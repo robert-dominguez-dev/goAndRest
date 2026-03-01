@@ -4,7 +4,6 @@ import { useWatch } from 'react-hook-form';
 import { WorkoutConfigButtonProps } from '../../../types.ts';
 import { Pressable } from 'react-native';
 import { getOnPressWithHapticFeedbackConditionally } from '../../../../../../../controls/helpers/getOnPressWithHapticFeedbackConditionally.ts';
-import { HapticFeedbackTypes } from 'react-native-haptic-feedback';
 import { getPressableOpacity } from '../../../../../../../controls/helpers/getPressableOpacity.ts';
 import { sizes } from '../../../../../../../../constants/ui.ts';
 import { AppView } from '../../../../../../../common/AppView/AppView.tsx';
@@ -36,10 +35,7 @@ const WorkoutConfigVerticalButtonComponent = ({
 
   return (
     <Pressable
-      onPress={getOnPressWithHapticFeedbackConditionally(
-        onPress,
-        HapticFeedbackTypes.selection,
-      )}
+      onPress={getOnPressWithHapticFeedbackConditionally(onPress)}
       disabled={disabled}>
       {({ pressed }) => {
         const opacity = getPressableOpacity({

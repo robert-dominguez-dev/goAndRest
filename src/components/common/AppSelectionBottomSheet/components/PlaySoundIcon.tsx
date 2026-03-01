@@ -1,6 +1,5 @@
 import { GestureResponderEvent, Pressable } from 'react-native';
 import { getOnPressWithHapticFeedback } from '../../../controls/helpers/getOnPressWithHapticFeedback.ts';
-import { HapticFeedbackTypes } from 'react-native-haptic-feedback';
 
 import { LucideIcon, PlayCircle, StopCircle } from 'lucide-react-native';
 import { useAppThemedColors } from '../../../../hooks/useAppThemedColors.ts';
@@ -61,11 +60,7 @@ export const PlaySoundIcon = ({
   const IconComponent: LucideIcon = isPlaying ? StopCircle : PlayCircle;
 
   return (
-    <Pressable
-      onPress={getOnPressWithHapticFeedback(
-        handlePress,
-        HapticFeedbackTypes.selection,
-      )}>
+    <Pressable onPress={getOnPressWithHapticFeedback(handlePress)}>
       <IconComponent
         color={text}
         size={categoryToIconSize.subHeader}

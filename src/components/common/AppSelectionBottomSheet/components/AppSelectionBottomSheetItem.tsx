@@ -3,7 +3,6 @@ import { AppRow } from '../../AppRow.tsx';
 import { Pressable } from 'react-native';
 import { getPressableOpacity } from '../../../controls/helpers/getPressableOpacity.ts';
 import { getOnPressWithHapticFeedback } from '../../../controls/helpers/getOnPressWithHapticFeedback.ts';
-import { HapticFeedbackTypes } from 'react-native-haptic-feedback';
 
 import { LucideIcon } from 'lucide-react-native';
 import {
@@ -51,10 +50,7 @@ export const AppSelectionBottomSheetItem = <TValue,>({
 
   return (
     <Pressable
-      onPress={getOnPressWithHapticFeedback(
-        handlePress,
-        HapticFeedbackTypes.selection,
-      )}
+      onPress={getOnPressWithHapticFeedback(handlePress)}
       disabled={isPressDisabled}>
       {({ pressed }) => {
         const opacity = getPressableOpacity({

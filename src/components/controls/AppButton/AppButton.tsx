@@ -2,7 +2,6 @@ import { Pressable, PressableProps } from 'react-native';
 
 import { AppButtonUI, AppButtonUIProps } from './components/AppButtonUI.tsx';
 import { getOnPressWithHapticFeedbackConditionally } from '../helpers/getOnPressWithHapticFeedbackConditionally.ts';
-import { HapticFeedbackTypes } from 'react-native-haptic-feedback';
 import { getPressableOpacity } from '../helpers/getPressableOpacity.ts';
 
 export type AppButtonProps = Pick<
@@ -33,11 +32,7 @@ export const AppButton = ({
     : onPress;
 
   return (
-    <Pressable
-      onPress={getOnPressWithHapticFeedbackConditionally(
-        handlePress,
-        HapticFeedbackTypes.selection,
-      )}>
+    <Pressable onPress={getOnPressWithHapticFeedbackConditionally(handlePress)}>
       {({ pressed }) => {
         const opacity = getPressableOpacity({
           disabled,

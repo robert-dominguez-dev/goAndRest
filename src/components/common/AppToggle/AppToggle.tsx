@@ -1,7 +1,6 @@
 import React from 'react';
 import { Pressable } from 'react-native';
 import { getOnPressWithHapticFeedback } from '../../controls/helpers/getOnPressWithHapticFeedback.ts';
-import { HapticFeedbackTypes } from 'react-native-haptic-feedback';
 import {
   AppToggleBase,
   AppToggleBaseProps,
@@ -13,10 +12,7 @@ type AppToggleProps = AppToggleBaseProps & {
 
 export const AppToggle = ({ value, onValueChange }: AppToggleProps) => (
   <Pressable
-    onPress={getOnPressWithHapticFeedback(
-      () => onValueChange(!value),
-      HapticFeedbackTypes.selection,
-    )}>
+    onPress={getOnPressWithHapticFeedback(() => onValueChange(!value))}>
     <AppToggleBase value={value} />
   </Pressable>
 );

@@ -1,7 +1,4 @@
-import {
-  AppView,
-  AppViewProps,
-} from '../../../../../common/AppView/AppView.tsx';
+import { AppView, AppViewProps, } from '../../../../../common/AppView/AppView.tsx';
 import { Pressable } from 'react-native';
 import { AppRow } from '../../../../../common/AppRow.tsx';
 import {
@@ -10,7 +7,6 @@ import {
 } from '../../../../../controls/AppButton/components/AppIconAndLabel.tsx';
 import { getPressableOpacity } from '../../../../../controls/helpers/getPressableOpacity.ts';
 import { getOnPressWithHapticFeedback } from '../../../../../controls/helpers/getOnPressWithHapticFeedback.ts';
-import { HapticFeedbackTypes } from 'react-native-haptic-feedback';
 
 export type SavedWorkoutItemFooterButtonProps = Pick<
   AppViewProps,
@@ -28,10 +24,7 @@ export const SavedWorkoutItemFooterButton = ({
 }: SavedWorkoutItemFooterButtonProps) => {
   return (
     <Pressable
-      onPress={getOnPressWithHapticFeedback(
-        onPress,
-        HapticFeedbackTypes.selection,
-      )}
+      onPress={getOnPressWithHapticFeedback(onPress)}
       style={{ flex: 1, flexBasis: 0 }}>
       {({ pressed }) => {
         const opacity = getPressableOpacity({

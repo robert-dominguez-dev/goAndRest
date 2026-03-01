@@ -1,4 +1,7 @@
-import ReactNativeHapticFeedback, { HapticFeedbackTypes, HapticOptions, } from 'react-native-haptic-feedback';
+import ReactNativeHapticFeedback, {
+  HapticFeedbackTypes,
+  HapticOptions,
+} from 'react-native-haptic-feedback';
 
 const options: HapticOptions = {
   enableVibrateFallback: false,
@@ -6,5 +9,5 @@ const options: HapticOptions = {
 };
 
 export const triggerHapticFeedback = (
-  feedbackType: HapticFeedbackTypes = HapticFeedbackTypes.clockTick,
+  feedbackType: HapticFeedbackTypes = HapticFeedbackTypes.selection,
 ) => ReactNativeHapticFeedback.trigger(feedbackType, options);

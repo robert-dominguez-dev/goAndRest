@@ -1,7 +1,6 @@
 import React, { JSX } from 'react';
 import Animated, { useAnimatedStyle } from 'react-native-reanimated';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
-import { AppSize } from '../../../types/ui.ts';
 import { AppView } from '../../common/AppView/AppView.tsx';
 import { useLayout } from '../../../hooks/useLayout.ts';
 import { scheduleOnRN } from 'react-native-worklets';
@@ -12,8 +11,14 @@ import {
 } from './components/AppCircularSliderBase.tsx';
 import { useCircularSliderGeometry } from './hooks/useCircularSliderGeometry.ts';
 import { countValueToAngleWorklet } from './helpers/countValueToAngleWorklet.ts';
+import { GestureResponderEvent, Pressable } from 'react-native';
+import { AppRoundedButtonSize } from '../AppRoundedButton/constants.ts';
+import { sizes } from '../../../constants/ui.ts';
+import { pressedInCircleGuard } from '../../../helpers/pressedInCircleGuard.ts';
+import { preventDefaultHandler } from '../../../helpers/preventDefaultHandler.ts';
 
-const THUMB_OFFSET = AppSize.m;
+const TOTAL_THUMB_BUTTON_SIZE =
+  sizes.defaultBorderWidth * 2 + AppRoundedButtonSize.xs;
 
 const fallbackThumbElement = (
   <AppView
@@ -33,6 +38,7 @@ export type AppCircularSliderProps = AppCircularSliderTicksCommonProps &
     thumbElement: JSX.Element;
     filledTrackColor?: string;
     trackColor?: string;
+    onConfirm: () => void;
   };
 
 export const AppCircularSlider = ({
@@ -46,16 +52,19 @@ export const AppCircularSlider = ({
   children,
   labelEveryNSteps,
   valueFormatter,
+  onConfirm,
   step = 1,
   filledTrackColor = 'black',
   trackColor = '#00000060',
 }: AppCircularSliderProps) => {
+  const containerPadding = TOTAL_THUMB_BUTTON_SIZE - strokeWidth;
+
   const { size, center, circumference, theta } = useCircularSliderGeometry({
     value,
     radius,
     strokeWidth,
     maxValue,
-    padding: THUMB_OFFSET * 2,
+    padding: containerPadding,
     isRunning: false,
   });
 
@@ -119,38 +128,66 @@ export const AppCircularSlider = ({
     };
   });
 
+  const handleContainerPress = (event: GestureResponderEvent) =>
+    pressedInCircleGuard(event, {
+      radius: size / 2,
+      onInsidePress: () => preventDefaultHandler(event),
+      onOutsidePress: onConfirm,
+    });
+
+  const contentSize = size - TOTAL_THUMB_BUTTON_SIZE * 2;
+  const contentRadius = contentSize / 2;
+
+  const handleContentPress = (event: GestureResponderEvent) =>
+    pressedInCircleGuard(event, {
+      radius: contentRadius,
+      onInsidePress: onConfirm,
+    });
+
   return (
     <GestureDetector gesture={panGesture}>
-      <AppCircularSliderBase
-        size={size}
-        circumference={circumference}
-        radius={radius}
-        center={center}
-        maxValue={maxValue}
-        step={step}
-        theta={theta}
-        labelEveryNSteps={labelEveryNSteps}
-        strokeWidth={strokeWidth}
-        valueFormatter={valueFormatter}
-        trackColor={trackColor}
-        filledTrackColor={filledTrackColor}>
-        {/* Thumb with wrapper */}
-        <Animated.View
-          style={[
-            animatedStyles,
-            {
-              position: 'absolute',
-              alignItems: 'center',
+      <Pressable onPress={handleContainerPress}>
+        <AppCircularSliderBase
+          size={size}
+          circumference={circumference}
+          radius={radius}
+          center={center}
+          maxValue={maxValue}
+          step={step}
+          theta={theta}
+          labelEveryNSteps={labelEveryNSteps}
+          strokeWidth={strokeWidth}
+          valueFormatter={valueFormatter}
+          trackColor={trackColor}
+          filledTrackColor={filledTrackColor}>
+          {/* Thumb with wrapper */}
+          <Animated.View
+            style={[
+              animatedStyles,
+              {
+                position: 'absolute',
+                alignItems: 'center',
+                justifyContent: 'center',
+              },
+            ]}>
+            <AppView onLayout={handleLayout}>
+              {thumbElement ? thumbElement : fallbackThumbElement}
+            </AppView>
+          </Animated.View>
+          <Pressable
+            onPress={handleContentPress}
+            style={{
+              borderRadius: contentRadius,
+              width: contentSize,
+              height: contentSize,
               justifyContent: 'center',
-            },
-          ]}
-          pointerEvents={'none'}>
-          <AppView onLayout={handleLayout}>
-            {thumbElement ? thumbElement : fallbackThumbElement}
-          </AppView>
-        </Animated.View>
-        {children}
-      </AppCircularSliderBase>
+              alignItems: 'center',
+              overflow: 'hidden',
+            }}>
+            {children}
+          </Pressable>
+        </AppCircularSliderBase>
+      </Pressable>
     </GestureDetector>
   );
 };

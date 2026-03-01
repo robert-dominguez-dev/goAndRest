@@ -8,6 +8,10 @@ import {
 } from './WorkoutConfigCircularSlider.tsx';
 import { UNLIMITED_NUMBER_OF_LINES } from '../../../../../../../../constants/common.ts';
 import { memo } from 'react';
+import { Pressable } from 'react-native';
+import { getPressableOpacity } from '../../../../../../../controls/helpers/getPressableOpacity.ts';
+import { getOnPressWithHapticFeedback } from '../../../../../../../controls/helpers/getOnPressWithHapticFeedback.ts';
+import { HapticFeedbackTypes } from 'react-native-haptic-feedback';
 
 export type WorkoutConfigBottomSheetContentBaseProps =
   AppBottomSheetRenderContentProps &
@@ -37,39 +41,44 @@ const WorkoutConfigBottomSheetContentBaseComponent = ({
   step,
   labelEveryNSteps,
 }: WorkoutConfigBottomSheetContentBaseProps) => {
-  const handleConfirm = () => {
-    onConfirm();
-    onClose();
-  };
-
-  const valueFormatted: string = valueFormatter?.(value) ?? String(value);
+  const handleConfirm = () =>
+    getOnPressWithHapticFeedback(() => {
+      onConfirm();
+      onClose();
+    }, HapticFeedbackTypes.selection)(undefined);
 
   return (
     <GestureHandlerRootView>
-      <AppView
-        gap={'l'}
-        paddingBottom={'m'}
-        alignItems={'center'}>
-        <AppText numberOfLines={UNLIMITED_NUMBER_OF_LINES}>
-          {description}
-        </AppText>
-        <AppText
-          category={'header'}
-          textAlign={'center'}
-          fontSizeOverride={'3xl'}>
-          {valueFormatted}
-        </AppText>
-        <WorkoutConfigCircularSlider
-          value={value}
-          onChange={onChange}
-          minValue={minValue}
-          maxValue={maxValue}
-          step={step}
-          labelEveryNSteps={labelEveryNSteps}
-          valueFormatter={valueFormatter}
-          onConfirm={handleConfirm}
-        />
-      </AppView>
+      <Pressable onPress={handleConfirm}>
+        {({ pressed }) => {
+          const opacity = getPressableOpacity({
+            pressed,
+            disabled: false,
+          });
+
+          return (
+            <AppView
+              opacity={opacity}
+              gap={'l'}
+              paddingBottom={'m'}
+              alignItems={'center'}>
+              <AppText numberOfLines={UNLIMITED_NUMBER_OF_LINES}>
+                {description}
+              </AppText>
+              <WorkoutConfigCircularSlider
+                value={value}
+                onChange={onChange}
+                minValue={minValue}
+                maxValue={maxValue}
+                step={step}
+                labelEveryNSteps={labelEveryNSteps}
+                valueFormatter={valueFormatter}
+                onConfirm={handleConfirm}
+              />
+            </AppView>
+          );
+        }}
+      </Pressable>
     </GestureHandlerRootView>
   );
 };
