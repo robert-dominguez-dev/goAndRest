@@ -46,7 +46,7 @@ export const AppSelectionBottomSheetItem = <TValue,>({
 
   const isPressDisabled: boolean = !!disabled || !!selected;
 
-  const textColorStatus: AppColorUnion = selected ? 'primary' : 'text';
+  const textColorStatus: AppColorUnion = selected ? 'selectedItem' : 'text';
 
   return (
     <Pressable

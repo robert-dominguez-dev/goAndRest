@@ -9,6 +9,7 @@ import { AppLanguageProvider } from './contexts/AppLanguageProvider/AppLanguageP
 import 'react-native-get-random-values';
 import { Suspense } from 'react';
 import { OrientationLocker } from 'react-native-orientation-locker';
+import { AppStatusBar } from './components/common/AppStatusBar.tsx';
 
 export const App = () => (
   <I18nextProvider i18n={appI18NextConfig}>
@@ -19,6 +20,7 @@ export const App = () => (
           <Suspense fallback={null}>
             <AppThemeProvider>
               <AppWorkoutsProvider>
+                <AppStatusBar />
                 <AppNavigator />
               </AppWorkoutsProvider>
             </AppThemeProvider>

@@ -1,7 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { AppTheme, ChildrenProp } from '../types/common.ts';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { Appearance } from 'react-native';
 import { checkIsAppTheme } from '../helpers/checkIsAppTheme.ts';
 import { AsyncStorageKey } from './constants.ts';
 
@@ -15,10 +14,7 @@ const AppThemeContext = createContext<AppThemeContextProps | undefined>(
 );
 
 export const AppThemeProvider = ({ children }: ChildrenProp) => {
-  const systemTheme: AppTheme =
-    Appearance.getColorScheme() === 'light' ? AppTheme.light : AppTheme.dark;
-
-  const [theme, setTheme] = useState<AppTheme>(systemTheme);
+  const [theme, setTheme] = useState<AppTheme>(AppTheme.dark);
 
   useEffect(() => {
     AsyncStorage.getItem(AsyncStorageKey.APP_THEME).then(storedTheme => {
