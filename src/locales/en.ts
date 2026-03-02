@@ -167,8 +167,8 @@ export const en = {
       endWorkoutPopUp: {
         title: 'Finish Workout',
         description: 'Are you sure you want to end your workout?',
-        positiveButtonLabel: 'End Workout',
-        negativeButtonLabel: 'Continue',
+        positiveButtonLabel: 'End',
+        negativeButtonLabel: 'Back',
       },
       totalElapsedTime: 'Total',
       descriptionTexts: {

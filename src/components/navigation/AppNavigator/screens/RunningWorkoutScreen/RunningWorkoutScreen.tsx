@@ -20,11 +20,21 @@ import { RunningWorkoutCounter } from './components/RunningWorkoutCounter.tsx';
 import { stopAndResetTrackPlayer } from '../../../../../hooks/useInitiateWorkoutSounds/helpers/stopAndResetTrackPlayer.ts';
 import { useEffect } from 'react';
 import { useWallpaperElement } from './hooks/useWallpaperElement.tsx';
+import { AppSize } from '../../../../../types/ui.ts';
+import { getMaxCircularIndicatorRadius } from '../../../../../helpers/getMaxCircularIndicatorRadius.ts';
 
 const INDICATOR_STROKE_WIDTH = 16;
+const INDICATORS_GAP = 8;
 
-const OUTER_INDICATOR_RADIUS = 168;
-const INNER_INDICATOR_RADIUS = 144;
+const MAX_WORKOUT_CONFIG_SLIDER_RADIUS = getMaxCircularIndicatorRadius({
+  strokeWidth: INDICATOR_STROKE_WIDTH,
+  paddingTotal: AppSize.sm * 2,
+});
+
+const OUTER_INDICATOR_RADIUS = Math.min(168, MAX_WORKOUT_CONFIG_SLIDER_RADIUS);
+
+const INNER_INDICATOR_RADIUS =
+  OUTER_INDICATOR_RADIUS - INDICATOR_STROKE_WIDTH - INDICATORS_GAP;
 
 const PULSING_BACKGROUND_SIZE =
   (INNER_INDICATOR_RADIUS - INDICATOR_STROKE_WIDTH) * 2;

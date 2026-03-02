@@ -166,7 +166,7 @@ export const sk = {
         title: 'Ukončenie tréningu',
         description: 'Naozaj chceš ukončiť tréning?',
         positiveButtonLabel: 'Ukončiť',
-        negativeButtonLabel: 'Pokračovať',
+        negativeButtonLabel: 'Späť',
       },
       totalElapsedTime: 'Celkom',
       descriptionTexts: {

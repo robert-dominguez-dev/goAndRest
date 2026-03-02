@@ -1,4 +1,5 @@
 import { AppColorUnion } from '../types/ui.ts';
+import { getByScreenWidth } from '../helpers/getByScreenWidth.ts';
 
 type HexColor = `#${string}`;
 
@@ -127,7 +128,7 @@ export const appColorsDark = {
   transparent: appColorsLight.transparent,
 } as const satisfies AppColors;
 
-type GradientColor = [HexColor, HexColor];
+type GradientColor = HexColor[];
 
 export const appLinearGradientColorsLight = {
   primary: [
@@ -146,7 +147,10 @@ export const appLinearGradientColorsLight = {
     appDesignSystemColors.grayscale['500'],
     appDesignSystemColors.grayscale['900'],
   ],
-  semiTransparent: [appColorsLight.background, '#ffffff00'],
+  semiTransparent: getByScreenWidth<GradientColor>({
+    small: [appColorsLight.background, appColorsLight.background, '#ffffff00'],
+    standard: [appColorsLight.background, '#ffffff00'],
+  }),
 } satisfies Record<string, GradientColor>;
 
 export type AppGradientColorUnion = keyof typeof appLinearGradientColorsLight;
@@ -169,7 +173,10 @@ export const appLinearGradientColorsDark = {
     appDesignSystemColors.grayscale['0'],
     appDesignSystemColors.grayscale['300'],
   ],
-  semiTransparent: [appColorsDark.background, '#00000080'],
+  semiTransparent: getByScreenWidth<GradientColor>({
+    small: [appColorsDark.background, appColorsDark.background, '#00000080'],
+    standard: [appColorsDark.background, '#00000080'],
+  }),
 } satisfies AppGradientColors;
 
 export const gradientToStandardColorStatus: Record<

@@ -2,7 +2,7 @@ import { AppText } from '../../../../../common/AppText/AppText.tsx';
 import { AppColorUnion } from '../../../../../../types/ui.ts';
 import { EMPTY_SPACE } from '../../../../../../constants/common.ts';
 
-const colorStatus: AppColorUnion = 'textMuted';
+const COLOR_STATUS: AppColorUnion = 'textMuted';
 
 type RunningWorkoutCounterProps = {
   label: string;
@@ -17,7 +17,7 @@ export const RunningWorkoutCounterText = ({
 }: RunningWorkoutCounterProps) => (
   <AppText
     grow={false}
-    colorStatus={colorStatus}
+    colorStatus={COLOR_STATUS}
     category={'subHeader'}>
     {label.toUpperCase()}
     {EMPTY_SPACE}
@@ -30,7 +30,7 @@ export const RunningWorkoutCounterText = ({
     </AppText>
     <AppText
       grow={false}
-      colorStatus={colorStatus}
+      colorStatus={COLOR_STATUS}
       category={'title'}>
       {'/'}
       {total}

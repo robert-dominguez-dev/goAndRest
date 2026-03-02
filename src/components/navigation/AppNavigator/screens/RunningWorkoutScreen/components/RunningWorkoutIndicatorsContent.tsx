@@ -11,6 +11,12 @@ import {
 } from '../constants.ts';
 import { useAppThemedColors } from '../../../../../../hooks/useAppThemedColors.ts';
 import { AppSize } from '../../../../../../types/ui.ts';
+import { getByScreenWidth } from '../../../../../../helpers/getByScreenWidth.ts';
+
+const TIME_FONT_SIZE = getByScreenWidth({
+  small: 100,
+  standard: 108,
+});
 
 type RunningWorkoutIndicatorsContentProps = Pick<
   WorkoutTimerState,
@@ -51,7 +57,7 @@ const RunningWorkoutIndicatorsContentComponent = ({
         </AppText>
         <AppTimeView
           colorStatus={phaseColorStatus}
-          fontSizeOverride={108}
+          fontSizeOverride={TIME_FONT_SIZE}
           msLeft={phaseRemainingMs}
         />
       </AppView>

@@ -11,8 +11,19 @@ import { AppRoundedButtonUI } from '../../../../../../../controls/AppRoundedButt
 import { Pressable } from 'react-native';
 import { preventDefaultHandler } from '../../../../../../../../helpers/preventDefaultHandler.ts';
 import { HapticFeedbackTypes } from 'react-native-haptic-feedback';
+import { getMaxCircularIndicatorRadius } from '../../../../../../../../helpers/getMaxCircularIndicatorRadius.ts';
 
-export const WORKOUT_CONFIG_SLIDER_RADIUS = 160;
+const STROKE_WIDTH = AppSize.l;
+
+const MAX_WORKOUT_CONFIG_SLIDER_RADIUS = getMaxCircularIndicatorRadius({
+  strokeWidth: STROKE_WIDTH,
+  paddingTotal: AppSize.sm * 2,
+});
+
+export const WORKOUT_CONFIG_SLIDER_RADIUS = Math.min(
+  160,
+  MAX_WORKOUT_CONFIG_SLIDER_RADIUS,
+);
 
 const thumbElement = (
   <Pressable onPress={preventDefaultHandler}>
@@ -52,7 +63,7 @@ const WorkoutConfigCircularSliderComponent = ({
   return (
     <AppCircularSlider
       radius={WORKOUT_CONFIG_SLIDER_RADIUS}
-      strokeWidth={AppSize.l}
+      strokeWidth={STROKE_WIDTH}
       minValue={minValue}
       maxValue={maxValue}
       step={step}

@@ -165,7 +165,7 @@ export const cs = {
         title: 'Ukončení tréninku',
         description: 'Opravdu chceš ukončit trénink?',
         positiveButtonLabel: 'Ukončit',
-        negativeButtonLabel: 'Pokračovat',
+        negativeButtonLabel: 'Zpět',
       },
       totalElapsedTime: 'Celkem',
       descriptionTexts: {

@@ -38,13 +38,15 @@ export const useAppTextStyle = ({
 
   const fontSizeOverrideEvaluated = getAppSize(fontSizeOverride);
 
-  const fontSizeOverrideProps: Pick<TextStyle, 'fontSize' | 'lineHeight'> =
-    fontSizeOverrideEvaluated
-      ? {
-          fontSize: fontSizeOverrideEvaluated,
-          lineHeight: fontSizeOverrideEvaluated,
-        }
-      : {};
+  const fontSizeOverrideProps: Pick<
+    TextStyle,
+    'fontSize' | 'lineHeight' | 'textAlignVertical'
+  > = fontSizeOverrideEvaluated
+    ? {
+        fontSize: fontSizeOverrideEvaluated,
+        lineHeight: fontSizeOverrideEvaluated,
+      }
+    : {};
 
   return {
     ...fontCategoryStyles[category],

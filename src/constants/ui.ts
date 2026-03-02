@@ -30,7 +30,7 @@ export const sizes = {
   turnEvaluationNameColumn: 100,
   turnEvaluationAnswerColumn: 80,
   turnEvaluationMovementsColumn: 80,
-  textShadowSizeHeader: 2,
+  textShadowSizeHeader: 1,
   textShadowSizeContent: 1,
 } as const satisfies Record<string, number>;
 

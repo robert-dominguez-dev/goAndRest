@@ -5,8 +5,8 @@ import {
   workoutSettingsButtonConfigMap,
 } from '../../LandingScreen/constants.ts';
 import { AppColorUnion } from '../../../../../../types/ui.ts';
-import { AppView } from '../../../../../common/AppView/AppView.tsx';
 import { AppText } from '../../../../../common/AppText/AppText.tsx';
+import { AppView } from '../../../../../common/AppView/AppView.tsx';
 
 export type SavedWorkoutItemBodyRowProps = {
   name: AppWorkoutConfigKey;
@@ -32,27 +32,24 @@ export const SavedWorkoutItemBodyRow = ({
   return (
     <AppRow
       grow
+      gap={'xs'}
       paddingVertical={'s'}
       alignItems={'center'}
       justifyContent={'space-between'}>
-      <AppView grow>
-        <AppRow
-          shrink
-          gap={'xs'}
-          alignItems={'center'}>
-          <AppText
-            category={'contentBold'}
-            colorStatus={colorStatus}>
-            {t(labelKey)}
-          </AppText>
-        </AppRow>
-      </AppView>
       <AppText
-        shrink
-        category={'subHeader'}
-        textAlign={'right'}>
-        {formattedValue}
+        grow={false}
+        category={'contentBold'}
+        colorStatus={colorStatus}>
+        {t(labelKey)}
       </AppText>
+      <AppView>
+        <AppText
+          grow={false}
+          category={'subHeader'}
+          textAlign={'right'}>
+          {formattedValue}
+        </AppText>
+      </AppView>
     </AppRow>
   );
 };
