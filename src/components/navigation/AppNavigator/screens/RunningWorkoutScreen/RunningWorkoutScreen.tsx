@@ -17,10 +17,9 @@ import { FinishedWorkoutScreen } from '../FinishedWorkoutScreen/FinishedWorkoutS
 import { isMutedAtom } from '../../../../../contexts/atoms.ts';
 import { useAtom } from 'jotai';
 import { RunningWorkoutCounter } from './components/RunningWorkoutCounter.tsx';
-import {
-  stopAndResetTrackPlayer
-} from '../../../../../hooks/useInitiateWorkoutSounds/helpers/stopAndResetTrackPlayer.ts';
+import { stopAndResetTrackPlayer } from '../../../../../hooks/useInitiateWorkoutSounds/helpers/stopAndResetTrackPlayer.ts';
 import { useEffect } from 'react';
+import { useWallpaperElement } from './hooks/useWallpaperElement.tsx';
 
 const INDICATOR_STROKE_WIDTH = 16;
 
@@ -68,6 +67,8 @@ export const RunningWorkoutScreen = ({
     phaseElapsedMs: currentState?.phaseElapsedMs,
   });
 
+  const wallpaperElement = useWallpaperElement();
+
   if (!currentState) {
     return <FinishedWorkoutScreen />;
   }
@@ -113,17 +114,12 @@ export const RunningWorkoutScreen = ({
         HeaderAccessoryLeftIconComponent={X}
         onHeaderAccessoryLeftPress={openEndWorkoutPopUp}
         HeaderAccessoryRightIconComponent={VolumeIconComponent}
-        onHeaderAccessoryRightPress={toggleMuted}>
+        onHeaderAccessoryRightPress={toggleMuted}
+        backgroundOverlayElement={wallpaperElement}>
         <AppView
-          gap={'l'}
+          gap={'m'}
           alignItems={'center'}
           justifyContent={'center'}>
-          <RunningWorkoutCounter
-            currentSeries={currentSeries}
-            currentRound={currentRound}
-            totalSeries={series}
-            totalRounds={rounds}
-          />
           <AppCircularIndicator
             isRunning={isRunning}
             value={totalElapsedMs}
@@ -150,6 +146,12 @@ export const RunningWorkoutScreen = ({
               />
             </AppCircularIndicator>
           </AppCircularIndicator>
+          <RunningWorkoutCounter
+            currentSeries={currentSeries}
+            currentRound={currentRound}
+            totalSeries={series}
+            totalRounds={rounds}
+          />
         </AppView>
       </AppScreenLayout>
       {popUp}

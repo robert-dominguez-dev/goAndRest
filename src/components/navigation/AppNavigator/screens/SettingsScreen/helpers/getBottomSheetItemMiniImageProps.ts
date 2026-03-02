@@ -1,7 +1,7 @@
 import { SettingValueProps } from '../types.ts';
 import {
-  AppFeedbackEntity,
   appFeedbackEntityToImageAspectRatio,
+  AppIllustrationName,
 } from '../../../../../../assets/constants/common.ts';
 
 const BOTTOM_SHEET_ITEM_ICON_SIZE = 24;
@@ -9,7 +9,7 @@ const BOTTOM_SHEET_ITEM_ICON_SIZE = 24;
 const countWidth = (ratio: number) => BOTTOM_SHEET_ITEM_ICON_SIZE * ratio;
 
 export const getBottomSheetItemMiniImageProps = (
-  illustrationName: AppFeedbackEntity,
+  illustrationName: AppIllustrationName,
 ): SettingValueProps['imageProps'] => ({
   illustrationName,
   height: BOTTOM_SHEET_ITEM_ICON_SIZE,

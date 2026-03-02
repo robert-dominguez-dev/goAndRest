@@ -1,5 +1,5 @@
 import { AppView, AppViewProps } from './AppView/AppView.tsx';
-import { ScrollView } from 'react-native';
+import { ScrollView, StyleSheet } from 'react-native';
 import { FILL_CONTAINER_DIMENSION } from '../../constants/common.ts';
 import { AppHeader, AppHeaderProps } from './AppHeader/AppHeader.tsx';
 import { JSX, ReactNode } from 'react';
@@ -62,7 +62,15 @@ export const AppScreenLayout = ({
 
   return (
     <AppView backgroundColorStatus={backgroundColorStatus}>
-      {backgroundOverlayElement}
+      {backgroundOverlayElement && (
+        <AppView {...StyleSheet.absoluteFill}>
+          {backgroundOverlayElement}
+          <AppView
+            {...StyleSheet.absoluteFill}
+            backgroundColorStatus={'semiTransparentOverlay'}
+          />
+        </AppView>
+      )}
       <AppView
         paddingHorizontal={HORIZONTAL_SCREEN_PADDING}
         paddingTop={screenPaddingTop}

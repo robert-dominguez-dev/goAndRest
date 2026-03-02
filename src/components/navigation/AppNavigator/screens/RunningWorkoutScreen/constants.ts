@@ -4,6 +4,8 @@ import { Easing, WithTimingConfig } from 'react-native-reanimated';
 import { TranslateKey } from '../../../../../locales/types.ts';
 import { workoutSettingsButtonConfigMap } from '../LandingScreen/constants.ts';
 import { Flame, LucideIcon, Wind } from 'lucide-react-native';
+import { AppWallpaper } from '../../../../../assets/types.ts';
+import { WorkoutCharacterVariant } from '../SettingsScreen/constants.tsx';
 
 export const workoutPhaseToTimerColorStatus: Record<
   RunningWorkoutPhase,
@@ -66,4 +68,13 @@ export const workoutPhaseToPulsingAnimationConfig: Record<
     duration: 1600,
     easing: Easing.inOut(Easing.sin),
   },
+};
+
+export const characterToWallpaperName: Record<
+  WorkoutCharacterVariant,
+  AppWallpaper
+> = {
+  [WorkoutCharacterVariant.warrior]: 'wallpaperWarrior',
+  [WorkoutCharacterVariant.cyborg]: 'wallpaperCyborg',
+  [WorkoutCharacterVariant.wizard]: 'wallpaperWizard',
 };

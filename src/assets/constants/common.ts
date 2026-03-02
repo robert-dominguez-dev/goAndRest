@@ -6,17 +6,12 @@ import {
 import { characters } from '../base64/characters.ts';
 import { voices } from '../base64/voices.ts';
 
-import { SoundPathByLanguage, WorkoutSoundPathsByLanguage } from '../types.ts';
-import {
-  coachFemalePreviewPathByLanguage,
-  coachFemaleSoundPathsByLanguage,
-} from './audio/voices/coachFemale.ts';
-import {
-  cyborgPreviewPathByLanguage,
-  cyborgSoundPathsByLanguage,
-} from './audio/characters/cyborg.ts';
+import { AppWallpaper, SoundPathByLanguage, WorkoutSoundPathsByLanguage, } from '../types.ts';
+import { coachFemalePreviewPathByLanguage, coachFemaleSoundPathsByLanguage, } from './audio/voices/coachFemale.ts';
+import { cyborgPreviewPathByLanguage, cyborgSoundPathsByLanguage, } from './audio/characters/cyborg.ts';
 import { warriorPreviewPathByLanguage } from './audio/characters/warrior.ts';
 import { wizardPreviewPathByLanguage } from './audio/characters/wizard.ts';
+import { wallpapers } from '../base64/wallpapers.ts';
 
 export type AppFeedbackEntity =
   | `${WorkoutVoiceVariant}`
@@ -25,10 +20,13 @@ export type AppFeedbackEntity =
 export const appIllustrations = {
   ...characters,
   ...voices,
-} satisfies Record<AppFeedbackEntity, string>;
+  ...wallpapers,
+} satisfies Record<AppFeedbackEntity | AppWallpaper, string>;
+
+export type AppIllustrationName = keyof typeof appIllustrations;
 
 export const appFeedbackEntityToImageAspectRatio: Record<
-  AppFeedbackEntity,
+  AppIllustrationName,
   number
 > = {
   [WorkoutVoiceVariant.coachFemale]: 216 / 357,
@@ -40,6 +38,10 @@ export const appFeedbackEntityToImageAspectRatio: Record<
   [WorkoutCharacterVariant.warrior]: 337 / 373,
   [WorkoutCharacterVariant.cyborg]: 282 / 315,
   [WorkoutCharacterVariant.wizard]: 303 / 376,
+  wallpaperDumbbell: 1,
+  wallpaperWarrior: 1,
+  wallpaperCyborg: 1,
+  wallpaperWizard: 1,
 };
 
 export enum AppAnimation {
