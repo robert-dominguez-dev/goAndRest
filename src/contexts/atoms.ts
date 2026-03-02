@@ -13,6 +13,7 @@ import {
 } from '../components/navigation/AppNavigator/screens/RunningWorkoutScreen/types.ts';
 import { atom } from 'jotai';
 import { WorkoutSoundFilePaths } from '../assets/types.ts';
+import { AppWorkoutFieldValues } from './AppWorkoutsProvider/types.ts';
 
 const createAsyncAtom = <T>(key: string, defaultValue: T) =>
   atomWithStorage(
@@ -71,6 +72,12 @@ export const soundVariantSettingAtom = createAsyncAtom<WorkoutSoundVariant>(
 export const runningWorkoutStateAtom =
   createAsyncAtom<WorkoutTimerPersistedState | null>(
     AsyncStorageKey.APP_RUNNING_WORKOUT_STATE,
+    null,
+  );
+
+export const lastRunningWorkoutAtom =
+  createAsyncAtom<AppWorkoutFieldValues | null>(
+    AsyncStorageKey.LAST_RUNNING_WORKOUT,
     null,
   );
 

@@ -13,6 +13,7 @@ export type AppButtonProps = Pick<
   | 'borderStyle'
   | 'IconComponent'
   | 'category'
+  | 'textColorStatus'
 > & { onPress?: () => void; onDisabledPress?: () => void; disabled?: boolean };
 
 export const AppButton = ({
@@ -25,6 +26,7 @@ export const AppButton = ({
   borderColorStatus,
   borderStyle,
   category = 'subHeader',
+  textColorStatus = 'text',
   backgroundColorStatus = 'primary',
 }: AppButtonProps) => {
   const handlePress: PressableProps['onPress'] = disabled
@@ -49,7 +51,7 @@ export const AppButton = ({
             borderStyle={borderStyle}
             IconComponent={IconComponent}
             category={category}
-            textColorStatus={'text'}
+            textColorStatus={textColorStatus}
           />
         );
       }}

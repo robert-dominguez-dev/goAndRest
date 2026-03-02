@@ -38,7 +38,7 @@ export const LandingScreen = ({ navigation }: LandingScreenProps) => {
         footer={footerElement}>
         <AppView
           grow
-          gap={'l'}>
+          gap={'m'}>
           <WorkoutConfigTimeView control={formProps.control} />
           <WorkoutConfigButtons />
         </AppView>

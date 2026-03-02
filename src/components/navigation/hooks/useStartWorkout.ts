@@ -3,13 +3,18 @@ import { AppWorkoutFieldValues } from '../../../contexts/AppWorkoutsProvider/typ
 import { useRootStackNavigation } from './useRootStackNavigation.ts';
 import { AppNavigatorScreen } from '../AppNavigator/types.ts';
 import { stopAndResetTrackPlayer } from '../../../hooks/useInitiateWorkoutSounds/helpers/stopAndResetTrackPlayer.ts';
+import { useSetAtom } from 'jotai';
+import { lastRunningWorkoutAtom } from '../../../contexts/atoms.ts';
 
 export const useStartWorkout = () => {
+  const setLastRunningWorkout = useSetAtom(lastRunningWorkoutAtom);
+
   const { start } = useWorkoutTimer();
 
   const navigation = useRootStackNavigation();
 
   return (appWorkout: AppWorkoutFieldValues) => {
+    void setLastRunningWorkout(appWorkout);
     void stopAndResetTrackPlayer();
     start(appWorkout);
     navigation.reset({

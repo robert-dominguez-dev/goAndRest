@@ -50,6 +50,7 @@ export type AppTranslations = {
     landingScreen: {
       title: string;
       selectStoredWorkoutButtonLabel: string;
+      lastRunningWorkoutButtonLabel: string;
       removeStoredWorkoutPopUp: PopUpTexts;
       resetWorkoutPopUp: PopUpTexts;
       saveWorkoutBottomSheet: SaveWorkoutBottomSheetTexts;

@@ -1,16 +1,12 @@
 import { memo } from 'react';
-import { AppButton } from '../../../../../../../controls/AppButton/AppButton.tsx';
 import { ArrowRight, SaveAll } from 'lucide-react-native';
 import { useRootStackNavigation } from '../../../../../../hooks/useRootStackNavigation.ts';
 import { AppNavigatorScreen } from '../../../../../types.ts';
-import { useAppThemedColors } from '../../../../../../../../hooks/useAppThemedColors.ts';
-import { categoryToIconSize } from '../../../../../../../controls/AppButton/components/AppIconAndLabel.tsx';
 import { useAppTranslation } from '../../../../../../../../locales/hooks/useAppTranslation.ts';
+import { AppDottedButton } from '../../../../../../../common/AppDottedButton.tsx';
 
 const SavedWorkoutsButtonComponent = () => {
   const t = useAppTranslation();
-
-  const { text } = useAppThemedColors();
 
   const navigation = useRootStackNavigation();
 
@@ -18,19 +14,11 @@ const SavedWorkoutsButtonComponent = () => {
     navigation.navigate(AppNavigatorScreen.SavedWorkoutsScreen);
 
   return (
-    <AppButton
+    <AppDottedButton
       label={t('screens.landingScreen.selectStoredWorkoutButtonLabel')}
-      backgroundColorStatus={'transparent'}
-      borderColorStatus={'text'}
-      borderStyle={'dotted'}
-      value={
-        <ArrowRight
-          color={text}
-          size={categoryToIconSize.subHeader}
-        />
-      }
-      IconComponent={SaveAll}
       onPress={goToSavedWorkouts}
+      AccessoryLeftIconComponent={SaveAll}
+      AccessoryRightIconComponent={ArrowRight}
     />
   );
 };

@@ -35,7 +35,8 @@ export const en = {
   screens: {
     landingScreen: {
       title: 'New Workout',
-      selectStoredWorkoutButtonLabel: 'Select Stored Workout',
+      selectStoredWorkoutButtonLabel: 'Select from Saved',
+      lastRunningWorkoutButtonLabel: 'Repeat Last',
       removeStoredWorkoutPopUp: {
         title: 'Delete Workout',
         description:

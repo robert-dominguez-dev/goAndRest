@@ -2,6 +2,7 @@ export enum AsyncStorageKey {
   APP_RUNNING_WORKOUT_STATE = 'APP_RUNNING_WORKOUT_STATE',
   APP_LANGUAGE = 'APP_LANGUAGE',
   APP_THEME = 'APP_THEME',
+  LAST_RUNNING_WORKOUT = 'LAST_RUNNING_WORKOUT',
   /**
    * Setting items
    */

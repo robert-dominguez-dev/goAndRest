@@ -108,7 +108,7 @@ export const appColorsDark = {
   inputText: appDesignSystemColors.grayscale['700'],
   inputTextMuted: appDesignSystemColors.grayscale['400'],
   slider: appDesignSystemColors.grayscale['100'],
-  selectedItem: appDesignSystemColors.primary['500'],
+  selectedItem: appDesignSystemColors.primary['400'],
   work: '#d5253f',
   workStrong: '#df213d',
   workPhase: '#d5253f',
