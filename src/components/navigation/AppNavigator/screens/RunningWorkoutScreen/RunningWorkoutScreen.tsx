@@ -1,4 +1,4 @@
-import { AppScreenLayout } from '../../../../common/AppScreenLayout.tsx';
+import { AppScreenLayout } from '../../../../common/AppScreenLayout/AppScreenLayout.tsx';
 import { LucideIcon, Volume2, VolumeX, X } from 'lucide-react-native';
 import { useAppTranslation } from '../../../../../locales/hooks/useAppTranslation.ts';
 import { RunningWorkoutScreenFooter } from './components/RunningWorkoutScreenFooter.tsx';

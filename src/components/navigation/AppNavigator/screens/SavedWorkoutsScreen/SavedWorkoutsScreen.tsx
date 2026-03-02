@@ -1,4 +1,4 @@
-import { AppScreenLayout } from '../../../../common/AppScreenLayout.tsx';
+import { AppScreenLayout } from '../../../../common/AppScreenLayout/AppScreenLayout.tsx';
 import { useAppTranslation } from '../../../../../locales/hooks/useAppTranslation.ts';
 import { ArrowLeft } from 'lucide-react-native';
 import { ScreenProps } from '../../../types.ts';

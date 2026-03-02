@@ -1,4 +1,4 @@
-import { AppScreenLayout } from '../../../../common/AppScreenLayout.tsx';
+import { AppScreenLayout } from '../../../../common/AppScreenLayout/AppScreenLayout.tsx';
 import { AppView } from '../../../../common/AppView/AppView.tsx';
 import { AppButton } from '../../../../controls/AppButton/AppButton.tsx';
 import { useAppTranslation } from '../../../../../locales/hooks/useAppTranslation.ts';

@@ -146,6 +146,7 @@ export const appLinearGradientColorsLight = {
     appDesignSystemColors.grayscale['500'],
     appDesignSystemColors.grayscale['900'],
   ],
+  semiTransparent: [appColorsLight.background, '#ffffff00'],
 } satisfies Record<string, GradientColor>;
 
 export type AppGradientColorUnion = keyof typeof appLinearGradientColorsLight;
@@ -168,6 +169,7 @@ export const appLinearGradientColorsDark = {
     appDesignSystemColors.grayscale['0'],
     appDesignSystemColors.grayscale['300'],
   ],
+  semiTransparent: [appColorsDark.background, '#00000080'],
 } satisfies AppGradientColors;
 
 export const gradientToStandardColorStatus: Record<
@@ -178,4 +180,5 @@ export const gradientToStandardColorStatus: Record<
   negative: 'negative',
   grayscale: 'backgroundAlt',
   slider: 'slider',
+  semiTransparent: 'semiTransparentOverlay',
 };

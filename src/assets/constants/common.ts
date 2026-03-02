@@ -6,9 +6,19 @@ import {
 import { characters } from '../base64/characters.ts';
 import { voices } from '../base64/voices.ts';
 
-import { AppWallpaper, SoundPathByLanguage, WorkoutSoundPathsByLanguage, } from '../types.ts';
-import { coachFemalePreviewPathByLanguage, coachFemaleSoundPathsByLanguage, } from './audio/voices/coachFemale.ts';
-import { cyborgPreviewPathByLanguage, cyborgSoundPathsByLanguage, } from './audio/characters/cyborg.ts';
+import {
+  AppWallpaper,
+  SoundPathByLanguage,
+  WorkoutSoundPathsByLanguage,
+} from '../types.ts';
+import {
+  coachFemalePreviewPathByLanguage,
+  coachFemaleSoundPathsByLanguage,
+} from './audio/voices/coachFemale.ts';
+import {
+  cyborgPreviewPathByLanguage,
+  cyborgSoundPathsByLanguage,
+} from './audio/characters/cyborg.ts';
 import { warriorPreviewPathByLanguage } from './audio/characters/warrior.ts';
 import { wizardPreviewPathByLanguage } from './audio/characters/wizard.ts';
 import { wallpapers } from '../base64/wallpapers.ts';
