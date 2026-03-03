@@ -95,8 +95,9 @@ export const cs = {
             description: 'Časovač zůstane aktivní i po opuštění aplikace.',
           },
           warmup: {
-            label: 'Rozehřátí',
-            description: 'Čas před začátkem tréninku určený k rozcvičení.',
+            label: 'Příprava',
+            description:
+              'Čas před zahájením tréninku, určený k zaujetí výchozí pozice, případně i ke krátkému rozcvičení.',
           },
           cooldown: {
             label: 'Vydýchání',

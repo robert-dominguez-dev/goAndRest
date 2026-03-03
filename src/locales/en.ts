@@ -95,9 +95,9 @@ export const en = {
             description: 'The timer remains active even after leaving the app',
           },
           warmup: {
-            label: 'Warm-up',
+            label: 'Preparation',
             description:
-              'Time before the workout starts, intended for stretching.',
+              'Preparation time before the workout starts, intended for getting into position or even a brief warm-up.',
           },
           cooldown: {
             label: 'Cool-down',

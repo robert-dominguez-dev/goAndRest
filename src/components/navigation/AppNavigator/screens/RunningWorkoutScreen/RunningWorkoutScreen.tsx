@@ -17,9 +17,7 @@ import { FinishedWorkoutScreen } from '../FinishedWorkoutScreen/FinishedWorkoutS
 import { isMutedAtom } from '../../../../../contexts/atoms.ts';
 import { useAtom } from 'jotai';
 import { RunningWorkoutCounter } from './components/RunningWorkoutCounter.tsx';
-import {
-  stopAndResetTrackPlayer
-} from '../../../../../hooks/useInitiateWorkoutSounds/helpers/stopAndResetTrackPlayer.ts';
+import { stopAndResetTrackPlayer } from '../../../../../hooks/useInitiateWorkoutSounds/helpers/stopAndResetTrackPlayer.ts';
 import { useEffect, useMemo } from 'react';
 import { useWallpaperElement } from './hooks/useWallpaperElement.tsx';
 import { AppSize } from '../../../../../types/ui.ts';
