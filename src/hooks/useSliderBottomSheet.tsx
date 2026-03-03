@@ -5,16 +5,16 @@ import {
 import { useLastValueSnapshot } from '../components/navigation/AppNavigator/screens/LandingScreen/components/WorkoutConfigButtons/hooks/useLastValueSnapshot.tsx';
 
 type UseSliderBottomSheetParams = {
-  getDuration: () => number;
-  setDuration: (value: number) => void;
+  getValue: () => number;
+  setValue: (value: number) => void;
 };
 
 export const useSliderBottomSheet = ({
-  getDuration,
-  setDuration,
+  getValue,
+  setValue,
 }: UseSliderBottomSheetParams) => {
   const { takeSnapshot, clearSnapshot, revertChanges } =
-    useLastValueSnapshot(setDuration);
+    useLastValueSnapshot(setValue);
 
   const { bottomSheet, handleOpen, handleClose } = useAppBottomSheet();
 
@@ -29,7 +29,7 @@ export const useSliderBottomSheet = ({
   };
 
   const open = (params: OpenAppBottomSheetParams) => {
-    takeSnapshot(getDuration());
+    takeSnapshot(getValue());
     handleOpen(params);
   };
 

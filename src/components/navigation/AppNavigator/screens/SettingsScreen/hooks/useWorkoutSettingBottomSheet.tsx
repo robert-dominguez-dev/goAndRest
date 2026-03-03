@@ -32,8 +32,8 @@ export const useWorkoutSettingBottomSheet = ({
   const [duration, setDuration] = useAtom(durationAtom);
 
   const { bottomSheet, open, confirm, revert } = useSliderBottomSheet({
-    getDuration: () => duration,
-    setDuration,
+    getValue: () => duration,
+    setValue: setDuration,
   });
 
   const renderContent = () => (
