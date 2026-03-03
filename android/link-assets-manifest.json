@@ -114,6 +114,158 @@
       "sha1": "47ed6470019f99626891804a760ce8c5c1500c2d"
     },
     {
+      "path": "src/assets/audio/workout/characters/warrior/cs/warrior_cs_1.m4a",
+      "sha1": "63beba6f3a34b6b293a691f00048e67ffc2c2178"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/warrior/cs/warrior_cs_10.m4a",
+      "sha1": "a2bafb5a3fa882b46f7eff4a923fdc0dc5b6d647"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/warrior/cs/warrior_cs_2.m4a",
+      "sha1": "9706a9bab583229548183922ca41e3019649332f"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/warrior/cs/warrior_cs_3.m4a",
+      "sha1": "dc4ad1bdfb2c9abf3c4d48f557dffd8157fe70de"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/warrior/cs/warrior_cs_4.m4a",
+      "sha1": "f85c6d2f24a1b0ca70e2319e96d035805cdb3e11"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/warrior/cs/warrior_cs_5.m4a",
+      "sha1": "ce32a3a8e4756e73192b92559e52498b7a67a974"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/warrior/cs/warrior_cs_6.m4a",
+      "sha1": "6d42091f9f039d8990833426b03915f8ea16e32a"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/warrior/cs/warrior_cs_7.m4a",
+      "sha1": "e6cc17426c85fc357986fe21173195d1dedef7b0"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/warrior/cs/warrior_cs_8.m4a",
+      "sha1": "6ce2888ee8cfac0133745e414d8317819bd2f1ed"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/warrior/cs/warrior_cs_9.m4a",
+      "sha1": "3f9e19b2cf1e5ac2bd5693fdddd79f1e3776b817"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/warrior/cs/warrior_cs_cooldown_short.m4a",
+      "sha1": "1a57a2ce93add2a72acc6a24d06ee80c8cd27d4d"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/warrior/cs/warrior_cs_cooldown_v1.m4a",
+      "sha1": "ebab7296c1193879a1aeb436ed01828758e122e4"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/warrior/cs/warrior_cs_cooldown_v2.m4a",
+      "sha1": "296f8f58fe5da276ba983e62ba9f1664fba1ce8d"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/warrior/cs/warrior_cs_cooldown_v3.m4a",
+      "sha1": "31fbc8a01669b0ca1b78c0caa0726ddbe3fb82ab"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/warrior/cs/warrior_cs_finish_short.m4a",
+      "sha1": "dbf6fb56849840a1655bc7d3bd5891d49f2aa565"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/warrior/cs/warrior_cs_finish_v1.m4a",
+      "sha1": "5977542f91de18b4cd3873ff0ecd6bf393833621"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/warrior/cs/warrior_cs_finish_v2.m4a",
+      "sha1": "7b9a74e3441dd9d088105f47e3998175e3db21af"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/warrior/cs/warrior_cs_finish_v3.m4a",
+      "sha1": "92c55d0ae054bd25f89215a060aacf03282d5377"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/warrior/cs/warrior_cs_half_short.m4a",
+      "sha1": "95b69311e6bd7293c9e38ba54b0020a62f0d3e9e"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/warrior/cs/warrior_cs_half_v1.m4a",
+      "sha1": "cdd6ad7f5f7ea5485869910af62147a5d3b57813"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/warrior/cs/warrior_cs_half_v2.m4a",
+      "sha1": "e63b534557ec6ae2d496d2ed17228f2b3d33373e"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/warrior/cs/warrior_cs_half_v3.m4a",
+      "sha1": "7ac7fa61072f68d98214010b8268e61a863d2c99"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/warrior/cs/warrior_cs_recovery_short.m4a",
+      "sha1": "64acda7b2cd104bfa7f8b46a89c8ab03b9e2bfbb"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/warrior/cs/warrior_cs_recovery_v1.m4a",
+      "sha1": "ace5b697dd4cee859c7f3cee30454e426ada6ff4"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/warrior/cs/warrior_cs_recovery_v2.m4a",
+      "sha1": "ae57021a6a5630b53990a770aec8e9f3328008a5"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/warrior/cs/warrior_cs_recovery_v3.m4a",
+      "sha1": "1e8a423a0fc3a406c621ddfc1ee6313df99a9715"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/warrior/cs/warrior_cs_rest_short.m4a",
+      "sha1": "e66258e9ab7a72040aad8f4ebdc5e6b133acfa6a"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/warrior/cs/warrior_cs_rest_v1.m4a",
+      "sha1": "149ae7c0c7f04d74879c912662278b34727fd059"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/warrior/cs/warrior_cs_rest_v2.m4a",
+      "sha1": "c629cc77dafbe21e7093ca26856e583a0a26ecd9"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/warrior/cs/warrior_cs_rest_v3.m4a",
+      "sha1": "f2042ee0b1596269a73e6d6c49c5855c0afb28c2"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/warrior/cs/warrior_cs_warmup_short.m4a",
+      "sha1": "f24181a5ded3dc0b14e552b4e1fe28549798cc18"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/warrior/cs/warrior_cs_warmup_v1.m4a",
+      "sha1": "591875ec33470bb9673f8c116fdd1252ef09b352"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/warrior/cs/warrior_cs_warmup_v2.m4a",
+      "sha1": "07c8f29d8731d1b534cb41fbe2323e26c6dc4e27"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/warrior/cs/warrior_cs_warmup_v3.m4a",
+      "sha1": "b35acc1a25c028e0120b849e7c67cef5ae7bfda0"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/warrior/cs/warrior_cs_work_short.m4a",
+      "sha1": "d3c56bff4fd6e6e670659784dccc08a9cfab6280"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/warrior/cs/warrior_cs_work_v1.m4a",
+      "sha1": "26eb0203a42f855519feaaf9736441aa450c785f"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/warrior/cs/warrior_cs_work_v2.m4a",
+      "sha1": "89bf21cd3fb7f96cd6b25020a7c01cfe73636b42"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/warrior/cs/warrior_cs_work_v3.m4a",
+      "sha1": "2610b1db67e51d2db6072e9ab1846b693f99c603"
+    },
+    {
       "path": "src/assets/audio/workout/characters/wizard/cs/wizard_cs_1.m4a",
       "sha1": "c0bcbfe30ce2d6392e3b548255f94006ca6f0631"
     },
