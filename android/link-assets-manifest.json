@@ -114,6 +114,154 @@
       "sha1": "47ed6470019f99626891804a760ce8c5c1500c2d"
     },
     {
+      "path": "src/assets/audio/workout/characters/wizard/cs/wizard_cs_1.m4a",
+      "sha1": "c0bcbfe30ce2d6392e3b548255f94006ca6f0631"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/wizard/cs/wizard_cs_10.m4a",
+      "sha1": "ddde4de40fc67d290fc181fd08800a616827e8e7"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/wizard/cs/wizard_cs_2.m4a",
+      "sha1": "131089a20b546cb45a26cd392e3c064bd4c1fafa"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/wizard/cs/wizard_cs_3.m4a",
+      "sha1": "dc9294b2d375cdeb5531ad0ffdf5e53792a2f605"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/wizard/cs/wizard_cs_4.m4a",
+      "sha1": "c9f150df6a5974e8416bdbc978b835091655538b"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/wizard/cs/wizard_cs_5.m4a",
+      "sha1": "a08da2b005e73491eec81275fd06f6747ce3f01c"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/wizard/cs/wizard_cs_6.m4a",
+      "sha1": "a16b37f24946e1cb9b46238ab278f67cac4d9847"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/wizard/cs/wizard_cs_7.m4a",
+      "sha1": "6060e452693a432b10fa077a0a9bd67452c2a30f"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/wizard/cs/wizard_cs_8.m4a",
+      "sha1": "f48e726a29b9ae6b39dc3e40cd74457319e82733"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/wizard/cs/wizard_cs_9.m4a",
+      "sha1": "cf6d11471eba2705086e354306448150baaae95f"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/wizard/cs/wizard_cs_cooldown_short.m4a",
+      "sha1": "d81d558b635f60998220450cb39b050f34d74e7f"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/wizard/cs/wizard_cs_cooldown_v1.m4a",
+      "sha1": "97fa34188b15379a3f04f9921c73e2dc5d0fc138"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/wizard/cs/wizard_cs_cooldown_v2.m4a",
+      "sha1": "badbe833731a1f6182cb7d9698d8e714bc754d0b"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/wizard/cs/wizard_cs_cooldown_v3.m4a",
+      "sha1": "2cdf0dbf8d126f3cb23ed500e7052759ce022657"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/wizard/cs/wizard_cs_finish_v1.m4a",
+      "sha1": "f2d56ee84d66c8cead5d4a26954797433bdd903f"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/wizard/cs/wizard_cs_finish_v2.m4a",
+      "sha1": "08fe19d675b07e41e73830844569003788520a17"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/wizard/cs/wizard_cs_finish_v3.m4a",
+      "sha1": "b1d54b06fbcb32e708815f8a55855c9ffb810212"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/wizard/cs/wizard_cs_half_short.m4a",
+      "sha1": "740c2e0cb0f0be7da41043c4651b7bce2a451a69"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/wizard/cs/wizard_cs_half_v1.m4a",
+      "sha1": "b0bc5e227d3ff7bac87f693c2450b59e6b3dadd7"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/wizard/cs/wizard_cs_half_v2.m4a",
+      "sha1": "71b0807acbca2552aaea7d97b3891d538eee15f1"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/wizard/cs/wizard_cs_half_v3.m4a",
+      "sha1": "63924042c3f84940a9a31be3d1d03bd366428313"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/wizard/cs/wizard_cs_recovery_short.m4a",
+      "sha1": "a561497b25162917d8fbbbc01d152376d2c0a5cd"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/wizard/cs/wizard_cs_recovery_v1.m4a",
+      "sha1": "3a81270a2f3ec0263a6e27fdbcf78e6b08135e1d"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/wizard/cs/wizard_cs_recovery_v2.m4a",
+      "sha1": "2d32dee8a7a07f44577f2792699e1ef4934e3074"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/wizard/cs/wizard_cs_recovery_v3.m4a",
+      "sha1": "465716eb848277b8de9da982b88e31bfcf9b68bb"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/wizard/cs/wizard_cs_rest_short.m4a",
+      "sha1": "5735d7660906f2483b864ba190dc834e64bce0c8"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/wizard/cs/wizard_cs_rest_v1.m4a",
+      "sha1": "e8a1c366b59b49bc2f0bbf4d28712a4cb29191aa"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/wizard/cs/wizard_cs_rest_v2.m4a",
+      "sha1": "abd6f6852528008e970dcece0d53bbae2d650e32"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/wizard/cs/wizard_cs_rest_v3.m4a",
+      "sha1": "1ba452bdcb75ce450d55b0407330692fb11db7d3"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/wizard/cs/wizard_cs_warmup_short.m4a",
+      "sha1": "da2d65d1a460bfe75742b8156452851c69cc109c"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/wizard/cs/wizard_cs_warmup_v1.m4a",
+      "sha1": "d677f619921f9ed49a7ffd785bda91277d999a7e"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/wizard/cs/wizard_cs_warmup_v2.m4a",
+      "sha1": "4fd2b9d795e7ff3eea61a6192d704580af03162d"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/wizard/cs/wizard_cs_warmup_v3.m4a",
+      "sha1": "a1da6a22105c4b831b834be0b6f8bb4b0cb37352"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/wizard/cs/wizard_cs_work_short.m4a",
+      "sha1": "b3e55100ff6f8b2ca5b16ea990ea0175d0f0b558"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/wizard/cs/wizard_cs_work_v1.m4a",
+      "sha1": "19426f97b1236663450f460d912e625e40dfc732"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/wizard/cs/wizard_cs_work_v2.m4a",
+      "sha1": "23cc920f6e794eb6a245d0632c787a319ed288a3"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/wizard/cs/wizard_cs_work_v3.m4a",
+      "sha1": "5a5fd5da67ae17e4806c10b9c53f35e924850863"
+    },
+    {
       "path": "src/assets/audio/workout/voices/coach/female/cs/coach_female_cs_1.m4a",
       "sha1": "aa96f7f4197f95da81c3ef5ac819624a159eae34"
     },

@@ -6,21 +6,11 @@ import {
 import { characters } from '../base64/characters.ts';
 import { voices } from '../base64/voices.ts';
 
-import {
-  AppWallpaper,
-  SoundPathByLanguage,
-  WorkoutSoundPathsByLanguage,
-} from '../types.ts';
-import {
-  coachFemalePreviewPathByLanguage,
-  coachFemaleSoundPathsByLanguage,
-} from './audio/voices/coachFemale.ts';
-import {
-  cyborgPreviewPathByLanguage,
-  cyborgSoundPathsByLanguage,
-} from './audio/characters/cyborg.ts';
+import { AppWallpaper, SoundPathByLanguage, WorkoutSoundPathsByLanguage, } from '../types.ts';
+import { coachFemalePreviewPathByLanguage, coachFemaleSoundPathsByLanguage, } from './audio/voices/coachFemale.ts';
+import { cyborgPreviewPathByLanguage, cyborgSoundPathsByLanguage, } from './audio/characters/cyborg.ts';
 import { warriorPreviewPathByLanguage } from './audio/characters/warrior.ts';
-import { wizardPreviewPathByLanguage } from './audio/characters/wizard.ts';
+import { wizardPreviewPathByLanguage, wizardSoundPathsByLanguage, } from './audio/characters/wizard.ts';
 import { wallpapers } from '../base64/wallpapers.ts';
 
 export type AppFeedbackEntity =
@@ -76,7 +66,7 @@ export const appFeedbackEntityToSoundFileNamesByLanguage: Record<
   [WorkoutVoiceVariant.calmMale]: null,
   [WorkoutCharacterVariant.warrior]: null,
   [WorkoutCharacterVariant.cyborg]: cyborgSoundPathsByLanguage,
-  [WorkoutCharacterVariant.wizard]: null,
+  [WorkoutCharacterVariant.wizard]: wizardSoundPathsByLanguage,
   [WorkoutSoundVariant.beep]: null,
   [WorkoutSoundVariant.bell]: null,
   [WorkoutSoundVariant.drum]: null,
