@@ -162,7 +162,7 @@ export const sk = {
       },
     },
     runningWorkoutScreen: {
-      title: 'Tréning',
+      title: 'Vlastný',
       endWorkoutPopUp: {
         title: 'Ukončenie tréningu',
         description: 'Naozaj chceš ukončiť tréning?',

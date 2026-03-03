@@ -164,7 +164,7 @@ export const en = {
       },
     },
     runningWorkoutScreen: {
-      title: 'Workout',
+      title: 'Custom',
       endWorkoutPopUp: {
         title: 'Finish Workout',
         description: 'Are you sure you want to end your workout?',

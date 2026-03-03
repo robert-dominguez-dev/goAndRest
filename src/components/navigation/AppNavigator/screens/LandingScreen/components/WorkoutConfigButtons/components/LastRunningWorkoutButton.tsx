@@ -5,6 +5,7 @@ import { AppWorkoutFieldValues } from '../../../../../../../../contexts/AppWorko
 import { AppDottedButton } from '../../../../../../../common/AppDottedButton.tsx';
 import { History, Play } from 'lucide-react-native';
 import { composeLastWorkoutButtonLabel } from '../helpers/composeLastWorkoutButtonLabel.ts';
+import { getRunningWorkoutName } from '../../../../RunningWorkoutScreen/helpers/getRunningWorkoutName.ts';
 
 type LastRunningWorkoutButtonProps = {
   lastRunningWorkout: AppWorkoutFieldValues;
@@ -19,10 +20,15 @@ const LastRunningWorkoutButtonComponent = ({
 
   const handleStartWorkout = () => startWorkout(lastRunningWorkout);
 
-  const label = composeLastWorkoutButtonLabel(
-    lastRunningWorkout.workoutName,
+  const { workoutName, ...workoutConfig } = lastRunningWorkout;
+
+  const workoutNameEvaluated = getRunningWorkoutName({
+    workoutName,
+    workoutConfig,
     t,
-  );
+  });
+
+  const label = composeLastWorkoutButtonLabel(workoutNameEvaluated, t);
 
   return (
     <AppDottedButton

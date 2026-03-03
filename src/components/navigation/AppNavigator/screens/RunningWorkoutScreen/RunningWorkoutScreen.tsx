@@ -17,11 +17,14 @@ import { FinishedWorkoutScreen } from '../FinishedWorkoutScreen/FinishedWorkoutS
 import { isMutedAtom } from '../../../../../contexts/atoms.ts';
 import { useAtom } from 'jotai';
 import { RunningWorkoutCounter } from './components/RunningWorkoutCounter.tsx';
-import { stopAndResetTrackPlayer } from '../../../../../hooks/useInitiateWorkoutSounds/helpers/stopAndResetTrackPlayer.ts';
-import { useEffect } from 'react';
+import {
+  stopAndResetTrackPlayer
+} from '../../../../../hooks/useInitiateWorkoutSounds/helpers/stopAndResetTrackPlayer.ts';
+import { useEffect, useMemo } from 'react';
 import { useWallpaperElement } from './hooks/useWallpaperElement.tsx';
 import { AppSize } from '../../../../../types/ui.ts';
 import { getMaxCircularIndicatorRadius } from '../../../../../helpers/getMaxCircularIndicatorRadius.ts';
+import { getRunningWorkoutName } from './helpers/getRunningWorkoutName.ts';
 
 const INDICATOR_STROKE_WIDTH = 16;
 const INDICATORS_GAP = 8;
@@ -79,12 +82,21 @@ export const RunningWorkoutScreen = ({
 
   const wallpaperElement = useWallpaperElement();
 
+  const headerTitle = useMemo(
+    () =>
+      getRunningWorkoutName({
+        workoutName: currentState?.workoutName,
+        workoutConfig: currentState?.workoutConfig,
+        t,
+      }),
+    [currentState?.workoutName, currentState?.workoutConfig],
+  );
+
   if (!currentState) {
     return <FinishedWorkoutScreen />;
   }
 
   const {
-    workoutName,
     currentPhase,
     totalElapsedMs,
     totalDurationMs,
@@ -94,9 +106,6 @@ export const RunningWorkoutScreen = ({
     currentRound,
     workoutConfig: { series, rounds },
   } = currentState;
-
-  const headerTitle: string =
-    workoutName || t('screens.runningWorkoutScreen.title');
 
   const phaseColorStatus = workoutPhaseToTimerColorStatus[currentPhase];
   const phaseColor = appColors[phaseColorStatus];

@@ -2,13 +2,22 @@ import { RotateCcw } from 'lucide-react-native';
 import { AppRoundedButton } from '../../../../../../../controls/AppRoundedButton/AppRoundedButton.tsx';
 import { AppSize } from '../../../../../../../../types/ui.ts';
 import { useAppThemedColors } from '../../../../../../../../hooks/useAppThemedColors.ts';
-import { useFormState } from 'react-hook-form';
+import { useFormContext, useWatch } from 'react-hook-form';
 import { useResetWorkoutPopUp } from '../hooks/useResetWorkoutPopUp.tsx';
+import { checkIsDefaultWorkoutConfig } from '../../../../../../../../helpers/checkIsDefaultWorkoutConfig.ts';
+import { AppWorkoutFieldValues } from '../../../../../../../../contexts/AppWorkoutsProvider/types.ts';
 
 export const ResetDefaultButton = () => {
   const { popUp, openResetWorkoutPopUp } = useResetWorkoutPopUp();
 
-  const { isDirty } = useFormState();
+  const { getValues } = useFormContext<AppWorkoutFieldValues>();
+
+  const workoutConfig = useWatch<AppWorkoutFieldValues>();
+
+  const isDefaultWorkoutConfig = checkIsDefaultWorkoutConfig({
+    ...workoutConfig,
+    ...getValues(),
+  });
 
   const { text } = useAppThemedColors();
 
@@ -18,7 +27,7 @@ export const ResetDefaultButton = () => {
         onPress={openResetWorkoutPopUp}
         size={'s'}
         status={'grayscale'}
-        disabled={!isDirty}>
+        disabled={isDefaultWorkoutConfig}>
         <RotateCcw
           size={AppSize.ml}
           color={text}

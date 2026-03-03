@@ -5,16 +5,24 @@ import { AppWorkoutFieldValues } from '../../../../../../../contexts/AppWorkouts
 import { SaveWorkoutButton } from './components/SaveWorkoutButton.tsx';
 import { useStartWorkout } from '../../../../../hooks/useStartWorkout.ts';
 import { ResetDefaultButton } from './components/ResetDefaultButton.tsx';
+import { useSetAtom } from 'jotai';
+import { lastDefaultWorkoutConfigAtom } from '../../../../../../../contexts/atoms.ts';
 
 const resetButtonElement = <ResetDefaultButton />;
 const saveButtonElement = <SaveWorkoutButton />;
 
 const LandingScreenFooterComponent = () => {
+  const setLastDefaultWorkoutConfig = useSetAtom(lastDefaultWorkoutConfigAtom);
+
   const { getValues } = useFormContext<AppWorkoutFieldValues>();
 
   const startWorkout = useStartWorkout();
 
-  const handleStartWorkout = () => startWorkout(getValues());
+  const handleStartWorkout = () => {
+    const workoutConfig = getValues();
+    void setLastDefaultWorkoutConfig(workoutConfig);
+    startWorkout(workoutConfig);
+  };
 
   return (
     <AppRoundedButtons

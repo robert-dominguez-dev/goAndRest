@@ -8,8 +8,9 @@ import { AppView } from '../../../../common/AppView/AppView.tsx';
 import { LandingScreenFooter } from './components/LandingScreenFooter/LandingScreenFooter.tsx';
 import { FormProvider, useForm } from 'react-hook-form';
 import { AppWorkoutFieldValues } from '../../../../../contexts/AppWorkoutsProvider/types.ts';
-import { defaultWorkoutConfig } from '../../../../../contexts/AppWorkoutsProvider/constants.ts';
 import { WorkoutConfigTimeView } from './components/WorkoutConfigButtons/components/WorkoutConfigTimeView.tsx';
+import { useAtomValue } from 'jotai';
+import { lastDefaultWorkoutConfigAtom } from '../../../../../contexts/atoms.ts';
 
 const footerElement = <LandingScreenFooter />;
 
@@ -21,8 +22,10 @@ type LandingScreenProps = ScreenProps<
 export const LandingScreen = ({ navigation }: LandingScreenProps) => {
   const t = useAppTranslation();
 
+  const lastDefaultWorkoutConfig = useAtomValue(lastDefaultWorkoutConfigAtom);
+
   const formProps = useForm<AppWorkoutFieldValues>({
-    defaultValues: defaultWorkoutConfig,
+    defaultValues: lastDefaultWorkoutConfig,
     reValidateMode: 'onBlur',
   });
 

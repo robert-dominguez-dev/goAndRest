@@ -29,6 +29,7 @@ export const useWorkoutConfigBottomSheet = (name: AppWorkoutConfigKey) => {
       control={control}
     />
   );
+
   const openWorkoutConfigBottomSheet = () =>
     open({
       renderContent,

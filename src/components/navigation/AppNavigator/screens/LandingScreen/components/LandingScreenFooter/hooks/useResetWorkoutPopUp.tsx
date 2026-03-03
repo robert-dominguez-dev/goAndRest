@@ -2,9 +2,14 @@ import { useAppTranslation } from '../../../../../../../../locales/hooks/useAppT
 import { useAppPopUp } from '../../../../../../../common/AppPopUp/hooks/useAppPopUp.tsx';
 import { useFormContext } from 'react-hook-form';
 import { AppWorkoutFieldValues } from '../../../../../../../../contexts/AppWorkoutsProvider/types.ts';
+import { defaultWorkoutConfig } from '../../../../../../../../contexts/AppWorkoutsProvider/constants.ts';
+import { useSetAtom } from 'jotai';
+import { lastDefaultWorkoutConfigAtom } from '../../../../../../../../contexts/atoms.ts';
 
 export const useResetWorkoutPopUp = () => {
   const t = useAppTranslation();
+
+  const setLastDefaultWorkoutConfig = useSetAtom(lastDefaultWorkoutConfigAtom);
 
   const { reset } = useFormContext<AppWorkoutFieldValues>();
 
@@ -13,7 +18,10 @@ export const useResetWorkoutPopUp = () => {
     description: t('screens.landingScreen.resetWorkoutPopUp.description'),
     primaryButtonProps: {
       label: t('screens.landingScreen.resetWorkoutPopUp.positiveButtonLabel'),
-      onPress: () => reset(),
+      onPress: () => {
+        void setLastDefaultWorkoutConfig(defaultWorkoutConfig);
+        reset(defaultWorkoutConfig);
+      },
       backgroundColorStatus: 'negative',
     },
     secondaryButtonProps: {

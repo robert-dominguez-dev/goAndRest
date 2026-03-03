@@ -161,7 +161,7 @@ export const cs = {
       },
     },
     runningWorkoutScreen: {
-      title: 'Trénink',
+      title: 'Vlastní',
       endWorkoutPopUp: {
         title: 'Ukončení tréninku',
         description: 'Opravdu chceš ukončit trénink?',
