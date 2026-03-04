@@ -139,6 +139,7 @@ export const en = {
               'Choose the character that will guide you through the workout.',
             items: {
               warrior: 'Warrior',
+              shieldmaiden: 'Shieldmaiden',
               cyborg: 'Cyborg',
               wizard: 'Wizard',
             },
@@ -198,6 +199,7 @@ export const en = {
         },
         byCharacter: {
           warrior: 'Battle Fought!',
+          shieldmaiden: 'Battle Fought!',
           cyborg: 'Process Complete',
           wizard: 'Well done, child!',
         },
@@ -216,6 +218,8 @@ export const en = {
         },
         byCharacter: {
           warrior:
+            'That was a brawl! Nothing beats a good thrashing. Keep it up, warrior!',
+          shieldmaiden:
             'That was a brawl! Nothing beats a good thrashing. Keep it up, warrior!',
           cyborg:
             'Hardware limits pushed. System integrity at maximum. Software updated to new version.',
@@ -236,6 +240,7 @@ export const en = {
           },
           byCharacter: {
             warrior: "Total time of today's battle",
+            shieldmaiden: "Total time of today's battle",
             cyborg: 'Total process length',
             wizard: 'Total duration of effort in space-time',
           },
@@ -253,6 +258,7 @@ export const en = {
         },
         byCharacter: {
           warrior: 'Done',
+          shieldmaiden: 'Done',
           cyborg: 'Done',
           wizard: 'Done',
         },

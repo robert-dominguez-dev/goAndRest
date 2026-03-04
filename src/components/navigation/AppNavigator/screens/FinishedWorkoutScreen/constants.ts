@@ -1,7 +1,4 @@
-import {
-  WorkoutCharacterVariant,
-  WorkoutVoiceVariant,
-} from '../SettingsScreen/constants.tsx';
+import { WorkoutCharacterVariant, WorkoutVoiceVariant, } from '../SettingsScreen/constants.tsx';
 import { TranslateKey } from '../../../../../locales/types.ts';
 
 type FinishedWorkoutScreenTranslateKeys = {
@@ -109,6 +106,17 @@ export const characterVariantToFinishWorkoutScreenTranslateKeys: Record<
     },
     buttonLabelKey:
       'screens.finishedWorkoutScreen.buttonLabel.byCharacter.warrior',
+  },
+  [WorkoutCharacterVariant.shieldmaiden]: {
+    titleKey: 'screens.finishedWorkoutScreen.title.byCharacter.shieldmaiden',
+    descriptionKey:
+      'screens.finishedWorkoutScreen.description.byCharacter.shieldmaiden',
+    stats: {
+      totalTimeKey:
+        'screens.finishedWorkoutScreen.stats.totalTime.byCharacter.shieldmaiden',
+    },
+    buttonLabelKey:
+      'screens.finishedWorkoutScreen.buttonLabel.byCharacter.shieldmaiden',
   },
   [WorkoutCharacterVariant.cyborg]: {
     titleKey: 'screens.finishedWorkoutScreen.title.byCharacter.cyborg',

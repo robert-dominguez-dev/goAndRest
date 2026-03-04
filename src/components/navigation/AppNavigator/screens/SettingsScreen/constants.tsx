@@ -32,12 +32,14 @@ export const workoutVoiceVariants: WorkoutVoiceVariant[] = [
 
 export enum WorkoutCharacterVariant {
   warrior = 'warrior',
+  shieldmaiden = 'shieldmaiden',
   cyborg = 'cyborg',
   wizard = 'wizard',
 }
 
 export const workoutCharacterVariants: WorkoutCharacterVariant[] = [
   WorkoutCharacterVariant.warrior,
+  WorkoutCharacterVariant.shieldmaiden,
   WorkoutCharacterVariant.cyborg,
   WorkoutCharacterVariant.wizard,
 ];

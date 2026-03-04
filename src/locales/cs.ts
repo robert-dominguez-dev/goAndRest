@@ -137,6 +137,7 @@ export const cs = {
             description: 'Vyber si postavu, která tě bude provázet tréninkem.',
             items: {
               warrior: 'Válečník',
+              shieldmaiden: 'Štítonoška',
               cyborg: 'Kyborg',
               wizard: 'Čaroděj',
             },
@@ -196,6 +197,7 @@ export const cs = {
         },
         byCharacter: {
           warrior: 'Bitva vybojována!',
+          shieldmaiden: 'Bitva vybojována!',
           cyborg: 'Proces dokončen',
           wizard: 'Dobrá práce, dítě!',
         },
@@ -217,6 +219,8 @@ export const cs = {
         byCharacter: {
           warrior:
             'Tak to byla řež. Není nad pořádný nářez! Jen tak dál, bojovníku!',
+          shieldmaiden:
+            'Tak to byla řež. Není nad pořádný nářez! Jen tak dál, bojovníku!',
           cyborg:
             'Hardwarové limity posunuty. Systémová integrita na maximu. Software aktualizován na nejnovější verzi.',
           wizard:
@@ -236,6 +240,7 @@ export const cs = {
           },
           byCharacter: {
             warrior: 'Celkový čas dnešní bitvy',
+            shieldmaiden: 'Celkový čas dnešní bitvy',
             cyborg: 'Celková délka procesu',
             wizard: 'Celková doba námahy v časoprostoru',
           },
@@ -253,6 +258,7 @@ export const cs = {
         },
         byCharacter: {
           warrior: 'Hotovo',
+          shieldmaiden: 'Hotovo',
           cyborg: 'Hotovo',
           wizard: 'Hotovo',
         },

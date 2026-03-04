@@ -138,6 +138,7 @@ export const sk = {
             description: 'Vyber si postavu, ktorá ťa bude sprevádzať tréningom',
             items: {
               warrior: 'Bojovník',
+              shieldmaiden: 'Štítonoska',
               cyborg: 'Kyborg',
               wizard: 'Čarodejník',
             },
@@ -197,6 +198,7 @@ export const sk = {
         },
         byCharacter: {
           warrior: 'Bitka vybojovaná!',
+          shieldmaiden: 'Bitka vybojovaná!',
           cyborg: 'Proces dokončený',
           wizard: 'Dobrá práca, dieťa!',
         },
@@ -218,6 +220,8 @@ export const sk = {
         byCharacter: {
           warrior:
             'Tak to bola rež. Niet nad poriadny nárez! Len tak ďalej, bojovník!',
+          shieldmaiden:
+            'Tak to bola rež. Niet nad poriadny nárez! Len tak ďalej, bojovník!',
           cyborg:
             'Hardvérové limity posunuté. Systémová integrita na maxime. Softvér aktualizovaný na novú verziu.',
           wizard:
@@ -237,6 +241,7 @@ export const sk = {
           },
           byCharacter: {
             warrior: 'Celkový čas dnešnej bitky',
+            shieldmaiden: 'Celkový čas dnešnej bitky',
             cyborg: 'Celková dĺžka procesu',
             wizard: 'Celková doba námahy v časopriestore',
           },
@@ -254,6 +259,7 @@ export const sk = {
         },
         byCharacter: {
           warrior: 'Hotovo',
+          shieldmaiden: 'Hotovo',
           cyborg: 'Hotovo',
           wizard: 'Hotovo',
         },

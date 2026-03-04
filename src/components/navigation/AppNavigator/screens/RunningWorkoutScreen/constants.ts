@@ -75,6 +75,7 @@ export const characterToWallpaperName: Record<
   AppWallpaper
 > = {
   [WorkoutCharacterVariant.warrior]: 'wallpaperWarrior',
+  [WorkoutCharacterVariant.shieldmaiden]: 'wallpaperWarrior',
   [WorkoutCharacterVariant.cyborg]: 'wallpaperCyborg',
   [WorkoutCharacterVariant.wizard]: 'wallpaperWizard',
 };
