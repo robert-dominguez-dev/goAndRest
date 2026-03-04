@@ -1,4 +1,7 @@
-import { WorkoutCharacterVariant, WorkoutVoiceVariant, } from '../SettingsScreen/constants.tsx';
+import {
+  WorkoutCharacterVariant,
+  WorkoutVoiceVariant,
+} from '../SettingsScreen/constants.tsx';
 import { TranslateKey } from '../../../../../locales/types.ts';
 
 type FinishedWorkoutScreenTranslateKeys = {

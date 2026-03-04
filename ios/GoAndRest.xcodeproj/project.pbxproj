@@ -156,6 +156,7 @@
 		3ED9A834CC624616B426BEE0 /* warrior_cs_work_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 44D9F06834014233BE15E6DC /* warrior_cs_work_v1.m4a */; };
 		773AE2E514054DA2A210C5AF /* warrior_cs_work_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1BAE803E40BE4A329A0F217A /* warrior_cs_work_v2.m4a */; };
 		291CFCABD5F44714B622F6DE /* warrior_cs_work_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = AAF14FB55BE74DCDA220F093 /* warrior_cs_work_v3.m4a */; };
+		E7F75196782F4C01A6C8D694 /* shieldmaiden_cs_preview.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 890EB467CBF848538AEDAE05 /* shieldmaiden_cs_preview.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -313,6 +314,7 @@
 		44D9F06834014233BE15E6DC /* warrior_cs_work_v1.m4a */ = {isa = PBXFileReference; name = "warrior_cs_work_v1.m4a"; path = "../src/assets/audio/workout/characters/warrior/cs/warrior_cs_work_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		1BAE803E40BE4A329A0F217A /* warrior_cs_work_v2.m4a */ = {isa = PBXFileReference; name = "warrior_cs_work_v2.m4a"; path = "../src/assets/audio/workout/characters/warrior/cs/warrior_cs_work_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		AAF14FB55BE74DCDA220F093 /* warrior_cs_work_v3.m4a */ = {isa = PBXFileReference; name = "warrior_cs_work_v3.m4a"; path = "../src/assets/audio/workout/characters/warrior/cs/warrior_cs_work_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		890EB467CBF848538AEDAE05 /* shieldmaiden_cs_preview.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_cs_preview.m4a"; path = "../src/assets/audio/preview/characters/shieldmaiden/shieldmaiden_cs_preview.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -496,6 +498,7 @@
 				44D9F06834014233BE15E6DC /* warrior_cs_work_v1.m4a */,
 				1BAE803E40BE4A329A0F217A /* warrior_cs_work_v2.m4a */,
 				AAF14FB55BE74DCDA220F093 /* warrior_cs_work_v3.m4a */,
+				890EB467CBF848538AEDAE05 /* shieldmaiden_cs_preview.m4a */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -745,6 +748,7 @@
 				3ED9A834CC624616B426BEE0 /* warrior_cs_work_v1.m4a in Resources */,
 				773AE2E514054DA2A210C5AF /* warrior_cs_work_v2.m4a in Resources */,
 				291CFCABD5F44714B622F6DE /* warrior_cs_work_v3.m4a in Resources */,
+				E7F75196782F4C01A6C8D694 /* shieldmaiden_cs_preview.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
