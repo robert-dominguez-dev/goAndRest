@@ -10,8 +10,8 @@ import { countdownSettingAtom } from '../contexts/atoms.ts';
 import { useAtomValue } from 'jotai';
 import clamp from 'lodash/clamp';
 
-const CONSIDERED_SHORT_PHASE_DURATION_THRESHOLD = 10;
-const PHASE_DURATION_TO_MAX_COUNTDOWN_DURATION_OFFSET = 3;
+const CONSIDERED_SHORT_PHASE_DURATION_THRESHOLD = 15;
+const PHASE_DURATION_TO_MAX_COUNTDOWN_DURATION_OFFSET = 5;
 const MIN_PHASE_DURATION_TO_HAVE_MIDDLE_FEEDBACK = 30;
 
 type UseWorkoutFeedbackParams = Partial<
