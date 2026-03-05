@@ -28,7 +28,10 @@ import {
   wizardSoundPathsByLanguage,
 } from './audio/characters/wizard.ts';
 import { wallpapers } from '../base64/wallpapers.ts';
-import { shieldmaidenPreviewPathByLanguage } from './audio/characters/shieldmaiden.ts';
+import {
+  shieldmaidenPreviewPathByLanguage,
+  shieldmaidenSoundPathsByLanguage,
+} from './audio/characters/shieldmaiden.ts';
 
 export type AppFeedbackEntity =
   | `${WorkoutVoiceVariant}`
@@ -83,7 +86,7 @@ export const appFeedbackEntityToSoundFileNamesByLanguage: Record<
   [WorkoutVoiceVariant.calmFemale]: null,
   [WorkoutVoiceVariant.calmMale]: null,
   [WorkoutCharacterVariant.warrior]: warriorSoundPathsByLanguage,
-  [WorkoutCharacterVariant.shieldmaiden]: null,
+  [WorkoutCharacterVariant.shieldmaiden]: shieldmaidenSoundPathsByLanguage,
   [WorkoutCharacterVariant.cyborg]: cyborgSoundPathsByLanguage,
   [WorkoutCharacterVariant.wizard]: wizardSoundPathsByLanguage,
   [WorkoutSoundVariant.beep]: null,
