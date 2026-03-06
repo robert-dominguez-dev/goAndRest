@@ -47,7 +47,27 @@
     },
     {
       "path": "src/assets/audio/preview/voices/coach/female/coach_female_cs_preview.m4a",
-      "sha1": "7b5b2d151953a12e122068882052d80f5cf8ca06"
+      "sha1": "d99d181e35df10c07a46ac0b88cea08815fceecb"
+    },
+    {
+      "path": "src/assets/audio/preview/voices/coach/female/coach_female_en_preview.m4a",
+      "sha1": "b962c632a2dd39d4898dbc70b7e614954607d757"
+    },
+    {
+      "path": "src/assets/audio/preview/voices/coach/female/coach_female_sk_preview.m4a",
+      "sha1": "44f35ceaeb4dc9d8369a9464d045760a4788a259"
+    },
+    {
+      "path": "src/assets/audio/preview/voices/coach/male/coach_male_cs_preview.m4a",
+      "sha1": "4b14f6bce4c7556aff1884573e80f624c14987db"
+    },
+    {
+      "path": "src/assets/audio/preview/voices/coach/male/coach_male_en_preview.m4a",
+      "sha1": "cb618af09ae2a97a1c6a07071dbdb68bc5795c34"
+    },
+    {
+      "path": "src/assets/audio/preview/voices/coach/male/coach_male_sk_preview.m4a",
+      "sha1": "12e8f2b1c3ec8455c422650d3e86642b57fe777e"
     },
     {
       "path": "src/assets/audio/workout/characters/cyborg/cs/cyborg_cs_1.m4a",

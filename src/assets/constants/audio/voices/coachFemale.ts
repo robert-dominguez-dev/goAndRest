@@ -83,6 +83,6 @@ export const coachFemaleSoundPathsByLanguage: WorkoutSoundPathsByLanguage = {
 
 export const coachFemalePreviewPathByLanguage: SoundPathByLanguage = {
   [SupportedLanguageCode.cs]: require('../../../audio/preview/voices/coach/female/coach_female_cs_preview.m4a'),
-  [SupportedLanguageCode.en]: require('../../../audio/preview/voices/coach/female/coach_female_cs_preview.m4a'),
-  [SupportedLanguageCode.sk]: require('../../../audio/preview/voices/coach/female/coach_female_cs_preview.m4a'),
+  [SupportedLanguageCode.en]: require('../../../audio/preview/voices/coach/female/coach_female_en_preview.m4a'),
+  [SupportedLanguageCode.sk]: require('../../../audio/preview/voices/coach/female/coach_female_sk_preview.m4a'),
 };
