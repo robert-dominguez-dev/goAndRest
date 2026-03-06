@@ -25,8 +25,8 @@ export const useCommonSettingBottomSheet = <TValue,>({
 
   const { bottomSheet, handleOpen } = useAppSelectionBottomSheet();
 
-  const items = itemValues.reduce<AppSelectionBottomSheetItemData<TValue>[]>(
-    (acc, value) => {
+  const items = itemValues.map<AppSelectionBottomSheetItemData<TValue>>(
+    value => {
       const {
         labelTranslateKey,
         IconComponent,
@@ -35,29 +35,24 @@ export const useCommonSettingBottomSheet = <TValue,>({
         audioPathByLanguage,
       } = getProps(value);
 
-      /**
-       * Filtering items at which we don't even have preview sound yet...
-       */
-      if (audioPathByLanguage) {
-        const itemData: AppSelectionBottomSheetItemData<TValue> = {
-          value,
-          label: t(labelTranslateKey),
-          selected: value === selectedValue,
-          AccessoryLeftIconComponent: IconComponent,
-          accessoryLeftIconStatus: iconColorStatus,
-          accessoryLeftImageProps: imageProps,
-          audioParams: {
-            soundKey: `${String(value)}_preview`,
-            url: audioPathByLanguage[language],
-          },
-        };
+      const audioParams: AppSelectionBottomSheetItemData<TValue>['audioParams'] =
+        audioPathByLanguage
+          ? {
+              soundKey: `${String(value)}_preview`,
+              url: audioPathByLanguage[language],
+            }
+          : undefined;
 
-        acc.push(itemData);
-      }
-
-      return acc;
+      return {
+        value,
+        label: t(labelTranslateKey),
+        selected: value === selectedValue,
+        AccessoryLeftIconComponent: IconComponent,
+        accessoryLeftIconStatus: iconColorStatus,
+        accessoryLeftImageProps: imageProps,
+        audioParams,
+      };
     },
-    [],
   );
 
   const openBottomSheet = () =>

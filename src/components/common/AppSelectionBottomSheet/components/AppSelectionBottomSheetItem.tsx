@@ -13,16 +13,17 @@ import {
 import { AppColorUnion } from '../../../../types/ui.ts';
 import { PlaySoundIcon, PlaySoundIconProps } from './PlaySoundIcon.tsx';
 
-export type AppSelectionBottomSheetItemData<TValue> = PlaySoundIconProps & {
-  label: string;
-  value: TValue;
-  accessoryLeft?: JSX.Element;
-  AccessoryLeftIconComponent?: LucideIcon;
-  accessoryLeftIconStatus?: AppColorUnion;
-  accessoryLeftImageProps?: AppSelectionBottomSheetItemTextProps['imageProps'];
-  selected?: boolean;
-  disabled?: boolean;
-};
+export type AppSelectionBottomSheetItemData<TValue> =
+  Partial<PlaySoundIconProps> & {
+    label: string;
+    value: TValue;
+    accessoryLeft?: JSX.Element;
+    AccessoryLeftIconComponent?: LucideIcon;
+    accessoryLeftIconStatus?: AppColorUnion;
+    accessoryLeftImageProps?: AppSelectionBottomSheetItemTextProps['imageProps'];
+    selected?: boolean;
+    disabled?: boolean;
+  };
 
 export type AppSelectionBottomSheetItemProps<TValue> =
   AppSelectionBottomSheetItemData<TValue> & {
@@ -75,7 +76,7 @@ export const AppSelectionBottomSheetItem = <TValue,>({
                 textColorStatus={textColorStatus}
               />
             </AppRow>
-            <PlaySoundIcon audioParams={audioParams} />
+            {audioParams && <PlaySoundIcon audioParams={audioParams} />}
           </AppRow>
         );
       }}
