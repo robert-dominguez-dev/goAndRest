@@ -770,6 +770,302 @@
       "sha1": "d8e272c963e34619241ebf0c376c1af8103412d1"
     },
     {
+      "path": "src/assets/audio/workout/voices/coach/female/en/coach_female_en_1.m4a",
+      "sha1": "787c88f8fef19410eea5427ffb2f421e1ead4fee"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/en/coach_female_en_10.m4a",
+      "sha1": "bfc0adee15bd6252a58ee38fa6d49240924c07d4"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/en/coach_female_en_2.m4a",
+      "sha1": "59642e4e4dffac51ec884adca4c11cf95495ad3b"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/en/coach_female_en_3.m4a",
+      "sha1": "6475f7907fe21c4890b9d77e42ca2bba3fc8d8e3"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/en/coach_female_en_4.m4a",
+      "sha1": "8a0ab1b9ce10f319d977524f42a137f63c5bb34e"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/en/coach_female_en_5.m4a",
+      "sha1": "0c6ac7b75362f28bd1fc39b4307f15bf68b1892c"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/en/coach_female_en_6.m4a",
+      "sha1": "6ad685300ba15f743a98ddb528aefce17acee995"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/en/coach_female_en_7.m4a",
+      "sha1": "3747c4ee8d77f429b447df83caad2e7b8ec2a31b"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/en/coach_female_en_8.m4a",
+      "sha1": "4994d254dd62344326c9f7f317d089bf7c17db46"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/en/coach_female_en_9.m4a",
+      "sha1": "0f7fec154ed9a48c86cef7d646c9eced7f112941"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/en/coach_female_en_cooldown_short.m4a",
+      "sha1": "b2f5a6a84db935b5fa9e1d513d0da086c449ec2a"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/en/coach_female_en_cooldown_v1.m4a",
+      "sha1": "bf6dd487fc948d2d5133d563febe0b8969f1aa42"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/en/coach_female_en_cooldown_v2.m4a",
+      "sha1": "e2883e7384ed22e4d8ddbc92bec08cbe4957b77c"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/en/coach_female_en_cooldown_v3.m4a",
+      "sha1": "a970bcec7c2f3afeb78277bcadd6c4a05af37aea"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/en/coach_female_en_finish_v1.m4a",
+      "sha1": "0beb935747e521bcf8c13b6ddd3aae1e61517106"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/en/coach_female_en_finish_v2.m4a",
+      "sha1": "31843f8f96c950d215776acadf9ac1e95718922f"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/en/coach_female_en_finish_v3.m4a",
+      "sha1": "0cc6119eca4948af24d20c5cb467f67634d85b4e"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/en/coach_female_en_half_v1.m4a",
+      "sha1": "3f918f580c9aa458c3ec2128faf4d5db506bfdb8"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/en/coach_female_en_half_v2.m4a",
+      "sha1": "87c3e682cfc02122c6b393b6596321ad65382faf"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/en/coach_female_en_half_v3.m4a",
+      "sha1": "c3ac125b6d03eaa2fc8fb106c186f08f08ebfd0c"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/en/coach_female_en_recovery_short.m4a",
+      "sha1": "a45e41210b58c49bf12e64ab04d5891de7cebb96"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/en/coach_female_en_recovery_v1.m4a",
+      "sha1": "7137c81d717bee255c590efd29cacd59b316936c"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/en/coach_female_en_recovery_v2.m4a",
+      "sha1": "7f2bcc211dd5e04ceebfcdaafb54287ad67f9d30"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/en/coach_female_en_recovery_v3.m4a",
+      "sha1": "bfecf1c5d28fd0364da2ca37e5d90f8269fdff27"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/en/coach_female_en_rest_short.m4a",
+      "sha1": "165aeae9d3041701d962bf649acec25717612521"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/en/coach_female_en_rest_v1.m4a",
+      "sha1": "3fd56ef03a23f354ca773b2b4bc9ccc57bebaf8e"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/en/coach_female_en_rest_v2.m4a",
+      "sha1": "8ec55f5a3edd7e30601f43039c9086640fd397c5"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/en/coach_female_en_rest_v3.m4a",
+      "sha1": "c8d71c459a4586e7fcb3f76276029f0ea042a301"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/en/coach_female_en_warmup_short.m4a",
+      "sha1": "4e86846e8ff65a177ede792b8627a00ca31704c6"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/en/coach_female_en_warmup_v1.m4a",
+      "sha1": "3961a195feacb10179390d1082613ca4a80e9323"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/en/coach_female_en_warmup_v2.m4a",
+      "sha1": "93758bf0e44cfb9e013b7db09c9cb7f223329224"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/en/coach_female_en_warmup_v3.m4a",
+      "sha1": "02ed4d39f4e06396cab84f4474c033704ee0fd49"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/en/coach_female_en_work_short.m4a",
+      "sha1": "63360c9762d84be2512e3323dc4b80e999244154"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/en/coach_female_en_work_v1.m4a",
+      "sha1": "66b83e5f9a15d4048a74a97ba865d7aa91ed9972"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/en/coach_female_en_work_v2.m4a",
+      "sha1": "87f0473f928f9adeca329594914cd27a1e8606c5"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/en/coach_female_en_work_v3.m4a",
+      "sha1": "f87788b6c8e2be635d4d6a2d8c17e5f27af77265"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/en/coach_female_en_work_v4.m4a",
+      "sha1": "9bf2daf8e5600629820494d68368950c64e9e025"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/sk/coach_female_sk_1.m4a",
+      "sha1": "a25c4264d4daf6adaaa44a6f33403262fbad0c20"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/sk/coach_female_sk_10.m4a",
+      "sha1": "bb8820aac4ab3aa5bbae71173fd1505264d084aa"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/sk/coach_female_sk_2.m4a",
+      "sha1": "73c5d8606f14cdbfaf5ec50b7ee688ed18631555"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/sk/coach_female_sk_3.m4a",
+      "sha1": "0ad91397c2e23c78c312ffb311fb8ef36a74d4d6"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/sk/coach_female_sk_4.m4a",
+      "sha1": "5dba0d22b7e388b0372b3285d813620fee78ac53"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/sk/coach_female_sk_5.m4a",
+      "sha1": "09c1acc788b12941e4d824e79854a21f91671b51"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/sk/coach_female_sk_6.m4a",
+      "sha1": "3480381351de93f5d53720a3fd4dc38a73bcb3e4"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/sk/coach_female_sk_7.m4a",
+      "sha1": "3efb7ec401a5bcecf79bcc850b77d2a24b396e89"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/sk/coach_female_sk_8.m4a",
+      "sha1": "1941be67af7a5b198bb5adf1d94a1137da3e329f"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/sk/coach_female_sk_9.m4a",
+      "sha1": "1ec12e32d8e8a10e828d17b282e7f36f811cb860"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/sk/coach_female_sk_cooldown_short.m4a",
+      "sha1": "09738a250fb99ddf1ac468e63261781e2c4e03a7"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/sk/coach_female_sk_cooldown_v1.m4a",
+      "sha1": "95f8a65c351c30b6a89ea0375d4e69979daee463"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/sk/coach_female_sk_cooldown_v2.m4a",
+      "sha1": "70e46a7aadded16e3430ced9e6f4936b1a76780b"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/sk/coach_female_sk_cooldown_v3.m4a",
+      "sha1": "007e528edf83dbf16b6d0a8383fde75a70547f4a"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/sk/coach_female_sk_finish_v1.m4a",
+      "sha1": "52bf353ac7a6a29b572b81bb2263add97ce1c700"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/sk/coach_female_sk_finish_v2.m4a",
+      "sha1": "c3a3cffa38ddea5be7e011c11b21696b55ed61a6"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/sk/coach_female_sk_finish_v3.m4a",
+      "sha1": "1b6095fd107f84c16615dac358d299f124251d9b"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/sk/coach_female_sk_half_v1.m4a",
+      "sha1": "e2fdcd40eaa21862344d2bbf2a1c37bf531926b4"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/sk/coach_female_sk_half_v2.m4a",
+      "sha1": "406cc9cc56e5304c6f6b47c4bc6aa0d3ca8b2fbb"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/sk/coach_female_sk_half_v3.m4a",
+      "sha1": "b608ba3c5e3ac3a3c1a075d4cfb2371f44e73501"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/sk/coach_female_sk_recovery_short.m4a",
+      "sha1": "54ac9e16e8c459b46a550fbcd1167c38ea96a5c3"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/sk/coach_female_sk_recovery_v1.m4a",
+      "sha1": "879fcb9f5275e8d85b63c1a6ab3d182b08837d33"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/sk/coach_female_sk_recovery_v2.m4a",
+      "sha1": "580ea5017462b85c56810d69eb13c74e3148dd75"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/sk/coach_female_sk_recovery_v3.m4a",
+      "sha1": "30776be8c854333d8a1476fec01fdf0e1b828418"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/sk/coach_female_sk_rest_short.m4a",
+      "sha1": "9b385352760cf883727f4ab3f6974c530534ebaf"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/sk/coach_female_sk_rest_v1.m4a",
+      "sha1": "59b0c106072773056e91493fe78e9f5a7ff06db6"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/sk/coach_female_sk_rest_v2.m4a",
+      "sha1": "0ef3a7f1c3dc7dc10320c0ae262400debd9f80d6"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/sk/coach_female_sk_rest_v3.m4a",
+      "sha1": "7e24f392e99aa6e121811b3f77af6749d8fa3ad2"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/sk/coach_female_sk_warmup_short.m4a",
+      "sha1": "eb0e4a31c5d7ced29fa80fb2b5590f17c67e6d6f"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/sk/coach_female_sk_warmup_v1.m4a",
+      "sha1": "de8d461d6c74d385b36e8c6515215b9e943d61b5"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/sk/coach_female_sk_warmup_v2.m4a",
+      "sha1": "785c6d4d5aa6bd857018a0d818b22469f513fc34"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/sk/coach_female_sk_warmup_v3.m4a",
+      "sha1": "46a74194d4b13afec926987bed0964a1d1920d76"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/sk/coach_female_sk_work_short.m4a",
+      "sha1": "18d1f8d0e8a01087c9d6fdaf67aef33f38cd85cf"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/sk/coach_female_sk_work_v1.m4a",
+      "sha1": "57ea182eff5f5d813f05c763a43c65663cf9d97b"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/sk/coach_female_sk_work_v2.m4a",
+      "sha1": "3c26e740b6055ea3defda553c6333ec7f1061abd"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/sk/coach_female_sk_work_v3.m4a",
+      "sha1": "aee5baa31d4b2c70f03a9d9081aa34dc1a871fc4"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/female/sk/coach_female_sk_work_v4.m4a",
+      "sha1": "61aa9ed5c50a8bbe2ce2a446665e4fe10738d810"
+    },
+    {
       "path": "src/assets/animations/confetti.riv",
       "sha1": "73dc0c807b4189d2a541f2da313ada296db6ddd0"
     },
