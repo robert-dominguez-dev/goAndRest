@@ -1,7 +1,10 @@
-import { Countdown, SoundPathByLanguage, WorkoutSoundFilePaths, WorkoutSoundPathsByLanguage, } from '../../../types.ts';
 import {
-  RunningWorkoutPhase
-} from '../../../../components/navigation/AppNavigator/screens/RunningWorkoutScreen/types.ts';
+  Countdown,
+  SoundPathByLanguage,
+  WorkoutSoundFilePaths,
+  WorkoutSoundPathsByLanguage,
+} from '../../../types.ts';
+import { RunningWorkoutPhase } from '../../../../components/navigation/AppNavigator/screens/RunningWorkoutScreen/types.ts';
 import { SupportedLanguageCode } from '../../../../contexts/AppLanguageProvider/constants.ts';
 
 const coachFemaleCs: WorkoutSoundFilePaths = {

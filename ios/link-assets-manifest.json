@@ -1066,6 +1066,450 @@
       "sha1": "61aa9ed5c50a8bbe2ce2a446665e4fe10738d810"
     },
     {
+      "path": "src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_1.m4a",
+      "sha1": "80ae2567d9e27ba368828910f25135b88018df36"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_10.m4a",
+      "sha1": "2d473c50e5bd2bb67305c371afa002feddad018a"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_2.m4a",
+      "sha1": "6d5908970c19d0c8100c4b179f3aad749066edfb"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_3.m4a",
+      "sha1": "84293ff05540a1f1b782486e1bda979102405b78"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_4.m4a",
+      "sha1": "cab83cd438929f5a5f92b7d5c213476b85d43e39"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_5.m4a",
+      "sha1": "f2985b9f6d9b07578fde246b4a7bbb98f9ad56d1"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_6.m4a",
+      "sha1": "f81a35cc73a8ab4e7bcfcec6366090cdf6d2d44a"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_7.m4a",
+      "sha1": "4d66d1def730b8ab6d6c782bca27a5a2d80148ae"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_8.m4a",
+      "sha1": "e48c128ff198d2bf20ac61b2f35b22bd89062ad4"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_9.m4a",
+      "sha1": "22721fef3bcc234286c59461853b508738f7992b"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_cooldown_short.m4a",
+      "sha1": "41ff5079f7a00fe67ba2ecc25d6ea8145da0c28a"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_cooldown_v1.m4a",
+      "sha1": "0fb116314f56cdd2813eeffece99f346f9d26c4c"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_cooldown_v2.m4a",
+      "sha1": "567733d4c8bd6f45f2dcc2bd672de564f0c48f90"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_cooldown_v3.m4a",
+      "sha1": "32d180bad39b396c203a4d66d41786ecef645037"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_finish_v1.m4a",
+      "sha1": "97737d4b58e9fc0c2dea0714b7ec4872394f1651"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_finish_v2.m4a",
+      "sha1": "91a99dcfd5ca8db14d81c4964c06e33a91959cbf"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_finish_v3.m4a",
+      "sha1": "38f1ef6d639c0ddfc8dbe59aa814c66946a5be12"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_half_v1.m4a",
+      "sha1": "9d0de4062b8249e982d587dc664f71302417eb04"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_half_v2.m4a",
+      "sha1": "762fa99b923d82716c32190f39b2fa235a3f8e8a"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_half_v3.m4a",
+      "sha1": "c3452e29bb91eb29256174d81d28d62f13e44e73"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_recovery_short.m4a",
+      "sha1": "cca299d50e97ec7336b9e34cada829a5b45c272e"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_recovery_v1.m4a",
+      "sha1": "6c6b3b03b6697167c6d9e7e141b7f968a99821ae"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_recovery_v2.m4a",
+      "sha1": "364c09cdbd7190326130402867cc392f3c5ae0b2"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_recovery_v3.m4a",
+      "sha1": "04cd75e38bc9a1b15f6fbd28e528890c83cce34d"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_rest_short.m4a",
+      "sha1": "d4a6c24a9081f6b42b204d24014636ee9428ddba"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_rest_v1.m4a",
+      "sha1": "677cd92883cbb4a2dd51279ded2ef97592545f0a"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_rest_v2.m4a",
+      "sha1": "d77406eaa1727532952362db3fe7a5a962bef677"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_rest_v3.m4a",
+      "sha1": "f0ca8af71b1b78e676ec9689d84ef150a3a9a3b2"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_warmup_short.m4a",
+      "sha1": "6a35d87dea19682f1da481d4c79c42687f078157"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_warmup_v1.m4a",
+      "sha1": "d8d2ca0d27014aa692c48e8608ade4c4e489041c"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_warmup_v2.m4a",
+      "sha1": "25e533a22c3a9ddc0146a8f5202572bcdb22ace4"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_warmup_v3.m4a",
+      "sha1": "3971bb3a58aa62927d2883d49d2d311592d6a74b"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_work_short.m4a",
+      "sha1": "1c0df7a3d2c2473bb95a85f76e6bdf406ee32b57"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_work_v1.m4a",
+      "sha1": "9929dafca26da95bfdeb8c3a2a5353fc8aa223c0"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_work_v2.m4a",
+      "sha1": "e0ccff9159eaf2930da1836ed38b87e18a95371f"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_work_v3.m4a",
+      "sha1": "c8ef4c88dc1695b9526135332920d68a34a478ae"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_work_v4.m4a",
+      "sha1": "aebbca9e7166428bbb8bea1cf0ce67a86e38d010"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/en/coach_male_en_1.m4a",
+      "sha1": "d57716349cbeb372c058fd7f833d9cd6f6b21921"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/en/coach_male_en_10.m4a",
+      "sha1": "4ef3f63292d300435c11712fe028c92e44eabffc"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/en/coach_male_en_2.m4a",
+      "sha1": "1da3fd7caf4518577b52034858ef053993247d8b"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/en/coach_male_en_3.m4a",
+      "sha1": "23a08309b6d138d48490ae4d7cf6506db90a5225"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/en/coach_male_en_4.m4a",
+      "sha1": "aada43085a717e4469290563be1047d10279440f"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/en/coach_male_en_5.m4a",
+      "sha1": "fca78613fda3d323e6eac0a03f4c154bc83c594b"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/en/coach_male_en_6.m4a",
+      "sha1": "06ba44e881ce063612ca7f0c43d953947ce82cec"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/en/coach_male_en_7.m4a",
+      "sha1": "91ea41f1436aca7e61e9e789ae2e6a296692438f"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/en/coach_male_en_8.m4a",
+      "sha1": "caf50872b75d5b00485fb898092321ffdb89926f"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/en/coach_male_en_9.m4a",
+      "sha1": "d95190976b3f216bca778eea85ddd5dca78a4b76"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/en/coach_male_en_cooldown_short.m4a",
+      "sha1": "7665a7211b51aaface456113b89f414383a33ec5"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/en/coach_male_en_cooldown_v1.m4a",
+      "sha1": "9a3fcb36b10e4b3e33307e91e599838f1df5d729"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/en/coach_male_en_cooldown_v2.m4a",
+      "sha1": "e0d6a408c785309fcc605df265bc89127a9397b4"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/en/coach_male_en_cooldown_v3.m4a",
+      "sha1": "ff8d697cb9581fcb364578a1797cd6e904503431"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/en/coach_male_en_finish_v1.m4a",
+      "sha1": "68f075cf0fbe1900abf271b04268d32d5f969f57"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/en/coach_male_en_finish_v2.m4a",
+      "sha1": "a724078533ec9b84085f7965e0ab54019d1f1e25"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/en/coach_male_en_finish_v3.m4a",
+      "sha1": "ac7cf3ac0d8d088cfa7128694180e90bc54f13a5"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/en/coach_male_en_half_v1.m4a",
+      "sha1": "08d8d657f88fd3fa0dd4987677f1e2cc2eb3cb1f"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/en/coach_male_en_half_v2.m4a",
+      "sha1": "43240b3c72abf9cebef804c8ccc2d4725ed3e37f"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/en/coach_male_en_half_v3.m4a",
+      "sha1": "56af5ee545f39bec54198bf929da80f6c709b7fe"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/en/coach_male_en_recovery_short.m4a",
+      "sha1": "e16e42cd68da79cb9fc8f1dd0d1bec9801a11db4"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/en/coach_male_en_recovery_v1.m4a",
+      "sha1": "84854ce1e70382941a8e19285809d7948b89c870"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/en/coach_male_en_recovery_v2.m4a",
+      "sha1": "69f79577a12ba0e8d381476f86cd6542ab8eadf9"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/en/coach_male_en_recovery_v3.m4a",
+      "sha1": "ab7f08c90bce1e0d2f1f7dc3eecc37db1c4e4527"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/en/coach_male_en_rest_short.m4a",
+      "sha1": "3b001642ebcbdb499ebf7ddb82f50ed51befc36a"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/en/coach_male_en_rest_v1.m4a",
+      "sha1": "19280e42df48123871eb96c56a27ee2641d92d84"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/en/coach_male_en_rest_v2.m4a",
+      "sha1": "da400b94c2b51af02fa204058d47bcde11297451"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/en/coach_male_en_rest_v3.m4a",
+      "sha1": "e9f697d7ae76e7e3eb7e09fc3726d7f97f371e76"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/en/coach_male_en_warmup_short.m4a",
+      "sha1": "6f5193b4f693d3c47c6ebf1c979e5d49ad0f989d"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/en/coach_male_en_warmup_v1.m4a",
+      "sha1": "bbe4b01cece305126bb3e335200a1efcfff0ea73"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/en/coach_male_en_warmup_v2.m4a",
+      "sha1": "9d1691157b804b6e62c66579940799def6fe800c"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/en/coach_male_en_warmup_v3.m4a",
+      "sha1": "2d8497c3893071e31bb6533df3d4cee7bd1e7d90"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/en/coach_male_en_work_short.m4a",
+      "sha1": "b6df372b60262fbd3e8935e7f3d04154615ab0ae"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/en/coach_male_en_work_v1.m4a",
+      "sha1": "e152ce534c3ebc1421ca619f1938deaf9d5a2145"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/en/coach_male_en_work_v2.m4a",
+      "sha1": "95d3440768f951596568ce3fd7decf07c866612e"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/en/coach_male_en_work_v3.m4a",
+      "sha1": "aeab04562e25ba6f12e54aeac79352487ab0e8af"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/en/coach_male_en_work_v4.m4a",
+      "sha1": "857f82dc18be5549c655da04157f6b73b7b7fd07"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_1.m4a",
+      "sha1": "fb442b8c2bf24c6bf4e24f47b579e7b2dcab498d"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_10.m4a",
+      "sha1": "060079523c3b003a34f027047fa035cf4ea00406"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_2.m4a",
+      "sha1": "85fd37e1f8a5364e8f71097ba6fa6da200b45a8d"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_3.m4a",
+      "sha1": "42177561e44a9a325588a37bd5e1e759f0c4cca0"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_4.m4a",
+      "sha1": "2f703db3ae10e2213af071bb81fe5d0658a6c144"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_5.m4a",
+      "sha1": "e32bd18f824f6a0f38bb0323802aa5b17f482faa"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_6.m4a",
+      "sha1": "23fbb8645745c7580b2e89a8b7683239acc7d13a"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_7.m4a",
+      "sha1": "2c10e3a14b87bd51d16c448c91a1f4e8e74df38b"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_8.m4a",
+      "sha1": "8a2bb0d5315a6a4e32484f3cf3b4afcc0cb331eb"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_9.m4a",
+      "sha1": "fd6706a7bfc510320779640f1bc2b2a667f99863"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_cooldown_short.m4a",
+      "sha1": "647fa7b1bd60342849f81f4be13533a1ff568e6f"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_cooldown_v1.m4a",
+      "sha1": "4ee5fdd0d2e3c0dcd6bc2a7d110748d3e749817c"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_cooldown_v2.m4a",
+      "sha1": "3a90d3e7ba7e399bd5090ecc531b3f2b9f4a7ad5"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_cooldown_v3.m4a",
+      "sha1": "2b1b0a8ee49fe213a65558fc39c2d691caebb1f5"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_finish_v1.m4a",
+      "sha1": "0d6744304a55fe1f170190395d018f89ccc6e006"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_finish_v2.m4a",
+      "sha1": "35c368293c5c7ae6c6362f96ab892201c2a06500"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_finish_v3.m4a",
+      "sha1": "d6a937ffe3ab5111b8dc82e7c88f3737c8bbbff4"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_half_v1.m4a",
+      "sha1": "0792fbf85b3f1b3781efca489cf94681d1f08afc"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_half_v2.m4a",
+      "sha1": "8321c5f4832158e819393fb631f60315c80d1404"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_half_v3.m4a",
+      "sha1": "73982f7f0c34bab00d882011ca22281c99f20700"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_recovery_short.m4a",
+      "sha1": "1d5182fb3efcc277f64c69c7dacb0d7d70c6e1d6"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_recovery_v1.m4a",
+      "sha1": "e06ac9ba9af898e24d996230dc17a3307cb837e2"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_recovery_v2.m4a",
+      "sha1": "0f4df70275990ea9fcfaf0ca8067688f4d9e78b4"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_recovery_v3.m4a",
+      "sha1": "69a6acf4932a85248ed8035dafecf1ec76190e76"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_rest_short.m4a",
+      "sha1": "5e73200f64cc9c57e43df42e3b1f992d17a67bff"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_rest_v1.m4a",
+      "sha1": "6e9e590bf59a46942838ffb7ab547a8e014442d6"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_rest_v2.m4a",
+      "sha1": "d63126790ba2c59a9a30bf18c711a9ba9d43ffc8"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_rest_v3.m4a",
+      "sha1": "5ba76cce9300eeb10e7c5637074bd33775e88ffd"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_warmup_short.m4a",
+      "sha1": "275fa804625558a036391b7f049eb6ec1920bdc1"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_warmup_v1.m4a",
+      "sha1": "0046f667922ba42aed020d94e34ee0aa93a2377f"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_warmup_v2.m4a",
+      "sha1": "9991f632b9c7f5bdd24e922593d77bb6a96dd26d"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_warmup_v3.m4a",
+      "sha1": "d8185174dfc7218b56fdae6101e24952326c1851"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_work_short.m4a",
+      "sha1": "ebe7efc22a0f551e34fb907720cfec592dd39d97"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_work_v1.m4a",
+      "sha1": "2ec3aa8829c92ab07c54ce666128ac62fbb308f8"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_work_v2.m4a",
+      "sha1": "798e83a501dcc462e018c2eb90e37e2adcbd0674"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_work_v3.m4a",
+      "sha1": "276e43c845d6eccb17c322eeb6a9fb4342e811c3"
+    },
+    {
+      "path": "src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_work_v4.m4a",
+      "sha1": "8a1529fe58ce229e97770202668aec5c433c0ad7"
+    },
+    {
       "path": "src/assets/animations/confetti.riv",
       "sha1": "73dc0c807b4189d2a541f2da313ada296db6ddd0"
     },

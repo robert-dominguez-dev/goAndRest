@@ -282,6 +282,117 @@
 		20E04AF8EA1F45FAA03A79F9 /* coach_female_sk_work_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = AFD8C5E89A5D4F41AF720804 /* coach_female_sk_work_v2.m4a */; };
 		C03A50BAA2F44D409DF4A4DC /* coach_female_sk_work_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 87BB115D9EE446A49F2DD5D8 /* coach_female_sk_work_v3.m4a */; };
 		F94C468FEF1B43E5830EB03F /* coach_female_sk_work_v4.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 692188EFC2824DC8AF9BA4C6 /* coach_female_sk_work_v4.m4a */; };
+		D3C52A5D0A6143FFA6E6D154 /* coach_male_cs_1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A9BEE0EE7DBD49A7B5B0A16E /* coach_male_cs_1.m4a */; };
+		8FAEE7BDE6544F0C8A50AA32 /* coach_male_cs_10.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 5BE87DFB649D4E87A5AA82E0 /* coach_male_cs_10.m4a */; };
+		A3DB9AB19F614A079E099452 /* coach_male_cs_2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 5B89DF3C592B43FE9FF81F91 /* coach_male_cs_2.m4a */; };
+		910951A809EF4176B97184D0 /* coach_male_cs_3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C062DD9F3DDE4B609CD7B3AE /* coach_male_cs_3.m4a */; };
+		86B958BFB68F435994F47FBB /* coach_male_cs_4.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C84FCD2B3AD74993996B893F /* coach_male_cs_4.m4a */; };
+		458FB47F0A474F878038B756 /* coach_male_cs_5.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 983CFE234F41406BA8E7CFF6 /* coach_male_cs_5.m4a */; };
+		319DA211DCA44BD887F28267 /* coach_male_cs_6.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FB7BEC8A199D462DA6C55C62 /* coach_male_cs_6.m4a */; };
+		13C8570589594DC4810DD372 /* coach_male_cs_7.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 27988AEE2CD44855995F84D7 /* coach_male_cs_7.m4a */; };
+		C21080BB48774060835FC2D6 /* coach_male_cs_8.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A9CE097E3F00410AB7DECEFA /* coach_male_cs_8.m4a */; };
+		EC4CF52FF06F4909BA6A79B1 /* coach_male_cs_9.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 10C9E5EAC97A4D95A23CC59A /* coach_male_cs_9.m4a */; };
+		3165D0387DC64B198DDFBC08 /* coach_male_cs_cooldown_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 41B5F437A83F4E71B6720D39 /* coach_male_cs_cooldown_short.m4a */; };
+		901131E2478E4523BAFA8C9C /* coach_male_cs_cooldown_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F203DC0A2139463EB89074AC /* coach_male_cs_cooldown_v1.m4a */; };
+		AD063A4000A649B6A9BB0E7D /* coach_male_cs_cooldown_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 797C5B53563D497681599BEC /* coach_male_cs_cooldown_v2.m4a */; };
+		CB7BAB9C94A148F5995BB7FF /* coach_male_cs_cooldown_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4C21DC1C9AF64C6F9B7431C4 /* coach_male_cs_cooldown_v3.m4a */; };
+		BEBC6A55F1744DC9BD9D6558 /* coach_male_cs_finish_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = EA8B46AB492E44758ECA3774 /* coach_male_cs_finish_v1.m4a */; };
+		E770CBAC3BE74D49B99F7CC0 /* coach_male_cs_finish_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A55378370CE643689B24B444 /* coach_male_cs_finish_v2.m4a */; };
+		647C5C0F6081438281C41317 /* coach_male_cs_finish_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 66CC9C4A3C5244CA94386F48 /* coach_male_cs_finish_v3.m4a */; };
+		2194A31451EB43D5A85CA00D /* coach_male_cs_half_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2D9F3E48550E4B14AF8F4EAA /* coach_male_cs_half_v1.m4a */; };
+		8BA477DFC07A4AFCAC2CB082 /* coach_male_cs_half_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4F89DA9588784A1DA09D85E8 /* coach_male_cs_half_v2.m4a */; };
+		3BA58454D117454092BEFC8A /* coach_male_cs_half_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 00B4792F9B5A49F7B795C8CD /* coach_male_cs_half_v3.m4a */; };
+		A94D832625674071B24D9B22 /* coach_male_cs_recovery_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4E7357A558B8421CB09D6BAB /* coach_male_cs_recovery_short.m4a */; };
+		C5DFE039B6AF4BAAAC338EED /* coach_male_cs_recovery_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F2D17FB1D9E748FFAC494EDE /* coach_male_cs_recovery_v1.m4a */; };
+		4D80927B1FE84A4F85968205 /* coach_male_cs_recovery_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8F801E32959F4A8591D76E21 /* coach_male_cs_recovery_v2.m4a */; };
+		9FC3E4D9E05F4F8CB3FF44AA /* coach_male_cs_recovery_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F8CB01D17DE640D1987C58AD /* coach_male_cs_recovery_v3.m4a */; };
+		136334890CEF40C8A2E17C75 /* coach_male_cs_rest_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D7BCEF6BCA96490BAD7F05FA /* coach_male_cs_rest_short.m4a */; };
+		B1DA5B328A1F4364A8A22960 /* coach_male_cs_rest_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 22FAB13A73244C269F8A826F /* coach_male_cs_rest_v1.m4a */; };
+		2782EB78F184440E8844F8F7 /* coach_male_cs_rest_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = AEF1754948F24FF3AAF035DA /* coach_male_cs_rest_v2.m4a */; };
+		E2DB9ACCB3B14A08879D758E /* coach_male_cs_rest_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = EDC7508262004C249A59A455 /* coach_male_cs_rest_v3.m4a */; };
+		04A31FCC48E047779956C6EB /* coach_male_cs_warmup_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 13E3597D168B47249A8F36B5 /* coach_male_cs_warmup_short.m4a */; };
+		0B54BB80E868438DB1A4DC10 /* coach_male_cs_warmup_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = BE0F51ABD5DA491097AF1E22 /* coach_male_cs_warmup_v1.m4a */; };
+		FAC339E2DF52436D9B18E0B4 /* coach_male_cs_warmup_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A7BDD02C8EB04A0E98A30B7E /* coach_male_cs_warmup_v2.m4a */; };
+		5B021559DC7C4CDAAFC0929B /* coach_male_cs_warmup_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = BDC3E4CE2EA84784AC64CE4E /* coach_male_cs_warmup_v3.m4a */; };
+		6EDE33920BAD44C3A38FCE43 /* coach_male_cs_work_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6A21CE536FCC4C7D95ECE869 /* coach_male_cs_work_short.m4a */; };
+		EEF335F6C7CB48E6A09C7CE6 /* coach_male_cs_work_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0FFEFAD2E5A24F76A0AFF736 /* coach_male_cs_work_v1.m4a */; };
+		44D1A3BE1193411BBDF24617 /* coach_male_cs_work_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 80EE516878344A24B525842D /* coach_male_cs_work_v2.m4a */; };
+		7994C865E1554F738BDA2BD1 /* coach_male_cs_work_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 63B1D686F110469DBE5B596E /* coach_male_cs_work_v3.m4a */; };
+		E63F5105011F4052ACDFB78C /* coach_male_cs_work_v4.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B05BD2238D474EE2ABC4E459 /* coach_male_cs_work_v4.m4a */; };
+		42F2298A593A45078D94B726 /* coach_male_en_1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C851CCE513F84D8493682A47 /* coach_male_en_1.m4a */; };
+		8CDE393884CC433AAA1B3A6F /* coach_male_en_10.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B6BA228D93624F89A590A085 /* coach_male_en_10.m4a */; };
+		75224B78F6B14DB29E37251F /* coach_male_en_2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D28A05536C2D4EED845856B0 /* coach_male_en_2.m4a */; };
+		21890BA7253046648D9AAD49 /* coach_male_en_3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8B1CF4D1BFF34BF988584F55 /* coach_male_en_3.m4a */; };
+		CC9105DDE38F49E3A5063AF3 /* coach_male_en_4.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6E86EB7A972548198C45EE6A /* coach_male_en_4.m4a */; };
+		0E971B956D814FFA99A4E635 /* coach_male_en_5.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3287024E55294579A6182EE8 /* coach_male_en_5.m4a */; };
+		ACA2E2B168AB4BA8AA314ED5 /* coach_male_en_6.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B59F1AC25B1244B08688F390 /* coach_male_en_6.m4a */; };
+		683DC9FBEB634E718B46156E /* coach_male_en_7.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8548AE2DB3474E389199A4B3 /* coach_male_en_7.m4a */; };
+		FED4BAB2C1264C0380D7ECB0 /* coach_male_en_8.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 610C98AC48F6468C83818B8C /* coach_male_en_8.m4a */; };
+		F1865A07F8CA452DB44AC6B7 /* coach_male_en_9.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 320576E7338B4F828E2F778C /* coach_male_en_9.m4a */; };
+		91F5D554AD094724A070FC27 /* coach_male_en_cooldown_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CFEF0E23B8AD4A7FBFAB3EA3 /* coach_male_en_cooldown_short.m4a */; };
+		3AEDC31A1996430E8518E749 /* coach_male_en_cooldown_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B32627CE63C647DEBBD3CBC7 /* coach_male_en_cooldown_v1.m4a */; };
+		D76003366E8E4871B2A02BB8 /* coach_male_en_cooldown_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 77FD48DDC51145B7B90FD32C /* coach_male_en_cooldown_v2.m4a */; };
+		43B42645A6E84820AB94E5BF /* coach_male_en_cooldown_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0973B8B74832416CB81DDCA2 /* coach_male_en_cooldown_v3.m4a */; };
+		95F29DD9F271476DABF537F1 /* coach_male_en_finish_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CBA8E994084B4B0FA84F32D2 /* coach_male_en_finish_v1.m4a */; };
+		8A9B80C7D0434CB29A6D428E /* coach_male_en_finish_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 54A0E5ED77C342039C222B1F /* coach_male_en_finish_v2.m4a */; };
+		B46EF0CC8F804C789CE49B28 /* coach_male_en_finish_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 75DAB2691F8A4B42B09A5937 /* coach_male_en_finish_v3.m4a */; };
+		BE18D6A123F640838DD8CF3A /* coach_male_en_half_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9AEAFFA297BE45AA899BEEA6 /* coach_male_en_half_v1.m4a */; };
+		DD0161475CD44954B55AFD34 /* coach_male_en_half_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DDFCEFE457244BC8892F12CA /* coach_male_en_half_v2.m4a */; };
+		76E0AB190E7E4AC29CDD4580 /* coach_male_en_half_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3902FD2EDB8B4966AC81D465 /* coach_male_en_half_v3.m4a */; };
+		7974F5ABAECC40B48107CC5A /* coach_male_en_recovery_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 404DCF8FA7A54DD1B6B56BFD /* coach_male_en_recovery_short.m4a */; };
+		70DBD9BC884649C7ADD59DCC /* coach_male_en_recovery_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 556C61D2458C4255B3BF6157 /* coach_male_en_recovery_v1.m4a */; };
+		80C293DFE1854D8ABB8E3D35 /* coach_male_en_recovery_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D8FD43E0CAA042D6A22FA3EC /* coach_male_en_recovery_v2.m4a */; };
+		21A82EF4280746EE9C1F7DBF /* coach_male_en_recovery_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = BE253F28A4F24D82B7729933 /* coach_male_en_recovery_v3.m4a */; };
+		C82685F80BFC49058E8FC3CB /* coach_male_en_rest_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 5D9008E5A4F24869A4497E0D /* coach_male_en_rest_short.m4a */; };
+		06EDA2169D384820AADDE439 /* coach_male_en_rest_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 08701F70418C4F5A976C472C /* coach_male_en_rest_v1.m4a */; };
+		80F4C7916425425992579401 /* coach_male_en_rest_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B979134CCFF646ADABED2972 /* coach_male_en_rest_v2.m4a */; };
+		F25C3BC511DB47E0AE36F129 /* coach_male_en_rest_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FEF6195046C24C328BCCDE68 /* coach_male_en_rest_v3.m4a */; };
+		F5C8AABFE9CE493092A8F183 /* coach_male_en_warmup_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B1909AD93840408F90F5683B /* coach_male_en_warmup_short.m4a */; };
+		F38F608526ED4F388D011651 /* coach_male_en_warmup_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 5EABE748000643BBBA7A3875 /* coach_male_en_warmup_v1.m4a */; };
+		DEEC7B86B44F4B9F9D61B0ED /* coach_male_en_warmup_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8BE85C929E714D87BA860541 /* coach_male_en_warmup_v2.m4a */; };
+		425F893A76FC495CBC6FEDFD /* coach_male_en_warmup_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C794E8A406964DA99308B622 /* coach_male_en_warmup_v3.m4a */; };
+		5A66DD6CFD3D4932BEC014B6 /* coach_male_en_work_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 626CED5E8E324631AED44938 /* coach_male_en_work_short.m4a */; };
+		F0E90790DCF4415CB3CFE2B5 /* coach_male_en_work_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6E64DFD480EA49409E0D6183 /* coach_male_en_work_v1.m4a */; };
+		873BB284AF724A29B87F55D2 /* coach_male_en_work_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 7D7C9BF180CB4DB38E296C7C /* coach_male_en_work_v2.m4a */; };
+		8F0818B30D3C4778B4F4D416 /* coach_male_en_work_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3F0D95DED8BF42AFA76371B1 /* coach_male_en_work_v3.m4a */; };
+		91018D7AE7CB48DD885AC9A2 /* coach_male_en_work_v4.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 935A92E065DF4823A0D04F1E /* coach_male_en_work_v4.m4a */; };
+		C55C04CF02064E449D40DA94 /* coach_male_sk_1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DF35B5FE567E461E8868B405 /* coach_male_sk_1.m4a */; };
+		9F2C6504F3F9433D928568EE /* coach_male_sk_10.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F9F6F64FE33648C3B0CC636B /* coach_male_sk_10.m4a */; };
+		9B30599FE08B420793DEFAD4 /* coach_male_sk_2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 42A7D960297247DFAF10BFC0 /* coach_male_sk_2.m4a */; };
+		26A88ED848FC496CB324034E /* coach_male_sk_3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CEDAFBDA18574C53ABAA91F7 /* coach_male_sk_3.m4a */; };
+		5D6B924F988B424991DB5A6B /* coach_male_sk_4.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9E344FC7A79A4DEF81D9727D /* coach_male_sk_4.m4a */; };
+		339CFAD973464BC4998E671F /* coach_male_sk_5.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 128B128627184969B062574A /* coach_male_sk_5.m4a */; };
+		D68C9C33F9DA4AE98D957E4B /* coach_male_sk_6.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1B49563847A44A948A394427 /* coach_male_sk_6.m4a */; };
+		0F1EB07137A449CB8D214C75 /* coach_male_sk_7.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4140F52AE05D4DA18C8766F5 /* coach_male_sk_7.m4a */; };
+		F187893B13F6471ABD383604 /* coach_male_sk_8.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 462E1A06D5344AACBBCC116E /* coach_male_sk_8.m4a */; };
+		492558CBE4024034A75271F4 /* coach_male_sk_9.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 287DCB5D3CC4491383C1221D /* coach_male_sk_9.m4a */; };
+		C8B0D461AB684519878D0D9B /* coach_male_sk_cooldown_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6F5B758B4AC34E49861122F1 /* coach_male_sk_cooldown_short.m4a */; };
+		8924BCA5BB0F4E62BC34218E /* coach_male_sk_cooldown_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 75B2EAAD0DCC447BA345410D /* coach_male_sk_cooldown_v1.m4a */; };
+		4D87C76F6F744B438919DDD7 /* coach_male_sk_cooldown_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B728752B00E740F0ADEFB83B /* coach_male_sk_cooldown_v2.m4a */; };
+		BAEBC37FDAEE41F6B95C788F /* coach_male_sk_cooldown_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8007A74C9D384167B0CEFA9A /* coach_male_sk_cooldown_v3.m4a */; };
+		299FBA91429E4FF991D74E4F /* coach_male_sk_finish_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9C8B525699594E788B303DD3 /* coach_male_sk_finish_v1.m4a */; };
+		F2ED5AD89F3247488BF4E503 /* coach_male_sk_finish_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 25519E30367D48EDA86A4559 /* coach_male_sk_finish_v2.m4a */; };
+		7616FA4C0FB94F23B6F98CE2 /* coach_male_sk_finish_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A7341305539A494C8303CE14 /* coach_male_sk_finish_v3.m4a */; };
+		BBB0C95A5F224497A43959E6 /* coach_male_sk_half_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2EEB9C269BB44DD9A60C9733 /* coach_male_sk_half_v1.m4a */; };
+		EFA4A42035D64DD28AD6DC29 /* coach_male_sk_half_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8F071D4796D34B3E806EFC54 /* coach_male_sk_half_v2.m4a */; };
+		7E5C9DDB42E84F45BAD045E9 /* coach_male_sk_half_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2EF0889A242D47009BB610CC /* coach_male_sk_half_v3.m4a */; };
+		413D7D78CDE74D00931C088A /* coach_male_sk_recovery_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 92ACDFEA605F4B40A55F8733 /* coach_male_sk_recovery_short.m4a */; };
+		1790DB15C4CC421EADD289F2 /* coach_male_sk_recovery_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C20C3810AE6D4AC799EE86A4 /* coach_male_sk_recovery_v1.m4a */; };
+		E75081D608D249F0988C8FB8 /* coach_male_sk_recovery_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04EFEAC1F0594335AB2F5E45 /* coach_male_sk_recovery_v2.m4a */; };
+		F48F80FA330A46E4A502DBBE /* coach_male_sk_recovery_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = AA0CCF7CE38E44928026BC7D /* coach_male_sk_recovery_v3.m4a */; };
+		7EB6498A846A41878BE5E9CE /* coach_male_sk_rest_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CE4E69D6F4CA417D969B824B /* coach_male_sk_rest_short.m4a */; };
+		06731C5954E242F7804CB425 /* coach_male_sk_rest_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DB62036391D24385ADECB2FC /* coach_male_sk_rest_v1.m4a */; };
+		7F945A9FB87443DD909D967E /* coach_male_sk_rest_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B24251F13ED84DA19A1D1706 /* coach_male_sk_rest_v2.m4a */; };
+		F26F04A6403C41ECA4596085 /* coach_male_sk_rest_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 7AC5B824E34947FCADF84BDB /* coach_male_sk_rest_v3.m4a */; };
+		3E8393CDCFCF499B9E9EB438 /* coach_male_sk_warmup_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = BC6DEB5C703B4F63B2D2C287 /* coach_male_sk_warmup_short.m4a */; };
+		5BA69D9A9F9B4F418AA44DC5 /* coach_male_sk_warmup_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 14AFE7D6BFE6435AB307DA45 /* coach_male_sk_warmup_v1.m4a */; };
+		FE9A4E891948408E843EF6CE /* coach_male_sk_warmup_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9331A03E39464D4B88F99A2F /* coach_male_sk_warmup_v2.m4a */; };
+		A2BA43BC3F074722B8CD9B56 /* coach_male_sk_warmup_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 63FCCBF6B9C94B2691DE7B1F /* coach_male_sk_warmup_v3.m4a */; };
+		7DB6D9306EE8431B8FF60665 /* coach_male_sk_work_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A5077890079146EDB12489F7 /* coach_male_sk_work_short.m4a */; };
+		8EC27FB0009E4066AFCF91E1 /* coach_male_sk_work_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4F79D4D2226A4727920F4805 /* coach_male_sk_work_v1.m4a */; };
+		FFB90E71B3FB40A7AE35505C /* coach_male_sk_work_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95A4B690BCAA43348B83E060 /* coach_male_sk_work_v2.m4a */; };
+		598896DCB17A4C0FAD91CB7B /* coach_male_sk_work_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0C2E114A2B1445078F4AFA7D /* coach_male_sk_work_v3.m4a */; };
+		FAC5CDA23FBD484FB0ADFAA3 /* coach_male_sk_work_v4.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 5BD9BA05CFF445EE9D0BCEEB /* coach_male_sk_work_v4.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -565,6 +676,117 @@
 		AFD8C5E89A5D4F41AF720804 /* coach_female_sk_work_v2.m4a */ = {isa = PBXFileReference; name = "coach_female_sk_work_v2.m4a"; path = "../src/assets/audio/workout/voices/coach/female/sk/coach_female_sk_work_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		87BB115D9EE446A49F2DD5D8 /* coach_female_sk_work_v3.m4a */ = {isa = PBXFileReference; name = "coach_female_sk_work_v3.m4a"; path = "../src/assets/audio/workout/voices/coach/female/sk/coach_female_sk_work_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		692188EFC2824DC8AF9BA4C6 /* coach_female_sk_work_v4.m4a */ = {isa = PBXFileReference; name = "coach_female_sk_work_v4.m4a"; path = "../src/assets/audio/workout/voices/coach/female/sk/coach_female_sk_work_v4.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A9BEE0EE7DBD49A7B5B0A16E /* coach_male_cs_1.m4a */ = {isa = PBXFileReference; name = "coach_male_cs_1.m4a"; path = "../src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5BE87DFB649D4E87A5AA82E0 /* coach_male_cs_10.m4a */ = {isa = PBXFileReference; name = "coach_male_cs_10.m4a"; path = "../src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_10.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5B89DF3C592B43FE9FF81F91 /* coach_male_cs_2.m4a */ = {isa = PBXFileReference; name = "coach_male_cs_2.m4a"; path = "../src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C062DD9F3DDE4B609CD7B3AE /* coach_male_cs_3.m4a */ = {isa = PBXFileReference; name = "coach_male_cs_3.m4a"; path = "../src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C84FCD2B3AD74993996B893F /* coach_male_cs_4.m4a */ = {isa = PBXFileReference; name = "coach_male_cs_4.m4a"; path = "../src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_4.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		983CFE234F41406BA8E7CFF6 /* coach_male_cs_5.m4a */ = {isa = PBXFileReference; name = "coach_male_cs_5.m4a"; path = "../src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_5.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FB7BEC8A199D462DA6C55C62 /* coach_male_cs_6.m4a */ = {isa = PBXFileReference; name = "coach_male_cs_6.m4a"; path = "../src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_6.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		27988AEE2CD44855995F84D7 /* coach_male_cs_7.m4a */ = {isa = PBXFileReference; name = "coach_male_cs_7.m4a"; path = "../src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_7.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A9CE097E3F00410AB7DECEFA /* coach_male_cs_8.m4a */ = {isa = PBXFileReference; name = "coach_male_cs_8.m4a"; path = "../src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_8.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		10C9E5EAC97A4D95A23CC59A /* coach_male_cs_9.m4a */ = {isa = PBXFileReference; name = "coach_male_cs_9.m4a"; path = "../src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_9.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		41B5F437A83F4E71B6720D39 /* coach_male_cs_cooldown_short.m4a */ = {isa = PBXFileReference; name = "coach_male_cs_cooldown_short.m4a"; path = "../src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_cooldown_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F203DC0A2139463EB89074AC /* coach_male_cs_cooldown_v1.m4a */ = {isa = PBXFileReference; name = "coach_male_cs_cooldown_v1.m4a"; path = "../src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_cooldown_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		797C5B53563D497681599BEC /* coach_male_cs_cooldown_v2.m4a */ = {isa = PBXFileReference; name = "coach_male_cs_cooldown_v2.m4a"; path = "../src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_cooldown_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4C21DC1C9AF64C6F9B7431C4 /* coach_male_cs_cooldown_v3.m4a */ = {isa = PBXFileReference; name = "coach_male_cs_cooldown_v3.m4a"; path = "../src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_cooldown_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EA8B46AB492E44758ECA3774 /* coach_male_cs_finish_v1.m4a */ = {isa = PBXFileReference; name = "coach_male_cs_finish_v1.m4a"; path = "../src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_finish_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A55378370CE643689B24B444 /* coach_male_cs_finish_v2.m4a */ = {isa = PBXFileReference; name = "coach_male_cs_finish_v2.m4a"; path = "../src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_finish_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		66CC9C4A3C5244CA94386F48 /* coach_male_cs_finish_v3.m4a */ = {isa = PBXFileReference; name = "coach_male_cs_finish_v3.m4a"; path = "../src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_finish_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2D9F3E48550E4B14AF8F4EAA /* coach_male_cs_half_v1.m4a */ = {isa = PBXFileReference; name = "coach_male_cs_half_v1.m4a"; path = "../src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_half_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4F89DA9588784A1DA09D85E8 /* coach_male_cs_half_v2.m4a */ = {isa = PBXFileReference; name = "coach_male_cs_half_v2.m4a"; path = "../src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_half_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		00B4792F9B5A49F7B795C8CD /* coach_male_cs_half_v3.m4a */ = {isa = PBXFileReference; name = "coach_male_cs_half_v3.m4a"; path = "../src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_half_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4E7357A558B8421CB09D6BAB /* coach_male_cs_recovery_short.m4a */ = {isa = PBXFileReference; name = "coach_male_cs_recovery_short.m4a"; path = "../src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_recovery_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F2D17FB1D9E748FFAC494EDE /* coach_male_cs_recovery_v1.m4a */ = {isa = PBXFileReference; name = "coach_male_cs_recovery_v1.m4a"; path = "../src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_recovery_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8F801E32959F4A8591D76E21 /* coach_male_cs_recovery_v2.m4a */ = {isa = PBXFileReference; name = "coach_male_cs_recovery_v2.m4a"; path = "../src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_recovery_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F8CB01D17DE640D1987C58AD /* coach_male_cs_recovery_v3.m4a */ = {isa = PBXFileReference; name = "coach_male_cs_recovery_v3.m4a"; path = "../src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_recovery_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D7BCEF6BCA96490BAD7F05FA /* coach_male_cs_rest_short.m4a */ = {isa = PBXFileReference; name = "coach_male_cs_rest_short.m4a"; path = "../src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_rest_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		22FAB13A73244C269F8A826F /* coach_male_cs_rest_v1.m4a */ = {isa = PBXFileReference; name = "coach_male_cs_rest_v1.m4a"; path = "../src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_rest_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		AEF1754948F24FF3AAF035DA /* coach_male_cs_rest_v2.m4a */ = {isa = PBXFileReference; name = "coach_male_cs_rest_v2.m4a"; path = "../src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_rest_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EDC7508262004C249A59A455 /* coach_male_cs_rest_v3.m4a */ = {isa = PBXFileReference; name = "coach_male_cs_rest_v3.m4a"; path = "../src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_rest_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		13E3597D168B47249A8F36B5 /* coach_male_cs_warmup_short.m4a */ = {isa = PBXFileReference; name = "coach_male_cs_warmup_short.m4a"; path = "../src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_warmup_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BE0F51ABD5DA491097AF1E22 /* coach_male_cs_warmup_v1.m4a */ = {isa = PBXFileReference; name = "coach_male_cs_warmup_v1.m4a"; path = "../src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_warmup_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A7BDD02C8EB04A0E98A30B7E /* coach_male_cs_warmup_v2.m4a */ = {isa = PBXFileReference; name = "coach_male_cs_warmup_v2.m4a"; path = "../src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_warmup_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BDC3E4CE2EA84784AC64CE4E /* coach_male_cs_warmup_v3.m4a */ = {isa = PBXFileReference; name = "coach_male_cs_warmup_v3.m4a"; path = "../src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_warmup_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6A21CE536FCC4C7D95ECE869 /* coach_male_cs_work_short.m4a */ = {isa = PBXFileReference; name = "coach_male_cs_work_short.m4a"; path = "../src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_work_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0FFEFAD2E5A24F76A0AFF736 /* coach_male_cs_work_v1.m4a */ = {isa = PBXFileReference; name = "coach_male_cs_work_v1.m4a"; path = "../src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_work_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		80EE516878344A24B525842D /* coach_male_cs_work_v2.m4a */ = {isa = PBXFileReference; name = "coach_male_cs_work_v2.m4a"; path = "../src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_work_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		63B1D686F110469DBE5B596E /* coach_male_cs_work_v3.m4a */ = {isa = PBXFileReference; name = "coach_male_cs_work_v3.m4a"; path = "../src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_work_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B05BD2238D474EE2ABC4E459 /* coach_male_cs_work_v4.m4a */ = {isa = PBXFileReference; name = "coach_male_cs_work_v4.m4a"; path = "../src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_work_v4.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C851CCE513F84D8493682A47 /* coach_male_en_1.m4a */ = {isa = PBXFileReference; name = "coach_male_en_1.m4a"; path = "../src/assets/audio/workout/voices/coach/male/en/coach_male_en_1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B6BA228D93624F89A590A085 /* coach_male_en_10.m4a */ = {isa = PBXFileReference; name = "coach_male_en_10.m4a"; path = "../src/assets/audio/workout/voices/coach/male/en/coach_male_en_10.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D28A05536C2D4EED845856B0 /* coach_male_en_2.m4a */ = {isa = PBXFileReference; name = "coach_male_en_2.m4a"; path = "../src/assets/audio/workout/voices/coach/male/en/coach_male_en_2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8B1CF4D1BFF34BF988584F55 /* coach_male_en_3.m4a */ = {isa = PBXFileReference; name = "coach_male_en_3.m4a"; path = "../src/assets/audio/workout/voices/coach/male/en/coach_male_en_3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6E86EB7A972548198C45EE6A /* coach_male_en_4.m4a */ = {isa = PBXFileReference; name = "coach_male_en_4.m4a"; path = "../src/assets/audio/workout/voices/coach/male/en/coach_male_en_4.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3287024E55294579A6182EE8 /* coach_male_en_5.m4a */ = {isa = PBXFileReference; name = "coach_male_en_5.m4a"; path = "../src/assets/audio/workout/voices/coach/male/en/coach_male_en_5.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B59F1AC25B1244B08688F390 /* coach_male_en_6.m4a */ = {isa = PBXFileReference; name = "coach_male_en_6.m4a"; path = "../src/assets/audio/workout/voices/coach/male/en/coach_male_en_6.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8548AE2DB3474E389199A4B3 /* coach_male_en_7.m4a */ = {isa = PBXFileReference; name = "coach_male_en_7.m4a"; path = "../src/assets/audio/workout/voices/coach/male/en/coach_male_en_7.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		610C98AC48F6468C83818B8C /* coach_male_en_8.m4a */ = {isa = PBXFileReference; name = "coach_male_en_8.m4a"; path = "../src/assets/audio/workout/voices/coach/male/en/coach_male_en_8.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		320576E7338B4F828E2F778C /* coach_male_en_9.m4a */ = {isa = PBXFileReference; name = "coach_male_en_9.m4a"; path = "../src/assets/audio/workout/voices/coach/male/en/coach_male_en_9.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CFEF0E23B8AD4A7FBFAB3EA3 /* coach_male_en_cooldown_short.m4a */ = {isa = PBXFileReference; name = "coach_male_en_cooldown_short.m4a"; path = "../src/assets/audio/workout/voices/coach/male/en/coach_male_en_cooldown_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B32627CE63C647DEBBD3CBC7 /* coach_male_en_cooldown_v1.m4a */ = {isa = PBXFileReference; name = "coach_male_en_cooldown_v1.m4a"; path = "../src/assets/audio/workout/voices/coach/male/en/coach_male_en_cooldown_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		77FD48DDC51145B7B90FD32C /* coach_male_en_cooldown_v2.m4a */ = {isa = PBXFileReference; name = "coach_male_en_cooldown_v2.m4a"; path = "../src/assets/audio/workout/voices/coach/male/en/coach_male_en_cooldown_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0973B8B74832416CB81DDCA2 /* coach_male_en_cooldown_v3.m4a */ = {isa = PBXFileReference; name = "coach_male_en_cooldown_v3.m4a"; path = "../src/assets/audio/workout/voices/coach/male/en/coach_male_en_cooldown_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CBA8E994084B4B0FA84F32D2 /* coach_male_en_finish_v1.m4a */ = {isa = PBXFileReference; name = "coach_male_en_finish_v1.m4a"; path = "../src/assets/audio/workout/voices/coach/male/en/coach_male_en_finish_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		54A0E5ED77C342039C222B1F /* coach_male_en_finish_v2.m4a */ = {isa = PBXFileReference; name = "coach_male_en_finish_v2.m4a"; path = "../src/assets/audio/workout/voices/coach/male/en/coach_male_en_finish_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		75DAB2691F8A4B42B09A5937 /* coach_male_en_finish_v3.m4a */ = {isa = PBXFileReference; name = "coach_male_en_finish_v3.m4a"; path = "../src/assets/audio/workout/voices/coach/male/en/coach_male_en_finish_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9AEAFFA297BE45AA899BEEA6 /* coach_male_en_half_v1.m4a */ = {isa = PBXFileReference; name = "coach_male_en_half_v1.m4a"; path = "../src/assets/audio/workout/voices/coach/male/en/coach_male_en_half_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DDFCEFE457244BC8892F12CA /* coach_male_en_half_v2.m4a */ = {isa = PBXFileReference; name = "coach_male_en_half_v2.m4a"; path = "../src/assets/audio/workout/voices/coach/male/en/coach_male_en_half_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3902FD2EDB8B4966AC81D465 /* coach_male_en_half_v3.m4a */ = {isa = PBXFileReference; name = "coach_male_en_half_v3.m4a"; path = "../src/assets/audio/workout/voices/coach/male/en/coach_male_en_half_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		404DCF8FA7A54DD1B6B56BFD /* coach_male_en_recovery_short.m4a */ = {isa = PBXFileReference; name = "coach_male_en_recovery_short.m4a"; path = "../src/assets/audio/workout/voices/coach/male/en/coach_male_en_recovery_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		556C61D2458C4255B3BF6157 /* coach_male_en_recovery_v1.m4a */ = {isa = PBXFileReference; name = "coach_male_en_recovery_v1.m4a"; path = "../src/assets/audio/workout/voices/coach/male/en/coach_male_en_recovery_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D8FD43E0CAA042D6A22FA3EC /* coach_male_en_recovery_v2.m4a */ = {isa = PBXFileReference; name = "coach_male_en_recovery_v2.m4a"; path = "../src/assets/audio/workout/voices/coach/male/en/coach_male_en_recovery_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BE253F28A4F24D82B7729933 /* coach_male_en_recovery_v3.m4a */ = {isa = PBXFileReference; name = "coach_male_en_recovery_v3.m4a"; path = "../src/assets/audio/workout/voices/coach/male/en/coach_male_en_recovery_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5D9008E5A4F24869A4497E0D /* coach_male_en_rest_short.m4a */ = {isa = PBXFileReference; name = "coach_male_en_rest_short.m4a"; path = "../src/assets/audio/workout/voices/coach/male/en/coach_male_en_rest_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		08701F70418C4F5A976C472C /* coach_male_en_rest_v1.m4a */ = {isa = PBXFileReference; name = "coach_male_en_rest_v1.m4a"; path = "../src/assets/audio/workout/voices/coach/male/en/coach_male_en_rest_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B979134CCFF646ADABED2972 /* coach_male_en_rest_v2.m4a */ = {isa = PBXFileReference; name = "coach_male_en_rest_v2.m4a"; path = "../src/assets/audio/workout/voices/coach/male/en/coach_male_en_rest_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FEF6195046C24C328BCCDE68 /* coach_male_en_rest_v3.m4a */ = {isa = PBXFileReference; name = "coach_male_en_rest_v3.m4a"; path = "../src/assets/audio/workout/voices/coach/male/en/coach_male_en_rest_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B1909AD93840408F90F5683B /* coach_male_en_warmup_short.m4a */ = {isa = PBXFileReference; name = "coach_male_en_warmup_short.m4a"; path = "../src/assets/audio/workout/voices/coach/male/en/coach_male_en_warmup_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5EABE748000643BBBA7A3875 /* coach_male_en_warmup_v1.m4a */ = {isa = PBXFileReference; name = "coach_male_en_warmup_v1.m4a"; path = "../src/assets/audio/workout/voices/coach/male/en/coach_male_en_warmup_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8BE85C929E714D87BA860541 /* coach_male_en_warmup_v2.m4a */ = {isa = PBXFileReference; name = "coach_male_en_warmup_v2.m4a"; path = "../src/assets/audio/workout/voices/coach/male/en/coach_male_en_warmup_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C794E8A406964DA99308B622 /* coach_male_en_warmup_v3.m4a */ = {isa = PBXFileReference; name = "coach_male_en_warmup_v3.m4a"; path = "../src/assets/audio/workout/voices/coach/male/en/coach_male_en_warmup_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		626CED5E8E324631AED44938 /* coach_male_en_work_short.m4a */ = {isa = PBXFileReference; name = "coach_male_en_work_short.m4a"; path = "../src/assets/audio/workout/voices/coach/male/en/coach_male_en_work_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6E64DFD480EA49409E0D6183 /* coach_male_en_work_v1.m4a */ = {isa = PBXFileReference; name = "coach_male_en_work_v1.m4a"; path = "../src/assets/audio/workout/voices/coach/male/en/coach_male_en_work_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7D7C9BF180CB4DB38E296C7C /* coach_male_en_work_v2.m4a */ = {isa = PBXFileReference; name = "coach_male_en_work_v2.m4a"; path = "../src/assets/audio/workout/voices/coach/male/en/coach_male_en_work_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3F0D95DED8BF42AFA76371B1 /* coach_male_en_work_v3.m4a */ = {isa = PBXFileReference; name = "coach_male_en_work_v3.m4a"; path = "../src/assets/audio/workout/voices/coach/male/en/coach_male_en_work_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		935A92E065DF4823A0D04F1E /* coach_male_en_work_v4.m4a */ = {isa = PBXFileReference; name = "coach_male_en_work_v4.m4a"; path = "../src/assets/audio/workout/voices/coach/male/en/coach_male_en_work_v4.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DF35B5FE567E461E8868B405 /* coach_male_sk_1.m4a */ = {isa = PBXFileReference; name = "coach_male_sk_1.m4a"; path = "../src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F9F6F64FE33648C3B0CC636B /* coach_male_sk_10.m4a */ = {isa = PBXFileReference; name = "coach_male_sk_10.m4a"; path = "../src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_10.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		42A7D960297247DFAF10BFC0 /* coach_male_sk_2.m4a */ = {isa = PBXFileReference; name = "coach_male_sk_2.m4a"; path = "../src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CEDAFBDA18574C53ABAA91F7 /* coach_male_sk_3.m4a */ = {isa = PBXFileReference; name = "coach_male_sk_3.m4a"; path = "../src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9E344FC7A79A4DEF81D9727D /* coach_male_sk_4.m4a */ = {isa = PBXFileReference; name = "coach_male_sk_4.m4a"; path = "../src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_4.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		128B128627184969B062574A /* coach_male_sk_5.m4a */ = {isa = PBXFileReference; name = "coach_male_sk_5.m4a"; path = "../src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_5.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1B49563847A44A948A394427 /* coach_male_sk_6.m4a */ = {isa = PBXFileReference; name = "coach_male_sk_6.m4a"; path = "../src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_6.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4140F52AE05D4DA18C8766F5 /* coach_male_sk_7.m4a */ = {isa = PBXFileReference; name = "coach_male_sk_7.m4a"; path = "../src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_7.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		462E1A06D5344AACBBCC116E /* coach_male_sk_8.m4a */ = {isa = PBXFileReference; name = "coach_male_sk_8.m4a"; path = "../src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_8.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		287DCB5D3CC4491383C1221D /* coach_male_sk_9.m4a */ = {isa = PBXFileReference; name = "coach_male_sk_9.m4a"; path = "../src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_9.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6F5B758B4AC34E49861122F1 /* coach_male_sk_cooldown_short.m4a */ = {isa = PBXFileReference; name = "coach_male_sk_cooldown_short.m4a"; path = "../src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_cooldown_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		75B2EAAD0DCC447BA345410D /* coach_male_sk_cooldown_v1.m4a */ = {isa = PBXFileReference; name = "coach_male_sk_cooldown_v1.m4a"; path = "../src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_cooldown_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B728752B00E740F0ADEFB83B /* coach_male_sk_cooldown_v2.m4a */ = {isa = PBXFileReference; name = "coach_male_sk_cooldown_v2.m4a"; path = "../src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_cooldown_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8007A74C9D384167B0CEFA9A /* coach_male_sk_cooldown_v3.m4a */ = {isa = PBXFileReference; name = "coach_male_sk_cooldown_v3.m4a"; path = "../src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_cooldown_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9C8B525699594E788B303DD3 /* coach_male_sk_finish_v1.m4a */ = {isa = PBXFileReference; name = "coach_male_sk_finish_v1.m4a"; path = "../src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_finish_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		25519E30367D48EDA86A4559 /* coach_male_sk_finish_v2.m4a */ = {isa = PBXFileReference; name = "coach_male_sk_finish_v2.m4a"; path = "../src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_finish_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A7341305539A494C8303CE14 /* coach_male_sk_finish_v3.m4a */ = {isa = PBXFileReference; name = "coach_male_sk_finish_v3.m4a"; path = "../src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_finish_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2EEB9C269BB44DD9A60C9733 /* coach_male_sk_half_v1.m4a */ = {isa = PBXFileReference; name = "coach_male_sk_half_v1.m4a"; path = "../src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_half_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8F071D4796D34B3E806EFC54 /* coach_male_sk_half_v2.m4a */ = {isa = PBXFileReference; name = "coach_male_sk_half_v2.m4a"; path = "../src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_half_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2EF0889A242D47009BB610CC /* coach_male_sk_half_v3.m4a */ = {isa = PBXFileReference; name = "coach_male_sk_half_v3.m4a"; path = "../src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_half_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		92ACDFEA605F4B40A55F8733 /* coach_male_sk_recovery_short.m4a */ = {isa = PBXFileReference; name = "coach_male_sk_recovery_short.m4a"; path = "../src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_recovery_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C20C3810AE6D4AC799EE86A4 /* coach_male_sk_recovery_v1.m4a */ = {isa = PBXFileReference; name = "coach_male_sk_recovery_v1.m4a"; path = "../src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_recovery_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		04EFEAC1F0594335AB2F5E45 /* coach_male_sk_recovery_v2.m4a */ = {isa = PBXFileReference; name = "coach_male_sk_recovery_v2.m4a"; path = "../src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_recovery_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		AA0CCF7CE38E44928026BC7D /* coach_male_sk_recovery_v3.m4a */ = {isa = PBXFileReference; name = "coach_male_sk_recovery_v3.m4a"; path = "../src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_recovery_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CE4E69D6F4CA417D969B824B /* coach_male_sk_rest_short.m4a */ = {isa = PBXFileReference; name = "coach_male_sk_rest_short.m4a"; path = "../src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_rest_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DB62036391D24385ADECB2FC /* coach_male_sk_rest_v1.m4a */ = {isa = PBXFileReference; name = "coach_male_sk_rest_v1.m4a"; path = "../src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_rest_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B24251F13ED84DA19A1D1706 /* coach_male_sk_rest_v2.m4a */ = {isa = PBXFileReference; name = "coach_male_sk_rest_v2.m4a"; path = "../src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_rest_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7AC5B824E34947FCADF84BDB /* coach_male_sk_rest_v3.m4a */ = {isa = PBXFileReference; name = "coach_male_sk_rest_v3.m4a"; path = "../src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_rest_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BC6DEB5C703B4F63B2D2C287 /* coach_male_sk_warmup_short.m4a */ = {isa = PBXFileReference; name = "coach_male_sk_warmup_short.m4a"; path = "../src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_warmup_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		14AFE7D6BFE6435AB307DA45 /* coach_male_sk_warmup_v1.m4a */ = {isa = PBXFileReference; name = "coach_male_sk_warmup_v1.m4a"; path = "../src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_warmup_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9331A03E39464D4B88F99A2F /* coach_male_sk_warmup_v2.m4a */ = {isa = PBXFileReference; name = "coach_male_sk_warmup_v2.m4a"; path = "../src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_warmup_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		63FCCBF6B9C94B2691DE7B1F /* coach_male_sk_warmup_v3.m4a */ = {isa = PBXFileReference; name = "coach_male_sk_warmup_v3.m4a"; path = "../src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_warmup_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A5077890079146EDB12489F7 /* coach_male_sk_work_short.m4a */ = {isa = PBXFileReference; name = "coach_male_sk_work_short.m4a"; path = "../src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_work_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4F79D4D2226A4727920F4805 /* coach_male_sk_work_v1.m4a */ = {isa = PBXFileReference; name = "coach_male_sk_work_v1.m4a"; path = "../src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_work_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		95A4B690BCAA43348B83E060 /* coach_male_sk_work_v2.m4a */ = {isa = PBXFileReference; name = "coach_male_sk_work_v2.m4a"; path = "../src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_work_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0C2E114A2B1445078F4AFA7D /* coach_male_sk_work_v3.m4a */ = {isa = PBXFileReference; name = "coach_male_sk_work_v3.m4a"; path = "../src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_work_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5BD9BA05CFF445EE9D0BCEEB /* coach_male_sk_work_v4.m4a */ = {isa = PBXFileReference; name = "coach_male_sk_work_v4.m4a"; path = "../src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_work_v4.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -874,6 +1096,117 @@
 				AFD8C5E89A5D4F41AF720804 /* coach_female_sk_work_v2.m4a */,
 				87BB115D9EE446A49F2DD5D8 /* coach_female_sk_work_v3.m4a */,
 				692188EFC2824DC8AF9BA4C6 /* coach_female_sk_work_v4.m4a */,
+				A9BEE0EE7DBD49A7B5B0A16E /* coach_male_cs_1.m4a */,
+				5BE87DFB649D4E87A5AA82E0 /* coach_male_cs_10.m4a */,
+				5B89DF3C592B43FE9FF81F91 /* coach_male_cs_2.m4a */,
+				C062DD9F3DDE4B609CD7B3AE /* coach_male_cs_3.m4a */,
+				C84FCD2B3AD74993996B893F /* coach_male_cs_4.m4a */,
+				983CFE234F41406BA8E7CFF6 /* coach_male_cs_5.m4a */,
+				FB7BEC8A199D462DA6C55C62 /* coach_male_cs_6.m4a */,
+				27988AEE2CD44855995F84D7 /* coach_male_cs_7.m4a */,
+				A9CE097E3F00410AB7DECEFA /* coach_male_cs_8.m4a */,
+				10C9E5EAC97A4D95A23CC59A /* coach_male_cs_9.m4a */,
+				41B5F437A83F4E71B6720D39 /* coach_male_cs_cooldown_short.m4a */,
+				F203DC0A2139463EB89074AC /* coach_male_cs_cooldown_v1.m4a */,
+				797C5B53563D497681599BEC /* coach_male_cs_cooldown_v2.m4a */,
+				4C21DC1C9AF64C6F9B7431C4 /* coach_male_cs_cooldown_v3.m4a */,
+				EA8B46AB492E44758ECA3774 /* coach_male_cs_finish_v1.m4a */,
+				A55378370CE643689B24B444 /* coach_male_cs_finish_v2.m4a */,
+				66CC9C4A3C5244CA94386F48 /* coach_male_cs_finish_v3.m4a */,
+				2D9F3E48550E4B14AF8F4EAA /* coach_male_cs_half_v1.m4a */,
+				4F89DA9588784A1DA09D85E8 /* coach_male_cs_half_v2.m4a */,
+				00B4792F9B5A49F7B795C8CD /* coach_male_cs_half_v3.m4a */,
+				4E7357A558B8421CB09D6BAB /* coach_male_cs_recovery_short.m4a */,
+				F2D17FB1D9E748FFAC494EDE /* coach_male_cs_recovery_v1.m4a */,
+				8F801E32959F4A8591D76E21 /* coach_male_cs_recovery_v2.m4a */,
+				F8CB01D17DE640D1987C58AD /* coach_male_cs_recovery_v3.m4a */,
+				D7BCEF6BCA96490BAD7F05FA /* coach_male_cs_rest_short.m4a */,
+				22FAB13A73244C269F8A826F /* coach_male_cs_rest_v1.m4a */,
+				AEF1754948F24FF3AAF035DA /* coach_male_cs_rest_v2.m4a */,
+				EDC7508262004C249A59A455 /* coach_male_cs_rest_v3.m4a */,
+				13E3597D168B47249A8F36B5 /* coach_male_cs_warmup_short.m4a */,
+				BE0F51ABD5DA491097AF1E22 /* coach_male_cs_warmup_v1.m4a */,
+				A7BDD02C8EB04A0E98A30B7E /* coach_male_cs_warmup_v2.m4a */,
+				BDC3E4CE2EA84784AC64CE4E /* coach_male_cs_warmup_v3.m4a */,
+				6A21CE536FCC4C7D95ECE869 /* coach_male_cs_work_short.m4a */,
+				0FFEFAD2E5A24F76A0AFF736 /* coach_male_cs_work_v1.m4a */,
+				80EE516878344A24B525842D /* coach_male_cs_work_v2.m4a */,
+				63B1D686F110469DBE5B596E /* coach_male_cs_work_v3.m4a */,
+				B05BD2238D474EE2ABC4E459 /* coach_male_cs_work_v4.m4a */,
+				C851CCE513F84D8493682A47 /* coach_male_en_1.m4a */,
+				B6BA228D93624F89A590A085 /* coach_male_en_10.m4a */,
+				D28A05536C2D4EED845856B0 /* coach_male_en_2.m4a */,
+				8B1CF4D1BFF34BF988584F55 /* coach_male_en_3.m4a */,
+				6E86EB7A972548198C45EE6A /* coach_male_en_4.m4a */,
+				3287024E55294579A6182EE8 /* coach_male_en_5.m4a */,
+				B59F1AC25B1244B08688F390 /* coach_male_en_6.m4a */,
+				8548AE2DB3474E389199A4B3 /* coach_male_en_7.m4a */,
+				610C98AC48F6468C83818B8C /* coach_male_en_8.m4a */,
+				320576E7338B4F828E2F778C /* coach_male_en_9.m4a */,
+				CFEF0E23B8AD4A7FBFAB3EA3 /* coach_male_en_cooldown_short.m4a */,
+				B32627CE63C647DEBBD3CBC7 /* coach_male_en_cooldown_v1.m4a */,
+				77FD48DDC51145B7B90FD32C /* coach_male_en_cooldown_v2.m4a */,
+				0973B8B74832416CB81DDCA2 /* coach_male_en_cooldown_v3.m4a */,
+				CBA8E994084B4B0FA84F32D2 /* coach_male_en_finish_v1.m4a */,
+				54A0E5ED77C342039C222B1F /* coach_male_en_finish_v2.m4a */,
+				75DAB2691F8A4B42B09A5937 /* coach_male_en_finish_v3.m4a */,
+				9AEAFFA297BE45AA899BEEA6 /* coach_male_en_half_v1.m4a */,
+				DDFCEFE457244BC8892F12CA /* coach_male_en_half_v2.m4a */,
+				3902FD2EDB8B4966AC81D465 /* coach_male_en_half_v3.m4a */,
+				404DCF8FA7A54DD1B6B56BFD /* coach_male_en_recovery_short.m4a */,
+				556C61D2458C4255B3BF6157 /* coach_male_en_recovery_v1.m4a */,
+				D8FD43E0CAA042D6A22FA3EC /* coach_male_en_recovery_v2.m4a */,
+				BE253F28A4F24D82B7729933 /* coach_male_en_recovery_v3.m4a */,
+				5D9008E5A4F24869A4497E0D /* coach_male_en_rest_short.m4a */,
+				08701F70418C4F5A976C472C /* coach_male_en_rest_v1.m4a */,
+				B979134CCFF646ADABED2972 /* coach_male_en_rest_v2.m4a */,
+				FEF6195046C24C328BCCDE68 /* coach_male_en_rest_v3.m4a */,
+				B1909AD93840408F90F5683B /* coach_male_en_warmup_short.m4a */,
+				5EABE748000643BBBA7A3875 /* coach_male_en_warmup_v1.m4a */,
+				8BE85C929E714D87BA860541 /* coach_male_en_warmup_v2.m4a */,
+				C794E8A406964DA99308B622 /* coach_male_en_warmup_v3.m4a */,
+				626CED5E8E324631AED44938 /* coach_male_en_work_short.m4a */,
+				6E64DFD480EA49409E0D6183 /* coach_male_en_work_v1.m4a */,
+				7D7C9BF180CB4DB38E296C7C /* coach_male_en_work_v2.m4a */,
+				3F0D95DED8BF42AFA76371B1 /* coach_male_en_work_v3.m4a */,
+				935A92E065DF4823A0D04F1E /* coach_male_en_work_v4.m4a */,
+				DF35B5FE567E461E8868B405 /* coach_male_sk_1.m4a */,
+				F9F6F64FE33648C3B0CC636B /* coach_male_sk_10.m4a */,
+				42A7D960297247DFAF10BFC0 /* coach_male_sk_2.m4a */,
+				CEDAFBDA18574C53ABAA91F7 /* coach_male_sk_3.m4a */,
+				9E344FC7A79A4DEF81D9727D /* coach_male_sk_4.m4a */,
+				128B128627184969B062574A /* coach_male_sk_5.m4a */,
+				1B49563847A44A948A394427 /* coach_male_sk_6.m4a */,
+				4140F52AE05D4DA18C8766F5 /* coach_male_sk_7.m4a */,
+				462E1A06D5344AACBBCC116E /* coach_male_sk_8.m4a */,
+				287DCB5D3CC4491383C1221D /* coach_male_sk_9.m4a */,
+				6F5B758B4AC34E49861122F1 /* coach_male_sk_cooldown_short.m4a */,
+				75B2EAAD0DCC447BA345410D /* coach_male_sk_cooldown_v1.m4a */,
+				B728752B00E740F0ADEFB83B /* coach_male_sk_cooldown_v2.m4a */,
+				8007A74C9D384167B0CEFA9A /* coach_male_sk_cooldown_v3.m4a */,
+				9C8B525699594E788B303DD3 /* coach_male_sk_finish_v1.m4a */,
+				25519E30367D48EDA86A4559 /* coach_male_sk_finish_v2.m4a */,
+				A7341305539A494C8303CE14 /* coach_male_sk_finish_v3.m4a */,
+				2EEB9C269BB44DD9A60C9733 /* coach_male_sk_half_v1.m4a */,
+				8F071D4796D34B3E806EFC54 /* coach_male_sk_half_v2.m4a */,
+				2EF0889A242D47009BB610CC /* coach_male_sk_half_v3.m4a */,
+				92ACDFEA605F4B40A55F8733 /* coach_male_sk_recovery_short.m4a */,
+				C20C3810AE6D4AC799EE86A4 /* coach_male_sk_recovery_v1.m4a */,
+				04EFEAC1F0594335AB2F5E45 /* coach_male_sk_recovery_v2.m4a */,
+				AA0CCF7CE38E44928026BC7D /* coach_male_sk_recovery_v3.m4a */,
+				CE4E69D6F4CA417D969B824B /* coach_male_sk_rest_short.m4a */,
+				DB62036391D24385ADECB2FC /* coach_male_sk_rest_v1.m4a */,
+				B24251F13ED84DA19A1D1706 /* coach_male_sk_rest_v2.m4a */,
+				7AC5B824E34947FCADF84BDB /* coach_male_sk_rest_v3.m4a */,
+				BC6DEB5C703B4F63B2D2C287 /* coach_male_sk_warmup_short.m4a */,
+				14AFE7D6BFE6435AB307DA45 /* coach_male_sk_warmup_v1.m4a */,
+				9331A03E39464D4B88F99A2F /* coach_male_sk_warmup_v2.m4a */,
+				63FCCBF6B9C94B2691DE7B1F /* coach_male_sk_warmup_v3.m4a */,
+				A5077890079146EDB12489F7 /* coach_male_sk_work_short.m4a */,
+				4F79D4D2226A4727920F4805 /* coach_male_sk_work_v1.m4a */,
+				95A4B690BCAA43348B83E060 /* coach_male_sk_work_v2.m4a */,
+				0C2E114A2B1445078F4AFA7D /* coach_male_sk_work_v3.m4a */,
+				5BD9BA05CFF445EE9D0BCEEB /* coach_male_sk_work_v4.m4a */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1249,6 +1582,117 @@
 				20E04AF8EA1F45FAA03A79F9 /* coach_female_sk_work_v2.m4a in Resources */,
 				C03A50BAA2F44D409DF4A4DC /* coach_female_sk_work_v3.m4a in Resources */,
 				F94C468FEF1B43E5830EB03F /* coach_female_sk_work_v4.m4a in Resources */,
+				D3C52A5D0A6143FFA6E6D154 /* coach_male_cs_1.m4a in Resources */,
+				8FAEE7BDE6544F0C8A50AA32 /* coach_male_cs_10.m4a in Resources */,
+				A3DB9AB19F614A079E099452 /* coach_male_cs_2.m4a in Resources */,
+				910951A809EF4176B97184D0 /* coach_male_cs_3.m4a in Resources */,
+				86B958BFB68F435994F47FBB /* coach_male_cs_4.m4a in Resources */,
+				458FB47F0A474F878038B756 /* coach_male_cs_5.m4a in Resources */,
+				319DA211DCA44BD887F28267 /* coach_male_cs_6.m4a in Resources */,
+				13C8570589594DC4810DD372 /* coach_male_cs_7.m4a in Resources */,
+				C21080BB48774060835FC2D6 /* coach_male_cs_8.m4a in Resources */,
+				EC4CF52FF06F4909BA6A79B1 /* coach_male_cs_9.m4a in Resources */,
+				3165D0387DC64B198DDFBC08 /* coach_male_cs_cooldown_short.m4a in Resources */,
+				901131E2478E4523BAFA8C9C /* coach_male_cs_cooldown_v1.m4a in Resources */,
+				AD063A4000A649B6A9BB0E7D /* coach_male_cs_cooldown_v2.m4a in Resources */,
+				CB7BAB9C94A148F5995BB7FF /* coach_male_cs_cooldown_v3.m4a in Resources */,
+				BEBC6A55F1744DC9BD9D6558 /* coach_male_cs_finish_v1.m4a in Resources */,
+				E770CBAC3BE74D49B99F7CC0 /* coach_male_cs_finish_v2.m4a in Resources */,
+				647C5C0F6081438281C41317 /* coach_male_cs_finish_v3.m4a in Resources */,
+				2194A31451EB43D5A85CA00D /* coach_male_cs_half_v1.m4a in Resources */,
+				8BA477DFC07A4AFCAC2CB082 /* coach_male_cs_half_v2.m4a in Resources */,
+				3BA58454D117454092BEFC8A /* coach_male_cs_half_v3.m4a in Resources */,
+				A94D832625674071B24D9B22 /* coach_male_cs_recovery_short.m4a in Resources */,
+				C5DFE039B6AF4BAAAC338EED /* coach_male_cs_recovery_v1.m4a in Resources */,
+				4D80927B1FE84A4F85968205 /* coach_male_cs_recovery_v2.m4a in Resources */,
+				9FC3E4D9E05F4F8CB3FF44AA /* coach_male_cs_recovery_v3.m4a in Resources */,
+				136334890CEF40C8A2E17C75 /* coach_male_cs_rest_short.m4a in Resources */,
+				B1DA5B328A1F4364A8A22960 /* coach_male_cs_rest_v1.m4a in Resources */,
+				2782EB78F184440E8844F8F7 /* coach_male_cs_rest_v2.m4a in Resources */,
+				E2DB9ACCB3B14A08879D758E /* coach_male_cs_rest_v3.m4a in Resources */,
+				04A31FCC48E047779956C6EB /* coach_male_cs_warmup_short.m4a in Resources */,
+				0B54BB80E868438DB1A4DC10 /* coach_male_cs_warmup_v1.m4a in Resources */,
+				FAC339E2DF52436D9B18E0B4 /* coach_male_cs_warmup_v2.m4a in Resources */,
+				5B021559DC7C4CDAAFC0929B /* coach_male_cs_warmup_v3.m4a in Resources */,
+				6EDE33920BAD44C3A38FCE43 /* coach_male_cs_work_short.m4a in Resources */,
+				EEF335F6C7CB48E6A09C7CE6 /* coach_male_cs_work_v1.m4a in Resources */,
+				44D1A3BE1193411BBDF24617 /* coach_male_cs_work_v2.m4a in Resources */,
+				7994C865E1554F738BDA2BD1 /* coach_male_cs_work_v3.m4a in Resources */,
+				E63F5105011F4052ACDFB78C /* coach_male_cs_work_v4.m4a in Resources */,
+				42F2298A593A45078D94B726 /* coach_male_en_1.m4a in Resources */,
+				8CDE393884CC433AAA1B3A6F /* coach_male_en_10.m4a in Resources */,
+				75224B78F6B14DB29E37251F /* coach_male_en_2.m4a in Resources */,
+				21890BA7253046648D9AAD49 /* coach_male_en_3.m4a in Resources */,
+				CC9105DDE38F49E3A5063AF3 /* coach_male_en_4.m4a in Resources */,
+				0E971B956D814FFA99A4E635 /* coach_male_en_5.m4a in Resources */,
+				ACA2E2B168AB4BA8AA314ED5 /* coach_male_en_6.m4a in Resources */,
+				683DC9FBEB634E718B46156E /* coach_male_en_7.m4a in Resources */,
+				FED4BAB2C1264C0380D7ECB0 /* coach_male_en_8.m4a in Resources */,
+				F1865A07F8CA452DB44AC6B7 /* coach_male_en_9.m4a in Resources */,
+				91F5D554AD094724A070FC27 /* coach_male_en_cooldown_short.m4a in Resources */,
+				3AEDC31A1996430E8518E749 /* coach_male_en_cooldown_v1.m4a in Resources */,
+				D76003366E8E4871B2A02BB8 /* coach_male_en_cooldown_v2.m4a in Resources */,
+				43B42645A6E84820AB94E5BF /* coach_male_en_cooldown_v3.m4a in Resources */,
+				95F29DD9F271476DABF537F1 /* coach_male_en_finish_v1.m4a in Resources */,
+				8A9B80C7D0434CB29A6D428E /* coach_male_en_finish_v2.m4a in Resources */,
+				B46EF0CC8F804C789CE49B28 /* coach_male_en_finish_v3.m4a in Resources */,
+				BE18D6A123F640838DD8CF3A /* coach_male_en_half_v1.m4a in Resources */,
+				DD0161475CD44954B55AFD34 /* coach_male_en_half_v2.m4a in Resources */,
+				76E0AB190E7E4AC29CDD4580 /* coach_male_en_half_v3.m4a in Resources */,
+				7974F5ABAECC40B48107CC5A /* coach_male_en_recovery_short.m4a in Resources */,
+				70DBD9BC884649C7ADD59DCC /* coach_male_en_recovery_v1.m4a in Resources */,
+				80C293DFE1854D8ABB8E3D35 /* coach_male_en_recovery_v2.m4a in Resources */,
+				21A82EF4280746EE9C1F7DBF /* coach_male_en_recovery_v3.m4a in Resources */,
+				C82685F80BFC49058E8FC3CB /* coach_male_en_rest_short.m4a in Resources */,
+				06EDA2169D384820AADDE439 /* coach_male_en_rest_v1.m4a in Resources */,
+				80F4C7916425425992579401 /* coach_male_en_rest_v2.m4a in Resources */,
+				F25C3BC511DB47E0AE36F129 /* coach_male_en_rest_v3.m4a in Resources */,
+				F5C8AABFE9CE493092A8F183 /* coach_male_en_warmup_short.m4a in Resources */,
+				F38F608526ED4F388D011651 /* coach_male_en_warmup_v1.m4a in Resources */,
+				DEEC7B86B44F4B9F9D61B0ED /* coach_male_en_warmup_v2.m4a in Resources */,
+				425F893A76FC495CBC6FEDFD /* coach_male_en_warmup_v3.m4a in Resources */,
+				5A66DD6CFD3D4932BEC014B6 /* coach_male_en_work_short.m4a in Resources */,
+				F0E90790DCF4415CB3CFE2B5 /* coach_male_en_work_v1.m4a in Resources */,
+				873BB284AF724A29B87F55D2 /* coach_male_en_work_v2.m4a in Resources */,
+				8F0818B30D3C4778B4F4D416 /* coach_male_en_work_v3.m4a in Resources */,
+				91018D7AE7CB48DD885AC9A2 /* coach_male_en_work_v4.m4a in Resources */,
+				C55C04CF02064E449D40DA94 /* coach_male_sk_1.m4a in Resources */,
+				9F2C6504F3F9433D928568EE /* coach_male_sk_10.m4a in Resources */,
+				9B30599FE08B420793DEFAD4 /* coach_male_sk_2.m4a in Resources */,
+				26A88ED848FC496CB324034E /* coach_male_sk_3.m4a in Resources */,
+				5D6B924F988B424991DB5A6B /* coach_male_sk_4.m4a in Resources */,
+				339CFAD973464BC4998E671F /* coach_male_sk_5.m4a in Resources */,
+				D68C9C33F9DA4AE98D957E4B /* coach_male_sk_6.m4a in Resources */,
+				0F1EB07137A449CB8D214C75 /* coach_male_sk_7.m4a in Resources */,
+				F187893B13F6471ABD383604 /* coach_male_sk_8.m4a in Resources */,
+				492558CBE4024034A75271F4 /* coach_male_sk_9.m4a in Resources */,
+				C8B0D461AB684519878D0D9B /* coach_male_sk_cooldown_short.m4a in Resources */,
+				8924BCA5BB0F4E62BC34218E /* coach_male_sk_cooldown_v1.m4a in Resources */,
+				4D87C76F6F744B438919DDD7 /* coach_male_sk_cooldown_v2.m4a in Resources */,
+				BAEBC37FDAEE41F6B95C788F /* coach_male_sk_cooldown_v3.m4a in Resources */,
+				299FBA91429E4FF991D74E4F /* coach_male_sk_finish_v1.m4a in Resources */,
+				F2ED5AD89F3247488BF4E503 /* coach_male_sk_finish_v2.m4a in Resources */,
+				7616FA4C0FB94F23B6F98CE2 /* coach_male_sk_finish_v3.m4a in Resources */,
+				BBB0C95A5F224497A43959E6 /* coach_male_sk_half_v1.m4a in Resources */,
+				EFA4A42035D64DD28AD6DC29 /* coach_male_sk_half_v2.m4a in Resources */,
+				7E5C9DDB42E84F45BAD045E9 /* coach_male_sk_half_v3.m4a in Resources */,
+				413D7D78CDE74D00931C088A /* coach_male_sk_recovery_short.m4a in Resources */,
+				1790DB15C4CC421EADD289F2 /* coach_male_sk_recovery_v1.m4a in Resources */,
+				E75081D608D249F0988C8FB8 /* coach_male_sk_recovery_v2.m4a in Resources */,
+				F48F80FA330A46E4A502DBBE /* coach_male_sk_recovery_v3.m4a in Resources */,
+				7EB6498A846A41878BE5E9CE /* coach_male_sk_rest_short.m4a in Resources */,
+				06731C5954E242F7804CB425 /* coach_male_sk_rest_v1.m4a in Resources */,
+				7F945A9FB87443DD909D967E /* coach_male_sk_rest_v2.m4a in Resources */,
+				F26F04A6403C41ECA4596085 /* coach_male_sk_rest_v3.m4a in Resources */,
+				3E8393CDCFCF499B9E9EB438 /* coach_male_sk_warmup_short.m4a in Resources */,
+				5BA69D9A9F9B4F418AA44DC5 /* coach_male_sk_warmup_v1.m4a in Resources */,
+				FE9A4E891948408E843EF6CE /* coach_male_sk_warmup_v2.m4a in Resources */,
+				A2BA43BC3F074722B8CD9B56 /* coach_male_sk_warmup_v3.m4a in Resources */,
+				7DB6D9306EE8431B8FF60665 /* coach_male_sk_work_short.m4a in Resources */,
+				8EC27FB0009E4066AFCF91E1 /* coach_male_sk_work_v1.m4a in Resources */,
+				FFB90E71B3FB40A7AE35505C /* coach_male_sk_work_v2.m4a in Resources */,
+				598896DCB17A4C0FAD91CB7B /* coach_male_sk_work_v3.m4a in Resources */,
+				FAC5CDA23FBD484FB0ADFAA3 /* coach_male_sk_work_v4.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

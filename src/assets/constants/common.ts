@@ -32,7 +32,10 @@ import {
   shieldmaidenPreviewPathByLanguage,
   shieldmaidenSoundPathsByLanguage,
 } from './audio/characters/shieldmaiden.ts';
-import { coachMalePreviewPathByLanguage } from './audio/voices/coachMale.ts';
+import {
+  coachMalePreviewPathByLanguage,
+  coachMaleSoundPathsByLanguage,
+} from './audio/voices/coachMale.ts';
 
 export type AppFeedbackEntity =
   | `${WorkoutVoiceVariant}`
@@ -81,7 +84,7 @@ export const appFeedbackEntityToSoundFileNamesByLanguage: Record<
   WorkoutSoundPathsByLanguage | null
 > = {
   [WorkoutVoiceVariant.coachFemale]: coachFemaleSoundPathsByLanguage,
-  [WorkoutVoiceVariant.coachMale]: null,
+  [WorkoutVoiceVariant.coachMale]: coachMaleSoundPathsByLanguage,
   [WorkoutVoiceVariant.friendFemale]: null,
   [WorkoutVoiceVariant.friendMale]: null,
   [WorkoutVoiceVariant.calmFemale]: null,
