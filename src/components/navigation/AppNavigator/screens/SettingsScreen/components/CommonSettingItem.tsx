@@ -6,6 +6,7 @@ import {
   useCommonSettingBottomSheet,
   UseSettingBottomSheetParams,
 } from '../hooks/useCommonSettingBottomSheet.tsx';
+import { useAppLanguage } from '../../../../../../contexts/AppLanguageProvider/AppLanguageProvider.tsx';
 
 type CommonSettingItemProps<TValue> = Pick<
   SettingsItemProps,
@@ -22,6 +23,8 @@ export const CommonSettingItem = <TValue,>({
 }: CommonSettingItemProps<TValue>) => {
   const t = useAppTranslation();
 
+  const { language } = useAppLanguage();
+
   const selectedValue = useAtomValue(atom);
 
   const { bottomSheet, openBottomSheet } = useCommonSettingBottomSheet({
@@ -31,7 +34,7 @@ export const CommonSettingItem = <TValue,>({
   });
 
   const { labelTranslateKey, IconComponent, imageProps, iconColorStatus } =
-    getProps(selectedValue);
+    getProps(selectedValue, language);
 
   const accessoryRight = (
     <AppSelectionBottomSheetItemText

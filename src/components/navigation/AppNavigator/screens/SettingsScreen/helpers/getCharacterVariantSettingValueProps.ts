@@ -3,9 +3,11 @@ import { WorkoutCharacterVariant } from '../constants.tsx';
 import { SettingValueProps } from '../types.ts';
 import { getBottomSheetItemMiniImageProps } from './getBottomSheetItemMiniImageProps.ts';
 import { appFeedbackEntityToPreviewFileNameByLanguage } from '../../../../../../assets/constants/common.ts';
+import { SupportedLanguageCode } from '../../../../../../contexts/AppLanguageProvider/constants.ts';
 
 export const getCharacterVariantSettingValueProps = (
   characterVariant: WorkoutCharacterVariant,
+  language: SupportedLanguageCode,
 ): SettingValueProps => {
   const labelTranslateKey = getSplitTranslateKey(
     'screens.settingsScreen.feedbackSection.items.characterVariant.items',
@@ -15,7 +17,9 @@ export const getCharacterVariantSettingValueProps = (
   return {
     labelTranslateKey,
     imageProps: getBottomSheetItemMiniImageProps(characterVariant),
-    audioPathByLanguage:
-      appFeedbackEntityToPreviewFileNameByLanguage[characterVariant],
+    previewAudioUrl:
+      appFeedbackEntityToPreviewFileNameByLanguage[characterVariant]?.[
+        language
+      ],
   };
 };

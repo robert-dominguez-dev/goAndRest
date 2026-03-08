@@ -9,6 +9,7 @@ import { voices } from '../base64/voices.ts';
 import {
   AppWallpaper,
   SoundPathByLanguage,
+  WorkoutSoundFilePaths,
   WorkoutSoundPathsByLanguage,
 } from '../types.ts';
 import {
@@ -36,6 +37,7 @@ import {
   coachMalePreviewPathByLanguage,
   coachMaleSoundPathsByLanguage,
 } from './audio/voices/coachMale.ts';
+import { bellPreviewPath, bellSoundPaths } from './audio/sounds/bell.ts';
 
 export type AppFeedbackEntity =
   | `${WorkoutVoiceVariant}`
@@ -75,12 +77,8 @@ export enum AppAnimation {
   confetti = 'confetti',
 }
 
-type AppFeedbackEntityWithSoundVariants =
-  | AppFeedbackEntity
-  | `${WorkoutSoundVariant}`;
-
 export const appFeedbackEntityToSoundFileNamesByLanguage: Record<
-  AppFeedbackEntityWithSoundVariants,
+  AppFeedbackEntity,
   WorkoutSoundPathsByLanguage | null
 > = {
   [WorkoutVoiceVariant.coachFemale]: coachFemaleSoundPathsByLanguage,
@@ -93,15 +91,21 @@ export const appFeedbackEntityToSoundFileNamesByLanguage: Record<
   [WorkoutCharacterVariant.shieldmaiden]: shieldmaidenSoundPathsByLanguage,
   [WorkoutCharacterVariant.cyborg]: cyborgSoundPathsByLanguage,
   [WorkoutCharacterVariant.wizard]: wizardSoundPathsByLanguage,
+};
+
+export const soundVariantToFileNames: Record<
+  WorkoutSoundVariant,
+  WorkoutSoundFilePaths | null
+> = {
   [WorkoutSoundVariant.beep]: null,
-  [WorkoutSoundVariant.bell]: null,
+  [WorkoutSoundVariant.bell]: bellSoundPaths,
   [WorkoutSoundVariant.drum]: null,
   [WorkoutSoundVariant.snap]: null,
   [WorkoutSoundVariant.whistle]: null,
 };
 
 export const appFeedbackEntityToPreviewFileNameByLanguage: Record<
-  AppFeedbackEntityWithSoundVariants,
+  AppFeedbackEntity,
   SoundPathByLanguage | undefined
 > = {
   [WorkoutVoiceVariant.coachFemale]: coachFemalePreviewPathByLanguage,
@@ -114,8 +118,14 @@ export const appFeedbackEntityToPreviewFileNameByLanguage: Record<
   [WorkoutCharacterVariant.shieldmaiden]: shieldmaidenPreviewPathByLanguage,
   [WorkoutCharacterVariant.cyborg]: cyborgPreviewPathByLanguage,
   [WorkoutCharacterVariant.wizard]: wizardPreviewPathByLanguage,
+};
+
+export const soundVariantToPreviewFileNames: Record<
+  WorkoutSoundVariant,
+  string | undefined
+> = {
   [WorkoutSoundVariant.beep]: undefined,
-  [WorkoutSoundVariant.bell]: undefined,
+  [WorkoutSoundVariant.bell]: bellPreviewPath,
   [WorkoutSoundVariant.drum]: undefined,
   [WorkoutSoundVariant.snap]: undefined,
   [WorkoutSoundVariant.whistle]: undefined,

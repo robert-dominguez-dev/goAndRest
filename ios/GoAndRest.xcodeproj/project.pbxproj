@@ -393,6 +393,10 @@
 		FFB90E71B3FB40A7AE35505C /* coach_male_sk_work_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95A4B690BCAA43348B83E060 /* coach_male_sk_work_v2.m4a */; };
 		598896DCB17A4C0FAD91CB7B /* coach_male_sk_work_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0C2E114A2B1445078F4AFA7D /* coach_male_sk_work_v3.m4a */; };
 		FAC5CDA23FBD484FB0ADFAA3 /* coach_male_sk_work_v4.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 5BD9BA05CFF445EE9D0BCEEB /* coach_male_sk_work_v4.m4a */; };
+		CBB5FA4CAC4F44FE90D06CF1 /* bell_countdown.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0D15A28DE872454B9EACAC09 /* bell_countdown.m4a */; };
+		C9F3FE308BC04C9698C1D3E5 /* bell_finish.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FF07B7FD9CF0434A9889E19E /* bell_finish.m4a */; };
+		03B6FE4267A5418A8DE40C41 /* bell_half.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 5B5726DB36B94BA1AE1BEC90 /* bell_half.m4a */; };
+		16A521E024BD42F48C59A028 /* bell_phase.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8F3693EB236D4975A559C223 /* bell_phase.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -787,6 +791,10 @@
 		95A4B690BCAA43348B83E060 /* coach_male_sk_work_v2.m4a */ = {isa = PBXFileReference; name = "coach_male_sk_work_v2.m4a"; path = "../src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_work_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		0C2E114A2B1445078F4AFA7D /* coach_male_sk_work_v3.m4a */ = {isa = PBXFileReference; name = "coach_male_sk_work_v3.m4a"; path = "../src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_work_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		5BD9BA05CFF445EE9D0BCEEB /* coach_male_sk_work_v4.m4a */ = {isa = PBXFileReference; name = "coach_male_sk_work_v4.m4a"; path = "../src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_work_v4.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0D15A28DE872454B9EACAC09 /* bell_countdown.m4a */ = {isa = PBXFileReference; name = "bell_countdown.m4a"; path = "../src/assets/audio/workout/sounds/bell/bell_countdown.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FF07B7FD9CF0434A9889E19E /* bell_finish.m4a */ = {isa = PBXFileReference; name = "bell_finish.m4a"; path = "../src/assets/audio/workout/sounds/bell/bell_finish.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5B5726DB36B94BA1AE1BEC90 /* bell_half.m4a */ = {isa = PBXFileReference; name = "bell_half.m4a"; path = "../src/assets/audio/workout/sounds/bell/bell_half.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8F3693EB236D4975A559C223 /* bell_phase.m4a */ = {isa = PBXFileReference; name = "bell_phase.m4a"; path = "../src/assets/audio/workout/sounds/bell/bell_phase.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1207,6 +1215,10 @@
 				95A4B690BCAA43348B83E060 /* coach_male_sk_work_v2.m4a */,
 				0C2E114A2B1445078F4AFA7D /* coach_male_sk_work_v3.m4a */,
 				5BD9BA05CFF445EE9D0BCEEB /* coach_male_sk_work_v4.m4a */,
+				0D15A28DE872454B9EACAC09 /* bell_countdown.m4a */,
+				FF07B7FD9CF0434A9889E19E /* bell_finish.m4a */,
+				5B5726DB36B94BA1AE1BEC90 /* bell_half.m4a */,
+				8F3693EB236D4975A559C223 /* bell_phase.m4a */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1693,6 +1705,10 @@
 				FFB90E71B3FB40A7AE35505C /* coach_male_sk_work_v2.m4a in Resources */,
 				598896DCB17A4C0FAD91CB7B /* coach_male_sk_work_v3.m4a in Resources */,
 				FAC5CDA23FBD484FB0ADFAA3 /* coach_male_sk_work_v4.m4a in Resources */,
+				CBB5FA4CAC4F44FE90D06CF1 /* bell_countdown.m4a in Resources */,
+				C9F3FE308BC04C9698C1D3E5 /* bell_finish.m4a in Resources */,
+				03B6FE4267A5418A8DE40C41 /* bell_half.m4a in Resources */,
+				16A521E024BD42F48C59A028 /* bell_phase.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

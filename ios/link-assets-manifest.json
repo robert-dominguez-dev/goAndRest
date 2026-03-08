@@ -622,6 +622,22 @@
       "sha1": "5a5fd5da67ae17e4806c10b9c53f35e924850863"
     },
     {
+      "path": "src/assets/audio/workout/sounds/bell/bell_countdown.m4a",
+      "sha1": "f6fbf8e175ff754586e250e8efd88277f3703836"
+    },
+    {
+      "path": "src/assets/audio/workout/sounds/bell/bell_finish.m4a",
+      "sha1": "cc15408a25fc368870c69542e2efeb57333748df"
+    },
+    {
+      "path": "src/assets/audio/workout/sounds/bell/bell_half.m4a",
+      "sha1": "f872a4d20cb3c6cdbc63b7bca84256dff5c59383"
+    },
+    {
+      "path": "src/assets/audio/workout/sounds/bell/bell_phase.m4a",
+      "sha1": "d099328cdbc2c0822273492f429d513f371921b9"
+    },
+    {
       "path": "src/assets/audio/workout/voices/coach/female/cs/coach_female_cs_1.m4a",
       "sha1": "aa96f7f4197f95da81c3ef5ac819624a159eae34"
     },

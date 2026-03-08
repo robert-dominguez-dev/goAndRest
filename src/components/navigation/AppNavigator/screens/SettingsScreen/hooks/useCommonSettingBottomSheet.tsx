@@ -1,15 +1,23 @@
-import { useAppSelectionBottomSheet } from '../../../../../common/AppSelectionBottomSheet/hooks/useAppSelectionBottomSheet.tsx';
-import { AppSelectionBottomSheetItemData } from '../../../../../common/AppSelectionBottomSheet/components/AppSelectionBottomSheetItem.tsx';
+import {
+  useAppSelectionBottomSheet
+} from '../../../../../common/AppSelectionBottomSheet/hooks/useAppSelectionBottomSheet.tsx';
+import {
+  AppSelectionBottomSheetItemData
+} from '../../../../../common/AppSelectionBottomSheet/components/AppSelectionBottomSheetItem.tsx';
 import { useAtom } from 'jotai';
 import { useAppTranslation } from '../../../../../../locales/hooks/useAppTranslation.ts';
 import { AppAtom } from '../../../../../../contexts/hooks/useDebouncedAtom.ts';
 import { SettingValueProps } from '../types.ts';
 import { useAppLanguage } from '../../../../../../contexts/AppLanguageProvider/AppLanguageProvider.tsx';
+import { SupportedLanguageCode } from '../../../../../../contexts/AppLanguageProvider/constants.ts';
 
 export type UseSettingBottomSheetParams<TValue> = {
   atom: AppAtom<TValue>;
   itemValues: TValue[];
-  getProps: (value: TValue) => SettingValueProps;
+  getProps: (
+    value: TValue,
+    language: SupportedLanguageCode,
+  ) => SettingValueProps;
 };
 
 export const useCommonSettingBottomSheet = <TValue,>({
@@ -32,14 +40,14 @@ export const useCommonSettingBottomSheet = <TValue,>({
         IconComponent,
         iconColorStatus,
         imageProps,
-        audioPathByLanguage,
-      } = getProps(value);
+        previewAudioUrl,
+      } = getProps(value, language);
 
       const audioParams: AppSelectionBottomSheetItemData<TValue>['audioParams'] =
-        audioPathByLanguage
+        previewAudioUrl
           ? {
               soundKey: `${String(value)}_preview`,
-              url: audioPathByLanguage[language],
+              url: previewAudioUrl,
             }
           : undefined;
 
