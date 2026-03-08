@@ -35,4 +35,4 @@ export const bellSoundPaths: WorkoutSoundFilePaths = {
   },
 };
 
-export const bellPreviewPath: string = require('../../../audio/workout/sounds/bell/bell_half.m4a');
+export const bellPreviewPath: string = require('../../../audio/workout/sounds/bell/bell_phase.m4a');

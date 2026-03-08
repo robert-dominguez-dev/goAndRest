@@ -105,3 +105,8 @@ export const workoutSoundFilePathsAtom = atom<WorkoutSoundFilePaths | null>(
 export const playingPreviewAtom = atom<string | null>(null);
 
 export const isMutedAtom = atom<boolean>(false);
+
+export const isDisclaimerInfoAgreedAtom = createAsyncAtom<boolean>(
+  AsyncStorageKey.APP_DISCLAIMER_AGREED,
+  false,
+);

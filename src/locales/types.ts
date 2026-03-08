@@ -118,6 +118,18 @@ export type AppTranslations = {
       };
       buttonLabel: TextsByCoachVariant;
     };
+    disclaimerScreen: {
+      title: string;
+      description: string;
+      subTitle: string;
+      sections: {
+        first: { title: string; description: string };
+        second: { title: string; description: string };
+        third: { title: string; description: string };
+        fourth: { title: string; description: string };
+      };
+      buttonLabel: string;
+    };
   };
 };
 

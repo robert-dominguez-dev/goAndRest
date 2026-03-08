@@ -264,5 +264,34 @@ export const en = {
         },
       },
     },
+    disclaimerScreen: {
+      title: 'Welcome to Go&Rest',
+      description:
+        'By entering and using this application, you acknowledge that all activities are performed at your own responsibility and risk. The Operator of this application bears no liability for consequences arising from its use.',
+      subTitle: 'Legal Information',
+      sections: {
+        first: {
+          title: '1. Limitation of Liability',
+          description:
+            "To the maximum extent permitted by applicable law, the user bears sole responsibility for the use of the application. Neither the Operator nor any future rights holders shall be held liable for any health consequences, injuries, or material damages associated with the use of the application's content.",
+        },
+        second: {
+          title: '2. Health Warranty',
+          description:
+            'The user warrants they are in good physical condition and their physical activity has been cleared by a medical professional. This app is not a substitute for professional medical care. Stop using the app immediately if you experience any issues.',
+        },
+        third: {
+          title: '3. Artistic Exaggeration',
+          description:
+            'All audio content and characters in the app are fictional. Statements made are artistic exaggeration for motivational purposes and must not be interpreted as professional advice or instructions to push past physical pain.',
+        },
+        fourth: {
+          title: '4. Agreement',
+          description:
+            'By entering and using the app, you confirm that you have read, understood, and accepted these terms in full, regardless of any future changes in the Operator of the application.',
+        },
+      },
+      buttonLabel: 'I agree and want to start',
+    },
   },
 } as const satisfies AppTranslations;

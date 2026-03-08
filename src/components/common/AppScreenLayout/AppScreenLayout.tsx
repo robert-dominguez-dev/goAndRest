@@ -12,6 +12,7 @@ export const HORIZONTAL_SCREEN_PADDING = AppSize.m;
 
 export type AppScreenLayoutProps = Pick<AppViewProps, 'children'> &
   Pick<AppViewProps, 'backgroundColorStatus'> & {
+    headerElementOverride?: JSX.Element;
     headerTitle?: AppHeaderProps['title'];
     HeaderAccessoryRightIconComponent?: AppHeaderProps['AccessoryRightIconComponent'];
     HeaderAccessoryLeftIconComponent?: AppHeaderProps['AccessoryLeftIconComponent'];
@@ -26,6 +27,7 @@ export type AppScreenLayoutProps = Pick<AppViewProps, 'children'> &
 export const AppScreenLayout = ({
   children,
   headerTitle,
+  headerElementOverride,
   HeaderAccessoryLeftIconComponent,
   onHeaderAccessoryLeftPress,
   HeaderAccessoryRightIconComponent,
@@ -38,7 +40,7 @@ export const AppScreenLayout = ({
 }: AppScreenLayoutProps) => {
   const { safeAreaPaddingTop, safeAreaPaddingBottom } = useAppSafeAreaPadding();
 
-  const maybeHeader = headerTitle ? (
+  const maybeHeader: JSX.Element | undefined = headerTitle ? (
     <AppHeader
       title={headerTitle}
       AccessoryLeftIconComponent={HeaderAccessoryLeftIconComponent}
@@ -47,6 +49,9 @@ export const AppScreenLayout = ({
       onAccessoryRightPress={onHeaderAccessoryRightPress}
     />
   ) : undefined;
+
+  const headerEvaluated: JSX.Element | undefined =
+    headerElementOverride || maybeHeader;
 
   const screenPaddingTop: AppSizeUnion =
     screenPaddingTopOverride ?? safeAreaPaddingTop;
@@ -73,7 +78,7 @@ export const AppScreenLayout = ({
         paddingTop={screenPaddingTop}
         paddingBottom={screenPaddingBottom}
         height={FILL_CONTAINER_DIMENSION}>
-        {maybeHeader}
+        {headerEvaluated}
         <AppView
           grow
           shrink

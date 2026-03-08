@@ -264,5 +264,34 @@ export const cs = {
         },
       },
     },
+    disclaimerScreen: {
+      title: 'Vítej v Go&Rest',
+      description:
+        'Vstupem do této aplikace a jejím užíváním bereš na vědomí, že veškeré aktivity provádíš na vlastní odpovědnost a riziko. Provozovatel aplikace nenese žádnou odpovědnost za následky plynoucí z jejího užívání.',
+      subTitle: 'Právní informace',
+      sections: {
+        first: {
+          title: '1. Omezení odpovědnosti',
+          description:
+            'V maximálním rozsahu povoleném rozhodným právem nese výhradní odpovědnost za užívání aplikace uživatel. Provozovatel ani budoucí vlastníci práv nenesou odpovědnost za jakékoli zdravotní následky, úrazy či materiální škody spojené s užíváním obsahu aplikace.',
+        },
+        second: {
+          title: '2. Zdravotní prohlášení',
+          description:
+            'Uživatel potvrzuje, že je v dobrém zdravotním stavu a jeho fyzická aktivita byla schválena lékařem. Aplikace není náhradou za odbornou lékařskou péči. Při jakýchkoli potížích ihned přestaňte aplikaci používat.',
+        },
+        third: {
+          title: '3. Umělecká nadsázka',
+          description:
+            'Veškerý audio obsah a postavy v aplikaci jsou fiktivní. Jejich výroky jsou projevem umělecké nadsázky, slouží výhradně k motivaci a nesmí být interpretovány jako odborné rady nebo pokyny k překonávání fyzických limitů přes práh bolesti.',
+        },
+        fourth: {
+          title: '4. Souhlas s užíváním',
+          description:
+            'Vstupem do aplikace a jejím užíváním potvrzujete, že jste se s těmito podmínkami seznámili, rozumíte jim a v plném rozsahu je přijímáte bez ohledu na případné změny v osobě provozovatele.',
+        },
+      },
+      buttonLabel: 'Souhlasím a chci začít',
+    },
   },
 } as const satisfies AppTranslations;
