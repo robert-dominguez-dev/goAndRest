@@ -622,6 +622,22 @@
       "sha1": "5a5fd5da67ae17e4806c10b9c53f35e924850863"
     },
     {
+      "path": "src/assets/audio/workout/sounds/beep/beep_countdown.m4a",
+      "sha1": "025285b26fb05bdc4807e6499c3fc23151efed68"
+    },
+    {
+      "path": "src/assets/audio/workout/sounds/beep/beep_finish.m4a",
+      "sha1": "333df2d16231623f911b17d6fbbb199c09aa3cf2"
+    },
+    {
+      "path": "src/assets/audio/workout/sounds/beep/beep_half.m4a",
+      "sha1": "47595df76a148f130e04cf6374b4f08871b45d9b"
+    },
+    {
+      "path": "src/assets/audio/workout/sounds/beep/beep_phase.m4a",
+      "sha1": "a557ba548a2eddf620018a666c1e2147bcbfd6ea"
+    },
+    {
       "path": "src/assets/audio/workout/sounds/bell/bell_countdown.m4a",
       "sha1": "f6fbf8e175ff754586e250e8efd88277f3703836"
     },

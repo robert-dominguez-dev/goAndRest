@@ -38,6 +38,7 @@ import {
   coachMaleSoundPathsByLanguage,
 } from './audio/voices/coachMale.ts';
 import { bellPreviewPath, bellSoundPaths } from './audio/sounds/bell.ts';
+import { beepPreviewPath, beepSoundPaths } from './audio/sounds/beep.ts';
 
 export type AppFeedbackEntity =
   | `${WorkoutVoiceVariant}`
@@ -97,7 +98,7 @@ export const soundVariantToFileNames: Record<
   WorkoutSoundVariant,
   WorkoutSoundFilePaths | null
 > = {
-  [WorkoutSoundVariant.beep]: null,
+  [WorkoutSoundVariant.beep]: beepSoundPaths,
   [WorkoutSoundVariant.bell]: bellSoundPaths,
   [WorkoutSoundVariant.drum]: null,
   [WorkoutSoundVariant.snap]: null,
@@ -124,7 +125,7 @@ export const soundVariantToPreviewFileNames: Record<
   WorkoutSoundVariant,
   string | undefined
 > = {
-  [WorkoutSoundVariant.beep]: undefined,
+  [WorkoutSoundVariant.beep]: beepPreviewPath,
   [WorkoutSoundVariant.bell]: bellPreviewPath,
   [WorkoutSoundVariant.drum]: undefined,
   [WorkoutSoundVariant.snap]: undefined,

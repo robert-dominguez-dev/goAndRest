@@ -397,6 +397,10 @@
 		C9F3FE308BC04C9698C1D3E5 /* bell_finish.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FF07B7FD9CF0434A9889E19E /* bell_finish.m4a */; };
 		03B6FE4267A5418A8DE40C41 /* bell_half.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 5B5726DB36B94BA1AE1BEC90 /* bell_half.m4a */; };
 		16A521E024BD42F48C59A028 /* bell_phase.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8F3693EB236D4975A559C223 /* bell_phase.m4a */; };
+		66B76182F7A745DFABD5F09B /* beep_countdown.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CD18068A1A2A42828AB14704 /* beep_countdown.m4a */; };
+		EC61A313E5FF45008EC60475 /* beep_finish.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B92AF83D6CE64CA3BE36D855 /* beep_finish.m4a */; };
+		2FD09BC66C98419FBA952906 /* beep_half.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4EA9075E6C7D41F086978C18 /* beep_half.m4a */; };
+		A2DB015CF2424B9A930F686F /* beep_phase.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0A5A15EFB1E34CC78A942F30 /* beep_phase.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -795,6 +799,10 @@
 		FF07B7FD9CF0434A9889E19E /* bell_finish.m4a */ = {isa = PBXFileReference; name = "bell_finish.m4a"; path = "../src/assets/audio/workout/sounds/bell/bell_finish.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		5B5726DB36B94BA1AE1BEC90 /* bell_half.m4a */ = {isa = PBXFileReference; name = "bell_half.m4a"; path = "../src/assets/audio/workout/sounds/bell/bell_half.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		8F3693EB236D4975A559C223 /* bell_phase.m4a */ = {isa = PBXFileReference; name = "bell_phase.m4a"; path = "../src/assets/audio/workout/sounds/bell/bell_phase.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CD18068A1A2A42828AB14704 /* beep_countdown.m4a */ = {isa = PBXFileReference; name = "beep_countdown.m4a"; path = "../src/assets/audio/workout/sounds/beep/beep_countdown.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B92AF83D6CE64CA3BE36D855 /* beep_finish.m4a */ = {isa = PBXFileReference; name = "beep_finish.m4a"; path = "../src/assets/audio/workout/sounds/beep/beep_finish.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4EA9075E6C7D41F086978C18 /* beep_half.m4a */ = {isa = PBXFileReference; name = "beep_half.m4a"; path = "../src/assets/audio/workout/sounds/beep/beep_half.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0A5A15EFB1E34CC78A942F30 /* beep_phase.m4a */ = {isa = PBXFileReference; name = "beep_phase.m4a"; path = "../src/assets/audio/workout/sounds/beep/beep_phase.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1219,6 +1227,10 @@
 				FF07B7FD9CF0434A9889E19E /* bell_finish.m4a */,
 				5B5726DB36B94BA1AE1BEC90 /* bell_half.m4a */,
 				8F3693EB236D4975A559C223 /* bell_phase.m4a */,
+				CD18068A1A2A42828AB14704 /* beep_countdown.m4a */,
+				B92AF83D6CE64CA3BE36D855 /* beep_finish.m4a */,
+				4EA9075E6C7D41F086978C18 /* beep_half.m4a */,
+				0A5A15EFB1E34CC78A942F30 /* beep_phase.m4a */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1709,6 +1721,10 @@
 				C9F3FE308BC04C9698C1D3E5 /* bell_finish.m4a in Resources */,
 				03B6FE4267A5418A8DE40C41 /* bell_half.m4a in Resources */,
 				16A521E024BD42F48C59A028 /* bell_phase.m4a in Resources */,
+				66B76182F7A745DFABD5F09B /* beep_countdown.m4a in Resources */,
+				EC61A313E5FF45008EC60475 /* beep_finish.m4a in Resources */,
+				2FD09BC66C98419FBA952906 /* beep_half.m4a in Resources */,
+				A2DB015CF2424B9A930F686F /* beep_phase.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

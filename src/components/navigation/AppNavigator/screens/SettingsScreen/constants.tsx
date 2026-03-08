@@ -55,7 +55,7 @@ export enum WorkoutSoundVariant {
 export const workoutSoundVariants: WorkoutSoundVariant[] = [
   WorkoutSoundVariant.beep,
   WorkoutSoundVariant.bell,
-  WorkoutSoundVariant.drum,
-  WorkoutSoundVariant.snap,
-  WorkoutSoundVariant.whistle,
+  // WorkoutSoundVariant.drum,
+  // WorkoutSoundVariant.snap,
+  // WorkoutSoundVariant.whistle,
 ];
