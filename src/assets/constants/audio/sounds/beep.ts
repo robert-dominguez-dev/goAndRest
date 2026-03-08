@@ -1,7 +1,5 @@
 import { Countdown, WorkoutSoundFilePaths } from '../../../types.ts';
-import {
-  RunningWorkoutPhase
-} from '../../../../components/navigation/AppNavigator/screens/RunningWorkoutScreen/types.ts';
+import { RunningWorkoutPhase } from '../../../../components/navigation/AppNavigator/screens/RunningWorkoutScreen/types.ts';
 
 export const beepSoundPaths: WorkoutSoundFilePaths = {
   [RunningWorkoutPhase.WARMUP]: {
