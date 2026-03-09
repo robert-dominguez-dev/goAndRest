@@ -54,7 +54,7 @@ export const vibrationsSettingAtom = createAsyncAtom<boolean>(
 
 export const soundFeedbackSettingAtom = createAsyncAtom<WorkoutSoundFeedback>(
   AsyncStorageKey.SOUND_FEEDBACK_SETTING,
-  WorkoutSoundFeedback.character,
+  WorkoutSoundFeedback.voice,
 );
 
 export const voiceVariantSettingAtom = createAsyncAtom<WorkoutVoiceVariant>(
@@ -65,7 +65,7 @@ export const voiceVariantSettingAtom = createAsyncAtom<WorkoutVoiceVariant>(
 export const characterVariantSettingAtom =
   createAsyncAtom<WorkoutCharacterVariant>(
     AsyncStorageKey.CHARACTER_VARIANT_SETTING,
-    WorkoutCharacterVariant.warrior,
+    WorkoutCharacterVariant.wizard,
   );
 
 export const soundVariantSettingAtom = createAsyncAtom<WorkoutSoundVariant>(
