@@ -8,3 +8,7 @@ export type WorkoutConfigButtonProps = Pick<AppButtonProps, 'disabled'> & {
   name: AppWorkoutConfigKey;
   onPress: () => void;
 };
+
+export type LocalWorkoutConfigFormValues = {
+  configValue: number;
+};

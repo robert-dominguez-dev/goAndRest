@@ -1,18 +1,16 @@
-import {
-  AppWorkoutConfigKey,
-  workoutSettingsButtonConfigMap,
-} from '../../../constants.ts';
+import { AppWorkoutConfigKey, workoutSettingsButtonConfigMap, } from '../../../constants.ts';
 import { useAppTranslation } from '../../../../../../../../locales/hooks/useAppTranslation.ts';
 import {
   AppWorkoutConfig,
   AppWorkoutFieldValues,
 } from '../../../../../../../../contexts/AppWorkoutsProvider/types.ts';
-import { useFormContext } from 'react-hook-form';
+import { useForm, useFormContext } from 'react-hook-form';
 import { WorkoutConfigBottomSheetContent } from '../components/WorkoutConfigBottomSheetContent.tsx';
 import { WorkoutConfigBottomSheetIconAndTitle } from '../components/WorkoutConfigBottomSheetIconAndTitle.tsx';
-import { useSliderBottomSheet } from '../../../../../../../../hooks/useSliderBottomSheet.tsx';
 import { useAtom } from 'jotai';
 import { lastDefaultWorkoutConfigAtom } from '../../../../../../../../contexts/atoms.ts';
+import { LocalWorkoutConfigFormValues } from '../../../types.ts';
+import { useAppBottomSheet } from '../../../../../../../common/AppBottomSheet/hooks/useAppBottomSheet.tsx';
 
 export const useWorkoutConfigBottomSheet = (name: AppWorkoutConfigKey) => {
   const t = useAppTranslation();
@@ -21,15 +19,13 @@ export const useWorkoutConfigBottomSheet = (name: AppWorkoutConfigKey) => {
     lastDefaultWorkoutConfigAtom,
   );
 
-  const { control, getValues, setValue } =
+  const { getValues: getContextValues, setValue: setContextValue } =
     useFormContext<AppWorkoutFieldValues>();
 
-  const getValue = () => getValues(name);
+  const { control, getValues, setValue } =
+    useForm<LocalWorkoutConfigFormValues>();
 
-  const { bottomSheet, open, confirm, revert } = useSliderBottomSheet({
-    getValue,
-    setValue: value => setValue(name, value),
-  });
+  const { bottomSheet, handleOpen, handleClose } = useAppBottomSheet();
 
   const { labelKey, backgroundColorStatus, IconComponent } =
     workoutSettingsButtonConfigMap[name];
@@ -41,22 +37,29 @@ export const useWorkoutConfigBottomSheet = (name: AppWorkoutConfigKey) => {
     />
   );
 
-  const handleConfirm = () => {
-    confirm();
+  const confirm = () => {
+    const localValue = getValues('configValue');
 
     const newDefaultConfig: AppWorkoutConfig = {
       ...lastDefaultWorkoutConfig,
-      [name]: getValue(),
+      [name]: localValue,
     };
 
+    setContextValue(name, localValue);
     void setLastDefaultWorkoutConfig(newDefaultConfig);
+    handleClose();
+  };
+
+  const revert = () => {
+    setValue('configValue', getContextValues(name));
+    handleClose();
   };
 
   const openWorkoutConfigBottomSheet = () =>
-    open({
+    handleOpen({
       renderContent,
       backgroundColorStatus,
-      onBottomSheetPress: handleConfirm,
+      onBottomSheetPress: confirm,
       onOverlayPress: revert,
       title: (
         <WorkoutConfigBottomSheetIconAndTitle

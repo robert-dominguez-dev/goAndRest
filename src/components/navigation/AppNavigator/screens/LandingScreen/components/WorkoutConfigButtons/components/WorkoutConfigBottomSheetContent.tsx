@@ -3,14 +3,15 @@ import {
   workoutSettingsButtonConfigMap,
 } from '../../../constants.ts';
 import { useAppTranslation } from '../../../../../../../../locales/hooks/useAppTranslation.ts';
-import { AppWorkoutFieldValues } from '../../../../../../../../contexts/AppWorkoutsProvider/types.ts';
-import { Control, Controller } from 'react-hook-form';
+import { Control, Controller, useFormContext } from 'react-hook-form';
 import { memo } from 'react';
 import { WorkoutConfigBottomSheetContentBase } from './WorkoutConfigBottomSheetContentBase.tsx';
+import { LocalWorkoutConfigFormValues } from '../../../types.ts';
+import { AppWorkoutFieldValues } from '../../../../../../../../contexts/AppWorkoutsProvider/types.ts';
 
 type WorkoutConfigBottomSheetContentProps = {
   name: AppWorkoutConfigKey;
-  control: Control<AppWorkoutFieldValues>;
+  control: Control<LocalWorkoutConfigFormValues>;
 };
 
 const WorkoutConfigBottomSheetContentComponent = ({
@@ -19,13 +20,17 @@ const WorkoutConfigBottomSheetContentComponent = ({
 }: WorkoutConfigBottomSheetContentProps) => {
   const t = useAppTranslation();
 
+  const { getValues } = useFormContext<AppWorkoutFieldValues>();
+
   const { descriptionKey, min, max, step, labelEveryNSteps, valueFormatter } =
     workoutSettingsButtonConfigMap[name];
 
   return (
     <Controller
       control={control}
-      name={name}
+      name={'configValue'}
+      defaultValue={getValues(name)}
+      shouldUnregister
       render={({ field }) => (
         <WorkoutConfigBottomSheetContentBase
           description={t(descriptionKey)}
