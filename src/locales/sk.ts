@@ -155,6 +155,17 @@ export const sk = {
               snap: 'Lusknutie',
             },
           },
+          countdown: {
+            label: 'Odpočítavanie konca fázy',
+            description:
+              'Počet sekúnd pred koncom každej fázy (cvičenie, pauza atď.), kedy ťa každú sekundu upozorní vybraný signál (zvuk, hlas, vibrácie).',
+            items: {
+              '10': 'Posledných 10 s',
+              '5': 'Posledných 5 s',
+              '3': 'Posledné 3 s',
+              '0': 'Bez odpočítavania',
+            },
+          },
           vibrations: {
             label: 'Vibrácie',
             description:

@@ -14,6 +14,7 @@ import { WarmupSettingItem } from './components/items/WarmupSettingItem.tsx';
 import { CooldownSettingItem } from './components/items/CooldownSettingItem.tsx';
 import { SoundFeedbackSettingItem } from './components/items/SoundFeedbackSettingItem.tsx';
 import { VibrationsSettingItem } from './components/items/VibrationsSettingItem.tsx';
+import { CountdownSettingItem } from './components/items/CountdownSettingItem.tsx';
 
 type SettingsScreenProps = ScreenProps<
   AppNavigatorScreenParams,
@@ -33,6 +34,7 @@ const workoutSettingsItems: JSX.Element[] = [
 
 const feedbackSettingsItems: JSX.Element[] = [
   <SoundFeedbackSettingItem key={'sounds'} />,
+  <CountdownSettingItem key={'countdown'} />,
   <VibrationsSettingItem key={'vibrations'} />,
 ];
 

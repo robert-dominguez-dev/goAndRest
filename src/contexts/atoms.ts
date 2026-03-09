@@ -2,6 +2,7 @@ import { atomWithStorage, createJSONStorage } from 'jotai/utils';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
   WorkoutCharacterVariant,
+  WorkoutCountdownVariant,
   WorkoutSoundFeedback,
   WorkoutSoundVariant,
   WorkoutVoiceVariant,
@@ -38,9 +39,9 @@ export const cooldownSettingAtom = createAsyncAtom<number>(
   0,
 );
 
-export const countdownSettingAtom = createAsyncAtom<number>(
+export const countdownSettingAtom = createAsyncAtom<WorkoutCountdownVariant>(
   AsyncStorageKey.COUNTDOWN_DURATION_SETTING,
-  5,
+  WorkoutCountdownVariant.five,
 );
 
 export const keepTimerInBackgroundSettingAtom = createAsyncAtom<boolean>(

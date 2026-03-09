@@ -156,6 +156,17 @@ export const en = {
               snap: 'Snap',
             },
           },
+          countdown: {
+            label: 'Phase end countdown',
+            description:
+              'Number of seconds before the end of each phase (exercise, rest, etc.) where your chosen signal (sound, voice, vibration) alerts you every second.',
+            items: {
+              '10': 'Last 10s',
+              '5': 'Last 5s',
+              '3': 'Last 3s',
+              '0': 'No countdown',
+            },
+          },
           vibrations: {
             label: 'Vibrations',
             description:

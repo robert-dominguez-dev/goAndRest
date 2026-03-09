@@ -59,3 +59,17 @@ export const workoutSoundVariants: WorkoutSoundVariant[] = [
   // WorkoutSoundVariant.snap,
   // WorkoutSoundVariant.whistle,
 ];
+
+export enum WorkoutCountdownVariant {
+  ten = '10',
+  five = '5',
+  three = '3',
+  none = '0',
+}
+
+export const workoutCountdownVariants: WorkoutCountdownVariant[] = [
+  WorkoutCountdownVariant.ten,
+  WorkoutCountdownVariant.five,
+  WorkoutCountdownVariant.three,
+  WorkoutCountdownVariant.none,
+];

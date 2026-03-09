@@ -154,6 +154,17 @@ export const cs = {
               snap: 'Lusknutí',
             },
           },
+          countdown: {
+            label: 'Odpočet konce fáze',
+            description:
+              'Počet sekund před koncem každé fáze (cvičení, pauza atd.), kdy tě na každou vteřinu upozorní vybraný signál (zvuk, hlas, vibrace).',
+            items: {
+              '10': 'Posledních 10 s',
+              '5': 'Posledních 5 s',
+              '3': 'Poslední 3 s',
+              '0': 'Bez odpočtu',
+            },
+          },
           vibrations: {
             label: 'Vibrace',
             description:

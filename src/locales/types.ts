@@ -4,6 +4,7 @@ import { AppWorkoutConfigKey } from '../components/navigation/AppNavigator/scree
 import { SupportedLanguageCode } from '../contexts/AppLanguageProvider/constants.ts';
 import {
   WorkoutCharacterVariant,
+  WorkoutCountdownVariant,
   WorkoutSoundFeedback,
   WorkoutSoundVariant,
   WorkoutVoiceVariant,
@@ -18,7 +19,7 @@ type WorkoutConfigTexts = Record<AppWorkoutConfigKey, WorkoutConfigItemTexts>;
 
 type SettingsItemTexts = WorkoutConfigItemTexts;
 
-type SettingsItemSubItems<TItemsKey extends string> = {
+type SettingsItemSubItems<TItemsKey extends string | number> = {
   items: Record<TItemsKey, string>;
 };
 
@@ -89,6 +90,8 @@ export type AppTranslations = {
             SettingsItemSubItems<WorkoutCharacterVariant>;
           soundVariant: SettingsItemTexts &
             SettingsItemSubItems<WorkoutSoundVariant>;
+          countdown: SettingsItemTexts &
+            SettingsItemSubItems<WorkoutCountdownVariant>;
           vibrations: SettingsItemTexts;
         };
       };

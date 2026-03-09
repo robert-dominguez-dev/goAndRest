@@ -9,6 +9,7 @@ import { usePlayWorkoutSoundByKey } from './usePlayWorkoutSoundByKey.ts';
 import { countdownSettingAtom } from '../contexts/atoms.ts';
 import { useAtomValue } from 'jotai';
 import clamp from 'lodash/clamp';
+import { getNumber } from '../helpers/getNumber.ts';
 
 const CONSIDERED_SHORT_PHASE_DURATION_THRESHOLD = 15;
 const PHASE_DURATION_TO_MAX_COUNTDOWN_DURATION_OFFSET = 5;
@@ -66,7 +67,7 @@ export const useWorkoutFeedback = ({
     const countdownFromEvaluated = clamp(
       totalSeconds - PHASE_DURATION_TO_MAX_COUNTDOWN_DURATION_OFFSET,
       0,
-      countdownFrom,
+      getNumber(countdownFrom),
     );
 
     const phaseInMiddleFeedbackThreshold = Math.max(
