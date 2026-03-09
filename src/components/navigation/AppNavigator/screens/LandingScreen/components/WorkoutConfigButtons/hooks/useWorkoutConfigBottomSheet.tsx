@@ -1,4 +1,7 @@
-import { AppWorkoutConfigKey, workoutSettingsButtonConfigMap, } from '../../../constants.ts';
+import {
+  AppWorkoutConfigKey,
+  workoutSettingsButtonConfigMap,
+} from '../../../constants.ts';
 import { useAppTranslation } from '../../../../../../../../locales/hooks/useAppTranslation.ts';
 import {
   AppWorkoutConfig,
