@@ -22,8 +22,8 @@ export enum WorkoutVoiceVariant {
 }
 
 export const workoutVoiceVariants: WorkoutVoiceVariant[] = [
-  // WorkoutVoiceVariant.briefFemale,
-  // WorkoutVoiceVariant.briefMale,
+  WorkoutVoiceVariant.briefFemale,
+  WorkoutVoiceVariant.briefMale,
   WorkoutVoiceVariant.coachFemale,
   WorkoutVoiceVariant.coachMale,
   // WorkoutVoiceVariant.calmFemale,
