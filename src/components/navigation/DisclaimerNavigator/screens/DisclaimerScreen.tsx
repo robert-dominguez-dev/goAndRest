@@ -7,16 +7,10 @@ import { isDisclaimerInfoAgreedAtom } from '../../../../contexts/atoms.ts';
 import { AppButton } from '../../../controls/AppButton/AppButton.tsx';
 import { AppView } from '../../../common/AppView/AppView.tsx';
 import { sectionTranslateKeys } from '../constants.ts';
-import {
-  useLanguageSettingBottomSheet
-} from '../../AppNavigator/screens/SettingsScreen/hooks/useLanguageSettingBottomSheet.tsx';
+import { useLanguageSettingBottomSheet } from '../../AppNavigator/screens/SettingsScreen/hooks/useLanguageSettingBottomSheet.tsx';
 import { AppRow } from '../../../common/AppRow.tsx';
-import {
-  AppSelectionBottomSheetItemText
-} from '../../../common/AppSelectionBottomSheet/components/AppSelectionBottomSheetItemText.tsx';
-import {
-  getAppLanguageSettingValueProps
-} from '../../AppNavigator/screens/SettingsScreen/helpers/getAppLanguageSettingValueProps.ts';
+import { AppSelectionBottomSheetItemText } from '../../../common/AppSelectionBottomSheet/components/AppSelectionBottomSheetItemText.tsx';
+import { getAppLanguageSettingValueProps } from '../../AppNavigator/screens/SettingsScreen/helpers/getAppLanguageSettingValueProps.ts';
 import { useAppLanguage } from '../../../../contexts/AppLanguageProvider/AppLanguageProvider.tsx';
 import { AppSize } from '../../../../types/ui.ts';
 

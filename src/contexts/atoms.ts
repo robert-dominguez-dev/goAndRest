@@ -18,6 +18,7 @@ import {
   AppWorkoutFieldValues,
 } from './AppWorkoutsProvider/types.ts';
 import { defaultWorkoutConfig } from './AppWorkoutsProvider/constants.ts';
+import { ONE_SECOND_MS } from '../constants/common.ts';
 
 const createAsyncAtom = <T>(key: string, defaultValue: T) =>
   atomWithStorage(
@@ -29,7 +30,7 @@ const createAsyncAtom = <T>(key: string, defaultValue: T) =>
 
 export const warmupSettingAtom = createAsyncAtom<number>(
   AsyncStorageKey.WARMUP_DURATION_SETTING,
-  0,
+  10 * ONE_SECOND_MS,
 );
 
 export const cooldownSettingAtom = createAsyncAtom<number>(

@@ -6,39 +6,21 @@ import {
 import { characters } from '../base64/characters.ts';
 import { voices } from '../base64/voices.ts';
 
-import {
-  AppWallpaper,
-  SoundPathByLanguage,
-  WorkoutSoundFilePaths,
-  WorkoutSoundPathsByLanguage,
-} from '../types.ts';
-import {
-  coachFemalePreviewPathByLanguage,
-  coachFemaleSoundPathsByLanguage,
-} from './audio/voices/coachFemale.ts';
-import {
-  cyborgPreviewPathByLanguage,
-  cyborgSoundPathsByLanguage,
-} from './audio/characters/cyborg.ts';
-import {
-  warriorPreviewPathByLanguage,
-  warriorSoundPathsByLanguage,
-} from './audio/characters/warrior.ts';
-import {
-  wizardPreviewPathByLanguage,
-  wizardSoundPathsByLanguage,
-} from './audio/characters/wizard.ts';
+import { AppWallpaper, SoundPathByLanguage, WorkoutSoundFilePaths, WorkoutSoundPathsByLanguage, } from '../types.ts';
+import { coachFemalePreviewPathByLanguage, coachFemaleSoundPathsByLanguage, } from './audio/voices/coachFemale.ts';
+import { cyborgPreviewPathByLanguage, cyborgSoundPathsByLanguage, } from './audio/characters/cyborg.ts';
+import { warriorPreviewPathByLanguage, warriorSoundPathsByLanguage, } from './audio/characters/warrior.ts';
+import { wizardPreviewPathByLanguage, wizardSoundPathsByLanguage, } from './audio/characters/wizard.ts';
 import { wallpapers } from '../base64/wallpapers.ts';
 import {
   shieldmaidenPreviewPathByLanguage,
   shieldmaidenSoundPathsByLanguage,
 } from './audio/characters/shieldmaiden.ts';
-import {
-  coachMalePreviewPathByLanguage,
-  coachMaleSoundPathsByLanguage,
-} from './audio/voices/coachMale.ts';
+import { coachMalePreviewPathByLanguage, coachMaleSoundPathsByLanguage, } from './audio/voices/coachMale.ts';
 import { bellPreviewPath, bellSoundPaths } from './audio/sounds/bell.ts';
 import { beepPreviewPath, beepSoundPaths } from './audio/sounds/beep.ts';
+import { briefFemalePreviewPathByLanguage, briefFemaleSoundPathsByLanguage, } from './audio/voices/briefFemale.ts';
+import { briefMalePreviewPathByLanguage, briefMaleSoundPathsByLanguage, } from './audio/voices/briefMale.ts';
 
 export type AppFeedbackEntity =
   | `${WorkoutVoiceVariant}`
@@ -84,8 +66,8 @@ export const appFeedbackEntityToSoundFileNamesByLanguage: Record<
 > = {
   [WorkoutVoiceVariant.coachFemale]: coachFemaleSoundPathsByLanguage,
   [WorkoutVoiceVariant.coachMale]: coachMaleSoundPathsByLanguage,
-  [WorkoutVoiceVariant.briefFemale]: null,
-  [WorkoutVoiceVariant.briefMale]: null,
+  [WorkoutVoiceVariant.briefFemale]: briefFemaleSoundPathsByLanguage,
+  [WorkoutVoiceVariant.briefMale]: briefMaleSoundPathsByLanguage,
   [WorkoutVoiceVariant.calmFemale]: null,
   [WorkoutVoiceVariant.calmMale]: null,
   [WorkoutCharacterVariant.warrior]: warriorSoundPathsByLanguage,
@@ -111,8 +93,8 @@ export const appFeedbackEntityToPreviewFileNameByLanguage: Record<
 > = {
   [WorkoutVoiceVariant.coachFemale]: coachFemalePreviewPathByLanguage,
   [WorkoutVoiceVariant.coachMale]: coachMalePreviewPathByLanguage,
-  [WorkoutVoiceVariant.briefFemale]: undefined,
-  [WorkoutVoiceVariant.briefMale]: undefined,
+  [WorkoutVoiceVariant.briefFemale]: briefFemalePreviewPathByLanguage,
+  [WorkoutVoiceVariant.briefMale]: briefMalePreviewPathByLanguage,
   [WorkoutVoiceVariant.calmFemale]: undefined,
   [WorkoutVoiceVariant.calmMale]: undefined,
   [WorkoutCharacterVariant.warrior]: warriorPreviewPathByLanguage,
