@@ -43,9 +43,11 @@ export const DisclaimerScreen = () => {
     </AppView>
   ));
 
+  const buttonLabel = t('screens.disclaimerScreen.buttonLabel').toUpperCase();
+
   const footerElement = (
     <AppButton
-      label={t('screens.disclaimerScreen.buttonLabel')}
+      label={buttonLabel}
       onPress={agree}
     />
   );
@@ -77,7 +79,7 @@ export const DisclaimerScreen = () => {
         footer={footerElement}>
         <AppView gap={'l'}>
           <AppText numberOfLines={UNLIMITED_NUMBER_OF_LINES}>
-            {t('screens.disclaimerScreen.description')}
+            {t('screens.disclaimerScreen.description', { value: buttonLabel })}
           </AppText>
           <AppView gap={'ml'}>
             <AppText

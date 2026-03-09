@@ -127,8 +127,8 @@ export const en = {
             items: {
               coachMale: 'Marcus (coach)',
               coachFemale: 'Sarah (coach)',
-              friendMale: 'Jake (buddy)',
-              friendFemale: 'Emma (buddy)',
+              briefMale: 'Dustin (brief)',
+              briefFemale: 'Kate (brief)',
               calmMale: 'Noah (calm)',
               calmFemale: 'Olivia (calm)',
             },
@@ -192,8 +192,8 @@ export const en = {
         byVoice: {
           coachMale: "Great! It's done!",
           coachFemale: "Great! It's done!",
-          friendMale: 'Top! We did it!',
-          friendFemale: 'Top! We did it!',
+          briefMale: 'Top! We did it!',
+          briefFemale: 'Top! We did it!',
           calmMale: 'Nice! Beautiful work',
           calmFemale: 'Nice! Beautiful work',
         },
@@ -209,8 +209,8 @@ export const en = {
         byVoice: {
           coachMale: 'That was a top-tier performance today. Keep it up!',
           coachFemale: 'That was a top-tier performance today. Keep it up!',
-          friendMale: "Nice! You're done, now go get some proper rest.",
-          friendFemale: "Nice! You're done, now go get some proper rest.",
+          briefMale: "Nice! You're done, now go get some proper rest.",
+          briefFemale: "Nice! You're done, now go get some proper rest.",
           calmMale:
             'Enjoy the stillness and the feeling of the session. It was time well spent.',
           calmFemale:
@@ -233,8 +233,8 @@ export const en = {
           byVoice: {
             coachMale: "Total time of today's grind",
             coachFemale: "Total time of today's grind",
-            friendMale: 'Total time crushed',
-            friendFemale: 'Total time crushed',
+            briefMale: 'Total time crushed',
+            briefFemale: 'Total time crushed',
             calmMale: 'Total time in motion',
             calmFemale: 'Total time in motion',
           },
@@ -251,8 +251,8 @@ export const en = {
         byVoice: {
           coachMale: 'Done',
           coachFemale: 'Done',
-          friendMale: 'Done',
-          friendFemale: 'Done',
+          briefMale: 'Done',
+          briefFemale: 'Done',
           calmMale: 'Done',
           calmFemale: 'Done',
         },
@@ -267,7 +267,7 @@ export const en = {
     disclaimerScreen: {
       title: 'Welcome to Go&Rest',
       description:
-        'By entering and using this application, you acknowledge that all activities are performed at your own responsibility and risk. The Operator of this application bears no liability for consequences arising from its use.',
+        'By entering and using this app, you acknowledge that all activities are performed at your own risk. The provider bears no responsibility for any consequences resulting from its use. If you do not agree with these terms, please do not use the app and delete it – it cannot be used without your consent. If you agree to all the points below, confirm your agreement by pressing the {{value}} button and enjoy the app to the fullest.',
       subTitle: 'Legal Information',
       sections: {
         first: {

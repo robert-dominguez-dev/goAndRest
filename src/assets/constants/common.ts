@@ -58,8 +58,8 @@ export const appFeedbackEntityToImageAspectRatio: Record<
 > = {
   [WorkoutVoiceVariant.coachFemale]: 216 / 357,
   [WorkoutVoiceVariant.coachMale]: 235 / 339,
-  [WorkoutVoiceVariant.friendFemale]: 210 / 356,
-  [WorkoutVoiceVariant.friendMale]: 241 / 344,
+  [WorkoutVoiceVariant.briefFemale]: 210 / 356,
+  [WorkoutVoiceVariant.briefMale]: 241 / 344,
   [WorkoutVoiceVariant.calmFemale]: 214 / 343,
   [WorkoutVoiceVariant.calmMale]: 251 / 344,
   [WorkoutCharacterVariant.warrior]: 337 / 373,
@@ -84,8 +84,8 @@ export const appFeedbackEntityToSoundFileNamesByLanguage: Record<
 > = {
   [WorkoutVoiceVariant.coachFemale]: coachFemaleSoundPathsByLanguage,
   [WorkoutVoiceVariant.coachMale]: coachMaleSoundPathsByLanguage,
-  [WorkoutVoiceVariant.friendFemale]: null,
-  [WorkoutVoiceVariant.friendMale]: null,
+  [WorkoutVoiceVariant.briefFemale]: null,
+  [WorkoutVoiceVariant.briefMale]: null,
   [WorkoutVoiceVariant.calmFemale]: null,
   [WorkoutVoiceVariant.calmMale]: null,
   [WorkoutCharacterVariant.warrior]: warriorSoundPathsByLanguage,
@@ -111,8 +111,8 @@ export const appFeedbackEntityToPreviewFileNameByLanguage: Record<
 > = {
   [WorkoutVoiceVariant.coachFemale]: coachFemalePreviewPathByLanguage,
   [WorkoutVoiceVariant.coachMale]: coachMalePreviewPathByLanguage,
-  [WorkoutVoiceVariant.friendFemale]: undefined,
-  [WorkoutVoiceVariant.friendMale]: undefined,
+  [WorkoutVoiceVariant.briefFemale]: undefined,
+  [WorkoutVoiceVariant.briefMale]: undefined,
   [WorkoutVoiceVariant.calmFemale]: undefined,
   [WorkoutVoiceVariant.calmMale]: undefined,
   [WorkoutCharacterVariant.warrior]: warriorPreviewPathByLanguage,

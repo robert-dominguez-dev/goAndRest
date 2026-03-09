@@ -49,27 +49,27 @@ export const voiceVariantToFinishWorkoutScreenTranslateKeys: Record<
     buttonLabelKey:
       'screens.finishedWorkoutScreen.buttonLabel.byVoice.coachMale',
   },
-  [WorkoutVoiceVariant.friendFemale]: {
-    titleKey: 'screens.finishedWorkoutScreen.title.byVoice.friendFemale',
+  [WorkoutVoiceVariant.briefFemale]: {
+    titleKey: 'screens.finishedWorkoutScreen.title.byVoice.briefFemale',
     descriptionKey:
-      'screens.finishedWorkoutScreen.description.byVoice.friendFemale',
+      'screens.finishedWorkoutScreen.description.byVoice.briefFemale',
     stats: {
       totalTimeKey:
-        'screens.finishedWorkoutScreen.stats.totalTime.byVoice.friendFemale',
+        'screens.finishedWorkoutScreen.stats.totalTime.byVoice.briefFemale',
     },
     buttonLabelKey:
-      'screens.finishedWorkoutScreen.buttonLabel.byVoice.friendFemale',
+      'screens.finishedWorkoutScreen.buttonLabel.byVoice.briefFemale',
   },
-  [WorkoutVoiceVariant.friendMale]: {
-    titleKey: 'screens.finishedWorkoutScreen.title.byVoice.friendMale',
+  [WorkoutVoiceVariant.briefMale]: {
+    titleKey: 'screens.finishedWorkoutScreen.title.byVoice.briefMale',
     descriptionKey:
-      'screens.finishedWorkoutScreen.description.byVoice.friendMale',
+      'screens.finishedWorkoutScreen.description.byVoice.briefMale',
     stats: {
       totalTimeKey:
-        'screens.finishedWorkoutScreen.stats.totalTime.byVoice.friendMale',
+        'screens.finishedWorkoutScreen.stats.totalTime.byVoice.briefMale',
     },
     buttonLabelKey:
-      'screens.finishedWorkoutScreen.buttonLabel.byVoice.friendMale',
+      'screens.finishedWorkoutScreen.buttonLabel.byVoice.briefMale',
   },
   [WorkoutVoiceVariant.calmFemale]: {
     titleKey: 'screens.finishedWorkoutScreen.title.byVoice.calmFemale',

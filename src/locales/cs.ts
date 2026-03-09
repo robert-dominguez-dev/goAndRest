@@ -126,8 +126,8 @@ export const cs = {
             items: {
               coachMale: 'Martin (trenér)',
               coachFemale: 'Petra (trenérka)',
-              friendMale: 'Honza (kámoš)',
-              friendFemale: 'Katka (kámoška)',
+              briefMale: 'Dušan (stručný) ',
+              briefFemale: 'Šárka (stručná)',
               calmMale: 'Tomáš (klidný)',
               calmFemale: 'Anna (klidná)',
             },
@@ -190,8 +190,8 @@ export const cs = {
         byVoice: {
           coachMale: 'Výborně! Je to tam!',
           coachFemale: 'Výborně! Je to tam!',
-          friendMale: 'Pecka! Máme hotovo!',
-          friendFemale: 'Pecka! Máme hotovo!',
+          briefMale: 'Pecka! Máme hotovo!',
+          briefFemale: 'Pecka! Máme hotovo!',
           calmMale: 'Pěkně! Krásná práce',
           calmFemale: 'Pěkně! Krásná práce',
         },
@@ -207,9 +207,9 @@ export const cs = {
         byVoice: {
           coachMale: 'Dnes to byl špičkový výkon. Jen tak dál!',
           coachFemale: 'Dnes to byl špičkový výkon. Jen tak dál!',
-          friendMale:
+          briefMale:
             'Dobře ty! Máš to za sebou, teď si jdi pořádně odpočinout.',
-          friendFemale:
+          briefFemale:
             'Dobře ty! Máš to za sebou, teď si jdi pořádně odpočinout.',
           calmMale:
             'Užij si ten klid a dojem z celého cvičení. Byl to dobře využitý čas.',
@@ -233,8 +233,8 @@ export const cs = {
           byVoice: {
             coachMale: 'Celkový čas dnešní dřiny',
             coachFemale: 'Celkový čas dnešní dřiny',
-            friendMale: 'Celkově odmakáno',
-            friendFemale: 'Celkově odmakáno',
+            briefMale: 'Celkově odmakáno',
+            briefFemale: 'Celkově odmakáno',
             calmMale: 'Celkový čas v pohybu',
             calmFemale: 'Celkový čas v pohybu',
           },
@@ -251,8 +251,8 @@ export const cs = {
         byVoice: {
           coachMale: 'Hotovo',
           coachFemale: 'Hotovo',
-          friendMale: 'Hotovo',
-          friendFemale: 'Hotovo',
+          briefMale: 'Hotovo',
+          briefFemale: 'Hotovo',
           calmMale: 'Hotovo',
           calmFemale: 'Hotovo',
         },
@@ -267,7 +267,7 @@ export const cs = {
     disclaimerScreen: {
       title: 'Vítej v Go&Rest',
       description:
-        'Vstupem do této aplikace a jejím užíváním bereš na vědomí, že veškeré aktivity provádíš na vlastní odpovědnost a riziko. Provozovatel aplikace nenese žádnou odpovědnost za následky plynoucí z jejího užívání.',
+        'Vstupem do této aplikace a jejím užíváním bereš na vědomí, že veškeré aktivity provádíš na vlastní odpovědnost a riziko. Provozovatel aplikace nenese žádnou odpovědnost za následky plynoucí z jejího užívání. Pokud s těmito podmínkami nesouhlasíš, prosím, aplikaci dál nepoužívej a smaž ji – bez souhlasu ji bohužel nelze používat. Souhlasíš-li se všemi body níže, potvrď svůj souhlas stisknutím tlačítka {{value}} a užij si aplikaci naplno.',
       subTitle: 'Právní informace',
       sections: {
         first: {

@@ -15,17 +15,17 @@ export const workoutSoundFeedbacks: WorkoutSoundFeedback[] = [
 export enum WorkoutVoiceVariant {
   coachMale = 'coachMale',
   coachFemale = 'coachFemale',
-  friendMale = 'friendMale',
-  friendFemale = 'friendFemale',
+  briefMale = 'briefMale',
+  briefFemale = 'briefFemale',
   calmMale = 'calmMale',
   calmFemale = 'calmFemale',
 }
 
 export const workoutVoiceVariants: WorkoutVoiceVariant[] = [
+  // WorkoutVoiceVariant.briefFemale,
+  // WorkoutVoiceVariant.briefMale,
   WorkoutVoiceVariant.coachFemale,
   WorkoutVoiceVariant.coachMale,
-  // WorkoutVoiceVariant.friendFemale,
-  // WorkoutVoiceVariant.friendMale,
   // WorkoutVoiceVariant.calmFemale,
   // WorkoutVoiceVariant.calmMale,
 ];
