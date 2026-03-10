@@ -15,6 +15,13 @@ import { CooldownSettingItem } from './components/items/CooldownSettingItem.tsx'
 import { SoundFeedbackSettingItem } from './components/items/SoundFeedbackSettingItem.tsx';
 import { VibrationsSettingItem } from './components/items/VibrationsSettingItem.tsx';
 import { CountdownSettingItem } from './components/items/CountdownSettingItem.tsx';
+import { Platform } from 'react-native';
+import { AppSizeUnion } from '../../../../../types/ui.ts';
+
+const screenPaddingTopOverride = Platform.select<AppSizeUnion | undefined>({
+  ios: 'ml',
+  android: undefined,
+});
 
 type SettingsScreenProps = ScreenProps<
   AppNavigatorScreenParams,
@@ -47,7 +54,7 @@ export const SettingsScreen = ({ navigation }: SettingsScreenProps) => {
       headerTitle={t('screens.settingsScreen.title')}
       HeaderAccessoryLeftIconComponent={X}
       onHeaderAccessoryLeftPress={navigation.goBack}
-      screenPaddingTopOverride={'ml'}>
+      screenPaddingTopOverride={screenPaddingTopOverride}>
       <AppView
         gap={'xl'}
         paddingBottom={'3xl'}>

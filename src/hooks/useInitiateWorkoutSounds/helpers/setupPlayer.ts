@@ -1,10 +1,10 @@
 import TrackPlayer, {
   AppKilledPlaybackBehavior,
   Capability,
+  Event,
   IOSCategory,
   IOSCategoryOptions,
 } from 'react-native-track-player';
-import { Event } from 'react-native-track-player/lib/src/constants/Event';
 import { stopAndResetTrackPlayer } from './stopAndResetTrackPlayer.ts';
 
 export const PlaybackService = async function () {

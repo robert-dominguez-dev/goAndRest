@@ -13,7 +13,7 @@ export const playSound = async ({ soundKey, url }: PlaySoundParams) => {
   };
 
   try {
-    await TrackPlayer.add(track);
+    await TrackPlayer.load(track);
     await TrackPlayer.play();
   } catch (error) {
     console.error('Audio playback error:', error);

@@ -81,7 +81,6 @@ export const appFeedbackEntityToImageAspectRatio: Record<
 };
 
 export enum AppAnimation {
-  thinkingOwl = 'thinking_owl',
   loader = 'loader',
   confetti = 'confetti',
 }

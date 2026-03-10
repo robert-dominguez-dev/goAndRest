@@ -2544,10 +2544,6 @@
     {
       "path": "src/assets/animations/loader.riv",
       "sha1": "86e7241cc9c47e817a4c155047fd24e9f6374d7f"
-    },
-    {
-      "path": "src/assets/animations/thinking_owl.riv",
-      "sha1": "c6b221b264cb09709961a72436eee1e29384ca42"
     }
   ]
 }

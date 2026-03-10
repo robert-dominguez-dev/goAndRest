@@ -1,5 +1,4 @@
-import { useTrackPlayerEvents } from 'react-native-track-player';
-import { Event } from 'react-native-track-player/lib/src/constants/Event';
+import { Event, useTrackPlayerEvents } from 'react-native-track-player';
 
 export const useOnTrackFinished = (
   soundKey: string,
