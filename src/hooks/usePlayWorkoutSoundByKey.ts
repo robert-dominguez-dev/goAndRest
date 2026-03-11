@@ -2,13 +2,22 @@ import { WorkoutSoundKey } from '../assets/types.ts';
 import { useAtomValue } from 'jotai';
 import { isMutedAtom, workoutSoundFilePathsAtom } from '../contexts/atoms.ts';
 import { getSoundTrackUrl } from './useInitiateWorkoutSounds/helpers/getSoundTrackUrl.ts';
-import { playSound } from '../helpers/playSound.ts';
+import { playSound, PlaySoundParams } from '../helpers/playSound.ts';
+
+type PlayWorkoutSoundByKeyParams = Pick<PlaySoundParams, 'isCountdown'> & {
+  soundKey: WorkoutSoundKey;
+  isPreferredShort?: boolean;
+};
 
 export const usePlayWorkoutSoundByKey = () => {
   const workoutSoundPaths = useAtomValue(workoutSoundFilePathsAtom);
   const isMuted = useAtomValue(isMutedAtom);
 
-  return async (soundKey: WorkoutSoundKey, isPreferredShort?: boolean) => {
+  return async ({
+    soundKey,
+    isPreferredShort,
+    isCountdown,
+  }: PlayWorkoutSoundByKeyParams) => {
     if (!workoutSoundPaths || isMuted) {
       return undefined;
     }
@@ -24,6 +33,7 @@ export const usePlayWorkoutSoundByKey = () => {
     await playSound({
       soundKey: soundKey.toString(),
       url,
+      isCountdown,
     });
   };
 };

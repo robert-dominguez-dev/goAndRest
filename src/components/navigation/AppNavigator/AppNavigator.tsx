@@ -1,8 +1,14 @@
-import { createNativeStackNavigator, NativeStackNavigationOptions, } from '@react-navigation/native-stack';
+import {
+  createNativeStackNavigator,
+  NativeStackNavigationOptions,
+} from '@react-navigation/native-stack';
 import { AppNavigatorScreen, AppNavigatorScreenParams } from './types.ts';
 
 import { memo } from 'react';
-import { commonAppNavigationOptions, ROOT_STACK_NAVIGATOR_ID, } from '../constants.ts';
+import {
+  commonAppNavigationOptions,
+  ROOT_STACK_NAVIGATOR_ID,
+} from '../constants.ts';
 import { LandingScreen } from './screens/LandingScreen/LandingScreen.tsx';
 import { SavedWorkoutsScreen } from './screens/SavedWorkoutsScreen/SavedWorkoutsScreen.tsx';
 import { RunningWorkoutScreen } from './screens/RunningWorkoutScreen/RunningWorkoutScreen.tsx';

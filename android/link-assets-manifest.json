@@ -102,6 +102,10 @@
       "sha1": "1d5e0022ba2a79a54ab1704e7dfdf8b5c7aa4f44"
     },
     {
+      "path": "src/assets/audio/silence.m4a",
+      "sha1": "c92688525242a985350fd71197c7ca0fd56a44c8"
+    },
+    {
       "path": "src/assets/audio/workout/characters/cyborg/cs/cyborg_cs_1.m4a",
       "sha1": "fa1d63e27086e4760d6322fe9e1c4c3afd1b541b"
     },

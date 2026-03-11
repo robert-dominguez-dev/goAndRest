@@ -47,6 +47,17 @@ import {
   briefMalePreviewPathByLanguage,
   briefMaleSoundPathsByLanguage,
 } from './audio/voices/briefMale.ts';
+import { APP_NAME } from '../../constants/common.ts';
+import { AddTrack } from 'react-native-track-player';
+
+export const SILENCE_SOUND_KEY = 'silence';
+
+export const SILENCE_SOUND_TRACK: AddTrack = {
+  url: require('../audio/silence.m4a'),
+  id: SILENCE_SOUND_KEY,
+  title: SILENCE_SOUND_KEY.toString(),
+  artist: APP_NAME,
+};
 
 export type AppFeedbackEntity =
   | `${WorkoutVoiceVariant}`

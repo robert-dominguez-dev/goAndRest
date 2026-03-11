@@ -53,12 +53,19 @@ export const useWorkoutFeedback = ({
     const elapsedSeconds = Math.ceil(phaseElapsedMs / ONE_SECOND_MS);
     const totalSeconds = remainingSeconds + elapsedSeconds;
 
-    const isShortPhase =
+    /**
+     * We consider a phase as short, if its total duration is below the CONSIDERED_SHORT_PHASE_DURATION_THRESHOLD.
+     * For short phases, we want to play the short version of the sound, if available, even if we are not in countdown mode.
+     */
+    const isPreferredShort =
       totalSeconds < CONSIDERED_SHORT_PHASE_DURATION_THRESHOLD;
 
     if (currentPhase !== lastPhaseRef.current) {
       vibrate('PHASE_START');
-      void playWorkoutSoundByKey(currentPhase, isShortPhase);
+      void playWorkoutSoundByKey({
+        soundKey: currentPhase,
+        isPreferredShort,
+      });
       lastPhaseRef.current = currentPhase;
     }
 
@@ -90,12 +97,19 @@ export const useWorkoutFeedback = ({
       if (isFirstFeedbackInCurrentSecond) {
         if (isInCountdownRange) {
           vibrate('COUNTDOWN');
-          void playWorkoutSoundByKey(remainingSeconds, isShortPhase);
+          void playWorkoutSoundByKey({
+            soundKey: remainingSeconds,
+            isCountdown: true,
+            isPreferredShort,
+          });
         }
 
         if (isEligibleForMiddleFeedback) {
           vibrate('HALF_OF_PHASE');
-          void playWorkoutSoundByKey('half', isShortPhase);
+          void playWorkoutSoundByKey({
+            soundKey: 'half',
+            isPreferredShort,
+          });
         }
 
         lastSecondRef.current = remainingSeconds;
