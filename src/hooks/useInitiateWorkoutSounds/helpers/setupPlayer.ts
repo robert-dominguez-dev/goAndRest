@@ -26,11 +26,15 @@ export const setupPlayer = async () => {
      */
     await TrackPlayer.getActiveTrackIndex();
   } catch {
+    /**
+     * Be aware, this is also set at native level in the AppDelegate.m file for iOS.
+     * If you change it here, make sure to change it there as well.
+     */
     await TrackPlayer.setupPlayer({
       iosCategory: IOSCategory.Playback,
       iosCategoryOptions: [
-        IOSCategoryOptions.MixWithOthers,
         IOSCategoryOptions.DuckOthers,
+        IOSCategoryOptions.MixWithOthers,
       ],
     });
 
