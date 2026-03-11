@@ -1,4 +1,4 @@
-import { TextStyle } from 'react-native';
+import { Platform, TextStyle } from 'react-native';
 import {
   AppColorUnion,
   AppSizeUnion,
@@ -17,6 +17,7 @@ export type UseAppTextStyleParams = Pick<TextStyle, 'textAlign'> & {
   textShadowColorStatus?: AppColorUnion;
   fontSizeOverride?: AppSizeUnion;
   colorOverride?: string;
+  marginCorrection?: number;
 };
 
 export const useAppTextStyle = ({
@@ -24,6 +25,7 @@ export const useAppTextStyle = ({
   textShadowColorStatus,
   fontSizeOverride,
   colorOverride,
+  marginCorrection = 0,
   category = 'content',
   colorStatus = 'text',
   grow = true,
@@ -48,11 +50,23 @@ export const useAppTextStyle = ({
       }
     : {};
 
+  const marginTop = Platform.select<number>({
+    ios: marginCorrection,
+    android: -marginCorrection,
+  });
+
+  const marginBottom = Platform.select<number>({
+    ios: -marginCorrection,
+    android: marginCorrection,
+  });
+
   return {
     ...fontCategoryStyles[category],
     ...textShadowStyles,
     ...fontSizeOverrideProps,
     textAlign,
+    marginTop,
+    marginBottom,
     color: colorOverride || appColors[colorStatus],
     flexGrow: Number(grow),
     flexShrink: Number(shrink),

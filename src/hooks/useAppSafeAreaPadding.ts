@@ -5,11 +5,12 @@ export const useAppSafeAreaPadding = () => {
   const { top, bottom } = useSafeAreaInsets();
 
   /**
-   * Especially on Android, the content on the bottom
+   * Especially on Android, the content
    * is squeezed to the edge of the page,
    * when using just bottom safe area inset.
    */
+  const safeAreaPaddingTop = top + AppSize.m;
   const safeAreaPaddingBottom = bottom + AppSize.m;
 
-  return { safeAreaPaddingTop: top, safeAreaPaddingBottom };
+  return { safeAreaPaddingTop, safeAreaPaddingBottom };
 };

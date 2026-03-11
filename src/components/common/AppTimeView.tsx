@@ -4,7 +4,7 @@ import { AppText, AppTextProps } from './AppText/AppText.tsx';
 
 type AppTimeViewProps = Pick<
   AppTextProps,
-  'fontSizeOverride' | 'colorStatus'
+  'fontSizeOverride' | 'colorStatus' | 'marginCorrection'
 > & {
   msLeft: number;
 };
@@ -12,6 +12,7 @@ type AppTimeViewProps = Pick<
 export const AppTimeView = ({
   msLeft,
   colorStatus,
+  marginCorrection,
   fontSizeOverride = 100,
 }: AppTimeViewProps) => {
   const timeFormatted = formatTimerTime(msLeft);
@@ -21,6 +22,7 @@ export const AppTimeView = ({
       <AppText
         textAlign={'center'}
         category={'header'}
+        marginCorrection={marginCorrection}
         colorStatus={colorStatus}
         fontSizeOverride={fontSizeOverride}>
         {timeFormatted}

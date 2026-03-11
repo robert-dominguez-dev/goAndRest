@@ -10,13 +10,15 @@ import {
   workoutPhaseToTimerColorStatus,
 } from '../constants.ts';
 import { useAppThemedColors } from '../../../../../../hooks/useAppThemedColors.ts';
-import { AppSize } from '../../../../../../types/ui.ts';
 import { getByScreenWidth } from '../../../../../../helpers/getByScreenWidth.ts';
+import { AppSize } from '../../../../../../types/ui.ts';
 
 const TIME_FONT_SIZE = getByScreenWidth({
   small: 100,
   standard: 108,
 });
+
+const TIME_TEXT_MARGIN_CORRECTION = TIME_FONT_SIZE / 20;
 
 type RunningWorkoutIndicatorsContentProps = Pick<
   WorkoutTimerState,
@@ -39,10 +41,11 @@ const RunningWorkoutIndicatorsContentComponent = ({
   return (
     <AppView
       grow
+      gap={'xs'}
       alignItems={'center'}
       justifyContent={'center'}>
       <AppView
-        gap={'s'}
+        gap={'xs'}
         alignItems={'center'}
         justifyContent={'center'}>
         <IconComponent
@@ -55,12 +58,13 @@ const RunningWorkoutIndicatorsContentComponent = ({
           category={'subHeader'}>
           {t(phaseLabelKey).toUpperCase()}
         </AppText>
-        <AppTimeView
-          colorStatus={phaseColorStatus}
-          fontSizeOverride={TIME_FONT_SIZE}
-          msLeft={phaseRemainingMs}
-        />
       </AppView>
+      <AppTimeView
+        colorStatus={phaseColorStatus}
+        fontSizeOverride={TIME_FONT_SIZE}
+        marginCorrection={TIME_TEXT_MARGIN_CORRECTION}
+        msLeft={phaseRemainingMs}
+      />
       <AppView gap={'xxs'}>
         <AppText
           grow={false}
