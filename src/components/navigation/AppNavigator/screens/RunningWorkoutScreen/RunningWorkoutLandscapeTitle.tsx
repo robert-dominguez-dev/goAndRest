@@ -5,9 +5,7 @@ import {
   workoutPhaseToNameTranslateKey,
   workoutPhaseToTimerColorStatus,
 } from './constants.tsx';
-import {
-  WorkoutConfigBottomSheetIconAndTitle
-} from '../LandingScreen/components/WorkoutConfigButtons/components/WorkoutConfigBottomSheetIconAndTitle.tsx';
+import { WorkoutConfigBottomSheetIconAndTitle } from '../LandingScreen/components/WorkoutConfigButtons/components/WorkoutConfigBottomSheetIconAndTitle.tsx';
 import { RunningWorkoutContentParams } from './types.ts';
 import { AppRow } from '../../../../common/AppRow.tsx';
 import { AppText } from '../../../../common/AppText/AppText.tsx';
@@ -22,7 +20,7 @@ type RunningWorkoutLandscapeTitleProps = Pick<
 
 const _RunningWorkoutLandscapeTitle = ({
   headerTitle,
-  currentState: { currentPhase, totalElapsedMs },
+  currentState: { currentPhase, totalDurationMs, totalElapsedMs },
 }: RunningWorkoutLandscapeTitleProps) => {
   const t = useAppTranslation();
 
@@ -43,6 +41,8 @@ const _RunningWorkoutLandscapeTitle = ({
     </AppText>
   );
 
+  const totalRemainingMs = totalDurationMs - totalElapsedMs;
+
   return (
     <AppRow
       grow={false}
@@ -59,7 +59,7 @@ const _RunningWorkoutLandscapeTitle = ({
       <AppTimeView
         colorStatus={'text'}
         fontSizeOverride={fontCategoryStyles.header.fontSize}
-        msLeft={totalElapsedMs}
+        msLeft={totalRemainingMs}
         prefix={totalTimePrefixLabel}
       />
       {slashTextElement}
