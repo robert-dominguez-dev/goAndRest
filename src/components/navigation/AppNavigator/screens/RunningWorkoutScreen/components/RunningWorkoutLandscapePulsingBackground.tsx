@@ -18,7 +18,7 @@ import Animated, {
 import { ONE_SECOND_MS } from '../../../../../../constants/common.ts';
 import { usePrevious } from '../../../../../../hooks/usePrevious.ts';
 
-const SKIP_THRESHOLD_MS = 1500;
+const SKIP_THRESHOLD_MS = 2000;
 
 const countPercents = (phaseElapsedMs: number, totalPhaseMs: number) =>
   (phaseElapsedMs / totalPhaseMs) * 100;
