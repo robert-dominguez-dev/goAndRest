@@ -16,10 +16,12 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 import { ONE_SECOND_MS } from '../../../../../../constants/common.ts';
-import clamp from 'lodash/clamp';
 import { usePrevious } from '../../../../../../hooks/usePrevious.ts';
 
 const SKIP_THRESHOLD_MS = 1500;
+
+const countPercents = (phaseElapsedMs: number, totalPhaseMs: number) =>
+  (phaseElapsedMs / totalPhaseMs) * 100;
 
 type RunningWorkoutLandscapePulsingBackgroundProps = Pick<
   WorkoutTimerState,
@@ -44,29 +46,22 @@ const RunningWorkoutLandscapePulsingBackgroundComponent = ({
     const msDelta = Math.abs(phaseElapsedMs - (prevPhaseElapsedMs ?? 0));
 
     if (!enabled || msDelta > SKIP_THRESHOLD_MS) {
-      const elapsedPercents = Math.floor((phaseElapsedMs / totalPhaseMs) * 100);
-
-      animatedPercentage.value = clamp(elapsedPercents, 0, 100);
-    } else {
-      /**
-       * The animation duration is 1 second,
-       * so we need to count in advance...
-       */
-      const elapsedPercentsAfterOneSecond = Math.floor(
-        ((phaseElapsedMs + ONE_SECOND_MS) / totalPhaseMs) * 100,
-      );
-
-      const elapsedPercentsClamped = clamp(
-        elapsedPercentsAfterOneSecond,
-        0,
-        100,
-      );
-
-      animatedPercentage.value = withTiming(elapsedPercentsClamped, {
-        duration: ONE_SECOND_MS,
-        easing: Easing.linear,
-      });
+      animatedPercentage.value = countPercents(phaseElapsedMs, totalPhaseMs);
     }
+
+    /**
+     * The animation duration is 1 second,
+     * so we need to count in advance...
+     */
+    const elapsedPercentsClamped = countPercents(
+      phaseElapsedMs + ONE_SECOND_MS,
+      totalPhaseMs,
+    );
+
+    animatedPercentage.value = withTiming(elapsedPercentsClamped, {
+      duration: ONE_SECOND_MS,
+      easing: Easing.linear,
+    });
   }, [phaseElapsedMs, phaseRemainingMs, animatedPercentage]);
 
   const animatedProgressStyle = useAnimatedStyle(() => ({
