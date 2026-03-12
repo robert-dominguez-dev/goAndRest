@@ -9,6 +9,7 @@ import {
   warmupSettingAtom,
 } from '../contexts/atoms.ts';
 import {
+  WorkoutTimerComputedState,
   WorkoutTimerPersistedState,
   WorkoutTimerState,
 } from '../components/navigation/AppNavigator/screens/RunningWorkoutScreen/types.ts';
@@ -16,6 +17,7 @@ import { calculateCurrentWorkoutState } from '../helpers/calculateCurrentWorkout
 import { getNumber } from '../helpers/getNumber.ts';
 import { AppWorkoutFieldValues } from '../contexts/AppWorkoutsProvider/types.ts';
 import { calculateSkipState } from '../helpers/calculateSkipState.ts';
+import { calculateCurrentWorkoutStateConditionally } from '../helpers/calculateCurrentWorkoutStateConditionally.ts';
 
 export const useWorkoutTimer = (onFinish?: () => void) => {
   const warmupSetting = useAtomValue(warmupSettingAtom);
@@ -24,7 +26,14 @@ export const useWorkoutTimer = (onFinish?: () => void) => {
   const setFinishedWorkoutStats = useSetAtom(finishedWorkoutStatsAtom);
 
   const [persistedState, setPersistedState] = useAtom(runningWorkoutStateAtom);
-  const [computedState, setComputedState] = useAtom(computedWorkoutStateAtom);
+
+  const [computedStateFromAtom, setComputedState] = useAtom(
+    computedWorkoutStateAtom,
+  );
+
+  const computedState: WorkoutTimerComputedState | undefined =
+    computedStateFromAtom ||
+    calculateCurrentWorkoutStateConditionally(persistedState);
 
   const stop = useCallback(() => {
     void setPersistedState(null);
