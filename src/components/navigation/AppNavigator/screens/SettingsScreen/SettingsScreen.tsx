@@ -64,14 +64,14 @@ export const SettingsScreen = ({ navigation }: SettingsScreenProps) => {
           items={appearanceSettingsItems}
         />
         <SettingsSection
-          IconComponent={Timer}
-          label={t('screens.settingsScreen.workoutSection.label')}
-          items={workoutSettingsItems}
-        />
-        <SettingsSection
           IconComponent={Volume2}
           label={t('screens.settingsScreen.feedbackSection.label')}
           items={feedbackSettingsItems}
+        />
+        <SettingsSection
+          IconComponent={Timer}
+          label={t('screens.settingsScreen.workoutSection.label')}
+          items={workoutSettingsItems}
         />
       </AppView>
     </AppScreenLayout>
