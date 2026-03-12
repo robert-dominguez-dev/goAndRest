@@ -5,30 +5,28 @@ import {
 import { useAppThemedColors } from '../../../../../../hooks/useAppThemedColors.ts';
 import { ViewStyle } from 'react-native';
 import Animated, { useAnimatedStyle } from 'react-native-reanimated';
-import { RunningWorkoutPhase } from '../types.ts';
-import { workoutPhaseToTimerColorStatus } from '../constants.tsx';
+import { FILL_CONTAINER_DIMENSION } from '../../../../../../constants/common.ts';
+import { AppColorUnion } from '../../../../../../types/ui.ts';
 
-type RunningWorkoutPulsingBackgroundProps = Pick<
-  UseWorkoutPhasePulsingValueParams,
-  'workoutPhase' | 'enabled'
-> & {
-  workoutPhase: RunningWorkoutPhase;
-  size: number;
-  enabled: boolean;
-};
+export type RunningWorkoutPulsingBackgroundProps =
+  UseWorkoutPhasePulsingValueParams & {
+    backgroundColorStatus: AppColorUnion;
+  };
 
 export const RunningWorkoutPulsingBackground = ({
-  workoutPhase,
-  size,
+  backgroundColorStatus,
+  timingConfig,
   enabled,
+  from,
+  to,
 }: RunningWorkoutPulsingBackgroundProps) => {
   const appColors = useAppThemedColors();
 
   const pulsingOpacity = useWorkoutPhasePulsingValue({
-    workoutPhase,
+    timingConfig,
     enabled,
-    from: 0.05,
-    to: 0.3,
+    from,
+    to,
   });
 
   const animatedStyle = useAnimatedStyle(() => ({
@@ -37,10 +35,9 @@ export const RunningWorkoutPulsingBackground = ({
 
   const staticStyle: ViewStyle = {
     position: 'absolute',
-    borderRadius: '50%',
-    width: size,
-    height: size,
-    backgroundColor: appColors[workoutPhaseToTimerColorStatus[workoutPhase]],
+    height: FILL_CONTAINER_DIMENSION,
+    width: FILL_CONTAINER_DIMENSION,
+    backgroundColor: appColors[backgroundColorStatus],
   };
 
   return <Animated.View style={[staticStyle, animatedStyle]} />;

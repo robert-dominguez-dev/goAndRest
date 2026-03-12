@@ -10,7 +10,7 @@ import { ScreenProps } from '../../../types.ts';
 import { AppNavigatorScreen, AppNavigatorScreenParams } from '../../types.ts';
 import { useWorkoutFeedback } from '../../../../../hooks/useWorkoutFeedback.ts';
 import { FinishedWorkoutScreen } from '../FinishedWorkoutScreen/FinishedWorkoutScreen.tsx';
-import { useMemo, useState } from 'react';
+import { JSX, useMemo, useState } from 'react';
 import { useWallpaperElement } from './hooks/useWallpaperElement.tsx';
 import { getRunningWorkoutName } from './helpers/getRunningWorkoutName.ts';
 import Orientation from 'react-native-orientation-locker';
@@ -23,6 +23,7 @@ import {
 } from './constants.tsx';
 import { AppOrientation } from '../../../../../types/common.ts';
 import { RunningWorkoutLandscapeTitle } from './RunningWorkoutLandscapeTitle.tsx';
+import { RunningWorkoutLandscapePulsingBackground } from './components/RunningWorkoutLandscapePulsingBackground.tsx';
 
 type RunningWorkoutScreenProps = ScreenProps<
   AppNavigatorScreenParams,
@@ -123,6 +124,22 @@ export const RunningWorkoutScreen = ({
   const headerTitleEvaluated =
     appOrientationToRunningWorkoutHeaderElement[appOrientation];
 
+  const appOrientationToBackgroundElement: Record<AppOrientation, JSX.Element> =
+    {
+      PORTRAIT: wallpaperElement,
+      LANDSCAPE: (
+        <RunningWorkoutLandscapePulsingBackground
+          currentPhase={currentState.currentPhase}
+          phaseElapsedMs={currentState.phaseElapsedMs}
+          phaseRemainingMs={currentState.phaseRemainingMs}
+          enabled={isRunning}
+        />
+      ),
+    };
+
+  const backgroundOverlayElement =
+    appOrientationToBackgroundElement[appOrientation];
+
   return (
     <>
       <AppScreenLayout
@@ -132,7 +149,7 @@ export const RunningWorkoutScreen = ({
         onHeaderAccessoryLeftPress={openEndWorkoutPopUp}
         HeaderAccessoryRightIconComponent={HeaderAccessoryRightIconComponent}
         onHeaderAccessoryRightPress={toggleOrientation}
-        backgroundOverlayElement={wallpaperElement}
+        backgroundOverlayElement={backgroundOverlayElement}
         contentPaddingTopOverride={contentPaddingTop}>
         <ContentComponent
           currentState={currentState}

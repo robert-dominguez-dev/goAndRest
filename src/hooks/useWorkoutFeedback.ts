@@ -61,12 +61,18 @@ export const useWorkoutFeedback = ({
       totalSeconds < CONSIDERED_SHORT_PHASE_DURATION_THRESHOLD;
 
     if (currentPhase !== lastPhaseRef.current) {
-      vibrate('PHASE_START');
-      void playWorkoutSoundByKey({
-        soundKey: currentPhase,
-        isPreferredShort,
-      });
       lastPhaseRef.current = currentPhase;
+
+      /**
+       * Only play a sound at the beginning of the phase...
+       */
+      if (elapsedSeconds < 2) {
+        vibrate('PHASE_START');
+        void playWorkoutSoundByKey({
+          soundKey: currentPhase,
+          isPreferredShort,
+        });
+      }
     }
 
     const exactSecondInTheMiddle = Math.ceil(totalSeconds / 2);

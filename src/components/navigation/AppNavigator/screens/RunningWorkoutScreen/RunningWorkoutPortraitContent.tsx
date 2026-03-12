@@ -2,13 +2,13 @@ import { workoutPhaseToTimerColorStatus } from './constants.tsx';
 import { AppView } from '../../../../common/AppView/AppView.tsx';
 import { AppCircularIndicator } from '../../../../controls/AppCircularSlider/components/AppCircularIndicator.tsx';
 import { useAppThemedColors } from '../../../../../hooks/useAppThemedColors.ts';
-import { RunningWorkoutPulsingBackground } from './components/RunningWorkoutPulsingBackground.tsx';
 import { RunningWorkoutIndicatorsContent } from './components/RunningWorkoutIndicatorsContent.tsx';
 import { RunningWorkoutCounter } from './components/RunningWorkoutCounter.tsx';
 import { memo } from 'react';
 import { AppSize } from '../../../../../types/ui.ts';
 import { getMaxCircularIndicatorRadius } from '../../../../../helpers/getMaxCircularIndicatorRadius.ts';
 import { RunningWorkoutContentParams } from './types.ts';
+import { RunningWorkoutPulsingBackgroundCircle } from './components/RunningWorkoutPulsingBackgroundCircle.tsx';
 
 const INDICATOR_STROKE_WIDTH = 16;
 const INDICATORS_GAP = 8;
@@ -67,7 +67,7 @@ const _RunningWorkoutPortraitContent = ({
           radius={INNER_INDICATOR_RADIUS}
           strokeWidth={INDICATOR_STROKE_WIDTH}
           maxValue={maxValue}>
-          <RunningWorkoutPulsingBackground
+          <RunningWorkoutPulsingBackgroundCircle
             size={PULSING_BACKGROUND_SIZE}
             workoutPhase={currentPhase}
             enabled={isRunning}

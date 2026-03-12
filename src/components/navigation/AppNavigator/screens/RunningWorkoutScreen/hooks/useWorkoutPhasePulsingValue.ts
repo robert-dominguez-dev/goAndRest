@@ -6,16 +6,15 @@ import {
 } from 'react-native-reanimated';
 import { ONE_SECOND_MS } from '../../../../../../constants/common.ts';
 import { useEffect } from 'react';
-import { RunningWorkoutPhase } from '../types.ts';
-import { workoutPhaseToPulsingAnimationConfig } from '../constants.tsx';
+import { WithTimingConfig } from 'react-native-reanimated/src/animation/timing.ts';
 
 const UNLIMITED_NUMBER_OF_REPS = -1;
 
 export type UseWorkoutPhasePulsingValueParams = {
-  workoutPhase: RunningWorkoutPhase;
-  from: number;
-  to: number;
+  from?: number;
+  to?: number;
   enabled: boolean;
+  timingConfig?: WithTimingConfig;
 };
 
 /**
@@ -23,10 +22,10 @@ export type UseWorkoutPhasePulsingValueParams = {
  * Useful for pulsing alerts, focus indicators, or "active" states.
  */
 export const useWorkoutPhasePulsingValue = ({
-  workoutPhase,
-  from,
-  to,
   enabled,
+  timingConfig,
+  from = 0.05,
+  to = 0.3,
 }: UseWorkoutPhasePulsingValueParams) => {
   const animatedValue = useSharedValue(from);
 
@@ -36,7 +35,7 @@ export const useWorkoutPhasePulsingValue = ({
     if (enabled) {
       animatedValue.value = from;
       animatedValue.value = withRepeat(
-        withTiming(to, workoutPhaseToPulsingAnimationConfig[workoutPhase]),
+        withTiming(to, timingConfig),
         UNLIMITED_NUMBER_OF_REPS,
         true,
       );
@@ -45,7 +44,7 @@ export const useWorkoutPhasePulsingValue = ({
         duration: ONE_SECOND_MS / 2,
       });
     }
-  }, [workoutPhase, enabled, from, to, animatedValue]);
+  }, [timingConfig, enabled, from, to, animatedValue]);
 
   return animatedValue;
 };
