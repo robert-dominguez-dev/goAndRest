@@ -1,4 +1,4 @@
-import { characterToWallpaperName } from '../constants.ts';
+import { characterToWallpaperName } from '../constants.tsx';
 import { AppImage } from '../../../../../common/AppImage.tsx';
 import { useAtomValue } from 'jotai';
 import {

@@ -7,20 +7,28 @@ import { AppRow } from '../../../../../../../common/AppRow.tsx';
 
 export type WorkoutConfigBottomSheetIconAndTitleProps = Pick<
   AppIconAndLabelProps,
-  'label' | 'IconComponent'
+  'label' | 'IconComponent' | 'textColorStatus' | 'grow'
 >;
 
 export const WorkoutConfigBottomSheetIconAndTitle = ({
   label,
   IconComponent,
+  textColorStatus,
+  grow,
 }: WorkoutConfigBottomSheetIconAndTitleProps) => (
-  <AppView>
+  <AppView
+    shrink={!grow}
+    grow={grow}>
     <AppRow
       gap={'s'}
+      shrink={!grow}
+      grow={grow}
       alignItems={'center'}>
       <AppIconAndLabel
+        grow={grow}
         label={label}
         IconComponent={IconComponent}
+        textColorStatus={textColorStatus}
         category={'header'}
       />
     </AppRow>

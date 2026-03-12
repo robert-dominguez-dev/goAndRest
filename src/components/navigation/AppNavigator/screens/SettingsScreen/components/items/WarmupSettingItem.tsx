@@ -6,7 +6,7 @@ import { formatTimerTime } from '../../../../../../../helpers/formatTimerTime.ts
 import { useWorkoutSettingBottomSheet } from '../../hooks/useWorkoutSettingBottomSheet.tsx';
 import { warmupSettingAtom } from '../../../../../../../contexts/atoms.ts';
 import { AppColorUnion } from '../../../../../../../types/ui.ts';
-import { workoutPhaseToIconComponent } from '../../../RunningWorkoutScreen/constants.ts';
+import { workoutPhaseToIconComponent } from '../../../RunningWorkoutScreen/constants.tsx';
 
 const IconComponent = workoutPhaseToIconComponent.WARMUP;
 const backgroundColorStatus: AppColorUnion = 'warmup';

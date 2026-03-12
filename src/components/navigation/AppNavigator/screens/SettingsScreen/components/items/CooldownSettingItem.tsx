@@ -5,7 +5,7 @@ import { AppSelectionBottomSheetItemText } from '../../../../../../common/AppSel
 import { formatTimerTime } from '../../../../../../../helpers/formatTimerTime.tsx';
 import { useWorkoutSettingBottomSheet } from '../../hooks/useWorkoutSettingBottomSheet.tsx';
 import { cooldownSettingAtom } from '../../../../../../../contexts/atoms.ts';
-import { workoutPhaseToIconComponent } from '../../../RunningWorkoutScreen/constants.ts';
+import { workoutPhaseToIconComponent } from '../../../RunningWorkoutScreen/constants.tsx';
 import { AppColorUnion } from '../../../../../../../types/ui.ts';
 
 const IconComponent = workoutPhaseToIconComponent.COOLDOWN;

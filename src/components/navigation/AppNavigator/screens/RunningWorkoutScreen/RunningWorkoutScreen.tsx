@@ -1,46 +1,25 @@
-import { AppScreenLayout } from '../../../../common/AppScreenLayout/AppScreenLayout.tsx';
-import { LucideIcon, Volume2, VolumeX, X } from 'lucide-react-native';
+import { AppScreenLayout, AppScreenLayoutProps, } from '../../../../common/AppScreenLayout/AppScreenLayout.tsx';
+import { X } from 'lucide-react-native';
 import { useAppTranslation } from '../../../../../locales/hooks/useAppTranslation.ts';
-import { RunningWorkoutScreenFooter } from './components/RunningWorkoutScreenFooter.tsx';
 import { useEndRunningWorkoutPopUp } from './hooks/useEndRunningWorkoutPopUp.tsx';
 import { useWorkoutTimer } from '../../../../../hooks/useWorkoutTimer.ts';
-import { workoutPhaseToTimerColorStatus } from './constants.ts';
-import { AppView } from '../../../../common/AppView/AppView.tsx';
-import { AppCircularIndicator } from '../../../../controls/AppCircularSlider/components/AppCircularIndicator.tsx';
-import { useAppThemedColors } from '../../../../../hooks/useAppThemedColors.ts';
-import { RunningWorkoutPulsingBackground } from './components/RunningWorkoutPulsingBackground.tsx';
 import { ScreenProps } from '../../../types.ts';
 import { AppNavigatorScreen, AppNavigatorScreenParams } from '../../types.ts';
-import { RunningWorkoutIndicatorsContent } from './components/RunningWorkoutIndicatorsContent.tsx';
 import { useWorkoutFeedback } from '../../../../../hooks/useWorkoutFeedback.ts';
 import { FinishedWorkoutScreen } from '../FinishedWorkoutScreen/FinishedWorkoutScreen.tsx';
-import { isMutedAtom } from '../../../../../contexts/atoms.ts';
-import { useAtom } from 'jotai';
-import { RunningWorkoutCounter } from './components/RunningWorkoutCounter.tsx';
-import { stopAndResetTrackPlayer } from '../../../../../hooks/useInitiateWorkoutSounds/helpers/stopAndResetTrackPlayer.ts';
-import { useEffect, useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { useWallpaperElement } from './hooks/useWallpaperElement.tsx';
-import { AppSize } from '../../../../../types/ui.ts';
-import { getMaxCircularIndicatorRadius } from '../../../../../helpers/getMaxCircularIndicatorRadius.ts';
 import { getRunningWorkoutName } from './helpers/getRunningWorkoutName.ts';
-
-const INDICATOR_STROKE_WIDTH = 16;
-const INDICATORS_GAP = 8;
-
-const MAX_WORKOUT_CONFIG_SLIDER_RADIUS = getMaxCircularIndicatorRadius({
-  strokeWidth: INDICATOR_STROKE_WIDTH,
-  paddingTotal: AppSize.sm * 2,
-});
-
-const OUTER_INDICATOR_RADIUS = Math.min(168, MAX_WORKOUT_CONFIG_SLIDER_RADIUS);
-
-const INNER_INDICATOR_RADIUS =
-  OUTER_INDICATOR_RADIUS - INDICATOR_STROKE_WIDTH - INDICATORS_GAP;
-
-const PULSING_BACKGROUND_SIZE =
-  (INNER_INDICATOR_RADIUS - INDICATOR_STROKE_WIDTH) * 2;
-
-const footerElement = <RunningWorkoutScreenFooter />;
+import Orientation from 'react-native-orientation-locker';
+import { handleAppOrientation } from './helpers/handleAppOrientation.tsx';
+import {
+  appOrientationToChangeIcon,
+  appOrientationToRunningWorkoutContentComponent,
+  appOrientationToRunningWorkoutFooterElement,
+  appOrientationToRunningWorkoutPaddingTop,
+} from './constants.tsx';
+import { AppOrientation } from '../../../../../types/common.ts';
+import { RunningWorkoutLandscapeTitle } from './RunningWorkoutLandscapeTitle.tsx';
 
 type RunningWorkoutScreenProps = ScreenProps<
   AppNavigatorScreenParams,
@@ -52,13 +31,25 @@ export const RunningWorkoutScreen = ({
 }: RunningWorkoutScreenProps) => {
   const t = useAppTranslation();
 
-  const appColors = useAppThemedColors();
+  const [appOrientation, setAppOrientation] =
+    useState<AppOrientation>('PORTRAIT');
 
-  const [isMuted, setIsMuted] = useAtom(isMutedAtom);
+  const changeToPortrait = () => {
+    Orientation.lockToPortrait();
+    setAppOrientation('PORTRAIT');
+  };
 
-  useEffect(() => () => setIsMuted(false), []);
+  const changeToLandscape = () => {
+    Orientation.lockToLandscape();
+    setAppOrientation('LANDSCAPE');
+  };
 
-  const { popUp, openEndWorkoutPopUp } = useEndRunningWorkoutPopUp();
+  const { popUp, openEndWorkoutPopUp } = useEndRunningWorkoutPopUp({
+    onChangeToPortrait: changeToPortrait,
+    onChangeToLandscape: changeToLandscape,
+  });
+
+  const handleOpenEndWorkoutPopUp = () => {};
 
   const handleFinish = () =>
     navigation.reset({
@@ -94,82 +85,58 @@ export const RunningWorkoutScreen = ({
     return <FinishedWorkoutScreen />;
   }
 
-  const {
-    currentPhase,
-    totalElapsedMs,
-    totalDurationMs,
-    phaseRemainingMs,
-    phaseElapsedMs,
-    currentSeries,
-    currentRound,
-    workoutConfig: { series, rounds },
-  } = currentState;
+  const toggleOrientation = () =>
+    Orientation.getOrientation(currentOrientation =>
+      handleAppOrientation({
+        orientation: currentOrientation,
+        onIsPortrait: changeToLandscape,
+        onIsLandscape: changeToPortrait,
+      }),
+    );
 
-  const phaseColorStatus = workoutPhaseToTimerColorStatus[currentPhase];
-  const phaseColor = appColors[phaseColorStatus];
+  const HeaderAccessoryRightIconComponent =
+    appOrientationToChangeIcon[appOrientation];
 
-  const maxValue = phaseRemainingMs + phaseElapsedMs;
+  const ContentComponent =
+    appOrientationToRunningWorkoutContentComponent[appOrientation];
 
-  const VolumeIconComponent: LucideIcon = isMuted ? VolumeX : Volume2;
+  const maybeFooterElement =
+    appOrientationToRunningWorkoutFooterElement[appOrientation];
 
-  const toggleMuted = () =>
-    setIsMuted(prev => {
-      const shouldBeMuted = !prev;
+  const contentPaddingTop =
+    appOrientationToRunningWorkoutPaddingTop[appOrientation];
 
-      if (shouldBeMuted) {
-        void stopAndResetTrackPlayer();
-      }
+  const appOrientationToRunningWorkoutHeaderElement: Record<
+    AppOrientation,
+    AppScreenLayoutProps['headerTitle']
+  > = {
+    PORTRAIT: headerTitle,
+    LANDSCAPE: (
+      <RunningWorkoutLandscapeTitle
+        headerTitle={headerTitle}
+        currentState={currentState}
+      />
+    ),
+  };
 
-      return shouldBeMuted;
-    });
+  const headerTitleEvaluated =
+    appOrientationToRunningWorkoutHeaderElement[appOrientation];
 
   return (
     <>
       <AppScreenLayout
-        headerTitle={headerTitle}
-        footer={footerElement}
+        headerTitle={headerTitleEvaluated}
+        footer={maybeFooterElement}
         HeaderAccessoryLeftIconComponent={X}
         onHeaderAccessoryLeftPress={openEndWorkoutPopUp}
-        HeaderAccessoryRightIconComponent={VolumeIconComponent}
-        onHeaderAccessoryRightPress={toggleMuted}
-        backgroundOverlayElement={wallpaperElement}>
-        <AppView
-          gap={'m'}
-          alignItems={'center'}
-          justifyContent={'center'}>
-          <AppCircularIndicator
-            isRunning={isRunning}
-            value={totalElapsedMs}
-            filledTrackColor={appColors.text}
-            radius={OUTER_INDICATOR_RADIUS}
-            strokeWidth={INDICATOR_STROKE_WIDTH}
-            maxValue={totalDurationMs}>
-            <AppCircularIndicator
-              isRunning={isRunning}
-              value={phaseElapsedMs}
-              filledTrackColor={phaseColor}
-              radius={INNER_INDICATOR_RADIUS}
-              strokeWidth={INDICATOR_STROKE_WIDTH}
-              maxValue={maxValue}>
-              <RunningWorkoutPulsingBackground
-                size={PULSING_BACKGROUND_SIZE}
-                workoutPhase={currentPhase}
-                enabled={isRunning}
-              />
-              <RunningWorkoutIndicatorsContent
-                currentPhase={currentPhase}
-                phaseRemainingMs={phaseRemainingMs}
-                totalElapsedMs={totalElapsedMs}
-              />
-            </AppCircularIndicator>
-          </AppCircularIndicator>
-          <RunningWorkoutCounter
-            currentSeries={currentSeries}
-            currentRound={currentRound}
-            totalSeries={series}
-            totalRounds={rounds}
-          />
-        </AppView>
+        HeaderAccessoryRightIconComponent={HeaderAccessoryRightIconComponent}
+        onHeaderAccessoryRightPress={toggleOrientation}
+        backgroundOverlayElement={wallpaperElement}
+        contentPaddingTopOverride={contentPaddingTop}>
+        <ContentComponent
+          currentState={currentState}
+          isRunning={isRunning}
+        />
       </AppScreenLayout>
       {popUp}
     </>

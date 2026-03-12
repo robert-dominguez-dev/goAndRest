@@ -41,3 +41,8 @@ export type WorkoutTimerComputedState = {
 
 export type WorkoutTimerState = WorkoutTimerPersistedState &
   WorkoutTimerComputedState;
+
+export type RunningWorkoutContentParams = {
+  currentState: WorkoutTimerState;
+  isRunning: boolean;
+};

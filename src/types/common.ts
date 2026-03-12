@@ -8,3 +8,5 @@ export enum AppTheme {
   light = 'light',
   dark = 'dark',
 }
+
+export type AppOrientation = 'PORTRAIT' | 'LANDSCAPE';

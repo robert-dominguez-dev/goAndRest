@@ -6,7 +6,7 @@ import { useAppThemedColors } from '../../../../../../hooks/useAppThemedColors.t
 import { ViewStyle } from 'react-native';
 import Animated, { useAnimatedStyle } from 'react-native-reanimated';
 import { RunningWorkoutPhase } from '../types.ts';
-import { workoutPhaseToTimerColorStatus } from '../constants.ts';
+import { workoutPhaseToTimerColorStatus } from '../constants.tsx';
 
 type RunningWorkoutPulsingBackgroundProps = Pick<
   UseWorkoutPhasePulsingValueParams,

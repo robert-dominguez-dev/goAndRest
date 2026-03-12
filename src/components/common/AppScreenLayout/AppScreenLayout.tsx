@@ -5,10 +5,8 @@ import { AppHeader, AppHeaderProps } from '../AppHeader/AppHeader.tsx';
 import { JSX, ReactNode } from 'react';
 
 import { useAppSafeAreaPadding } from '../../../hooks/useAppSafeAreaPadding.ts';
-import { AppSize, AppSizeUnion } from '../../../types/ui.ts';
+import { AppSizeUnion } from '../../../types/ui.ts';
 import { AppScreenLayoutBackgroundOverlay } from './components/AppScreenLayoutWallpaper.tsx';
-
-export const HORIZONTAL_SCREEN_PADDING = AppSize.m;
 
 export type AppScreenLayoutProps = Pick<AppViewProps, 'children'> &
   Pick<AppViewProps, 'backgroundColorStatus'> & {
@@ -22,6 +20,7 @@ export type AppScreenLayoutProps = Pick<AppViewProps, 'children'> &
     scrollable?: boolean;
     backgroundOverlayElement?: JSX.Element;
     screenPaddingTopOverride?: AppSizeUnion;
+    contentPaddingTopOverride?: AppSizeUnion;
   };
 
 export const AppScreenLayout = ({
@@ -36,9 +35,15 @@ export const AppScreenLayout = ({
   scrollable,
   backgroundOverlayElement,
   screenPaddingTopOverride,
+  contentPaddingTopOverride,
   backgroundColorStatus = 'background',
 }: AppScreenLayoutProps) => {
-  const { safeAreaPaddingTop, safeAreaPaddingBottom } = useAppSafeAreaPadding();
+  const {
+    safeAreaPaddingTop,
+    safeAreaPaddingBottom,
+    safeAreaPaddingLeft,
+    safeAreaPaddingRight,
+  } = useAppSafeAreaPadding();
 
   const maybeHeader: JSX.Element | undefined = headerTitle ? (
     <AppHeader
@@ -74,15 +79,16 @@ export const AppScreenLayout = ({
         </AppScreenLayoutBackgroundOverlay>
       )}
       <AppView
-        paddingHorizontal={HORIZONTAL_SCREEN_PADDING}
         paddingTop={screenPaddingTop}
         paddingBottom={screenPaddingBottom}
+        paddingLeft={safeAreaPaddingLeft}
+        paddingRight={safeAreaPaddingRight}
         height={FILL_CONTAINER_DIMENSION}>
         {headerEvaluated}
         <AppView
           grow
           shrink
-          paddingTop={'l'}
+          paddingTop={contentPaddingTopOverride ?? 'l'}
           paddingBottom={contentPaddingBottom}>
           {content}
         </AppView>

@@ -1,11 +1,22 @@
-import { RunningWorkoutPhase } from './types.ts';
-import { AppColorUnion } from '../../../../../types/ui.ts';
+import { RunningWorkoutContentParams, RunningWorkoutPhase } from './types.ts';
+import { AppColorUnion, AppSizeUnion } from '../../../../../types/ui.ts';
 import { Easing, WithTimingConfig } from 'react-native-reanimated';
 import { TranslateKey } from '../../../../../locales/types.ts';
 import { workoutSettingsButtonConfigMap } from '../LandingScreen/constants.ts';
-import { Flame, LucideIcon, Wind } from 'lucide-react-native';
+import {
+  Flame,
+  LucideIcon,
+  Maximize2,
+  Minimize2,
+  Wind,
+} from 'lucide-react-native';
 import { AppWallpaper } from '../../../../../assets/types.ts';
 import { WorkoutCharacterVariant } from '../SettingsScreen/constants.tsx';
+import { ComponentType, JSX } from 'react';
+import { RunningWorkoutPortraitContent } from './RunningWorkoutPortraitContent.tsx';
+import { RunningWorkoutLandscapeContent } from './RunningWorkoutLandscapeContent.tsx';
+import { RunningWorkoutPortraitFooter } from './components/RunningWorkoutPortraitFooter.tsx';
+import { AppOrientation } from '../../../../../types/common.ts';
 
 export const workoutPhaseToTimerColorStatus: Record<
   RunningWorkoutPhase,
@@ -78,4 +89,33 @@ export const characterToWallpaperName: Record<
   [WorkoutCharacterVariant.shieldmaiden]: 'wallpaperWarrior',
   [WorkoutCharacterVariant.cyborg]: 'wallpaperCyborg',
   [WorkoutCharacterVariant.wizard]: 'wallpaperWizard',
+};
+
+export const appOrientationToChangeIcon: Record<AppOrientation, LucideIcon> = {
+  PORTRAIT: Maximize2,
+  LANDSCAPE: Minimize2,
+};
+
+export const appOrientationToRunningWorkoutContentComponent: Record<
+  AppOrientation,
+  ComponentType<RunningWorkoutContentParams>
+> = {
+  PORTRAIT: RunningWorkoutPortraitContent,
+  LANDSCAPE: RunningWorkoutLandscapeContent,
+};
+
+export const appOrientationToRunningWorkoutFooterElement: Record<
+  AppOrientation,
+  JSX.Element | undefined
+> = {
+  PORTRAIT: <RunningWorkoutPortraitFooter />,
+  LANDSCAPE: undefined,
+};
+
+export const appOrientationToRunningWorkoutPaddingTop: Record<
+  AppOrientation,
+  AppSizeUnion | undefined
+> = {
+  PORTRAIT: undefined,
+  LANDSCAPE: 0,
 };

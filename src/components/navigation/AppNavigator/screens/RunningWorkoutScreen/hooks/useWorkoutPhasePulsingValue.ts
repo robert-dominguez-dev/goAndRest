@@ -7,7 +7,7 @@ import {
 import { ONE_SECOND_MS } from '../../../../../../constants/common.ts';
 import { useEffect } from 'react';
 import { RunningWorkoutPhase } from '../types.ts';
-import { workoutPhaseToPulsingAnimationConfig } from '../constants.ts';
+import { workoutPhaseToPulsingAnimationConfig } from '../constants.tsx';
 
 const UNLIMITED_NUMBER_OF_REPS = -1;
 

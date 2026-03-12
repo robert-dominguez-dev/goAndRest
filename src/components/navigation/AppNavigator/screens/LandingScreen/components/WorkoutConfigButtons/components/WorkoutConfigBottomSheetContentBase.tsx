@@ -9,8 +9,15 @@ import {
 import { memo } from 'react';
 import { UNLIMITED_NUMBER_OF_LINES } from '../../../../../../../../constants/common.ts';
 import { useAppTranslation } from '../../../../../../../../locales/hooks/useAppTranslation.ts';
+import { getByScreenWidth } from '../../../../../../../../helpers/getByScreenWidth.ts';
+import { AppSizeUnion } from '../../../../../../../../types/ui.ts';
 
 const INFO_TEXT_PADDING = WORKOUT_CONFIG_SLIDER_RADIUS / 1.5;
+
+const MAIN_GAP = getByScreenWidth<AppSizeUnion>({
+  standard: 'ml',
+  small: 's',
+});
 
 export type WorkoutConfigBottomSheetContentBaseProps = Pick<
   WorkoutConfigCircularSliderProps,
@@ -42,7 +49,7 @@ const WorkoutConfigBottomSheetContentBaseComponent = ({
   return (
     <GestureHandlerRootView>
       <AppView
-        gap={'l'}
+        gap={MAIN_GAP}
         paddingVertical={'m'}
         alignItems={'center'}>
         <AppView gap={'xxs'}>
