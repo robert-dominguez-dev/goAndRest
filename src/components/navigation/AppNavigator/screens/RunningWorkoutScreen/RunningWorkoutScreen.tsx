@@ -1,4 +1,7 @@
-import { AppScreenLayout, AppScreenLayoutProps, } from '../../../../common/AppScreenLayout/AppScreenLayout.tsx';
+import {
+  AppScreenLayout,
+  AppScreenLayoutProps,
+} from '../../../../common/AppScreenLayout/AppScreenLayout.tsx';
 import { X } from 'lucide-react-native';
 import { useAppTranslation } from '../../../../../locales/hooks/useAppTranslation.ts';
 import { useEndRunningWorkoutPopUp } from './hooks/useEndRunningWorkoutPopUp.tsx';
@@ -48,8 +51,6 @@ export const RunningWorkoutScreen = ({
     onChangeToPortrait: changeToPortrait,
     onChangeToLandscape: changeToLandscape,
   });
-
-  const handleOpenEndWorkoutPopUp = () => {};
 
   const handleFinish = () =>
     navigation.reset({
