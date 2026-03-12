@@ -3,10 +3,11 @@ import { AppView } from '../../../../common/AppView/AppView.tsx';
 import { memo } from 'react';
 import { RunningWorkoutContentParams } from './types.ts';
 import { AppTimeView } from '../../../../common/AppTimeView.tsx';
-import { useWindowDimensions } from 'react-native';
 import { RunningWorkoutCounter } from './components/RunningWorkoutCounter.tsx';
 import { AppSize } from '../../../../../types/ui.ts';
 import { RunningWorkoutLandscapeFooter } from './components/RunningWorkoutLandscapeFooter.tsx';
+import { FILL_CONTAINER_DIMENSION } from '../../../../../constants/common.ts';
+import { useLayout } from '../../../../../hooks/useLayout.ts';
 
 const _RunningWorkoutLandscapeContent = ({
   currentState: {
@@ -17,19 +18,19 @@ const _RunningWorkoutLandscapeContent = ({
     workoutConfig: { series, rounds },
   },
 }: RunningWorkoutContentParams) => {
-  const { height } = useWindowDimensions();
+  const { handleLayout, layout } = useLayout();
 
-  const fontSizeOverride = height * 0.75;
+  const fontSizeOverride = layout?.height;
 
   const phaseColorStatus = workoutPhaseToTimerColorStatus[currentPhase];
 
   return (
     <AppView
-      grow
+      height={FILL_CONTAINER_DIMENSION}
       alignItems={'center'}>
       <AppView
         grow
-        position={'absolute'}
+        onLayout={handleLayout}
         justifyContent={'center'}>
         <AppTimeView
           colorStatus={phaseColorStatus}
@@ -37,9 +38,7 @@ const _RunningWorkoutLandscapeContent = ({
           msLeft={phaseRemainingMs}
         />
       </AppView>
-      <AppView
-        position={'absolute'}
-        bottom={AppSize.m}>
+      <AppView bottom={AppSize.m}>
         <RunningWorkoutCounter
           currentSeries={currentSeries}
           currentRound={currentRound}

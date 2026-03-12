@@ -16,6 +16,6 @@ export const useAppSafeAreaPadding = () => {
     safeAreaPaddingTop,
     safeAreaPaddingBottom,
     safeAreaPaddingLeft: Math.max(AppSize.m, left),
-    safeAreaPaddingRight: Math.max(AppSize.m, left),
+    safeAreaPaddingRight: Math.max(AppSize.m, right),
   };
 };
