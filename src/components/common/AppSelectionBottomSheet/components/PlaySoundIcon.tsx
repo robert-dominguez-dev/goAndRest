@@ -33,9 +33,11 @@ export const PlaySoundIcon = ({
     setPlayingPreviewKey(null);
   };
 
+  const isPlaying = playingPreviewKey === soundKey;
+
   useOnTrackFinished(soundKey, () => {
-    if (playingPreviewKey === soundKey) {
-      void stop();
+    if (isPlaying) {
+      setPlayingPreviewKey(null);
     }
   });
 
@@ -44,8 +46,6 @@ export const PlaySoundIcon = ({
       void stop();
     };
   }, []);
-
-  const isPlaying = playingPreviewKey === soundKey;
 
   const handlePress = async (event: GestureResponderEvent) => {
     event.preventDefault();

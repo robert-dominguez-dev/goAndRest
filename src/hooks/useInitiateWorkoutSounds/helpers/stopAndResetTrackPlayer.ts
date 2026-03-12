@@ -1,7 +1,11 @@
 import TrackPlayer from 'react-native-track-player';
 
-export const stopAndResetTrackPlayer = () =>
-  TrackPlayer.stop()
-    .then(() => TrackPlayer.reset())
-    .then(() => console.log('Stop and reset successful.'))
-    .catch(error => console.error('Stop and reset error:', error));
+export const stopAndResetTrackPlayer = async () => {
+  try {
+    await TrackPlayer.stop();
+    await TrackPlayer.reset();
+    console.log('Stop and reset successful.');
+  } catch (error) {
+    console.error('Stop and reset error:', error);
+  }
+};
