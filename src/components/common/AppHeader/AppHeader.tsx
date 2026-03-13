@@ -9,6 +9,7 @@ import isString from 'lodash/isString';
 import { LucideIcon } from 'lucide-react-native';
 import { AppText } from '../AppText/AppText.tsx';
 import { useAppThemedColors } from '../../../hooks/useAppThemedColors.ts';
+import { AppViewProps } from '../AppView/AppView.tsx';
 
 export type AppHeaderProps = {
   title?: string | JSX.Element;
@@ -37,25 +38,36 @@ export const AppHeader = ({
     title
   );
 
+  const hasAnyAccessory: boolean =
+    !!AccessoryLeftIconComponent || !!AccessoryRightIconComponent;
+
+  const justifyContent: AppViewProps['justifyContent'] = hasAnyAccessory
+    ? 'space-between'
+    : 'center';
+
   return (
     <AppRow
-      justifyContent={'space-between'}
+      justifyContent={justifyContent}
       alignItems={'center'}>
-      <AppHeaderAccessoryContainer
-        alignItems={'flex-start'}
-        onPress={onAccessoryLeftPress}>
-        {AccessoryLeftIconComponent && (
-          <AccessoryLeftIconComponent color={text} />
-        )}
-      </AppHeaderAccessoryContainer>
+      {hasAnyAccessory && (
+        <AppHeaderAccessoryContainer
+          alignItems={'flex-start'}
+          onPress={onAccessoryLeftPress}>
+          {AccessoryLeftIconComponent && (
+            <AccessoryLeftIconComponent color={text} />
+          )}
+        </AppHeaderAccessoryContainer>
+      )}
       {titleElement}
-      <AppHeaderAccessoryContainer
-        alignItems={'flex-end'}
-        onPress={onAccessoryRightPress}>
-        {AccessoryRightIconComponent && (
-          <AccessoryRightIconComponent color={text} />
-        )}
-      </AppHeaderAccessoryContainer>
+      {hasAnyAccessory && (
+        <AppHeaderAccessoryContainer
+          alignItems={'flex-end'}
+          onPress={onAccessoryRightPress}>
+          {AccessoryRightIconComponent && (
+            <AccessoryRightIconComponent color={text} />
+          )}
+        </AppHeaderAccessoryContainer>
+      )}
     </AppRow>
   );
 };
