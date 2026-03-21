@@ -36,9 +36,3 @@ export type WorkoutSoundPathsByLanguage = Record<
 export type SoundPathByLanguage = Record<SupportedLanguageCode, string>;
 
 export type WorkoutSoundKey = keyof WorkoutSoundFilePaths;
-
-export type AppWallpaper =
-  | 'wallpaperDumbbell'
-  | 'wallpaperWarrior'
-  | 'wallpaperWizard'
-  | 'wallpaperCyborg';

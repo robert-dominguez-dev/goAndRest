@@ -11,7 +11,6 @@ import { AppNavigatorScreen, AppNavigatorScreenParams } from '../../types.ts';
 import { useWorkoutFeedback } from '../../../../../hooks/useWorkoutFeedback.ts';
 import { FinishedWorkoutScreen } from '../FinishedWorkoutScreen/FinishedWorkoutScreen.tsx';
 import { JSX, useMemo, useState } from 'react';
-import { useWallpaperElement } from './hooks/useWallpaperElement.tsx';
 import { getRunningWorkoutName } from './helpers/getRunningWorkoutName.ts';
 import Orientation from 'react-native-orientation-locker';
 import { handleAppOrientation } from './helpers/handleAppOrientation.tsx';
@@ -71,8 +70,6 @@ export const RunningWorkoutScreen = ({
     phaseElapsedMs: currentState?.phaseElapsedMs,
   });
 
-  const wallpaperElement = useWallpaperElement();
-
   const headerTitle = useMemo(
     () =>
       getRunningWorkoutName({
@@ -124,18 +121,20 @@ export const RunningWorkoutScreen = ({
   const headerTitleEvaluated =
     appOrientationToRunningWorkoutHeaderElement[appOrientation];
 
-  const appOrientationToBackgroundElement: Record<AppOrientation, JSX.Element> =
-    {
-      PORTRAIT: wallpaperElement,
-      LANDSCAPE: (
-        <RunningWorkoutLandscapePulsingBackground
-          currentPhase={currentState.currentPhase}
-          phaseElapsedMs={currentState.phaseElapsedMs}
-          phaseRemainingMs={currentState.phaseRemainingMs}
-          enabled={isRunning}
-        />
-      ),
-    };
+  const appOrientationToBackgroundElement: Record<
+    AppOrientation,
+    JSX.Element | undefined
+  > = {
+    PORTRAIT: undefined,
+    LANDSCAPE: (
+      <RunningWorkoutLandscapePulsingBackground
+        currentPhase={currentState.currentPhase}
+        phaseElapsedMs={currentState.phaseElapsedMs}
+        phaseRemainingMs={currentState.phaseRemainingMs}
+        enabled={isRunning}
+      />
+    ),
+  };
 
   const backgroundOverlayElement =
     appOrientationToBackgroundElement[appOrientation];

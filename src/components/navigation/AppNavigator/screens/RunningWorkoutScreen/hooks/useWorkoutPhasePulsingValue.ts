@@ -3,10 +3,10 @@ import {
   useSharedValue,
   withRepeat,
   withTiming,
+  WithTimingConfig,
 } from 'react-native-reanimated';
 import { ONE_SECOND_MS } from '../../../../../../constants/common.ts';
 import { useEffect } from 'react';
-import { WithTimingConfig } from 'react-native-reanimated/src/animation/timing.ts';
 
 const UNLIMITED_NUMBER_OF_REPS = -1;
 

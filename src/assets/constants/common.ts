@@ -7,7 +7,6 @@ import { characters } from '../base64/characters.ts';
 import { voices } from '../base64/voices.ts';
 
 import {
-  AppWallpaper,
   SoundPathByLanguage,
   WorkoutSoundFilePaths,
   WorkoutSoundPathsByLanguage,
@@ -28,7 +27,6 @@ import {
   wizardPreviewPathByLanguage,
   wizardSoundPathsByLanguage,
 } from './audio/characters/wizard.ts';
-import { wallpapers } from '../base64/wallpapers.ts';
 import {
   shieldmaidenPreviewPathByLanguage,
   shieldmaidenSoundPathsByLanguage,
@@ -66,8 +64,7 @@ export type AppFeedbackEntity =
 export const appIllustrations = {
   ...characters,
   ...voices,
-  ...wallpapers,
-} satisfies Record<AppFeedbackEntity | AppWallpaper, string>;
+} satisfies Record<AppFeedbackEntity, string>;
 
 export type AppIllustrationName = keyof typeof appIllustrations;
 
@@ -85,10 +82,6 @@ export const appFeedbackEntityToImageAspectRatio: Record<
   [WorkoutCharacterVariant.shieldmaiden]: 342 / 381,
   [WorkoutCharacterVariant.cyborg]: 282 / 315,
   [WorkoutCharacterVariant.wizard]: 303 / 376,
-  wallpaperDumbbell: 1,
-  wallpaperWarrior: 1,
-  wallpaperCyborg: 1,
-  wallpaperWizard: 1,
 };
 
 export enum AppAnimation {

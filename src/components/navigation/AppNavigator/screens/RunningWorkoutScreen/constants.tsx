@@ -10,8 +10,6 @@ import {
   Minimize2,
   Wind,
 } from 'lucide-react-native';
-import { AppWallpaper } from '../../../../../assets/types.ts';
-import { WorkoutCharacterVariant } from '../SettingsScreen/constants.tsx';
 import { ComponentType, JSX } from 'react';
 import { RunningWorkoutPortraitContent } from './RunningWorkoutPortraitContent.tsx';
 import { RunningWorkoutLandscapeContent } from './RunningWorkoutLandscapeContent.tsx';
@@ -79,16 +77,6 @@ export const workoutPhaseToPulsingAnimationConfig: Record<
     duration: 1600,
     easing: Easing.inOut(Easing.sin),
   },
-};
-
-export const characterToWallpaperName: Record<
-  WorkoutCharacterVariant,
-  AppWallpaper
-> = {
-  [WorkoutCharacterVariant.warrior]: 'wallpaperWarrior',
-  [WorkoutCharacterVariant.shieldmaiden]: 'wallpaperWarrior',
-  [WorkoutCharacterVariant.cyborg]: 'wallpaperCyborg',
-  [WorkoutCharacterVariant.wizard]: 'wallpaperWizard',
 };
 
 export const appOrientationToChangeIcon: Record<AppOrientation, LucideIcon> = {
