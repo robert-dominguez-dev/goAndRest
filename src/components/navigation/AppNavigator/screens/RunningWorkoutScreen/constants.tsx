@@ -3,18 +3,13 @@ import { AppColorUnion, AppSizeUnion } from '../../../../../types/ui.ts';
 import { Easing, WithTimingConfig } from 'react-native-reanimated';
 import { TranslateKey } from '../../../../../locales/types.ts';
 import { workoutSettingsButtonConfigMap } from '../LandingScreen/constants.ts';
-import {
-  Flame,
-  LucideIcon,
-  Maximize2,
-  Minimize2,
-  Wind,
-} from 'lucide-react-native';
+
 import { ComponentType, JSX } from 'react';
 import { RunningWorkoutPortraitContent } from './RunningWorkoutPortraitContent.tsx';
 import { RunningWorkoutLandscapeContent } from './RunningWorkoutLandscapeContent.tsx';
 import { RunningWorkoutPortraitFooter } from './components/RunningWorkoutPortraitFooter.tsx';
 import { AppOrientation } from '../../../../../types/common.ts';
+import { AppIconName } from '../../../../common/AppIcon.tsx';
 
 export const workoutPhaseToTimerColorStatus: Record<
   RunningWorkoutPhase,
@@ -41,17 +36,15 @@ export const workoutPhaseToNameTranslateKey: Record<
     'screens.settingsScreen.workoutSection.items.cooldown.label',
 };
 
-export const workoutPhaseToIconComponent: Record<
-  RunningWorkoutPhase,
-  LucideIcon
-> = {
-  [RunningWorkoutPhase.WARMUP]: Flame,
-  [RunningWorkoutPhase.WORK]: workoutSettingsButtonConfigMap.work.IconComponent,
-  [RunningWorkoutPhase.REST]: workoutSettingsButtonConfigMap.rest.IconComponent,
-  [RunningWorkoutPhase.RECOVERY]:
-    workoutSettingsButtonConfigMap.recovery.IconComponent,
-  [RunningWorkoutPhase.COOLDOWN]: Wind,
-};
+export const workoutPhaseToIconName: Record<RunningWorkoutPhase, AppIconName> =
+  {
+    [RunningWorkoutPhase.WARMUP]: 'Flame',
+    [RunningWorkoutPhase.WORK]: workoutSettingsButtonConfigMap.work.iconName,
+    [RunningWorkoutPhase.REST]: workoutSettingsButtonConfigMap.rest.iconName,
+    [RunningWorkoutPhase.RECOVERY]:
+      workoutSettingsButtonConfigMap.recovery.iconName,
+    [RunningWorkoutPhase.COOLDOWN]: 'Wind',
+  };
 
 export const workoutPhaseToPulsingAnimationConfig: Record<
   RunningWorkoutPhase,
@@ -79,9 +72,12 @@ export const workoutPhaseToPulsingAnimationConfig: Record<
   },
 };
 
-export const appOrientationToChangeIcon: Record<AppOrientation, LucideIcon> = {
-  PORTRAIT: Maximize2,
-  LANDSCAPE: Minimize2,
+export const appOrientationToChangeIconName: Record<
+  AppOrientation,
+  AppIconName
+> = {
+  PORTRAIT: 'Maximize2',
+  LANDSCAPE: 'Minimize2',
 };
 
 export const appOrientationToRunningWorkoutContentComponent: Record<

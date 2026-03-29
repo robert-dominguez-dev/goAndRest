@@ -8,6 +8,9 @@ import {
   SavedWorkoutItemFooter,
   SavedWorkoutItemFooterProps,
 } from './SavedWorkoutItemFooter.tsx';
+import { DimensionValue } from 'react-native';
+
+export const MORE_THAN_THIRD_WIDTH_PERCENTS: DimensionValue = '35%';
 
 const SavedWorkoutItemComponent = ({
   workout,
@@ -16,10 +19,13 @@ const SavedWorkoutItemComponent = ({
 }: SavedWorkoutItemFooterProps) => {
   return (
     <AppView
+      grow
+      flexBasis={0}
       overflow={'hidden'}
       backgroundColorStatus={'backgroundAlt'}
       borderColorStatus={'border'}
       borderWidthOverride={1}
+      minWidth={MORE_THAN_THIRD_WIDTH_PERCENTS}
       borderRadius={sizes.configButtonBorderRadius}>
       <SavedWorkoutItemHeader workout={workout} />
       <AppDivider />

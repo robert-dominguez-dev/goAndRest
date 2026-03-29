@@ -12,7 +12,7 @@ import { useAtom } from 'jotai';
 
 type UseWorkoutSettingBottomSheetParams = Pick<
   WorkoutConfigBottomSheetIconAndTitleProps,
-  'IconComponent'
+  'iconName'
 > &
   Pick<AppBottomSheetProps, 'backgroundColorStatus'> &
   Pick<
@@ -25,7 +25,7 @@ type UseWorkoutSettingBottomSheetParams = Pick<
 export const useWorkoutSettingBottomSheet = ({
   title,
   description,
-  IconComponent,
+  iconName,
   backgroundColorStatus,
   durationAtom,
 }: UseWorkoutSettingBottomSheetParams) => {
@@ -52,7 +52,7 @@ export const useWorkoutSettingBottomSheet = ({
       title: (
         <WorkoutConfigBottomSheetIconAndTitle
           label={title}
-          IconComponent={IconComponent}
+          iconName={iconName}
         />
       ),
     });

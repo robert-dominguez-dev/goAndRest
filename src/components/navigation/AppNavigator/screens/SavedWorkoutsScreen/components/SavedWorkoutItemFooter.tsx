@@ -1,7 +1,6 @@
 import { AppStoredWorkout } from '../../../../../../contexts/AppWorkoutsProvider/types.ts';
 import { AppRow } from '../../../../../common/AppRow.tsx';
 import { useAppTranslation } from '../../../../../../locales/hooks/useAppTranslation.ts';
-import { Play, Trash2 } from 'lucide-react-native';
 import { AppDivider } from '../../../../../common/AppDivider.tsx';
 import { SavedWorkoutItemFooterButton } from './SavedWorkoutItemFooterButton.tsx';
 
@@ -26,7 +25,7 @@ export const SavedWorkoutItemFooter = ({
         label={t(
           'screens.savedWorkoutsScreen.existingWorkoutItem.deleteButtonLabel',
         )}
-        IconComponent={Trash2}
+        iconName={'Trash2'}
         backgroundColorStatus={'negative'}
         onPress={() => onDelete(workout)}
       />
@@ -35,7 +34,7 @@ export const SavedWorkoutItemFooter = ({
         label={t(
           'screens.savedWorkoutsScreen.existingWorkoutItem.startButtonLabel',
         )}
-        IconComponent={Play}
+        iconName={'Play'}
         backgroundColorStatus={'primary'}
         onPress={() => onStart(workout)}
       />

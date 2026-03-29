@@ -4,6 +4,7 @@ import { AppText, AppTextProps } from '../../../common/AppText/AppText.tsx';
 import { AppViewProps } from '../../../common/AppView/AppView.tsx';
 import { AppIconAndLabel, AppIconAndLabelProps } from './AppIconAndLabel.tsx';
 import { JSX } from 'react';
+import { useGetTabletScaledNumber } from '../../../../hooks/useGetTabletScaledNumber.ts';
 
 const { configButtonSize, configButtonBorderRadius } = sizes;
 
@@ -23,11 +24,16 @@ export const AppButtonUI = ({
   backgroundColorStatus,
   borderColorStatus,
   borderStyle,
-  IconComponent,
+  iconName,
   category = 'header',
 }: AppButtonUIProps) => {
+  const getTabletScaledNumber = useGetTabletScaledNumber();
+
+  const height = getTabletScaledNumber(configButtonSize);
+  const borderRadius = getTabletScaledNumber(configButtonBorderRadius);
+
   const labelTextAlign: AppTextProps['textAlign'] =
-    !value && !IconComponent ? 'center' : undefined;
+    !value && !iconName ? 'center' : undefined;
 
   const valueElement: JSX.Element | undefined =
     typeof value === 'string' ? (
@@ -51,13 +57,13 @@ export const AppButtonUI = ({
       borderColorStatus={borderColorStatus}
       backgroundColorStatus={backgroundColorStatus}
       borderStyle={borderStyle}
-      height={configButtonSize}
-      borderRadius={configButtonBorderRadius}
+      height={height}
+      borderRadius={borderRadius}
       opacity={opacity}>
       <AppIconAndLabel
         label={label.toUpperCase()}
         textColorStatus={textColorStatus}
-        IconComponent={IconComponent}
+        iconName={iconName}
         textAlign={labelTextAlign}
         category={category}
       />

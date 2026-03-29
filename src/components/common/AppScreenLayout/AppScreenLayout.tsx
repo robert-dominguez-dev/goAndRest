@@ -12,8 +12,8 @@ export type AppScreenLayoutProps = Pick<AppViewProps, 'children'> &
   Pick<AppViewProps, 'backgroundColorStatus'> & {
     headerElementOverride?: JSX.Element;
     headerTitle?: AppHeaderProps['title'];
-    HeaderAccessoryRightIconComponent?: AppHeaderProps['AccessoryRightIconComponent'];
-    HeaderAccessoryLeftIconComponent?: AppHeaderProps['AccessoryLeftIconComponent'];
+    headerAccessoryRightIconName?: AppHeaderProps['accessoryRightIconName'];
+    headerAccessoryLeftIconName?: AppHeaderProps['accessoryLeftIconName'];
     onHeaderAccessoryRightPress?: AppHeaderProps['onAccessoryRightPress'];
     onHeaderAccessoryLeftPress?: AppHeaderProps['onAccessoryLeftPress'];
     footer?: ReactNode;
@@ -27,9 +27,9 @@ export const AppScreenLayout = ({
   children,
   headerTitle,
   headerElementOverride,
-  HeaderAccessoryLeftIconComponent,
+  headerAccessoryLeftIconName,
   onHeaderAccessoryLeftPress,
-  HeaderAccessoryRightIconComponent,
+  headerAccessoryRightIconName,
   onHeaderAccessoryRightPress,
   footer,
   scrollable,
@@ -48,9 +48,9 @@ export const AppScreenLayout = ({
   const maybeHeader: JSX.Element | undefined = headerTitle ? (
     <AppHeader
       title={headerTitle}
-      AccessoryLeftIconComponent={HeaderAccessoryLeftIconComponent}
+      accessoryLeftIconName={headerAccessoryLeftIconName}
       onAccessoryLeftPress={onHeaderAccessoryLeftPress}
-      AccessoryRightIconComponent={HeaderAccessoryRightIconComponent}
+      accessoryRightIconName={headerAccessoryRightIconName}
       onAccessoryRightPress={onHeaderAccessoryRightPress}
     />
   ) : undefined;

@@ -1,5 +1,5 @@
 import { FieldValues } from 'react-hook-form';
-import { TextInput } from 'react-native';
+import { Pressable, TextInput } from 'react-native';
 import { TextStyle } from 'react-native/Libraries/StyleSheet/StyleSheetTypes';
 import { getAppInputTextColorStatus } from '../helpers/getAppInputTextColorStatus.ts';
 import { AppRow } from '../../../common/AppRow.tsx';
@@ -12,7 +12,7 @@ import { getAppInputStringValue } from '../helpers/getAppInputStringValue.ts';
 import { getAppInputKeyboardType } from '../helpers/getAppInputKeyboardType.ts';
 import { getAppInputMultilineDependentProps } from '../helpers/getAppInputMultilineDependentProps.ts';
 import { normalizeNumberInputText } from '../../../../helpers/normalizeNumberInputText.ts';
-import { CircleX } from 'lucide-react-native';
+import { AppIcon } from '../../../common/AppIcon.tsx';
 import { JSX } from 'react';
 import { sizes } from '../../../../constants/ui.ts';
 import { useAppThemedColors } from '../../../../hooks/useAppThemedColors.ts';
@@ -50,10 +50,12 @@ export const AppInputRender = <TFieldValues extends FieldValues>({
 
   const maybeResetIcon: JSX.Element | undefined =
     value && !disabled ? (
-      <CircleX
-        color={inputText}
-        onPress={handleReset}
-      />
+      <Pressable onPress={handleReset}>
+        <AppIcon
+          name={'CircleX'}
+          colorStatus={'inputText'}
+        />
+      </Pressable>
     ) : undefined;
 
   const keyboardType = getAppInputKeyboardType(numeric);

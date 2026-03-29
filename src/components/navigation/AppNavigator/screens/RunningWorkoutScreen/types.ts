@@ -1,4 +1,5 @@
 import { AppWorkoutConfig } from '../../../../../contexts/AppWorkoutsProvider/types.ts';
+import { RunningWorkoutScreenLayoutProps } from './RunningWorkoutScreenLayout.tsx';
 
 export enum RunningWorkoutPhase {
   WARMUP = 'WARMUP',
@@ -46,3 +47,8 @@ export type RunningWorkoutContentParams = {
   currentState: WorkoutTimerState;
   isRunning: boolean;
 };
+
+export type RunningWorkoutScreenCommonProps = Pick<
+  RunningWorkoutScreenLayoutProps,
+  'onFinish'
+>;

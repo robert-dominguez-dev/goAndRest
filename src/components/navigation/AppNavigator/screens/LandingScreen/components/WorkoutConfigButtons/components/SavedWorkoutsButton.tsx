@@ -1,5 +1,4 @@
 import { memo } from 'react';
-import { ArrowRight, SaveAll } from 'lucide-react-native';
 import { useRootStackNavigation } from '../../../../../../hooks/useRootStackNavigation.ts';
 import { AppNavigatorScreen } from '../../../../../types.ts';
 import { useAppTranslation } from '../../../../../../../../locales/hooks/useAppTranslation.ts';
@@ -17,8 +16,8 @@ const SavedWorkoutsButtonComponent = () => {
     <AppDottedButton
       label={t('screens.landingScreen.selectStoredWorkoutButtonLabel')}
       onPress={goToSavedWorkouts}
-      AccessoryLeftIconComponent={SaveAll}
-      AccessoryRightIconComponent={ArrowRight}
+      accessoryLeftIconName={'SaveAll'}
+      accessoryRightIconName={'ArrowRight'}
     />
   );
 };

@@ -1,7 +1,7 @@
 import { AppWorkoutConfig } from '../../../../../contexts/AppWorkoutsProvider/types.ts';
 import { formatTimerTime } from '../../../../../helpers/formatTimerTime.tsx';
 import { AppButtonProps } from '../../../../controls/AppButton/AppButton.tsx';
-import { BatteryCharging, Coffee, Dumbbell, Repeat } from 'lucide-react-native';
+import { AppIconName } from '../../../../common/AppIcon.tsx';
 import { TranslateKey } from '../../../../../locales/types.ts';
 import { formatRounds } from '../../../../../helpers/formatRounds.ts';
 import { ONE_SECOND_MS } from '../../../../../constants/common.ts';
@@ -9,7 +9,7 @@ import { ONE_SECOND_MS } from '../../../../../constants/common.ts';
 export type AppWorkoutConfigKey = keyof AppWorkoutConfig;
 
 export type WorkoutSettingsButtonConfig = Required<
-  Pick<AppButtonProps, 'backgroundColorStatus' | 'IconComponent'>
+  Pick<AppButtonProps, 'backgroundColorStatus' | 'iconName'>
 > & {
   min: number;
   max: number;
@@ -33,7 +33,7 @@ export const workoutSettingsButtonConfigMap: Record<
     labelKey: 'common.workoutConfig.work.label',
     descriptionKey: 'common.workoutConfig.work.description',
     backgroundColorStatus: 'work',
-    IconComponent: Dumbbell,
+    iconName: 'Dumbbell',
     min: FIVE_SECONDS_MS,
     max: FIVE_MINUTES_MS,
     step: TIME_STEP,
@@ -44,7 +44,7 @@ export const workoutSettingsButtonConfigMap: Record<
     labelKey: 'common.workoutConfig.rest.label',
     descriptionKey: 'common.workoutConfig.rest.description',
     backgroundColorStatus: 'rest',
-    IconComponent: BatteryCharging,
+    iconName: 'BatteryCharging',
     min: 0,
     max: FIVE_MINUTES_MS,
     step: TIME_STEP,
@@ -55,7 +55,7 @@ export const workoutSettingsButtonConfigMap: Record<
     labelKey: 'common.workoutConfig.series.label',
     descriptionKey: 'common.workoutConfig.series.description',
     backgroundColorStatus: 'series',
-    IconComponent: Repeat,
+    iconName: 'Repeat',
     min: 1,
     max: 30,
     step: 1,
@@ -66,7 +66,7 @@ export const workoutSettingsButtonConfigMap: Record<
     labelKey: 'common.workoutConfig.rounds.label',
     descriptionKey: 'common.workoutConfig.rounds.description',
     backgroundColorStatus: 'rounds',
-    IconComponent: Repeat,
+    iconName: 'Repeat',
     min: 1,
     max: 30,
     step: 1,
@@ -77,7 +77,7 @@ export const workoutSettingsButtonConfigMap: Record<
     labelKey: 'common.workoutConfig.recovery.label',
     descriptionKey: 'common.workoutConfig.recovery.description',
     backgroundColorStatus: 'recovery',
-    IconComponent: Coffee,
+    iconName: 'Coffee',
     min: 0,
     max: FIVE_MINUTES_MS,
     step: TIME_STEP,

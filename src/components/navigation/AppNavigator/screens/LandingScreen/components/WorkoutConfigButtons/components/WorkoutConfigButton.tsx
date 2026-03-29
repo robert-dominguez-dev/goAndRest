@@ -19,7 +19,7 @@ const WorkoutConfigButtonComponent = ({
     name,
   });
 
-  const { labelKey, backgroundColorStatus, IconComponent, valueFormatter } =
+  const { labelKey, backgroundColorStatus, iconName, valueFormatter } =
     workoutSettingsButtonConfigMap[name];
 
   const formattedValue = valueFormatter(value);
@@ -36,7 +36,7 @@ const WorkoutConfigButtonComponent = ({
       label={t(labelKey)}
       value={valueElement}
       backgroundColorStatus={backgroundColorStatus}
-      IconComponent={IconComponent}
+      iconName={iconName}
       onPress={onPress}
       disabled={disabled}
     />

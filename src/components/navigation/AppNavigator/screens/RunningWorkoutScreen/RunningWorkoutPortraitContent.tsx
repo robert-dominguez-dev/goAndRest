@@ -5,32 +5,28 @@ import { useAppThemedColors } from '../../../../../hooks/useAppThemedColors.ts';
 import { RunningWorkoutIndicatorsContent } from './components/RunningWorkoutIndicatorsContent.tsx';
 import { RunningWorkoutCounter } from './components/RunningWorkoutCounter.tsx';
 import { memo } from 'react';
-import { AppSize } from '../../../../../types/ui.ts';
-import { getMaxCircularIndicatorRadius } from '../../../../../helpers/getMaxCircularIndicatorRadius.ts';
 import { RunningWorkoutContentParams } from './types.ts';
 import { RunningWorkoutPulsingBackgroundCircle } from './components/RunningWorkoutPulsingBackgroundCircle.tsx';
+import { usePortraitIndicatorSizes } from './hooks/usePortraitIndicatorSizes.ts';
+import { useIsTablet } from '../../../../../hooks/useIsTablet.ts';
+import { FlexStyle } from 'react-native';
 
-const INDICATOR_STROKE_WIDTH = 16;
-const INDICATORS_GAP = 8;
-
-const MAX_WORKOUT_CONFIG_SLIDER_RADIUS = getMaxCircularIndicatorRadius({
-  strokeWidth: INDICATOR_STROKE_WIDTH,
-  paddingTotal: AppSize.sm * 2,
-});
-
-const OUTER_INDICATOR_RADIUS = Math.min(168, MAX_WORKOUT_CONFIG_SLIDER_RADIUS);
-
-const INNER_INDICATOR_RADIUS =
-  OUTER_INDICATOR_RADIUS - INDICATOR_STROKE_WIDTH - INDICATORS_GAP;
-
-const PULSING_BACKGROUND_SIZE =
-  (INNER_INDICATOR_RADIUS - INDICATOR_STROKE_WIDTH) * 2;
+const FONT_SIZE_SCALE = 0.6;
 
 const _RunningWorkoutPortraitContent = ({
   currentState,
   isRunning,
 }: RunningWorkoutContentParams) => {
   const appColors = useAppThemedColors();
+
+  const { strokeWidth, outerRadius, innerRadius, pulsingBackgroundSize } =
+    usePortraitIndicatorSizes();
+
+  const isTablet = useIsTablet();
+
+  const justifyContent: FlexStyle['justifyContent'] = isTablet
+    ? 'center'
+    : undefined;
 
   const {
     currentPhase,
@@ -48,43 +44,56 @@ const _RunningWorkoutPortraitContent = ({
 
   const maxValue = phaseRemainingMs + phaseElapsedMs;
 
+  const timeFontSize = Math.round(outerRadius * FONT_SIZE_SCALE);
+
   return (
     <AppView
+      grow
+      paddingBottom={'l'}
       gap={'m'}
-      alignItems={'center'}
-      justifyContent={'center'}>
-      <AppCircularIndicator
-        isRunning={isRunning}
-        value={totalElapsedMs}
-        filledTrackColor={appColors.text}
-        radius={OUTER_INDICATOR_RADIUS}
-        strokeWidth={INDICATOR_STROKE_WIDTH}
-        maxValue={totalDurationMs}>
+      alignItems={'center'}>
+      <AppView
+        grow
+        justifyContent={'center'}>
         <AppCircularIndicator
           isRunning={isRunning}
-          value={phaseElapsedMs}
-          filledTrackColor={phaseColor}
-          radius={INNER_INDICATOR_RADIUS}
-          strokeWidth={INDICATOR_STROKE_WIDTH}
-          maxValue={maxValue}>
-          <RunningWorkoutPulsingBackgroundCircle
-            size={PULSING_BACKGROUND_SIZE}
-            workoutPhase={currentPhase}
-            enabled={isRunning}
-          />
-          <RunningWorkoutIndicatorsContent
-            currentPhase={currentPhase}
-            phaseRemainingMs={phaseRemainingMs}
-            totalElapsedMs={totalElapsedMs}
-          />
+          value={totalElapsedMs}
+          filledTrackColor={appColors.text}
+          radius={outerRadius}
+          strokeWidth={strokeWidth}
+          maxValue={totalDurationMs}>
+          <AppCircularIndicator
+            isRunning={isRunning}
+            value={phaseElapsedMs}
+            filledTrackColor={phaseColor}
+            radius={innerRadius}
+            strokeWidth={strokeWidth}
+            maxValue={maxValue}>
+            <RunningWorkoutPulsingBackgroundCircle
+              size={pulsingBackgroundSize}
+              workoutPhase={currentPhase}
+              enabled={isRunning}
+            />
+            <RunningWorkoutIndicatorsContent
+              currentPhase={currentPhase}
+              phaseRemainingMs={phaseRemainingMs}
+              totalElapsedMs={totalElapsedMs}
+              timeFontSize={timeFontSize}
+              padding={strokeWidth * 2}
+            />
+          </AppCircularIndicator>
         </AppCircularIndicator>
-      </AppCircularIndicator>
-      <RunningWorkoutCounter
-        currentSeries={currentSeries}
-        currentRound={currentRound}
-        totalSeries={series}
-        totalRounds={rounds}
-      />
+      </AppView>
+      <AppView
+        grow
+        justifyContent={'center'}>
+        <RunningWorkoutCounter
+          currentSeries={currentSeries}
+          currentRound={currentRound}
+          totalSeries={series}
+          totalRounds={rounds}
+        />
+      </AppView>
     </AppView>
   );
 };

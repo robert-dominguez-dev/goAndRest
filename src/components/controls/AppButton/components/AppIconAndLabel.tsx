@@ -1,13 +1,14 @@
 import { AppText, AppTextProps } from '../../../common/AppText/AppText.tsx';
 import { AppColorUnion, AppTextCategoryUnion } from '../../../../types/ui.ts';
-import { LucideIcon } from 'lucide-react-native';
-import { useAppThemedColors } from '../../../../hooks/useAppThemedColors.ts';
+import { AppIcon, AppIconName } from '../../../common/AppIcon.tsx';
+
+const smallIconSize = 16;
 
 export const categoryToIconSize: Partial<Record<AppTextCategoryUnion, number>> =
   {
     header: 28,
     subHeader: 24,
-    title: 16,
+    title: smallIconSize,
   };
 
 export type AppIconAndLabelProps = Pick<
@@ -17,30 +18,31 @@ export type AppIconAndLabelProps = Pick<
   label: string;
   textColorStatus?: AppColorUnion;
   iconColorStatus?: AppColorUnion;
-  IconComponent?: LucideIcon;
+  iconName?: AppIconName;
 };
 
 export const AppIconAndLabel = ({
   label,
-  IconComponent,
+  iconName,
   textAlign,
   category,
   grow,
   textColorStatus = 'text',
   iconColorStatus = textColorStatus,
 }: AppIconAndLabelProps) => {
-  const appColors = useAppThemedColors();
-
   const iconSize: number | undefined = category
     ? categoryToIconSize[category]
     : undefined;
 
+  const iconSizeEvaluated: number = iconSize ?? smallIconSize;
+
   return (
     <>
-      {IconComponent && (
-        <IconComponent
-          color={appColors[iconColorStatus]}
-          size={iconSize}
+      {iconName && (
+        <AppIcon
+          name={iconName}
+          size={iconSizeEvaluated}
+          colorStatus={iconColorStatus}
         />
       )}
       <AppText

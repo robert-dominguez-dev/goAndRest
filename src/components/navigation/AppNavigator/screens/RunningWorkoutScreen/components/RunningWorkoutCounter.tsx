@@ -1,9 +1,7 @@
 import { AppRow } from '../../../../../common/AppRow.tsx';
 import { memo } from 'react';
 import { WorkoutTimerComputedState } from '../types.ts';
-import { ArrowBigRightDash } from 'lucide-react-native';
-import { categoryToIconSize } from '../../../../../controls/AppButton/components/AppIconAndLabel.tsx';
-import { useAppThemedColors } from '../../../../../../hooks/useAppThemedColors.ts';
+import { AppIcon } from '../../../../../common/AppIcon.tsx';
 import { AppView } from '../../../../../common/AppView/AppView.tsx';
 import { RunningWorkoutCounterText } from './RunningWorkoutCounterText.tsx';
 import { useAppTranslation } from '../../../../../../locales/hooks/useAppTranslation.ts';
@@ -24,8 +22,6 @@ const RunningWorkoutCounterComponent = ({
 }: RunningWorkoutCounterProps) => {
   const t = useAppTranslation();
 
-  const { textMuted } = useAppThemedColors();
-
   const shouldDisplayRoundCounter = totalRounds > 1;
 
   return (
@@ -40,9 +36,9 @@ const RunningWorkoutCounterComponent = ({
           <AppView
             paddingHorizontal={'sm'}
             paddingBottom={'xs'}>
-            <ArrowBigRightDash
-              color={textMuted}
-              size={categoryToIconSize.subHeader}
+            <AppIcon
+              name={'ArrowBigRightDash'}
+              colorStatus={'textMuted'}
             />
           </AppView>
           <RunningWorkoutCounterText

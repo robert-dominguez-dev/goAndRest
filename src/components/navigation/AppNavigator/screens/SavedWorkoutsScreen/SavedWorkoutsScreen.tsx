@@ -1,14 +1,9 @@
 import { AppScreenLayout } from '../../../../common/AppScreenLayout/AppScreenLayout.tsx';
 import { useAppTranslation } from '../../../../../locales/hooks/useAppTranslation.ts';
-import { ArrowLeft } from 'lucide-react-native';
 import { ScreenProps } from '../../../types.ts';
 import { AppNavigatorScreen, AppNavigatorScreenParams } from '../../types.ts';
-import { useAppWorkouts } from '../../../../../contexts/AppWorkoutsProvider/AppWorkoutsProvider.tsx';
-import { SavedWorkoutItem } from './components/SavedWorkoutItem.tsx';
-import { AppView } from '../../../../common/AppView/AppView.tsx';
-import { AppStoredWorkout } from '../../../../../contexts/AppWorkoutsProvider/types.ts';
 import { useDeleteWorkoutPopUp } from './hooks/useDeleteWorkoutPopUp.ts';
-import { useStartWorkout } from '../../../hooks/useStartWorkout.ts';
+import { SavedWorkoutItems } from './components/SavedWorkoutItems.tsx';
 
 type SavedWorkoutsScreenProps = ScreenProps<
   AppNavigatorScreenParams,
@@ -20,34 +15,16 @@ export const SavedWorkoutsScreen = ({
 }: SavedWorkoutsScreenProps) => {
   const t = useAppTranslation();
 
-  const { storedWorkouts } = useAppWorkouts();
-
-  const startWorkout = useStartWorkout();
-
   const { popUp, handleDeleteWorkout } = useDeleteWorkoutPopUp();
-
-  const handleStartWorkout = async ({
-    config,
-    meta: { name },
-  }: AppStoredWorkout) => startWorkout({ workoutName: name, ...config });
-
-  const storedWorkoutItemElements = storedWorkouts.map(workout => (
-    <SavedWorkoutItem
-      key={workout.id}
-      workout={workout}
-      onStart={handleStartWorkout}
-      onDelete={handleDeleteWorkout}
-    />
-  ));
 
   return (
     <>
       <AppScreenLayout
         scrollable
         headerTitle={t('screens.savedWorkoutsScreen.title')}
-        HeaderAccessoryLeftIconComponent={ArrowLeft}
+        headerAccessoryLeftIconName={'ArrowLeft'}
         onHeaderAccessoryLeftPress={navigation.goBack}>
-        <AppView gap={'m'}>{storedWorkoutItemElements}</AppView>
+        <SavedWorkoutItems onDeleteWorkout={handleDeleteWorkout} />
       </AppScreenLayout>
       {popUp}
     </>

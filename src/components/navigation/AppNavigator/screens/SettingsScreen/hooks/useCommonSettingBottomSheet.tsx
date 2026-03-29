@@ -33,7 +33,7 @@ export const useCommonSettingBottomSheet = <TValue,>({
     value => {
       const {
         labelTranslateKey,
-        IconComponent,
+        iconName,
         iconColorStatus,
         imageProps,
         previewAudioUrl,
@@ -51,7 +51,7 @@ export const useCommonSettingBottomSheet = <TValue,>({
         value,
         label: t(labelTranslateKey),
         selected: value === selectedValue,
-        AccessoryLeftIconComponent: IconComponent,
+        accessoryLeftIconName: iconName,
         accessoryLeftIconStatus: iconColorStatus,
         accessoryLeftImageProps: imageProps,
         audioParams,

@@ -17,7 +17,7 @@ import { getNumber } from '../../../../../helpers/getNumber.ts';
 import { FullScreenConfettiAnimation } from '../../../../common/FullScreenConfettiAnimation.tsx';
 import { useFinishedWorkoutFeedbackOnMount } from '../../../../../hooks/useFinishedWorkoutFeedbackOnMount.ts';
 import { useFinishWorkout } from '../../../hooks/useFinishWorkout.ts';
-import { OrientationLocker } from 'react-native-orientation-locker';
+import { AppOrientationLocker } from '../../../../common/AppOrientationLocker.tsx';
 
 export const FinishedWorkoutScreen = () => {
   useFinishedWorkoutFeedbackOnMount();
@@ -44,7 +44,7 @@ export const FinishedWorkoutScreen = () => {
 
   return (
     <>
-      <OrientationLocker orientation={'PORTRAIT'} />
+      <AppOrientationLocker orientation={'PORTRAIT'} />
       <AppScreenLayout
         headerTitle={t(titleKey)}
         footer={

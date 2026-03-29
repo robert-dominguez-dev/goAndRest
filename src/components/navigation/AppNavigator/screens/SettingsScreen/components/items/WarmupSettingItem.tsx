@@ -6,9 +6,9 @@ import { formatTimerTime } from '../../../../../../../helpers/formatTimerTime.ts
 import { useWorkoutSettingBottomSheet } from '../../hooks/useWorkoutSettingBottomSheet.tsx';
 import { warmupSettingAtom } from '../../../../../../../contexts/atoms.ts';
 import { AppColorUnion } from '../../../../../../../types/ui.ts';
-import { workoutPhaseToIconComponent } from '../../../RunningWorkoutScreen/constants.tsx';
+import { workoutPhaseToIconName } from '../../../RunningWorkoutScreen/constants.tsx';
 
-const IconComponent = workoutPhaseToIconComponent.WARMUP;
+const iconName = workoutPhaseToIconName.WARMUP;
 const backgroundColorStatus: AppColorUnion = 'warmup';
 
 const WarmupSettingItemComponent = () => {
@@ -24,14 +24,14 @@ const WarmupSettingItemComponent = () => {
     useWorkoutSettingBottomSheet({
       title,
       description,
-      IconComponent,
+      iconName,
       backgroundColorStatus,
       durationAtom: warmupSettingAtom,
     });
 
   const accessoryRight = (
     <AppSelectionBottomSheetItemText
-      IconComponent={IconComponent}
+      iconName={iconName}
       iconColorStatus={backgroundColorStatus}
       label={formatTimerTime(duration)}
     />

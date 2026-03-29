@@ -10,6 +10,7 @@ import {
   UNLIMITED_NUMBER_OF_LINES,
 } from '../../../constants/common.ts';
 import { AppBackdrop } from '../AppBackdrop.tsx';
+import { useMaxTabletActiveElementWidth } from '../../../hooks/useMaxTabletActiveElementWidth.ts';
 
 type AppPopUpButtonProps = Pick<AppButtonProps, 'label' | 'onPress'> &
   Pick<AppButtonProps, 'backgroundColorStatus'>;
@@ -29,6 +30,8 @@ export const AppPopUp = ({
   secondaryButtonProps,
   onClose,
 }: AppPopUpProps) => {
+  const maxWidth = useMaxTabletActiveElementWidth();
+
   const handleSecondaryButtonPress = () => {
     secondaryButtonProps?.onPress?.();
     onClose();
@@ -54,6 +57,7 @@ export const AppPopUp = ({
     <AppBackdrop>
       <AppView
         width={FILL_CONTAINER_DIMENSION}
+        maxWidth={maxWidth}
         gap={'m'}
         padding={'m'}
         margin={'m'}

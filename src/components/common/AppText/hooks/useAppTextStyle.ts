@@ -4,10 +4,10 @@ import {
   AppSizeUnion,
   AppTextCategoryUnion,
 } from '../../../../types/ui.ts';
-import { fontCategoryStyles } from '../../../../constants/fonts.ts';
 import { useAppThemedColors } from '../../../../hooks/useAppThemedColors.ts';
 import { useTextShadowsStyle } from './getTextShadowsStyles.ts';
 import { getAppSize } from '../../../../helpers/getAppSize.ts';
+import { useScaledTextCategoryStyle } from './useScaledTextCategoryStyle.ts';
 
 export type UseAppTextStyleParams = Pick<TextStyle, 'textAlign'> & {
   category?: AppTextCategoryUnion;
@@ -38,6 +38,8 @@ export const useAppTextStyle = ({
     textShadowColorStatus,
   });
 
+  const textCategoryStyle = useScaledTextCategoryStyle(category);
+
   const fontSizeOverrideEvaluated = getAppSize(fontSizeOverride);
 
   const fontSizeOverrideProps: Pick<
@@ -61,7 +63,7 @@ export const useAppTextStyle = ({
   });
 
   return {
-    ...fontCategoryStyles[category],
+    ...textCategoryStyle,
     ...textShadowStyles,
     ...fontSizeOverrideProps,
     textAlign,

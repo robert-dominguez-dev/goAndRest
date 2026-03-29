@@ -1,22 +1,15 @@
 import { getSplitTranslateKey } from '../../../../../../locales/helpers/getSplitTranslateKey.ts';
 import { WorkoutSoundVariant } from '../constants.tsx';
-import {
-  Bell,
-  Drum,
-  HandFist,
-  LucideIcon,
-  Radio,
-  Shell,
-} from 'lucide-react-native';
+import { AppIconName } from '../../../../../common/AppIcon.tsx';
 import { SettingValueProps } from '../types.ts';
 import { soundVariantToPreviewFileNames } from '../../../../../../assets/constants/common.ts';
 
-const soundVariantToEmoji: Record<WorkoutSoundVariant, LucideIcon> = {
-  [WorkoutSoundVariant.beep]: Radio,
-  [WorkoutSoundVariant.bell]: Bell,
-  [WorkoutSoundVariant.whistle]: Shell,
-  [WorkoutSoundVariant.drum]: Drum,
-  [WorkoutSoundVariant.snap]: HandFist,
+const soundVariantToIconName: Record<WorkoutSoundVariant, AppIconName> = {
+  [WorkoutSoundVariant.beep]: 'Radio',
+  [WorkoutSoundVariant.bell]: 'Bell',
+  [WorkoutSoundVariant.whistle]: 'Shell',
+  [WorkoutSoundVariant.drum]: 'Drum',
+  [WorkoutSoundVariant.snap]: 'HandFist',
 };
 
 export const getSoundVariantSettingValueProps = (
@@ -27,11 +20,11 @@ export const getSoundVariantSettingValueProps = (
     soundVariant,
   );
 
-  const IconComponent = soundVariantToEmoji[soundVariant];
+  const iconName = soundVariantToIconName[soundVariant];
 
   return {
     labelTranslateKey,
-    IconComponent,
+    iconName,
     previewAudioUrl: soundVariantToPreviewFileNames[soundVariant],
   };
 };

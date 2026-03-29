@@ -4,7 +4,7 @@ import { Pressable } from 'react-native';
 import { getPressableOpacity } from '../../../controls/helpers/getPressableOpacity.ts';
 import { getOnPressWithHapticFeedback } from '../../../controls/helpers/getOnPressWithHapticFeedback.ts';
 
-import { LucideIcon } from 'lucide-react-native';
+import { AppIconName } from '../../AppIcon.tsx';
 import {
   APP_BOTTOM_SHEET_ICON_LABEL_GAP_UNION,
   AppSelectionBottomSheetItemText,
@@ -18,7 +18,7 @@ export type AppSelectionBottomSheetItemData<TValue> =
     label: string;
     value: TValue;
     accessoryLeft?: JSX.Element;
-    AccessoryLeftIconComponent?: LucideIcon;
+    accessoryLeftIconName?: AppIconName;
     accessoryLeftIconStatus?: AppColorUnion;
     accessoryLeftImageProps?: AppSelectionBottomSheetItemTextProps['imageProps'];
     selected?: boolean;
@@ -37,7 +37,7 @@ export const AppSelectionBottomSheetItem = <TValue,>({
   selected,
   disabled,
   accessoryLeft,
-  AccessoryLeftIconComponent,
+  accessoryLeftIconName,
   accessoryLeftIconStatus,
   accessoryLeftImageProps,
   audioParams,
@@ -70,7 +70,7 @@ export const AppSelectionBottomSheetItem = <TValue,>({
               {accessoryLeft}
               <AppSelectionBottomSheetItemText
                 label={label}
-                IconComponent={AccessoryLeftIconComponent}
+                iconName={accessoryLeftIconName}
                 iconColorStatus={accessoryLeftIconStatus}
                 imageProps={accessoryLeftImageProps}
                 textColorStatus={textColorStatus}

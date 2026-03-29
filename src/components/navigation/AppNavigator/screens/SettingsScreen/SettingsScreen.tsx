@@ -1,6 +1,5 @@
 import { AppScreenLayout } from '../../../../common/AppScreenLayout/AppScreenLayout.tsx';
 import { useAppTranslation } from '../../../../../locales/hooks/useAppTranslation.ts';
-import { Palette, Timer, Volume2, X } from 'lucide-react-native';
 import { ScreenProps } from '../../../types.ts';
 import { AppNavigatorScreen, AppNavigatorScreenParams } from '../../types.ts';
 import { SettingsSection } from './components/SettingsSection.tsx';
@@ -52,24 +51,24 @@ export const SettingsScreen = ({ navigation }: SettingsScreenProps) => {
     <AppScreenLayout
       scrollable
       headerTitle={t('screens.settingsScreen.title')}
-      HeaderAccessoryLeftIconComponent={X}
+      headerAccessoryLeftIconName={'X'}
       onHeaderAccessoryLeftPress={navigation.goBack}
       screenPaddingTopOverride={screenPaddingTopOverride}>
       <AppView
         gap={'xl'}
         paddingBottom={'3xl'}>
         <SettingsSection
-          IconComponent={Palette}
+          iconName={'Palette'}
           label={t('screens.settingsScreen.appearanceSection.label')}
           items={appearanceSettingsItems}
         />
         <SettingsSection
-          IconComponent={Volume2}
+          iconName={'Volume2'}
           label={t('screens.settingsScreen.feedbackSection.label')}
           items={feedbackSettingsItems}
         />
         <SettingsSection
-          IconComponent={Timer}
+          iconName={'Timer'}
           label={t('screens.settingsScreen.workoutSection.label')}
           items={workoutSettingsItems}
         />

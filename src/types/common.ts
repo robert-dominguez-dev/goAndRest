@@ -10,3 +10,9 @@ export enum AppTheme {
 }
 
 export type AppOrientation = 'PORTRAIT' | 'LANDSCAPE';
+
+export enum TabletScaleStep {
+  small = 600,
+  medium = 800,
+  large = 1000,
+}

@@ -6,28 +6,25 @@ import {
 
 import { JSX } from 'react';
 import isString from 'lodash/isString';
-import { LucideIcon } from 'lucide-react-native';
+import { AppIcon, AppIconName } from '../AppIcon.tsx';
 import { AppText } from '../AppText/AppText.tsx';
-import { useAppThemedColors } from '../../../hooks/useAppThemedColors.ts';
 import { AppViewProps } from '../AppView/AppView.tsx';
 
 export type AppHeaderProps = {
   title?: string | JSX.Element;
-  AccessoryLeftIconComponent?: LucideIcon;
+  accessoryLeftIconName?: AppIconName;
   onAccessoryLeftPress?: AppHeaderAccessoryContainerProps['onPress'];
-  AccessoryRightIconComponent?: LucideIcon;
+  accessoryRightIconName?: AppIconName;
   onAccessoryRightPress?: AppHeaderAccessoryContainerProps['onPress'];
 };
 
 export const AppHeader = ({
   title,
-  AccessoryLeftIconComponent,
+  accessoryLeftIconName,
   onAccessoryLeftPress,
-  AccessoryRightIconComponent,
+  accessoryRightIconName,
   onAccessoryRightPress,
 }: AppHeaderProps) => {
-  const { text } = useAppThemedColors();
-
   const titleElement = isString(title) ? (
     <AppText
       textAlign={'center'}
@@ -39,7 +36,7 @@ export const AppHeader = ({
   );
 
   const hasAnyAccessory: boolean =
-    !!AccessoryLeftIconComponent || !!AccessoryRightIconComponent;
+    !!accessoryLeftIconName || !!accessoryRightIconName;
 
   const justifyContent: AppViewProps['justifyContent'] = hasAnyAccessory
     ? 'space-between'
@@ -53,9 +50,7 @@ export const AppHeader = ({
         <AppHeaderAccessoryContainer
           alignItems={'flex-start'}
           onPress={onAccessoryLeftPress}>
-          {AccessoryLeftIconComponent && (
-            <AccessoryLeftIconComponent color={text} />
-          )}
+          {accessoryLeftIconName && <AppIcon name={accessoryLeftIconName} />}
         </AppHeaderAccessoryContainer>
       )}
       {titleElement}
@@ -63,9 +58,7 @@ export const AppHeader = ({
         <AppHeaderAccessoryContainer
           alignItems={'flex-end'}
           onPress={onAccessoryRightPress}>
-          {AccessoryRightIconComponent && (
-            <AccessoryRightIconComponent color={text} />
-          )}
+          {accessoryRightIconName && <AppIcon name={accessoryRightIconName} />}
         </AppHeaderAccessoryContainer>
       )}
     </AppRow>

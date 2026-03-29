@@ -10,7 +10,10 @@ import {
 } from '../helpers/getBottomSheetContentHeader.tsx';
 import { getPressableOpacity } from '../../../controls/helpers/getPressableOpacity.ts';
 import { preventDefaultHandler } from '../../../../helpers/preventDefaultHandler.ts';
-import { getOnPressWithHapticFeedbackConditionally } from '../../../controls/helpers/getOnPressWithHapticFeedbackConditionally.ts';
+import {
+  getOnPressWithHapticFeedbackConditionally
+} from '../../../controls/helpers/getOnPressWithHapticFeedbackConditionally.ts';
+import { useIsTabletAndLandscape } from '../../../../hooks/useIsTabletAndLandscape.ts';
 
 export type AppBottomSheetContentProps = ChildrenProp &
   GetBottomSheetContentHeaderParams &
@@ -24,7 +27,7 @@ const AppBottomSheetContentComponent = ({
   title,
   onClose,
   headerOverride,
-  AccessoryRightIconComponent,
+  accessoryRightIconName,
   onAccessoryRightPress,
   onBottomSheetPress,
   backgroundColorStatus = 'backgroundAlt',
@@ -32,11 +35,17 @@ const AppBottomSheetContentComponent = ({
 }: AppBottomSheetContentProps) => {
   const { safeAreaPaddingBottom } = useAppSafeAreaPadding();
 
+  const isTabletLandscape = useIsTabletAndLandscape();
+
+  const maxWidth: AppViewProps['maxWidth'] = isTabletLandscape
+    ? '50%'
+    : undefined;
+
   const header = getBottomSheetContentHeader({
     title,
     headerOverride,
     onClose,
-    AccessoryRightIconComponent,
+    accessoryRightIconName,
     onAccessoryRightPress,
   });
 
@@ -61,6 +70,9 @@ const AppBottomSheetContentComponent = ({
             grow
             disableBorderBottom
             maxHeight={FILL_CONTAINER_DIMENSION}
+            width={FILL_CONTAINER_DIMENSION}
+            maxWidth={maxWidth}
+            alignSelf={'flex-end'}
             gap={'m'}
             paddingTop={'m'}
             paddingHorizontal={'m'}

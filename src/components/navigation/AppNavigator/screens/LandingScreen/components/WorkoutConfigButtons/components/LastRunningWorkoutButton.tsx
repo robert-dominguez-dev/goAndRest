@@ -3,7 +3,6 @@ import { useAppTranslation } from '../../../../../../../../locales/hooks/useAppT
 import { useStartWorkout } from '../../../../../../hooks/useStartWorkout.ts';
 import { AppWorkoutFieldValues } from '../../../../../../../../contexts/AppWorkoutsProvider/types.ts';
 import { AppDottedButton } from '../../../../../../../common/AppDottedButton.tsx';
-import { History, Play } from 'lucide-react-native';
 import { composeLastWorkoutButtonLabel } from '../helpers/composeLastWorkoutButtonLabel.ts';
 import { getRunningWorkoutName } from '../../../../RunningWorkoutScreen/helpers/getRunningWorkoutName.ts';
 
@@ -34,8 +33,8 @@ const LastRunningWorkoutButtonComponent = ({
     <AppDottedButton
       label={label}
       onPress={handleStartWorkout}
-      AccessoryLeftIconComponent={History}
-      AccessoryRightIconComponent={Play}
+      accessoryLeftIconName={'History'}
+      accessoryRightIconName={'Play'}
     />
   );
 };

@@ -11,7 +11,7 @@ export type AppButtonProps = Pick<
   | 'backgroundColorStatus'
   | 'borderColorStatus'
   | 'borderStyle'
-  | 'IconComponent'
+  | 'iconName'
   | 'category'
   | 'textColorStatus'
 > & { onPress?: () => void; onDisabledPress?: () => void; disabled?: boolean };
@@ -22,7 +22,7 @@ export const AppButton = ({
   onPress,
   onDisabledPress,
   disabled,
-  IconComponent,
+  iconName,
   borderColorStatus,
   borderStyle,
   category = 'subHeader',
@@ -49,7 +49,7 @@ export const AppButton = ({
             backgroundColorStatus={backgroundColorStatus}
             borderColorStatus={borderColorStatus}
             borderStyle={borderStyle}
-            IconComponent={IconComponent}
+            iconName={iconName}
             category={category}
             textColorStatus={textColorStatus}
           />

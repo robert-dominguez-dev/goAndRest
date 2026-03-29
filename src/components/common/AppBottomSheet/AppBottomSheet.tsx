@@ -1,4 +1,5 @@
 import { Modal, Pressable } from 'react-native';
+import { ALL_SUPPORTED_ORIENTATIONS } from '../../../constants/common.ts';
 import {
   AppBottomSheetContent,
   AppBottomSheetContentProps,
@@ -18,7 +19,7 @@ export type AppBottomSheetProps = Pick<
   | 'onClose'
   | 'scrollable'
   | 'backgroundColorStatus'
-  | 'AccessoryRightIconComponent'
+  | 'accessoryRightIconName'
   | 'onAccessoryRightPress'
   | 'onBottomSheetPress'
 > & {
@@ -32,7 +33,7 @@ export const AppBottomSheet = ({
   title,
   scrollable,
   backgroundColorStatus,
-  AccessoryRightIconComponent,
+  accessoryRightIconName,
   onAccessoryRightPress,
   onOverlayPress,
   onBottomSheetPress,
@@ -43,7 +44,8 @@ export const AppBottomSheet = ({
     <Modal
       transparent
       statusBarTranslucent
-      animationType={'slide'}>
+      animationType={'slide'}
+      supportedOrientations={ALL_SUPPORTED_ORIENTATIONS}>
       <Pressable
         onPress={getOnPressWithHapticFeedbackConditionally(onOverlayPress)}
         style={{ flex: 1, justifyContent: 'flex-end' }}>
@@ -54,7 +56,7 @@ export const AppBottomSheet = ({
             onBottomSheetPress={onBottomSheetPress}
             scrollable={scrollable}
             backgroundColorStatus={backgroundColorStatus}
-            AccessoryRightIconComponent={AccessoryRightIconComponent}
+            accessoryRightIconName={accessoryRightIconName}
             onAccessoryRightPress={onAccessoryRightPress}>
             {contentElement}
           </AppBottomSheetContent>

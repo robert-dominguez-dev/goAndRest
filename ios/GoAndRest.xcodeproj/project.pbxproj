@@ -2826,6 +2826,7 @@
 				DEVELOPMENT_TEAM = 84JJGMBQ83;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = GoAndRest/Info.plist;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				INFOPLIST_KEY_CFBundleDisplayName = "Go&Rest";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
@@ -2861,6 +2862,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 84JJGMBQ83;
 				INFOPLIST_FILE = GoAndRest/Info.plist;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				INFOPLIST_KEY_CFBundleDisplayName = "Go&Rest";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;

@@ -2,7 +2,6 @@ import { useAppTranslation } from '../../../../../../../../locales/hooks/useAppT
 import { useAppBottomSheet } from '../../../../../../../common/AppBottomSheet/hooks/useAppBottomSheet.tsx';
 import { AppBottomSheetProps } from '../../../../../../../common/AppBottomSheet/AppBottomSheet.tsx';
 import { SaveWorkoutBottomSheetContent } from '../components/SaveWorkoutBottomSheetContent.tsx';
-import { X } from 'lucide-react-native';
 
 export const useSaveWorkoutBottomSheet = () => {
   const t = useAppTranslation();
@@ -18,7 +17,7 @@ export const useSaveWorkoutBottomSheet = () => {
       renderContent,
       title: t('screens.landingScreen.saveWorkoutBottomSheet.title'),
       backgroundColorStatus: 'backgroundAlt',
-      AccessoryRightIconComponent: X,
+      accessoryRightIconName: 'X',
       onAccessoryRightPress: handleClose,
     });
 

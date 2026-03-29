@@ -16,10 +16,12 @@ export const AppTimeView = ({
   msLeft,
   colorStatus,
   prefix,
-  fontSizeOverride = 100,
+  fontSizeOverride,
 }: AppTimeViewProps) => {
   const timeFormatted = formatTimerTime(msLeft);
-  const marginCorrection = getNumber(getAppSize(fontSizeOverride)) / 20;
+  const marginCorrection: number | undefined = fontSizeOverride
+    ? getNumber(getAppSize(fontSizeOverride)) / 20
+    : undefined;
 
   return (
     <AppRow justifyContent={'center'}>

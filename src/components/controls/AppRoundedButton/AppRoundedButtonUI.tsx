@@ -5,6 +5,7 @@ import {
   getAppRoundedButtonUIProps,
   GetAppRoundedButtonUIPropsParams,
 } from './helpers/getAppRoundedButtonUIProps.ts';
+import { useGetTabletScaledNumber } from '../../../hooks/useGetTabletScaledNumber.ts';
 
 export type AppRoundedButtonUIProps = ChildrenProp &
   GetAppRoundedButtonUIPropsParams;
@@ -16,17 +17,23 @@ export const AppRoundedButtonUI = ({
   const { width, height, borderRadius, backgroundColorStatus, opacity } =
     getAppRoundedButtonUIProps(props);
 
+  const getTabletScaledNumber = useGetTabletScaledNumber();
+
+  const widthEvaluated = getTabletScaledNumber(width);
+  const heightEvaluated = getTabletScaledNumber(height);
+  const borderRadiusEvaluated = getTabletScaledNumber(borderRadius);
+
   return (
     <AppViewWithGradientBorder
-      width={width}
-      height={height}
-      borderRadius={borderRadius}
+      width={widthEvaluated}
+      height={heightEvaluated}
+      borderRadius={borderRadiusEvaluated}
       opacity={opacity}
       gradientBorderColorStatus={props.status}>
       <AppView
-        width={width}
-        height={height}
-        borderRadius={borderRadius}
+        width={widthEvaluated}
+        height={heightEvaluated}
+        borderRadius={borderRadiusEvaluated}
         backgroundColorStatus={backgroundColorStatus}
         alignItems={'center'}
         justifyContent={'center'}>

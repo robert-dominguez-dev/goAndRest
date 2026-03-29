@@ -9,14 +9,14 @@ import { JSX } from 'react';
 
 type SettingsSectionProps = Pick<
   AppIconAndLabelProps,
-  'label' | 'IconComponent'
+  'label' | 'iconName'
 > & {
   items: JSX.Element[];
 };
 
 export const SettingsSection = ({
   label,
-  IconComponent,
+  iconName,
   items,
 }: SettingsSectionProps) => (
   <AppView gap={'m'}>
@@ -25,7 +25,7 @@ export const SettingsSection = ({
         gap={'s'}
         alignItems={'center'}>
         <AppIconAndLabel
-          IconComponent={IconComponent}
+          iconName={iconName}
           label={label.toUpperCase()}
           category={'subHeader'}
           textColorStatus={'textMuted'}

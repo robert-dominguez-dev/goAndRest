@@ -1,7 +1,6 @@
 import { AppRow } from '../AppRow.tsx';
 import { AppRoundedButton } from '../../controls/AppRoundedButton/AppRoundedButton.tsx';
 import { JSX } from 'react';
-import { useAppThemedColors } from '../../../hooks/useAppThemedColors.ts';
 import { AppView } from '../AppView/AppView.tsx';
 import {
   AppRoundedButtonSizeUnion,
@@ -11,8 +10,10 @@ import {
   getPlayButtonCommonProps,
   GetPlayButtonCommonPropsParams,
 } from './helpers/getPlayButtonCommonProps.tsx';
+import { AppIcon } from '../AppIcon.tsx';
+import { useMaxTabletActiveElementWidth } from '../../../hooks/useMaxTabletActiveElementWidth.ts';
 
-const SECONDARY_BUTTON_MIN_WIDTH = 80;
+export const SECONDARY_BUTTON_MIN_WIDTH = 80;
 const MAIN_BUTTON_SIZE: AppRoundedButtonSizeUnion = 'l';
 const MAIN_BUTTON_ICON_SIZE = roundedButtonToIconSize[MAIN_BUTTON_SIZE];
 
@@ -28,39 +29,46 @@ export const AppRoundedButtons = ({
   onPause,
   isRunning,
 }: AppRoundedButtonsProps) => {
-  const { text } = useAppThemedColors();
+  const maxWidth = useMaxTabletActiveElementWidth();
 
-  const { handlePress, IconComponent } = getPlayButtonCommonProps({
+  const { handlePress, iconName } = getPlayButtonCommonProps({
     onPlay,
     onPause,
     isRunning,
   });
 
   return (
-    <AppRow alignItems={'center'}>
-      <AppView
-        grow
-        minWidth={SECONDARY_BUTTON_MIN_WIDTH}
+    <AppView
+      shrink
+      alignItems={'center'}
+      justifyContent={'center'}>
+      <AppRow
         alignItems={'center'}
-        justifyContent={'center'}>
-        {leftButton}
-      </AppView>
-      <AppRoundedButton
-        onPress={handlePress}
-        size={MAIN_BUTTON_SIZE}
-        status={'primary'}>
-        <IconComponent
-          size={MAIN_BUTTON_ICON_SIZE}
-          color={text}
-        />
-      </AppRoundedButton>
-      <AppView
-        grow
-        minWidth={SECONDARY_BUTTON_MIN_WIDTH}
-        alignItems={'center'}
-        justifyContent={'center'}>
-        {rightButton}
-      </AppView>
-    </AppRow>
+        maxWidth={maxWidth}>
+        <AppView
+          grow
+          minWidth={SECONDARY_BUTTON_MIN_WIDTH}
+          alignItems={'center'}
+          justifyContent={'center'}>
+          {leftButton}
+        </AppView>
+        <AppRoundedButton
+          onPress={handlePress}
+          size={MAIN_BUTTON_SIZE}
+          status={'primary'}>
+          <AppIcon
+            name={iconName}
+            size={MAIN_BUTTON_ICON_SIZE}
+          />
+        </AppRoundedButton>
+        <AppView
+          grow
+          minWidth={SECONDARY_BUTTON_MIN_WIDTH}
+          alignItems={'center'}
+          justifyContent={'center'}>
+          {rightButton}
+        </AppView>
+      </AppRow>
+    </AppView>
   );
 };

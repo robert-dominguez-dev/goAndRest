@@ -1,4 +1,4 @@
-import { DimensionValue, Platform } from 'react-native';
+import { DimensionValue, ModalProps, Platform } from 'react-native';
 
 export const APP_NAME = 'Go&Rest';
 
@@ -31,3 +31,16 @@ export const COMMA = ',';
 export const COMMA_SPACE = COMMA + EMPTY_SPACE;
 
 export const DOT = '.';
+
+export const TABLET_MAX_ACTIVE_UI_WIDTH_RATIO = 0.75;
+export const MAX_ACTIVE_UI_WIDTH = 600;
+
+export const ALL_SUPPORTED_ORIENTATIONS: NonNullable<
+  ModalProps['supportedOrientations']
+> = [
+  'portrait',
+  'portrait-upside-down',
+  'landscape',
+  'landscape-left',
+  'landscape-right',
+];

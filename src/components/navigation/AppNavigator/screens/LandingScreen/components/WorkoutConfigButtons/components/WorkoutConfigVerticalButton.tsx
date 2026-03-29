@@ -12,6 +12,8 @@ import { useAppTranslation } from '../../../../../../../../locales/hooks/useAppT
 import { AppRow } from '../../../../../../../common/AppRow.tsx';
 import { UNLIMITED_NUMBER_OF_LINES } from '../../../../../../../../constants/common.ts';
 import { WorkoutConfigButtonValue } from './WorkoutConfigButtonValue.tsx';
+import { useGetTabletScaledNumber } from '../../../../../../../../hooks/useGetTabletScaledNumber.ts';
+import { AppSize } from '../../../../../../../../types/ui.ts';
 
 const { configButtonSize, configButtonBorderRadius } = sizes;
 
@@ -22,6 +24,14 @@ const WorkoutConfigVerticalButtonComponent = ({
   disabled,
 }: WorkoutConfigButtonProps) => {
   const t = useAppTranslation();
+
+  const getTabletScaledNumber = useGetTabletScaledNumber();
+
+  const width = getTabletScaledNumber(configButtonSize);
+  const borderRadius = getTabletScaledNumber(configButtonBorderRadius);
+  const labelFontSize = getTabletScaledNumber(16);
+  const paddingTop = getTabletScaledNumber(AppSize.s);
+  const paddingBottom = getTabletScaledNumber(AppSize.xs);
 
   const value = useWatch({
     control,
@@ -47,19 +57,19 @@ const WorkoutConfigVerticalButtonComponent = ({
           <AppView
             grow
             opacity={opacity}
-            width={configButtonSize}
-            borderRadius={configButtonBorderRadius}
+            width={width}
+            borderRadius={borderRadius}
             backgroundColorStatus={backgroundColorStatus}
             paddingHorizontal={'xs'}
-            paddingTop={'s'}
-            paddingBottom={'xs'}
+            paddingTop={paddingTop}
+            paddingBottom={paddingBottom}
             justifyContent={'space-between'}
             alignItems={'center'}>
             <AppRow>
               <AppText
                 textAlign={'center'}
                 category={'title'}
-                fontSizeOverride={16}
+                fontSizeOverride={labelFontSize}
                 numberOfLines={UNLIMITED_NUMBER_OF_LINES}>
                 {t(labelKey).toUpperCase()}
               </AppText>

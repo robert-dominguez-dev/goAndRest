@@ -1,38 +1,34 @@
 import { memo } from 'react';
 import { AppButton, AppButtonProps } from '../controls/AppButton/AppButton.tsx';
-import { LucideIcon } from 'lucide-react-native';
-import { useAppThemedColors } from '../../hooks/useAppThemedColors.ts';
-import { categoryToIconSize } from '../controls/AppButton/components/AppIconAndLabel.tsx';
+import { AppIcon, AppIconName } from './AppIcon.tsx';
 import { AppColorUnion } from '../../types/ui.ts';
 
 type AppDottedButtonProps = Pick<AppButtonProps, 'label' | 'onPress'> & {
   colorStatus?: AppColorUnion;
-  AccessoryLeftIconComponent: LucideIcon;
-  AccessoryRightIconComponent: LucideIcon;
+  accessoryLeftIconName: AppIconName;
+  accessoryRightIconName: AppIconName;
 };
 
 const AppDottedButtonComponent = ({
   label,
   onPress,
-  AccessoryLeftIconComponent,
-  AccessoryRightIconComponent,
+  accessoryLeftIconName,
+  accessoryRightIconName,
   colorStatus = 'text',
 }: AppDottedButtonProps) => {
-  const appColors = useAppThemedColors();
-
   return (
     <AppButton
       label={label}
       onPress={onPress}
       borderColorStatus={colorStatus}
       textColorStatus={colorStatus}
-      IconComponent={AccessoryLeftIconComponent}
+      iconName={accessoryLeftIconName}
       backgroundColorStatus={'transparent'}
       borderStyle={'dotted'}
       value={
-        <AccessoryRightIconComponent
-          color={appColors[colorStatus]}
-          size={categoryToIconSize.subHeader}
+        <AppIcon
+          name={accessoryRightIconName}
+          colorStatus={colorStatus}
         />
       }
     />

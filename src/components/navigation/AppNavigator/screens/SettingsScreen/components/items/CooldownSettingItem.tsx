@@ -5,10 +5,10 @@ import { AppSelectionBottomSheetItemText } from '../../../../../../common/AppSel
 import { formatTimerTime } from '../../../../../../../helpers/formatTimerTime.tsx';
 import { useWorkoutSettingBottomSheet } from '../../hooks/useWorkoutSettingBottomSheet.tsx';
 import { cooldownSettingAtom } from '../../../../../../../contexts/atoms.ts';
-import { workoutPhaseToIconComponent } from '../../../RunningWorkoutScreen/constants.tsx';
+import { workoutPhaseToIconName } from '../../../RunningWorkoutScreen/constants.tsx';
 import { AppColorUnion } from '../../../../../../../types/ui.ts';
 
-const IconComponent = workoutPhaseToIconComponent.COOLDOWN;
+const iconName = workoutPhaseToIconName.COOLDOWN;
 const backgroundColorStatus: AppColorUnion = 'cooldown';
 
 const CooldownSettingItemComponent = () => {
@@ -24,14 +24,14 @@ const CooldownSettingItemComponent = () => {
     useWorkoutSettingBottomSheet({
       title,
       description,
-      IconComponent,
+      iconName,
       backgroundColorStatus,
       durationAtom: cooldownSettingAtom,
     });
 
   const accessoryRight = (
     <AppSelectionBottomSheetItemText
-      IconComponent={IconComponent}
+      iconName={iconName}
       iconColorStatus={backgroundColorStatus}
       label={formatTimerTime(duration)}
     />

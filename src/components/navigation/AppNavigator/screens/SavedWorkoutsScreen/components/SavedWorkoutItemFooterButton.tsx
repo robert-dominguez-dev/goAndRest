@@ -15,13 +15,13 @@ export type SavedWorkoutItemFooterButtonProps = Pick<
   AppViewProps,
   'backgroundColorStatus'
 > &
-  Pick<AppIconAndLabelProps, 'label' | 'IconComponent'> & {
+  Pick<AppIconAndLabelProps, 'label' | 'iconName'> & {
     onPress: () => void;
   };
 
 export const SavedWorkoutItemFooterButton = ({
   label,
-  IconComponent,
+  iconName,
   onPress,
   backgroundColorStatus,
 }: SavedWorkoutItemFooterButtonProps) => {
@@ -55,7 +55,7 @@ export const SavedWorkoutItemFooterButton = ({
                 <AppIconAndLabel
                   grow={false}
                   category={'subHeader'}
-                  IconComponent={IconComponent}
+                  iconName={iconName}
                   label={label.toUpperCase()}
                 />
               </AppRow>

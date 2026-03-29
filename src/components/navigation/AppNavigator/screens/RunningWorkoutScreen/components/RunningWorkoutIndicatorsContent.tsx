@@ -1,54 +1,52 @@
 import { useAppTranslation } from '../../../../../../locales/hooks/useAppTranslation.ts';
 import { AppTimeView } from '../../../../../common/AppTimeView.tsx';
-import { AppView } from '../../../../../common/AppView/AppView.tsx';
+import { AppView, AppViewProps, } from '../../../../../common/AppView/AppView.tsx';
 import { AppText } from '../../../../../common/AppText/AppText.tsx';
 import { memo } from 'react';
 import { WorkoutTimerState } from '../types.ts';
 import {
-  workoutPhaseToIconComponent,
+  workoutPhaseToIconName,
   workoutPhaseToNameTranslateKey,
   workoutPhaseToTimerColorStatus,
 } from '../constants.tsx';
-import { useAppThemedColors } from '../../../../../../hooks/useAppThemedColors.ts';
-import { getByScreenWidth } from '../../../../../../helpers/getByScreenWidth.ts';
-import { AppSize } from '../../../../../../types/ui.ts';
-
-const TIME_FONT_SIZE = getByScreenWidth({
-  small: 100,
-  standard: 108,
-});
+import { AppIcon } from '../../../../../common/AppIcon.tsx';
 
 type RunningWorkoutIndicatorsContentProps = Pick<
   WorkoutTimerState,
   'currentPhase' | 'phaseRemainingMs' | 'totalElapsedMs'
->;
+> &
+  Pick<AppViewProps, 'padding'> & { timeFontSize: number };
 
 const RunningWorkoutIndicatorsContentComponent = ({
   currentPhase,
   phaseRemainingMs,
   totalElapsedMs,
+  timeFontSize,
+  padding,
 }: RunningWorkoutIndicatorsContentProps) => {
   const t = useAppTranslation();
 
   const phaseLabelKey = workoutPhaseToNameTranslateKey[currentPhase];
   const phaseColorStatus = workoutPhaseToTimerColorStatus[currentPhase];
-  const IconComponent = workoutPhaseToIconComponent[currentPhase];
-
-  const appColors = useAppThemedColors();
+  const iconName = workoutPhaseToIconName[currentPhase];
 
   return (
     <AppView
       grow
+      shrink
+      padding={padding}
       gap={'xs'}
       alignItems={'center'}
       justifyContent={'center'}>
       <AppView
+        grow
+        shrink
         gap={'xs'}
         alignItems={'center'}
         justifyContent={'center'}>
-        <IconComponent
-          size={AppSize.ml}
-          color={appColors[phaseColorStatus]}
+        <AppIcon
+          name={iconName}
+          colorStatus={phaseColorStatus}
         />
         <AppText
           grow={false}
@@ -59,10 +57,15 @@ const RunningWorkoutIndicatorsContentComponent = ({
       </AppView>
       <AppTimeView
         colorStatus={phaseColorStatus}
-        fontSizeOverride={TIME_FONT_SIZE}
+        fontSizeOverride={timeFontSize}
         msLeft={phaseRemainingMs}
       />
-      <AppView gap={'xxs'}>
+      <AppView
+        grow
+        shrink
+        gap={'xxs'}
+        alignItems={'center'}
+        justifyContent={'center'}>
         <AppText
           grow={false}
           colorStatus={'text'}

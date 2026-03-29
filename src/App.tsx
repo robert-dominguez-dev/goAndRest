@@ -7,13 +7,13 @@ import { appI18NextConfig } from './locales/constants.ts';
 import { AppLanguageProvider } from './contexts/AppLanguageProvider/AppLanguageProvider.tsx';
 import 'react-native-get-random-values';
 import { Suspense } from 'react';
-import { OrientationLocker } from 'react-native-orientation-locker';
 import { AppStatusBar } from './components/common/AppStatusBar.tsx';
 import { AppNavigators } from './components/navigation/AppNavigators.tsx';
+import { AppOrientationLocker } from './components/common/AppOrientationLocker.tsx';
 
 export const App = () => (
   <I18nextProvider i18n={appI18NextConfig}>
-    <OrientationLocker orientation={'PORTRAIT'} />
+    <AppOrientationLocker orientation={'PORTRAIT'} />
     <AppLanguageProvider>
       <NavigationContainer>
         <SafeAreaProvider>

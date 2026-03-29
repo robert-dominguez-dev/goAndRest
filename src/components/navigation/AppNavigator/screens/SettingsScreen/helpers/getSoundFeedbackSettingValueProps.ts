@@ -1,19 +1,13 @@
 import { getSplitTranslateKey } from '../../../../../../locales/helpers/getSplitTranslateKey.ts';
 import { WorkoutSoundFeedback } from '../constants.tsx';
 import { SettingValueProps } from '../types.ts';
-import {
-  Drama,
-  LucideIcon,
-  Music4,
-  Speech,
-  VolumeOff,
-} from 'lucide-react-native';
+import { AppIconName } from '../../../../../common/AppIcon.tsx';
 
-const soundFeedbackToEmoji: Record<WorkoutSoundFeedback, LucideIcon> = {
-  [WorkoutSoundFeedback.voice]: Speech,
-  [WorkoutSoundFeedback.character]: Drama,
-  [WorkoutSoundFeedback.sound]: Music4,
-  [WorkoutSoundFeedback.none]: VolumeOff,
+const soundFeedbackToIconName: Record<WorkoutSoundFeedback, AppIconName> = {
+  [WorkoutSoundFeedback.voice]: 'Speech',
+  [WorkoutSoundFeedback.character]: 'Drama',
+  [WorkoutSoundFeedback.sound]: 'Music4',
+  [WorkoutSoundFeedback.none]: 'VolumeOff',
 };
 
 export const getSoundFeedbackSettingValueProps = (
@@ -24,10 +18,10 @@ export const getSoundFeedbackSettingValueProps = (
     soundFeedback,
   );
 
-  const IconComponent = soundFeedbackToEmoji[soundFeedback];
+  const iconName = soundFeedbackToIconName[soundFeedback];
 
   return {
     labelTranslateKey,
-    IconComponent,
+    iconName,
   };
 };

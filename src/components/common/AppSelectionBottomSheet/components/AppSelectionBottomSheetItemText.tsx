@@ -11,7 +11,7 @@ export const APP_BOTTOM_SHEET_ICON_LABEL_GAP_UNION: AppSizeUnion = 's';
 
 export type AppSelectionBottomSheetItemTextProps = Pick<
   AppIconAndLabelProps,
-  'label' | 'IconComponent' | 'iconColorStatus' | 'textColorStatus'
+  'label' | 'iconName' | 'iconColorStatus' | 'textColorStatus'
 > & {
   imageProps?: Required<
     Pick<AppImageProps, 'illustrationName' | 'width' | 'height'>
@@ -20,7 +20,7 @@ export type AppSelectionBottomSheetItemTextProps = Pick<
 
 export const AppSelectionBottomSheetItemText = ({
   label,
-  IconComponent,
+  iconName,
   imageProps,
   textColorStatus = 'textMuted',
   iconColorStatus = textColorStatus,
@@ -36,7 +36,7 @@ export const AppSelectionBottomSheetItemText = ({
     <AppIconAndLabel
       grow={false}
       label={label}
-      IconComponent={IconComponent}
+      iconName={iconName}
       iconColorStatus={iconColorStatus}
       textColorStatus={textColorStatus}
       category={'subHeader'}

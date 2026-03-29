@@ -1,9 +1,7 @@
 import { GestureResponderEvent, Pressable } from 'react-native';
 import { getOnPressWithHapticFeedback } from '../../../controls/helpers/getOnPressWithHapticFeedback.ts';
 
-import { LucideIcon, PlayCircle, StopCircle } from 'lucide-react-native';
-import { useAppThemedColors } from '../../../../hooks/useAppThemedColors.ts';
-import { categoryToIconSize } from '../../../controls/AppButton/components/AppIconAndLabel.tsx';
+import { AppIcon, AppIconName } from '../../AppIcon.tsx';
 import { playSound, PlaySoundParams } from '../../../../helpers/playSound.ts';
 import { useEffect } from 'react';
 import { useAtom } from 'jotai';
@@ -19,8 +17,6 @@ export const PlaySoundIcon = ({
   audioParams: { soundKey, url },
 }: PlaySoundIconProps) => {
   const [playingPreviewKey, setPlayingPreviewKey] = useAtom(playingPreviewAtom);
-
-  const { text } = useAppThemedColors();
 
   const play = async () => {
     await stopAndResetTrackPlayer();
@@ -57,14 +53,11 @@ export const PlaySoundIcon = ({
     }
   };
 
-  const IconComponent: LucideIcon = isPlaying ? StopCircle : PlayCircle;
+  const iconName: AppIconName = isPlaying ? 'StopCircle' : 'PlayCircle';
 
   return (
     <Pressable onPress={getOnPressWithHapticFeedback(handlePress)}>
-      <IconComponent
-        color={text}
-        size={categoryToIconSize.subHeader}
-      />
+      <AppIcon name={iconName} />
     </Pressable>
   );
 };

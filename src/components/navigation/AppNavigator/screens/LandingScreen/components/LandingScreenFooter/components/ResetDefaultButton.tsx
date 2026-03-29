@@ -1,7 +1,5 @@
-import { RotateCcw } from 'lucide-react-native';
+import { AppIcon } from '../../../../../../../common/AppIcon.tsx';
 import { AppRoundedButton } from '../../../../../../../controls/AppRoundedButton/AppRoundedButton.tsx';
-import { AppSize } from '../../../../../../../../types/ui.ts';
-import { useAppThemedColors } from '../../../../../../../../hooks/useAppThemedColors.ts';
 import { useFormContext, useWatch } from 'react-hook-form';
 import { useResetWorkoutPopUp } from '../hooks/useResetWorkoutPopUp.tsx';
 import { checkIsDefaultWorkoutConfig } from '../../../../../../../../helpers/checkIsDefaultWorkoutConfig.ts';
@@ -19,8 +17,6 @@ export const ResetDefaultButton = () => {
     ...getValues(),
   });
 
-  const { text } = useAppThemedColors();
-
   return (
     <>
       <AppRoundedButton
@@ -28,10 +24,7 @@ export const ResetDefaultButton = () => {
         size={'s'}
         status={'grayscale'}
         disabled={isDefaultWorkoutConfig}>
-        <RotateCcw
-          size={AppSize.ml}
-          color={text}
-        />
+        <AppIcon name={'RotateCcw'} />
       </AppRoundedButton>
       {popUp}
     </>

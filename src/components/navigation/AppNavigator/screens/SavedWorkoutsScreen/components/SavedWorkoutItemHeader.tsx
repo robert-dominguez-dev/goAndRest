@@ -4,7 +4,6 @@ import { AppText } from '../../../../../common/AppText/AppText.tsx';
 import { countTotalWorkoutTime } from '../../LandingScreen/helpers/countTotalWorkoutTime.ts';
 import { formatTimerTime } from '../../../../../../helpers/formatTimerTime.tsx';
 import { SAVED_WORKOUT_HEADER_AND_FOOTER_HEIGHT } from './SavedWorkoutItemFooter.tsx';
-import { Clock } from 'lucide-react-native';
 import { AppIconAndLabel } from '../../../../../controls/AppButton/components/AppIconAndLabel.tsx';
 
 type SavedWorkoutItemHeaderProps = {
@@ -34,7 +33,7 @@ export const SavedWorkoutItemHeader = ({
         <AppIconAndLabel
           grow={false}
           category={'header'}
-          IconComponent={Clock}
+          iconName={'Clock'}
           label={formatTimerTime(totalWorkoutTime)}
         />
       </AppRow>

@@ -10,7 +10,7 @@ enum FontName {
   BarlowCondensedBlack = 'BarlowCondensed-Black',
 }
 
-type FontCategoryStyle = {
+export type FontCategoryStyle = {
   fontFamily: FontName;
   fontSize: number;
   lineHeight?: number;

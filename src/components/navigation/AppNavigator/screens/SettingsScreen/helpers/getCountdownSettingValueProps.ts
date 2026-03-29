@@ -1,20 +1,15 @@
 import { getSplitTranslateKey } from '../../../../../../locales/helpers/getSplitTranslateKey.ts';
 import { WorkoutCountdownVariant } from '../constants.tsx';
 import { SettingValueProps } from '../types.ts';
-import {
-  CircleX,
-  Clock10,
-  Clock11,
-  Clock9,
-  LucideIcon,
-} from 'lucide-react-native';
+import { AppIconName } from '../../../../../common/AppIcon.tsx';
 
-const countdownVariantToEmoji: Record<WorkoutCountdownVariant, LucideIcon> = {
-  [WorkoutCountdownVariant.ten]: Clock9,
-  [WorkoutCountdownVariant.five]: Clock10,
-  [WorkoutCountdownVariant.three]: Clock11,
-  [WorkoutCountdownVariant.none]: CircleX,
-};
+const countdownVariantToIconName: Record<WorkoutCountdownVariant, AppIconName> =
+  {
+    [WorkoutCountdownVariant.ten]: 'Clock9',
+    [WorkoutCountdownVariant.five]: 'Clock10',
+    [WorkoutCountdownVariant.three]: 'Clock11',
+    [WorkoutCountdownVariant.none]: 'CircleX',
+  };
 
 export const getCountdownSettingValueProps = (
   countdownVariant: WorkoutCountdownVariant,
@@ -24,10 +19,10 @@ export const getCountdownSettingValueProps = (
     countdownVariant,
   );
 
-  const IconComponent = countdownVariantToEmoji[countdownVariant];
+  const iconName = countdownVariantToIconName[countdownVariant];
 
   return {
     labelTranslateKey,
-    IconComponent,
+    iconName,
   };
 };

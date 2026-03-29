@@ -1,17 +1,18 @@
 import { useAppTranslation } from '../../../../../locales/hooks/useAppTranslation.ts';
 import { memo } from 'react';
 import {
-  workoutPhaseToIconComponent,
+  workoutPhaseToIconName,
   workoutPhaseToNameTranslateKey,
   workoutPhaseToTimerColorStatus,
 } from './constants.tsx';
-import { WorkoutConfigBottomSheetIconAndTitle } from '../LandingScreen/components/WorkoutConfigButtons/components/WorkoutConfigBottomSheetIconAndTitle.tsx';
+import {
+  WorkoutConfigBottomSheetIconAndTitle
+} from '../LandingScreen/components/WorkoutConfigButtons/components/WorkoutConfigBottomSheetIconAndTitle.tsx';
 import { RunningWorkoutContentParams } from './types.ts';
 import { AppRow } from '../../../../common/AppRow.tsx';
 import { AppText } from '../../../../common/AppText/AppText.tsx';
 import { AppTimeView } from '../../../../common/AppTimeView.tsx';
 import { EMPTY_SPACE } from '../../../../../constants/common.ts';
-import { fontCategoryStyles } from '../../../../../constants/fonts.ts';
 
 type RunningWorkoutLandscapeTitleProps = Pick<
   RunningWorkoutContentParams,
@@ -25,7 +26,7 @@ const _RunningWorkoutLandscapeTitle = ({
   const t = useAppTranslation();
 
   const phaseLabelKey = workoutPhaseToNameTranslateKey[currentPhase];
-  const IconComponent = workoutPhaseToIconComponent[currentPhase];
+  const iconName = workoutPhaseToIconName[currentPhase];
   const phaseColorStatus = workoutPhaseToTimerColorStatus[currentPhase];
 
   const totalTimePrefixLabel = `${t(
@@ -52,13 +53,12 @@ const _RunningWorkoutLandscapeTitle = ({
       <WorkoutConfigBottomSheetIconAndTitle
         grow={false}
         label={t(phaseLabelKey).toUpperCase()}
-        IconComponent={IconComponent}
+        iconName={iconName}
         textColorStatus={phaseColorStatus}
       />
       {slashTextElement}
       <AppTimeView
         colorStatus={'text'}
-        fontSizeOverride={fontCategoryStyles.header.fontSize}
         msLeft={totalRemainingMs}
         prefix={totalTimePrefixLabel}
       />

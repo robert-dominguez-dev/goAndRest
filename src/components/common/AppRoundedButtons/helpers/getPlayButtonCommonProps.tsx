@@ -1,5 +1,5 @@
 import { AppRoundedButtonProps } from '../../../controls/AppRoundedButton/AppRoundedButton.tsx';
-import { LucideIcon, Pause, Play } from 'lucide-react-native';
+import { AppIconName } from '../../AppIcon.tsx';
 
 export type GetPlayButtonCommonPropsParams = {
   onPlay: () => void;
@@ -16,7 +16,7 @@ export const getPlayButtonCommonProps = ({
     ? onPause
     : onPlay;
 
-  const IconComponent: LucideIcon = isRunning ? Pause : Play;
+  const iconName: AppIconName = isRunning ? 'Pause' : 'Play';
 
-  return { handlePress, IconComponent };
+  return { handlePress, iconName };
 };

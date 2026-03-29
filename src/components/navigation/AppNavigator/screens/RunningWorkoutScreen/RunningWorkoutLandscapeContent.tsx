@@ -8,6 +8,8 @@ import { AppSize } from '../../../../../types/ui.ts';
 import { RunningWorkoutLandscapeFooter } from './components/RunningWorkoutLandscapeFooter.tsx';
 import { FILL_CONTAINER_DIMENSION } from '../../../../../constants/common.ts';
 import { useLayout } from '../../../../../hooks/useLayout.ts';
+import { useIsTablet } from '../../../../../hooks/useIsTablet.ts';
+import { getNumber } from '../../../../../helpers/getNumber.ts';
 
 const _RunningWorkoutLandscapeContent = ({
   currentState: {
@@ -20,7 +22,13 @@ const _RunningWorkoutLandscapeContent = ({
 }: RunningWorkoutContentParams) => {
   const { handleLayout, layout } = useLayout();
 
-  const fontSizeOverride = layout?.height;
+  const layoutHeightSafe = getNumber(layout?.height);
+
+  const isTablet = useIsTablet();
+
+  const fontSizeOverride: number = isTablet
+    ? Math.round(layoutHeightSafe * 0.75)
+    : layoutHeightSafe;
 
   const phaseColorStatus = workoutPhaseToTimerColorStatus[currentPhase];
 
@@ -50,7 +58,7 @@ const _RunningWorkoutLandscapeContent = ({
         grow
         gap={'m'}
         position={'absolute'}
-        height={fontSizeOverride}
+        height={layoutHeightSafe}
         top={0}
         right={-AppSize.m}
         justifyContent={'center'}
