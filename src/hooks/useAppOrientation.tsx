@@ -6,19 +6,19 @@ import Orientation, {
 import { handleAppOrientation } from '../components/navigation/AppNavigator/screens/RunningWorkoutScreen/helpers/handleAppOrientation.tsx';
 import { AppOrientation } from '../types/common.ts';
 
-export const useAppOrientation = (shouldLockOrientationOnChange?: boolean) => {
+export const useAppOrientation = (shouldKeepOrientationLocked?: boolean) => {
   const [appOrientation, setAppOrientation] =
     useState<AppOrientation>('PORTRAIT');
 
   const changeToPortrait = () => {
-    if (shouldLockOrientationOnChange) {
+    if (shouldKeepOrientationLocked) {
       Orientation.lockToPortrait();
     }
     setAppOrientation('PORTRAIT');
   };
 
   const changeToLandscape = () => {
-    if (shouldLockOrientationOnChange) {
+    if (shouldKeepOrientationLocked) {
       Orientation.lockToLandscape();
     }
     setAppOrientation('LANDSCAPE');
@@ -43,12 +43,19 @@ export const useAppOrientation = (shouldLockOrientationOnChange?: boolean) => {
     [],
   );
 
-  useOrientationChange(handleOrientationChange);
+  useOrientationChange(orientation => {
+    if (shouldKeepOrientationLocked) {
+      return undefined;
+    }
+    handleOrientationChange(orientation);
+  });
 
-  useEffect(
-    () => Orientation.getOrientation(handleOrientationChange),
-    [handleOrientationChange],
-  );
+  useEffect(() => {
+    if (shouldKeepOrientationLocked) {
+      return undefined;
+    }
+    Orientation.getOrientation(handleOrientationChange);
+  }, [handleOrientationChange]);
 
   return {
     appOrientation,
