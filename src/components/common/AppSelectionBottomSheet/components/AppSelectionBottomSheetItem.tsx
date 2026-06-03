@@ -12,6 +12,7 @@ import {
 } from './AppSelectionBottomSheetItemText.tsx';
 import { AppColorUnion } from '../../../../types/ui.ts';
 import { PlaySoundIcon, PlaySoundIconProps } from './PlaySoundIcon.tsx';
+import { CustomAnalyticsParams, logCustomEvent, } from '../../../navigation/helpers/logCustomEvent.ts';
 
 export type AppSelectionBottomSheetItemData<TValue> =
   Partial<PlaySoundIconProps> & {
@@ -23,6 +24,7 @@ export type AppSelectionBottomSheetItemData<TValue> =
     accessoryLeftImageProps?: AppSelectionBottomSheetItemTextProps['imageProps'];
     selected?: boolean;
     disabled?: boolean;
+    analytics?: CustomAnalyticsParams;
   };
 
 export type AppSelectionBottomSheetItemProps<TValue> =
@@ -41,8 +43,15 @@ export const AppSelectionBottomSheetItem = <TValue,>({
   accessoryLeftIconStatus,
   accessoryLeftImageProps,
   audioParams,
+  analytics,
 }: AppSelectionBottomSheetItemProps<TValue>) => {
-  const handlePress = () => onSelect(value);
+  const handlePress = () => {
+    if (analytics) {
+      void logCustomEvent(analytics.eventName, analytics.eventParams);
+    }
+
+    onSelect(value);
+  };
 
   const isPressDisabled: boolean = !!disabled || !!selected;
 

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "435519774298",
+    "project_id": "goandrest-94ba2",
+    "storage_bucket": "goandrest-94ba2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:435519774298:android:d26d8a683faeca48920263",
+        "android_client_info": {
+          "package_name": "com.goandrest"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACpPbl6d_vOzEbQDrCslz-REZk8AZUSTI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

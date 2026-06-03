@@ -2,6 +2,7 @@ import { TranslateKey } from '../../../../../locales/types.ts';
 import { AppIconName } from '../../../../common/AppIcon.tsx';
 import { AppColorUnion } from '../../../../../types/ui.ts';
 import { AppSelectionBottomSheetItemTextProps } from '../../../../common/AppSelectionBottomSheet/components/AppSelectionBottomSheetItemText.tsx';
+import { CustomAnalyticsParams } from '../../../helpers/logCustomEvent.ts';
 
 export type SettingValueProps = {
   labelTranslateKey: TranslateKey;
@@ -9,4 +10,5 @@ export type SettingValueProps = {
   iconColorStatus?: AppColorUnion;
   imageProps?: AppSelectionBottomSheetItemTextProps['imageProps'];
   previewAudioUrl?: string;
+  analytics?: CustomAnalyticsParams;
 };

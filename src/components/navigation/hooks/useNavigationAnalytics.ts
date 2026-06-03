@@ -1,0 +1,40 @@
+import { useCallback, useRef } from 'react';
+import { useNavigationContainerRef } from '@react-navigation/native';
+import { getAnalytics } from '@react-native-firebase/analytics';
+import { IS_DEV_MODE } from '../../../constants/common.ts';
+import { logScreenViewEvent } from '../helpers/logScreenViewEvent.ts';
+
+export const useNavigationAnalytics = () => {
+  const navigationRef = useNavigationContainerRef();
+  const routeNameRef = useRef<string | undefined>(undefined);
+
+  const analytics = getAnalytics();
+
+  const onReady = useCallback(() => {
+    routeNameRef.current = navigationRef.getCurrentRoute()?.name;
+  }, [navigationRef]);
+
+  const onStateChange = useCallback(async () => {
+    const previousRouteName = routeNameRef.current;
+    const currentRouteName = navigationRef.getCurrentRoute()?.name;
+
+    if (previousRouteName !== currentRouteName && currentRouteName) {
+      if (IS_DEV_MODE) {
+        console.log(`📱 Analytics [Screen View]: ${currentRouteName}`);
+      }
+
+      await logScreenViewEvent({
+        screen_name: currentRouteName,
+        screen_class: currentRouteName,
+      });
+    }
+
+    routeNameRef.current = currentRouteName;
+  }, [navigationRef, analytics]);
+
+  return {
+    navigationRef,
+    onReady,
+    onStateChange,
+  };
+};

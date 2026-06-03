@@ -1,5 +1,8 @@
 import { getSplitTranslateKey } from '../../../../../../locales/helpers/getSplitTranslateKey.ts';
-import { WorkoutCharacterVariant } from '../constants.tsx';
+import {
+  WorkoutCharacterVariant,
+  WorkoutSoundFeedback,
+} from '../constants.tsx';
 import { SettingValueProps } from '../types.ts';
 import { getBottomSheetItemMiniImageProps } from './getBottomSheetItemMiniImageProps.ts';
 import { appFeedbackEntityToPreviewFileNameByLanguage } from '../../../../../../assets/constants/common.ts';
@@ -21,5 +24,12 @@ export const getCharacterVariantSettingValueProps = (
       appFeedbackEntityToPreviewFileNameByLanguage[characterVariant]?.[
         language
       ],
+    analytics: {
+      eventName: 'select_sound_feedback',
+      eventParams: {
+        soundFeedbackType: WorkoutSoundFeedback.character,
+        soundFeedbackName: characterVariant,
+      },
+    },
   };
 };

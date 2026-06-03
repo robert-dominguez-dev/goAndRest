@@ -10,23 +10,31 @@ import { Suspense } from 'react';
 import { AppStatusBar } from './components/common/AppStatusBar.tsx';
 import { AppNavigators } from './components/navigation/AppNavigators.tsx';
 import { AppOrientationLocker } from './components/common/AppOrientationLocker.tsx';
+import { useNavigationAnalytics } from './components/navigation/hooks/useNavigationAnalytics.ts';
 
-export const App = () => (
-  <I18nextProvider i18n={appI18NextConfig}>
-    <AppOrientationLocker orientation={'PORTRAIT'} />
-    <AppLanguageProvider>
-      <NavigationContainer>
-        <SafeAreaProvider>
-          <Suspense fallback={null}>
-            <AppThemeProvider>
-              <AppWorkoutsProvider>
-                <AppStatusBar />
-                <AppNavigators />
-              </AppWorkoutsProvider>
-            </AppThemeProvider>
-          </Suspense>
-        </SafeAreaProvider>
-      </NavigationContainer>
-    </AppLanguageProvider>
-  </I18nextProvider>
-);
+export const App = () => {
+  const { navigationRef, onReady, onStateChange } = useNavigationAnalytics();
+
+  return (
+    <I18nextProvider i18n={appI18NextConfig}>
+      <AppOrientationLocker orientation={'PORTRAIT'} />
+      <AppLanguageProvider>
+        <NavigationContainer
+          ref={navigationRef}
+          onReady={onReady}
+          onStateChange={onStateChange}>
+          <SafeAreaProvider>
+            <Suspense fallback={null}>
+              <AppThemeProvider>
+                <AppWorkoutsProvider>
+                  <AppStatusBar />
+                  <AppNavigators />
+                </AppWorkoutsProvider>
+              </AppThemeProvider>
+            </Suspense>
+          </SafeAreaProvider>
+        </NavigationContainer>
+      </AppLanguageProvider>
+    </I18nextProvider>
+  );
+};

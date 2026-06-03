@@ -37,6 +37,7 @@ export const useCommonSettingBottomSheet = <TValue,>({
         iconColorStatus,
         imageProps,
         previewAudioUrl,
+        analytics,
       } = getProps(value, language);
 
       const audioParams: AppSelectionBottomSheetItemData<TValue>['audioParams'] =
@@ -55,6 +56,7 @@ export const useCommonSettingBottomSheet = <TValue,>({
         accessoryLeftIconStatus: iconColorStatus,
         accessoryLeftImageProps: imageProps,
         audioParams,
+        analytics,
       };
     },
   );

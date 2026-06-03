@@ -1,5 +1,5 @@
 import { getSplitTranslateKey } from '../../../../../../locales/helpers/getSplitTranslateKey.ts';
-import { WorkoutSoundVariant } from '../constants.tsx';
+import { WorkoutSoundFeedback, WorkoutSoundVariant } from '../constants.tsx';
 import { AppIconName } from '../../../../../common/AppIcon.tsx';
 import { SettingValueProps } from '../types.ts';
 import { soundVariantToPreviewFileNames } from '../../../../../../assets/constants/common.ts';
@@ -26,5 +26,12 @@ export const getSoundVariantSettingValueProps = (
     labelTranslateKey,
     iconName,
     previewAudioUrl: soundVariantToPreviewFileNames[soundVariant],
+    analytics: {
+      eventName: 'select_sound_feedback',
+      eventParams: {
+        soundFeedbackType: WorkoutSoundFeedback.sound,
+        soundFeedbackName: soundVariant,
+      },
+    },
   };
 };
