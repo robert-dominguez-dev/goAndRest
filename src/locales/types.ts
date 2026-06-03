@@ -120,6 +120,9 @@ export type AppTranslations = {
         totalTime: TextsByCoachVariant;
       };
       buttonLabel: TextsByCoachVariant;
+      ratingRequest: string;
+      ratingRequestThankYou: string;
+      ratingRequestSorry: string;
     };
     disclaimerScreen: {
       title: string;

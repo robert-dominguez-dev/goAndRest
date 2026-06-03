@@ -4,6 +4,7 @@ import { usePreciseInterval } from './usePreciseInterval';
 import {
   computedWorkoutStateAtom,
   cooldownSettingAtom,
+  finishedWorkoutsCountAtom,
   finishedWorkoutStatsAtom,
   runningWorkoutStateAtom,
   warmupSettingAtom,
@@ -18,12 +19,17 @@ import { getNumber } from '../helpers/getNumber.ts';
 import { AppWorkoutFieldValues } from '../contexts/AppWorkoutsProvider/types.ts';
 import { calculateSkipState } from '../helpers/calculateSkipState.ts';
 import { calculateCurrentWorkoutStateConditionally } from '../helpers/calculateCurrentWorkoutStateConditionally.ts';
+import { logCustomEvent } from '../components/navigation/helpers/logCustomEvent.ts';
 
 export const useWorkoutTimer = (onFinish?: () => void) => {
   const warmupSetting = useAtomValue(warmupSettingAtom);
   const cooldownSetting = useAtomValue(cooldownSettingAtom);
 
   const setFinishedWorkoutStats = useSetAtom(finishedWorkoutStatsAtom);
+
+  const [currentFinishedWorkoutsCount, setFinishedWorkoutsCount] = useAtom(
+    finishedWorkoutsCountAtom,
+  );
 
   const [persistedState, setPersistedState] = useAtom(runningWorkoutStateAtom);
 
@@ -49,11 +55,18 @@ export const useWorkoutTimer = (onFinish?: () => void) => {
     setComputedState(newComputedState);
 
     if (newComputedState.isFinished) {
+      const finishedWorkoutsCount = currentFinishedWorkoutsCount + 1;
+
+      void logCustomEvent('finish_workout', {
+        finishedWorkoutsCount,
+      });
+
+      void setFinishedWorkoutsCount(finishedWorkoutsCount);
       setFinishedWorkoutStats(persistedState);
       stop();
       onFinish?.();
     }
-  }, [persistedState, setPersistedState, stop]);
+  }, [persistedState, currentFinishedWorkoutsCount, setPersistedState, stop]);
 
   const isFinished = !!computedState?.isFinished;
 

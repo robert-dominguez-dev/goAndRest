@@ -48,6 +48,7 @@ export type AppIconName = Extract<
   | 'Volume2'
   | 'VolumeOff'
   | 'Wind'
+  | 'Star'
   | 'X'
 >;
 

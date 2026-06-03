@@ -1,12 +1,15 @@
 import { Analytics, getAnalytics } from '@react-native-firebase/analytics';
 import { logDevAnalyticsError } from './logDevAnalyticsError.ts';
 import { IS_DEV_MODE } from '../../../constants/common.ts';
-import { logDevAnalyticsSuccess } from './logDevAnalyticsSuccess.ts';
+import {
+  EventParams,
+  logDevAnalyticsSuccess,
+} from './logDevAnalyticsSuccess.ts';
 
 export const logEventWrapper = async (
   callback: (analytics: Analytics) => Promise<void>,
   eventType: string,
-  params?: Record<string, string>,
+  params?: EventParams,
 ) => {
   try {
     const analytics = getAnalytics();

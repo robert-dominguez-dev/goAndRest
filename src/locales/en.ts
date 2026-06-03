@@ -274,6 +274,11 @@ export const en = {
           wizard: 'Done',
         },
       },
+      ratingRequest:
+        'Endorphins kicking in? 🔥 Put that energy to good use and rate Go&Rest! 💪 It only takes 10 seconds and helps us a ton to keep improving the app.',
+      ratingRequestThankYou: 'Thank you! ♥️ Your support means a lot to us.',
+      ratingRequestSorry:
+        'Sorry to hear that!️ We are constantly working on updates and improvements 🛠, so hopefully your next workout feels much better.',
     },
     disclaimerScreen: {
       title: 'Welcome to Go&Rest',

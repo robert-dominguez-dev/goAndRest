@@ -14,10 +14,7 @@ import {
 } from '../components/navigation/AppNavigator/screens/RunningWorkoutScreen/types.ts';
 import { atom } from 'jotai';
 import { WorkoutSoundFilePaths } from '../assets/types.ts';
-import {
-  AppWorkoutConfig,
-  AppWorkoutFieldValues,
-} from './AppWorkoutsProvider/types.ts';
+import { AppWorkoutConfig, AppWorkoutFieldValues, } from './AppWorkoutsProvider/types.ts';
 import { defaultWorkoutConfig } from './AppWorkoutsProvider/constants.ts';
 import { ONE_SECOND_MS } from '../constants/common.ts';
 
@@ -111,4 +108,14 @@ export const isMutedAtom = atom<boolean>(false);
 export const isDisclaimerInfoAgreedAtom = createAsyncAtom<boolean>(
   AsyncStorageKey.APP_DISCLAIMER_AGREED,
   false,
+);
+
+export const starsRatedAtom = createAsyncAtom<number | null>(
+  AsyncStorageKey.STARS_RATED,
+  null,
+);
+
+export const finishedWorkoutsCountAtom = createAsyncAtom<number>(
+  AsyncStorageKey.FINISHED_WORKOUTS_COUNT,
+  0,
 );

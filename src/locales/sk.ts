@@ -275,6 +275,12 @@ export const sk = {
           wizard: 'Hotovo',
         },
       },
+      ratingRequest:
+        'Endorfíny v žilách? 🔥 Využi vlnu energie a ohodnoť Go&Rest! 💪 Zaberie ti to 10 sekúnd a nám to strašne pomôže aplikáciu ďalej zlepšovať.',
+      ratingRequestThankYou:
+        'Skvelé, ďakujeme veľmi pekne! ♥️ Tvoja podpora pre nás veľa znamená.',
+      ratingRequestSorry:
+        'To nás mrzí! Na aplikácii ale neustále makáme a vylepšujeme ju 🛠️, tak snáď ti budúci tréning sadne lepšie.',
     },
     disclaimerScreen: {
       title: 'Vitaj v Go&Rest',

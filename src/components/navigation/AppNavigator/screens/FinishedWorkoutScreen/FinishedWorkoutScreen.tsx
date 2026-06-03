@@ -12,12 +12,16 @@ import { AppText } from '../../../../common/AppText/AppText.tsx';
 import { UNLIMITED_NUMBER_OF_LINES } from '../../../../../constants/common.ts';
 import { AppTimeView } from '../../../../common/AppTimeView.tsx';
 import { useAtomValue } from 'jotai';
-import { finishedWorkoutStatsAtom } from '../../../../../contexts/atoms.ts';
+import { finishedWorkoutsCountAtom, finishedWorkoutStatsAtom, starsRatedAtom, } from '../../../../../contexts/atoms.ts';
 import { getNumber } from '../../../../../helpers/getNumber.ts';
-import { FullScreenConfettiAnimation } from '../../../../common/FullScreenConfettiAnimation.tsx';
 import { useFinishedWorkoutFeedbackOnMount } from '../../../../../hooks/useFinishedWorkoutFeedbackOnMount.ts';
 import { useFinishWorkout } from '../../../hooks/useFinishWorkout.ts';
 import { AppOrientationLocker } from '../../../../common/AppOrientationLocker.tsx';
+import { FullScreenConfettiAnimation } from '../../../../common/FullScreenConfettiAnimation.tsx';
+import { RatingRequestHint } from './components/RatingRequestHint.tsx';
+import { useRef } from 'react';
+
+const MIN_NUMBER_OF_WORKOUTS_TO_REQUEST_REVIEW = 3;
 
 export const FinishedWorkoutScreen = () => {
   useFinishedWorkoutFeedbackOnMount();
@@ -25,6 +29,15 @@ export const FinishedWorkoutScreen = () => {
   const t = useAppTranslation();
 
   const finishedWorkoutStats = useAtomValue(finishedWorkoutStatsAtom);
+
+  const starsRated = useAtomValue(starsRatedAtom);
+  const starsRatedOriginallyRef = useRef(starsRated);
+
+  const finishedWorkoutsCount = useAtomValue(finishedWorkoutsCountAtom);
+
+  const shouldRequestReview: boolean =
+    finishedWorkoutsCount >= MIN_NUMBER_OF_WORKOUTS_TO_REQUEST_REVIEW &&
+    !starsRatedOriginallyRef.current;
 
   const totalWorkoutDuration =
     Date.now() - getNumber(finishedWorkoutStats?.startedAt);
@@ -74,6 +87,11 @@ export const FinishedWorkoutScreen = () => {
               msLeft={totalWorkoutDuration}
             />
           </AppView>
+        </AppView>
+        <AppView
+          grow
+          justifyContent={'flex-end'}>
+          {shouldRequestReview && <RatingRequestHint />}
         </AppView>
       </AppScreenLayout>
       <FullScreenConfettiAnimation isPresent />

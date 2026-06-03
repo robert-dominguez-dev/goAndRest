@@ -6,12 +6,15 @@ import {
 
 const BOTTOM_SHEET_ITEM_ICON_SIZE = 24;
 
-const countWidth = (ratio: number) => BOTTOM_SHEET_ITEM_ICON_SIZE * ratio;
-
 export const getBottomSheetItemMiniImageProps = (
   illustrationName: AppIllustrationName,
-): SettingValueProps['imageProps'] => ({
-  illustrationName,
-  height: BOTTOM_SHEET_ITEM_ICON_SIZE,
-  width: countWidth(appFeedbackEntityToImageAspectRatio[illustrationName]),
-});
+  size = BOTTOM_SHEET_ITEM_ICON_SIZE,
+): SettingValueProps['imageProps'] => {
+  const countWidth = (ratio: number) => size * ratio;
+
+  return {
+    illustrationName,
+    height: size,
+    width: countWidth(appFeedbackEntityToImageAspectRatio[illustrationName]),
+  };
+};
