@@ -82,6 +82,6 @@ export const shieldmaidenSoundPathsByLanguage: WorkoutSoundPathsByLanguage = {
 
 export const shieldmaidenPreviewPathByLanguage: SoundPathByLanguage = {
   [SupportedLanguageCode.cs]: require('../../../audio/preview/characters/shieldmaiden/shieldmaiden_cs_preview.m4a'),
-  [SupportedLanguageCode.en]: require('../../../audio/preview/characters/shieldmaiden/shieldmaiden_cs_preview.m4a'),
-  [SupportedLanguageCode.sk]: require('../../../audio/preview/characters/shieldmaiden/shieldmaiden_cs_preview.m4a'),
+  [SupportedLanguageCode.en]: require('../../../audio/preview/characters/shieldmaiden/shieldmaiden_en_preview.m4a'),
+  [SupportedLanguageCode.sk]: require('../../../audio/preview/characters/shieldmaiden/shieldmaiden_sk_preview.m4a'),
 };

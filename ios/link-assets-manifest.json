@@ -34,12 +34,36 @@
       "sha1": "7b3df003a9bf9c8a84a7fd9433b10caf3a39e98d"
     },
     {
+      "path": "src/assets/audio/preview/characters/cyborg/cyborg_en_preview.m4a",
+      "sha1": "9c41e43ee11cfe62f271b0544efad8cae0c662f0"
+    },
+    {
+      "path": "src/assets/audio/preview/characters/cyborg/cyborg_sk_preview.m4a",
+      "sha1": "8abddda5f9d5435f51943e49421e82cde246662b"
+    },
+    {
       "path": "src/assets/audio/preview/characters/shieldmaiden/shieldmaiden_cs_preview.m4a",
       "sha1": "a2df5f75863c2b1a5f5d72b935e48585565d36b4"
     },
     {
+      "path": "src/assets/audio/preview/characters/shieldmaiden/shieldmaiden_en_preview.m4a",
+      "sha1": "145d3db6df4bb2ac0ddb4f2f16ae13ee3a468a49"
+    },
+    {
+      "path": "src/assets/audio/preview/characters/shieldmaiden/shieldmaiden_sk_preview.m4a",
+      "sha1": "df1582810b8601d65ef9b9c23e79dd1d811f08ac"
+    },
+    {
       "path": "src/assets/audio/preview/characters/warrior/warrior_cs_preview.m4a",
       "sha1": "9561ace3a5f2364b732e4a56d915c3e76ecec9c4"
+    },
+    {
+      "path": "src/assets/audio/preview/characters/warrior/warrior_en_preview.m4a",
+      "sha1": "0810cb5b398d23b2f99bb679649ba854a715e3ef"
+    },
+    {
+      "path": "src/assets/audio/preview/characters/warrior/warrior_sk_preview.m4a",
+      "sha1": "4b6d7e37a7cfcfb70b53b14f9b6d4b125082c6d7"
     },
     {
       "path": "src/assets/audio/preview/characters/wizard/wizard_cs_preview.m4a",

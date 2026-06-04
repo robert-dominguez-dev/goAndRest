@@ -651,6 +651,12 @@
 		FEF44361716C40C4961130FF /* warrior_cs_work_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F72C1A5C0081467EB10D4FF2 /* warrior_cs_work_short.m4a */; };
 		FF80F116C46941B5AEDB7B98 /* wizard_en_cooldown_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 7C3939FEC8E343C6AC892044 /* wizard_en_cooldown_short.m4a */; };
 		FFB90E71B3FB40A7AE35505C /* coach_male_sk_work_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95A4B690BCAA43348B83E060 /* coach_male_sk_work_v2.m4a */; };
+		9004F02DB1A5441A8676B713 /* cyborg_en_preview.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 667EBD4E41ED40F4AFD5D70F /* cyborg_en_preview.m4a */; };
+		9969E90B03F64B3EB56655E1 /* cyborg_sk_preview.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F3A03F02EC9349DE90F0CB9F /* cyborg_sk_preview.m4a */; };
+		406FC358EB534276ACBCD238 /* shieldmaiden_en_preview.m4a in Resources */ = {isa = PBXBuildFile; fileRef = EFF5E34979A742C790E510D8 /* shieldmaiden_en_preview.m4a */; };
+		D0A8F6F8804B40FAB689947C /* shieldmaiden_sk_preview.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2388300E708945A09831C6AF /* shieldmaiden_sk_preview.m4a */; };
+		5E3F3FD7145545C1B2A4DE6A /* warrior_en_preview.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9297E0C63B9A45F18F8B3B26 /* warrior_en_preview.m4a */; };
+		42957AEB1209405A9CC0C301 /* warrior_sk_preview.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 64406CF0899B4B33BE8C71C9 /* warrior_sk_preview.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1303,6 +1309,12 @@
 		FF07B7FD9CF0434A9889E19E /* bell_finish.m4a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = bell_finish.m4a; path = ../src/assets/audio/workout/sounds/bell/bell_finish.m4a; sourceTree = "<group>"; };
 		FF6469B040EC4056B43CF533 /* shieldmaiden_cs_3.m4a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = shieldmaiden_cs_3.m4a; path = ../src/assets/audio/workout/characters/shieldmaiden/cs/shieldmaiden_cs_3.m4a; sourceTree = "<group>"; };
 		FFCA900937DA4B6F9E17FADC /* wizard_cs_5.m4a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = wizard_cs_5.m4a; path = ../src/assets/audio/workout/characters/wizard/cs/wizard_cs_5.m4a; sourceTree = "<group>"; };
+		667EBD4E41ED40F4AFD5D70F /* cyborg_en_preview.m4a */ = {isa = PBXFileReference; name = "cyborg_en_preview.m4a"; path = "../src/assets/audio/preview/characters/cyborg/cyborg_en_preview.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F3A03F02EC9349DE90F0CB9F /* cyborg_sk_preview.m4a */ = {isa = PBXFileReference; name = "cyborg_sk_preview.m4a"; path = "../src/assets/audio/preview/characters/cyborg/cyborg_sk_preview.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EFF5E34979A742C790E510D8 /* shieldmaiden_en_preview.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_en_preview.m4a"; path = "../src/assets/audio/preview/characters/shieldmaiden/shieldmaiden_en_preview.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2388300E708945A09831C6AF /* shieldmaiden_sk_preview.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_sk_preview.m4a"; path = "../src/assets/audio/preview/characters/shieldmaiden/shieldmaiden_sk_preview.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9297E0C63B9A45F18F8B3B26 /* warrior_en_preview.m4a */ = {isa = PBXFileReference; name = "warrior_en_preview.m4a"; path = "../src/assets/audio/preview/characters/warrior/warrior_en_preview.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		64406CF0899B4B33BE8C71C9 /* warrior_sk_preview.m4a */ = {isa = PBXFileReference; name = "warrior_sk_preview.m4a"; path = "../src/assets/audio/preview/characters/warrior/warrior_sk_preview.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1980,6 +1992,12 @@
 				B288C21D58FE4F0A9BB8C618 /* brief_male_en_preview.m4a */,
 				0C019BE1F2124BCE8EFF8E08 /* brief_male_sk_preview.m4a */,
 				3CF6B334CF814D408A9C96A0 /* silence.m4a */,
+				667EBD4E41ED40F4AFD5D70F /* cyborg_en_preview.m4a */,
+				F3A03F02EC9349DE90F0CB9F /* cyborg_sk_preview.m4a */,
+				EFF5E34979A742C790E510D8 /* shieldmaiden_en_preview.m4a */,
+				2388300E708945A09831C6AF /* shieldmaiden_sk_preview.m4a */,
+				9297E0C63B9A45F18F8B3B26 /* warrior_en_preview.m4a */,
+				64406CF0899B4B33BE8C71C9 /* warrior_sk_preview.m4a */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -2726,6 +2744,12 @@
 				5F1766B2B3624C72A75CFF0A /* brief_male_en_preview.m4a in Resources */,
 				2FF850A8CD9944269137CCD3 /* brief_male_sk_preview.m4a in Resources */,
 				CB734F3C86934B60AFDC285E /* silence.m4a in Resources */,
+				9004F02DB1A5441A8676B713 /* cyborg_en_preview.m4a in Resources */,
+				9969E90B03F64B3EB56655E1 /* cyborg_sk_preview.m4a in Resources */,
+				406FC358EB534276ACBCD238 /* shieldmaiden_en_preview.m4a in Resources */,
+				D0A8F6F8804B40FAB689947C /* shieldmaiden_sk_preview.m4a in Resources */,
+				5E3F3FD7145545C1B2A4DE6A /* warrior_en_preview.m4a in Resources */,
+				42957AEB1209405A9CC0C301 /* warrior_sk_preview.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

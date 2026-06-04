@@ -1,11 +1,8 @@
-import {
-  Countdown,
-  SoundPathByLanguage,
-  WorkoutSoundFilePaths,
-  WorkoutSoundPathsByLanguage,
-} from '../../../types.ts';
+import { Countdown, SoundPathByLanguage, WorkoutSoundFilePaths, WorkoutSoundPathsByLanguage, } from '../../../types.ts';
 import { SupportedLanguageCode } from '../../../../contexts/AppLanguageProvider/constants.ts';
-import { RunningWorkoutPhase } from '../../../../components/navigation/AppNavigator/screens/RunningWorkoutScreen/types.ts';
+import {
+  RunningWorkoutPhase
+} from '../../../../components/navigation/AppNavigator/screens/RunningWorkoutScreen/types.ts';
 
 const warriorCs: WorkoutSoundFilePaths = {
   [RunningWorkoutPhase.WARMUP]: {
@@ -82,6 +79,6 @@ export const warriorSoundPathsByLanguage: WorkoutSoundPathsByLanguage = {
 
 export const warriorPreviewPathByLanguage: SoundPathByLanguage = {
   [SupportedLanguageCode.cs]: require('../../../audio/preview/characters/warrior/warrior_cs_preview.m4a'),
-  [SupportedLanguageCode.en]: require('../../../audio/preview/characters/warrior/warrior_cs_preview.m4a'),
-  [SupportedLanguageCode.sk]: require('../../../audio/preview/characters/warrior/warrior_cs_preview.m4a'),
+  [SupportedLanguageCode.en]: require('../../../audio/preview/characters/warrior/warrior_en_preview.m4a'),
+  [SupportedLanguageCode.sk]: require('../../../audio/preview/characters/warrior/warrior_sk_preview.m4a'),
 };
