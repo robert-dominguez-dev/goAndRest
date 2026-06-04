@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
+    "android:port": "adb reverse tcp:8081 tcp:8081",
     "android:bundle": "npm run android:version && cd android && ./gradlew bundleRelease",
     "android:assemble": "cd android && ./gradlew assembleRelease",
     "android:version": "node scripts/android_version_increment.mjs",
