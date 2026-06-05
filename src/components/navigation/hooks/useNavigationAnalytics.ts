@@ -1,7 +1,6 @@
 import { useCallback, useRef } from 'react';
 import { useNavigationContainerRef } from '@react-navigation/native';
 import { getAnalytics } from '@react-native-firebase/analytics';
-import { IS_DEV_MODE } from '../../../constants/common.ts';
 import { logScreenViewEvent } from '../helpers/logScreenViewEvent.ts';
 
 export const useNavigationAnalytics = () => {
@@ -19,10 +18,6 @@ export const useNavigationAnalytics = () => {
     const currentRouteName = navigationRef.getCurrentRoute()?.name;
 
     if (previousRouteName !== currentRouteName && currentRouteName) {
-      if (IS_DEV_MODE) {
-        console.log(`📱 Analytics [Screen View]: ${currentRouteName}`);
-      }
-
       await logScreenViewEvent({
         screen_name: currentRouteName,
         screen_class: currentRouteName,

@@ -12,12 +12,11 @@ export const logEventWrapper = async (
   params?: EventParams,
 ) => {
   try {
-    const analytics = getAnalytics();
-
-    await callback(analytics);
-
     if (IS_DEV_MODE) {
       logDevAnalyticsSuccess(eventType, params);
+    } else {
+      const analytics = getAnalytics();
+      await callback(analytics);
     }
   } catch (error) {
     if (IS_DEV_MODE) {
