@@ -657,6 +657,68 @@
 		D0A8F6F8804B40FAB689947C /* shieldmaiden_sk_preview.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2388300E708945A09831C6AF /* shieldmaiden_sk_preview.m4a */; };
 		5E3F3FD7145545C1B2A4DE6A /* warrior_en_preview.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9297E0C63B9A45F18F8B3B26 /* warrior_en_preview.m4a */; };
 		42957AEB1209405A9CC0C301 /* warrior_sk_preview.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 64406CF0899B4B33BE8C71C9 /* warrior_sk_preview.m4a */; };
+		C86734A38E62409F9C40CA66 /* cyborg_en_1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 740833A20FA94002B4DFDA27 /* cyborg_en_1.m4a */; };
+		7C0B795FF1944B658D031DDB /* cyborg_en_10.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 479284931BBE46D7BD895912 /* cyborg_en_10.m4a */; };
+		A774C3961D4A4D7FAE138142 /* cyborg_en_2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 294EF4C8ED33473FB768116B /* cyborg_en_2.m4a */; };
+		E686EB702E9F44A786D819EE /* cyborg_en_3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3B514AD81A784A0FA21FAE28 /* cyborg_en_3.m4a */; };
+		2B1ED9473D4F4B32A2EE5B38 /* cyborg_en_4.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 85BEC90CD79D4CA0B5ABA686 /* cyborg_en_4.m4a */; };
+		764EE672A14C45ED9ED2A406 /* cyborg_en_5.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3363AE9A775E4DBD936BED74 /* cyborg_en_5.m4a */; };
+		06B08EB63AA74938BD7AADE1 /* cyborg_en_6.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DBD57E5EF6114AA2B01EB8CC /* cyborg_en_6.m4a */; };
+		92BBC7BEAC1E43A4A59BC802 /* cyborg_en_7.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A94D606A05D449B39AB4F80A /* cyborg_en_7.m4a */; };
+		29E2F20651594E509C4671D5 /* cyborg_en_8.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6CB9AF06983048F493F9D9DF /* cyborg_en_8.m4a */; };
+		44B11F2C8E85459B885CE3FB /* cyborg_en_9.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 08DDD4C9073841F2AE9E58DC /* cyborg_en_9.m4a */; };
+		65FBE9181E30435AB980DE8E /* cyborg_en_cooldown_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2A560A46EA2347C283098BBD /* cyborg_en_cooldown_short.m4a */; };
+		251CD409ED7C4563A4F497EB /* cyborg_en_cooldown_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 7D7D45B3EEA14AE59EC2684A /* cyborg_en_cooldown_v1.m4a */; };
+		193C8E0A532348B78AD1D696 /* cyborg_en_cooldown_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D4E1614FAEDF445CA0578FF1 /* cyborg_en_cooldown_v2.m4a */; };
+		F0D09261AF954331B2902692 /* cyborg_en_finish_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CC4BFE4342954292B1CEB615 /* cyborg_en_finish_short.m4a */; };
+		5B3428EC0DDC4320A508B6B7 /* cyborg_en_finish_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F831E57F7A4C4A89833A531F /* cyborg_en_finish_v1.m4a */; };
+		E70456F2DEB042E9A7563E14 /* cyborg_en_finish_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B300D3282E6E4D5C9B5352D2 /* cyborg_en_finish_v2.m4a */; };
+		A5E707F981B848EDA1FD75F9 /* cyborg_en_half_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 21362998B463446285C9B44A /* cyborg_en_half_short.m4a */; };
+		E13A53AB6DBD40E0B81C5628 /* cyborg_en_half_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 125351FCDE3D42A99FD5119D /* cyborg_en_half_v1.m4a */; };
+		FBA949290FA646A1BC1C146F /* cyborg_en_half_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A6E93520C0A34E309772ECE0 /* cyborg_en_half_v2.m4a */; };
+		436D747B06D24A39BFEEFBEE /* cyborg_en_recovery_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 948F4E4296C74FE09884B9E8 /* cyborg_en_recovery_short.m4a */; };
+		C980414FC82D4076AFFEEF8C /* cyborg_en_recovery_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 159D06C29C4C4A0880A35AC1 /* cyborg_en_recovery_v1.m4a */; };
+		FE6660B30BFB4C399EA353FA /* cyborg_en_recovery_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DE38B810D1CB4E798E78F3B4 /* cyborg_en_recovery_v2.m4a */; };
+		075502B4369847C68F7B17AD /* cyborg_en_rest_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DA4AF106BD164B5F99E05AE3 /* cyborg_en_rest_short.m4a */; };
+		2C136B91306248F2A49C00E7 /* cyborg_en_rest_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E4925F0A9AFF4E60AEFB1A93 /* cyborg_en_rest_v1.m4a */; };
+		77DC74AA58744BBAB0DF3712 /* cyborg_en_rest_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3EE346B1B15B4B189AA13C2E /* cyborg_en_rest_v2.m4a */; };
+		89D5484833BE420D85DE66AF /* cyborg_en_warmup_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 90D663A7E73D440DA74B7644 /* cyborg_en_warmup_short.m4a */; };
+		A648D60CC9614D07B4FAAAA7 /* cyborg_en_warmup_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A370E22F3E8C4C7D9EB99236 /* cyborg_en_warmup_v1.m4a */; };
+		95D73EAFB2CE4CA690721ACE /* cyborg_en_warmup_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CCC3FAF4D3664064B7384F37 /* cyborg_en_warmup_v2.m4a */; };
+		89205ADB0B2548EA99C1362D /* cyborg_en_work_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E6526BEC511947FC8D1EA8F2 /* cyborg_en_work_short.m4a */; };
+		3F0756DE29AB4D4C9CD3FDB9 /* cyborg_en_work_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 7EEF48C7439945EE80C66641 /* cyborg_en_work_v1.m4a */; };
+		82A534A074924575901BFC0F /* cyborg_en_work_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 65C156495FB84F06B2D2B125 /* cyborg_en_work_v2.m4a */; };
+		FEBC4D01D64F432ABC68B5B4 /* cyborg_sk_1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E52DF4B7271949ED9BE28376 /* cyborg_sk_1.m4a */; };
+		A7B32C6246AC49058266B8BF /* cyborg_sk_10.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FA7EC26C098C42FE8FED3359 /* cyborg_sk_10.m4a */; };
+		02064B4D9BE74D5B9B053326 /* cyborg_sk_2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 89E80374FEC2473686655B59 /* cyborg_sk_2.m4a */; };
+		3E57DEBED0E047B3808E43E3 /* cyborg_sk_3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0A369E4D4D04483A95DABC56 /* cyborg_sk_3.m4a */; };
+		2FE686E3AC2F4FBDA945CBB7 /* cyborg_sk_4.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 7BA6ABB60837411382442239 /* cyborg_sk_4.m4a */; };
+		C38769E810734DCDB588B34D /* cyborg_sk_5.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9F1738B1BC4445A7B71428E4 /* cyborg_sk_5.m4a */; };
+		CD23C14ECE0E4C88BBA96EA6 /* cyborg_sk_6.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6152D5936E61418DA7658441 /* cyborg_sk_6.m4a */; };
+		78A7876EC19B4634A9AEC96F /* cyborg_sk_7.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 09FBBFF83C56418596EE6878 /* cyborg_sk_7.m4a */; };
+		48AAC93D257B43B69FE18C14 /* cyborg_sk_8.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DE4E0AE1E87A49C2A31BD197 /* cyborg_sk_8.m4a */; };
+		5D938991F30E4E73A779F212 /* cyborg_sk_9.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0B5EE41CF10847899FCF9971 /* cyborg_sk_9.m4a */; };
+		F7DC9BECA91E4A98BF7541FA /* cyborg_sk_cooldown_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = BF7EA1199B2245B5AC94E54A /* cyborg_sk_cooldown_short.m4a */; };
+		74AE06A19224447688A513A4 /* cyborg_sk_cooldown_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A69128B03A8F4E3EB2E761FE /* cyborg_sk_cooldown_v1.m4a */; };
+		846C301C5DD444B3ABC17396 /* cyborg_sk_cooldown_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 45A5EA5F89B34FBA89F5AF45 /* cyborg_sk_cooldown_v2.m4a */; };
+		7EB7FC0F45D04E9581478556 /* cyborg_sk_finish_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8CF6DDE017294AC2A76140F8 /* cyborg_sk_finish_short.m4a */; };
+		5D26817405CF4EFCBA2376F6 /* cyborg_sk_finish_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C79591EF062A4E90A4B844DB /* cyborg_sk_finish_v1.m4a */; };
+		92BE57C67C414A7A91784840 /* cyborg_sk_finish_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 68EDE5CB06CB46E5AE22C9B4 /* cyborg_sk_finish_v2.m4a */; };
+		9FF05A65F47E42C092B3C9DE /* cyborg_sk_half_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1946D86126414768A30566F9 /* cyborg_sk_half_short.m4a */; };
+		AE8661F81CE844969B0D9166 /* cyborg_sk_half_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C1E5E5804FD14BC38843A3B6 /* cyborg_sk_half_v1.m4a */; };
+		34237C9954804478B3255E4E /* cyborg_sk_half_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F2804CF93E7F4CE6AEB05B70 /* cyborg_sk_half_v2.m4a */; };
+		DFE0AF73EE4B4488869C2BE4 /* cyborg_sk_recovery_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6DA6F53826A14BA39C660930 /* cyborg_sk_recovery_short.m4a */; };
+		5CE0E998D0994DC992105FDB /* cyborg_sk_recovery_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C91BB3C5D54541E69A305ECB /* cyborg_sk_recovery_v1.m4a */; };
+		6C858431E89748A9A7EAFF45 /* cyborg_sk_recovery_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 30A3EC0561534BC896A25807 /* cyborg_sk_recovery_v2.m4a */; };
+		B0E0A4C3F66D456C88C635D0 /* cyborg_sk_rest_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 60BBA73386EC49A09F5E7444 /* cyborg_sk_rest_short.m4a */; };
+		7A801AA362564161B8E0BCC9 /* cyborg_sk_rest_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E3E5810F69F94A769B030B84 /* cyborg_sk_rest_v1.m4a */; };
+		20322B4327FA43B388AE07BF /* cyborg_sk_rest_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E13CB57CC58C40D285554103 /* cyborg_sk_rest_v2.m4a */; };
+		9DBE912A2AF64AAC9C9531AF /* cyborg_sk_warmup_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 5FCFC26AD9E341D4B1C38F32 /* cyborg_sk_warmup_short.m4a */; };
+		D5B88E98516A4A6CACBD3013 /* cyborg_sk_warmup_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 65773481514B4883AC0861FF /* cyborg_sk_warmup_v1.m4a */; };
+		4D52A24FF9224300A2FC4A0A /* cyborg_sk_warmup_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3ED76352945D4766867C787C /* cyborg_sk_warmup_v2.m4a */; };
+		6C6295E267234E14A857F3F4 /* cyborg_sk_work_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FF129955F16644A59519863D /* cyborg_sk_work_short.m4a */; };
+		F56AFCF5F86544A497FC33AE /* cyborg_sk_work_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 364C5BDD7BE34D2092ED8DC5 /* cyborg_sk_work_v1.m4a */; };
+		F4288DF334024B48B1B322CF /* cyborg_sk_work_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B162D95E9E16491993AC1DFD /* cyborg_sk_work_v2.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1315,6 +1377,68 @@
 		2388300E708945A09831C6AF /* shieldmaiden_sk_preview.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_sk_preview.m4a"; path = "../src/assets/audio/preview/characters/shieldmaiden/shieldmaiden_sk_preview.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		9297E0C63B9A45F18F8B3B26 /* warrior_en_preview.m4a */ = {isa = PBXFileReference; name = "warrior_en_preview.m4a"; path = "../src/assets/audio/preview/characters/warrior/warrior_en_preview.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		64406CF0899B4B33BE8C71C9 /* warrior_sk_preview.m4a */ = {isa = PBXFileReference; name = "warrior_sk_preview.m4a"; path = "../src/assets/audio/preview/characters/warrior/warrior_sk_preview.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		740833A20FA94002B4DFDA27 /* cyborg_en_1.m4a */ = {isa = PBXFileReference; name = "cyborg_en_1.m4a"; path = "../src/assets/audio/workout/characters/cyborg/en/cyborg_en_1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		479284931BBE46D7BD895912 /* cyborg_en_10.m4a */ = {isa = PBXFileReference; name = "cyborg_en_10.m4a"; path = "../src/assets/audio/workout/characters/cyborg/en/cyborg_en_10.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		294EF4C8ED33473FB768116B /* cyborg_en_2.m4a */ = {isa = PBXFileReference; name = "cyborg_en_2.m4a"; path = "../src/assets/audio/workout/characters/cyborg/en/cyborg_en_2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3B514AD81A784A0FA21FAE28 /* cyborg_en_3.m4a */ = {isa = PBXFileReference; name = "cyborg_en_3.m4a"; path = "../src/assets/audio/workout/characters/cyborg/en/cyborg_en_3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		85BEC90CD79D4CA0B5ABA686 /* cyborg_en_4.m4a */ = {isa = PBXFileReference; name = "cyborg_en_4.m4a"; path = "../src/assets/audio/workout/characters/cyborg/en/cyborg_en_4.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3363AE9A775E4DBD936BED74 /* cyborg_en_5.m4a */ = {isa = PBXFileReference; name = "cyborg_en_5.m4a"; path = "../src/assets/audio/workout/characters/cyborg/en/cyborg_en_5.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DBD57E5EF6114AA2B01EB8CC /* cyborg_en_6.m4a */ = {isa = PBXFileReference; name = "cyborg_en_6.m4a"; path = "../src/assets/audio/workout/characters/cyborg/en/cyborg_en_6.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A94D606A05D449B39AB4F80A /* cyborg_en_7.m4a */ = {isa = PBXFileReference; name = "cyborg_en_7.m4a"; path = "../src/assets/audio/workout/characters/cyborg/en/cyborg_en_7.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6CB9AF06983048F493F9D9DF /* cyborg_en_8.m4a */ = {isa = PBXFileReference; name = "cyborg_en_8.m4a"; path = "../src/assets/audio/workout/characters/cyborg/en/cyborg_en_8.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		08DDD4C9073841F2AE9E58DC /* cyborg_en_9.m4a */ = {isa = PBXFileReference; name = "cyborg_en_9.m4a"; path = "../src/assets/audio/workout/characters/cyborg/en/cyborg_en_9.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2A560A46EA2347C283098BBD /* cyborg_en_cooldown_short.m4a */ = {isa = PBXFileReference; name = "cyborg_en_cooldown_short.m4a"; path = "../src/assets/audio/workout/characters/cyborg/en/cyborg_en_cooldown_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7D7D45B3EEA14AE59EC2684A /* cyborg_en_cooldown_v1.m4a */ = {isa = PBXFileReference; name = "cyborg_en_cooldown_v1.m4a"; path = "../src/assets/audio/workout/characters/cyborg/en/cyborg_en_cooldown_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D4E1614FAEDF445CA0578FF1 /* cyborg_en_cooldown_v2.m4a */ = {isa = PBXFileReference; name = "cyborg_en_cooldown_v2.m4a"; path = "../src/assets/audio/workout/characters/cyborg/en/cyborg_en_cooldown_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CC4BFE4342954292B1CEB615 /* cyborg_en_finish_short.m4a */ = {isa = PBXFileReference; name = "cyborg_en_finish_short.m4a"; path = "../src/assets/audio/workout/characters/cyborg/en/cyborg_en_finish_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F831E57F7A4C4A89833A531F /* cyborg_en_finish_v1.m4a */ = {isa = PBXFileReference; name = "cyborg_en_finish_v1.m4a"; path = "../src/assets/audio/workout/characters/cyborg/en/cyborg_en_finish_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B300D3282E6E4D5C9B5352D2 /* cyborg_en_finish_v2.m4a */ = {isa = PBXFileReference; name = "cyborg_en_finish_v2.m4a"; path = "../src/assets/audio/workout/characters/cyborg/en/cyborg_en_finish_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		21362998B463446285C9B44A /* cyborg_en_half_short.m4a */ = {isa = PBXFileReference; name = "cyborg_en_half_short.m4a"; path = "../src/assets/audio/workout/characters/cyborg/en/cyborg_en_half_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		125351FCDE3D42A99FD5119D /* cyborg_en_half_v1.m4a */ = {isa = PBXFileReference; name = "cyborg_en_half_v1.m4a"; path = "../src/assets/audio/workout/characters/cyborg/en/cyborg_en_half_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A6E93520C0A34E309772ECE0 /* cyborg_en_half_v2.m4a */ = {isa = PBXFileReference; name = "cyborg_en_half_v2.m4a"; path = "../src/assets/audio/workout/characters/cyborg/en/cyborg_en_half_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		948F4E4296C74FE09884B9E8 /* cyborg_en_recovery_short.m4a */ = {isa = PBXFileReference; name = "cyborg_en_recovery_short.m4a"; path = "../src/assets/audio/workout/characters/cyborg/en/cyborg_en_recovery_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		159D06C29C4C4A0880A35AC1 /* cyborg_en_recovery_v1.m4a */ = {isa = PBXFileReference; name = "cyborg_en_recovery_v1.m4a"; path = "../src/assets/audio/workout/characters/cyborg/en/cyborg_en_recovery_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DE38B810D1CB4E798E78F3B4 /* cyborg_en_recovery_v2.m4a */ = {isa = PBXFileReference; name = "cyborg_en_recovery_v2.m4a"; path = "../src/assets/audio/workout/characters/cyborg/en/cyborg_en_recovery_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DA4AF106BD164B5F99E05AE3 /* cyborg_en_rest_short.m4a */ = {isa = PBXFileReference; name = "cyborg_en_rest_short.m4a"; path = "../src/assets/audio/workout/characters/cyborg/en/cyborg_en_rest_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E4925F0A9AFF4E60AEFB1A93 /* cyborg_en_rest_v1.m4a */ = {isa = PBXFileReference; name = "cyborg_en_rest_v1.m4a"; path = "../src/assets/audio/workout/characters/cyborg/en/cyborg_en_rest_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3EE346B1B15B4B189AA13C2E /* cyborg_en_rest_v2.m4a */ = {isa = PBXFileReference; name = "cyborg_en_rest_v2.m4a"; path = "../src/assets/audio/workout/characters/cyborg/en/cyborg_en_rest_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		90D663A7E73D440DA74B7644 /* cyborg_en_warmup_short.m4a */ = {isa = PBXFileReference; name = "cyborg_en_warmup_short.m4a"; path = "../src/assets/audio/workout/characters/cyborg/en/cyborg_en_warmup_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A370E22F3E8C4C7D9EB99236 /* cyborg_en_warmup_v1.m4a */ = {isa = PBXFileReference; name = "cyborg_en_warmup_v1.m4a"; path = "../src/assets/audio/workout/characters/cyborg/en/cyborg_en_warmup_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CCC3FAF4D3664064B7384F37 /* cyborg_en_warmup_v2.m4a */ = {isa = PBXFileReference; name = "cyborg_en_warmup_v2.m4a"; path = "../src/assets/audio/workout/characters/cyborg/en/cyborg_en_warmup_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E6526BEC511947FC8D1EA8F2 /* cyborg_en_work_short.m4a */ = {isa = PBXFileReference; name = "cyborg_en_work_short.m4a"; path = "../src/assets/audio/workout/characters/cyborg/en/cyborg_en_work_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7EEF48C7439945EE80C66641 /* cyborg_en_work_v1.m4a */ = {isa = PBXFileReference; name = "cyborg_en_work_v1.m4a"; path = "../src/assets/audio/workout/characters/cyborg/en/cyborg_en_work_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		65C156495FB84F06B2D2B125 /* cyborg_en_work_v2.m4a */ = {isa = PBXFileReference; name = "cyborg_en_work_v2.m4a"; path = "../src/assets/audio/workout/characters/cyborg/en/cyborg_en_work_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E52DF4B7271949ED9BE28376 /* cyborg_sk_1.m4a */ = {isa = PBXFileReference; name = "cyborg_sk_1.m4a"; path = "../src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FA7EC26C098C42FE8FED3359 /* cyborg_sk_10.m4a */ = {isa = PBXFileReference; name = "cyborg_sk_10.m4a"; path = "../src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_10.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		89E80374FEC2473686655B59 /* cyborg_sk_2.m4a */ = {isa = PBXFileReference; name = "cyborg_sk_2.m4a"; path = "../src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0A369E4D4D04483A95DABC56 /* cyborg_sk_3.m4a */ = {isa = PBXFileReference; name = "cyborg_sk_3.m4a"; path = "../src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7BA6ABB60837411382442239 /* cyborg_sk_4.m4a */ = {isa = PBXFileReference; name = "cyborg_sk_4.m4a"; path = "../src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_4.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9F1738B1BC4445A7B71428E4 /* cyborg_sk_5.m4a */ = {isa = PBXFileReference; name = "cyborg_sk_5.m4a"; path = "../src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_5.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6152D5936E61418DA7658441 /* cyborg_sk_6.m4a */ = {isa = PBXFileReference; name = "cyborg_sk_6.m4a"; path = "../src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_6.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		09FBBFF83C56418596EE6878 /* cyborg_sk_7.m4a */ = {isa = PBXFileReference; name = "cyborg_sk_7.m4a"; path = "../src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_7.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DE4E0AE1E87A49C2A31BD197 /* cyborg_sk_8.m4a */ = {isa = PBXFileReference; name = "cyborg_sk_8.m4a"; path = "../src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_8.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0B5EE41CF10847899FCF9971 /* cyborg_sk_9.m4a */ = {isa = PBXFileReference; name = "cyborg_sk_9.m4a"; path = "../src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_9.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BF7EA1199B2245B5AC94E54A /* cyborg_sk_cooldown_short.m4a */ = {isa = PBXFileReference; name = "cyborg_sk_cooldown_short.m4a"; path = "../src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_cooldown_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A69128B03A8F4E3EB2E761FE /* cyborg_sk_cooldown_v1.m4a */ = {isa = PBXFileReference; name = "cyborg_sk_cooldown_v1.m4a"; path = "../src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_cooldown_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		45A5EA5F89B34FBA89F5AF45 /* cyborg_sk_cooldown_v2.m4a */ = {isa = PBXFileReference; name = "cyborg_sk_cooldown_v2.m4a"; path = "../src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_cooldown_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8CF6DDE017294AC2A76140F8 /* cyborg_sk_finish_short.m4a */ = {isa = PBXFileReference; name = "cyborg_sk_finish_short.m4a"; path = "../src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_finish_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C79591EF062A4E90A4B844DB /* cyborg_sk_finish_v1.m4a */ = {isa = PBXFileReference; name = "cyborg_sk_finish_v1.m4a"; path = "../src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_finish_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		68EDE5CB06CB46E5AE22C9B4 /* cyborg_sk_finish_v2.m4a */ = {isa = PBXFileReference; name = "cyborg_sk_finish_v2.m4a"; path = "../src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_finish_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1946D86126414768A30566F9 /* cyborg_sk_half_short.m4a */ = {isa = PBXFileReference; name = "cyborg_sk_half_short.m4a"; path = "../src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_half_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C1E5E5804FD14BC38843A3B6 /* cyborg_sk_half_v1.m4a */ = {isa = PBXFileReference; name = "cyborg_sk_half_v1.m4a"; path = "../src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_half_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F2804CF93E7F4CE6AEB05B70 /* cyborg_sk_half_v2.m4a */ = {isa = PBXFileReference; name = "cyborg_sk_half_v2.m4a"; path = "../src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_half_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6DA6F53826A14BA39C660930 /* cyborg_sk_recovery_short.m4a */ = {isa = PBXFileReference; name = "cyborg_sk_recovery_short.m4a"; path = "../src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_recovery_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C91BB3C5D54541E69A305ECB /* cyborg_sk_recovery_v1.m4a */ = {isa = PBXFileReference; name = "cyborg_sk_recovery_v1.m4a"; path = "../src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_recovery_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		30A3EC0561534BC896A25807 /* cyborg_sk_recovery_v2.m4a */ = {isa = PBXFileReference; name = "cyborg_sk_recovery_v2.m4a"; path = "../src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_recovery_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		60BBA73386EC49A09F5E7444 /* cyborg_sk_rest_short.m4a */ = {isa = PBXFileReference; name = "cyborg_sk_rest_short.m4a"; path = "../src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_rest_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E3E5810F69F94A769B030B84 /* cyborg_sk_rest_v1.m4a */ = {isa = PBXFileReference; name = "cyborg_sk_rest_v1.m4a"; path = "../src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_rest_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E13CB57CC58C40D285554103 /* cyborg_sk_rest_v2.m4a */ = {isa = PBXFileReference; name = "cyborg_sk_rest_v2.m4a"; path = "../src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_rest_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5FCFC26AD9E341D4B1C38F32 /* cyborg_sk_warmup_short.m4a */ = {isa = PBXFileReference; name = "cyborg_sk_warmup_short.m4a"; path = "../src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_warmup_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		65773481514B4883AC0861FF /* cyborg_sk_warmup_v1.m4a */ = {isa = PBXFileReference; name = "cyborg_sk_warmup_v1.m4a"; path = "../src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_warmup_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3ED76352945D4766867C787C /* cyborg_sk_warmup_v2.m4a */ = {isa = PBXFileReference; name = "cyborg_sk_warmup_v2.m4a"; path = "../src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_warmup_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FF129955F16644A59519863D /* cyborg_sk_work_short.m4a */ = {isa = PBXFileReference; name = "cyborg_sk_work_short.m4a"; path = "../src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_work_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		364C5BDD7BE34D2092ED8DC5 /* cyborg_sk_work_v1.m4a */ = {isa = PBXFileReference; name = "cyborg_sk_work_v1.m4a"; path = "../src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_work_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B162D95E9E16491993AC1DFD /* cyborg_sk_work_v2.m4a */ = {isa = PBXFileReference; name = "cyborg_sk_work_v2.m4a"; path = "../src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_work_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1998,6 +2122,68 @@
 				2388300E708945A09831C6AF /* shieldmaiden_sk_preview.m4a */,
 				9297E0C63B9A45F18F8B3B26 /* warrior_en_preview.m4a */,
 				64406CF0899B4B33BE8C71C9 /* warrior_sk_preview.m4a */,
+				740833A20FA94002B4DFDA27 /* cyborg_en_1.m4a */,
+				479284931BBE46D7BD895912 /* cyborg_en_10.m4a */,
+				294EF4C8ED33473FB768116B /* cyborg_en_2.m4a */,
+				3B514AD81A784A0FA21FAE28 /* cyborg_en_3.m4a */,
+				85BEC90CD79D4CA0B5ABA686 /* cyborg_en_4.m4a */,
+				3363AE9A775E4DBD936BED74 /* cyborg_en_5.m4a */,
+				DBD57E5EF6114AA2B01EB8CC /* cyborg_en_6.m4a */,
+				A94D606A05D449B39AB4F80A /* cyborg_en_7.m4a */,
+				6CB9AF06983048F493F9D9DF /* cyborg_en_8.m4a */,
+				08DDD4C9073841F2AE9E58DC /* cyborg_en_9.m4a */,
+				2A560A46EA2347C283098BBD /* cyborg_en_cooldown_short.m4a */,
+				7D7D45B3EEA14AE59EC2684A /* cyborg_en_cooldown_v1.m4a */,
+				D4E1614FAEDF445CA0578FF1 /* cyborg_en_cooldown_v2.m4a */,
+				CC4BFE4342954292B1CEB615 /* cyborg_en_finish_short.m4a */,
+				F831E57F7A4C4A89833A531F /* cyborg_en_finish_v1.m4a */,
+				B300D3282E6E4D5C9B5352D2 /* cyborg_en_finish_v2.m4a */,
+				21362998B463446285C9B44A /* cyborg_en_half_short.m4a */,
+				125351FCDE3D42A99FD5119D /* cyborg_en_half_v1.m4a */,
+				A6E93520C0A34E309772ECE0 /* cyborg_en_half_v2.m4a */,
+				948F4E4296C74FE09884B9E8 /* cyborg_en_recovery_short.m4a */,
+				159D06C29C4C4A0880A35AC1 /* cyborg_en_recovery_v1.m4a */,
+				DE38B810D1CB4E798E78F3B4 /* cyborg_en_recovery_v2.m4a */,
+				DA4AF106BD164B5F99E05AE3 /* cyborg_en_rest_short.m4a */,
+				E4925F0A9AFF4E60AEFB1A93 /* cyborg_en_rest_v1.m4a */,
+				3EE346B1B15B4B189AA13C2E /* cyborg_en_rest_v2.m4a */,
+				90D663A7E73D440DA74B7644 /* cyborg_en_warmup_short.m4a */,
+				A370E22F3E8C4C7D9EB99236 /* cyborg_en_warmup_v1.m4a */,
+				CCC3FAF4D3664064B7384F37 /* cyborg_en_warmup_v2.m4a */,
+				E6526BEC511947FC8D1EA8F2 /* cyborg_en_work_short.m4a */,
+				7EEF48C7439945EE80C66641 /* cyborg_en_work_v1.m4a */,
+				65C156495FB84F06B2D2B125 /* cyborg_en_work_v2.m4a */,
+				E52DF4B7271949ED9BE28376 /* cyborg_sk_1.m4a */,
+				FA7EC26C098C42FE8FED3359 /* cyborg_sk_10.m4a */,
+				89E80374FEC2473686655B59 /* cyborg_sk_2.m4a */,
+				0A369E4D4D04483A95DABC56 /* cyborg_sk_3.m4a */,
+				7BA6ABB60837411382442239 /* cyborg_sk_4.m4a */,
+				9F1738B1BC4445A7B71428E4 /* cyborg_sk_5.m4a */,
+				6152D5936E61418DA7658441 /* cyborg_sk_6.m4a */,
+				09FBBFF83C56418596EE6878 /* cyborg_sk_7.m4a */,
+				DE4E0AE1E87A49C2A31BD197 /* cyborg_sk_8.m4a */,
+				0B5EE41CF10847899FCF9971 /* cyborg_sk_9.m4a */,
+				BF7EA1199B2245B5AC94E54A /* cyborg_sk_cooldown_short.m4a */,
+				A69128B03A8F4E3EB2E761FE /* cyborg_sk_cooldown_v1.m4a */,
+				45A5EA5F89B34FBA89F5AF45 /* cyborg_sk_cooldown_v2.m4a */,
+				8CF6DDE017294AC2A76140F8 /* cyborg_sk_finish_short.m4a */,
+				C79591EF062A4E90A4B844DB /* cyborg_sk_finish_v1.m4a */,
+				68EDE5CB06CB46E5AE22C9B4 /* cyborg_sk_finish_v2.m4a */,
+				1946D86126414768A30566F9 /* cyborg_sk_half_short.m4a */,
+				C1E5E5804FD14BC38843A3B6 /* cyborg_sk_half_v1.m4a */,
+				F2804CF93E7F4CE6AEB05B70 /* cyborg_sk_half_v2.m4a */,
+				6DA6F53826A14BA39C660930 /* cyborg_sk_recovery_short.m4a */,
+				C91BB3C5D54541E69A305ECB /* cyborg_sk_recovery_v1.m4a */,
+				30A3EC0561534BC896A25807 /* cyborg_sk_recovery_v2.m4a */,
+				60BBA73386EC49A09F5E7444 /* cyborg_sk_rest_short.m4a */,
+				E3E5810F69F94A769B030B84 /* cyborg_sk_rest_v1.m4a */,
+				E13CB57CC58C40D285554103 /* cyborg_sk_rest_v2.m4a */,
+				5FCFC26AD9E341D4B1C38F32 /* cyborg_sk_warmup_short.m4a */,
+				65773481514B4883AC0861FF /* cyborg_sk_warmup_v1.m4a */,
+				3ED76352945D4766867C787C /* cyborg_sk_warmup_v2.m4a */,
+				FF129955F16644A59519863D /* cyborg_sk_work_short.m4a */,
+				364C5BDD7BE34D2092ED8DC5 /* cyborg_sk_work_v1.m4a */,
+				B162D95E9E16491993AC1DFD /* cyborg_sk_work_v2.m4a */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -2750,6 +2936,68 @@
 				D0A8F6F8804B40FAB689947C /* shieldmaiden_sk_preview.m4a in Resources */,
 				5E3F3FD7145545C1B2A4DE6A /* warrior_en_preview.m4a in Resources */,
 				42957AEB1209405A9CC0C301 /* warrior_sk_preview.m4a in Resources */,
+				C86734A38E62409F9C40CA66 /* cyborg_en_1.m4a in Resources */,
+				7C0B795FF1944B658D031DDB /* cyborg_en_10.m4a in Resources */,
+				A774C3961D4A4D7FAE138142 /* cyborg_en_2.m4a in Resources */,
+				E686EB702E9F44A786D819EE /* cyborg_en_3.m4a in Resources */,
+				2B1ED9473D4F4B32A2EE5B38 /* cyborg_en_4.m4a in Resources */,
+				764EE672A14C45ED9ED2A406 /* cyborg_en_5.m4a in Resources */,
+				06B08EB63AA74938BD7AADE1 /* cyborg_en_6.m4a in Resources */,
+				92BBC7BEAC1E43A4A59BC802 /* cyborg_en_7.m4a in Resources */,
+				29E2F20651594E509C4671D5 /* cyborg_en_8.m4a in Resources */,
+				44B11F2C8E85459B885CE3FB /* cyborg_en_9.m4a in Resources */,
+				65FBE9181E30435AB980DE8E /* cyborg_en_cooldown_short.m4a in Resources */,
+				251CD409ED7C4563A4F497EB /* cyborg_en_cooldown_v1.m4a in Resources */,
+				193C8E0A532348B78AD1D696 /* cyborg_en_cooldown_v2.m4a in Resources */,
+				F0D09261AF954331B2902692 /* cyborg_en_finish_short.m4a in Resources */,
+				5B3428EC0DDC4320A508B6B7 /* cyborg_en_finish_v1.m4a in Resources */,
+				E70456F2DEB042E9A7563E14 /* cyborg_en_finish_v2.m4a in Resources */,
+				A5E707F981B848EDA1FD75F9 /* cyborg_en_half_short.m4a in Resources */,
+				E13A53AB6DBD40E0B81C5628 /* cyborg_en_half_v1.m4a in Resources */,
+				FBA949290FA646A1BC1C146F /* cyborg_en_half_v2.m4a in Resources */,
+				436D747B06D24A39BFEEFBEE /* cyborg_en_recovery_short.m4a in Resources */,
+				C980414FC82D4076AFFEEF8C /* cyborg_en_recovery_v1.m4a in Resources */,
+				FE6660B30BFB4C399EA353FA /* cyborg_en_recovery_v2.m4a in Resources */,
+				075502B4369847C68F7B17AD /* cyborg_en_rest_short.m4a in Resources */,
+				2C136B91306248F2A49C00E7 /* cyborg_en_rest_v1.m4a in Resources */,
+				77DC74AA58744BBAB0DF3712 /* cyborg_en_rest_v2.m4a in Resources */,
+				89D5484833BE420D85DE66AF /* cyborg_en_warmup_short.m4a in Resources */,
+				A648D60CC9614D07B4FAAAA7 /* cyborg_en_warmup_v1.m4a in Resources */,
+				95D73EAFB2CE4CA690721ACE /* cyborg_en_warmup_v2.m4a in Resources */,
+				89205ADB0B2548EA99C1362D /* cyborg_en_work_short.m4a in Resources */,
+				3F0756DE29AB4D4C9CD3FDB9 /* cyborg_en_work_v1.m4a in Resources */,
+				82A534A074924575901BFC0F /* cyborg_en_work_v2.m4a in Resources */,
+				FEBC4D01D64F432ABC68B5B4 /* cyborg_sk_1.m4a in Resources */,
+				A7B32C6246AC49058266B8BF /* cyborg_sk_10.m4a in Resources */,
+				02064B4D9BE74D5B9B053326 /* cyborg_sk_2.m4a in Resources */,
+				3E57DEBED0E047B3808E43E3 /* cyborg_sk_3.m4a in Resources */,
+				2FE686E3AC2F4FBDA945CBB7 /* cyborg_sk_4.m4a in Resources */,
+				C38769E810734DCDB588B34D /* cyborg_sk_5.m4a in Resources */,
+				CD23C14ECE0E4C88BBA96EA6 /* cyborg_sk_6.m4a in Resources */,
+				78A7876EC19B4634A9AEC96F /* cyborg_sk_7.m4a in Resources */,
+				48AAC93D257B43B69FE18C14 /* cyborg_sk_8.m4a in Resources */,
+				5D938991F30E4E73A779F212 /* cyborg_sk_9.m4a in Resources */,
+				F7DC9BECA91E4A98BF7541FA /* cyborg_sk_cooldown_short.m4a in Resources */,
+				74AE06A19224447688A513A4 /* cyborg_sk_cooldown_v1.m4a in Resources */,
+				846C301C5DD444B3ABC17396 /* cyborg_sk_cooldown_v2.m4a in Resources */,
+				7EB7FC0F45D04E9581478556 /* cyborg_sk_finish_short.m4a in Resources */,
+				5D26817405CF4EFCBA2376F6 /* cyborg_sk_finish_v1.m4a in Resources */,
+				92BE57C67C414A7A91784840 /* cyborg_sk_finish_v2.m4a in Resources */,
+				9FF05A65F47E42C092B3C9DE /* cyborg_sk_half_short.m4a in Resources */,
+				AE8661F81CE844969B0D9166 /* cyborg_sk_half_v1.m4a in Resources */,
+				34237C9954804478B3255E4E /* cyborg_sk_half_v2.m4a in Resources */,
+				DFE0AF73EE4B4488869C2BE4 /* cyborg_sk_recovery_short.m4a in Resources */,
+				5CE0E998D0994DC992105FDB /* cyborg_sk_recovery_v1.m4a in Resources */,
+				6C858431E89748A9A7EAFF45 /* cyborg_sk_recovery_v2.m4a in Resources */,
+				B0E0A4C3F66D456C88C635D0 /* cyborg_sk_rest_short.m4a in Resources */,
+				7A801AA362564161B8E0BCC9 /* cyborg_sk_rest_v1.m4a in Resources */,
+				20322B4327FA43B388AE07BF /* cyborg_sk_rest_v2.m4a in Resources */,
+				9DBE912A2AF64AAC9C9531AF /* cyborg_sk_warmup_short.m4a in Resources */,
+				D5B88E98516A4A6CACBD3013 /* cyborg_sk_warmup_v1.m4a in Resources */,
+				4D52A24FF9224300A2FC4A0A /* cyborg_sk_warmup_v2.m4a in Resources */,
+				6C6295E267234E14A857F3F4 /* cyborg_sk_work_short.m4a in Resources */,
+				F56AFCF5F86544A497FC33AE /* cyborg_sk_work_v1.m4a in Resources */,
+				F4288DF334024B48B1B322CF /* cyborg_sk_work_v2.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

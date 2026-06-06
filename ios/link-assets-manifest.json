@@ -246,6 +246,254 @@
       "sha1": "f23085f935b01fbc8a7ab3292e19276804e1e49b"
     },
     {
+      "path": "src/assets/audio/workout/characters/cyborg/en/cyborg_en_1.m4a",
+      "sha1": "404d21f67620144c8550af9e1d8c2a346feeb419"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/en/cyborg_en_10.m4a",
+      "sha1": "4c5b4d48c7591f4cd4455d27e983471c00c02709"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/en/cyborg_en_2.m4a",
+      "sha1": "5c69a39161df4b4cfac6b115bea54517e34c09bd"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/en/cyborg_en_3.m4a",
+      "sha1": "5657eaf505ba7f2b8e4d40553eab8ee63ee9282f"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/en/cyborg_en_4.m4a",
+      "sha1": "b95020ad076f6ce17201192cc7f73809b4ab4867"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/en/cyborg_en_5.m4a",
+      "sha1": "85818e59e7a2c4846772e7ce310ed84d87886b0f"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/en/cyborg_en_6.m4a",
+      "sha1": "32bbe74880912dfdda6c8a49202b60545966a5b0"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/en/cyborg_en_7.m4a",
+      "sha1": "e0e9f3f2ad7229ce7a5db6287bd157405af4ef57"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/en/cyborg_en_8.m4a",
+      "sha1": "b34dcacc62f2cb22d05b684a01461fd25a7e56e5"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/en/cyborg_en_9.m4a",
+      "sha1": "f44e0d8156f465b722f5d6c1f7583bf7494712ef"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/en/cyborg_en_cooldown_short.m4a",
+      "sha1": "8979b4f1e1d5f7eaa72c3480a6938f0660973908"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/en/cyborg_en_cooldown_v1.m4a",
+      "sha1": "2067b85b3b5c7e875a8105699f4f2ac7bd2c344d"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/en/cyborg_en_cooldown_v2.m4a",
+      "sha1": "0ad64f8221a9ee28a96df678d8d7958f0a4aff05"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/en/cyborg_en_finish_short.m4a",
+      "sha1": "1fd1b464ba8e6dc7975881fa3330c56a5b8c75be"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/en/cyborg_en_finish_v1.m4a",
+      "sha1": "81e136e0b87b9bbcf073e642a4797e78141ffde8"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/en/cyborg_en_finish_v2.m4a",
+      "sha1": "3432ee8e7bf3aa96dd77bffedd623405ef3720e2"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/en/cyborg_en_half_short.m4a",
+      "sha1": "be6e3cf07f7ddd9313b364969bdbae1d062501a5"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/en/cyborg_en_half_v1.m4a",
+      "sha1": "cd03f06f9e2d6b8c7efd76b0e8259ba5a78165df"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/en/cyborg_en_half_v2.m4a",
+      "sha1": "a5823f97da271b9a1c06963e2e308425b4250317"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/en/cyborg_en_recovery_short.m4a",
+      "sha1": "1bdab1ab60bcb573d8ceddb6b5629225182de15b"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/en/cyborg_en_recovery_v1.m4a",
+      "sha1": "c67c343a740b3fb4d0a0908063c4966eabdeaf05"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/en/cyborg_en_recovery_v2.m4a",
+      "sha1": "9fd5bdefc44b016b13092c9221f8d7d8e41b530e"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/en/cyborg_en_rest_short.m4a",
+      "sha1": "1630ce028279e8c2b94ad2aaf4b55eec707c1aaa"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/en/cyborg_en_rest_v1.m4a",
+      "sha1": "bf9711f4c571accbdd83292bc09597d735b4954d"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/en/cyborg_en_rest_v2.m4a",
+      "sha1": "378c73212910508e09b77cd6623e65e10018b708"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/en/cyborg_en_warmup_short.m4a",
+      "sha1": "e4e353f207469fdcb4b8be09625eea0716f78462"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/en/cyborg_en_warmup_v1.m4a",
+      "sha1": "572714aa785732535d4dd831e0dce503350bcb03"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/en/cyborg_en_warmup_v2.m4a",
+      "sha1": "143d2a5501a1dce92f1e2eced4454b51cb435d81"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/en/cyborg_en_work_short.m4a",
+      "sha1": "8b011335d4e0e3e1e0267d2dd7e11abf2fdc0749"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/en/cyborg_en_work_v1.m4a",
+      "sha1": "0b60519fdc1165979801b989cb121a41aea15fe0"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/en/cyborg_en_work_v2.m4a",
+      "sha1": "13201e7ed08e3e93f5019c838129e110099c1292"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_1.m4a",
+      "sha1": "c584099d0da1d775bef16adcea57ed2e6e6f8872"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_10.m4a",
+      "sha1": "4d0e7e9040adfd5cef447a010032b9c83851d1ca"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_2.m4a",
+      "sha1": "bbc9bd4e8633f4975ac276d4666989d81da1a43c"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_3.m4a",
+      "sha1": "18e62d2534566334c3800286ff3de5b430e94e03"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_4.m4a",
+      "sha1": "bc458ca205715124a02c81e7cc35197eb99526fa"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_5.m4a",
+      "sha1": "10b12ee37a1056c6e06c939a8e18ab2fa47163ca"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_6.m4a",
+      "sha1": "5e5365cd57f18f7f822acf3baf34e9ee392aadb5"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_7.m4a",
+      "sha1": "6640943fd930e922cd8856308eceb140526ec95f"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_8.m4a",
+      "sha1": "80b6993e9f1545594576f65cb6372803fe800c3d"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_9.m4a",
+      "sha1": "d5de72dcb3228d486296d80505758ff2de0f5b44"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_cooldown_short.m4a",
+      "sha1": "d95f8210b43ba98d40630a456de9cfed0d5b943c"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_cooldown_v1.m4a",
+      "sha1": "661e8d4e04657316f15ce5a4b76601f1de32deb7"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_cooldown_v2.m4a",
+      "sha1": "a29683919a249272df254598de117fe256850e7d"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_finish_short.m4a",
+      "sha1": "f298c3b204ab7866887d9d0286f45f28228e1ab1"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_finish_v1.m4a",
+      "sha1": "c7155b7003d612f9eac509e7a98dfaf27c6a1993"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_finish_v2.m4a",
+      "sha1": "e71e102adb543a7f54f44b5f8289325b126869cd"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_half_short.m4a",
+      "sha1": "e5671146568d39dcfab17c878f4f36015c371320"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_half_v1.m4a",
+      "sha1": "0e946189bc0ea7a202c3b6c22decf325a4bf2843"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_half_v2.m4a",
+      "sha1": "aafa48a1773e36a6a5d074c82c277d3eca4d5b9c"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_recovery_short.m4a",
+      "sha1": "a80b4e16e84ea3a3b3f2f79d47c35d02aa58c13f"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_recovery_v1.m4a",
+      "sha1": "473b84ffb9972e349ec4d4d5d397a1aca46daa0d"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_recovery_v2.m4a",
+      "sha1": "83ad146cf7dfc47185973040299d95ea0cd5b73f"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_rest_short.m4a",
+      "sha1": "1124c9abefa4c76acef63fe08f15a509be11f7f4"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_rest_v1.m4a",
+      "sha1": "f1d1938ad4c3a0f1b1183f0a02feed1ab320a29d"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_rest_v2.m4a",
+      "sha1": "ef05bae5dc2dfbbb9bf60ace7d87e7e67e999d0f"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_warmup_short.m4a",
+      "sha1": "12c46b9122de5ed04c8bb2839d78a66f4dc97e07"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_warmup_v1.m4a",
+      "sha1": "055f6fa73e56122198ea34e88c00f74814c8a259"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_warmup_v2.m4a",
+      "sha1": "f3b7871a999336a4291ad20ea6f064a0a6e0e973"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_work_short.m4a",
+      "sha1": "324ca6aece342f8beb2f68ab5fe5e40461403ec6"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_work_v1.m4a",
+      "sha1": "763caa15c805d14c7d783cc8d00e89bee32ce95f"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_work_v2.m4a",
+      "sha1": "72b4296167d80c3a124b42a77db3fa7a2ef696c7"
+    },
+    {
       "path": "src/assets/audio/workout/characters/shieldmaiden/cs/shieldmaiden_cs_1.m4a",
       "sha1": "2cc68f5201cec5ac0efefdceb020d28e3309157a"
     },
