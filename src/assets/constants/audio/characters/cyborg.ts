@@ -1,10 +1,7 @@
+import { Countdown, SoundPathByLanguage, WorkoutSoundFilePaths, WorkoutSoundPathsByLanguage, } from '../../../types.ts';
 import {
-  Countdown,
-  SoundPathByLanguage,
-  WorkoutSoundFilePaths,
-  WorkoutSoundPathsByLanguage,
-} from '../../../types.ts';
-import { RunningWorkoutPhase } from '../../../../components/navigation/AppNavigator/screens/RunningWorkoutScreen/types.ts';
+  RunningWorkoutPhase
+} from '../../../../components/navigation/AppNavigator/screens/RunningWorkoutScreen/types.ts';
 import { SupportedLanguageCode } from '../../../../contexts/AppLanguageProvider/constants.ts';
 
 const cyborgCs: WorkoutSoundFilePaths = {
@@ -195,6 +192,6 @@ export const cyborgSoundPathsByLanguage: WorkoutSoundPathsByLanguage = {
 
 export const cyborgPreviewPathByLanguage: SoundPathByLanguage = {
   [SupportedLanguageCode.cs]: require('../../../audio/preview/characters/cyborg/cyborg_cs_preview.m4a'),
-  [SupportedLanguageCode.en]: require('../../../audio/preview/characters/cyborg/cyborg_cs_preview.m4a'),
-  [SupportedLanguageCode.sk]: require('../../../audio/preview/characters/cyborg/cyborg_cs_preview.m4a'),
+  [SupportedLanguageCode.en]: require('../../../audio/preview/characters/cyborg/cyborg_en_preview.m4a'),
+  [SupportedLanguageCode.sk]: require('../../../audio/preview/characters/cyborg/cyborg_sk_preview.m4a'),
 };
