@@ -630,6 +630,294 @@
       "sha1": "4cc71990cd7e635fc1bfefc6edd832f5e4298be2"
     },
     {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_1.m4a",
+      "sha1": "7e1dc3e2e953d23d9ab304d85eed069e970c62f1"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_10.m4a",
+      "sha1": "c9647716cb64f5908ffa75f1defc525e07d422ef"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_2.m4a",
+      "sha1": "b5eb0918553f62a5508c1b385db277f547823a45"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_3.m4a",
+      "sha1": "499944cbd8ac4bc5fe677bf742e3d407ff06a36d"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_4.m4a",
+      "sha1": "62a46acdbf9285a733b08966672275f7b37155db"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_5.m4a",
+      "sha1": "c37cdacb2a0e09219f1a80bc2005cd41fc3208a4"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_6.m4a",
+      "sha1": "8fa73b834992de9f9e96f5047b1bea9ac08dcf4e"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_7.m4a",
+      "sha1": "2e6bc7a9c55e5a5654bd76048c33508c3749bf6a"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_8.m4a",
+      "sha1": "801646bf7b1e1f140892304db4bd3da3965becee"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_9.m4a",
+      "sha1": "4222ba17546b22f72681e6aeea2445900011979c"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_cooldown_short.m4a",
+      "sha1": "72c6794c6d24e8bc56631b632fdf00cabbdb11ab"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_cooldown_v1.m4a",
+      "sha1": "887e9c224db6876ab719c23bd41ea5780ba1bb02"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_cooldown_v2.m4a",
+      "sha1": "5d3f641e48556b0949df6e7a8a73586d02c6cdb6"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_cooldown_v3.m4a",
+      "sha1": "9ad290b90eedd0cf34d00fab9c1d8ffd110bcbd9"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_finish_v1.m4a",
+      "sha1": "aecd22719538b3fb68cd93560e7493756892b9ff"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_finish_v2.m4a",
+      "sha1": "18b889021a2db945d284bf40aca32ca9ed761d10"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_finish_v3.m4a",
+      "sha1": "76a8e5ea9bd638e751ebf94e7f21bd6430428a30"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_half_v1.m4a",
+      "sha1": "702f58ac9c038d991bfd4b1e6e50301644b64de6"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_half_v2.m4a",
+      "sha1": "9e31375cf83477d6dff8f97e09f5f36e29ad0b63"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_half_v3.m4a",
+      "sha1": "4678a17a9da539248f722b7bcec3a59984c0afdb"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_recovery_short.m4a",
+      "sha1": "80261c5ed5fcecfbdb6e521def225b8341e7830c"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_recovery_v1.m4a",
+      "sha1": "52f839d6b5003ee5d1e6ac5893e4fd7111fde1ea"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_recovery_v2.m4a",
+      "sha1": "574daa8f171a0a42e6899acd22b8688aa7c541fa"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_recovery_v3.m4a",
+      "sha1": "773d60b7f8212e51885c8eece5e2fc3c3d405474"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_rest_short.m4a",
+      "sha1": "c78349136cae5cd37d19b9da5674c348a496cd59"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_rest_v1.m4a",
+      "sha1": "a01b9cd827ae30fe62358b3b006eda1929f9c742"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_rest_v2.m4a",
+      "sha1": "45a516b05ff6498a1abc0fe0b6170cca9f3c91d8"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_rest_v3.m4a",
+      "sha1": "b26e4b95422685a6634b7db99c8a85575ac3c66b"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_warmup_short.m4a",
+      "sha1": "cbfee32a18978d603675b5c35905d4345871a076"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_warmup_v1.m4a",
+      "sha1": "035e2210221a727d497f0f7fb1a6b26a09e32e4d"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_warmup_v2.m4a",
+      "sha1": "2186af630a7b27e34550dfc12b9c987c557b9a0b"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_warmup_v3.m4a",
+      "sha1": "283316bfad9f7d33d13aa55c588385dd61acd273"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_work_short.m4a",
+      "sha1": "c50c8d360185a4f9a6577454842d29ce0532f13d"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_work_v1.m4a",
+      "sha1": "a45be29f0d82f1ac76ee4ffa6cd5a869dfd3462c"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_work_v2.m4a",
+      "sha1": "5281b1e33d5251946e16456177ade861d201ffa7"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_work_v3.m4a",
+      "sha1": "6463471f49562b6f53f671dc085cff25f421a226"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_1.m4a",
+      "sha1": "27e0a479d71f5b7fc76324ab15cf9f17a4a47364"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_10.m4a",
+      "sha1": "ad5f0d2c55a45fe2c5e19c6aefb7e74c20579951"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_2.m4a",
+      "sha1": "ad06ace84e26781de07676cfac19439d8baccc05"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_3.m4a",
+      "sha1": "ce97ad30aeade12177a1c690d27e1fe8b7b75633"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_4.m4a",
+      "sha1": "55da6ed69d99f4d9555520b65868a64920dec3ae"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_5.m4a",
+      "sha1": "25be33bf0925477d3afd0c02a3f23ae5a9b86fb9"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_6.m4a",
+      "sha1": "d065feaef5ee0fc0720493d93810a1782ff34ca7"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_7.m4a",
+      "sha1": "ce3994e9830ea63436ae8e8af0ed4f88f2060dce"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_8.m4a",
+      "sha1": "f2f158b3a0643a633887988b5ab6f603820edac4"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_9.m4a",
+      "sha1": "a4536e163be5f6a28931e2b40bcbf7773a3f9c26"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_cooldown_short.m4a",
+      "sha1": "c047ef63cc7b0feb2999e6cdb88601e586d87a54"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_cooldown_v1.m4a",
+      "sha1": "60b95bad26e3529453a0b8257c1bd3aed796e66b"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_cooldown_v2.m4a",
+      "sha1": "8cfd97f384a27c3e76b31fbbb3f190309f205486"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_cooldown_v3.m4a",
+      "sha1": "8d43ee75f827249b962794d26dccea1150fef4fc"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_finish_v1.m4a",
+      "sha1": "d1121aa73c30bcddf6d6264a016b3213946241e2"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_finish_v2.m4a",
+      "sha1": "cf27489fd3bfb689c00113d96238674fd8aa5b21"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_finish_v3.m4a",
+      "sha1": "0e3e4bee224bd3d089c88229e5b1ab24e5d4064f"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_half_v1.m4a",
+      "sha1": "778cebaf96a3fae9eaf11310f3ffc9f4759b1b56"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_half_v2.m4a",
+      "sha1": "dc549f0c6db274b3ab68cdd67ff9df9ef24d2c92"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_half_v3.m4a",
+      "sha1": "996199f34389b9a166e5e529329fe1e11d96d685"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_recovery_short.m4a",
+      "sha1": "448c31678c271699c2bc69e92b815ffe15a92981"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_recovery_v1.m4a",
+      "sha1": "f2f5dddf6325079d1562064e2d5ac007415aa159"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_recovery_v2.m4a",
+      "sha1": "16bf0f9937a94b340eb060787e0c82a86691040d"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_recovery_v3.m4a",
+      "sha1": "1a278adf1458aaaf7a61944aca5aa5b93d82bc8f"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_rest_short.m4a",
+      "sha1": "1670c872ff2e6e70b3cef20ea34d8f61eda8feb9"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_rest_v1.m4a",
+      "sha1": "77f0a8b4311ac72f4b851fc3e10b2332cd2db224"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_rest_v2.m4a",
+      "sha1": "f2e14d5d10a2db60a8097070f5a6c5c7281bdd5f"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_rest_v3.m4a",
+      "sha1": "b40aacf22aef0db4fe77896e19ef56cedddbc16d"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_warmup_short.m4a",
+      "sha1": "5bc8854c190a28444db68a7cf711f19d29243b98"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_warmup_v1.m4a",
+      "sha1": "bf0037a2e439a4a4b95b0fc3248118383755b4b0"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_warmup_v2.m4a",
+      "sha1": "08e1ea08a55dfe142477c1e4e0eb0c9710ea72b9"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_warmup_v3.m4a",
+      "sha1": "43462b5bac5384e2330b14825fff6354886c60e3"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_work_short.m4a",
+      "sha1": "22ae3f922ce9812dd1f030623e5729ea39d59107"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_work_v1.m4a",
+      "sha1": "59e81da95c99aa9918c3fa4f0cb1efa45dd3a1dd"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_work_v2.m4a",
+      "sha1": "f339b8c6476c781636fe6122937d8e7c57884319"
+    },
+    {
+      "path": "src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_work_v3.m4a",
+      "sha1": "b06fc6c665fc4172b46057651481bb6e7df3dd3d"
+    },
+    {
       "path": "src/assets/audio/workout/characters/warrior/cs/warrior_cs_1.m4a",
       "sha1": "63beba6f3a34b6b293a691f00048e67ffc2c2178"
     },

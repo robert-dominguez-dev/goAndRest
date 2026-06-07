@@ -789,6 +789,78 @@
 		12D50102491B41E2AD7D6E08 /* warrior_sk_work_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D427EF020125458CB49E4AA0 /* warrior_sk_work_v1.m4a */; };
 		77892E79E0F04A11A559D745 /* warrior_sk_work_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 967E6B74AE724FC192BA5A48 /* warrior_sk_work_v2.m4a */; };
 		96335616CC224153A326F1DD /* warrior_sk_work_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D630A81A93A14C688E4015A8 /* warrior_sk_work_v3.m4a */; };
+		22DB7B8A585A405E9CCF718C /* shieldmaiden_en_1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = AE1E3B3EE11A47E994AD5551 /* shieldmaiden_en_1.m4a */; };
+		2404FE6000D347EC89B0FFE8 /* shieldmaiden_en_10.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 7AFD6CC4948D415F9F31716B /* shieldmaiden_en_10.m4a */; };
+		D9E83EDA8C934D81842CC97C /* shieldmaiden_en_2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = EF727AAE427C4F15A1A5819E /* shieldmaiden_en_2.m4a */; };
+		30083E9D1C0F48ACAE160386 /* shieldmaiden_en_3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 57A6C701A04B46D5A91F71CD /* shieldmaiden_en_3.m4a */; };
+		F6D44584E5F44A5DAF0F9243 /* shieldmaiden_en_4.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 915E126923734F3BBCE8432E /* shieldmaiden_en_4.m4a */; };
+		7832A36F1D214A71B139BC3C /* shieldmaiden_en_5.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4E9EE7A6A4D942C696F69681 /* shieldmaiden_en_5.m4a */; };
+		FEA140ECFDDD4F8CB787946F /* shieldmaiden_en_6.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D8247B93F4CA4F7BBFEC405C /* shieldmaiden_en_6.m4a */; };
+		0C34FAEAE092429599110649 /* shieldmaiden_en_7.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 55B0AFBCF0364E9CB2625EAB /* shieldmaiden_en_7.m4a */; };
+		F10A5D9C00C0432FA67FCE0B /* shieldmaiden_en_8.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1F463E2175364607AB6D325E /* shieldmaiden_en_8.m4a */; };
+		04D4ED2BCC844EC39D0E5790 /* shieldmaiden_en_9.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CB4612213DE94E7EACBC46F0 /* shieldmaiden_en_9.m4a */; };
+		028777C0F3B34371886AB1B5 /* shieldmaiden_en_cooldown_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3964BC8ED71C44F792EAB39E /* shieldmaiden_en_cooldown_short.m4a */; };
+		D26659714E4245C78F9CF42A /* shieldmaiden_en_cooldown_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E5D4F9903FBC4BB78434EB27 /* shieldmaiden_en_cooldown_v1.m4a */; };
+		1C4CD15F0085442EA458D66B /* shieldmaiden_en_cooldown_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4D71E0A8CF504D9DAA430B55 /* shieldmaiden_en_cooldown_v2.m4a */; };
+		0BE41AE8750142E285B22617 /* shieldmaiden_en_cooldown_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0C1E74B1827948ABBA426F5A /* shieldmaiden_en_cooldown_v3.m4a */; };
+		57454897D8984078B7660A03 /* shieldmaiden_en_finish_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6DE3CBD203DA4C8EBDFBDB18 /* shieldmaiden_en_finish_v1.m4a */; };
+		D7315DFBD8D3435682BFD5EF /* shieldmaiden_en_finish_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 08AFF5D6C3A84A6485BB667F /* shieldmaiden_en_finish_v2.m4a */; };
+		1780569607DC40BF96E20128 /* shieldmaiden_en_finish_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 34AB0423E3154B519C8693C3 /* shieldmaiden_en_finish_v3.m4a */; };
+		F5D04B7F80CF4F82850033D7 /* shieldmaiden_en_half_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DFE48361B6074B838D0DCE1F /* shieldmaiden_en_half_v1.m4a */; };
+		DBCAD3A2C402496BB63FE5A1 /* shieldmaiden_en_half_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2365D077B8DF455C99F8031F /* shieldmaiden_en_half_v2.m4a */; };
+		EBCAA476C45A43C9BEB6F179 /* shieldmaiden_en_half_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E8152EAA956C40F3B9731495 /* shieldmaiden_en_half_v3.m4a */; };
+		D77B6B4D522B40D7B1B400CE /* shieldmaiden_en_recovery_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C38D7CDA04C144B395B5A568 /* shieldmaiden_en_recovery_short.m4a */; };
+		9A870EA916024EC0AE01F4BE /* shieldmaiden_en_recovery_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 170C047E35B04EB183E4F75E /* shieldmaiden_en_recovery_v1.m4a */; };
+		C7D8523F2F8F443FB99F52BC /* shieldmaiden_en_recovery_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 84908B41CBAF43CCA37D2C01 /* shieldmaiden_en_recovery_v2.m4a */; };
+		4DD296E7650B434E929D1AC5 /* shieldmaiden_en_recovery_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DE6CA0E28FB54C2BB4930C8B /* shieldmaiden_en_recovery_v3.m4a */; };
+		7960F5E5D1124322A1677015 /* shieldmaiden_en_rest_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 22863C96EE3843B7BAF40D2B /* shieldmaiden_en_rest_short.m4a */; };
+		5C7FBCA4232447609C5F6A81 /* shieldmaiden_en_rest_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 013EC62E2BD04B1C9101D5C0 /* shieldmaiden_en_rest_v1.m4a */; };
+		6673C334D86D4788A3621868 /* shieldmaiden_en_rest_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C88B2BD8DCC5401581AD0A14 /* shieldmaiden_en_rest_v2.m4a */; };
+		F6417A1D0E3E4B1593A638AB /* shieldmaiden_en_rest_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9297C935D8244918B56A9CEB /* shieldmaiden_en_rest_v3.m4a */; };
+		F98040354FCC4628A067AF1F /* shieldmaiden_en_warmup_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1D38A7BB7DBD40619EC631D3 /* shieldmaiden_en_warmup_short.m4a */; };
+		0806ABE10F4D4DB5ADCF6FCE /* shieldmaiden_en_warmup_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CDB2C5DE8BB54CFA818052A8 /* shieldmaiden_en_warmup_v1.m4a */; };
+		4E1964BAF5534F3EBFD70B0B /* shieldmaiden_en_warmup_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4FE54543ECD940FFB6CFA627 /* shieldmaiden_en_warmup_v2.m4a */; };
+		BD3B016516AD49AEA04CBA80 /* shieldmaiden_en_warmup_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = EE26C0E347DA45438B7F15F9 /* shieldmaiden_en_warmup_v3.m4a */; };
+		7D473B28D9594A76B8798776 /* shieldmaiden_en_work_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 7B8CCE945D49495AAA40A74D /* shieldmaiden_en_work_short.m4a */; };
+		D5DCF31A0A0447DABB0230F2 /* shieldmaiden_en_work_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 84132F945E9843FFB4AD89DC /* shieldmaiden_en_work_v1.m4a */; };
+		AA1DA8BF295D431287480087 /* shieldmaiden_en_work_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D25E244A0AC64A22B29C4A56 /* shieldmaiden_en_work_v2.m4a */; };
+		1FB7A6CCF2F24DD8AB4676D1 /* shieldmaiden_en_work_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C0B843F66AA642AD816C6EA2 /* shieldmaiden_en_work_v3.m4a */; };
+		B856552F22734BBFB2DA8823 /* shieldmaiden_sk_1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 21A4D0E25B024BFFA0A7D1E9 /* shieldmaiden_sk_1.m4a */; };
+		ED508F0DA8B047A685FB8672 /* shieldmaiden_sk_10.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 735AD466AD0E435CB37A328B /* shieldmaiden_sk_10.m4a */; };
+		B59EAF8A565447898D298527 /* shieldmaiden_sk_2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 61C35F996534492484FD8884 /* shieldmaiden_sk_2.m4a */; };
+		B446FB37C39043DCA4373BD8 /* shieldmaiden_sk_3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4A609C8B539246938F161F16 /* shieldmaiden_sk_3.m4a */; };
+		52916C974856486FA61D77B7 /* shieldmaiden_sk_4.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4D4E7BF6F4E54979ABF91001 /* shieldmaiden_sk_4.m4a */; };
+		DB24A18E70794636B285B2B2 /* shieldmaiden_sk_5.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 7311F465D87D48B0AB5474B6 /* shieldmaiden_sk_5.m4a */; };
+		BCA1DEA7C5B14F679F506B1C /* shieldmaiden_sk_6.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C372A97937D34CD9A492C12E /* shieldmaiden_sk_6.m4a */; };
+		274D449DC0B34286976AC77F /* shieldmaiden_sk_7.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D5C2866D14D94AA08C4A562F /* shieldmaiden_sk_7.m4a */; };
+		181FD26B45CD41C89F101544 /* shieldmaiden_sk_8.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 40936E3AB070486A914710CA /* shieldmaiden_sk_8.m4a */; };
+		5A30F7E299974CE6B5C97261 /* shieldmaiden_sk_9.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 788655315FAC4D429FEA854F /* shieldmaiden_sk_9.m4a */; };
+		08F8864E474B458BA2691F92 /* shieldmaiden_sk_cooldown_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 60B8F3ABC6774542BA27D438 /* shieldmaiden_sk_cooldown_short.m4a */; };
+		E9B46E194B764BC28B486EB5 /* shieldmaiden_sk_cooldown_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 7B243F442DCE467B9D00D038 /* shieldmaiden_sk_cooldown_v1.m4a */; };
+		7AC79C1A1A6D4F0FB0606581 /* shieldmaiden_sk_cooldown_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = EECBDE90FF20428E8EABA722 /* shieldmaiden_sk_cooldown_v2.m4a */; };
+		EAA563AC18CF402493AF9409 /* shieldmaiden_sk_cooldown_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 51EBA92A65354DC88FD3E833 /* shieldmaiden_sk_cooldown_v3.m4a */; };
+		5B6322AD86D341DFA03F144C /* shieldmaiden_sk_finish_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0201266BD1084FD7B933C127 /* shieldmaiden_sk_finish_v1.m4a */; };
+		3F7832683E8A47399987D669 /* shieldmaiden_sk_finish_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4BEBEA244624B4AA339E79B /* shieldmaiden_sk_finish_v2.m4a */; };
+		AF0CEAAB5423415294C17C1A /* shieldmaiden_sk_finish_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FA5AA603EC2A4CB899E6DC1E /* shieldmaiden_sk_finish_v3.m4a */; };
+		61C10E6AE1F5409990499BF0 /* shieldmaiden_sk_half_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9D858447C76446D0B30F7945 /* shieldmaiden_sk_half_v1.m4a */; };
+		9DA14E611DE043AE80777858 /* shieldmaiden_sk_half_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D0CF59A0B3A04714B36554DD /* shieldmaiden_sk_half_v2.m4a */; };
+		E5290216CCC9427EB4A74E25 /* shieldmaiden_sk_half_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = EA478839C9604B0EBAB67FFB /* shieldmaiden_sk_half_v3.m4a */; };
+		62D60BA09CB04D589AEBE35F /* shieldmaiden_sk_recovery_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 088F61AD5D294B9B9B01934B /* shieldmaiden_sk_recovery_short.m4a */; };
+		3E34F50E1A4C43A499EB6602 /* shieldmaiden_sk_recovery_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = BE20392D68674139B754F023 /* shieldmaiden_sk_recovery_v1.m4a */; };
+		93F9CCD5F6AD493996F7594A /* shieldmaiden_sk_recovery_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 007215B94344480A8615BB40 /* shieldmaiden_sk_recovery_v2.m4a */; };
+		EEC95B5A788B46FD877D520C /* shieldmaiden_sk_recovery_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = ECB277C053BE43EA8DEB935C /* shieldmaiden_sk_recovery_v3.m4a */; };
+		DC3B43D7E2C048C58DD0F579 /* shieldmaiden_sk_rest_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DD7CF9D64C414C2EB409A1FC /* shieldmaiden_sk_rest_short.m4a */; };
+		184B978B9A72413C9BA7D7A4 /* shieldmaiden_sk_rest_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 7EDF643DB51C468EBF08DB12 /* shieldmaiden_sk_rest_v1.m4a */; };
+		DD21344B88994E70A6BCF7CE /* shieldmaiden_sk_rest_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9E04E2CE546B486F8CBE1F18 /* shieldmaiden_sk_rest_v2.m4a */; };
+		C82CE67A71EE4D87ACE3DF60 /* shieldmaiden_sk_rest_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 612CAD814BF94F2490EFC73D /* shieldmaiden_sk_rest_v3.m4a */; };
+		D2BE234908ED47CEA5F1B8E1 /* shieldmaiden_sk_warmup_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 224374E39A194F3586755E42 /* shieldmaiden_sk_warmup_short.m4a */; };
+		CE643CA3A13247389474F09F /* shieldmaiden_sk_warmup_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E0A182E996664EDD966FAD3E /* shieldmaiden_sk_warmup_v1.m4a */; };
+		88862887286F48E6A9D9F814 /* shieldmaiden_sk_warmup_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D7A9C418609341F2B8C1B1CC /* shieldmaiden_sk_warmup_v2.m4a */; };
+		7404EDF45BDF4FB081C9B36E /* shieldmaiden_sk_warmup_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 603EEB789FD24219A3E8E7D0 /* shieldmaiden_sk_warmup_v3.m4a */; };
+		DAEF9B6650B24D5487384866 /* shieldmaiden_sk_work_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = BA2B3640119F4E83B2B86E7F /* shieldmaiden_sk_work_short.m4a */; };
+		01079E8AB10B4B0CB664E6C5 /* shieldmaiden_sk_work_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A52E30E632874EE4BEECD74C /* shieldmaiden_sk_work_v1.m4a */; };
+		9D6CFF838DE145629F4D527D /* shieldmaiden_sk_work_v2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 19141C2EE455434AA08B0CDE /* shieldmaiden_sk_work_v2.m4a */; };
+		6D7F45B7A689495993D58961 /* shieldmaiden_sk_work_v3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FC2146A456BD4C1AAD096447 /* shieldmaiden_sk_work_v3.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1579,6 +1651,78 @@
 		D427EF020125458CB49E4AA0 /* warrior_sk_work_v1.m4a */ = {isa = PBXFileReference; name = "warrior_sk_work_v1.m4a"; path = "../src/assets/audio/workout/characters/warrior/sk/warrior_sk_work_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		967E6B74AE724FC192BA5A48 /* warrior_sk_work_v2.m4a */ = {isa = PBXFileReference; name = "warrior_sk_work_v2.m4a"; path = "../src/assets/audio/workout/characters/warrior/sk/warrior_sk_work_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		D630A81A93A14C688E4015A8 /* warrior_sk_work_v3.m4a */ = {isa = PBXFileReference; name = "warrior_sk_work_v3.m4a"; path = "../src/assets/audio/workout/characters/warrior/sk/warrior_sk_work_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		AE1E3B3EE11A47E994AD5551 /* shieldmaiden_en_1.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_en_1.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7AFD6CC4948D415F9F31716B /* shieldmaiden_en_10.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_en_10.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_10.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EF727AAE427C4F15A1A5819E /* shieldmaiden_en_2.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_en_2.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		57A6C701A04B46D5A91F71CD /* shieldmaiden_en_3.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_en_3.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		915E126923734F3BBCE8432E /* shieldmaiden_en_4.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_en_4.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_4.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4E9EE7A6A4D942C696F69681 /* shieldmaiden_en_5.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_en_5.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_5.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D8247B93F4CA4F7BBFEC405C /* shieldmaiden_en_6.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_en_6.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_6.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		55B0AFBCF0364E9CB2625EAB /* shieldmaiden_en_7.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_en_7.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_7.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1F463E2175364607AB6D325E /* shieldmaiden_en_8.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_en_8.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_8.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CB4612213DE94E7EACBC46F0 /* shieldmaiden_en_9.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_en_9.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_9.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3964BC8ED71C44F792EAB39E /* shieldmaiden_en_cooldown_short.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_en_cooldown_short.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_cooldown_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E5D4F9903FBC4BB78434EB27 /* shieldmaiden_en_cooldown_v1.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_en_cooldown_v1.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_cooldown_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4D71E0A8CF504D9DAA430B55 /* shieldmaiden_en_cooldown_v2.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_en_cooldown_v2.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_cooldown_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0C1E74B1827948ABBA426F5A /* shieldmaiden_en_cooldown_v3.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_en_cooldown_v3.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_cooldown_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6DE3CBD203DA4C8EBDFBDB18 /* shieldmaiden_en_finish_v1.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_en_finish_v1.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_finish_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		08AFF5D6C3A84A6485BB667F /* shieldmaiden_en_finish_v2.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_en_finish_v2.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_finish_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		34AB0423E3154B519C8693C3 /* shieldmaiden_en_finish_v3.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_en_finish_v3.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_finish_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DFE48361B6074B838D0DCE1F /* shieldmaiden_en_half_v1.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_en_half_v1.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_half_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2365D077B8DF455C99F8031F /* shieldmaiden_en_half_v2.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_en_half_v2.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_half_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E8152EAA956C40F3B9731495 /* shieldmaiden_en_half_v3.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_en_half_v3.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_half_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C38D7CDA04C144B395B5A568 /* shieldmaiden_en_recovery_short.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_en_recovery_short.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_recovery_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		170C047E35B04EB183E4F75E /* shieldmaiden_en_recovery_v1.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_en_recovery_v1.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_recovery_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		84908B41CBAF43CCA37D2C01 /* shieldmaiden_en_recovery_v2.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_en_recovery_v2.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_recovery_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DE6CA0E28FB54C2BB4930C8B /* shieldmaiden_en_recovery_v3.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_en_recovery_v3.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_recovery_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		22863C96EE3843B7BAF40D2B /* shieldmaiden_en_rest_short.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_en_rest_short.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_rest_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		013EC62E2BD04B1C9101D5C0 /* shieldmaiden_en_rest_v1.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_en_rest_v1.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_rest_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C88B2BD8DCC5401581AD0A14 /* shieldmaiden_en_rest_v2.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_en_rest_v2.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_rest_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9297C935D8244918B56A9CEB /* shieldmaiden_en_rest_v3.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_en_rest_v3.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_rest_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1D38A7BB7DBD40619EC631D3 /* shieldmaiden_en_warmup_short.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_en_warmup_short.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_warmup_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CDB2C5DE8BB54CFA818052A8 /* shieldmaiden_en_warmup_v1.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_en_warmup_v1.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_warmup_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4FE54543ECD940FFB6CFA627 /* shieldmaiden_en_warmup_v2.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_en_warmup_v2.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_warmup_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EE26C0E347DA45438B7F15F9 /* shieldmaiden_en_warmup_v3.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_en_warmup_v3.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_warmup_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7B8CCE945D49495AAA40A74D /* shieldmaiden_en_work_short.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_en_work_short.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_work_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		84132F945E9843FFB4AD89DC /* shieldmaiden_en_work_v1.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_en_work_v1.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_work_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D25E244A0AC64A22B29C4A56 /* shieldmaiden_en_work_v2.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_en_work_v2.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_work_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C0B843F66AA642AD816C6EA2 /* shieldmaiden_en_work_v3.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_en_work_v3.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_work_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		21A4D0E25B024BFFA0A7D1E9 /* shieldmaiden_sk_1.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_sk_1.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		735AD466AD0E435CB37A328B /* shieldmaiden_sk_10.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_sk_10.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_10.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		61C35F996534492484FD8884 /* shieldmaiden_sk_2.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_sk_2.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4A609C8B539246938F161F16 /* shieldmaiden_sk_3.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_sk_3.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4D4E7BF6F4E54979ABF91001 /* shieldmaiden_sk_4.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_sk_4.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_4.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7311F465D87D48B0AB5474B6 /* shieldmaiden_sk_5.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_sk_5.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_5.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C372A97937D34CD9A492C12E /* shieldmaiden_sk_6.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_sk_6.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_6.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D5C2866D14D94AA08C4A562F /* shieldmaiden_sk_7.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_sk_7.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_7.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		40936E3AB070486A914710CA /* shieldmaiden_sk_8.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_sk_8.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_8.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		788655315FAC4D429FEA854F /* shieldmaiden_sk_9.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_sk_9.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_9.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		60B8F3ABC6774542BA27D438 /* shieldmaiden_sk_cooldown_short.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_sk_cooldown_short.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_cooldown_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7B243F442DCE467B9D00D038 /* shieldmaiden_sk_cooldown_v1.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_sk_cooldown_v1.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_cooldown_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EECBDE90FF20428E8EABA722 /* shieldmaiden_sk_cooldown_v2.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_sk_cooldown_v2.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_cooldown_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		51EBA92A65354DC88FD3E833 /* shieldmaiden_sk_cooldown_v3.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_sk_cooldown_v3.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_cooldown_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0201266BD1084FD7B933C127 /* shieldmaiden_sk_finish_v1.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_sk_finish_v1.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_finish_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A4BEBEA244624B4AA339E79B /* shieldmaiden_sk_finish_v2.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_sk_finish_v2.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_finish_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FA5AA603EC2A4CB899E6DC1E /* shieldmaiden_sk_finish_v3.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_sk_finish_v3.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_finish_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9D858447C76446D0B30F7945 /* shieldmaiden_sk_half_v1.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_sk_half_v1.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_half_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D0CF59A0B3A04714B36554DD /* shieldmaiden_sk_half_v2.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_sk_half_v2.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_half_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EA478839C9604B0EBAB67FFB /* shieldmaiden_sk_half_v3.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_sk_half_v3.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_half_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		088F61AD5D294B9B9B01934B /* shieldmaiden_sk_recovery_short.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_sk_recovery_short.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_recovery_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BE20392D68674139B754F023 /* shieldmaiden_sk_recovery_v1.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_sk_recovery_v1.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_recovery_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		007215B94344480A8615BB40 /* shieldmaiden_sk_recovery_v2.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_sk_recovery_v2.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_recovery_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		ECB277C053BE43EA8DEB935C /* shieldmaiden_sk_recovery_v3.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_sk_recovery_v3.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_recovery_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DD7CF9D64C414C2EB409A1FC /* shieldmaiden_sk_rest_short.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_sk_rest_short.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_rest_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7EDF643DB51C468EBF08DB12 /* shieldmaiden_sk_rest_v1.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_sk_rest_v1.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_rest_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9E04E2CE546B486F8CBE1F18 /* shieldmaiden_sk_rest_v2.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_sk_rest_v2.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_rest_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		612CAD814BF94F2490EFC73D /* shieldmaiden_sk_rest_v3.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_sk_rest_v3.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_rest_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		224374E39A194F3586755E42 /* shieldmaiden_sk_warmup_short.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_sk_warmup_short.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_warmup_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E0A182E996664EDD966FAD3E /* shieldmaiden_sk_warmup_v1.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_sk_warmup_v1.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_warmup_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D7A9C418609341F2B8C1B1CC /* shieldmaiden_sk_warmup_v2.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_sk_warmup_v2.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_warmup_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		603EEB789FD24219A3E8E7D0 /* shieldmaiden_sk_warmup_v3.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_sk_warmup_v3.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_warmup_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BA2B3640119F4E83B2B86E7F /* shieldmaiden_sk_work_short.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_sk_work_short.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_work_short.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A52E30E632874EE4BEECD74C /* shieldmaiden_sk_work_v1.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_sk_work_v1.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_work_v1.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		19141C2EE455434AA08B0CDE /* shieldmaiden_sk_work_v2.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_sk_work_v2.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_work_v2.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FC2146A456BD4C1AAD096447 /* shieldmaiden_sk_work_v3.m4a */ = {isa = PBXFileReference; name = "shieldmaiden_sk_work_v3.m4a"; path = "../src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_work_v3.m4a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2394,6 +2538,78 @@
 				D427EF020125458CB49E4AA0 /* warrior_sk_work_v1.m4a */,
 				967E6B74AE724FC192BA5A48 /* warrior_sk_work_v2.m4a */,
 				D630A81A93A14C688E4015A8 /* warrior_sk_work_v3.m4a */,
+				AE1E3B3EE11A47E994AD5551 /* shieldmaiden_en_1.m4a */,
+				7AFD6CC4948D415F9F31716B /* shieldmaiden_en_10.m4a */,
+				EF727AAE427C4F15A1A5819E /* shieldmaiden_en_2.m4a */,
+				57A6C701A04B46D5A91F71CD /* shieldmaiden_en_3.m4a */,
+				915E126923734F3BBCE8432E /* shieldmaiden_en_4.m4a */,
+				4E9EE7A6A4D942C696F69681 /* shieldmaiden_en_5.m4a */,
+				D8247B93F4CA4F7BBFEC405C /* shieldmaiden_en_6.m4a */,
+				55B0AFBCF0364E9CB2625EAB /* shieldmaiden_en_7.m4a */,
+				1F463E2175364607AB6D325E /* shieldmaiden_en_8.m4a */,
+				CB4612213DE94E7EACBC46F0 /* shieldmaiden_en_9.m4a */,
+				3964BC8ED71C44F792EAB39E /* shieldmaiden_en_cooldown_short.m4a */,
+				E5D4F9903FBC4BB78434EB27 /* shieldmaiden_en_cooldown_v1.m4a */,
+				4D71E0A8CF504D9DAA430B55 /* shieldmaiden_en_cooldown_v2.m4a */,
+				0C1E74B1827948ABBA426F5A /* shieldmaiden_en_cooldown_v3.m4a */,
+				6DE3CBD203DA4C8EBDFBDB18 /* shieldmaiden_en_finish_v1.m4a */,
+				08AFF5D6C3A84A6485BB667F /* shieldmaiden_en_finish_v2.m4a */,
+				34AB0423E3154B519C8693C3 /* shieldmaiden_en_finish_v3.m4a */,
+				DFE48361B6074B838D0DCE1F /* shieldmaiden_en_half_v1.m4a */,
+				2365D077B8DF455C99F8031F /* shieldmaiden_en_half_v2.m4a */,
+				E8152EAA956C40F3B9731495 /* shieldmaiden_en_half_v3.m4a */,
+				C38D7CDA04C144B395B5A568 /* shieldmaiden_en_recovery_short.m4a */,
+				170C047E35B04EB183E4F75E /* shieldmaiden_en_recovery_v1.m4a */,
+				84908B41CBAF43CCA37D2C01 /* shieldmaiden_en_recovery_v2.m4a */,
+				DE6CA0E28FB54C2BB4930C8B /* shieldmaiden_en_recovery_v3.m4a */,
+				22863C96EE3843B7BAF40D2B /* shieldmaiden_en_rest_short.m4a */,
+				013EC62E2BD04B1C9101D5C0 /* shieldmaiden_en_rest_v1.m4a */,
+				C88B2BD8DCC5401581AD0A14 /* shieldmaiden_en_rest_v2.m4a */,
+				9297C935D8244918B56A9CEB /* shieldmaiden_en_rest_v3.m4a */,
+				1D38A7BB7DBD40619EC631D3 /* shieldmaiden_en_warmup_short.m4a */,
+				CDB2C5DE8BB54CFA818052A8 /* shieldmaiden_en_warmup_v1.m4a */,
+				4FE54543ECD940FFB6CFA627 /* shieldmaiden_en_warmup_v2.m4a */,
+				EE26C0E347DA45438B7F15F9 /* shieldmaiden_en_warmup_v3.m4a */,
+				7B8CCE945D49495AAA40A74D /* shieldmaiden_en_work_short.m4a */,
+				84132F945E9843FFB4AD89DC /* shieldmaiden_en_work_v1.m4a */,
+				D25E244A0AC64A22B29C4A56 /* shieldmaiden_en_work_v2.m4a */,
+				C0B843F66AA642AD816C6EA2 /* shieldmaiden_en_work_v3.m4a */,
+				21A4D0E25B024BFFA0A7D1E9 /* shieldmaiden_sk_1.m4a */,
+				735AD466AD0E435CB37A328B /* shieldmaiden_sk_10.m4a */,
+				61C35F996534492484FD8884 /* shieldmaiden_sk_2.m4a */,
+				4A609C8B539246938F161F16 /* shieldmaiden_sk_3.m4a */,
+				4D4E7BF6F4E54979ABF91001 /* shieldmaiden_sk_4.m4a */,
+				7311F465D87D48B0AB5474B6 /* shieldmaiden_sk_5.m4a */,
+				C372A97937D34CD9A492C12E /* shieldmaiden_sk_6.m4a */,
+				D5C2866D14D94AA08C4A562F /* shieldmaiden_sk_7.m4a */,
+				40936E3AB070486A914710CA /* shieldmaiden_sk_8.m4a */,
+				788655315FAC4D429FEA854F /* shieldmaiden_sk_9.m4a */,
+				60B8F3ABC6774542BA27D438 /* shieldmaiden_sk_cooldown_short.m4a */,
+				7B243F442DCE467B9D00D038 /* shieldmaiden_sk_cooldown_v1.m4a */,
+				EECBDE90FF20428E8EABA722 /* shieldmaiden_sk_cooldown_v2.m4a */,
+				51EBA92A65354DC88FD3E833 /* shieldmaiden_sk_cooldown_v3.m4a */,
+				0201266BD1084FD7B933C127 /* shieldmaiden_sk_finish_v1.m4a */,
+				A4BEBEA244624B4AA339E79B /* shieldmaiden_sk_finish_v2.m4a */,
+				FA5AA603EC2A4CB899E6DC1E /* shieldmaiden_sk_finish_v3.m4a */,
+				9D858447C76446D0B30F7945 /* shieldmaiden_sk_half_v1.m4a */,
+				D0CF59A0B3A04714B36554DD /* shieldmaiden_sk_half_v2.m4a */,
+				EA478839C9604B0EBAB67FFB /* shieldmaiden_sk_half_v3.m4a */,
+				088F61AD5D294B9B9B01934B /* shieldmaiden_sk_recovery_short.m4a */,
+				BE20392D68674139B754F023 /* shieldmaiden_sk_recovery_v1.m4a */,
+				007215B94344480A8615BB40 /* shieldmaiden_sk_recovery_v2.m4a */,
+				ECB277C053BE43EA8DEB935C /* shieldmaiden_sk_recovery_v3.m4a */,
+				DD7CF9D64C414C2EB409A1FC /* shieldmaiden_sk_rest_short.m4a */,
+				7EDF643DB51C468EBF08DB12 /* shieldmaiden_sk_rest_v1.m4a */,
+				9E04E2CE546B486F8CBE1F18 /* shieldmaiden_sk_rest_v2.m4a */,
+				612CAD814BF94F2490EFC73D /* shieldmaiden_sk_rest_v3.m4a */,
+				224374E39A194F3586755E42 /* shieldmaiden_sk_warmup_short.m4a */,
+				E0A182E996664EDD966FAD3E /* shieldmaiden_sk_warmup_v1.m4a */,
+				D7A9C418609341F2B8C1B1CC /* shieldmaiden_sk_warmup_v2.m4a */,
+				603EEB789FD24219A3E8E7D0 /* shieldmaiden_sk_warmup_v3.m4a */,
+				BA2B3640119F4E83B2B86E7F /* shieldmaiden_sk_work_short.m4a */,
+				A52E30E632874EE4BEECD74C /* shieldmaiden_sk_work_v1.m4a */,
+				19141C2EE455434AA08B0CDE /* shieldmaiden_sk_work_v2.m4a */,
+				FC2146A456BD4C1AAD096447 /* shieldmaiden_sk_work_v3.m4a */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -3278,6 +3494,78 @@
 				12D50102491B41E2AD7D6E08 /* warrior_sk_work_v1.m4a in Resources */,
 				77892E79E0F04A11A559D745 /* warrior_sk_work_v2.m4a in Resources */,
 				96335616CC224153A326F1DD /* warrior_sk_work_v3.m4a in Resources */,
+				22DB7B8A585A405E9CCF718C /* shieldmaiden_en_1.m4a in Resources */,
+				2404FE6000D347EC89B0FFE8 /* shieldmaiden_en_10.m4a in Resources */,
+				D9E83EDA8C934D81842CC97C /* shieldmaiden_en_2.m4a in Resources */,
+				30083E9D1C0F48ACAE160386 /* shieldmaiden_en_3.m4a in Resources */,
+				F6D44584E5F44A5DAF0F9243 /* shieldmaiden_en_4.m4a in Resources */,
+				7832A36F1D214A71B139BC3C /* shieldmaiden_en_5.m4a in Resources */,
+				FEA140ECFDDD4F8CB787946F /* shieldmaiden_en_6.m4a in Resources */,
+				0C34FAEAE092429599110649 /* shieldmaiden_en_7.m4a in Resources */,
+				F10A5D9C00C0432FA67FCE0B /* shieldmaiden_en_8.m4a in Resources */,
+				04D4ED2BCC844EC39D0E5790 /* shieldmaiden_en_9.m4a in Resources */,
+				028777C0F3B34371886AB1B5 /* shieldmaiden_en_cooldown_short.m4a in Resources */,
+				D26659714E4245C78F9CF42A /* shieldmaiden_en_cooldown_v1.m4a in Resources */,
+				1C4CD15F0085442EA458D66B /* shieldmaiden_en_cooldown_v2.m4a in Resources */,
+				0BE41AE8750142E285B22617 /* shieldmaiden_en_cooldown_v3.m4a in Resources */,
+				57454897D8984078B7660A03 /* shieldmaiden_en_finish_v1.m4a in Resources */,
+				D7315DFBD8D3435682BFD5EF /* shieldmaiden_en_finish_v2.m4a in Resources */,
+				1780569607DC40BF96E20128 /* shieldmaiden_en_finish_v3.m4a in Resources */,
+				F5D04B7F80CF4F82850033D7 /* shieldmaiden_en_half_v1.m4a in Resources */,
+				DBCAD3A2C402496BB63FE5A1 /* shieldmaiden_en_half_v2.m4a in Resources */,
+				EBCAA476C45A43C9BEB6F179 /* shieldmaiden_en_half_v3.m4a in Resources */,
+				D77B6B4D522B40D7B1B400CE /* shieldmaiden_en_recovery_short.m4a in Resources */,
+				9A870EA916024EC0AE01F4BE /* shieldmaiden_en_recovery_v1.m4a in Resources */,
+				C7D8523F2F8F443FB99F52BC /* shieldmaiden_en_recovery_v2.m4a in Resources */,
+				4DD296E7650B434E929D1AC5 /* shieldmaiden_en_recovery_v3.m4a in Resources */,
+				7960F5E5D1124322A1677015 /* shieldmaiden_en_rest_short.m4a in Resources */,
+				5C7FBCA4232447609C5F6A81 /* shieldmaiden_en_rest_v1.m4a in Resources */,
+				6673C334D86D4788A3621868 /* shieldmaiden_en_rest_v2.m4a in Resources */,
+				F6417A1D0E3E4B1593A638AB /* shieldmaiden_en_rest_v3.m4a in Resources */,
+				F98040354FCC4628A067AF1F /* shieldmaiden_en_warmup_short.m4a in Resources */,
+				0806ABE10F4D4DB5ADCF6FCE /* shieldmaiden_en_warmup_v1.m4a in Resources */,
+				4E1964BAF5534F3EBFD70B0B /* shieldmaiden_en_warmup_v2.m4a in Resources */,
+				BD3B016516AD49AEA04CBA80 /* shieldmaiden_en_warmup_v3.m4a in Resources */,
+				7D473B28D9594A76B8798776 /* shieldmaiden_en_work_short.m4a in Resources */,
+				D5DCF31A0A0447DABB0230F2 /* shieldmaiden_en_work_v1.m4a in Resources */,
+				AA1DA8BF295D431287480087 /* shieldmaiden_en_work_v2.m4a in Resources */,
+				1FB7A6CCF2F24DD8AB4676D1 /* shieldmaiden_en_work_v3.m4a in Resources */,
+				B856552F22734BBFB2DA8823 /* shieldmaiden_sk_1.m4a in Resources */,
+				ED508F0DA8B047A685FB8672 /* shieldmaiden_sk_10.m4a in Resources */,
+				B59EAF8A565447898D298527 /* shieldmaiden_sk_2.m4a in Resources */,
+				B446FB37C39043DCA4373BD8 /* shieldmaiden_sk_3.m4a in Resources */,
+				52916C974856486FA61D77B7 /* shieldmaiden_sk_4.m4a in Resources */,
+				DB24A18E70794636B285B2B2 /* shieldmaiden_sk_5.m4a in Resources */,
+				BCA1DEA7C5B14F679F506B1C /* shieldmaiden_sk_6.m4a in Resources */,
+				274D449DC0B34286976AC77F /* shieldmaiden_sk_7.m4a in Resources */,
+				181FD26B45CD41C89F101544 /* shieldmaiden_sk_8.m4a in Resources */,
+				5A30F7E299974CE6B5C97261 /* shieldmaiden_sk_9.m4a in Resources */,
+				08F8864E474B458BA2691F92 /* shieldmaiden_sk_cooldown_short.m4a in Resources */,
+				E9B46E194B764BC28B486EB5 /* shieldmaiden_sk_cooldown_v1.m4a in Resources */,
+				7AC79C1A1A6D4F0FB0606581 /* shieldmaiden_sk_cooldown_v2.m4a in Resources */,
+				EAA563AC18CF402493AF9409 /* shieldmaiden_sk_cooldown_v3.m4a in Resources */,
+				5B6322AD86D341DFA03F144C /* shieldmaiden_sk_finish_v1.m4a in Resources */,
+				3F7832683E8A47399987D669 /* shieldmaiden_sk_finish_v2.m4a in Resources */,
+				AF0CEAAB5423415294C17C1A /* shieldmaiden_sk_finish_v3.m4a in Resources */,
+				61C10E6AE1F5409990499BF0 /* shieldmaiden_sk_half_v1.m4a in Resources */,
+				9DA14E611DE043AE80777858 /* shieldmaiden_sk_half_v2.m4a in Resources */,
+				E5290216CCC9427EB4A74E25 /* shieldmaiden_sk_half_v3.m4a in Resources */,
+				62D60BA09CB04D589AEBE35F /* shieldmaiden_sk_recovery_short.m4a in Resources */,
+				3E34F50E1A4C43A499EB6602 /* shieldmaiden_sk_recovery_v1.m4a in Resources */,
+				93F9CCD5F6AD493996F7594A /* shieldmaiden_sk_recovery_v2.m4a in Resources */,
+				EEC95B5A788B46FD877D520C /* shieldmaiden_sk_recovery_v3.m4a in Resources */,
+				DC3B43D7E2C048C58DD0F579 /* shieldmaiden_sk_rest_short.m4a in Resources */,
+				184B978B9A72413C9BA7D7A4 /* shieldmaiden_sk_rest_v1.m4a in Resources */,
+				DD21344B88994E70A6BCF7CE /* shieldmaiden_sk_rest_v2.m4a in Resources */,
+				C82CE67A71EE4D87ACE3DF60 /* shieldmaiden_sk_rest_v3.m4a in Resources */,
+				D2BE234908ED47CEA5F1B8E1 /* shieldmaiden_sk_warmup_short.m4a in Resources */,
+				CE643CA3A13247389474F09F /* shieldmaiden_sk_warmup_v1.m4a in Resources */,
+				88862887286F48E6A9D9F814 /* shieldmaiden_sk_warmup_v2.m4a in Resources */,
+				7404EDF45BDF4FB081C9B36E /* shieldmaiden_sk_warmup_v3.m4a in Resources */,
+				DAEF9B6650B24D5487384866 /* shieldmaiden_sk_work_short.m4a in Resources */,
+				01079E8AB10B4B0CB664E6C5 /* shieldmaiden_sk_work_v1.m4a in Resources */,
+				9D6CFF838DE145629F4D527D /* shieldmaiden_sk_work_v2.m4a in Resources */,
+				6D7F45B7A689495993D58961 /* shieldmaiden_sk_work_v3.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
