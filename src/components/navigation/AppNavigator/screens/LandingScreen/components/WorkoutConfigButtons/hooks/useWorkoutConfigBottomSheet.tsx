@@ -30,7 +30,7 @@ export const useWorkoutConfigBottomSheet = (name: AppWorkoutConfigKey) => {
 
   const { bottomSheet, handleOpen, handleClose } = useAppBottomSheet();
 
-  const { labelKey, backgroundColorStatus, IconComponent } =
+  const { labelKey, backgroundColorStatus, iconName } =
     workoutSettingsButtonConfigMap[name];
 
   const renderContent = () => (
@@ -67,7 +67,7 @@ export const useWorkoutConfigBottomSheet = (name: AppWorkoutConfigKey) => {
       title: (
         <WorkoutConfigBottomSheetIconAndTitle
           label={t(labelKey)}
-          IconComponent={IconComponent}
+          iconName={iconName}
         />
       ),
     });
