@@ -20,11 +20,13 @@ const initializeAds = async (): Promise<boolean> => {
 };
 
 /**
- * Attempted once at module load (best effort), and retried on demand
- * right before showing an ad if it didn't succeed yet - e.g. there was
- * no network at app startup but there is now. Once it succeeds, it's
- * cached for the rest of the session (no need to re-gather consent
- * before every single ad).
+ * Called on demand right before showing an ad - e.g. there was no
+ * network at the first attempt but there is now. Once it succeeds,
+ * it's cached for the rest of the session (no need to re-gather
+ * consent before every single ad). Deliberately not triggered eagerly
+ * at module load - the native consent form could otherwise pop up the
+ * moment the app starts, well before the user has opened the premium
+ * sheet or read its description.
  */
 export const ensureAdsInitialized = (): Promise<boolean> => {
   if (isInitialized) {
@@ -41,5 +43,3 @@ export const ensureAdsInitialized = (): Promise<boolean> => {
 
   return initializationPromise;
 };
-
-void ensureAdsInitialized();

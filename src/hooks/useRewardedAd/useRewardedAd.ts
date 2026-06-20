@@ -13,12 +13,17 @@ import { useAppPopUp } from '../../components/common/AppPopUp/hooks/useAppPopUp.
 export const REWARDED_AD_UNIT_ID = TestIds.REWARDED;
 
 /**
- * `setHidden` controls the caller's bottom sheet Modal. It's hidden for
- * the entire duration an ad-related UI is on screen (the ad itself, or
- * this hook's own "ad not available" popup) and only restored once
- * that UI is fully dismissed - never simultaneously with the popup,
- * since two RN Modals becoming visible at almost the same time is
- * unreliable on Android (the second one can fail to surface).
+ * `setHidden` controls the caller's bottom sheet Modal. It's only ever
+ * hidden right before showing this hook's own "ad not available"
+ * popup - two RN Modals becoming visible at almost the same time is
+ * unreliable on Android. The popup's own button restores it.
+ *
+ * The bottom sheet is deliberately left visible (untouched) while the
+ * actual rewarded ad is loading/showing: toggling the Modal's
+ * `visible` prop right as the native ad activity is being presented
+ * made the ad close itself immediately (a window-focus change is
+ * apparently read as the user backing out), so the ad is simply shown
+ * on top of the still-visible sheet instead.
  */
 export const useRewardedAd = (setHidden: (hidden: boolean) => void) => {
   const t = useAppTranslation();
@@ -40,22 +45,17 @@ export const useRewardedAd = (setHidden: (hidden: boolean) => void) => {
     }
 
     isShowingRef.current = true;
-    setHidden(true);
 
     const isReady = await ensureAdsInitialized();
 
     if (!isReady) {
       isShowingRef.current = false;
+      setHidden(true);
       showAdNotAvailablePopUp();
       return false;
     }
 
     return new Promise(resolve => {
-      /**
-       * No requestNonPersonalizedAdsOnly override here - consent is
-       * gathered via the UMP flow in helpers/initializeAds.ts, which
-       * already informs the SDK whether personalized ads are allowed.
-       */
       const rewarded = RewardedAd.createForAdRequest(REWARDED_AD_UNIT_ID);
 
       let earnedReward = false;
@@ -67,18 +67,13 @@ export const useRewardedAd = (setHidden: (hidden: boolean) => void) => {
         unsubscribers.forEach(unsubscribe => unsubscribe());
       };
 
-      const resolveOnce = (result: boolean, keepHidden = false) => {
+      const resolveOnce = (result: boolean) => {
         if (resolved) {
           return;
         }
         resolved = true;
         cleanup();
         isShowingRef.current = false;
-
-        if (!keepHidden) {
-          setHidden(false);
-        }
-
         resolve(result);
       };
 
@@ -90,8 +85,9 @@ export const useRewardedAd = (setHidden: (hidden: boolean) => void) => {
 
       unsubscribers.push(
         rewarded.addAdEventListener(AdEventType.ERROR, () => {
+          setHidden(true);
           showAdNotAvailablePopUp();
-          resolveOnce(false, true);
+          resolveOnce(false);
         }),
       );
 

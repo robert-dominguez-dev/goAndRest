@@ -1,4 +1,4 @@
-import { Fragment, memo } from 'react';
+import { Fragment, memo, useState } from 'react';
 import { useAtom } from 'jotai';
 import { AppView } from '../AppView/AppView.tsx';
 import { AppText } from '../AppText/AppText.tsx';
@@ -56,6 +56,9 @@ const PremiumCharacterBottomSheetContentComponent = ({
     premiumCharacterActivationsAtom,
   );
 
+  const [loadingValue, setLoadingValue] =
+    useState<WorkoutCharacterVariant | null>(null);
+
   const handleRowPress = async (value: WorkoutCharacterVariant) => {
     if (checkIsCharacterActive(activations, value)) {
       void setCharacterVariant(value);
@@ -63,7 +66,9 @@ const PremiumCharacterBottomSheetContentComponent = ({
       return undefined;
     }
 
+    setLoadingValue(value);
     const earnedReward = await showRewardedAd();
+    setLoadingValue(null);
 
     if (!earnedReward) {
       return undefined;
@@ -99,6 +104,8 @@ const PremiumCharacterBottomSheetContentComponent = ({
 
     const withDivider = !checkIsLast(workoutCharacterVariants, index);
 
+    const isLoading = value === loadingValue;
+
     return (
       <Fragment key={value}>
         <AppSelectionBottomSheetItem
@@ -109,9 +116,11 @@ const PremiumCharacterBottomSheetContentComponent = ({
           audioParams={audioParams}
           analytics={analytics}
           selected={value === characterVariant && isActive}
+          disabled={loadingValue !== null}
           accessoryRight={
             <PremiumCharacterLockBadge
               isActive={isActive}
+              isLoading={isLoading}
               label={getDaysRemainingLabel(daysRemaining, t)}
             />
           }
