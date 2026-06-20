@@ -14,9 +14,13 @@ import {
 } from '../components/navigation/AppNavigator/screens/RunningWorkoutScreen/types.ts';
 import { atom } from 'jotai';
 import { WorkoutSoundFilePaths } from '../assets/types.ts';
-import { AppWorkoutConfig, AppWorkoutFieldValues, } from './AppWorkoutsProvider/types.ts';
+import {
+  AppWorkoutConfig,
+  AppWorkoutFieldValues,
+} from './AppWorkoutsProvider/types.ts';
 import { defaultWorkoutConfig } from './AppWorkoutsProvider/constants.ts';
 import { ONE_SECOND_MS } from '../constants/common.ts';
+import { PremiumCharacterActivations } from './premiumCharacters/types.ts';
 
 const createAsyncAtom = <T>(key: string, defaultValue: T) =>
   atomWithStorage(
@@ -65,6 +69,12 @@ export const characterVariantSettingAtom =
   createAsyncAtom<WorkoutCharacterVariant>(
     AsyncStorageKey.CHARACTER_VARIANT_SETTING,
     WorkoutCharacterVariant.wizard,
+  );
+
+export const premiumCharacterActivationsAtom =
+  createAsyncAtom<PremiumCharacterActivations>(
+    AsyncStorageKey.PREMIUM_CHARACTER_ACTIVATIONS,
+    {},
   );
 
 export const soundVariantSettingAtom = createAsyncAtom<WorkoutSoundVariant>(

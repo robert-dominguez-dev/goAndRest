@@ -32,6 +32,10 @@ export const sk = {
       },
     },
     pressAnywhere: 'Klikni kamkoľvek pre potvrdenie 👇',
+    adNotAvailablePopUp: {
+      title: 'Reklama nie je dostupná',
+      description: 'Skús to prosím neskôr.',
+    },
   },
   screens: {
     landingScreen: {
@@ -116,7 +120,7 @@ export const sk = {
               'Výber typu zvukových signálov pre kľúčové momenty počas tréningu (napr. oznámenie o polovici, odpočet, začiatok novej fázy).',
             items: {
               voice: 'Štandardné hlasy',
-              character: 'Zábavné hlasy',
+              character: 'Premium hlasy',
               sound: 'Zvukové signály',
               none: 'Bez zvuku',
             },
@@ -141,6 +145,17 @@ export const sk = {
               shieldmaiden: 'Štítonoska',
               cyborg: 'Kyborg',
               wizard: 'Čarodejník',
+            },
+            premiumBottomSheet: {
+              title: 'Aktivuj prémiový hlas!',
+              description:
+                'Chceš nastaviť prémiový hlas k časovaču? Klikni naň, pozri si krátke video a máš ho odomknutý na 7 dní úplne zadarmo.\n\nIkonou ▷ vpravo si môžeš prehrať ukážku. 👉',
+              daysRemaining: {
+                lessThanOne: '< 1 deň',
+                one: '{{value}} deň',
+                few: '{{value}} dni',
+                many: '{{value}} dní',
+              },
             },
           },
           soundVariant: {

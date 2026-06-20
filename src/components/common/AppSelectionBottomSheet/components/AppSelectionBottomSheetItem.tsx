@@ -12,7 +12,10 @@ import {
 } from './AppSelectionBottomSheetItemText.tsx';
 import { AppColorUnion } from '../../../../types/ui.ts';
 import { PlaySoundIcon, PlaySoundIconProps } from './PlaySoundIcon.tsx';
-import { CustomAnalyticsParams, logCustomEvent, } from '../../../navigation/helpers/logCustomEvent.ts';
+import {
+  CustomAnalyticsParams,
+  logCustomEvent,
+} from '../../../navigation/helpers/logCustomEvent.ts';
 
 export type AppSelectionBottomSheetItemData<TValue> =
   Partial<PlaySoundIconProps> & {
@@ -21,7 +24,9 @@ export type AppSelectionBottomSheetItemData<TValue> =
     accessoryLeft?: JSX.Element;
     accessoryLeftIconName?: AppIconName;
     accessoryLeftIconStatus?: AppColorUnion;
+    accessoryLeftTextColorStatus?: AppColorUnion;
     accessoryLeftImageProps?: AppSelectionBottomSheetItemTextProps['imageProps'];
+    accessoryRight?: JSX.Element;
     selected?: boolean;
     disabled?: boolean;
     analytics?: CustomAnalyticsParams;
@@ -41,7 +46,9 @@ export const AppSelectionBottomSheetItem = <TValue,>({
   accessoryLeft,
   accessoryLeftIconName,
   accessoryLeftIconStatus,
+  accessoryLeftTextColorStatus,
   accessoryLeftImageProps,
+  accessoryRight,
   audioParams,
   analytics,
 }: AppSelectionBottomSheetItemProps<TValue>) => {
@@ -55,7 +62,9 @@ export const AppSelectionBottomSheetItem = <TValue,>({
 
   const isPressDisabled: boolean = !!disabled || !!selected;
 
-  const textColorStatus: AppColorUnion = selected ? 'selectedItem' : 'text';
+  const textColorStatus: AppColorUnion = selected
+    ? 'selectedItem'
+    : accessoryLeftTextColorStatus ?? 'text';
 
   return (
     <Pressable
@@ -74,6 +83,7 @@ export const AppSelectionBottomSheetItem = <TValue,>({
             alignItems={'center'}
             justifyContent={'space-between'}>
             <AppRow
+              shrink
               gap={APP_BOTTOM_SHEET_ICON_LABEL_GAP_UNION}
               alignItems={'center'}>
               {accessoryLeft}
@@ -84,6 +94,7 @@ export const AppSelectionBottomSheetItem = <TValue,>({
                 imageProps={accessoryLeftImageProps}
                 textColorStatus={textColorStatus}
               />
+              {accessoryRight}
             </AppRow>
             {audioParams && <PlaySoundIcon audioParams={audioParams} />}
           </AppRow>

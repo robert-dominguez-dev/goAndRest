@@ -11,6 +11,7 @@ import { AppStatusBar } from './components/common/AppStatusBar.tsx';
 import { AppNavigators } from './components/navigation/AppNavigators.tsx';
 import { AppOrientationLocker } from './components/common/AppOrientationLocker.tsx';
 import { useNavigationAnalytics } from './components/navigation/hooks/useNavigationAnalytics.ts';
+import { PremiumCharacterActivationGuard } from './components/common/PremiumCharacterActivationGuard.tsx';
 
 export const App = () => {
   const { navigationRef, onReady, onStateChange } = useNavigationAnalytics();
@@ -28,6 +29,7 @@ export const App = () => {
               <AppThemeProvider>
                 <AppWorkoutsProvider>
                   <AppStatusBar />
+                  <PremiumCharacterActivationGuard />
                   <AppNavigators />
                 </AppWorkoutsProvider>
               </AppThemeProvider>

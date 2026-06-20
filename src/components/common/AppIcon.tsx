@@ -23,6 +23,7 @@ export type AppIconName = Extract<
   | 'Drum'
   | 'Dumbbell'
   | 'Flame'
+  | 'Gem'
   | 'HandFist'
   | 'History'
   | 'Maximize2'

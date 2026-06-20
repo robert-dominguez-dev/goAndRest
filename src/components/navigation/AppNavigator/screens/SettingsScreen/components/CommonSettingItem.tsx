@@ -33,7 +33,7 @@ export const CommonSettingItem = <TValue,>({
     getProps,
   });
 
-  const { labelTranslateKey, iconName, imageProps, iconColorStatus } =
+  const { labelTranslateKey, iconName, imageProps, iconColorStatus, labelColorStatus } =
     getProps(selectedValue, language);
 
   const accessoryRight = (
@@ -41,6 +41,7 @@ export const CommonSettingItem = <TValue,>({
       label={t(labelTranslateKey)}
       iconName={iconName}
       iconColorStatus={iconColorStatus}
+      textColorStatus={labelColorStatus}
       imageProps={imageProps}
     />
   );

@@ -12,6 +12,7 @@ import { LandingScreenContent } from './components/LandingScreenContent.tsx';
 import { ComponentType, JSX } from 'react';
 import { WorkoutConfigTimeViewProps } from './components/WorkoutConfigButtons/components/WorkoutConfigTimeView.tsx';
 import { LandingScreenTabletLandscapeContent } from './components/LandingScreenTabletLandscapeContent.tsx';
+import { usePremiumCharacterBottomSheet } from '../../../../common/PremiumCharacterBottomSheet/hooks/usePremiumCharacterBottomSheet.tsx';
 
 const footerElement = <LandingScreenFooter />;
 
@@ -35,6 +36,8 @@ export const LandingScreen = ({ navigation }: LandingScreenProps) => {
 
   const isTabletLandscape = useIsTabletAndLandscape();
 
+  const { bottomSheet, openBottomSheet } = usePremiumCharacterBottomSheet();
+
   const ContentComponent: ComponentType<WorkoutConfigTimeViewProps> =
     isTabletLandscape
       ? LandingScreenTabletLandscapeContent
@@ -50,9 +53,13 @@ export const LandingScreen = ({ navigation }: LandingScreenProps) => {
         headerTitle={t('screens.landingScreen.title')}
         headerAccessoryLeftIconName={'Menu'}
         onHeaderAccessoryLeftPress={goToSettings}
+        headerAccessoryRightIconName={'Gem'}
+        headerAccessoryRightIconColorStatus={'premium'}
+        onHeaderAccessoryRightPress={openBottomSheet}
         footer={footerElementEvaluated}>
         <ContentComponent control={formProps.control} />
       </AppScreenLayout>
+      {bottomSheet}
     </FormProvider>
   );
 };

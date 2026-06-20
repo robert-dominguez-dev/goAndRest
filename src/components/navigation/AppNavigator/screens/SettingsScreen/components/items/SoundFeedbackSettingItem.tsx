@@ -11,6 +11,7 @@ import { useAtomValue } from 'jotai';
 import { VoiceVariantSettingItem } from './VoiceVariantSettingItem.tsx';
 import { CharacterVariantSettingItem } from './CharacterVariantSettingItem.tsx';
 import { SoundVariantSettingItem } from './SoundVariantSettingItem.tsx';
+import { usePremiumSoundFeedbackGuard } from '../../hooks/usePremiumSoundFeedbackGuard.tsx';
 
 const soundFeedbackToVariantItem: Record<
   WorkoutSoundFeedback,
@@ -30,6 +31,8 @@ const SoundFeedbackSettingItemComponent = () => {
   const maybeVariantSettingsItemElement =
     soundFeedbackToVariantItem[soundFeedback];
 
+  const { bottomSheet } = usePremiumSoundFeedbackGuard();
+
   return (
     <>
       <CommonSettingItem
@@ -44,6 +47,7 @@ const SoundFeedbackSettingItemComponent = () => {
         getProps={getSoundFeedbackSettingValueProps}
       />
       {maybeVariantSettingsItemElement}
+      {bottomSheet}
     </>
   );
 };

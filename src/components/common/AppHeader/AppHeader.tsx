@@ -9,20 +9,25 @@ import isString from 'lodash/isString';
 import { AppIcon, AppIconName } from '../AppIcon.tsx';
 import { AppText } from '../AppText/AppText.tsx';
 import { AppViewProps } from '../AppView/AppView.tsx';
+import { AppColorUnion } from '../../../types/ui.ts';
 
 export type AppHeaderProps = {
   title?: string | JSX.Element;
   accessoryLeftIconName?: AppIconName;
+  accessoryLeftIconColorStatus?: AppColorUnion;
   onAccessoryLeftPress?: AppHeaderAccessoryContainerProps['onPress'];
   accessoryRightIconName?: AppIconName;
+  accessoryRightIconColorStatus?: AppColorUnion;
   onAccessoryRightPress?: AppHeaderAccessoryContainerProps['onPress'];
 };
 
 export const AppHeader = ({
   title,
   accessoryLeftIconName,
+  accessoryLeftIconColorStatus,
   onAccessoryLeftPress,
   accessoryRightIconName,
+  accessoryRightIconColorStatus,
   onAccessoryRightPress,
 }: AppHeaderProps) => {
   const titleElement = isString(title) ? (
@@ -50,7 +55,12 @@ export const AppHeader = ({
         <AppHeaderAccessoryContainer
           alignItems={'flex-start'}
           onPress={onAccessoryLeftPress}>
-          {accessoryLeftIconName && <AppIcon name={accessoryLeftIconName} />}
+          {accessoryLeftIconName && (
+            <AppIcon
+              name={accessoryLeftIconName}
+              colorStatus={accessoryLeftIconColorStatus}
+            />
+          )}
         </AppHeaderAccessoryContainer>
       )}
       {titleElement}
@@ -58,7 +68,12 @@ export const AppHeader = ({
         <AppHeaderAccessoryContainer
           alignItems={'flex-end'}
           onPress={onAccessoryRightPress}>
-          {accessoryRightIconName && <AppIcon name={accessoryRightIconName} />}
+          {accessoryRightIconName && (
+            <AppIcon
+              name={accessoryRightIconName}
+              colorStatus={accessoryRightIconColorStatus}
+            />
+          )}
         </AppHeaderAccessoryContainer>
       )}
     </AppRow>

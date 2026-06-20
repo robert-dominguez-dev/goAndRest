@@ -25,6 +25,7 @@ export type AppBottomSheetProps = Pick<
 > & {
   renderContent: (params: AppBottomSheetRenderContentProps) => JSX.Element;
   onOverlayPress?: () => void;
+  hidden?: boolean;
 };
 
 export const AppBottomSheet = ({
@@ -37,6 +38,7 @@ export const AppBottomSheet = ({
   onAccessoryRightPress,
   onOverlayPress,
   onBottomSheetPress,
+  hidden,
 }: AppBottomSheetProps) => {
   const contentElement = renderContent({ onClose });
 
@@ -44,6 +46,7 @@ export const AppBottomSheet = ({
     <Modal
       transparent
       statusBarTranslucent
+      visible={!hidden}
       animationType={'slide'}
       supportedOrientations={ALL_SUPPORTED_ORIENTATIONS}>
       <Pressable

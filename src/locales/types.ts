@@ -46,6 +46,10 @@ export type AppTranslations = {
     ok: string;
     workoutConfig: WorkoutConfigTexts;
     pressAnywhere: string;
+    adNotAvailablePopUp: {
+      title: string;
+      description: string;
+    };
   };
   screens: {
     landingScreen: {
@@ -87,7 +91,18 @@ export type AppTranslations = {
           voiceVariant: SettingsItemTexts &
             SettingsItemSubItems<WorkoutVoiceVariant>;
           characterVariant: SettingsItemTexts &
-            SettingsItemSubItems<WorkoutCharacterVariant>;
+            SettingsItemSubItems<WorkoutCharacterVariant> & {
+              premiumBottomSheet: {
+                title: string;
+                description: string;
+                daysRemaining: {
+                  lessThanOne: string;
+                  one: string;
+                  few: string;
+                  many: string;
+                };
+              };
+            };
           soundVariant: SettingsItemTexts &
             SettingsItemSubItems<WorkoutSoundVariant>;
           countdown: SettingsItemTexts &

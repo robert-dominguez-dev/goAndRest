@@ -6,8 +6,8 @@ export enum WorkoutSoundFeedback {
 }
 
 export const workoutSoundFeedbacks: WorkoutSoundFeedback[] = [
-  WorkoutSoundFeedback.voice,
   WorkoutSoundFeedback.character,
+  WorkoutSoundFeedback.voice,
   WorkoutSoundFeedback.sound,
   WorkoutSoundFeedback.none,
 ];

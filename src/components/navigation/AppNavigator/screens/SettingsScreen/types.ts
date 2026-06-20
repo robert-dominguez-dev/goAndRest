@@ -8,6 +8,7 @@ export type SettingValueProps = {
   labelTranslateKey: TranslateKey;
   iconName?: AppIconName;
   iconColorStatus?: AppColorUnion;
+  labelColorStatus?: AppColorUnion;
   imageProps?: AppSelectionBottomSheetItemTextProps['imageProps'];
   previewAudioUrl?: string;
   analytics?: CustomAnalyticsParams;

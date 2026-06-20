@@ -31,6 +31,10 @@ export const en = {
       },
     },
     pressAnywhere: 'Click anywhere to confirm 👇',
+    adNotAvailablePopUp: {
+      title: 'Ad not available',
+      description: 'Please try again later.',
+    },
   },
   screens: {
     landingScreen: {
@@ -115,7 +119,7 @@ export const en = {
               'Select the type of audio signals for key moments during a workout (e.g., halfway mark, countdown, start of a new phase).',
             items: {
               voice: 'Standard Voices',
-              character: 'Fun Voices',
+              character: 'Premium Voices',
               sound: 'Sound Signals',
               none: 'No Sound',
             },
@@ -142,6 +146,17 @@ export const en = {
               shieldmaiden: 'Shieldmaiden',
               cyborg: 'Cyborg',
               wizard: 'Wizard',
+            },
+            premiumBottomSheet: {
+              title: 'Unlock a premium voice!',
+              description:
+                'Want to set a premium voice for your timer? Tap it, watch a short video, and unlock it free for 7 days.\n\nUse the ▷ icon on the right to hear a preview. 👉',
+              daysRemaining: {
+                lessThanOne: '< 1 day',
+                one: '{{value}} day',
+                few: '{{value}} days',
+                many: '{{value}} days',
+              },
             },
           },
           soundVariant: {

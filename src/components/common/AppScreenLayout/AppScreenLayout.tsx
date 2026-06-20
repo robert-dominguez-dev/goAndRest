@@ -13,6 +13,7 @@ export type AppScreenLayoutProps = Pick<AppViewProps, 'children'> &
     headerElementOverride?: JSX.Element;
     headerTitle?: AppHeaderProps['title'];
     headerAccessoryRightIconName?: AppHeaderProps['accessoryRightIconName'];
+    headerAccessoryRightIconColorStatus?: AppHeaderProps['accessoryRightIconColorStatus'];
     headerAccessoryLeftIconName?: AppHeaderProps['accessoryLeftIconName'];
     onHeaderAccessoryRightPress?: AppHeaderProps['onAccessoryRightPress'];
     onHeaderAccessoryLeftPress?: AppHeaderProps['onAccessoryLeftPress'];
@@ -30,6 +31,7 @@ export const AppScreenLayout = ({
   headerAccessoryLeftIconName,
   onHeaderAccessoryLeftPress,
   headerAccessoryRightIconName,
+  headerAccessoryRightIconColorStatus,
   onHeaderAccessoryRightPress,
   footer,
   scrollable,
@@ -51,6 +53,7 @@ export const AppScreenLayout = ({
       accessoryLeftIconName={headerAccessoryLeftIconName}
       onAccessoryLeftPress={onHeaderAccessoryLeftPress}
       accessoryRightIconName={headerAccessoryRightIconName}
+      accessoryRightIconColorStatus={headerAccessoryRightIconColorStatus}
       onAccessoryRightPress={onHeaderAccessoryRightPress}
     />
   ) : undefined;
