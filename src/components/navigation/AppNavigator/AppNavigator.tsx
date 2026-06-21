@@ -15,6 +15,7 @@ import { runningWorkoutStateAtom } from '../../../contexts/atoms.ts';
 import { calculateCurrentWorkoutState } from '../../../helpers/calculateCurrentWorkoutState.ts';
 import { FinishedWorkoutScreen } from './screens/FinishedWorkoutScreen/FinishedWorkoutScreen.tsx';
 import { useInitiateWorkoutSounds } from '../../../hooks/useInitiateWorkoutSounds/useInitiateWorkoutSounds.ts';
+import { DevScreen } from './screens/DevScreen/DevScreen.tsx';
 
 const Stack = createNativeStackNavigator<AppNavigatorScreenParams, string>();
 
@@ -55,6 +56,10 @@ const AppNavigatorComponent = () => {
       <Stack.Screen
         name={AppNavigatorScreen.SavedWorkoutsScreen}
         component={SavedWorkoutsScreen}
+      />
+      <Stack.Screen
+        name={AppNavigatorScreen.DevScreen}
+        component={DevScreen}
       />
     </Stack.Navigator>
   );

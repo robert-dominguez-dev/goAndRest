@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react';
-import { useAtom } from 'jotai';
+import { useAtom, useSetAtom } from 'jotai';
 import { useAppTranslation } from '../../../../locales/hooks/useAppTranslation.ts';
 import { useAppBottomSheet } from '../../AppBottomSheet/hooks/useAppBottomSheet.tsx';
 import { AppBottomSheetProps } from '../../AppBottomSheet/AppBottomSheet.tsx';
@@ -39,8 +39,8 @@ export const usePremiumCharacterBottomSheet = () => {
     loadingOverlay,
   } = useRewardedAd(setHidden);
 
-  const [soundFeedback, setSoundFeedback] = useAtom(soundFeedbackSettingAtom);
-  const [, setCharacterVariant] = useAtom(characterVariantSettingAtom);
+  const setSoundFeedback = useSetAtom(soundFeedbackSettingAtom);
+  const setCharacterVariant = useSetAtom(characterVariantSettingAtom);
   const [activations, setActivations] = useAtom(
     premiumCharacterActivationsAtom,
   );
@@ -49,6 +49,7 @@ export const usePremiumCharacterBottomSheet = () => {
     useState<WorkoutCharacterVariant | null>(null);
 
   const selectCharacter = (value: WorkoutCharacterVariant) => {
+    void setSoundFeedback(WorkoutSoundFeedback.character);
     void setCharacterVariant(value);
     handleClose();
   };
@@ -63,10 +64,6 @@ export const usePremiumCharacterBottomSheet = () => {
 
     if (!earnedReward) {
       return undefined;
-    }
-
-    if (soundFeedback !== WorkoutSoundFeedback.character) {
-      void setSoundFeedback(WorkoutSoundFeedback.character);
     }
 
     void setActivations({ ...activations, [value]: Date.now() });

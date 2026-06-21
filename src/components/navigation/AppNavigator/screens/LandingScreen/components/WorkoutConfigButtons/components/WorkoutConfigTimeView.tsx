@@ -4,6 +4,7 @@ import { Control, useWatch } from 'react-hook-form';
 import { AppWorkoutFieldValues } from '../../../../../../../../contexts/AppWorkoutsProvider/types.ts';
 import { countTotalWorkoutTime } from '../../../helpers/countTotalWorkoutTime.ts';
 import { useGetTabletScaledNumber } from '../../../../../../../../hooks/useGetTabletScaledNumber.ts';
+import { useDevScreenEasterEggHandler } from '../../../../../../hooks/useDevScreenEasterEggHandler.ts';
 
 export type WorkoutConfigTimeViewProps = {
   control: Control<AppWorkoutFieldValues>;
@@ -20,11 +21,14 @@ export const WorkoutConfigTimeView = ({
 
   const totalWorkoutTime = countTotalWorkoutTime(workoutConfig);
 
+  const devScreenEasterEggHandler = useDevScreenEasterEggHandler();
+
   return (
     <AppView
       grow
       alignItems={'center'}
-      justifyContent={'center'}>
+      justifyContent={'center'}
+      onTouchStart={devScreenEasterEggHandler}>
       <AppTimeView
         fontSizeOverride={getTabletScaledNumber(100)}
         msLeft={totalWorkoutTime}
