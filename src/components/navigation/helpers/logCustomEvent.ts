@@ -20,6 +20,7 @@ type CustomEventParams = {
   isInAppReviewAvailable?: boolean;
   reviewType?: 'in_app_review' | 'store_redirect' | 'web_url_redirect';
   errorMessage?: string;
+  message?: string;
   finishedWorkoutsCount?: number;
   reason?: 'consent_or_init' | 'load_error';
   characterVariant?: string;

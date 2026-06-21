@@ -106,17 +106,20 @@ export const useRewardedAd = (setHidden: (hidden: boolean) => void) => {
       );
 
       unsubscribers.push(
-        rewarded.addAdEventListener(RewardedAdEventType.EARNED_REWARD, () => {
-          earnedReward = true;
-        }),
+        rewarded.addAdEventListener(
+          RewardedAdEventType.EARNED_REWARD,
+          reward => {
+            void logCustomEvent('rewarded_ad_earned_reward', {
+              message: `User got a reward: ${reward.amount} ${reward.type}`,
+            });
+            earnedReward = true;
+          },
+        ),
       );
 
       unsubscribers.push(
         rewarded.addAdEventListener(AdEventType.CLOSED, () => {
           setHidden(false);
-          if (earnedReward) {
-            void logCustomEvent('rewarded_ad_earned_reward');
-          }
           resolveOnce(earnedReward);
         }),
       );
