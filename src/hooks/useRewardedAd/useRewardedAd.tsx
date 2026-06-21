@@ -1,13 +1,24 @@
 import { JSX, useCallback, useRef, useState } from 'react';
-import { AdEventType, RewardedAd, RewardedAdEventType, TestIds, } from 'react-native-google-mobile-ads';
+import {
+  AdEventType,
+  RewardedAd,
+  RewardedAdEventType,
+  TestIds,
+} from 'react-native-google-mobile-ads';
 import { ensureAdsInitialized } from './helpers/initializeAds.ts';
 import { useAppTranslation } from '../../locales/hooks/useAppTranslation.ts';
 import { useAppPopUp } from '../../components/common/AppPopUp/hooks/useAppPopUp.tsx';
 import { AppFullScreenLoader } from '../../components/common/AppFullScreenLoader.tsx';
 import { logCustomEvent } from '../../components/navigation/helpers/logCustomEvent.ts';
+import { Platform } from 'react-native';
 
-// TODO: nahradit produkčním AdMob ad unit ID před release
-export const REWARDED_AD_UNIT_ID = TestIds.REWARDED;
+const AD_UNIT_ID: string = __DEV__
+  ? TestIds.REWARDED
+  : Platform.select({
+      ios: 'ca-app-pub-1007840337928730/7044042183',
+      android: 'ca-app-pub-1007840337928730/7004779665',
+      default: TestIds.REWARDED,
+    });
 
 /**
  * The bottom sheet is hidden before ad init even starts - the consent
@@ -55,7 +66,7 @@ export const useRewardedAd = (setHidden: (hidden: boolean) => void) => {
     }
 
     return new Promise(resolve => {
-      const rewarded = RewardedAd.createForAdRequest(REWARDED_AD_UNIT_ID);
+      const rewarded = RewardedAd.createForAdRequest(AD_UNIT_ID);
 
       let earnedReward = false;
       let resolved = false;

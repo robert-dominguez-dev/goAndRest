@@ -11,10 +11,9 @@
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="${usesCleartextTraffic}"
             android:supportsRtl="true">
-        <!-- TODO: nahradit produkčním AdMob App ID před release -->
         <meta-data
                 android:name="com.google.android.gms.ads.APPLICATION_ID"
-                android:value="ca-app-pub-3940256099942544~3347511713"/>
+                android:value="ca-app-pub-1007840337928730~2533538840"/>
         <activity
                 android:name=".MainActivity"
                 android:theme="@style/BootTheme"
