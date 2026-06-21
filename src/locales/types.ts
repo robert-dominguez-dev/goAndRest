@@ -9,6 +9,7 @@ import {
   WorkoutSoundVariant,
   WorkoutVoiceVariant,
 } from '../components/navigation/AppNavigator/screens/SettingsScreen/constants.tsx';
+import { PersonalizedAdsStatus } from '../components/navigation/AppNavigator/screens/SettingsScreen/helpers/getPersonalizedAdsStatus.ts';
 
 type WorkoutConfigItemTexts = {
   label: string;
@@ -115,6 +116,14 @@ export type AppTranslations = {
           countdown: SettingsItemTexts &
             SettingsItemSubItems<WorkoutCountdownVariant>;
           vibrations: SettingsItemTexts;
+        };
+      };
+      otherSection: {
+        label: string;
+        items: {
+          personalizedAds: SettingsItemTexts & {
+            status: Record<PersonalizedAdsStatus, string>;
+          };
         };
       };
     };

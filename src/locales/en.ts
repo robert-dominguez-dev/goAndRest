@@ -33,7 +33,8 @@ export const en = {
     pressAnywhere: 'Click anywhere to confirm 👇',
     adNotAvailablePopUp: {
       title: 'Ad not available',
-      description: 'Please try again later.',
+      description:
+        'You may have personalized ads turned off. Enable them in Settings → Other and try again.',
     },
     adLoading: 'Preparing ad…',
   },
@@ -194,6 +195,23 @@ export const en = {
             label: 'Vibrations',
             description:
               'Enable vibration alerts for key moments during a workout (e.g., halfway mark, countdown, start of a new phase).',
+          },
+        },
+      },
+      otherSection: {
+        label: 'Other',
+        items: {
+          personalizedAds: {
+            label: 'Type of ads',
+            description:
+              'Affects ad relevance, and sometimes whether ads show at all. Tap to change the setting.',
+            status: {
+              personalized: 'Personalized',
+              general: 'General',
+              limited: 'Limited',
+              off: 'Off',
+              unknown: 'Not set',
+            },
           },
         },
       },

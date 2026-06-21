@@ -1,7 +1,4 @@
-import {
-  createNativeStackNavigator,
-  NativeStackNavigationOptions,
-} from '@react-navigation/native-stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { AppNavigatorScreen, AppNavigatorScreenParams } from './types.ts';
 
 import { memo } from 'react';
@@ -18,17 +15,6 @@ import { runningWorkoutStateAtom } from '../../../contexts/atoms.ts';
 import { calculateCurrentWorkoutState } from '../../../helpers/calculateCurrentWorkoutState.ts';
 import { FinishedWorkoutScreen } from './screens/FinishedWorkoutScreen/FinishedWorkoutScreen.tsx';
 import { useInitiateWorkoutSounds } from '../../../hooks/useInitiateWorkoutSounds/useInitiateWorkoutSounds.ts';
-import { Platform } from 'react-native';
-
-const settingsScreenOptions = Platform.select<
-  NativeStackNavigationOptions | undefined
->({
-  ios: {
-    presentation: 'pageSheet',
-    sheetGrabberVisible: false,
-  },
-  android: undefined,
-});
 
 const Stack = createNativeStackNavigator<AppNavigatorScreenParams, string>();
 
@@ -57,7 +43,6 @@ const AppNavigatorComponent = () => {
       <Stack.Screen
         name={AppNavigatorScreen.SettingsScreen}
         component={SettingsScreen}
-        options={settingsScreenOptions}
       />
       <Stack.Screen
         name={AppNavigatorScreen.RunningWorkoutScreen}

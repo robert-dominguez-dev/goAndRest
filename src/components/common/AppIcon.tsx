@@ -40,6 +40,7 @@ export type AppIconName = Extract<
   | 'RotateCcw'
   | 'Save'
   | 'SaveAll'
+  | 'Settings'
   | 'Shell'
   | 'Speech'
   | 'StopCircle'

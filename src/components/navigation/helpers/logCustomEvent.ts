@@ -8,6 +8,7 @@ type CustomEventName =
   | 'request_store_review_failure'
   | 'finish_workout'
   | 'ads_consent_failure'
+  | 'ads_consent_change'
   | 'rewarded_ad_attempt'
   | 'rewarded_ad_not_available'
   | 'rewarded_ad_earned_reward'
@@ -23,6 +24,7 @@ type CustomEventParams = {
   message?: string;
   finishedWorkoutsCount?: number;
   reason?: 'consent_or_init' | 'load_error';
+  status?: string;
   characterVariant?: string;
 };
 

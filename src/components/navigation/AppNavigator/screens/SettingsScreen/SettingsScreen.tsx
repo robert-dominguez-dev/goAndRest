@@ -14,13 +14,7 @@ import { CooldownSettingItem } from './components/items/CooldownSettingItem.tsx'
 import { SoundFeedbackSettingItem } from './components/items/SoundFeedbackSettingItem.tsx';
 import { VibrationsSettingItem } from './components/items/VibrationsSettingItem.tsx';
 import { CountdownSettingItem } from './components/items/CountdownSettingItem.tsx';
-import { Platform } from 'react-native';
-import { AppSizeUnion } from '../../../../../types/ui.ts';
-
-const screenPaddingTopOverride = Platform.select<AppSizeUnion | undefined>({
-  ios: 'ml',
-  android: undefined,
-});
+import { PersonalizedAdsSettingItem } from './components/items/PersonalizedAdsSettingItem.tsx';
 
 type SettingsScreenProps = ScreenProps<
   AppNavigatorScreenParams,
@@ -44,6 +38,10 @@ const feedbackSettingsItems: JSX.Element[] = [
   <VibrationsSettingItem key={'vibrations'} />,
 ];
 
+const otherSettingsItems: JSX.Element[] = [
+  <PersonalizedAdsSettingItem key={'personalized_ads'} />,
+];
+
 export const SettingsScreen = ({ navigation }: SettingsScreenProps) => {
   const t = useAppTranslation();
 
@@ -52,8 +50,7 @@ export const SettingsScreen = ({ navigation }: SettingsScreenProps) => {
       scrollable
       headerTitle={t('screens.settingsScreen.title')}
       headerAccessoryLeftIconName={'X'}
-      onHeaderAccessoryLeftPress={navigation.goBack}
-      screenPaddingTopOverride={screenPaddingTopOverride}>
+      onHeaderAccessoryLeftPress={navigation.goBack}>
       <AppView
         gap={'xl'}
         paddingBottom={'3xl'}>
@@ -71,6 +68,11 @@ export const SettingsScreen = ({ navigation }: SettingsScreenProps) => {
           iconName={'Timer'}
           label={t('screens.settingsScreen.workoutSection.label')}
           items={workoutSettingsItems}
+        />
+        <SettingsSection
+          iconName={'Settings'}
+          label={t('screens.settingsScreen.otherSection.label')}
+          items={otherSettingsItems}
         />
       </AppView>
     </AppScreenLayout>

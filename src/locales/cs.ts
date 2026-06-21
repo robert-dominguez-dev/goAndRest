@@ -33,7 +33,8 @@ export const cs = {
     pressAnywhere: 'Klikni kamkoliv pro potvrzení 👇 ',
     adNotAvailablePopUp: {
       title: 'Reklama není dostupná',
-      description: 'Zkus to prosím později.',
+      description:
+        'Je možné, že máš vypnuté personalizované reklamy. Zapni je v Nastavení → Ostatní a zkus to znovu.',
     },
     adLoading: 'Připravujeme reklamu…',
   },
@@ -192,6 +193,23 @@ export const cs = {
             label: 'Vibrace',
             description:
               'Aktivace vibračních signálů pro klíčové momenty během tréninku (např. oznámení o polovině, odpočet, začátek nové fáze).',
+          },
+        },
+      },
+      otherSection: {
+        label: 'Ostatní',
+        items: {
+          personalizedAds: {
+            label: 'Typ reklam',
+            description:
+              'Ovlivňuje relevanci reklam a někdy i možnost jejich zobrazení. Klepnutím lze nastavení změnit.',
+            status: {
+              personalized: 'Personalizované',
+              general: 'Obecné',
+              limited: 'Omezené',
+              off: 'Vypnuté',
+              unknown: 'Nenastaveno',
+            },
           },
         },
       },
