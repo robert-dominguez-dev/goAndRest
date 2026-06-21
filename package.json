@@ -11,6 +11,7 @@
     "android:debugAnalytics": "adb shell setprop debug.firebase.analytics.app com.goandrest",
     "android:debugAnalyticsStop": "adb shell setprop debug.firebase.analytics.app none",
     "ios": "react-native run-ios",
+    "ios:device": "react-native run-ios --device",
     "ios:build:release": "react-native build-ios --mode=Release",
     "ios:version": "node scripts/ios_version_increment.mjs",
     "ios:ci": "npm install && npx pod-install && react-native-asset",

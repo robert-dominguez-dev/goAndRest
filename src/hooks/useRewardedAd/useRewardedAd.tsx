@@ -1,34 +1,26 @@
-import { useCallback, useRef } from 'react';
-import {
-  AdEventType,
-  RewardedAd,
-  RewardedAdEventType,
-  TestIds,
-} from 'react-native-google-mobile-ads';
+import { JSX, useCallback, useRef, useState } from 'react';
+import { AdEventType, RewardedAd, RewardedAdEventType, TestIds, } from 'react-native-google-mobile-ads';
 import { ensureAdsInitialized } from './helpers/initializeAds.ts';
 import { useAppTranslation } from '../../locales/hooks/useAppTranslation.ts';
 import { useAppPopUp } from '../../components/common/AppPopUp/hooks/useAppPopUp.tsx';
+import { AppFullScreenLoader } from '../../components/common/AppFullScreenLoader.tsx';
 
 // TODO: nahradit produkčním AdMob ad unit ID před release
 export const REWARDED_AD_UNIT_ID = TestIds.REWARDED;
 
 /**
- * `setHidden` controls the caller's bottom sheet Modal. It's only ever
- * hidden right before showing this hook's own "ad not available"
- * popup - two RN Modals becoming visible at almost the same time is
- * unreliable on Android. The popup's own button restores it.
- *
- * The bottom sheet is deliberately left visible (untouched) while the
- * actual rewarded ad is loading/showing: toggling the Modal's
- * `visible` prop right as the native ad activity is being presented
- * made the ad close itself immediately (a window-focus change is
- * apparently read as the user backing out), so the ad is simply shown
- * on top of the still-visible sheet instead.
+ * The bottom sheet is hidden before ad init even starts - the consent
+ * form can pop up then, and iOS can't present it over an
+ * already-presented Modal. It's restored only once the whole flow
+ * ends, not mid-show: toggling it while the ad is up closes the ad
+ * (a focus change reads as the user backing out). `loadingOverlay` is
+ * a plain, non-Modal overlay, so it doesn't hit the same conflict.
  */
 export const useRewardedAd = (setHidden: (hidden: boolean) => void) => {
   const t = useAppTranslation();
 
   const isShowingRef = useRef(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const { popUp, onOpen: showAdNotAvailablePopUp } = useAppPopUp({
     title: t('common.adNotAvailablePopUp.title'),
@@ -45,12 +37,14 @@ export const useRewardedAd = (setHidden: (hidden: boolean) => void) => {
     }
 
     isShowingRef.current = true;
+    setHidden(true);
+    setIsLoading(true);
 
     const isReady = await ensureAdsInitialized();
 
     if (!isReady) {
       isShowingRef.current = false;
-      setHidden(true);
+      setIsLoading(false);
       showAdNotAvailablePopUp();
       return false;
     }
@@ -79,13 +73,14 @@ export const useRewardedAd = (setHidden: (hidden: boolean) => void) => {
 
       unsubscribers.push(
         rewarded.addAdEventListener(RewardedAdEventType.LOADED, () => {
+          setIsLoading(false);
           void rewarded.show();
         }),
       );
 
       unsubscribers.push(
         rewarded.addAdEventListener(AdEventType.ERROR, () => {
-          setHidden(true);
+          setIsLoading(false);
           showAdNotAvailablePopUp();
           resolveOnce(false);
         }),
@@ -99,6 +94,7 @@ export const useRewardedAd = (setHidden: (hidden: boolean) => void) => {
 
       unsubscribers.push(
         rewarded.addAdEventListener(AdEventType.CLOSED, () => {
+          setHidden(false);
           resolveOnce(earnedReward);
         }),
       );
@@ -107,5 +103,9 @@ export const useRewardedAd = (setHidden: (hidden: boolean) => void) => {
     });
   }, [setHidden, showAdNotAvailablePopUp]);
 
-  return { showRewardedAd, popUp };
+  const loadingOverlay: JSX.Element | null = isLoading ? (
+    <AppFullScreenLoader label={t('common.adLoading')} />
+  ) : null;
+
+  return { showRewardedAd, popUp, loadingOverlay };
 };

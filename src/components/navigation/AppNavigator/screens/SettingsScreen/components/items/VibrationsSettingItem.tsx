@@ -12,7 +12,7 @@ const VibrationsSettingItemComponent = () => {
     vibrationsSettingAtom,
   );
 
-  const toggleVibrations = () => setVibrationsEnabled(prev => !prev);
+  const toggleVibrations = () => setVibrationsEnabled(!vibrationsEnabled);
 
   const accessoryRight = <AppToggleBase value={vibrationsEnabled} />;
 

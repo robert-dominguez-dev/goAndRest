@@ -8,7 +8,9 @@ export const getDaysRemainingLabel = (
   daysRemaining: number | null,
   t: TranslateFN,
 ): string | undefined => {
-  if (daysRemaining === null) return undefined;
+  if (daysRemaining === null) {
+    return undefined;
+  }
 
   if (daysRemaining === 0) {
     return t(

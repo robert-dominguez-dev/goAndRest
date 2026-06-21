@@ -35,6 +35,7 @@ export const cs = {
       title: 'Reklama není dostupná',
       description: 'Zkus to prosím později.',
     },
+    adLoading: 'Připravujeme reklamu…',
   },
   screens: {
     landingScreen: {
@@ -154,6 +155,13 @@ export const cs = {
                 one: '{{value}} den',
                 few: '{{value}} dny',
                 many: '{{value}} dní',
+              },
+              extendPopUp: {
+                title: 'Prodloužit aktivaci?',
+                description:
+                  'Tenhle hlas máš aktivní ještě {{value}}. Zhlédnutím reklamy mu aktivaci nastavíš znovu na 7 dní.',
+                selectOnlyButtonLabel: 'Jen vybrat',
+                extendButtonLabel: 'Prodloužit',
               },
             },
           },

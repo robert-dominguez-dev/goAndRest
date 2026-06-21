@@ -13,7 +13,7 @@ const KeepTimerInBackgroundSettingItemComponent = () => {
   );
 
   const toggleShouldKeepInBackground = () =>
-    setShouldKeepInBackground(prev => !prev);
+    setShouldKeepInBackground(!shouldKeepInBackground);
 
   const accessoryRight = <AppToggleBase value={shouldKeepInBackground} />;
 

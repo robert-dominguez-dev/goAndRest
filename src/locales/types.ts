@@ -50,6 +50,7 @@ export type AppTranslations = {
       title: string;
       description: string;
     };
+    adLoading: string;
   };
   screens: {
     landingScreen: {
@@ -100,6 +101,12 @@ export type AppTranslations = {
                   one: string;
                   few: string;
                   many: string;
+                };
+                extendPopUp: {
+                  title: string;
+                  description: string;
+                  selectOnlyButtonLabel: string;
+                  extendButtonLabel: string;
                 };
               };
             };

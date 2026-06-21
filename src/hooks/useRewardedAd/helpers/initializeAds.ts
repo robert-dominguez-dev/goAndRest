@@ -10,7 +10,8 @@ const initializeAds = async (): Promise<boolean> => {
     if (!consentInfo.canRequestAds) {
       return false;
     }
-  } catch {
+  } catch (error) {
+    console.log(error);
     return false;
   }
 

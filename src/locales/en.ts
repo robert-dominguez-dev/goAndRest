@@ -35,6 +35,7 @@ export const en = {
       title: 'Ad not available',
       description: 'Please try again later.',
     },
+    adLoading: 'Preparing ad…',
   },
   screens: {
     landingScreen: {
@@ -156,6 +157,13 @@ export const en = {
                 one: '{{value}} day',
                 few: '{{value}} days',
                 many: '{{value}} days',
+              },
+              extendPopUp: {
+                title: 'Extend activation?',
+                description:
+                  'This voice is active for {{value}}. Watch an ad to reset it to a fresh 7 days.',
+                selectOnlyButtonLabel: 'Just select',
+                extendButtonLabel: 'Extend',
               },
             },
           },

@@ -1,11 +1,27 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
+import { useAtom } from 'jotai';
 import { useAppTranslation } from '../../../../locales/hooks/useAppTranslation.ts';
 import { useAppBottomSheet } from '../../AppBottomSheet/hooks/useAppBottomSheet.tsx';
 import { AppBottomSheetProps } from '../../AppBottomSheet/AppBottomSheet.tsx';
 import { AppRow } from '../../AppRow.tsx';
 import { AppIconAndLabel } from '../../../controls/AppButton/components/AppIconAndLabel.tsx';
 import { PremiumCharacterBottomSheetContent } from '../PremiumCharacterBottomSheetContent.tsx';
-import { useRewardedAd } from '../../../../hooks/useRewardedAd/useRewardedAd.ts';
+import { useRewardedAd } from '../../../../hooks/useRewardedAd/useRewardedAd.tsx';
+import { useSelectOrExtendPopUp } from './useSelectOrExtendPopUp.tsx';
+import {
+  characterVariantSettingAtom,
+  premiumCharacterActivationsAtom,
+  soundFeedbackSettingAtom,
+} from '../../../../contexts/atoms.ts';
+import {
+  WorkoutCharacterVariant,
+  WorkoutSoundFeedback,
+} from '../../../navigation/AppNavigator/screens/SettingsScreen/constants.tsx';
+import {
+  checkIsCharacterActive,
+  EXTEND_POPUP_MAX_DAYS_REMAINING,
+  getCharacterActivationDaysRemaining,
+} from '../../../../contexts/premiumCharacters/helpers/checkIsCharacterActive.ts';
 
 export const usePremiumCharacterBottomSheet = () => {
   const t = useAppTranslation();
@@ -13,15 +29,74 @@ export const usePremiumCharacterBottomSheet = () => {
   const { bottomSheet, handleOpen, handleClose, setHidden, isOpen } =
     useAppBottomSheet();
 
-  /**
-   * Called here, not inside the content component - the content lives
-   * inside a Modal that gets hidden while the ad plays, so the "ad not
-   * available" popup needs to render outside of it to stay visible.
-   * `setHidden` is also owned by useRewardedAd itself now, so the
-   * bottom sheet and the popup are never made visible at the same time.
-   */
-  const { showRewardedAd, popUp: adNotAvailablePopUp } =
-    useRewardedAd(setHidden);
+  // Rendered outside the bottom sheet content (as siblings below) -
+  // both can pop up a native dialog (consent form, the ad itself)
+  // that iOS can't present on top of an already-presented Modal.
+  const {
+    showRewardedAd,
+    popUp: adNotAvailablePopUp,
+    loadingOverlay,
+  } = useRewardedAd(setHidden);
+
+  const [soundFeedback, setSoundFeedback] = useAtom(soundFeedbackSettingAtom);
+  const [, setCharacterVariant] = useAtom(characterVariantSettingAtom);
+  const [activations, setActivations] = useAtom(
+    premiumCharacterActivationsAtom,
+  );
+
+  const [loadingValue, setLoadingValue] =
+    useState<WorkoutCharacterVariant | null>(null);
+
+  const selectCharacter = (value: WorkoutCharacterVariant) => {
+    void setCharacterVariant(value);
+    handleClose();
+  };
+
+  const watchAdAndActivate = async (value: WorkoutCharacterVariant) => {
+    setLoadingValue(value);
+    const earnedReward = await showRewardedAd();
+    setLoadingValue(null);
+
+    if (!earnedReward) {
+      return undefined;
+    }
+
+    if (soundFeedback !== WorkoutSoundFeedback.character) {
+      void setSoundFeedback(WorkoutSoundFeedback.character);
+    }
+
+    void setActivations({ ...activations, [value]: Date.now() });
+    selectCharacter(value);
+  };
+
+  const { popUp: selectOrExtendPopUp, open: openSelectOrExtendPopUp } =
+    useSelectOrExtendPopUp({
+      onSelectOnly: selectCharacter,
+      onExtend: value => void watchAdAndActivate(value),
+    });
+
+  const handleRowPress = (value: WorkoutCharacterVariant) => {
+    if (!checkIsCharacterActive(activations, value)) {
+      void watchAdAndActivate(value);
+      return undefined;
+    }
+
+    const daysRemaining = getCharacterActivationDaysRemaining(
+      activations,
+      value,
+    );
+
+    if (
+      daysRemaining !== null &&
+      daysRemaining <= EXTEND_POPUP_MAX_DAYS_REMAINING
+    ) {
+      setHidden(true);
+      openSelectOrExtendPopUp(value);
+      return undefined;
+    }
+
+    selectCharacter(value);
+  };
 
   const titleElement = (
     <AppRow
@@ -42,10 +117,10 @@ export const usePremiumCharacterBottomSheet = () => {
     </AppRow>
   );
 
-  const renderContent: AppBottomSheetProps['renderContent'] = ({ onClose }) => (
+  const renderContent: AppBottomSheetProps['renderContent'] = () => (
     <PremiumCharacterBottomSheetContent
-      onClose={onClose}
-      showRewardedAd={showRewardedAd}
+      loadingValue={loadingValue}
+      onRowPress={handleRowPress}
     />
   );
 
@@ -62,6 +137,8 @@ export const usePremiumCharacterBottomSheet = () => {
     <Fragment>
       {bottomSheet}
       {adNotAvailablePopUp}
+      {loadingOverlay}
+      {selectOrExtendPopUp}
     </Fragment>
   );
 

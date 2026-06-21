@@ -5,6 +5,8 @@ const ONE_DAY_MS = 24 * 60 * 60 * 1000;
 
 export const PREMIUM_CHARACTER_ACTIVATION_DURATION_MS = 7 * ONE_DAY_MS;
 
+export const EXTEND_POPUP_MAX_DAYS_REMAINING = 3;
+
 export const checkIsCharacterActive = (
   activations: PremiumCharacterActivations,
   characterVariant: WorkoutCharacterVariant,
