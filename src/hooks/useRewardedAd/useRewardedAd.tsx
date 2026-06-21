@@ -4,6 +4,7 @@ import { ensureAdsInitialized } from './helpers/initializeAds.ts';
 import { useAppTranslation } from '../../locales/hooks/useAppTranslation.ts';
 import { useAppPopUp } from '../../components/common/AppPopUp/hooks/useAppPopUp.tsx';
 import { AppFullScreenLoader } from '../../components/common/AppFullScreenLoader.tsx';
+import { logCustomEvent } from '../../components/navigation/helpers/logCustomEvent.ts';
 
 // TODO: nahradit produkčním AdMob ad unit ID před release
 export const REWARDED_AD_UNIT_ID = TestIds.REWARDED;
@@ -39,12 +40,16 @@ export const useRewardedAd = (setHidden: (hidden: boolean) => void) => {
     isShowingRef.current = true;
     setHidden(true);
     setIsLoading(true);
+    void logCustomEvent('rewarded_ad_attempt');
 
     const isReady = await ensureAdsInitialized();
 
     if (!isReady) {
       isShowingRef.current = false;
       setIsLoading(false);
+      void logCustomEvent('rewarded_ad_not_available', {
+        reason: 'consent_or_init',
+      });
       showAdNotAvailablePopUp();
       return false;
     }
@@ -81,6 +86,9 @@ export const useRewardedAd = (setHidden: (hidden: boolean) => void) => {
       unsubscribers.push(
         rewarded.addAdEventListener(AdEventType.ERROR, () => {
           setIsLoading(false);
+          void logCustomEvent('rewarded_ad_not_available', {
+            reason: 'load_error',
+          });
           showAdNotAvailablePopUp();
           resolveOnce(false);
         }),
@@ -95,6 +103,9 @@ export const useRewardedAd = (setHidden: (hidden: boolean) => void) => {
       unsubscribers.push(
         rewarded.addAdEventListener(AdEventType.CLOSED, () => {
           setHidden(false);
+          if (earnedReward) {
+            void logCustomEvent('rewarded_ad_earned_reward');
+          }
           resolveOnce(earnedReward);
         }),
       );

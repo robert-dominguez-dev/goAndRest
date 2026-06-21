@@ -8,6 +8,7 @@ import { AppIconAndLabel } from '../../../controls/AppButton/components/AppIconA
 import { PremiumCharacterBottomSheetContent } from '../PremiumCharacterBottomSheetContent.tsx';
 import { useRewardedAd } from '../../../../hooks/useRewardedAd/useRewardedAd.tsx';
 import { useSelectOrExtendPopUp } from './useSelectOrExtendPopUp.tsx';
+import { logCustomEvent } from '../../../navigation/helpers/logCustomEvent.ts';
 import {
   characterVariantSettingAtom,
   premiumCharacterActivationsAtom,
@@ -52,7 +53,10 @@ export const usePremiumCharacterBottomSheet = () => {
     handleClose();
   };
 
-  const watchAdAndActivate = async (value: WorkoutCharacterVariant) => {
+  const watchAdAndActivate = async (
+    value: WorkoutCharacterVariant,
+    isExtend = false,
+  ) => {
     setLoadingValue(value);
     const earnedReward = await showRewardedAd();
     setLoadingValue(null);
@@ -66,13 +70,17 @@ export const usePremiumCharacterBottomSheet = () => {
     }
 
     void setActivations({ ...activations, [value]: Date.now() });
+    void logCustomEvent(
+      isExtend ? 'premium_character_extended' : 'premium_character_activated',
+      { characterVariant: value },
+    );
     selectCharacter(value);
   };
 
   const { popUp: selectOrExtendPopUp, open: openSelectOrExtendPopUp } =
     useSelectOrExtendPopUp({
       onSelectOnly: selectCharacter,
-      onExtend: value => void watchAdAndActivate(value),
+      onExtend: value => void watchAdAndActivate(value, true),
     });
 
   const handleRowPress = (value: WorkoutCharacterVariant) => {

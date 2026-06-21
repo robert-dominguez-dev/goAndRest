@@ -1,4 +1,6 @@
 import mobileAds, { AdsConsent } from 'react-native-google-mobile-ads';
+import { logCustomEvent } from '../../../components/navigation/helpers/logCustomEvent.ts';
+import { getErrorMessage } from '../../../helpers/getErrorMessage.ts';
 
 let isInitialized = false;
 let initializationPromise: Promise<boolean> | null = null;
@@ -11,7 +13,9 @@ const initializeAds = async (): Promise<boolean> => {
       return false;
     }
   } catch (error) {
-    console.log(error);
+    void logCustomEvent('ads_consent_failure', {
+      errorMessage: getErrorMessage(error),
+    });
     return false;
   }
 
