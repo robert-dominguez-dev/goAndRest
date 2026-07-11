@@ -60,11 +60,25 @@ class ReactNativeDelegate: RCTDefaultReactNativeFactoryDelegate {
     self.bundleURL()
   }
 
+  // Metro runs on 8083 (so this app coexists with other RN projects on the
+  // default 8081 / 8082). Point the debug bundle at it explicitly on launch,
+  // otherwise a real device can't reach Metro and you can't even open the Dev
+  // Menu to fix it (the bundle never loads — chicken and egg).
+  //   Simulator → localhost. Real device → this Mac's LAN IP; UPDATE this if the
+  //   Mac's IP changes (System Settings › Wi-Fi › Details). Device + Mac must be
+  //   on the same Wi-Fi. DEBUG-only, so release/CI use the embedded bundle.
+#if targetEnvironment(simulator)
+  private static let metroHost = "localhost:8083"
+#else
+  private static let metroHost = "192.168.1.19:8083"
+#endif
+
   override func bundleURL() -> URL? {
 #if DEBUG
-    RCTBundleURLProvider.sharedSettings().jsBundleURL(forBundleRoot: "index")
+    RCTBundleURLProvider.sharedSettings().jsLocation = ReactNativeDelegate.metroHost
+    return RCTBundleURLProvider.sharedSettings().jsBundleURL(forBundleRoot: "index")
 #else
-    Bundle.main.url(forResource: "main", withExtension: "jsbundle")
+    return Bundle.main.url(forResource: "main", withExtension: "jsbundle")
 #endif
   }
 }
