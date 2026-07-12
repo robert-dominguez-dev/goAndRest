@@ -47,18 +47,18 @@ export const sk = {
     },
     paywall: {
       title: 'Go&Rest Premium',
-      subtitleFree: 'Odomkni všetko. Raz a navždy.',
+      subtitleFree: 'Odomkni všetko jednou platbou.',
       subtitlePremium: 'Máš odomknuté všetko. Vďaka za podporu! ♥️',
       benefitHistory: 'História tréningov',
       benefitChart: 'Graf, ako sa mení tvoja náročnosť v čase',
-      benefitVoices: 'Všetky prémiové hlasy a postavy — navždy',
+      benefitVoices: 'Všetky prémiové hlasy a postavy',
       benefitNoAds: 'Žiadne reklamy',
       benefitBackup: 'Záloha dát do súboru (JSON)',
-      buyButton: 'Kúpiť navždy — {{priceString}}',
+      buyButton: 'Kúpiť — {{priceString}}',
       oneTimeNote: 'Jednorazová platba. Žiadne predplatné.',
       restore: 'Obnoviť predchádzajúci nákup',
       activeState: 'PREMIUM AKTÍVNY ✓',
-      charSheetUnlock: 'Odomknúť všetko navždy — {{priceString}}',
+      charSheetUnlock: 'Odomknúť všetko — {{priceString}}',
       errorPopUp: {
         title: 'Nákup sa nepodaril',
         description: 'Skús to prosím znova neskôr.',
@@ -104,7 +104,7 @@ export const sk = {
     },
     settingsScreen: {
       title: 'Nastavenia',
-      proBannerSubtitle: 'Všetko navždy, bez reklám — {{priceString}}',
+      proBannerSubtitle: 'Všetko odomknuté, bez reklám — {{priceString}}',
       appearanceSection: {
         label: 'Vzhľad',
         items: {
@@ -183,9 +183,8 @@ export const sk = {
               title: 'Aktivuj prémiový hlas!',
               titlePremium: 'Vyber postavu',
               description:
-                'Chceš prémiový hlas k časovaču? Klikni naň, pozri si krátke video a odomkneš ho na 7 dní zadarmo — alebo si dole odomkni všetko navždy.\n\nIkonou ▷ vpravo si prehráš ukážku. 👉',
-              descriptionPremium:
-                'Máš Premium — všetky postavy sú odomknuté natrvalo.',
+                'Chceš prémiový hlas k časovaču? Klikni naň, pozri si krátke video a odomkneš ho na 7 dní zadarmo — alebo si dole odomkni všetko.\n\nIkonou ▷ vpravo si prehráš ukážku. 👉',
+              descriptionPremium: 'Máš Premium — všetky postavy sú odomknuté.',
               daysRemaining: {
                 lessThanOne: '< 1 deň',
                 one: '{{value}} deň',

@@ -46,18 +46,18 @@ export const cs = {
     },
     paywall: {
       title: 'Go&Rest Premium',
-      subtitleFree: 'Odemkni vše. Jednou a navždy.',
+      subtitleFree: 'Odemkni vše jednou platbou.',
       subtitlePremium: 'Máš odemčeno vše. Díky za podporu! ♥️',
       benefitHistory: 'Historie tréninků',
       benefitChart: 'Graf, jak se mění tvoje náročnost v čase',
-      benefitVoices: 'Všechny prémiové hlasy a postavy — navždy',
+      benefitVoices: 'Všechny prémiové hlasy a postavy',
       benefitNoAds: 'Žádné reklamy',
       benefitBackup: 'Záloha dat do souboru (JSON)',
-      buyButton: 'Koupit navždy — {{priceString}}',
+      buyButton: 'Koupit — {{priceString}}',
       oneTimeNote: 'Jednorázová platba. Žádné předplatné.',
       restore: 'Obnovit dřívější nákup',
       activeState: 'PREMIUM AKTIVNÍ ✓',
-      charSheetUnlock: 'Odemknout vše navždy — {{priceString}}',
+      charSheetUnlock: 'Odemknout vše — {{priceString}}',
       errorPopUp: {
         title: 'Nákup se nezdařil',
         description: 'Zkus to prosím znovu později.',
@@ -103,7 +103,7 @@ export const cs = {
     },
     settingsScreen: {
       title: 'Nastavení',
-      proBannerSubtitle: 'Vše navždy, bez reklam — {{priceString}}',
+      proBannerSubtitle: 'Vše odemčené, bez reklam — {{priceString}}',
       appearanceSection: {
         label: 'Vzhled',
         items: {
@@ -182,9 +182,9 @@ export const cs = {
               title: 'Aktivuj prémiový hlas!',
               titlePremium: 'Vyber postavu',
               description:
-                'Chceš prémiový hlas k časovači? Klepni na něj, zhlédni krátké video a odemkneš ho na 7 dní zdarma — nebo si dole odemkni vše navždy.\n\nIkonou ▷ vpravo si přehraješ ukázku. 👉',
+                'Chceš prémiový hlas k časovači? Klepni na něj, zhlédni krátké video a odemkneš ho na 7 dní zdarma — nebo si dole odemkni vše.\n\nIkonou ▷ vpravo si přehraješ ukázku. 👉',
               descriptionPremium:
-                'Máš Premium — všechny postavy jsou odemčené natrvalo.',
+                'Máš Premium — všechny postavy jsou odemčené.',
               daysRemaining: {
                 lessThanOne: '< 1 den',
                 one: '{{value}} den',

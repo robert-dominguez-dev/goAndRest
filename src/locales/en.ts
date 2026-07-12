@@ -46,19 +46,19 @@ export const en = {
     },
     paywall: {
       title: 'Go&Rest Premium',
-      subtitleFree: 'Unlock everything. Once and for good.',
+      subtitleFree: 'Unlock everything with a one-time purchase.',
       subtitlePremium:
         'You have everything unlocked. Thanks for the support! ♥️',
       benefitHistory: 'Workout history',
       benefitChart: 'Chart showing how your intensity changes over time',
-      benefitVoices: 'All premium voices and characters — forever',
+      benefitVoices: 'All premium voices and characters',
       benefitNoAds: 'No ads',
       benefitBackup: 'Data backup to a file (JSON)',
-      buyButton: 'Buy forever — {{priceString}}',
+      buyButton: 'Buy — {{priceString}}',
       oneTimeNote: 'One-time payment. No subscription.',
       restore: 'Restore previous purchase',
       activeState: 'PREMIUM ACTIVE ✓',
-      charSheetUnlock: 'Unlock everything forever — {{priceString}}',
+      charSheetUnlock: 'Unlock everything — {{priceString}}',
       errorPopUp: {
         title: 'Purchase failed',
         description: 'Please try again later.',
@@ -104,7 +104,7 @@ export const en = {
     },
     settingsScreen: {
       title: 'Settings',
-      proBannerSubtitle: 'Everything forever, no ads — {{priceString}}',
+      proBannerSubtitle: 'Everything unlocked, no ads — {{priceString}}',
       appearanceSection: {
         label: 'Appearance',
         items: {
@@ -185,9 +185,9 @@ export const en = {
               title: 'Unlock a premium voice!',
               titlePremium: 'Choose a character',
               description:
-                'Want a premium voice for your timer? Tap it, watch a short video and unlock it free for 7 days — or unlock everything forever below.\n\nUse the ▷ icon on the right to hear a preview. 👉',
+                'Want a premium voice for your timer? Tap it, watch a short video and unlock it free for 7 days — or unlock everything below.\n\nUse the ▷ icon on the right to hear a preview. 👉',
               descriptionPremium:
-                'You have Premium — every character is unlocked forever.',
+                'You have Premium — every character is unlocked.',
               daysRemaining: {
                 lessThanOne: '< 1 day',
                 one: '{{value}} day',
