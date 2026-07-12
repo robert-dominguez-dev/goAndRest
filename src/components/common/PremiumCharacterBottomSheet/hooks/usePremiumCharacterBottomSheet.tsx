@@ -1,5 +1,4 @@
-import { Fragment, useRef, useState } from 'react';
-import { Platform } from 'react-native';
+import { Fragment, useState } from 'react';
 import { useAtom, useSetAtom } from 'jotai';
 import { useAppTranslation } from '../../../../locales/hooks/useAppTranslation.ts';
 import { useAppBottomSheet } from '../../AppBottomSheet/hooks/useAppBottomSheet.tsx';
@@ -136,29 +135,9 @@ export const usePremiumCharacterBottomSheet = (
     </AppRow>
   );
 
-  // Two native Modals can't be presented on top of each other on iOS, so
-  // the paywall is only opened once this sheet's Modal has actually
-  // finished dismissing - signalled by `onDismiss`, which iOS fires after
-  // the close animation completes (Android has no such restriction and
-  // has no `onDismiss`, so it closes and opens the paywall right away).
-  const pendingUnlockAllPressRef = useRef(false);
-
-  const handleModalDismiss = () => {
-    if (!pendingUnlockAllPressRef.current) {
-      return;
-    }
-    pendingUnlockAllPressRef.current = false;
-    handleClose();
-    onUnlockAllPress?.();
-  };
-
+  // The paywall is now a full screen (not a Modal), so there is no
+  // Modal-over-Modal conflict on iOS: just close this sheet and navigate.
   const handleUnlockAllPress = () => {
-    if (Platform.OS === 'ios') {
-      pendingUnlockAllPressRef.current = true;
-      setHidden(true);
-      return undefined;
-    }
-
     handleClose();
     onUnlockAllPress?.();
   };
@@ -178,7 +157,6 @@ export const usePremiumCharacterBottomSheet = (
       backgroundColorStatus: 'backgroundAlt',
       onAccessoryRightPress: handleClose,
       onOverlayPress: handleClose,
-      onDismiss: handleModalDismiss,
     });
 
   const bottomSheetWithPopUp = (
