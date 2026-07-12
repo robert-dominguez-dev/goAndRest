@@ -51,20 +51,17 @@ export const HistoryScreen = ({ navigation }: HistoryScreenProps) => {
         {isPremium ? (
           content
         ) : (
-          <AppView
-            grow
-            opacity={INACTIVE_OPACITY}
-            pointerEvents={'none'}>
-            {content}
+          <AppView grow>
+            <AppView
+              grow
+              opacity={INACTIVE_OPACITY}
+              pointerEvents={'none'}>
+              {content}
+            </AppView>
+            <HistoryPremiumOverlay onUnlockPress={goToPaywall} />
           </AppView>
         )}
       </AppScreenLayout>
-      {!isPremium && (
-        <HistoryPremiumOverlay
-          onUnlockPress={goToPaywall}
-          onClose={navigation.goBack}
-        />
-      )}
       {detailBottomSheet}
     </>
   );

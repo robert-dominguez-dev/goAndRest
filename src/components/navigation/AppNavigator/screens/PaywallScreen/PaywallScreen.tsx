@@ -2,6 +2,7 @@ import { AppScreenLayout } from '../../../../common/AppScreenLayout/AppScreenLay
 import { ScreenProps } from '../../../types.ts';
 import { AppNavigatorScreen, AppNavigatorScreenParams } from '../../types.ts';
 import { PaywallContent } from './components/PaywallContent.tsx';
+import { PaywallFooter } from './components/PaywallFooter.tsx';
 import { usePaywallPurchase } from './hooks/usePaywallPurchase.tsx';
 
 type PaywallScreenProps = ScreenProps<
@@ -23,12 +24,15 @@ export const PaywallScreen = ({ navigation }: PaywallScreenProps) => {
         scrollable
         headerTitle={EMPTY_HEADER_TITLE}
         headerAccessoryLeftIconName={'X'}
-        onHeaderAccessoryLeftPress={navigation.goBack}>
-        <PaywallContent
-          isPurchasing={isPurchasing}
-          onBuyPress={handleBuyPress}
-          onRestorePress={handleRestorePress}
-        />
+        onHeaderAccessoryLeftPress={navigation.goBack}
+        footer={
+          <PaywallFooter
+            isPurchasing={isPurchasing}
+            onBuyPress={handleBuyPress}
+            onRestorePress={handleRestorePress}
+          />
+        }>
+        <PaywallContent />
       </AppScreenLayout>
       {popUps}
       {loaderOverlay}
