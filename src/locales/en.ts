@@ -185,7 +185,7 @@ export const en = {
               title: 'Unlock a premium voice!',
               titlePremium: 'Choose a character',
               description:
-                'Want to set a premium voice for your timer? Tap it, watch a short video, and unlock it free for 7 days.\n\nUse the ▷ icon on the right to hear a preview. 👉',
+                'Want a premium voice for your timer? Tap it, watch a short video and unlock it free for 7 days — or unlock everything forever below.\n\nUse the ▷ icon on the right to hear a preview. 👉',
               descriptionPremium:
                 'You have Premium — every character is unlocked forever.',
               daysRemaining: {

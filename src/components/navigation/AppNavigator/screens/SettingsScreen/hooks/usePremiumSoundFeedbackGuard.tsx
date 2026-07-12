@@ -15,7 +15,9 @@ import { WorkoutSoundFeedback } from '../constants.tsx';
  * activating anything reverts the feedback setting to whatever it was
  * before.
  */
-export const usePremiumSoundFeedbackGuard = () => {
+export const usePremiumSoundFeedbackGuard = (
+  onUnlockAllPress?: () => void,
+) => {
   const [soundFeedback, setSoundFeedback] = useAtom(soundFeedbackSettingAtom);
   const characterVariant = useAtomValue(characterVariantSettingAtom);
 
@@ -23,7 +25,7 @@ export const usePremiumSoundFeedbackGuard = () => {
   const wasOpenRef = useRef(false);
 
   const { bottomSheet, openBottomSheet, isOpen } =
-    usePremiumCharacterBottomSheet();
+    usePremiumCharacterBottomSheet(onUnlockAllPress);
 
   const isPremiumCharacterUnlocked = useIsPremiumCharacterUnlocked();
 

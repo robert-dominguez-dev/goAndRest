@@ -182,7 +182,7 @@ export const cs = {
               title: 'Aktivuj prémiový hlas!',
               titlePremium: 'Vyber postavu',
               description:
-                'Chceš nastavit prémiový hlas k časovači? Klepni na něj, zhlédni krátké video a máš ho odemčený na 7 dní úplně zdarma.\n\nIkonou ▷ vpravo si můžeš přehrát ukázku. 👉',
+                'Chceš prémiový hlas k časovači? Klepni na něj, zhlédni krátké video a odemkneš ho na 7 dní zdarma — nebo si dole odemkni vše navždy.\n\nIkonou ▷ vpravo si přehraješ ukázku. 👉',
               descriptionPremium:
                 'Máš Premium — všechny postavy jsou odemčené natrvalo.',
               daysRemaining: {

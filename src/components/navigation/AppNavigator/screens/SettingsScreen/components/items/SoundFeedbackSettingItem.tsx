@@ -42,7 +42,7 @@ const SoundFeedbackSettingItemComponent = ({
   const maybeVariantSettingsItemElement =
     soundFeedbackToVariantItem[soundFeedback];
 
-  const { bottomSheet } = usePremiumSoundFeedbackGuard();
+  const { bottomSheet } = usePremiumSoundFeedbackGuard(onUnlockAllPress);
 
   const getProps = useCallback(
     (value: WorkoutSoundFeedback) =>
