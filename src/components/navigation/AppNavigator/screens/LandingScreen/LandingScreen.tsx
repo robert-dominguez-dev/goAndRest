@@ -13,7 +13,6 @@ import { ComponentType, JSX } from 'react';
 import { WorkoutConfigTimeViewProps } from './components/WorkoutConfigButtons/components/WorkoutConfigTimeView.tsx';
 import { LandingScreenTabletLandscapeContent } from './components/LandingScreenTabletLandscapeContent.tsx';
 import { useIsPremium } from '../../../../../contexts/premium/hooks/useIsPremium.ts';
-import { usePaywallBottomSheet } from '../../../../common/PaywallBottomSheet/hooks/usePaywallBottomSheet.tsx';
 
 const footerElement = <LandingScreenFooter />;
 
@@ -39,7 +38,8 @@ export const LandingScreen = ({ navigation }: LandingScreenProps) => {
 
   const isPremium = useIsPremium();
 
-  const { paywallBottomSheet, openPaywall } = usePaywallBottomSheet();
+  const goToPaywall = () =>
+    navigation.navigate(AppNavigatorScreen.PaywallScreen);
 
   const goToHistory = () =>
     navigation.navigate(AppNavigatorScreen.HistoryScreen);
@@ -61,11 +61,10 @@ export const LandingScreen = ({ navigation }: LandingScreenProps) => {
         onHeaderAccessoryLeftPress={goToSettings}
         headerAccessoryRightIconName={isPremium ? 'LineChart' : 'Gem'}
         headerAccessoryRightIconColorStatus={isPremium ? 'text' : 'premium'}
-        onHeaderAccessoryRightPress={isPremium ? goToHistory : openPaywall}
+        onHeaderAccessoryRightPress={isPremium ? goToHistory : goToPaywall}
         footer={footerElementEvaluated}>
         <ContentComponent control={formProps.control} />
       </AppScreenLayout>
-      {paywallBottomSheet}
     </FormProvider>
   );
 };

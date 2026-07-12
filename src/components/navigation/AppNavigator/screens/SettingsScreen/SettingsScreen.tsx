@@ -17,7 +17,6 @@ import { CountdownSettingItem } from './components/items/CountdownSettingItem.ts
 import { PersonalizedAdsSettingItem } from './components/items/PersonalizedAdsSettingItem.tsx';
 import { ProBanner } from './components/ProBanner.tsx';
 import { useIsPremium } from '../../../../../contexts/premium/hooks/useIsPremium.ts';
-import { usePaywallBottomSheet } from '../../../../common/PaywallBottomSheet/hooks/usePaywallBottomSheet.tsx';
 import { useBackupSection } from './hooks/useBackupSection.tsx';
 
 type SettingsScreenProps = ScreenProps<
@@ -45,16 +44,17 @@ export const SettingsScreen = ({ navigation }: SettingsScreenProps) => {
 
   const isPremium = useIsPremium();
 
-  const { paywallBottomSheet, openPaywall } = usePaywallBottomSheet();
+  const goToPaywall = () =>
+    navigation.navigate(AppNavigatorScreen.PaywallScreen);
 
   const { items: backupSettingsItems, sheets: backupSheets } = useBackupSection(
-    { onPremiumRequired: openPaywall },
+    { onPremiumRequired: goToPaywall },
   );
 
   const feedbackSettingsItems: JSX.Element[] = [
     <SoundFeedbackSettingItem
       key={'sounds'}
-      onUnlockAllPress={openPaywall}
+      onUnlockAllPress={goToPaywall}
     />,
     <CountdownSettingItem key={'countdown'} />,
     <VibrationsSettingItem key={'vibrations'} />,
@@ -70,7 +70,7 @@ export const SettingsScreen = ({ navigation }: SettingsScreenProps) => {
         <AppView
           gap={'xl'}
           paddingBottom={'3xl'}>
-          {!isPremium && <ProBanner onPress={openPaywall} />}
+          {!isPremium && <ProBanner onPress={goToPaywall} />}
           <SettingsSection
             iconName={'Palette'}
             label={t('screens.settingsScreen.appearanceSection.label')}
@@ -100,7 +100,6 @@ export const SettingsScreen = ({ navigation }: SettingsScreenProps) => {
           )}
         </AppView>
       </AppScreenLayout>
-      {paywallBottomSheet}
       {backupSheets}
     </>
   );

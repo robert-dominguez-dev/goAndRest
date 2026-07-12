@@ -5,12 +5,11 @@ import { AppRow } from '../../../../../common/AppRow.tsx';
 import { AppText } from '../../../../../common/AppText/AppText.tsx';
 import { AppIcon } from '../../../../../common/AppIcon.tsx';
 import { AppDivider } from '../../../../../common/AppDivider.tsx';
-import { getOnPressWithHapticFeedbackConditionally } from '../../../../../controls/helpers/getOnPressWithHapticFeedbackConditionally.ts';
-import { useAppTranslation } from '../../../../../../locales/hooks/useAppTranslation.ts';
 import {
-  DASH,
-  FILL_CONTAINER_DIMENSION,
-} from '../../../../../../constants/common.ts';
+  getOnPressWithHapticFeedbackConditionally
+} from '../../../../../controls/helpers/getOnPressWithHapticFeedbackConditionally.ts';
+import { useAppTranslation } from '../../../../../../locales/hooks/useAppTranslation.ts';
+import { DASH, FILL_CONTAINER_DIMENSION, } from '../../../../../../constants/common.ts';
 import { RPE_LEVELS } from '../../../../../../constants/rpe.ts';
 import { getFinishedWorkoutStreakLabel } from '../helpers/getFinishedWorkoutStreakLabel.ts';
 
@@ -40,15 +39,15 @@ const FinishedWorkoutSummaryComponent = ({
       <AppDivider />
       <AppView
         alignItems={'center'}
-        gap={'xs'}>
+        gap={'s'}>
         <AppText
+          grow={false}
           category={'subHeader'}
           colorStatus={'textMuted'}
           textAlign={'center'}>
           {t('screens.finishedWorkoutScreen.difficultyLabel')}
         </AppText>
         <AppText
-          category={'header'}
           fontSizeOverride={'xl'}
           textAlign={'center'}>
           {rpeLevel ? rpeLevel.face : DASH}

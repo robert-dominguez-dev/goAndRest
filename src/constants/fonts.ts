@@ -23,7 +23,7 @@ export const fontCategoryStyles: Record<
   header: {
     fontFamily: FontName.BarlowCondensedBlack,
     fontSize: 36,
-    lineHeight: 40,
+    lineHeight: 44,
   },
   subHeader: {
     fontFamily: FontName.BarlowCondensedBlack,
@@ -40,5 +40,9 @@ export const fontCategoryStyles: Record<
   content: {
     fontFamily: FontName.BarlowCondensedRegular,
     fontSize: 18,
+  },
+  caption: {
+    fontFamily: FontName.BarlowCondensedRegular,
+    fontSize: 14,
   },
 };

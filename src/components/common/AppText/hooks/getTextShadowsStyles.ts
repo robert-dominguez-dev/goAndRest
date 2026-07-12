@@ -56,6 +56,7 @@ export const useTextShadowsStyle = ({
     title: contentTextShadowStyle,
     contentBold: contentTextShadowStyle,
     content: contentTextShadowStyle,
+    caption: contentTextShadowStyle,
   } satisfies Record<AppTextCategoryUnion, TextShadowStyle>;
 
   return categoryToTextShadowStyle[textCategory];

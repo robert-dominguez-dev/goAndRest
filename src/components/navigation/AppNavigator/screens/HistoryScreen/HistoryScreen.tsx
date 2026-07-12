@@ -7,7 +7,6 @@ import { ScreenProps } from '../../../types.ts';
 import { AppNavigatorScreen, AppNavigatorScreenParams } from '../../types.ts';
 import { workoutHistoryAtom } from '../../../../../contexts/atoms.ts';
 import { useIsPremium } from '../../../../../contexts/premium/hooks/useIsPremium.ts';
-import { usePaywallBottomSheet } from '../../../../common/PaywallBottomSheet/hooks/usePaywallBottomSheet.tsx';
 import { INACTIVE_OPACITY } from '../../../../../constants/ui.ts';
 import { useHistoryDetailBottomSheet } from './hooks/useHistoryDetailBottomSheet.tsx';
 import { getDemoWorkoutHistoryLog } from './helpers/getDemoWorkoutHistoryLog.ts';
@@ -29,10 +28,11 @@ export const HistoryScreen = ({ navigation }: HistoryScreenProps) => {
 
   const data = isPremium ? log : demoLog;
 
-  const { paywallBottomSheet, openPaywall } = usePaywallBottomSheet();
-
   const { bottomSheet: detailBottomSheet, openHistoryDetailBottomSheet } =
     useHistoryDetailBottomSheet();
+
+  const goToPaywall = () =>
+    navigation.navigate(AppNavigatorScreen.PaywallScreen);
 
   const content = (
     <HistoryContent
@@ -51,18 +51,20 @@ export const HistoryScreen = ({ navigation }: HistoryScreenProps) => {
         {isPremium ? (
           content
         ) : (
-          <AppView grow>
-            <AppView
-              grow
-              opacity={INACTIVE_OPACITY}
-              pointerEvents={'none'}>
-              {content}
-            </AppView>
-            <HistoryPremiumOverlay onUnlockPress={openPaywall} />
+          <AppView
+            grow
+            opacity={INACTIVE_OPACITY}
+            pointerEvents={'none'}>
+            {content}
           </AppView>
         )}
       </AppScreenLayout>
-      {paywallBottomSheet}
+      {!isPremium && (
+        <HistoryPremiumOverlay
+          onUnlockPress={goToPaywall}
+          onClose={navigation.goBack}
+        />
+      )}
       {detailBottomSheet}
     </>
   );

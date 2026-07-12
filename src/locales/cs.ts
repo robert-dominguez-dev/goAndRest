@@ -46,14 +46,14 @@ export const cs = {
     },
     paywall: {
       title: 'Go&Rest Premium',
-      subtitleFree: 'Odemkni vše jednou platbou.',
+      subtitleFree: 'Odemkni vše jedním nákupem.',
       subtitlePremium: 'Máš odemčeno vše. Díky za podporu! ♥️',
       benefitHistory: 'Historie tréninků',
       benefitChart: 'Graf, jak se mění tvoje náročnost v čase',
       benefitVoices: 'Všechny prémiové hlasy a postavy',
       benefitNoAds: 'Žádné reklamy',
       benefitBackup: 'Záloha dat do souboru (JSON)',
-      buyButton: 'Koupit — {{priceString}}',
+      buyButton: 'Koupit Premium — {{priceString}}',
       oneTimeNote: 'Jednorázová platba. Žádné předplatné.',
       restore: 'Obnovit dřívější nákup',
       activeState: 'PREMIUM AKTIVNÍ ✓',
@@ -66,6 +66,16 @@ export const cs = {
         title: 'Nenašli jsme nákup',
         description: 'Na tomto účtu jsme nenašli žádný předchozí nákup.',
       },
+      successPopUp: {
+        title: 'Premium aktivní ✓',
+        description: 'Díky za podporu! Máš odemčeno vše.',
+      },
+      pendingPopUp: {
+        title: 'Platba se zpracovává',
+        description:
+          'Nákup proběhl, ale aktivace ještě není hotová. Zkus to za chvíli přes „Obnovit dřívější nákup".',
+      },
+      processing: 'Zpracováváme…',
     },
   },
   screens: {

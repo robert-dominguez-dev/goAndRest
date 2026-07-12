@@ -3,14 +3,13 @@ import { AppBackdrop } from '../../../../../common/AppBackdrop.tsx';
 import { AppView } from '../../../../../common/AppView/AppView.tsx';
 import { AppRow } from '../../../../../common/AppRow.tsx';
 import { AppText } from '../../../../../common/AppText/AppText.tsx';
-import { getOnPressWithHapticFeedbackConditionally } from '../../../../../controls/helpers/getOnPressWithHapticFeedbackConditionally.ts';
+import {
+  getOnPressWithHapticFeedbackConditionally
+} from '../../../../../controls/helpers/getOnPressWithHapticFeedbackConditionally.ts';
 import { getPressableOpacity } from '../../../../../controls/helpers/getPressableOpacity.ts';
 import { useAppTranslation } from '../../../../../../locales/hooks/useAppTranslation.ts';
 import { useMaxTabletActiveElementWidth } from '../../../../../../hooks/useMaxTabletActiveElementWidth.ts';
-import {
-  FILL_CONTAINER_DIMENSION,
-  UNLIMITED_NUMBER_OF_LINES,
-} from '../../../../../../constants/common.ts';
+import { FILL_CONTAINER_DIMENSION, UNLIMITED_NUMBER_OF_LINES, } from '../../../../../../constants/common.ts';
 import { RPE_LEVELS } from '../../../../../../constants/rpe.ts';
 
 type RpeRatingPopUpProps = {
@@ -49,7 +48,7 @@ export const RpeRatingPopUp = ({ onSelect }: RpeRatingPopUpProps) => {
           numberOfLines={UNLIMITED_NUMBER_OF_LINES}>
           {t('screens.finishedWorkoutScreen.rpePopupDescription')}
         </AppText>
-        <AppRow gap={'s'}>
+        <AppRow gap={'xs'}>
           {RPE_LEVELS.map((level, index) => (
             <Pressable
               key={level.labelKey}
@@ -60,7 +59,6 @@ export const RpeRatingPopUp = ({ onSelect }: RpeRatingPopUpProps) => {
               {({ pressed }) => (
                 <AppView
                   grow
-                  flexBasis={0}
                   opacity={getPressableOpacity({ pressed, disabled: false })}
                   alignItems={'center'}
                   gap={'xs'}
@@ -69,12 +67,13 @@ export const RpeRatingPopUp = ({ onSelect }: RpeRatingPopUpProps) => {
                   borderRadius={'s'}
                   backgroundColorStatus={'background'}>
                   <AppText
-                    category={'title'}
+                    grow={false}
+                    category={'header'}
                     textAlign={'center'}>
                     {level.face}
                   </AppText>
                   <AppText
-                    category={'contentBold'}
+                    category={'caption'}
                     colorStatus={'textMuted'}
                     textAlign={'center'}
                     numberOfLines={UNLIMITED_NUMBER_OF_LINES}>

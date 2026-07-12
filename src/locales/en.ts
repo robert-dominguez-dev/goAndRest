@@ -46,7 +46,7 @@ export const en = {
     },
     paywall: {
       title: 'Go&Rest Premium',
-      subtitleFree: 'Unlock everything with a one-time purchase.',
+      subtitleFree: 'Unlock everything with a single purchase.',
       subtitlePremium:
         'You have everything unlocked. Thanks for the support! ♥️',
       benefitHistory: 'Workout history',
@@ -54,7 +54,7 @@ export const en = {
       benefitVoices: 'All premium voices and characters',
       benefitNoAds: 'No ads',
       benefitBackup: 'Data backup to a file (JSON)',
-      buyButton: 'Buy — {{priceString}}',
+      buyButton: 'Buy Premium — {{priceString}}',
       oneTimeNote: 'One-time payment. No subscription.',
       restore: 'Restore previous purchase',
       activeState: 'PREMIUM ACTIVE ✓',
@@ -67,6 +67,16 @@ export const en = {
         title: 'No purchase found',
         description: 'We could not find any previous purchase on this account.',
       },
+      successPopUp: {
+        title: 'Premium active ✓',
+        description: 'Thanks for the support! Everything is unlocked.',
+      },
+      pendingPopUp: {
+        title: 'Payment processing',
+        description:
+          'The purchase went through, but activation is not finished yet. Try "Restore previous purchase" in a moment.',
+      },
+      processing: 'Processing…',
     },
   },
   screens: {

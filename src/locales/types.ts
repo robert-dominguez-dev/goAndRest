@@ -81,6 +81,15 @@ export type AppTranslations = {
         title: string;
         description: string;
       };
+      successPopUp: {
+        title: string;
+        description: string;
+      };
+      pendingPopUp: {
+        title: string;
+        description: string;
+      };
+      processing: string;
     };
   };
   screens: {

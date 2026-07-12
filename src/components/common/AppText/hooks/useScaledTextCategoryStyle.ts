@@ -1,4 +1,7 @@
-import { FontCategoryStyle, fontCategoryStyles, } from '../../../../constants/fonts.ts';
+import {
+  FontCategoryStyle,
+  fontCategoryStyles,
+} from '../../../../constants/fonts.ts';
 import { AppTextCategoryUnion } from '../../../../types/ui.ts';
 import { checkIsValidNumber } from '../../../../helpers/checkIsValidNumber.ts';
 import { useMemo } from 'react';
@@ -25,5 +28,5 @@ export const useScaledTextCategoryStyle = (
       fontSize,
       lineHeight,
     };
-  }, [category, category, getTabletScaledNumber]);
+  }, [category, getTabletScaledNumber]);
 };

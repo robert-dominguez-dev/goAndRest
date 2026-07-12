@@ -47,14 +47,14 @@ export const sk = {
     },
     paywall: {
       title: 'Go&Rest Premium',
-      subtitleFree: 'Odomkni všetko jednou platbou.',
+      subtitleFree: 'Odomkni všetko jedným nákupom.',
       subtitlePremium: 'Máš odomknuté všetko. Vďaka za podporu! ♥️',
       benefitHistory: 'História tréningov',
       benefitChart: 'Graf, ako sa mení tvoja náročnosť v čase',
       benefitVoices: 'Všetky prémiové hlasy a postavy',
       benefitNoAds: 'Žiadne reklamy',
       benefitBackup: 'Záloha dát do súboru (JSON)',
-      buyButton: 'Kúpiť — {{priceString}}',
+      buyButton: 'Kúpiť Premium — {{priceString}}',
       oneTimeNote: 'Jednorazová platba. Žiadne predplatné.',
       restore: 'Obnoviť predchádzajúci nákup',
       activeState: 'PREMIUM AKTÍVNY ✓',
@@ -67,6 +67,16 @@ export const sk = {
         title: 'Nenašli sme nákup',
         description: 'Na tomto účte sme nenašli žiadny predchádzajúci nákup.',
       },
+      successPopUp: {
+        title: 'Premium aktívny ✓',
+        description: 'Vďaka za podporu! Máš odomknuté všetko.',
+      },
+      pendingPopUp: {
+        title: 'Platba sa spracúva',
+        description:
+          'Nákup prebehol, ale aktivácia ešte nie je hotová. Skús to o chvíľu cez „Obnoviť predchádzajúci nákup".',
+      },
+      processing: 'Spracúvame…',
     },
   },
   screens: {

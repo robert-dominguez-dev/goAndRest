@@ -23,7 +23,8 @@ export type AppTextCategoryUnion =
   | 'subHeader'
   | 'title'
   | 'contentBold'
-  | 'content';
+  | 'content'
+  | 'caption';
 
 export type BorderProps = Pick<ViewStyle, 'borderColor' | 'borderWidth'>;
 

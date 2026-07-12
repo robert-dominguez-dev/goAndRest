@@ -5,6 +5,7 @@ export enum AppNavigatorScreen {
   FinishedWorkoutScreen = 'FinishedWorkoutScreen',
   SavedWorkoutsScreen = 'SavedWorkoutsScreen',
   HistoryScreen = 'HistoryScreen',
+  PaywallScreen = 'PaywallScreen',
   DevScreen = 'DevScreen',
 }
 
@@ -15,5 +16,6 @@ export type AppNavigatorScreenParams = {
   [AppNavigatorScreen.FinishedWorkoutScreen]: undefined;
   [AppNavigatorScreen.SavedWorkoutsScreen]: undefined;
   [AppNavigatorScreen.HistoryScreen]: undefined;
+  [AppNavigatorScreen.PaywallScreen]: undefined;
   [AppNavigatorScreen.DevScreen]: undefined;
 };

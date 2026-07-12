@@ -1,0 +1,110 @@
+import { Fragment, JSX, useCallback, useState } from 'react';
+import { useAppTranslation } from '../../../../../../locales/hooks/useAppTranslation.ts';
+import { useAppPopUp } from '../../../../../common/AppPopUp/hooks/useAppPopUp.tsx';
+import { AppFullScreenLoader } from '../../../../../common/AppFullScreenLoader.tsx';
+import { usePremiumActions } from '../../../../../../contexts/premium/hooks/usePremiumActions.ts';
+
+/**
+ * Owns the purchase / restore flow for the paywall screen: a non-Modal
+ * full-screen loader while the request is in flight (so the native store
+ * sheet can present over it), and an outcome popup for every case
+ * (success, payment succeeded but entitlement not yet active, error,
+ * nothing to restore). `onEntitled` runs once the user is premium.
+ */
+export const usePaywallPurchase = (onEntitled: () => void) => {
+  const t = useAppTranslation();
+
+  const { purchasePremium, restorePremium } = usePremiumActions();
+
+  const [isPurchasing, setIsPurchasing] = useState(false);
+
+  const { popUp: successPopUp, onOpen: openSuccessPopUp } = useAppPopUp({
+    title: t('common.paywall.successPopUp.title'),
+    description: t('common.paywall.successPopUp.description'),
+    primaryButtonProps: { label: t('common.ok'), onPress: onEntitled },
+  });
+
+  const { popUp: pendingPopUp, onOpen: openPendingPopUp } = useAppPopUp({
+    title: t('common.paywall.pendingPopUp.title'),
+    description: t('common.paywall.pendingPopUp.description'),
+    primaryButtonProps: { label: t('common.ok') },
+  });
+
+  const { popUp: errorPopUp, onOpen: openErrorPopUp } = useAppPopUp({
+    title: t('common.paywall.errorPopUp.title'),
+    description: t('common.paywall.errorPopUp.description'),
+    primaryButtonProps: { label: t('common.ok') },
+  });
+
+  const { popUp: restoreNotFoundPopUp, onOpen: openRestoreNotFoundPopUp } =
+    useAppPopUp({
+      title: t('common.paywall.restoreNotFoundPopUp.title'),
+      description: t('common.paywall.restoreNotFoundPopUp.description'),
+      primaryButtonProps: { label: t('common.ok') },
+    });
+
+  const handleBuyPress = useCallback(async () => {
+    setIsPurchasing(true);
+    const outcome = await purchasePremium();
+    setIsPurchasing(false);
+
+    if (outcome.status === 'cancelled') {
+      return;
+    }
+
+    if (outcome.status === 'error') {
+      openErrorPopUp();
+      return;
+    }
+
+    if (outcome.isPremium) {
+      openSuccessPopUp();
+    } else {
+      openPendingPopUp();
+    }
+  }, [purchasePremium, openErrorPopUp, openSuccessPopUp, openPendingPopUp]);
+
+  const handleRestorePress = useCallback(async () => {
+    setIsPurchasing(true);
+    const result = await restorePremium();
+    setIsPurchasing(false);
+
+    if (result === 'restored') {
+      openSuccessPopUp();
+      return;
+    }
+
+    if (result === 'notFound') {
+      openRestoreNotFoundPopUp();
+      return;
+    }
+
+    openErrorPopUp();
+  }, [
+    restorePremium,
+    openSuccessPopUp,
+    openRestoreNotFoundPopUp,
+    openErrorPopUp,
+  ]);
+
+  const loaderOverlay: JSX.Element | null = isPurchasing ? (
+    <AppFullScreenLoader label={t('common.paywall.processing')} />
+  ) : null;
+
+  const popUps = (
+    <Fragment>
+      {successPopUp}
+      {pendingPopUp}
+      {errorPopUp}
+      {restoreNotFoundPopUp}
+    </Fragment>
+  );
+
+  return {
+    isPurchasing,
+    handleBuyPress,
+    handleRestorePress,
+    loaderOverlay,
+    popUps,
+  };
+};
