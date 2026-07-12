@@ -1,6 +1,5 @@
+import { differenceInCalendarDays } from 'date-fns';
 import { WorkoutHistoryEntry } from '../contexts/workoutHistory/types.ts';
-
-const DAY = 24 * 60 * 60 * 1000;
 
 export const computeStreak = (
   log: WorkoutHistoryEntry[],
@@ -14,18 +13,19 @@ export const computeStreak = (
     return 0;
   }
 
-  const today = new Date(now).setHours(0, 0, 0, 0);
-  const yesterday = today - DAY;
-  const mostRecentDay = uniqueDays[0];
+  // Calendar-day math (not fixed 24h subtraction) so the streak survives
+  // daylight-saving transitions, where consecutive local midnights are 23
+  // or 25 hours apart.
+  const daysSinceMostRecent = differenceInCalendarDays(now, uniqueDays[0]);
 
-  if (mostRecentDay !== today && mostRecentDay !== yesterday) {
+  if (daysSinceMostRecent < 0 || daysSinceMostRecent > 1) {
     return 0;
   }
 
   let streak = 1;
 
   for (let i = 1; i < uniqueDays.length; i++) {
-    if (uniqueDays[i - 1] - uniqueDays[i] === DAY) {
+    if (differenceInCalendarDays(uniqueDays[i - 1], uniqueDays[i]) === 1) {
       streak++;
     } else {
       break;

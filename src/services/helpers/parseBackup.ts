@@ -52,19 +52,29 @@ const parseLog = (value: unknown): WorkoutHistoryEntry[] => {
   }));
 };
 
+// A backup with no recoverable workouts and no history entries is
+// indistinguishable from a foreign/garbage JSON file. Restoring it would
+// silently wipe the user's real data, so it is treated as invalid.
+const buildBackup = (
+  date: number | null,
+  workouts: AppStoredWorkout[],
+  log: WorkoutHistoryEntry[],
+): ParsedBackup | null =>
+  workouts.length === 0 && log.length === 0 ? null : { date, workouts, log };
+
 export const parseBackup = (raw: unknown): ParsedBackup | null => {
   if (Array.isArray(raw)) {
-    return { date: null, workouts: [], log: parseLog(raw) };
+    return buildBackup(null, [], parseLog(raw));
   }
 
   if (typeof raw === 'object' && raw !== null) {
     const record = raw as Record<string, unknown>;
 
-    return {
-      date: typeof record.date === 'number' ? record.date : null,
-      workouts: parseWorkouts(record.workouts),
-      log: parseLog(record.log),
-    };
+    return buildBackup(
+      typeof record.date === 'number' ? record.date : null,
+      parseWorkouts(record.workouts),
+      parseLog(record.log),
+    );
   }
 
   return null;

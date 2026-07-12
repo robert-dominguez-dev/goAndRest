@@ -43,6 +43,11 @@ export const usePaywallBottomSheet = () => {
     if (outcome.status === 'error') {
       setHidden(true);
       openErrorPopUp();
+      return;
+    }
+
+    if (outcome.status === 'success') {
+      handleClose();
     }
   };
 

@@ -50,8 +50,21 @@ describe('parseBackup', () => {
     expect(result?.log).toEqual([validEntry]);
   });
 
-  it('defensively fills in missing fields on an object', () => {
-    expect(parseBackup({})).toEqual({ date: null, workouts: [], log: [] });
+  it('returns null for an object with no recoverable data', () => {
+    expect(parseBackup({})).toBeNull();
+  });
+
+  it('returns null for a backup that contains no workouts and no log', () => {
+    expect(parseBackup({ date: 123, workouts: [], log: [] })).toBeNull();
+    expect(parseBackup([])).toBeNull();
+  });
+
+  it('keeps a backup that has only a log', () => {
+    expect(parseBackup({ log: [validEntry] })).toEqual({
+      date: null,
+      workouts: [],
+      log: [validEntry],
+    });
   });
 
   it.each([
