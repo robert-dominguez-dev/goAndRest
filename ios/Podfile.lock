@@ -106,6 +106,8 @@ PODS:
   - nanopb/decode (3.30910.0)
   - nanopb/encode (3.30910.0)
   - PromisesObjC (2.4.0)
+  - PurchasesHybridCommon (18.19.0):
+    - RevenueCat (= 5.80.2)
   - RCT-Folly (2024.11.18.00):
     - boost
     - DoubleConversion
@@ -1990,6 +1992,62 @@ PODS:
     - React-RCTFBReactNativeSpec
     - ReactCommon/turbomodule/core
     - SocketRocket
+  - react-native-blob-util (0.24.10):
+    - boost
+    - DoubleConversion
+    - fast_float
+    - fmt
+    - glog
+    - hermes-engine
+    - RCT-Folly
+    - RCT-Folly/Fabric
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-jsi
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-renderercss
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - SocketRocket
+    - Yoga
+  - react-native-document-picker (12.0.1):
+    - boost
+    - DoubleConversion
+    - fast_float
+    - fmt
+    - glog
+    - hermes-engine
+    - RCT-Folly
+    - RCT-Folly/Fabric
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-jsi
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-renderercss
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - SocketRocket
+    - Yoga
   - react-native-get-random-values (2.0.0):
     - boost
     - DoubleConversion
@@ -2695,6 +2753,7 @@ PODS:
     - React-perflogger (= 0.83.1)
     - React-utils (= 0.83.1)
     - SocketRocket
+  - RevenueCat (5.80.2)
   - rive-react-native (9.8.0):
     - React-Core
     - RiveRuntime (= 6.13.0)
@@ -2873,6 +2932,9 @@ PODS:
     - ReactCommon/turbomodule/core
     - SocketRocket
     - Yoga
+  - RNPurchases (10.4.2):
+    - PurchasesHybridCommon (= 18.19.0)
+    - React-Core
   - RNReactNativeHapticFeedback (2.3.3):
     - boost
     - DoubleConversion
@@ -3044,6 +3106,34 @@ PODS:
     - React-NativeModulesApple
     - React-RCTFabric
     - React-RCTImage
+    - React-renderercss
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - SocketRocket
+    - Yoga
+  - RNShare (12.3.1):
+    - boost
+    - DoubleConversion
+    - fast_float
+    - fmt
+    - glog
+    - hermes-engine
+    - RCT-Folly
+    - RCT-Folly/Fabric
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-jsi
+    - React-NativeModulesApple
+    - React-RCTFabric
     - React-renderercss
     - React-rendererdebug
     - React-utils
@@ -3252,6 +3342,8 @@ DEPENDENCIES:
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
   - React-Mapbuffer (from `../node_modules/react-native/ReactCommon`)
   - React-microtasksnativemodule (from `../node_modules/react-native/ReactCommon/react/nativemodule/microtasks`)
+  - react-native-blob-util (from `../node_modules/react-native-blob-util`)
+  - "react-native-document-picker (from `../node_modules/@react-native-documents/picker`)"
   - react-native-get-random-values (from `../node_modules/react-native-get-random-values`)
   - react-native-in-app-review (from `../node_modules/react-native-in-app-review`)
   - react-native-orientation-locker (from `../node_modules/react-native-orientation-locker`)
@@ -3297,9 +3389,11 @@ DEPENDENCIES:
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNGoogleMobileAds (from `../node_modules/react-native-google-mobile-ads`)
   - RNLocalize (from `../node_modules/react-native-localize`)
+  - RNPurchases (from `../node_modules/react-native-purchases`)
   - RNReactNativeHapticFeedback (from `../node_modules/react-native-haptic-feedback`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
+  - RNShare (from `../node_modules/react-native-share`)
   - RNSVG (from `../node_modules/react-native-svg`)
   - RNWorklets (from `../node_modules/react-native-worklets`)
   - SocketRocket (~> 0.7.1)
@@ -3319,6 +3413,8 @@ SPEC REPOS:
     - GoogleUtilities
     - nanopb
     - PromisesObjC
+    - PurchasesHybridCommon
+    - RevenueCat
     - RiveRuntime
     - SocketRocket
     - SwiftAudioEx
@@ -3413,6 +3509,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   React-microtasksnativemodule:
     :path: "../node_modules/react-native/ReactCommon/react/nativemodule/microtasks"
+  react-native-blob-util:
+    :path: "../node_modules/react-native-blob-util"
+  react-native-document-picker:
+    :path: "../node_modules/@react-native-documents/picker"
   react-native-get-random-values:
     :path: "../node_modules/react-native-get-random-values"
   react-native-in-app-review:
@@ -3503,12 +3603,16 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-google-mobile-ads"
   RNLocalize:
     :path: "../node_modules/react-native-localize"
+  RNPurchases:
+    :path: "../node_modules/react-native-purchases"
   RNReactNativeHapticFeedback:
     :path: "../node_modules/react-native-haptic-feedback"
   RNReanimated:
     :path: "../node_modules/react-native-reanimated"
   RNScreens:
     :path: "../node_modules/react-native-screens"
+  RNShare:
+    :path: "../node_modules/react-native-share"
   RNSVG:
     :path: "../node_modules/react-native-svg"
   RNWorklets:
@@ -3537,6 +3641,7 @@ SPEC CHECKSUMS:
   hermes-engine: 7a945d78d63cc1ed79d01bf79d7a941a1c22c05a
   nanopb: fad817b59e0457d11a5dfbde799381cd727c1275
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
+  PurchasesHybridCommon: 1eb67a6c8997233b35ed9b4eee8205dd8dd92890
   RCT-Folly: 846fda9475e61ec7bcbf8a3fe81edfcaeb090669
   RCTDeprecation: a41bbdd9af30bf2e5715796b313e44ec43eefff1
   RCTRequired: 7be34aabb0b77c3cefe644528df0fa0afad4e4d0
@@ -3573,6 +3678,8 @@ SPEC CHECKSUMS:
   React-logger: b8483fa08e0d62e430c76d864309d90576ca2f68
   React-Mapbuffer: 7b72a669e94662359dad4f42b5af005eb24b4e83
   React-microtasksnativemodule: cdc02da075f2857803ed63f24f5f72fc40e094c0
+  react-native-blob-util: 597cb703d6dee59abec9754daf3d7951512bb132
+  react-native-document-picker: dc2d83366e47e89e7c51e8a41eab99c1d54e941c
   react-native-get-random-values: e2acf4070fe4b7325705a05af047449637a27a21
   react-native-in-app-review: 1516ba69d60d58053b7eb3aaaf8d2a5a74af8b57
   react-native-orientation-locker: cc6f357b289a2e0dd2210fea0c52cb8e0727fdaa
@@ -3611,6 +3718,7 @@ SPEC CHECKSUMS:
   ReactAppDependencyProvider: 0eb286cc274abb059ee601b862ebddac2e681d01
   ReactCodegen: 3d48510bcef445f6403c0004047d4d9cbb915435
   ReactCommon: ac934cb340aee91282ecd6f273a26d24d4c55cae
+  RevenueCat: b772273e51fa103a2ecc644439dd54a5dec199f3
   rive-react-native: d0c2336f11b329dc0d304eda71df407f316ed7f6
   RiveRuntime: 903690a5ba698b2a7e8d462e8aa7ceeba862614c
   RNCAsyncStorage: 29f0230e1a25f36c20b05f65e2eb8958d6526e82
@@ -3619,9 +3727,11 @@ SPEC CHECKSUMS:
   RNGestureHandler: cd4be101cfa17ea6bbd438710caa02e286a84381
   RNGoogleMobileAds: 349c79298f8094fb2fbbe47f0c4902290e6b7353
   RNLocalize: 23e6689ec46c6cba49eb8cde959e30e49160a35b
+  RNPurchases: 64e5e656f042c2f20ccdb3fe3ed683664229de73
   RNReactNativeHapticFeedback: be4f1b4bf0398c30b59b76ed92ecb0a2ff3a69c6
   RNReanimated: 292cd58688552a22b3fc1cefcfbc49b336dfed68
   RNScreens: c77cc7a5d1fbc23f0725b54e96eec81118453382
+  RNShare: bf3fa119b277d4a1729553e870039427bcb80c93
   RNSVG: 595abfa0f9ac26d56afcaaedf4e37a00f54cab71
   RNWorklets: 944dddd0eef13006b658e653abbb3ee8365c3809
   SocketRocket: d4aabe649be1e368d1318fdf28a022d714d65748
