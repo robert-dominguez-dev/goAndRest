@@ -363,31 +363,6 @@ export const sk = {
           wizard: 'Dobrá práca, dieťa!',
         },
       },
-      description: {
-        default: 'Skvelá práca. Máš za sebou ďalší kvalitný tréning.',
-        byVoice: {
-          coachMale: 'Dnes to bol špičkový výkon. Len tak ďalej!',
-          coachFemale: 'Dnes to bol špičkový výkon. Len tak ďalej!',
-          briefMale:
-            'Dobre ty! Máš to za sebou, teraz si choď poriadne oddýchnuť.',
-          briefFemale:
-            'Dobre ty! Máš to za sebou, teraz si choď poriadne oddýchnuť.',
-          calmMale:
-            'Uži si ten pokoj a dojem z celého cvičenia. Bol to dobre využitý čas.',
-          calmFemale:
-            'Uži si ten pokoj a dojem z celého cvičenia. Bol to dobre využitý čas.',
-        },
-        byCharacter: {
-          warrior:
-            'Tak to bola rež. Niet nad poriadny nárez! Len tak ďalej, bojovník!',
-          shieldmaiden:
-            'Tak to bola rež. Niet nad poriadny nárez! Len tak ďalej, bojovník!',
-          cyborg:
-            'Hardvérové limity posunuté. Systémová integrita na maxime. Softvér aktualizovaný na novú verziu.',
-          wizard:
-            'Tvoja vôľa a vytrvalosť dnes potvrdili, že si oveľa viac než len pouhá hmota.',
-        },
-      },
       stats: {
         totalTime: {
           default: 'Celkový čas',

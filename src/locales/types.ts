@@ -242,7 +242,6 @@ export type AppTranslations = {
     };
     finishedWorkoutScreen: {
       title: TextsByCoachVariant;
-      description: TextsByCoachVariant;
       stats: {
         totalTime: TextsByCoachVariant;
       };

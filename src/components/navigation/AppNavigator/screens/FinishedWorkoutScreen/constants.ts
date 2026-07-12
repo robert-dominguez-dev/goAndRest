@@ -6,7 +6,6 @@ import { TranslateKey } from '../../../../../locales/types.ts';
 
 type FinishedWorkoutScreenTranslateKeys = {
   titleKey: TranslateKey;
-  descriptionKey: TranslateKey;
   stats: {
     totalTimeKey: TranslateKey;
   };
@@ -16,7 +15,6 @@ type FinishedWorkoutScreenTranslateKeys = {
 export const defaultFinishWorkoutScreenTranslateKeys: FinishedWorkoutScreenTranslateKeys =
   {
     titleKey: 'screens.finishedWorkoutScreen.title.default',
-    descriptionKey: 'screens.finishedWorkoutScreen.description.default',
     stats: {
       totalTimeKey: 'screens.finishedWorkoutScreen.stats.totalTime.default',
     },
@@ -29,8 +27,6 @@ export const voiceVariantToFinishWorkoutScreenTranslateKeys: Record<
 > = {
   [WorkoutVoiceVariant.coachFemale]: {
     titleKey: 'screens.finishedWorkoutScreen.title.byVoice.coachFemale',
-    descriptionKey:
-      'screens.finishedWorkoutScreen.description.byVoice.coachFemale',
     stats: {
       totalTimeKey:
         'screens.finishedWorkoutScreen.stats.totalTime.byVoice.coachFemale',
@@ -40,8 +36,6 @@ export const voiceVariantToFinishWorkoutScreenTranslateKeys: Record<
   },
   [WorkoutVoiceVariant.coachMale]: {
     titleKey: 'screens.finishedWorkoutScreen.title.byVoice.coachMale',
-    descriptionKey:
-      'screens.finishedWorkoutScreen.description.byVoice.coachMale',
     stats: {
       totalTimeKey:
         'screens.finishedWorkoutScreen.stats.totalTime.byVoice.coachMale',
@@ -51,8 +45,6 @@ export const voiceVariantToFinishWorkoutScreenTranslateKeys: Record<
   },
   [WorkoutVoiceVariant.briefFemale]: {
     titleKey: 'screens.finishedWorkoutScreen.title.byVoice.briefFemale',
-    descriptionKey:
-      'screens.finishedWorkoutScreen.description.byVoice.briefFemale',
     stats: {
       totalTimeKey:
         'screens.finishedWorkoutScreen.stats.totalTime.byVoice.briefFemale',
@@ -62,8 +54,6 @@ export const voiceVariantToFinishWorkoutScreenTranslateKeys: Record<
   },
   [WorkoutVoiceVariant.briefMale]: {
     titleKey: 'screens.finishedWorkoutScreen.title.byVoice.briefMale',
-    descriptionKey:
-      'screens.finishedWorkoutScreen.description.byVoice.briefMale',
     stats: {
       totalTimeKey:
         'screens.finishedWorkoutScreen.stats.totalTime.byVoice.briefMale',
@@ -73,8 +63,6 @@ export const voiceVariantToFinishWorkoutScreenTranslateKeys: Record<
   },
   [WorkoutVoiceVariant.calmFemale]: {
     titleKey: 'screens.finishedWorkoutScreen.title.byVoice.calmFemale',
-    descriptionKey:
-      'screens.finishedWorkoutScreen.description.byVoice.calmFemale',
     stats: {
       totalTimeKey:
         'screens.finishedWorkoutScreen.stats.totalTime.byVoice.calmFemale',
@@ -84,8 +72,6 @@ export const voiceVariantToFinishWorkoutScreenTranslateKeys: Record<
   },
   [WorkoutVoiceVariant.calmMale]: {
     titleKey: 'screens.finishedWorkoutScreen.title.byVoice.calmMale',
-    descriptionKey:
-      'screens.finishedWorkoutScreen.description.byVoice.calmMale',
     stats: {
       totalTimeKey:
         'screens.finishedWorkoutScreen.stats.totalTime.byVoice.calmMale',
@@ -101,8 +87,6 @@ export const characterVariantToFinishWorkoutScreenTranslateKeys: Record<
 > = {
   [WorkoutCharacterVariant.warrior]: {
     titleKey: 'screens.finishedWorkoutScreen.title.byCharacter.warrior',
-    descriptionKey:
-      'screens.finishedWorkoutScreen.description.byCharacter.warrior',
     stats: {
       totalTimeKey:
         'screens.finishedWorkoutScreen.stats.totalTime.byCharacter.warrior',
@@ -112,8 +96,6 @@ export const characterVariantToFinishWorkoutScreenTranslateKeys: Record<
   },
   [WorkoutCharacterVariant.shieldmaiden]: {
     titleKey: 'screens.finishedWorkoutScreen.title.byCharacter.shieldmaiden',
-    descriptionKey:
-      'screens.finishedWorkoutScreen.description.byCharacter.shieldmaiden',
     stats: {
       totalTimeKey:
         'screens.finishedWorkoutScreen.stats.totalTime.byCharacter.shieldmaiden',
@@ -123,8 +105,6 @@ export const characterVariantToFinishWorkoutScreenTranslateKeys: Record<
   },
   [WorkoutCharacterVariant.cyborg]: {
     titleKey: 'screens.finishedWorkoutScreen.title.byCharacter.cyborg',
-    descriptionKey:
-      'screens.finishedWorkoutScreen.description.byCharacter.cyborg',
     stats: {
       totalTimeKey:
         'screens.finishedWorkoutScreen.stats.totalTime.byCharacter.cyborg',
@@ -134,8 +114,6 @@ export const characterVariantToFinishWorkoutScreenTranslateKeys: Record<
   },
   [WorkoutCharacterVariant.wizard]: {
     titleKey: 'screens.finishedWorkoutScreen.title.byCharacter.wizard',
-    descriptionKey:
-      'screens.finishedWorkoutScreen.description.byCharacter.wizard',
     stats: {
       totalTimeKey:
         'screens.finishedWorkoutScreen.stats.totalTime.byCharacter.wizard',

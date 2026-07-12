@@ -366,29 +366,6 @@ export const en = {
           wizard: 'Well done, child!',
         },
       },
-      description: {
-        default: "Great job. You've finished another solid workout.",
-        byVoice: {
-          coachMale: 'That was a top-tier performance today. Keep it up!',
-          coachFemale: 'That was a top-tier performance today. Keep it up!',
-          briefMale: "Nice! You're done, now go get some proper rest.",
-          briefFemale: "Nice! You're done, now go get some proper rest.",
-          calmMale:
-            'Enjoy the stillness and the feeling of the session. It was time well spent.',
-          calmFemale:
-            'Enjoy the stillness and the feeling of the session. It was time well spent.',
-        },
-        byCharacter: {
-          warrior:
-            'That was a brawl! Nothing beats a good thrashing. Keep it up, warrior!',
-          shieldmaiden:
-            'That was a brawl! Nothing beats a good thrashing. Keep it up, warrior!',
-          cyborg:
-            'Hardware limits pushed. System integrity at maximum. Software updated to new version.',
-          wizard:
-            'Your will and endurance have proven today that you are much more than mere matter.',
-        },
-      },
       stats: {
         totalTime: {
           default: 'Total Time',

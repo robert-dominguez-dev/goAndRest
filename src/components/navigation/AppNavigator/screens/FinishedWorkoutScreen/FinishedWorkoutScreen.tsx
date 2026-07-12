@@ -52,7 +52,6 @@ export const FinishedWorkoutScreen = () => {
 
   const {
     titleKey,
-    descriptionKey,
     buttonLabelKey,
     stats: { totalTimeKey },
   } = useBySoundFeedbackSettings({
@@ -91,12 +90,6 @@ export const FinishedWorkoutScreen = () => {
           />
         }>
         <AppView gap={'l'}>
-          <AppText
-            category={'content'}
-            textAlign={'center'}
-            numberOfLines={UNLIMITED_NUMBER_OF_LINES}>
-            {t(descriptionKey)}
-          </AppText>
           <AppView gap={'m'}>
             <AppText
               colorStatus={'textMuted'}
