@@ -12,7 +12,8 @@ import { LandingScreenContent } from './components/LandingScreenContent.tsx';
 import { ComponentType, JSX } from 'react';
 import { WorkoutConfigTimeViewProps } from './components/WorkoutConfigButtons/components/WorkoutConfigTimeView.tsx';
 import { LandingScreenTabletLandscapeContent } from './components/LandingScreenTabletLandscapeContent.tsx';
-import { usePremiumCharacterBottomSheet } from '../../../../common/PremiumCharacterBottomSheet/hooks/usePremiumCharacterBottomSheet.tsx';
+import { useIsPremium } from '../../../../../contexts/premium/hooks/useIsPremium.ts';
+import { usePaywallBottomSheet } from '../../../../common/PaywallBottomSheet/hooks/usePaywallBottomSheet.tsx';
 
 const footerElement = <LandingScreenFooter />;
 
@@ -36,7 +37,12 @@ export const LandingScreen = ({ navigation }: LandingScreenProps) => {
 
   const isTabletLandscape = useIsTabletAndLandscape();
 
-  const { bottomSheet, openBottomSheet } = usePremiumCharacterBottomSheet();
+  const isPremium = useIsPremium();
+
+  const { paywallBottomSheet, openPaywall } = usePaywallBottomSheet();
+
+  const goToHistory = () =>
+    navigation.navigate(AppNavigatorScreen.HistoryScreen);
 
   const ContentComponent: ComponentType<WorkoutConfigTimeViewProps> =
     isTabletLandscape
@@ -53,13 +59,13 @@ export const LandingScreen = ({ navigation }: LandingScreenProps) => {
         headerTitle={t('screens.landingScreen.title')}
         headerAccessoryLeftIconName={'Menu'}
         onHeaderAccessoryLeftPress={goToSettings}
-        headerAccessoryRightIconName={'Gem'}
-        headerAccessoryRightIconColorStatus={'premium'}
-        onHeaderAccessoryRightPress={openBottomSheet}
+        headerAccessoryRightIconName={isPremium ? 'LineChart' : 'Gem'}
+        headerAccessoryRightIconColorStatus={isPremium ? 'text' : 'premium'}
+        onHeaderAccessoryRightPress={isPremium ? goToHistory : openPaywall}
         footer={footerElementEvaluated}>
         <ContentComponent control={formProps.control} />
       </AppScreenLayout>
-      {bottomSheet}
+      {paywallBottomSheet}
     </FormProvider>
   );
 };

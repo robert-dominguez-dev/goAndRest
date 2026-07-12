@@ -2,13 +2,10 @@ import { useAtom, useAtomValue } from 'jotai';
 import { useEffect, useRef } from 'react';
 import {
   characterVariantSettingAtom,
-  premiumCharacterActivationsAtom,
   soundFeedbackSettingAtom,
 } from '../../../../../../contexts/atoms.ts';
-import { checkIsCharacterActive } from '../../../../../../contexts/premiumCharacters/helpers/checkIsCharacterActive.ts';
-import {
-  usePremiumCharacterBottomSheet
-} from '../../../../../common/PremiumCharacterBottomSheet/hooks/usePremiumCharacterBottomSheet.tsx';
+import { useIsPremiumCharacterUnlocked } from '../../../../../../contexts/premiumCharacters/hooks/useIsPremiumCharacterUnlocked.ts';
+import { usePremiumCharacterBottomSheet } from '../../../../../common/PremiumCharacterBottomSheet/hooks/usePremiumCharacterBottomSheet.tsx';
 import { WorkoutSoundFeedback } from '../constants.tsx';
 
 /**
@@ -21,7 +18,6 @@ import { WorkoutSoundFeedback } from '../constants.tsx';
 export const usePremiumSoundFeedbackGuard = () => {
   const [soundFeedback, setSoundFeedback] = useAtom(soundFeedbackSettingAtom);
   const characterVariant = useAtomValue(characterVariantSettingAtom);
-  const activations = useAtomValue(premiumCharacterActivationsAtom);
 
   const previousSoundFeedbackRef = useRef(soundFeedback);
   const wasOpenRef = useRef(false);
@@ -29,10 +25,9 @@ export const usePremiumSoundFeedbackGuard = () => {
   const { bottomSheet, openBottomSheet, isOpen } =
     usePremiumCharacterBottomSheet();
 
-  const isCharacterActive = checkIsCharacterActive(
-    activations,
-    characterVariant,
-  );
+  const isPremiumCharacterUnlocked = useIsPremiumCharacterUnlocked();
+
+  const isCharacterActive = isPremiumCharacterUnlocked(characterVariant);
 
   useEffect(() => {
     if (soundFeedback !== WorkoutSoundFeedback.character) {

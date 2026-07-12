@@ -8,10 +8,15 @@ import {
 import { ChildrenProp } from '../../types/common.ts';
 import { AppView } from './AppView/AppView.tsx';
 
-export const AppBackdrop = ({ children }: ChildrenProp) => (
+type AppBackdropProps = ChildrenProp & {
+  onRequestClose?: () => void;
+};
+
+export const AppBackdrop = ({ children, onRequestClose }: AppBackdropProps) => (
   <Modal
     transparent
     statusBarTranslucent
+    onRequestClose={onRequestClose}
     supportedOrientations={ALL_SUPPORTED_ORIENTATIONS}>
     <AppView
       grow

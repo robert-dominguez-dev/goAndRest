@@ -21,6 +21,7 @@ import {
 import { defaultWorkoutConfig } from './AppWorkoutsProvider/constants.ts';
 import { ONE_SECOND_MS } from '../constants/common.ts';
 import { PremiumCharacterActivations } from './premiumCharacters/types.ts';
+import { WorkoutHistoryEntry } from './workoutHistory/types.ts';
 
 const createAsyncAtom = <T>(key: string, defaultValue: T) =>
   atomWithStorage(
@@ -129,3 +130,15 @@ export const finishedWorkoutsCountAtom = createAsyncAtom<number>(
   AsyncStorageKey.FINISHED_WORKOUTS_COUNT,
   0,
 );
+
+export const workoutHistoryAtom = createAsyncAtom<WorkoutHistoryEntry[]>(
+  AsyncStorageKey.WORKOUT_HISTORY,
+  [],
+);
+
+export const isPremiumAtom = createAsyncAtom<boolean>(
+  AsyncStorageKey.IS_PREMIUM,
+  false,
+);
+
+export const premiumPriceAtom = atom<string | null>(null);

@@ -37,6 +37,37 @@ export const en = {
         'You may have personalized ads turned off. Enable them in Settings → Other and try again.',
     },
     adLoading: 'Preparing ad…',
+    rpe: {
+      easy: 'Breezy',
+      moderate: 'Steady',
+      solid: 'Sweaty',
+      hard: 'Burning',
+      max: 'Brutal',
+    },
+    paywall: {
+      title: 'Go&Rest Premium',
+      subtitleFree: 'Unlock everything. Once and for good.',
+      subtitlePremium:
+        'You have everything unlocked. Thanks for the support! ♥️',
+      benefitHistory: 'Workout history',
+      benefitChart: 'Chart showing how your intensity changes over time',
+      benefitVoices: 'All premium voices and characters — forever',
+      benefitNoAds: 'No ads',
+      benefitBackup: 'Data backup to a file (JSON)',
+      buyButton: 'Buy forever — {{priceString}}',
+      oneTimeNote: 'One-time payment. No subscription.',
+      restore: 'Restore previous purchase',
+      activeState: 'PREMIUM ACTIVE ✓',
+      charSheetUnlock: 'Unlock everything forever — {{priceString}}',
+      errorPopUp: {
+        title: 'Purchase failed',
+        description: 'Please try again later.',
+      },
+      restoreNotFoundPopUp: {
+        title: 'No purchase found',
+        description: 'We could not find any previous purchase on this account.',
+      },
+    },
   },
   screens: {
     landingScreen: {
@@ -73,6 +104,7 @@ export const en = {
     },
     settingsScreen: {
       title: 'Settings',
+      proBannerSubtitle: 'Everything forever, no ads — {{priceString}}',
       appearanceSection: {
         label: 'Appearance',
         items: {
@@ -151,8 +183,11 @@ export const en = {
             },
             premiumBottomSheet: {
               title: 'Unlock a premium voice!',
+              titlePremium: 'Choose a character',
               description:
                 'Want to set a premium voice for your timer? Tap it, watch a short video, and unlock it free for 7 days.\n\nUse the ▷ icon on the right to hear a preview. 👉',
+              descriptionPremium:
+                'You have Premium — every character is unlocked forever.',
               daysRemaining: {
                 lessThanOne: '< 1 day',
                 one: '{{value}} day',
@@ -198,6 +233,37 @@ export const en = {
           },
         },
       },
+      backupSection: {
+        label: 'Backup & restore',
+        items: {
+          backupData: {
+            label: 'Back up data',
+            description:
+              'Save your workout history and settings to a file (JSON).',
+            exportValue: 'Export',
+          },
+          restoreData: {
+            label: 'Restore from backup',
+            description: 'Load a previously saved backup from a file.',
+            importValue: 'Import',
+          },
+        },
+        restoreSheet: {
+          title: 'Restore from backup',
+          warning:
+            'Restoring will overwrite the current data in the app. This action cannot be undone.',
+          rowDate: 'Backup date',
+          rowWorkouts: 'Number of saved workouts',
+          rowLog: 'Number of history entries',
+          rowPeriod: 'History entries period',
+          dateUnknown: 'unknown',
+          confirm: 'Restore',
+          invalidPopUp: {
+            title: 'Invalid file',
+            description: 'The backup file could not be loaded.',
+          },
+        },
+      },
       otherSection: {
         label: 'Other',
         items: {
@@ -237,6 +303,40 @@ export const en = {
         startButtonLabel: 'Start',
         deleteButtonLabel: 'Delete',
       },
+    },
+    historyScreen: {
+      title: 'History',
+      premiumOverlayTitle: 'History is a Premium feature',
+      premiumOverlayDescription:
+        'Unlock the story of your workouts — a time and difficulty chart, calendar and data backup.',
+      premiumOverlayUnlock: 'Unlock — {{priceString}}',
+      weekTitle: 'This week',
+      streakNone: 'no streak',
+      streakDays: {
+        one: '{{count}} day streak',
+        few: '{{count}} days streak',
+        many: '{{count}} days streak',
+      },
+      weekVolume: {
+        one: '{{min}} min · {{count}} workout',
+        few: '{{min}} min · {{count}} workouts',
+        many: '{{min}} min · {{count}} workouts',
+      },
+      chartTitle: 'Time and difficulty over time',
+      legendTime: 'Time',
+      legendDifficulty: 'Difficulty',
+      chartEmpty: 'Rate a few workouts and you will see your progress here.',
+      recentTitle: 'Recent workouts',
+      rounds: {
+        one: '{{count}} round',
+        few: '{{count}} rounds',
+        many: '{{count}} rounds',
+      },
+      listEmpty: 'No workouts yet. They will appear here once you finish one.',
+      detailTotalTime: 'Total Time',
+      detailDifficulty: 'Difficulty',
+      detailRoundsTile: 'rounds',
+      detailMinutesTile: 'min',
     },
     finishedWorkoutScreen: {
       title: {
@@ -320,6 +420,14 @@ export const en = {
       ratingRequestThankYou: 'Thank you! ♥️ Your support means a lot to us.',
       ratingRequestSorry:
         'Sorry to hear that!️ We are constantly working on updates and improvements 🛠, so hopefully your next workout feels much better.',
+      rpePopupTitle: 'How hard was it?',
+      rpePopupDescription:
+        'Pick the one that matches how much physical effort it took.',
+      difficultyLabel: 'Difficulty',
+      streakStart: 'Start a streak!',
+      weekTileLabel: 'this week · {{min}} min',
+      historyLinkPremium: 'History and difficulty trends',
+      historyLinkFree: 'History, calendar and difficulty trends',
     },
     disclaimerScreen: {
       title: 'Welcome to Go&Rest',

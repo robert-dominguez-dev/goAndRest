@@ -26,6 +26,7 @@ export type AppBottomSheetProps = Pick<
   renderContent: (params: AppBottomSheetRenderContentProps) => JSX.Element;
   onOverlayPress?: () => void;
   hidden?: boolean;
+  onDismiss?: () => void;
 };
 
 export const AppBottomSheet = ({
@@ -39,6 +40,7 @@ export const AppBottomSheet = ({
   onOverlayPress,
   onBottomSheetPress,
   hidden,
+  onDismiss,
 }: AppBottomSheetProps) => {
   const contentElement = renderContent({ onClose });
 
@@ -48,7 +50,8 @@ export const AppBottomSheet = ({
       statusBarTranslucent
       visible={!hidden}
       animationType={'slide'}
-      supportedOrientations={ALL_SUPPORTED_ORIENTATIONS}>
+      supportedOrientations={ALL_SUPPORTED_ORIENTATIONS}
+      onDismiss={onDismiss}>
       <Pressable
         onPress={getOnPressWithHapticFeedbackConditionally(onOverlayPress)}
         style={{ flex: 1, justifyContent: 'flex-end' }}>

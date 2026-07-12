@@ -9,26 +9,37 @@ import {
   voiceVariantToFinishWorkoutScreenTranslateKeys,
 } from './constants.ts';
 import { AppText } from '../../../../common/AppText/AppText.tsx';
-import { UNLIMITED_NUMBER_OF_LINES } from '../../../../../constants/common.ts';
+import {
+  ONE_SECOND_MS,
+  UNLIMITED_NUMBER_OF_LINES,
+} from '../../../../../constants/common.ts';
 import { AppTimeView } from '../../../../common/AppTimeView.tsx';
 import { useAtomValue } from 'jotai';
-import { finishedWorkoutsCountAtom, finishedWorkoutStatsAtom, starsRatedAtom, } from '../../../../../contexts/atoms.ts';
-import { getNumber } from '../../../../../helpers/getNumber.ts';
+import {
+  finishedWorkoutsCountAtom,
+  starsRatedAtom,
+} from '../../../../../contexts/atoms.ts';
 import { useFinishedWorkoutFeedbackOnMount } from '../../../../../hooks/useFinishedWorkoutFeedbackOnMount.ts';
 import { useFinishWorkout } from '../../../hooks/useFinishWorkout.ts';
 import { AppOrientationLocker } from '../../../../common/AppOrientationLocker.tsx';
 import { FullScreenConfettiAnimation } from '../../../../common/FullScreenConfettiAnimation.tsx';
 import { RatingRequestHint } from './components/RatingRequestHint.tsx';
 import { useRef } from 'react';
+import { AppNavigatorScreen } from '../../types.ts';
+import { useRootStackNavigation } from '../../../hooks/useRootStackNavigation.ts';
+import { useIsPremium } from '../../../../../contexts/premium/hooks/useIsPremium.ts';
+import { useFinishedWorkoutSummary } from './hooks/useFinishedWorkoutSummary.ts';
+import { FinishedWorkoutSummary } from './components/FinishedWorkoutSummary.tsx';
+import { RpeRatingPopUp } from './components/RpeRatingPopUp.tsx';
 
 const MIN_NUMBER_OF_WORKOUTS_TO_REQUEST_REVIEW = 3;
 
 export const FinishedWorkoutScreen = () => {
   useFinishedWorkoutFeedbackOnMount();
 
-  const t = useAppTranslation();
+  const navigation = useRootStackNavigation();
 
-  const finishedWorkoutStats = useAtomValue(finishedWorkoutStatsAtom);
+  const t = useAppTranslation();
 
   const starsRated = useAtomValue(starsRatedAtom);
   const starsRatedOriginallyRef = useRef(starsRated);
@@ -38,9 +49,6 @@ export const FinishedWorkoutScreen = () => {
   const shouldRequestReview: boolean =
     finishedWorkoutsCount >= MIN_NUMBER_OF_WORKOUTS_TO_REQUEST_REVIEW &&
     !starsRatedOriginallyRef.current;
-
-  const totalWorkoutDuration =
-    Date.now() - getNumber(finishedWorkoutStats?.startedAt);
 
   const {
     titleKey,
@@ -53,17 +61,33 @@ export const FinishedWorkoutScreen = () => {
     ...characterVariantToFinishWorkoutScreenTranslateKeys,
   });
 
+  const isPremium = useIsPremium();
+
+  const { sec, rpe, setRpe, streak, weekVolumeStats, commit } =
+    useFinishedWorkoutSummary();
+
   const finishWorkout = useFinishWorkout();
+
+  const handleFinish = () => {
+    commit();
+    finishWorkout();
+  };
+
+  const handleHistoryPress = () => {
+    commit();
+    navigation.navigate(AppNavigatorScreen.HistoryScreen);
+  };
 
   return (
     <>
       <AppOrientationLocker orientation={'PORTRAIT'} />
       <AppScreenLayout
+        scrollable
         headerTitle={t(titleKey)}
         footer={
           <AppButton
             label={t(buttonLabelKey)}
-            onPress={finishWorkout}
+            onPress={handleFinish}
           />
         }>
         <AppView gap={'l'}>
@@ -84,9 +108,16 @@ export const FinishedWorkoutScreen = () => {
             <AppTimeView
               colorStatus={'textMuted'}
               fontSizeOverride={80}
-              msLeft={totalWorkoutDuration}
+              msLeft={sec * ONE_SECOND_MS}
             />
           </AppView>
+          <FinishedWorkoutSummary
+            rpe={rpe}
+            streak={streak}
+            weekVolumeStats={weekVolumeStats}
+            isPremium={isPremium}
+            onHistoryPress={handleHistoryPress}
+          />
         </AppView>
         <AppView
           grow
@@ -95,6 +126,7 @@ export const FinishedWorkoutScreen = () => {
         </AppView>
       </AppScreenLayout>
       <FullScreenConfettiAnimation isPresent />
+      {rpe === null && <RpeRatingPopUp onSelect={setRpe} />}
     </>
   );
 };

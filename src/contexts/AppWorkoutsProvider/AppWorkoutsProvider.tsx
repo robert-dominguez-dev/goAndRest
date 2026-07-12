@@ -12,6 +12,7 @@ import { getUpdatedWorkouts } from './helpers/getUpdatedWorkouts.ts';
 type AppWorkoutsContextProps = {
   storeWorkout: (workout: AppStoredWorkout) => void;
   removeWorkout: (workoutId: string) => void;
+  replaceAllWorkouts: (workouts: AppStoredWorkout[]) => void;
   storedWorkouts: AppStoredWorkout[];
 };
 
@@ -49,12 +50,18 @@ export const AppWorkoutsProvider = ({ children }: ChildrenProp) => {
     });
   };
 
+  const replaceAllWorkouts = (workouts: AppStoredWorkout[]) => {
+    setStoredWorkouts(workouts);
+    void updateAppWorkoutsInStorage(workouts);
+  };
+
   return (
     <AppWorkoutsContext.Provider
       value={{
         storedWorkouts,
         storeWorkout,
         removeWorkout,
+        replaceAllWorkouts,
       }}>
       {children}
     </AppWorkoutsContext.Provider>

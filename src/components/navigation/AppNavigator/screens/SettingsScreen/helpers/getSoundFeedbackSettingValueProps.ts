@@ -19,14 +19,22 @@ const soundFeedbackToColorStatus: Partial<
 
 export const getSoundFeedbackSettingValueProps = (
   soundFeedback: WorkoutSoundFeedback,
+  isPremium = false,
 ): SettingValueProps => {
   const labelTranslateKey = getSplitTranslateKey(
     'screens.settingsScreen.feedbackSection.items.soundFeedback.items',
     soundFeedback,
   );
 
-  const iconName = soundFeedbackToIconName[soundFeedback];
-  const colorStatus = soundFeedbackToColorStatus[soundFeedback];
+  const isUnlockedCharacterOption =
+    soundFeedback === WorkoutSoundFeedback.character && isPremium;
+
+  const iconName = isUnlockedCharacterOption
+    ? undefined
+    : soundFeedbackToIconName[soundFeedback];
+  const colorStatus = isUnlockedCharacterOption
+    ? undefined
+    : soundFeedbackToColorStatus[soundFeedback];
 
   return {
     labelTranslateKey,

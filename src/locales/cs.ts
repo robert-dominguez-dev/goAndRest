@@ -37,6 +37,36 @@ export const cs = {
         'Je možné, že máš vypnuté personalizované reklamy. Zapni je v Nastavení → Ostatní a zkus to znovu.',
     },
     adLoading: 'Připravujeme reklamu…',
+    rpe: {
+      easy: 'Pohoda',
+      moderate: 'Zahřívačka',
+      solid: 'Fuška',
+      hard: 'Dřina',
+      max: 'Zabijačka',
+    },
+    paywall: {
+      title: 'Go&Rest Premium',
+      subtitleFree: 'Odemkni vše. Jednou a navždy.',
+      subtitlePremium: 'Máš odemčeno vše. Díky za podporu! ♥️',
+      benefitHistory: 'Historie tréninků',
+      benefitChart: 'Graf, jak se mění tvoje náročnost v čase',
+      benefitVoices: 'Všechny prémiové hlasy a postavy — navždy',
+      benefitNoAds: 'Žádné reklamy',
+      benefitBackup: 'Záloha dat do souboru (JSON)',
+      buyButton: 'Koupit navždy — {{priceString}}',
+      oneTimeNote: 'Jednorázová platba. Žádné předplatné.',
+      restore: 'Obnovit dřívější nákup',
+      activeState: 'PREMIUM AKTIVNÍ ✓',
+      charSheetUnlock: 'Odemknout vše navždy — {{priceString}}',
+      errorPopUp: {
+        title: 'Nákup se nezdařil',
+        description: 'Zkus to prosím znovu později.',
+      },
+      restoreNotFoundPopUp: {
+        title: 'Nenašli jsme nákup',
+        description: 'Na tomto účtu jsme nenašli žádný předchozí nákup.',
+      },
+    },
   },
   screens: {
     landingScreen: {
@@ -73,6 +103,7 @@ export const cs = {
     },
     settingsScreen: {
       title: 'Nastavení',
+      proBannerSubtitle: 'Vše navždy, bez reklam — {{priceString}}',
       appearanceSection: {
         label: 'Vzhled',
         items: {
@@ -149,8 +180,11 @@ export const cs = {
             },
             premiumBottomSheet: {
               title: 'Aktivuj prémiový hlas!',
+              titlePremium: 'Vyber postavu',
               description:
                 'Chceš nastavit prémiový hlas k časovači? Klepni na něj, zhlédni krátké video a máš ho odemčený na 7 dní úplně zdarma.\n\nIkonou ▷ vpravo si můžeš přehrát ukázku. 👉',
+              descriptionPremium:
+                'Máš Premium — všechny postavy jsou odemčené natrvalo.',
               daysRemaining: {
                 lessThanOne: '< 1 den',
                 one: '{{value}} den',
@@ -196,6 +230,37 @@ export const cs = {
           },
         },
       },
+      backupSection: {
+        label: 'Záloha a obnova',
+        items: {
+          backupData: {
+            label: 'Zálohovat data',
+            description:
+              'Ulož historii tréninků a nastavení do souboru (JSON).',
+            exportValue: 'Export',
+          },
+          restoreData: {
+            label: 'Obnovit ze zálohy',
+            description: 'Načti dřív uloženou zálohu ze souboru.',
+            importValue: 'Import',
+          },
+        },
+        restoreSheet: {
+          title: 'Obnovit ze zálohy',
+          warning:
+            'Obnovením přepíšeš aktuální data v aplikaci. Tuto akci nelze vzít zpět.',
+          rowDate: 'Datum zálohy',
+          rowWorkouts: 'Počet uložených tréninků',
+          rowLog: 'Počet záznamů v historii',
+          rowPeriod: 'Období záznamů v historii',
+          dateUnknown: 'neznámé',
+          confirm: 'Obnovit',
+          invalidPopUp: {
+            title: 'Neplatný soubor',
+            description: 'Soubor zálohy se nepodařilo načíst.',
+          },
+        },
+      },
       otherSection: {
         label: 'Ostatní',
         items: {
@@ -235,6 +300,40 @@ export const cs = {
         startButtonLabel: 'Start',
         deleteButtonLabel: 'Smazat',
       },
+    },
+    historyScreen: {
+      title: 'Historie',
+      premiumOverlayTitle: 'Historie je součást Premium',
+      premiumOverlayDescription:
+        'Odemkni si příběh svých tréninků — graf času a náročnosti, kalendář a zálohu dat.',
+      premiumOverlayUnlock: 'Odemknout — {{priceString}}',
+      weekTitle: 'Tento týden',
+      streakNone: 'bez streaku',
+      streakDays: {
+        one: '{{count}} den v řadě',
+        few: '{{count}} dny v řadě',
+        many: '{{count}} dní v řadě',
+      },
+      weekVolume: {
+        one: '{{min}} min · {{count}} trénink',
+        few: '{{min}} min · {{count}} tréninky',
+        many: '{{min}} min · {{count}} tréninků',
+      },
+      chartTitle: 'Čas a náročnost v čase',
+      legendTime: 'Čas',
+      legendDifficulty: 'Náročnost',
+      chartEmpty: 'Ohodnoť pár tréninků škálou a uvidíš tu svůj vývoj.',
+      recentTitle: 'Poslední tréninky',
+      rounds: {
+        one: '{{count}} kolo',
+        few: '{{count}} kola',
+        many: '{{count}} kol',
+      },
+      listEmpty: 'Zatím žádný trénink. Po dokončení se sem uloží.',
+      detailTotalTime: 'Celkový čas',
+      detailDifficulty: 'Náročnost',
+      detailRoundsTile: 'kol',
+      detailMinutesTile: 'min',
     },
     finishedWorkoutScreen: {
       title: {
@@ -321,6 +420,14 @@ export const cs = {
         'Skvělé, díky moc! ♥️ Tvoje podpora pro nás hodně znamená.',
       ratingRequestSorry:
         'To nás mrzí!️ Na aplikaci ale neustále makáme a vylepšujeme ji 🛠, tak snad ti příští trénink sedne líp.',
+      rpePopupTitle: 'Jak náročné to bylo?',
+      rpePopupDescription:
+        'Vyber podle toho, kolik tě trénink stál fyzických sil.',
+      difficultyLabel: 'Náročnost',
+      streakStart: 'Začni streak!',
+      weekTileLabel: 'tento týden · {{min}} min',
+      historyLinkPremium: 'Historie a vývoj náročnosti',
+      historyLinkFree: 'Historie, kalendář a vývoj náročnosti',
     },
     disclaimerScreen: {
       title: 'Vítej v Go&Rest',

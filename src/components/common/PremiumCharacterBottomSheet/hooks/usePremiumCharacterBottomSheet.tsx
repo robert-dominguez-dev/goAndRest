@@ -1,4 +1,5 @@
-import { Fragment, useState } from 'react';
+import { Fragment, useRef, useState } from 'react';
+import { Platform } from 'react-native';
 import { useAtom, useSetAtom } from 'jotai';
 import { useAppTranslation } from '../../../../locales/hooks/useAppTranslation.ts';
 import { useAppBottomSheet } from '../../AppBottomSheet/hooks/useAppBottomSheet.tsx';
@@ -19,12 +20,15 @@ import {
   WorkoutSoundFeedback,
 } from '../../../navigation/AppNavigator/screens/SettingsScreen/constants.tsx';
 import {
-  checkIsCharacterActive,
   EXTEND_POPUP_MAX_DAYS_REMAINING,
   getCharacterActivationDaysRemaining,
 } from '../../../../contexts/premiumCharacters/helpers/checkIsCharacterActive.ts';
+import { useIsPremiumCharacterUnlocked } from '../../../../contexts/premiumCharacters/hooks/useIsPremiumCharacterUnlocked.ts';
+import { useIsPremium } from '../../../../contexts/premium/hooks/useIsPremium.ts';
 
-export const usePremiumCharacterBottomSheet = () => {
+export const usePremiumCharacterBottomSheet = (
+  onUnlockAllPress?: () => void,
+) => {
   const t = useAppTranslation();
 
   const { bottomSheet, handleOpen, handleClose, setHidden, isOpen } =
@@ -44,6 +48,9 @@ export const usePremiumCharacterBottomSheet = () => {
   const [activations, setActivations] = useAtom(
     premiumCharacterActivationsAtom,
   );
+
+  const isPremium = useIsPremium();
+  const isPremiumCharacterUnlocked = useIsPremiumCharacterUnlocked();
 
   const [loadingValue, setLoadingValue] =
     useState<WorkoutCharacterVariant | null>(null);
@@ -81,8 +88,13 @@ export const usePremiumCharacterBottomSheet = () => {
     });
 
   const handleRowPress = (value: WorkoutCharacterVariant) => {
-    if (!checkIsCharacterActive(activations, value)) {
+    if (!isPremiumCharacterUnlocked(value)) {
       void watchAdAndActivate(value);
+      return undefined;
+    }
+
+    if (isPremium) {
+      selectCharacter(value);
       return undefined;
     }
 
@@ -115,17 +127,47 @@ export const usePremiumCharacterBottomSheet = () => {
         iconColorStatus={'premium'}
         textColorStatus={'premium'}
         label={t(
-          'screens.settingsScreen.feedbackSection.items.characterVariant.premiumBottomSheet.title',
+          isPremium
+            ? 'screens.settingsScreen.feedbackSection.items.characterVariant.premiumBottomSheet.titlePremium'
+            : 'screens.settingsScreen.feedbackSection.items.characterVariant.premiumBottomSheet.title',
         )}
         category={'header'}
       />
     </AppRow>
   );
 
+  // Two native Modals can't be presented on top of each other on iOS, so
+  // the paywall is only opened once this sheet's Modal has actually
+  // finished dismissing - signalled by `onDismiss`, which iOS fires after
+  // the close animation completes (Android has no such restriction and
+  // has no `onDismiss`, so it closes and opens the paywall right away).
+  const pendingUnlockAllPressRef = useRef(false);
+
+  const handleModalDismiss = () => {
+    if (!pendingUnlockAllPressRef.current) {
+      return;
+    }
+    pendingUnlockAllPressRef.current = false;
+    handleClose();
+    onUnlockAllPress?.();
+  };
+
+  const handleUnlockAllPress = () => {
+    if (Platform.OS === 'ios') {
+      pendingUnlockAllPressRef.current = true;
+      setHidden(true);
+      return undefined;
+    }
+
+    handleClose();
+    onUnlockAllPress?.();
+  };
+
   const renderContent: AppBottomSheetProps['renderContent'] = () => (
     <PremiumCharacterBottomSheetContent
       loadingValue={loadingValue}
       onRowPress={handleRowPress}
+      onUnlockAllPress={onUnlockAllPress ? handleUnlockAllPress : undefined}
     />
   );
 
@@ -136,6 +178,7 @@ export const usePremiumCharacterBottomSheet = () => {
       backgroundColorStatus: 'backgroundAlt',
       onAccessoryRightPress: handleClose,
       onOverlayPress: handleClose,
+      onDismiss: handleModalDismiss,
     });
 
   const bottomSheetWithPopUp = (

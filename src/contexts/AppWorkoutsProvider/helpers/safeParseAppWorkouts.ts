@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import type { AppStoredWorkout } from '../types.ts';
 
-const AppWorkoutSchema: z.ZodType<AppStoredWorkout> = z.object({
+export const AppWorkoutSchema: z.ZodType<AppStoredWorkout> = z.object({
   id: z.string(),
   meta: z.object({
     name: z.string(),

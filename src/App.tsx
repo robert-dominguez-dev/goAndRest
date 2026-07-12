@@ -12,9 +12,11 @@ import { AppNavigators } from './components/navigation/AppNavigators.tsx';
 import { AppOrientationLocker } from './components/common/AppOrientationLocker.tsx';
 import { useNavigationAnalytics } from './components/navigation/hooks/useNavigationAnalytics.ts';
 import { PremiumCharacterActivationGuard } from './components/common/PremiumCharacterActivationGuard.tsx';
+import { usePremiumSync } from './contexts/premium/hooks/usePremiumSync.ts';
 
 export const App = () => {
   const { navigationRef, onReady, onStateChange } = useNavigationAnalytics();
+  usePremiumSync();
 
   return (
     <I18nextProvider i18n={appI18NextConfig}>

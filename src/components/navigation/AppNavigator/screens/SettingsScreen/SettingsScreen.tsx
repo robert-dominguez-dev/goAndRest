@@ -15,6 +15,10 @@ import { SoundFeedbackSettingItem } from './components/items/SoundFeedbackSettin
 import { VibrationsSettingItem } from './components/items/VibrationsSettingItem.tsx';
 import { CountdownSettingItem } from './components/items/CountdownSettingItem.tsx';
 import { PersonalizedAdsSettingItem } from './components/items/PersonalizedAdsSettingItem.tsx';
+import { ProBanner } from './components/ProBanner.tsx';
+import { useIsPremium } from '../../../../../contexts/premium/hooks/useIsPremium.ts';
+import { usePaywallBottomSheet } from '../../../../common/PaywallBottomSheet/hooks/usePaywallBottomSheet.tsx';
+import { useBackupSection } from './hooks/useBackupSection.tsx';
 
 type SettingsScreenProps = ScreenProps<
   AppNavigatorScreenParams,
@@ -32,12 +36,6 @@ const workoutSettingsItems: JSX.Element[] = [
   <CooldownSettingItem key={'cooldown'} />,
 ];
 
-const feedbackSettingsItems: JSX.Element[] = [
-  <SoundFeedbackSettingItem key={'sounds'} />,
-  <CountdownSettingItem key={'countdown'} />,
-  <VibrationsSettingItem key={'vibrations'} />,
-];
-
 const otherSettingsItems: JSX.Element[] = [
   <PersonalizedAdsSettingItem key={'personalized_ads'} />,
 ];
@@ -45,36 +43,65 @@ const otherSettingsItems: JSX.Element[] = [
 export const SettingsScreen = ({ navigation }: SettingsScreenProps) => {
   const t = useAppTranslation();
 
+  const isPremium = useIsPremium();
+
+  const { paywallBottomSheet, openPaywall } = usePaywallBottomSheet();
+
+  const { items: backupSettingsItems, sheets: backupSheets } = useBackupSection(
+    { onPremiumRequired: openPaywall },
+  );
+
+  const feedbackSettingsItems: JSX.Element[] = [
+    <SoundFeedbackSettingItem
+      key={'sounds'}
+      onUnlockAllPress={openPaywall}
+    />,
+    <CountdownSettingItem key={'countdown'} />,
+    <VibrationsSettingItem key={'vibrations'} />,
+  ];
+
   return (
-    <AppScreenLayout
-      scrollable
-      headerTitle={t('screens.settingsScreen.title')}
-      headerAccessoryLeftIconName={'X'}
-      onHeaderAccessoryLeftPress={navigation.goBack}>
-      <AppView
-        gap={'xl'}
-        paddingBottom={'3xl'}>
-        <SettingsSection
-          iconName={'Palette'}
-          label={t('screens.settingsScreen.appearanceSection.label')}
-          items={appearanceSettingsItems}
-        />
-        <SettingsSection
-          iconName={'Volume2'}
-          label={t('screens.settingsScreen.feedbackSection.label')}
-          items={feedbackSettingsItems}
-        />
-        <SettingsSection
-          iconName={'Timer'}
-          label={t('screens.settingsScreen.workoutSection.label')}
-          items={workoutSettingsItems}
-        />
-        <SettingsSection
-          iconName={'Settings'}
-          label={t('screens.settingsScreen.otherSection.label')}
-          items={otherSettingsItems}
-        />
-      </AppView>
-    </AppScreenLayout>
+    <>
+      <AppScreenLayout
+        scrollable
+        headerTitle={t('screens.settingsScreen.title')}
+        headerAccessoryLeftIconName={'X'}
+        onHeaderAccessoryLeftPress={navigation.goBack}>
+        <AppView
+          gap={'xl'}
+          paddingBottom={'3xl'}>
+          {!isPremium && <ProBanner onPress={openPaywall} />}
+          <SettingsSection
+            iconName={'Palette'}
+            label={t('screens.settingsScreen.appearanceSection.label')}
+            items={appearanceSettingsItems}
+          />
+          <SettingsSection
+            iconName={'Volume2'}
+            label={t('screens.settingsScreen.feedbackSection.label')}
+            items={feedbackSettingsItems}
+          />
+          <SettingsSection
+            iconName={'Timer'}
+            label={t('screens.settingsScreen.workoutSection.label')}
+            items={workoutSettingsItems}
+          />
+          <SettingsSection
+            iconName={'Database'}
+            label={t('screens.settingsScreen.backupSection.label')}
+            items={backupSettingsItems}
+          />
+          {!isPremium && (
+            <SettingsSection
+              iconName={'Settings'}
+              label={t('screens.settingsScreen.otherSection.label')}
+              items={otherSettingsItems}
+            />
+          )}
+        </AppView>
+      </AppScreenLayout>
+      {paywallBottomSheet}
+      {backupSheets}
+    </>
   );
 };

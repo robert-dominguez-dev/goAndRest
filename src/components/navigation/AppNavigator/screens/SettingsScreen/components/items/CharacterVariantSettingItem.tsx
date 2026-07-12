@@ -8,14 +8,21 @@ import { AppSelectionBottomSheetItemText } from '../../../../../../common/AppSel
 import { SettingsItem } from '../SettingsItem.tsx';
 import { usePremiumCharacterBottomSheet } from '../../../../../../common/PremiumCharacterBottomSheet/hooks/usePremiumCharacterBottomSheet.tsx';
 
-const CharacterVariantSettingItemComponent = () => {
+type CharacterVariantSettingItemProps = {
+  onUnlockAllPress: () => void;
+};
+
+const CharacterVariantSettingItemComponent = ({
+  onUnlockAllPress,
+}: CharacterVariantSettingItemProps) => {
   const t = useAppTranslation();
 
   const { language } = useAppLanguage();
 
   const selectedValue = useAtomValue(characterVariantSettingAtom);
 
-  const { bottomSheet, openBottomSheet } = usePremiumCharacterBottomSheet();
+  const { bottomSheet, openBottomSheet } =
+    usePremiumCharacterBottomSheet(onUnlockAllPress);
 
   const { labelTranslateKey, imageProps } =
     getCharacterVariantSettingValueProps(selectedValue, language);

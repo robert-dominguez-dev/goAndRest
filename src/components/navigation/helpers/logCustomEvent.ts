@@ -13,7 +13,14 @@ type CustomEventName =
   | 'rewarded_ad_not_available'
   | 'rewarded_ad_earned_reward'
   | 'premium_character_activated'
-  | 'premium_character_extended';
+  | 'premium_character_extended'
+  | 'purchases_configure_failure'
+  | 'customer_info_fetch_failure'
+  | 'offerings_fetch_failure'
+  | 'purchase_failure'
+  | 'restore_purchases_failure'
+  | 'backup_export_failure'
+  | 'backup_import_failure';
 
 type CustomEventParams = {
   soundFeedbackType?: string;

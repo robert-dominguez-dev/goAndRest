@@ -52,6 +52,36 @@ export type AppTranslations = {
       description: string;
     };
     adLoading: string;
+    rpe: {
+      easy: string;
+      moderate: string;
+      solid: string;
+      hard: string;
+      max: string;
+    };
+    paywall: {
+      title: string;
+      subtitleFree: string;
+      subtitlePremium: string;
+      benefitHistory: string;
+      benefitChart: string;
+      benefitVoices: string;
+      benefitNoAds: string;
+      benefitBackup: string;
+      buyButton: string;
+      oneTimeNote: string;
+      restore: string;
+      activeState: string;
+      charSheetUnlock: string;
+      errorPopUp: {
+        title: string;
+        description: string;
+      };
+      restoreNotFoundPopUp: {
+        title: string;
+        description: string;
+      };
+    };
   };
   screens: {
     landingScreen: {
@@ -69,6 +99,7 @@ export type AppTranslations = {
     };
     settingsScreen: {
       title: string;
+      proBannerSubtitle: string;
       appearanceSection: {
         label: string;
         items: {
@@ -96,7 +127,9 @@ export type AppTranslations = {
             SettingsItemSubItems<WorkoutCharacterVariant> & {
               premiumBottomSheet: {
                 title: string;
+                titlePremium: string;
                 description: string;
+                descriptionPremium: string;
                 daysRemaining: {
                   lessThanOne: string;
                   one: string;
@@ -116,6 +149,27 @@ export type AppTranslations = {
           countdown: SettingsItemTexts &
             SettingsItemSubItems<WorkoutCountdownVariant>;
           vibrations: SettingsItemTexts;
+        };
+      };
+      backupSection: {
+        label: string;
+        items: {
+          backupData: SettingsItemTexts & { exportValue: string };
+          restoreData: SettingsItemTexts & { importValue: string };
+        };
+        restoreSheet: {
+          title: string;
+          warning: string;
+          rowDate: string;
+          rowWorkouts: string;
+          rowLog: string;
+          rowPeriod: string;
+          dateUnknown: string;
+          confirm: string;
+          invalidPopUp: {
+            title: string;
+            description: string;
+          };
         };
       };
       otherSection: {
@@ -144,6 +198,39 @@ export type AppTranslations = {
         deleteButtonLabel: string;
       };
     };
+    historyScreen: {
+      title: string;
+      premiumOverlayTitle: string;
+      premiumOverlayDescription: string;
+      premiumOverlayUnlock: string;
+      weekTitle: string;
+      streakNone: string;
+      streakDays: {
+        one: string;
+        few: string;
+        many: string;
+      };
+      weekVolume: {
+        one: string;
+        few: string;
+        many: string;
+      };
+      chartTitle: string;
+      legendTime: string;
+      legendDifficulty: string;
+      chartEmpty: string;
+      recentTitle: string;
+      rounds: {
+        one: string;
+        few: string;
+        many: string;
+      };
+      listEmpty: string;
+      detailTotalTime: string;
+      detailDifficulty: string;
+      detailRoundsTile: string;
+      detailMinutesTile: string;
+    };
     finishedWorkoutScreen: {
       title: TextsByCoachVariant;
       description: TextsByCoachVariant;
@@ -154,6 +241,13 @@ export type AppTranslations = {
       ratingRequest: string;
       ratingRequestThankYou: string;
       ratingRequestSorry: string;
+      rpePopupTitle: string;
+      rpePopupDescription: string;
+      difficultyLabel: string;
+      streakStart: string;
+      weekTileLabel: string;
+      historyLinkPremium: string;
+      historyLinkFree: string;
     };
     disclaimerScreen: {
       title: string;
@@ -172,7 +266,7 @@ export type AppTranslations = {
 
 export type TranslateKey = NestedKeys<AppTranslations>;
 
-type DefaultTranslationParams = { value: string };
+type DefaultTranslationParams = { value?: string; priceString?: string };
 
 export type TranslationOptions = Pick<TOptionsBase, 'count' | 'returnObjects'> &
   Record<string, string | number> &
