@@ -22,8 +22,6 @@ import {
 import { useFinishedWorkoutFeedbackOnMount } from '../../../../../hooks/useFinishedWorkoutFeedbackOnMount.ts';
 import { useFinishWorkout } from '../../../hooks/useFinishWorkout.ts';
 import { AppOrientationLocker } from '../../../../common/AppOrientationLocker.tsx';
-import { FullScreenConfettiAnimation } from '../../../../common/FullScreenConfettiAnimation.tsx';
-import { RatingRequestHint } from './components/RatingRequestHint.tsx';
 import { useRef } from 'react';
 import { AppNavigatorScreen } from '../../types.ts';
 import { useRootStackNavigation } from '../../../hooks/useRootStackNavigation.ts';
@@ -31,6 +29,8 @@ import { useIsPremium } from '../../../../../contexts/premium/hooks/useIsPremium
 import { useFinishedWorkoutSummary } from './hooks/useFinishedWorkoutSummary.ts';
 import { FinishedWorkoutSummary } from './components/FinishedWorkoutSummary.tsx';
 import { RpeRatingPopUp } from './components/RpeRatingPopUp.tsx';
+import { AppDivider } from '../../../../common/AppDivider.tsx';
+import { RatingRequestHint } from './components/RatingRequestHint.tsx';
 
 const MIN_NUMBER_OF_WORKOUTS_TO_REQUEST_REVIEW = 3;
 
@@ -77,19 +77,24 @@ export const FinishedWorkoutScreen = () => {
     navigation.navigate(AppNavigatorScreen.HistoryScreen);
   };
 
+  const footerElement = (
+    <AppView gap={'m'}>
+      {shouldRequestReview && <RatingRequestHint />}
+      <AppButton
+        label={t(buttonLabelKey)}
+        onPress={handleFinish}
+      />
+    </AppView>
+  );
+
   return (
     <>
       <AppOrientationLocker orientation={'PORTRAIT'} />
       <AppScreenLayout
         scrollable
         headerTitle={t(titleKey)}
-        footer={
-          <AppButton
-            label={t(buttonLabelKey)}
-            onPress={handleFinish}
-          />
-        }>
-        <AppView gap={'l'}>
+        footer={footerElement}>
+        <AppView gap={'m'}>
           <AppView gap={'m'}>
             <AppText
               colorStatus={'textMuted'}
@@ -104,6 +109,7 @@ export const FinishedWorkoutScreen = () => {
               msLeft={sec * ONE_SECOND_MS}
             />
           </AppView>
+          <AppDivider />
           <FinishedWorkoutSummary
             rpe={rpe}
             streak={streak}
@@ -112,13 +118,7 @@ export const FinishedWorkoutScreen = () => {
             onHistoryPress={handleHistoryPress}
           />
         </AppView>
-        <AppView
-          grow
-          justifyContent={'flex-end'}>
-          {shouldRequestReview && <RatingRequestHint />}
-        </AppView>
       </AppScreenLayout>
-      <FullScreenConfettiAnimation isPresent />
       {rpe === null && <RpeRatingPopUp onSelect={setRpe} />}
     </>
   );

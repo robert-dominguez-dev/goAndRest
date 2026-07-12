@@ -16,6 +16,7 @@ export type UseAppTextStyleParams = Pick<TextStyle, 'textAlign'> & {
   shrink?: boolean;
   textShadowColorStatus?: AppColorUnion;
   fontSizeOverride?: AppSizeUnion;
+  lineHeightMultiplier?: number;
   colorOverride?: string;
   marginCorrection?: number;
 };
@@ -25,6 +26,7 @@ export const useAppTextStyle = ({
   textShadowColorStatus,
   fontSizeOverride,
   colorOverride,
+  lineHeightMultiplier = 1,
   marginCorrection = 0,
   category = 'content',
   colorStatus = 'text',
@@ -48,7 +50,7 @@ export const useAppTextStyle = ({
   > = fontSizeOverrideEvaluated
     ? {
         fontSize: fontSizeOverrideEvaluated,
-        lineHeight: fontSizeOverrideEvaluated,
+        lineHeight: fontSizeOverrideEvaluated * lineHeightMultiplier,
       }
     : {};
 

@@ -4,12 +4,12 @@ import { AppView } from '../../../../../common/AppView/AppView.tsx';
 import { AppRow } from '../../../../../common/AppRow.tsx';
 import { AppText } from '../../../../../common/AppText/AppText.tsx';
 import { AppIcon } from '../../../../../common/AppIcon.tsx';
-import { AppDivider } from '../../../../../common/AppDivider.tsx';
-import {
-  getOnPressWithHapticFeedbackConditionally
-} from '../../../../../controls/helpers/getOnPressWithHapticFeedbackConditionally.ts';
+import { getOnPressWithHapticFeedbackConditionally } from '../../../../../controls/helpers/getOnPressWithHapticFeedbackConditionally.ts';
 import { useAppTranslation } from '../../../../../../locales/hooks/useAppTranslation.ts';
-import { DASH, FILL_CONTAINER_DIMENSION, } from '../../../../../../constants/common.ts';
+import {
+  DASH,
+  FILL_CONTAINER_DIMENSION,
+} from '../../../../../../constants/common.ts';
 import { RPE_LEVELS } from '../../../../../../constants/rpe.ts';
 import { getFinishedWorkoutStreakLabel } from '../helpers/getFinishedWorkoutStreakLabel.ts';
 
@@ -36,10 +36,9 @@ const FinishedWorkoutSummaryComponent = ({
 
   return (
     <AppView gap={'m'}>
-      <AppDivider />
       <AppView
         alignItems={'center'}
-        gap={'s'}>
+        gap={'sm'}>
         <AppText
           grow={false}
           category={'subHeader'}
@@ -47,18 +46,23 @@ const FinishedWorkoutSummaryComponent = ({
           textAlign={'center'}>
           {t('screens.finishedWorkoutScreen.difficultyLabel')}
         </AppText>
-        <AppText
-          fontSizeOverride={'xl'}
-          textAlign={'center'}>
-          {rpeLevel ? rpeLevel.face : DASH}
-        </AppText>
-        {rpeLevel && (
+        <AppView>
           <AppText
-            category={'contentBold'}
+            grow={false}
+            fontSizeOverride={'xl'}
+            lineHeightMultiplier={1.2}
             textAlign={'center'}>
-            {t(rpeLevel.labelKey)}
+            {rpeLevel ? rpeLevel.face : DASH}
           </AppText>
-        )}
+          {rpeLevel && (
+            <AppText
+              grow={false}
+              category={'contentBold'}
+              textAlign={'center'}>
+              {t(rpeLevel.labelKey)}
+            </AppText>
+          )}
+        </AppView>
       </AppView>
       <AppRow
         gap={'s'}

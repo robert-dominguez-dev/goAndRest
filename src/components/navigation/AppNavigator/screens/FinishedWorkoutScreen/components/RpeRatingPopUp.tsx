@@ -3,13 +3,14 @@ import { AppBackdrop } from '../../../../../common/AppBackdrop.tsx';
 import { AppView } from '../../../../../common/AppView/AppView.tsx';
 import { AppRow } from '../../../../../common/AppRow.tsx';
 import { AppText } from '../../../../../common/AppText/AppText.tsx';
-import {
-  getOnPressWithHapticFeedbackConditionally
-} from '../../../../../controls/helpers/getOnPressWithHapticFeedbackConditionally.ts';
+import { getOnPressWithHapticFeedbackConditionally } from '../../../../../controls/helpers/getOnPressWithHapticFeedbackConditionally.ts';
 import { getPressableOpacity } from '../../../../../controls/helpers/getPressableOpacity.ts';
 import { useAppTranslation } from '../../../../../../locales/hooks/useAppTranslation.ts';
 import { useMaxTabletActiveElementWidth } from '../../../../../../hooks/useMaxTabletActiveElementWidth.ts';
-import { FILL_CONTAINER_DIMENSION, UNLIMITED_NUMBER_OF_LINES, } from '../../../../../../constants/common.ts';
+import {
+  FILL_CONTAINER_DIMENSION,
+  UNLIMITED_NUMBER_OF_LINES,
+} from '../../../../../../constants/common.ts';
 import { RPE_LEVELS } from '../../../../../../constants/rpe.ts';
 
 type RpeRatingPopUpProps = {
