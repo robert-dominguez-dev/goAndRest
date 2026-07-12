@@ -318,7 +318,7 @@ export const en = {
       title: 'History',
       premiumOverlayTitle: 'History is a Premium feature',
       premiumOverlayDescription:
-        'Unlock the story of your workouts — a time and difficulty chart, calendar and data backup.',
+        'Unlock the story of your workouts — a time and difficulty chart and data backup.',
       premiumOverlayUnlock: 'Unlock — {{priceString}}',
       weekTitle: 'This week',
       streakNone: 'no streak',
@@ -414,7 +414,7 @@ export const en = {
       streakStart: 'Start a streak!',
       weekTileLabel: 'this week · {{min}} min',
       historyLinkPremium: 'History and difficulty trends',
-      historyLinkFree: 'History, calendar and difficulty trends',
+      historyLinkFree: 'History and difficulty trends',
     },
     disclaimerScreen: {
       title: 'Welcome to Go&Rest',

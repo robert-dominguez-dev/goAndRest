@@ -315,7 +315,7 @@ export const sk = {
       title: 'História',
       premiumOverlayTitle: 'História je súčasť Premium',
       premiumOverlayDescription:
-        'Odomkni si príbeh svojich tréningov — graf času a náročnosti, kalendár a zálohu dát.',
+        'Odomkni si príbeh svojich tréningov — graf času a náročnosti a zálohu dát.',
       premiumOverlayUnlock: 'Odomknúť — {{priceString}}',
       weekTitle: 'Tento týždeň',
       streakNone: 'bez streaku',
@@ -412,7 +412,7 @@ export const sk = {
       streakStart: 'Začni streak!',
       weekTileLabel: 'tento týždeň · {{min}} min',
       historyLinkPremium: 'História a vývoj náročnosti',
-      historyLinkFree: 'História, kalendár a vývoj náročnosti',
+      historyLinkFree: 'História a vývoj náročnosti',
     },
     disclaimerScreen: {
       title: 'Vitaj v Go&Rest',
