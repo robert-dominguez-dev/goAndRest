@@ -13,10 +13,18 @@ import { AppOrientationLocker } from './components/common/AppOrientationLocker.t
 import { useNavigationAnalytics } from './components/navigation/hooks/useNavigationAnalytics.ts';
 import { PremiumCharacterActivationGuard } from './components/common/PremiumCharacterActivationGuard.tsx';
 import { usePremiumSync } from './contexts/premium/hooks/usePremiumSync.ts';
+import { HistoryPaywallOverlay } from './components/common/HistoryPaywallOverlay.tsx';
+import { AppNavigatorScreen } from './components/navigation/AppNavigator/types.ts';
 
 export const App = () => {
   const { navigationRef, onReady, onStateChange } = useNavigationAnalytics();
   usePremiumSync();
+
+  const goToPaywall = () => {
+    if (navigationRef.isReady()) {
+      navigationRef.navigate(AppNavigatorScreen.PaywallScreen);
+    }
+  };
 
   return (
     <I18nextProvider i18n={appI18NextConfig}>
@@ -33,6 +41,7 @@ export const App = () => {
                   <AppStatusBar />
                   <PremiumCharacterActivationGuard />
                   <AppNavigators />
+                  <HistoryPaywallOverlay onUnlockPress={goToPaywall} />
                 </AppWorkoutsProvider>
               </AppThemeProvider>
             </Suspense>

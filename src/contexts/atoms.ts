@@ -142,3 +142,8 @@ export const isPremiumAtom = createAsyncAtom<boolean>(
 );
 
 export const premiumPriceAtom = atom<string | null>(null);
+
+// Whether the free-tier history paywall overlay should be shown. Set by the
+// History screen while it is focused, read by the top-level overlay rendered
+// above the whole navigator so it covers the screen edge to edge.
+export const isHistoryPaywallVisibleAtom = atom<boolean>(false);

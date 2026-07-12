@@ -2,9 +2,10 @@ import { useCallback, useRef } from 'react';
 import { useNavigationContainerRef } from '@react-navigation/native';
 import { getAnalytics } from '@react-native-firebase/analytics';
 import { logScreenViewEvent } from '../helpers/logScreenViewEvent.ts';
+import { AppNavigatorScreenParams } from '../AppNavigator/types.ts';
 
 export const useNavigationAnalytics = () => {
-  const navigationRef = useNavigationContainerRef();
+  const navigationRef = useNavigationContainerRef<AppNavigatorScreenParams>();
   const routeNameRef = useRef<string | undefined>(undefined);
 
   const analytics = getAnalytics();
