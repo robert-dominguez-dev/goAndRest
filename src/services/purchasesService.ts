@@ -1,10 +1,12 @@
 import Purchases, {
   CustomerInfo,
   CustomerInfoUpdateListener,
+  LOG_LEVEL,
   PRODUCT_CATEGORY,
   PurchasesPackage,
   PurchasesStoreProduct,
 } from 'react-native-purchases';
+import { IS_DEV_MODE } from '../constants/common.ts';
 import {
   REVENUECAT_API_KEY,
   REVENUECAT_LIFETIME_PRODUCT_ID,
@@ -22,6 +24,9 @@ export const configurePurchases = async (): Promise<void> => {
   try {
     if (await Purchases.isConfigured()) {
       return;
+    }
+    if (IS_DEV_MODE) {
+      await Purchases.setLogLevel(LOG_LEVEL.DEBUG);
     }
     Purchases.configure({ apiKey: REVENUECAT_API_KEY });
   } catch (error) {
