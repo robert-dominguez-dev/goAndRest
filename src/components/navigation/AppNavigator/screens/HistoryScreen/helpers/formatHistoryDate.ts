@@ -23,3 +23,11 @@ export const formatHistoryDetailDate = (
   format(new Date(date), 'd. MMMM yyyy', {
     locale: dateFnsLocaleByAppLanguage[language],
   });
+
+export const formatHistoryAxisDate = (
+  date: number,
+  language: SupportedLanguageCode,
+): string =>
+  format(new Date(date), 'd.M.', {
+    locale: dateFnsLocaleByAppLanguage[language],
+  });

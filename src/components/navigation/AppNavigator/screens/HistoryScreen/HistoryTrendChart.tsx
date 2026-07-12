@@ -7,7 +7,7 @@ type HistoryTrendChartProps = {
 };
 
 const CHART_WIDTH = 320;
-const CHART_HEIGHT = 128;
+export const CHART_HEIGHT = 128;
 const CHART_PADDING = 14;
 const GRID_LINE_RATIOS = [0.25, 0.5, 0.75];
 const MAX_RPE = 4;

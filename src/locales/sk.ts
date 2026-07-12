@@ -319,7 +319,7 @@ export const sk = {
         few: '{{min}} min · {{count}} tréningy',
         many: '{{min}} min · {{count}} tréningov',
       },
-      chartTitle: 'Čas a náročnosť v čase',
+      chartTitle: 'Čas a náročnosť',
       legendTime: 'Čas',
       legendDifficulty: 'Náročnosť',
       chartEmpty: 'Ohodnoť pár tréningov škálou a uvidíš tu svoj vývoj.',

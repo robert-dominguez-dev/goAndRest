@@ -322,7 +322,7 @@ export const en = {
         few: '{{min}} min · {{count}} workouts',
         many: '{{min}} min · {{count}} workouts',
       },
-      chartTitle: 'Time and difficulty over time',
+      chartTitle: 'Time and difficulty',
       legendTime: 'Time',
       legendDifficulty: 'Difficulty',
       chartEmpty: 'Rate a few workouts and you will see your progress here.',

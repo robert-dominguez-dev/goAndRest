@@ -29,17 +29,19 @@ const HistoryStatsRowComponent = ({
         grow
         flexBasis={0}
         alignItems={'center'}
+        justifyContent={'center'}
         backgroundColorStatus={'backgroundAlt'}
         borderRadius={'m'}
-        paddingVertical={'s'}
-        paddingHorizontal={'s'}>
+        padding={'m'}>
         <AppText
+          grow={false}
           category={'header'}
           textAlign={'center'}>
           {streak > 0 ? `🔥 ${streak}` : DASH}
         </AppText>
         <AppText
-          category={'contentBold'}
+          grow={false}
+          category={'content'}
           colorStatus={'textMuted'}
           textAlign={'center'}>
           {getStreakLabel(streak, t)}
@@ -49,18 +51,21 @@ const HistoryStatsRowComponent = ({
         grow
         flexBasis={0}
         alignItems={'center'}
+        justifyContent={'center'}
         backgroundColorStatus={'backgroundAlt'}
         borderRadius={'m'}
-        paddingVertical={'s'}
-        paddingHorizontal={'s'}>
+        padding={'m'}
+        gap={'s'}>
         <AppText
-          category={'contentBold'}
+          grow={false}
+          category={'content'}
           colorStatus={'textMuted'}
           textAlign={'center'}>
           {t('screens.historyScreen.weekTitle')}
         </AppText>
         <AppText
-          category={'subHeader'}
+          grow={false}
+          category={'title'}
           textAlign={'center'}>
           {getWeekVolumeLabel(weekVolumeStats.min, weekVolumeStats.count, t)}
         </AppText>
