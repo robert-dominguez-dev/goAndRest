@@ -1,11 +1,13 @@
 import { memo } from 'react';
-import { StyleSheet } from 'react-native';
+import { Pressable, StyleSheet } from 'react-native';
 import { BlurView } from '@react-native-community/blur';
 import { useAtomValue } from 'jotai';
 import { AppView } from './AppView/AppView.tsx';
 import { AppText } from './AppText/AppText.tsx';
+import { AppRow } from './AppRow.tsx';
 import { AppIcon } from './AppIcon.tsx';
 import { PremiumCtaButton } from '../controls/PremiumCtaButton/PremiumCtaButton.tsx';
+import { getOnPressWithHapticFeedbackConditionally } from '../controls/helpers/getOnPressWithHapticFeedbackConditionally.ts';
 import { useAppTranslation } from '../../locales/hooks/useAppTranslation.ts';
 import { useAppTheme } from '../../contexts/AppThemeProvider.tsx';
 import { useAppThemedColors } from '../../hooks/useAppThemedColors.ts';
@@ -26,10 +28,12 @@ const BLUR_AMOUNT = 6;
 
 type HistoryPaywallOverlayProps = {
   onUnlockPress: () => void;
+  onClose: () => void;
 };
 
 const HistoryPaywallOverlayComponent = ({
   onUnlockPress,
+  onClose,
 }: HistoryPaywallOverlayProps) => {
   const isVisible = useAtomValue(isHistoryPaywallVisibleAtom);
 
@@ -69,45 +73,61 @@ const HistoryPaywallOverlayComponent = ({
         bottom={0}
         left={0}
         right={0}
-        alignItems={'center'}
-        justifyContent={'center'}
-        gap={'m'}
-        paddingHorizontal={'l'}
         paddingTop={safeAreaPaddingTop}
         paddingBottom={safeAreaPaddingBottom}
         paddingLeft={safeAreaPaddingLeft}
         paddingRight={safeAreaPaddingRight}
         backgroundColorStatus={'semiTransparentBackground'}>
+        <AppRow>
+          <AppView
+            grow={false}
+            padding={'s'}>
+            <Pressable
+              onPress={getOnPressWithHapticFeedbackConditionally(onClose)}>
+              <AppIcon
+                name={'ArrowLeft'}
+                colorStatus={'text'}
+              />
+            </Pressable>
+          </AppView>
+        </AppRow>
         <AppView
-          gap={'xs'}
+          grow
           alignItems={'center'}
-          justifyContent={'center'}>
-          <AppIcon
-            name={'Gem'}
-            size={'xl'}
-            colorStatus={'premium'}
-          />
+          justifyContent={'center'}
+          gap={'m'}
+          paddingHorizontal={'l'}>
+          <AppView
+            gap={'xs'}
+            alignItems={'center'}
+            justifyContent={'center'}>
+            <AppIcon
+              name={'Gem'}
+              size={'xl'}
+              colorStatus={'premium'}
+            />
+            <AppText
+              grow={false}
+              category={'header'}
+              textAlign={'center'}
+              numberOfLines={UNLIMITED_NUMBER_OF_LINES}>
+              {t('screens.historyScreen.premiumOverlayTitle')}
+            </AppText>
+          </AppView>
           <AppText
             grow={false}
-            category={'header'}
             textAlign={'center'}
             numberOfLines={UNLIMITED_NUMBER_OF_LINES}>
-            {t('screens.historyScreen.premiumOverlayTitle')}
+            {t('screens.historyScreen.premiumOverlayDescription')}
           </AppText>
-        </AppView>
-        <AppText
-          grow={false}
-          textAlign={'center'}
-          numberOfLines={UNLIMITED_NUMBER_OF_LINES}>
-          {t('screens.historyScreen.premiumOverlayDescription')}
-        </AppText>
-        <AppView width={FILL_CONTAINER_DIMENSION}>
-          <PremiumCtaButton
-            label={t('screens.historyScreen.premiumOverlayUnlock', {
-              priceString: price ?? PREMIUM_PRICE_PLACEHOLDER,
-            })}
-            onPress={onUnlockPress}
-          />
+          <AppView width={FILL_CONTAINER_DIMENSION}>
+            <PremiumCtaButton
+              label={t('screens.historyScreen.premiumOverlayUnlock', {
+                priceString: price ?? PREMIUM_PRICE_PLACEHOLDER,
+              })}
+              onPress={onUnlockPress}
+            />
+          </AppView>
         </AppView>
       </AppView>
     </AppView>

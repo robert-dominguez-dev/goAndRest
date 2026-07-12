@@ -26,6 +26,12 @@ export const App = () => {
     }
   };
 
+  const goBackFromHistory = () => {
+    if (navigationRef.isReady() && navigationRef.canGoBack()) {
+      navigationRef.goBack();
+    }
+  };
+
   return (
     <I18nextProvider i18n={appI18NextConfig}>
       <AppOrientationLocker orientation={'PORTRAIT'} />
@@ -41,7 +47,10 @@ export const App = () => {
                   <AppStatusBar />
                   <PremiumCharacterActivationGuard />
                   <AppNavigators />
-                  <HistoryPaywallOverlay onUnlockPress={goToPaywall} />
+                  <HistoryPaywallOverlay
+                    onUnlockPress={goToPaywall}
+                    onClose={goBackFromHistory}
+                  />
                 </AppWorkoutsProvider>
               </AppThemeProvider>
             </Suspense>
