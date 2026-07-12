@@ -7,7 +7,6 @@ import { ScreenProps } from '../../../types.ts';
 import { AppNavigatorScreen, AppNavigatorScreenParams } from '../../types.ts';
 import { workoutHistoryAtom } from '../../../../../contexts/atoms.ts';
 import { useIsPremium } from '../../../../../contexts/premium/hooks/useIsPremium.ts';
-import { INACTIVE_OPACITY } from '../../../../../constants/ui.ts';
 import { useHistoryDetailBottomSheet } from './hooks/useHistoryDetailBottomSheet.tsx';
 import { getDemoWorkoutHistoryLog } from './helpers/getDemoWorkoutHistoryLog.ts';
 import { HistoryContent } from './components/HistoryContent.tsx';
@@ -54,7 +53,6 @@ export const HistoryScreen = ({ navigation }: HistoryScreenProps) => {
           <AppView grow>
             <AppView
               grow
-              opacity={INACTIVE_OPACITY}
               pointerEvents={'none'}>
               {content}
             </AppView>
