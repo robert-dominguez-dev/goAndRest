@@ -60,31 +60,27 @@ export const HistoryTrendChart = ({ data }: HistoryTrendChartProps) => {
             fill={appColors.primary}
           />
         ))}
-        {/* Halo behind the minute labels so they stay readable over the line. */}
         {data.map((entry, index) => (
-          <SvgText
-            key={`time-halo-${entry.date}-${index}`}
-            x={getX(index, count)}
-            y={getTimeY(entry) - 9}
-            fontSize={10}
-            fill={appColors.backgroundAlt}
-            stroke={appColors.backgroundAlt}
-            strokeWidth={2.6}
-            strokeLinejoin={'round'}
-            textAnchor={'middle'}>
-            {`${Math.round((entry.sec || 0) / 60)} min`}
-          </SvgText>
-        ))}
-        {data.map((entry, index) => (
-          <SvgText
-            key={`time-label-${entry.date}-${index}`}
-            x={getX(index, count)}
-            y={getTimeY(entry) - 9}
-            fontSize={10}
-            fill={appColors.primary}
-            textAnchor={'middle'}>
-            {`${Math.round((entry.sec || 0) / 60)} min`}
-          </SvgText>
+          <>
+            <SvgText
+              key={`time-label-${entry.date}-${index}`}
+              x={getX(index, count)}
+              y={getTimeY(entry) - 20}
+              fontSize={10}
+              fill={appColors.primary}
+              textAnchor={'middle'}>
+              {Math.round((entry.sec || 0) / 60)}
+            </SvgText>
+            <SvgText
+              key={`time-label-unit-${entry.date}-${index}`}
+              x={getX(index, count)}
+              y={getTimeY(entry) - 9}
+              fontSize={10}
+              fill={appColors.primary}
+              textAnchor={'middle'}>
+              min
+            </SvgText>
+          </>
         ))}
         <SvgText
           x={0}

@@ -35,9 +35,9 @@ const HistoryRecentListItemComponent = ({
     <Pressable
       onPress={getOnPressWithHapticFeedbackConditionally(() => onPress(entry))}>
       <AppRow
+        height={60}
         alignItems={'center'}
-        gap={'sm'}
-        paddingVertical={'s'}>
+        gap={'sm'}>
         <AppText
           grow={false}
           category={'title'}>
@@ -45,12 +45,17 @@ const HistoryRecentListItemComponent = ({
         </AppText>
         <AppView
           grow
-          alignItems={'flex-start'}>
-          <AppText category={'contentBold'}>{entry.name || dateLabel}</AppText>
+          justifyContent={'center'}>
+          <AppText
+            grow={false}
+            category={'title'}>
+            {entry.name || dateLabel}
+          </AppText>
           {entry.name && (
             <AppText
+              grow={false}
               colorStatus={'textMuted'}
-              fontSizeOverride={'sm'}>
+              category={'caption'}>
               {dateLabel}
             </AppText>
           )}

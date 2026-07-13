@@ -3,7 +3,7 @@ import { AppView } from '../../../../../common/AppView/AppView.tsx';
 import { computeStreak } from '../../../../../../helpers/computeStreak.ts';
 import { weekVolume } from '../../../../../../helpers/weekVolume.ts';
 import { WorkoutHistoryEntry } from '../../../../../../contexts/workoutHistory/types.ts';
-import { HistoryStatsRow } from './HistoryStatsRow.tsx';
+import { WeekStatsRow } from './WeekStatsRow.tsx';
 import { HistoryChartCard } from './HistoryChartCard.tsx';
 import { HistoryRecentList } from './HistoryRecentList.tsx';
 
@@ -34,7 +34,7 @@ const HistoryContentComponent = ({
 
   return (
     <AppView gap={'m'}>
-      <HistoryStatsRow
+      <WeekStatsRow
         streak={streak}
         weekVolumeStats={weekVolumeStats}
       />

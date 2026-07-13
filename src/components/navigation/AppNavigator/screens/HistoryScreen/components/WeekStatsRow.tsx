@@ -3,9 +3,10 @@ import { AppRow } from '../../../../../common/AppRow.tsx';
 import { AppView } from '../../../../../common/AppView/AppView.tsx';
 import { AppText } from '../../../../../common/AppText/AppText.tsx';
 import { useAppTranslation } from '../../../../../../locales/hooks/useAppTranslation.ts';
-import { DASH } from '../../../../../../constants/common.ts';
 import { getStreakLabel } from '../helpers/getStreakLabel.ts';
 import { getWeekVolumeLabel } from '../helpers/getWeekVolumeLabel.ts';
+
+const MOTIVATIONAL_STREAK_VALUE = '💪';
 
 type WeekVolumeStats = {
   min: number;
@@ -17,31 +18,30 @@ type HistoryStatsRowProps = {
   weekVolumeStats: WeekVolumeStats;
 };
 
-const HistoryStatsRowComponent = ({
+const WeekStatsRowComponent = ({
   streak,
   weekVolumeStats,
 }: HistoryStatsRowProps) => {
   const t = useAppTranslation();
 
   return (
-    <AppRow gap={'s'}>
+    <AppRow gap={'sm'}>
       <AppView
-        grow
-        flexBasis={0}
         alignItems={'center'}
         justifyContent={'center'}
         backgroundColorStatus={'backgroundAlt'}
         borderRadius={'m'}
-        padding={'m'}>
+        paddingVertical={'m'}
+        paddingHorizontal={'xl'}>
         <AppText
           grow={false}
           category={'header'}
           textAlign={'center'}>
-          {streak > 0 ? `🔥 ${streak}` : DASH}
+          {streak > 0 ? `🔥 ${streak}` : MOTIVATIONAL_STREAK_VALUE}
         </AppText>
         <AppText
           grow={false}
-          category={'content'}
+          category={'contentBold'}
           colorStatus={'textMuted'}
           textAlign={'center'}>
           {getStreakLabel(streak, t)}
@@ -49,7 +49,6 @@ const HistoryStatsRowComponent = ({
       </AppView>
       <AppView
         grow
-        flexBasis={0}
         alignItems={'center'}
         justifyContent={'center'}
         backgroundColorStatus={'backgroundAlt'}
@@ -58,14 +57,14 @@ const HistoryStatsRowComponent = ({
         gap={'s'}>
         <AppText
           grow={false}
-          category={'content'}
+          category={'title'}
           colorStatus={'textMuted'}
           textAlign={'center'}>
-          {t('screens.historyScreen.weekTitle')}
+          {t('screens.historyScreen.weekTitle').toUpperCase()}
         </AppText>
         <AppText
           grow={false}
-          category={'title'}
+          category={'subHeader'}
           textAlign={'center'}>
           {getWeekVolumeLabel(weekVolumeStats.min, weekVolumeStats.count, t)}
         </AppText>
@@ -74,4 +73,4 @@ const HistoryStatsRowComponent = ({
   );
 };
 
-export const HistoryStatsRow = memo(HistoryStatsRowComponent);
+export const WeekStatsRow = memo(WeekStatsRowComponent);

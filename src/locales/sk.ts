@@ -320,9 +320,9 @@ export const sk = {
       weekTitle: 'Tento týždeň',
       streakNone: 'bez streaku',
       streakDays: {
-        one: '{{count}} deň v rade',
-        few: '{{count}} dni v rade',
-        many: '{{count}} dní v rade',
+        one: 'deň v rade',
+        few: 'dni v rade',
+        many: 'dní v rade',
       },
       weekVolume: {
         one: '{{min}} min · {{count}} tréning',
@@ -330,6 +330,7 @@ export const sk = {
         many: '{{min}} min · {{count}} tréningov',
       },
       chartTitle: 'Vývoj času',
+      chartSubtitle: 'Koľko času si tento týždeň na tréningoch strávil.',
       chartEmpty: 'Ohodnoť pár tréningov škálou a uvidíš tu svoj vývoj.',
       recentTitle: 'Posledné tréningy',
       rounds: {
@@ -412,7 +413,7 @@ export const sk = {
       rpePopupDescription:
         'Vyber podľa toho, koľko ťa tréning stál fyzických síl.',
       difficultyLabel: 'Náročnosť',
-      streakStart: 'Začni streak!',
+      streakStart: 'Začni radu!',
       weekTileLabel: 'tento týždeň · {{min}} min',
       historyLinkPremium: 'História a vývoj náročnosti',
       historyLinkFree: 'História a vývoj náročnosti',

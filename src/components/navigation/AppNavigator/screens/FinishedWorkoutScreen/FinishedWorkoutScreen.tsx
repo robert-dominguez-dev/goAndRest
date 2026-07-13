@@ -95,13 +95,13 @@ export const FinishedWorkoutScreen = () => {
         headerTitle={t(titleKey)}
         footer={footerElement}>
         <AppView gap={'m'}>
-          <AppView gap={'m'}>
+          <AppView gap={'xs'}>
             <AppText
               colorStatus={'textMuted'}
-              category={'subHeader'}
+              category={'title'}
               textAlign={'center'}
               numberOfLines={UNLIMITED_NUMBER_OF_LINES}>
-              {t(totalTimeKey)}
+              {t(totalTimeKey).toUpperCase()}
             </AppText>
             <AppTimeView
               colorStatus={'textMuted'}

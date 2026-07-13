@@ -14,6 +14,5 @@ export const getStreakLabel = (streak: number, t: TranslateFN): string => {
       STREAK_DAYS_TRANSLATE_KEY_PREFIX,
       getCountPluralForm(streak),
     ),
-    { count: streak, value: String(streak) },
   );
 };

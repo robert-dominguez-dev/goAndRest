@@ -6,12 +6,9 @@ import { AppText } from '../../../../../common/AppText/AppText.tsx';
 import { AppIcon } from '../../../../../common/AppIcon.tsx';
 import { getOnPressWithHapticFeedbackConditionally } from '../../../../../controls/helpers/getOnPressWithHapticFeedbackConditionally.ts';
 import { useAppTranslation } from '../../../../../../locales/hooks/useAppTranslation.ts';
-import {
-  DASH,
-  FILL_CONTAINER_DIMENSION,
-} from '../../../../../../constants/common.ts';
+import { DASH } from '../../../../../../constants/common.ts';
 import { RPE_LEVELS } from '../../../../../../constants/rpe.ts';
-import { getFinishedWorkoutStreakLabel } from '../helpers/getFinishedWorkoutStreakLabel.ts';
+import { WeekStatsRow } from '../../HistoryScreen/components/WeekStatsRow.tsx';
 
 const MOTIVATIONAL_STREAK_VALUE = '💪';
 
@@ -38,13 +35,13 @@ const FinishedWorkoutSummaryComponent = ({
     <AppView gap={'m'}>
       <AppView
         alignItems={'center'}
-        gap={'sm'}>
+        gap={'s'}>
         <AppText
           grow={false}
-          category={'subHeader'}
+          category={'title'}
           colorStatus={'textMuted'}
           textAlign={'center'}>
-          {t('screens.finishedWorkoutScreen.difficultyLabel')}
+          {t('screens.finishedWorkoutScreen.difficultyLabel').toUpperCase()}
         </AppText>
         <AppView>
           <AppText
@@ -57,59 +54,17 @@ const FinishedWorkoutSummaryComponent = ({
           {rpeLevel && (
             <AppText
               grow={false}
-              category={'contentBold'}
+              category={'subHeader'}
               textAlign={'center'}>
-              {t(rpeLevel.labelKey)}
+              {t(rpeLevel.labelKey).toUpperCase()}
             </AppText>
           )}
         </AppView>
       </AppView>
-      <AppRow
-        gap={'s'}
-        width={FILL_CONTAINER_DIMENSION}>
-        <AppView
-          grow
-          flexBasis={0}
-          alignItems={'center'}
-          backgroundColorStatus={'backgroundAlt'}
-          borderRadius={'m'}
-          paddingVertical={'s'}
-          paddingHorizontal={'s'}>
-          <AppText
-            category={'header'}
-            textAlign={'center'}>
-            {streak > 0 ? `🔥 ${streak}` : MOTIVATIONAL_STREAK_VALUE}
-          </AppText>
-          <AppText
-            category={'contentBold'}
-            colorStatus={'textMuted'}
-            textAlign={'center'}>
-            {getFinishedWorkoutStreakLabel(streak, t)}
-          </AppText>
-        </AppView>
-        <AppView
-          grow
-          flexBasis={0}
-          alignItems={'center'}
-          backgroundColorStatus={'backgroundAlt'}
-          borderRadius={'m'}
-          paddingVertical={'s'}
-          paddingHorizontal={'s'}>
-          <AppText
-            category={'header'}
-            textAlign={'center'}>
-            {`${weekVolumeStats.count}×`}
-          </AppText>
-          <AppText
-            category={'contentBold'}
-            colorStatus={'textMuted'}
-            textAlign={'center'}>
-            {t('screens.finishedWorkoutScreen.weekTileLabel', {
-              min: weekVolumeStats.min,
-            })}
-          </AppText>
-        </AppView>
-      </AppRow>
+      <WeekStatsRow
+        streak={streak}
+        weekVolumeStats={weekVolumeStats}
+      />
       <Pressable
         onPress={getOnPressWithHapticFeedbackConditionally(onHistoryPress)}>
         <AppRow

@@ -17,6 +17,5 @@ export const getFinishedWorkoutStreakLabel = (
       STREAK_DAYS_TRANSLATE_KEY_PREFIX,
       getCountPluralForm(streak),
     ),
-    { count: streak, value: String(streak) },
   );
 };

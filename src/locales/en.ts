@@ -323,9 +323,9 @@ export const en = {
       weekTitle: 'This week',
       streakNone: 'no streak',
       streakDays: {
-        one: '{{count}} day streak',
-        few: '{{count}} days streak',
-        many: '{{count}} days streak',
+        one: 'day streak',
+        few: 'days streak',
+        many: 'days streak',
       },
       weekVolume: {
         one: '{{min}} min · {{count}} workout',
@@ -333,6 +333,7 @@ export const en = {
         many: '{{min}} min · {{count}} workouts',
       },
       chartTitle: 'Time progress',
+      chartSubtitle: 'How much time did you spend training this week.',
       chartEmpty: 'Rate a few workouts and you will see your progress here.',
       recentTitle: 'Recent workouts',
       rounds: {

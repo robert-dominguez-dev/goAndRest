@@ -21,9 +21,16 @@ const HistoryChartCardComponent = ({ data }: HistoryChartCardProps) => {
       borderRadius={'m'}
       padding={'m'}
       gap={'s'}>
-      <AppText category={'subHeader'}>
-        {t('screens.historyScreen.chartTitle')}
-      </AppText>
+      <AppView>
+        <AppText category={'subHeader'}>
+          {t('screens.historyScreen.chartTitle').toUpperCase()}
+        </AppText>
+        <AppText
+          category={'content'}
+          colorStatus={'inputTextMuted'}>
+          {t('screens.historyScreen.chartSubtitle')}
+        </AppText>
+      </AppView>
       {hasData ? (
         <HistoryTrendChart data={data} />
       ) : (

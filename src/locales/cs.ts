@@ -320,9 +320,9 @@ export const cs = {
       weekTitle: 'Tento týden',
       streakNone: 'bez streaku',
       streakDays: {
-        one: '{{count}} den v řadě',
-        few: '{{count}} dny v řadě',
-        many: '{{count}} dní v řadě',
+        one: 'den v řadě',
+        few: 'dny v řadě',
+        many: 'dní v řadě',
       },
       weekVolume: {
         one: '{{min}} min · {{count}} trénink',
@@ -330,6 +330,7 @@ export const cs = {
         many: '{{min}} min · {{count}} tréninků',
       },
       chartTitle: 'Vývoj času',
+      chartSubtitle: 'Kolik času jsi tento týden na trénincích strávil.',
       chartEmpty: 'Ohodnoť pár tréninků škálou a uvidíš tu svůj vývoj.',
       recentTitle: 'Poslední tréninky',
       rounds: {
@@ -412,7 +413,7 @@ export const cs = {
       rpePopupDescription:
         'Vyber podle toho, kolik tě trénink stál fyzických sil.',
       difficultyLabel: 'Náročnost',
-      streakStart: 'Začni streak!',
+      streakStart: 'Začni řadu!',
       weekTileLabel: 'tento týden · {{min}} min',
       historyLinkPremium: 'Historie a vývoj náročnosti',
       historyLinkFree: 'Historie a vývoj náročnosti',

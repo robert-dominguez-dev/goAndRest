@@ -225,6 +225,7 @@ export type AppTranslations = {
         many: string;
       };
       chartTitle: string;
+      chartSubtitle: string;
       chartEmpty: string;
       recentTitle: string;
       rounds: {

@@ -20,30 +20,32 @@ const HistoryRecentListComponent = ({
   const t = useAppTranslation();
 
   return (
-    <AppView gap={'s'}>
+    <AppView gap={'xs'}>
       <AppText
         category={'subHeader'}
         colorStatus={'textMuted'}>
-        {t('screens.historyScreen.recentTitle')}
+        {t('screens.historyScreen.recentTitle').toUpperCase()}
       </AppText>
-      {entries.length ? (
-        entries.map((entry, index) => (
-          <Fragment key={`${entry.date}-${index}`}>
-            <HistoryRecentListItem
-              entry={entry}
-              onPress={onEntryPress}
-            />
-            {!checkIsLast(entries, index) && <AppDivider />}
-          </Fragment>
-        ))
-      ) : (
-        <AppText
-          colorStatus={'textMuted'}
-          textAlign={'center'}
-          numberOfLines={UNLIMITED_NUMBER_OF_LINES}>
-          {t('screens.historyScreen.listEmpty')}
-        </AppText>
-      )}
+      <AppView>
+        {entries.length ? (
+          entries.map((entry, index) => (
+            <Fragment key={`${entry.date}-${index}`}>
+              <HistoryRecentListItem
+                entry={entry}
+                onPress={onEntryPress}
+              />
+              {!checkIsLast(entries, index) && <AppDivider />}
+            </Fragment>
+          ))
+        ) : (
+          <AppText
+            colorStatus={'textMuted'}
+            textAlign={'center'}
+            numberOfLines={UNLIMITED_NUMBER_OF_LINES}>
+            {t('screens.historyScreen.listEmpty')}
+          </AppText>
+        )}
+      </AppView>
     </AppView>
   );
 };
