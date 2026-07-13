@@ -29,7 +29,10 @@ const SavedWorkoutItemComponent = ({
       borderRadius={sizes.configButtonBorderRadius}>
       <SavedWorkoutItemHeader workout={workout} />
       <AppDivider />
-      <SavedWorkoutItemBody config={workout.config} />
+      <SavedWorkoutItemBody
+        config={workout.config}
+        paddingHorizontal={'m'}
+      />
       <AppDivider />
       <SavedWorkoutItemFooter
         workout={workout}

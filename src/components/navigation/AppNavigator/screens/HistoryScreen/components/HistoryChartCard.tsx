@@ -5,6 +5,7 @@ import { useAppTranslation } from '../../../../../../locales/hooks/useAppTransla
 import { WorkoutHistoryEntry } from '../../../../../../contexts/workoutHistory/types.ts';
 import { HistoryTrendChart } from '../HistoryTrendChart.tsx';
 import { HistoryChartEmpty } from './HistoryChartEmpty.tsx';
+import { MIN_RATED_ENTRIES_FOR_CHART } from '../../HistoryDetailScreen/HistoryDetailScreen.tsx';
 
 type HistoryChartCardProps = {
   data: WorkoutHistoryEntry[];
@@ -13,7 +14,7 @@ type HistoryChartCardProps = {
 const HistoryChartCardComponent = ({ data }: HistoryChartCardProps) => {
   const t = useAppTranslation();
 
-  const hasData = data.length > 0;
+  const hasData = data.length >= MIN_RATED_ENTRIES_FOR_CHART;
 
   return (
     <AppView

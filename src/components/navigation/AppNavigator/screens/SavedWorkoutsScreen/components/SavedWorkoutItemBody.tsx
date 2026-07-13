@@ -1,5 +1,8 @@
 import { AppWorkoutConfig } from '../../../../../../contexts/AppWorkoutsProvider/types.ts';
-import { AppView } from '../../../../../common/AppView/AppView.tsx';
+import {
+  AppView,
+  AppViewProps,
+} from '../../../../../common/AppView/AppView.tsx';
 import { AppRow } from '../../../../../common/AppRow.tsx';
 import { SavedWorkoutItemBodyRow } from './SavedWorkoutItemBodyRow.tsx';
 import { AppDivider } from '../../../../../common/AppDivider.tsx';
@@ -8,13 +11,19 @@ import { AppSizeUnion } from '../../../../../../types/ui.ts';
 const HORIZONTAL_DIVIDERS_SPACING: AppSizeUnion = 'm';
 const VERTICAL_DIVIDERS_SPACING: AppSizeUnion = 's';
 
-export type SavedWorkoutItemBodyProps = {
+export type SavedWorkoutItemBodyProps = Pick<
+  AppViewProps,
+  'paddingHorizontal'
+> & {
   config: AppWorkoutConfig;
 };
 
-export const SavedWorkoutItemBody = ({ config }: SavedWorkoutItemBodyProps) => (
+export const SavedWorkoutItemBody = ({
+  config,
+  paddingHorizontal,
+}: SavedWorkoutItemBodyProps) => (
   <AppView
-    paddingHorizontal={'m'}
+    paddingHorizontal={paddingHorizontal}
     paddingBottom={'xxs'}>
     <AppRow gap={HORIZONTAL_DIVIDERS_SPACING}>
       <AppView

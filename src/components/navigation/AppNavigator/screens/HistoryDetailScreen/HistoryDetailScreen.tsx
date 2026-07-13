@@ -26,7 +26,7 @@ import {
 } from '../LandingScreen/components/LandingScreenFooter/hooks/useSaveWorkoutBottomSheet.tsx';
 
 const MAX_COMPARED_ENTRIES = 14;
-const MIN_RATED_ENTRIES_FOR_CHART = 2;
+export const MIN_RATED_ENTRIES_FOR_CHART = 2;
 
 type HistoryDetailScreenProps = ScreenProps<
   AppNavigatorScreenParams,
@@ -163,26 +163,31 @@ export const HistoryDetailScreen = ({
             rpe={entry.rpe}
           />
           <AppView
-            gap={'xs'}
+            gap={'s'}
             width={FILL_CONTAINER_DIMENSION}>
-            <AppText
-              category={'subHeader'}
-              colorStatus={'textMuted'}>
-              {t('screens.historyScreen.detailDifficultyChartTitle')}
-            </AppText>
-            <AppText
-              colorStatus={'textMuted'}
-              textAlign={'center'}
-              numberOfLines={UNLIMITED_NUMBER_OF_LINES}>
-              {entry.name
-                ? t(
-                    'screens.historyScreen.detailDifficultyChartSubtitleNamed',
-                    {
-                      name: entry.name,
-                    },
-                  )
-                : t('screens.historyScreen.detailDifficultyChartSubtitle')}
-            </AppText>
+            <AppView>
+              <AppText
+                grow={false}
+                category={'subHeader'}
+                colorStatus={'textMuted'}>
+                {t(
+                  'screens.historyScreen.detailDifficultyChartTitle',
+                ).toUpperCase()}
+              </AppText>
+              <AppText
+                grow={false}
+                colorStatus={'textMuted'}
+                numberOfLines={UNLIMITED_NUMBER_OF_LINES}>
+                {entry.name
+                  ? t(
+                      'screens.historyScreen.detailDifficultyChartSubtitleNamed',
+                      {
+                        name: entry.name,
+                      },
+                    )
+                  : t('screens.historyScreen.detailDifficultyChartSubtitle')}
+              </AppText>
+            </AppView>
             {hasEnoughDataForChart ? (
               <HistoryDifficultyChart data={chronologicalSiblings} />
             ) : (
@@ -191,12 +196,12 @@ export const HistoryDetailScreen = ({
           </AppView>
           {entry.config && (
             <AppView
-              gap={'xs'}
+              gap={'s'}
               width={FILL_CONTAINER_DIMENSION}>
               <AppText
                 category={'subHeader'}
                 colorStatus={'textMuted'}>
-                {t('screens.historyScreen.detailConfigTitle')}
+                {t('screens.historyScreen.detailConfigTitle').toUpperCase()}
               </AppText>
               <AppDivider />
               <SavedWorkoutItemBody config={entry.config} />
