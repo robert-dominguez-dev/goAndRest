@@ -8,22 +8,21 @@ export const getComparableHistoryEntries = (
   entry: WorkoutHistoryEntry,
 ): WorkoutHistoryEntry[] => {
   const comparableEntries = ((): WorkoutHistoryEntry[] => {
-    if (entry.name) {
-      return log.filter(e => e.name === entry.name);
+    if (!entry.config) {
+      return [];
     }
 
-    if (entry.config) {
-      const signature = getWorkoutConfigSignature(entry.config);
+    const signature = getWorkoutConfigSignature(entry.config);
 
-      return log.filter(
-        e =>
-          !e.name &&
-          e.config &&
-          getWorkoutConfigSignature(e.config) === signature,
-      );
-    }
-
-    return [];
+    // Compare by config signature so entries sharing a name but with a
+    // config the user changed over time are not lumped together; named
+    // entries additionally match on the name, anonymous ones on being nameless.
+    return log.filter(
+      e =>
+        e.config &&
+        getWorkoutConfigSignature(e.config) === signature &&
+        (entry.name ? e.name === entry.name : !e.name),
+    );
   })();
 
   return [...comparableEntries]

@@ -26,44 +26,57 @@ const buildEntry = (
   sec: 100,
   rounds: 2,
   rpe: 5,
+  config: baseConfig,
   ...overrides,
 });
 
 describe('getComparableHistoryEntries', () => {
-  it('for a named entry, includes only entries with the same name and ignores same-config entries with a different or no name', () => {
-    const entry = buildEntry({ id: 'entry', date: 3, name: 'Leg day' });
-    const sameName = buildEntry({ id: 'same-name', date: 1, name: 'Leg day' });
+  it('for a named entry, includes only same-name entries that share the config signature', () => {
+    const entry = buildEntry({ id: 'entry', date: 4, name: 'Leg day' });
+    const sameNameSameConfig = buildEntry({
+      id: 'same-name-same-config',
+      date: 1,
+      name: 'Leg day',
+    });
+    const sameNameDifferentConfig = buildEntry({
+      id: 'same-name-different-config',
+      date: 2,
+      name: 'Leg day',
+      config: differentConfig,
+    });
     const differentName = buildEntry({
       id: 'different-name',
-      date: 2,
+      date: 3,
       name: 'Arm day',
-      config: baseConfig,
     });
     const anonymousSameConfig = buildEntry({
       id: 'anonymous-same-config',
-      date: 2,
-      config: baseConfig,
+      date: 3,
     });
 
     const result = getComparableHistoryEntries(
-      [sameName, differentName, anonymousSameConfig, entry],
+      [
+        sameNameSameConfig,
+        sameNameDifferentConfig,
+        differentName,
+        anonymousSameConfig,
+        entry,
+      ],
       entry,
     );
 
-    expect(result).toEqual([sameName, entry]);
+    expect(result).toEqual([sameNameSameConfig, entry]);
   });
 
-  it('for an anonymous entry with a config, includes only anonymous entries with the same config signature and excludes named entries with a matching config', () => {
-    const entry = buildEntry({ id: 'entry', date: 3, config: baseConfig });
+  it('for an anonymous entry, includes only anonymous entries with the same config signature and excludes named entries with a matching config', () => {
+    const entry = buildEntry({ id: 'entry', date: 3 });
     const sameConfigAnonymous = buildEntry({
       id: 'same-config-anonymous',
       date: 1,
-      config: baseConfig,
     });
     const sameConfigNamed = buildEntry({
       id: 'same-config-named',
       date: 2,
-      config: baseConfig,
       name: 'Leg day',
     });
     const differentConfigAnonymous = buildEntry({
@@ -80,9 +93,9 @@ describe('getComparableHistoryEntries', () => {
     expect(result).toEqual([sameConfigAnonymous, entry]);
   });
 
-  it('returns an empty array for an anonymous entry without a config', () => {
-    const entry = buildEntry({ id: 'entry', date: 1 });
-    const other = buildEntry({ id: 'other', date: 2, config: baseConfig });
+  it('returns an empty array for an entry without a config', () => {
+    const entry = buildEntry({ id: 'entry', date: 1, config: undefined });
+    const other = buildEntry({ id: 'other', date: 2 });
 
     expect(getComparableHistoryEntries([entry, other], entry)).toEqual([]);
   });
