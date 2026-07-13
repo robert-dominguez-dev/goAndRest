@@ -49,6 +49,7 @@ export type AppIconName = Extract<
   | 'SaveAll'
   | 'Settings'
   | 'Shell'
+  | 'SlidersHorizontal'
   | 'Speech'
   | 'StopCircle'
   | 'Timer'

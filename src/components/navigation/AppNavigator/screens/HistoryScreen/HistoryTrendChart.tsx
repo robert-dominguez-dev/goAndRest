@@ -9,10 +9,8 @@ import {
   CHART_WIDTH,
   getX,
   historyChartStyles,
-  MARGIN_LEFT,
   MARGIN_TOP,
   PLOT_HEIGHT,
-  PLOT_WIDTH,
 } from './helpers/historyChartLayout.ts';
 
 type HistoryTrendChartProps = {
@@ -25,12 +23,15 @@ export const HistoryTrendChart = ({ data }: HistoryTrendChartProps) => {
 
   const count = data.length;
 
-  const maxMinutes = Math.max(1, ...data.map(entry => (entry.sec || 0) / 60));
+  const minutes = data.map(entry => (entry.sec || 0) / 60);
+  const minMinutes = Math.min(...minutes);
+  const maxMinutes = Math.max(...minutes);
+  const span = Math.max(1, maxMinutes - minMinutes);
 
   const getTimeY = (entry: WorkoutHistoryEntry): number =>
     MARGIN_TOP +
     PLOT_HEIGHT -
-    ((entry.sec || 0) / 60 / maxMinutes) * PLOT_HEIGHT;
+    (((entry.sec || 0) / 60 - minMinutes) / span) * PLOT_HEIGHT;
 
   const timePoints = data
     .map((entry, index) => `${getX(index, count)},${getTimeY(entry)}`)
@@ -86,7 +87,7 @@ export const HistoryTrendChart = ({ data }: HistoryTrendChartProps) => {
           </SvgText>
         ))}
         <SvgText
-          x={MARGIN_LEFT}
+          x={0}
           y={CHART_HEIGHT - 5}
           fontSize={11}
           fill={appColors.textMuted}
@@ -94,7 +95,7 @@ export const HistoryTrendChart = ({ data }: HistoryTrendChartProps) => {
           {formatHistoryAxisDate(data[0].date, language)}
         </SvgText>
         <SvgText
-          x={MARGIN_LEFT + PLOT_WIDTH}
+          x={CHART_WIDTH}
           y={CHART_HEIGHT - 5}
           fontSize={11}
           fill={appColors.textMuted}

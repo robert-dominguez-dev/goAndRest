@@ -6,6 +6,7 @@ import { AppText } from '../../../../common/AppText/AppText.tsx';
 import { AppDivider } from '../../../../common/AppDivider.tsx';
 import { AppTimeView } from '../../../../common/AppTimeView.tsx';
 import { useAppTranslation } from '../../../../../locales/hooks/useAppTranslation.ts';
+import { useAppLanguage } from '../../../../../contexts/AppLanguageProvider/AppLanguageProvider.tsx';
 import {
   DASH,
   FILL_CONTAINER_DIMENSION,
@@ -16,8 +17,10 @@ import { RPE_LEVELS } from '../../../../../constants/rpe.ts';
 import { WorkoutHistoryEntry } from '../../../../../contexts/workoutHistory/types.ts';
 import { workoutHistoryAtom } from '../../../../../contexts/atoms.ts';
 import { getWorkoutConfigSignature } from '../../../../../contexts/workoutHistory/helpers/getWorkoutConfigSignature.ts';
+import { formatHistoryDetailDate } from './helpers/formatHistoryDate.ts';
 import { HistoryDifficultyChart } from './HistoryDifficultyChart.tsx';
 import { HistoryDetailSaveSection } from './components/HistoryDetailSaveSection.tsx';
+import { SavedWorkoutItemBody } from '../SavedWorkoutsScreen/components/SavedWorkoutItemBody.tsx';
 
 const MAX_COMPARED_ENTRIES = 14;
 const MIN_RATED_ENTRIES_FOR_CHART = 2;
@@ -30,12 +33,11 @@ const HistoryDetailBottomSheetContentComponent = ({
   entry,
 }: HistoryDetailBottomSheetContentProps) => {
   const t = useAppTranslation();
+  const { language } = useAppLanguage();
 
   const log = useAtomValue(workoutHistoryAtom);
 
   const rpeLevel = entry.rpe !== null ? RPE_LEVELS[entry.rpe] : undefined;
-
-  const minutes = Math.round(entry.sec / 60);
 
   const chronologicalSiblings = useMemo(() => {
     if (!entry.config) {
@@ -64,44 +66,16 @@ const HistoryDetailBottomSheetContentComponent = ({
 
   return (
     <AppView
-      gap={'m'}
-      alignItems={'center'}>
-      <AppView alignItems={'center'}>
+      alignItems={'center'}
+      gap={'m'}>
+      {entry.name && (
         <AppText
-          category={'subHeader'}
           colorStatus={'textMuted'}
-          textAlign={'center'}>
-          {t('screens.historyScreen.detailTotalTime')}
+          textAlign={'center'}
+          fontSizeOverride={'sm'}>
+          {formatHistoryDetailDate(entry.date, language)}
         </AppText>
-        <AppTimeView
-          fontSizeOverride={80}
-          msLeft={entry.sec * ONE_SECOND_MS}
-        />
-      </AppView>
-      <AppDivider />
-      <AppView
-        alignItems={'center'}
-        gap={'xs'}>
-        <AppText
-          category={'subHeader'}
-          colorStatus={'textMuted'}
-          textAlign={'center'}>
-          {t('screens.historyScreen.detailDifficulty')}
-        </AppText>
-        <AppText
-          category={'header'}
-          fontSizeOverride={'xl'}
-          textAlign={'center'}>
-          {rpeLevel ? rpeLevel.face : DASH}
-        </AppText>
-        {rpeLevel && (
-          <AppText
-            category={'contentBold'}
-            textAlign={'center'}>
-            {t(rpeLevel.labelKey)}
-          </AppText>
-        )}
-      </AppView>
+      )}
       <AppRow
         gap={'s'}
         width={FILL_CONTAINER_DIMENSION}>
@@ -109,59 +83,65 @@ const HistoryDetailBottomSheetContentComponent = ({
           grow
           flexBasis={0}
           alignItems={'center'}
+          justifyContent={'center'}
           backgroundColorStatus={'backgroundAlt'}
           borderRadius={'m'}
-          paddingVertical={'s'}
-          paddingHorizontal={'s'}>
+          padding={'m'}>
           <AppText
-            category={'header'}
-            textAlign={'center'}>
-            {entry.rounds || 0}
-          </AppText>
-          <AppText
-            category={'contentBold'}
+            category={'content'}
             colorStatus={'textMuted'}
             textAlign={'center'}>
-            {t('screens.historyScreen.detailRoundsTile')}
+            {t('screens.historyScreen.detailTotalTime')}
           </AppText>
+          <AppTimeView
+            fontSizeOverride={40}
+            msLeft={entry.sec * ONE_SECOND_MS}
+          />
         </AppView>
         <AppView
           grow
           flexBasis={0}
           alignItems={'center'}
+          justifyContent={'center'}
           backgroundColorStatus={'backgroundAlt'}
           borderRadius={'m'}
-          paddingVertical={'s'}
-          paddingHorizontal={'s'}>
+          padding={'m'}>
           <AppText
-            category={'header'}
-            textAlign={'center'}>
-            {minutes}
-          </AppText>
-          <AppText
-            category={'contentBold'}
+            category={'content'}
             colorStatus={'textMuted'}
             textAlign={'center'}>
-            {t('screens.historyScreen.detailMinutesTile')}
+            {t('screens.historyScreen.detailDifficulty')}
           </AppText>
+          <AppRow
+            gap={'xs'}
+            alignItems={'center'}
+            justifyContent={'center'}>
+            <AppText fontSizeOverride={30}>
+              {rpeLevel ? rpeLevel.face : DASH}
+            </AppText>
+            {rpeLevel && (
+              <AppText category={'contentBold'}>{t(rpeLevel.labelKey)}</AppText>
+            )}
+          </AppRow>
         </AppView>
       </AppRow>
-      <AppDivider />
       <AppView
-        alignItems={'center'}
         gap={'xs'}
         width={FILL_CONTAINER_DIMENSION}>
         <AppText
           category={'subHeader'}
-          colorStatus={'textMuted'}
-          textAlign={'center'}>
+          colorStatus={'textMuted'}>
           {t('screens.historyScreen.detailDifficultyChartTitle')}
         </AppText>
         <AppText
           colorStatus={'textMuted'}
           textAlign={'center'}
           numberOfLines={UNLIMITED_NUMBER_OF_LINES}>
-          {t('screens.historyScreen.detailDifficultyChartSubtitle')}
+          {entry.name
+            ? t('screens.historyScreen.detailDifficultyChartSubtitleNamed', {
+                name: entry.name,
+              })
+            : t('screens.historyScreen.detailDifficultyChartSubtitle')}
         </AppText>
         {hasEnoughDataForChart ? (
           <HistoryDifficultyChart data={chronologicalSiblings} />
@@ -174,6 +154,19 @@ const HistoryDetailBottomSheetContentComponent = ({
           </AppText>
         )}
       </AppView>
+      {entry.config && (
+        <AppView
+          gap={'xs'}
+          width={FILL_CONTAINER_DIMENSION}>
+          <AppText
+            category={'subHeader'}
+            colorStatus={'textMuted'}>
+            {t('screens.historyScreen.detailConfigTitle')}
+          </AppText>
+          <AppDivider />
+          <SavedWorkoutItemBody config={entry.config} />
+        </AppView>
+      )}
       <HistoryDetailSaveSection entry={entry} />
     </AppView>
   );

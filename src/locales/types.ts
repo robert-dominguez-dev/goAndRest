@@ -235,10 +235,10 @@ export type AppTranslations = {
       listEmpty: string;
       detailTotalTime: string;
       detailDifficulty: string;
-      detailRoundsTile: string;
-      detailMinutesTile: string;
+      detailConfigTitle: string;
       detailDifficultyChartTitle: string;
       detailDifficultyChartSubtitle: string;
+      detailDifficultyChartSubtitleNamed: string;
       detailDifficultyChartEmpty: string;
       detailSave: string;
     };

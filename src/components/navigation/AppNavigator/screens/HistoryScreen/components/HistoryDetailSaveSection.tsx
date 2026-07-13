@@ -3,7 +3,6 @@ import { useForm } from 'react-hook-form';
 import { useAtomValue, useSetAtom } from 'jotai';
 import { v4 as uuidv4 } from 'uuid';
 import { AppView } from '../../../../../common/AppView/AppView.tsx';
-import { AppDivider } from '../../../../../common/AppDivider.tsx';
 import { AppInput } from '../../../../../controls/AppInput/AppInput.tsx';
 import { AppButton } from '../../../../../controls/AppButton/AppButton.tsx';
 import { getWorkoutNameRules } from '../../../../../controls/helpers/getWorkoutNameRules.ts';
@@ -69,7 +68,6 @@ const HistoryDetailSaveSectionComponent = ({
 
   return (
     <AppView gap={'m'}>
-      <AppDivider />
       <AppInput
         name={'workoutName'}
         control={control}

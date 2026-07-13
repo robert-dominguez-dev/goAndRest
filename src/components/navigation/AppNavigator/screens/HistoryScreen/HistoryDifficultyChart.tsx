@@ -1,4 +1,4 @@
-import { View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { Polyline, Svg, Text as SvgText } from 'react-native-svg';
 import { useAppThemedColors } from '../../../../../hooks/useAppThemedColors.ts';
 import { useAppLanguage } from '../../../../../contexts/AppLanguageProvider/AppLanguageProvider.tsx';
@@ -10,12 +10,12 @@ import {
   CHART_WIDTH,
   getX,
   historyChartStyles,
-  MARGIN_LEFT,
   MARGIN_TOP,
   MAX_RPE,
   PLOT_HEIGHT,
-  PLOT_WIDTH,
 } from './helpers/historyChartLayout.ts';
+
+const AREA_BACKGROUND_ALPHA_SUFFIX = '14';
 
 type HistoryDifficultyChartProps = {
   data: WorkoutHistoryEntry[];
@@ -47,48 +47,63 @@ export const HistoryDifficultyChart = ({
     .join(' ');
 
   return (
-    <View style={historyChartStyles.container}>
-      <Svg
-        width={'100%'}
-        height={'100%'}
-        viewBox={`0 0 ${CHART_WIDTH} ${CHART_HEIGHT}`}>
-        <Polyline
-          points={feelPolyline}
-          fill={'none'}
-          stroke={appColors.premium}
-          strokeWidth={2.5}
-          strokeDasharray={'5 4'}
-          strokeLinejoin={'round'}
-          strokeLinecap={'round'}
-        />
-        {feelPoints.map(({ entry, index, rpe }) => (
+    <View
+      style={[
+        styles.areaBackground,
+        { backgroundColor: `${appColors.text}${AREA_BACKGROUND_ALPHA_SUFFIX}` },
+      ]}>
+      <View style={historyChartStyles.container}>
+        <Svg
+          width={'100%'}
+          height={'100%'}
+          viewBox={`0 0 ${CHART_WIDTH} ${CHART_HEIGHT}`}>
+          <Polyline
+            points={feelPolyline}
+            fill={'none'}
+            stroke={appColors.premium}
+            strokeWidth={2.5}
+            strokeDasharray={'5 4'}
+            strokeLinejoin={'round'}
+            strokeLinecap={'round'}
+          />
+          {feelPoints.map(({ entry, index, rpe }) => (
+            <SvgText
+              key={`feel-${entry.date}-${index}`}
+              x={getX(index, count)}
+              y={getFeelY(rpe)}
+              fontSize={16}
+              textAnchor={'middle'}
+              alignmentBaseline={'central'}>
+              {RPE_LEVELS[rpe].face}
+            </SvgText>
+          ))}
           <SvgText
-            key={`feel-${entry.date}-${index}`}
-            x={getX(index, count)}
-            y={getFeelY(rpe)}
-            fontSize={15}
-            textAnchor={'middle'}
-            alignmentBaseline={'central'}>
-            {RPE_LEVELS[rpe].face}
+            x={0}
+            y={CHART_HEIGHT - 5}
+            fontSize={11}
+            fill={appColors.textMuted}
+            textAnchor={'start'}>
+            {formatHistoryAxisDate(data[0].date, language)}
           </SvgText>
-        ))}
-        <SvgText
-          x={MARGIN_LEFT}
-          y={CHART_HEIGHT - 5}
-          fontSize={11}
-          fill={appColors.textMuted}
-          textAnchor={'start'}>
-          {formatHistoryAxisDate(data[0].date, language)}
-        </SvgText>
-        <SvgText
-          x={MARGIN_LEFT + PLOT_WIDTH}
-          y={CHART_HEIGHT - 5}
-          fontSize={11}
-          fill={appColors.textMuted}
-          textAnchor={'end'}>
-          {formatHistoryAxisDate(data[count - 1].date, language)}
-        </SvgText>
-      </Svg>
+          <SvgText
+            x={CHART_WIDTH}
+            y={CHART_HEIGHT - 5}
+            fontSize={11}
+            fill={appColors.textMuted}
+            textAnchor={'end'}>
+            {formatHistoryAxisDate(data[count - 1].date, language)}
+          </SvgText>
+        </Svg>
+      </View>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  areaBackground: {
+    borderRadius: 12,
+    paddingTop: 10,
+    paddingHorizontal: 14,
+    paddingBottom: 4,
+  },
+});
