@@ -21,6 +21,7 @@ export const useHistoryDetailBottomSheet = () => {
       backgroundColorStatus: 'backgroundAlt',
       accessoryRightIconName: 'X',
       onAccessoryRightPress: handleClose,
+      scrollable: true,
     });
   };
 

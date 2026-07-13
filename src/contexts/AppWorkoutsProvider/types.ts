@@ -19,4 +19,7 @@ export type AppStoredWorkout = {
   config: AppWorkoutConfig;
 };
 
-export type AppWorkoutFieldValues = AppWorkoutConfig & { workoutName: string };
+export type AppWorkoutFieldValues = AppWorkoutConfig & {
+  workoutName: string;
+  savedWorkoutId?: string;
+};

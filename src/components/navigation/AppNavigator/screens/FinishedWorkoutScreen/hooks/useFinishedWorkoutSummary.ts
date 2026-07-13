@@ -9,6 +9,7 @@ import { computeStreak } from '../../../../../../helpers/computeStreak.ts';
 import { weekVolume } from '../../../../../../helpers/weekVolume.ts';
 import { addWorkoutHistoryEntry } from '../../../../../../contexts/workoutHistory/helpers/addWorkoutHistoryEntry.ts';
 import { WorkoutHistoryEntry } from '../../../../../../contexts/workoutHistory/types.ts';
+import type { AppWorkoutConfig } from '../../../../../../contexts/AppWorkoutsProvider/types.ts';
 
 export const useFinishedWorkoutSummary = () => {
   const finishedWorkoutStats = useAtomValue(finishedWorkoutStatsAtom);
@@ -33,15 +34,27 @@ export const useFinishedWorkoutSummary = () => {
 
   const committedRef = useRef(false);
 
-  const session: WorkoutHistoryEntry = useMemo(
-    () => ({
+  const session: WorkoutHistoryEntry = useMemo(() => {
+    const runningConfig = finishedWorkoutStats?.workoutConfig;
+
+    const config: AppWorkoutConfig | undefined = runningConfig && {
+      work: runningConfig.work,
+      rest: runningConfig.rest,
+      series: runningConfig.series,
+      rounds: runningConfig.rounds,
+      recovery: runningConfig.recovery,
+    };
+
+    return {
       date: dateRef.current,
       sec: secRef.current,
       rounds,
       rpe,
-    }),
-    [rounds, rpe],
-  );
+      config,
+      name: finishedWorkoutStats?.workoutName || undefined,
+      savedWorkoutId: finishedWorkoutStats?.savedWorkoutId,
+    };
+  }, [rounds, rpe, finishedWorkoutStats]);
 
   const projectedLog = useMemo(
     () => [session, ...currentLog],

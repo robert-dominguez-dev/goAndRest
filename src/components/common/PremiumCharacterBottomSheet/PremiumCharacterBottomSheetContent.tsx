@@ -82,7 +82,7 @@ const PremiumCharacterBottomSheetContentComponent = ({
           value={value}
           label={t(labelTranslateKey)}
           accessoryLeftImageProps={imageProps}
-          accessoryLeftTextColorStatus={'premium'}
+          accessoryLeftTextColorStatus={isPremium ? 'text' : 'premium'}
           audioParams={audioParams}
           analytics={analytics}
           selected={value === characterVariant && isActive}

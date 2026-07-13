@@ -332,9 +332,7 @@ export const en = {
         few: '{{min}} min · {{count}} workouts',
         many: '{{min}} min · {{count}} workouts',
       },
-      chartTitle: 'Time and difficulty',
-      legendTime: 'Time',
-      legendDifficulty: 'Difficulty',
+      chartTitle: 'Time progress',
       chartEmpty: 'Rate a few workouts and you will see your progress here.',
       recentTitle: 'Recent workouts',
       rounds: {
@@ -347,6 +345,11 @@ export const en = {
       detailDifficulty: 'Difficulty',
       detailRoundsTile: 'rounds',
       detailMinutesTile: 'min',
+      detailDifficultyChartTitle: 'Difficulty over time',
+      detailDifficultyChartSubtitle: 'Workouts with the same setup',
+      detailDifficultyChartEmpty:
+        'Nothing to compare yet — finish more of the same workout.',
+      detailSave: 'Save',
     },
     finishedWorkoutScreen: {
       title: {

@@ -1,5 +1,8 @@
 import { AppWorkoutSchema } from '../../contexts/AppWorkoutsProvider/helpers/safeParseAppWorkouts.ts';
-import { AppStoredWorkout } from '../../contexts/AppWorkoutsProvider/types.ts';
+import {
+  AppStoredWorkout,
+  AppWorkoutConfig,
+} from '../../contexts/AppWorkoutsProvider/types.ts';
 import { WorkoutHistoryEntry } from '../../contexts/workoutHistory/types.ts';
 
 export type ParsedBackup = {
@@ -39,17 +42,56 @@ const isValidLogEntry = (entry: unknown): entry is WorkoutHistoryEntry => {
   );
 };
 
+const CONFIG_KEYS = ['work', 'rest', 'series', 'rounds', 'recovery'] as const;
+
+const parseConfig = (value: unknown): AppWorkoutConfig | undefined => {
+  if (typeof value !== 'object' || value === null) {
+    return undefined;
+  }
+
+  const record = value as Record<string, unknown>;
+
+  const isValid = CONFIG_KEYS.every(
+    key => typeof record[key] === 'number' && Number.isFinite(record[key]),
+  );
+
+  return isValid
+    ? {
+        work: Number(record.work),
+        rest: Number(record.rest),
+        series: Number(record.series),
+        rounds: Number(record.rounds),
+        recovery: Number(record.recovery),
+      }
+    : undefined;
+};
+
 const parseLog = (value: unknown): WorkoutHistoryEntry[] => {
   if (!Array.isArray(value)) {
     return [];
   }
 
-  return value.filter(isValidLogEntry).map(({ date, sec, rounds, rpe }) => ({
-    date,
-    sec,
-    rounds,
-    rpe,
-  }));
+  return value.filter(isValidLogEntry).map(entry => {
+    const { date, sec, rounds, rpe } = entry;
+    const record = entry as Record<string, unknown>;
+
+    const config = parseConfig(record.config);
+    const savedWorkoutId =
+      typeof record.savedWorkoutId === 'string'
+        ? record.savedWorkoutId
+        : undefined;
+    const name = typeof record.name === 'string' ? record.name : undefined;
+
+    return {
+      date,
+      sec,
+      rounds,
+      rpe,
+      ...(config !== undefined && { config }),
+      ...(savedWorkoutId !== undefined && { savedWorkoutId }),
+      ...(name !== undefined && { name }),
+    };
+  });
 };
 
 // A backup with no recoverable workouts and no history entries is

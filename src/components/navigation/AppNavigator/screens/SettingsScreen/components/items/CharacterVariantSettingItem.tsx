@@ -7,6 +7,7 @@ import { getCharacterVariantSettingValueProps } from '../../helpers/getCharacter
 import { AppSelectionBottomSheetItemText } from '../../../../../../common/AppSelectionBottomSheet/components/AppSelectionBottomSheetItemText.tsx';
 import { SettingsItem } from '../SettingsItem.tsx';
 import { usePremiumCharacterBottomSheet } from '../../../../../../common/PremiumCharacterBottomSheet/hooks/usePremiumCharacterBottomSheet.tsx';
+import { useIsPremium } from '../../../../../../../contexts/premium/hooks/useIsPremium.ts';
 
 type CharacterVariantSettingItemProps = {
   onUnlockAllPress: () => void;
@@ -21,6 +22,8 @@ const CharacterVariantSettingItemComponent = ({
 
   const selectedValue = useAtomValue(characterVariantSettingAtom);
 
+  const isPremium = useIsPremium();
+
   const { bottomSheet, openBottomSheet } =
     usePremiumCharacterBottomSheet(onUnlockAllPress);
 
@@ -30,7 +33,7 @@ const CharacterVariantSettingItemComponent = ({
   const accessoryRight = (
     <AppSelectionBottomSheetItemText
       label={t(labelTranslateKey)}
-      textColorStatus={'premium'}
+      textColorStatus={isPremium ? 'text' : 'premium'}
       imageProps={imageProps}
     />
   );

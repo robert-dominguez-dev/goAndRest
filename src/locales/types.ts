@@ -225,8 +225,6 @@ export type AppTranslations = {
         many: string;
       };
       chartTitle: string;
-      legendTime: string;
-      legendDifficulty: string;
       chartEmpty: string;
       recentTitle: string;
       rounds: {
@@ -239,6 +237,10 @@ export type AppTranslations = {
       detailDifficulty: string;
       detailRoundsTile: string;
       detailMinutesTile: string;
+      detailDifficultyChartTitle: string;
+      detailDifficultyChartSubtitle: string;
+      detailDifficultyChartEmpty: string;
+      detailSave: string;
     };
     finishedWorkoutScreen: {
       title: TextsByCoachVariant;

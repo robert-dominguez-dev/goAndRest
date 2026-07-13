@@ -14,7 +14,7 @@ export const useStartWorkout = () => {
   const navigation = useRootStackNavigation();
 
   return (appWorkout: AppWorkoutFieldValues) => {
-    void setLastRunningWorkout(appWorkout);
+    void setLastRunningWorkout({ ...appWorkout, savedWorkoutId: undefined });
     void stopAndResetTrackPlayer();
     start(appWorkout);
     navigation.reset({

@@ -1,16 +1,15 @@
 import { memo } from 'react';
 import { Pressable } from 'react-native';
 import { AppRow } from '../../../../../common/AppRow.tsx';
+import { AppView } from '../../../../../common/AppView/AppView.tsx';
 import { AppText } from '../../../../../common/AppText/AppText.tsx';
 import { AppIcon } from '../../../../../common/AppIcon.tsx';
 import { getOnPressWithHapticFeedbackConditionally } from '../../../../../controls/helpers/getOnPressWithHapticFeedbackConditionally.ts';
-import { useAppTranslation } from '../../../../../../locales/hooks/useAppTranslation.ts';
 import { useAppLanguage } from '../../../../../../contexts/AppLanguageProvider/AppLanguageProvider.tsx';
 import { formatTimerTime } from '../../../../../../helpers/formatTimerTime.tsx';
 import { ONE_SECOND_MS } from '../../../../../../constants/common.ts';
 import { RPE_LEVELS } from '../../../../../../constants/rpe.ts';
 import { WorkoutHistoryEntry } from '../../../../../../contexts/workoutHistory/types.ts';
-import { getRoundsLabel } from '../helpers/getRoundsLabel.ts';
 import { formatHistoryListDate } from '../helpers/formatHistoryDate.ts';
 
 type HistoryRecentListItemProps = {
@@ -24,17 +23,13 @@ const HistoryRecentListItemComponent = ({
   entry,
   onPress,
 }: HistoryRecentListItemProps) => {
-  const t = useAppTranslation();
   const { language } = useAppLanguage();
 
   const rpeFace =
     entry.rpe !== null ? RPE_LEVELS[entry.rpe].face : NO_RPE_PLACEHOLDER;
 
+  const dateLabel = formatHistoryListDate(entry.date, language);
   const timeLabel = formatTimerTime(entry.sec * ONE_SECOND_MS);
-
-  const rightLabel = entry.rounds
-    ? `${getRoundsLabel(entry.rounds, t)} · ${timeLabel}`
-    : timeLabel;
 
   return (
     <Pressable
@@ -48,13 +43,22 @@ const HistoryRecentListItemComponent = ({
           category={'title'}>
           {rpeFace}
         </AppText>
-        <AppText category={'contentBold'}>
-          {formatHistoryListDate(entry.date, language)}
-        </AppText>
+        <AppView
+          grow
+          alignItems={'flex-start'}>
+          <AppText category={'contentBold'}>{entry.name || dateLabel}</AppText>
+          {entry.name && (
+            <AppText
+              colorStatus={'textMuted'}
+              fontSizeOverride={'sm'}>
+              {dateLabel}
+            </AppText>
+          )}
+        </AppView>
         <AppText
           grow={false}
           colorStatus={'textMuted'}>
-          {rightLabel}
+          {timeLabel}
         </AppText>
         <AppIcon
           name={'ChevronRight'}

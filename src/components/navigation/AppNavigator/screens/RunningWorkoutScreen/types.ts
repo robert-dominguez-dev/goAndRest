@@ -20,6 +20,7 @@ export type AppRunningWorkoutConfig = AppWorkoutConfig & {
 export type WorkoutTimerPersistedState = {
   workoutConfig: AppRunningWorkoutConfig;
   workoutName: string;
+  savedWorkoutId?: string;
   startedAt: number;
   totalPausedTime: number;
   pausedAt: number | null;

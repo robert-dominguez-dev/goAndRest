@@ -29,11 +29,9 @@ export const getSoundFeedbackSettingValueProps = (
   const isUnlockedCharacterOption =
     soundFeedback === WorkoutSoundFeedback.character && isPremium;
 
-  const iconName = isUnlockedCharacterOption
-    ? undefined
-    : soundFeedbackToIconName[soundFeedback];
+  const iconName = soundFeedbackToIconName[soundFeedback];
   const colorStatus = isUnlockedCharacterOption
-    ? undefined
+    ? 'text'
     : soundFeedbackToColorStatus[soundFeedback];
 
   return {

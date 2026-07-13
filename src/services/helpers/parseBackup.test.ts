@@ -94,4 +94,27 @@ describe('parseBackup', () => {
 
     expect(parseBackup(raw)?.workouts).toHaveLength(1);
   });
+
+  it('preserves a log entry with a valid config, name and savedWorkoutId', () => {
+    const entry = {
+      ...validEntry,
+      config: { work: 20, rest: 10, series: 3, rounds: 2, recovery: 15 },
+      name: 'Leg Day',
+      savedWorkoutId: 'abc-123',
+    };
+
+    expect(parseBackup({ log: [entry] })?.log).toEqual([entry]);
+  });
+
+  it('keeps a log entry but drops a malformed config', () => {
+    const entry = { ...validEntry, config: { work: 20, rest: 10 } };
+
+    expect(parseBackup({ log: [entry] })?.log).toEqual([validEntry]);
+  });
+
+  it('drops non-string name and savedWorkoutId while keeping the entry', () => {
+    const entry = { ...validEntry, name: 42, savedWorkoutId: false };
+
+    expect(parseBackup({ log: [entry] })?.log).toEqual([validEntry]);
+  });
 });

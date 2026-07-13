@@ -329,9 +329,7 @@ export const sk = {
         few: '{{min}} min · {{count}} tréningy',
         many: '{{min}} min · {{count}} tréningov',
       },
-      chartTitle: 'Čas a náročnosť',
-      legendTime: 'Čas',
-      legendDifficulty: 'Náročnosť',
+      chartTitle: 'Vývoj času',
       chartEmpty: 'Ohodnoť pár tréningov škálou a uvidíš tu svoj vývoj.',
       recentTitle: 'Posledné tréningy',
       rounds: {
@@ -344,6 +342,11 @@ export const sk = {
       detailDifficulty: 'Náročnosť',
       detailRoundsTile: 'kôl',
       detailMinutesTile: 'min',
+      detailDifficultyChartTitle: 'Náročnosť v čase',
+      detailDifficultyChartSubtitle: 'Tréningy s rovnakým nastavením',
+      detailDifficultyChartEmpty:
+        'Zatiaľ nie je s čím porovnávať — dokonči viac rovnakých tréningov.',
+      detailSave: 'Uložiť',
     },
     finishedWorkoutScreen: {
       title: {

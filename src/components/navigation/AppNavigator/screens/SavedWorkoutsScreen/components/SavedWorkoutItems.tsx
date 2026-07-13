@@ -24,9 +24,11 @@ export const SavedWorkoutItems = ({
   const isTabletLandscape = useIsTabletAndLandscape();
 
   const handleStartWorkout = async ({
+    id,
     config,
     meta: { name },
-  }: AppStoredWorkout) => startWorkout({ workoutName: name, ...config });
+  }: AppStoredWorkout) =>
+    startWorkout({ workoutName: name, savedWorkoutId: id, ...config });
 
   const workoutItems = storedWorkouts.map<JSX.Element>(workout => (
     <SavedWorkoutItem

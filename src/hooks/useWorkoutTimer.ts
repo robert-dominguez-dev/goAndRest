@@ -83,7 +83,11 @@ export const useWorkoutTimer = (onFinish?: () => void) => {
   usePreciseInterval(updateComputedState, isRunning, [updateComputedState]);
 
   const start = useCallback(
-    ({ workoutName, ...workoutConfig }: AppWorkoutFieldValues) => {
+    ({
+      workoutName,
+      savedWorkoutId,
+      ...workoutConfig
+    }: AppWorkoutFieldValues) => {
       const now = Date.now();
 
       const newPersistedState: WorkoutTimerPersistedState = {
@@ -93,6 +97,7 @@ export const useWorkoutTimer = (onFinish?: () => void) => {
           cooldown: getNumber(cooldownSetting),
         },
         workoutName,
+        savedWorkoutId,
         startedAt: now,
         totalPausedTime: 0,
         pausedAt: null,
