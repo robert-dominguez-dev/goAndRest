@@ -10,8 +10,11 @@ import {
 import { useForm, useFormContext } from 'react-hook-form';
 import { WorkoutConfigBottomSheetContent } from '../components/WorkoutConfigBottomSheetContent.tsx';
 import { WorkoutConfigBottomSheetIconAndTitle } from '../components/WorkoutConfigBottomSheetIconAndTitle.tsx';
-import { useAtom } from 'jotai';
-import { lastDefaultWorkoutConfigAtom } from '../../../../../../../../contexts/atoms.ts';
+import { useAtom, useSetAtom } from 'jotai';
+import {
+  heldWorkoutIdentityAtom,
+  lastDefaultWorkoutConfigAtom,
+} from '../../../../../../../../contexts/atoms.ts';
 import { LocalWorkoutConfigFormValues } from '../../../types.ts';
 import { useAppBottomSheet } from '../../../../../../../common/AppBottomSheet/hooks/useAppBottomSheet.tsx';
 
@@ -21,6 +24,8 @@ export const useWorkoutConfigBottomSheet = (name: AppWorkoutConfigKey) => {
   const [lastDefaultWorkoutConfig, setLastDefaultWorkoutConfig] = useAtom(
     lastDefaultWorkoutConfigAtom,
   );
+
+  const setHeldWorkoutIdentity = useSetAtom(heldWorkoutIdentityAtom);
 
   const { getValues: getContextValues, setValue: setContextValue } =
     useFormContext<AppWorkoutFieldValues>();
@@ -50,6 +55,7 @@ export const useWorkoutConfigBottomSheet = (name: AppWorkoutConfigKey) => {
 
     setContextValue(name, localValue);
     void setLastDefaultWorkoutConfig(newDefaultConfig);
+    void setHeldWorkoutIdentity(null);
     handleClose();
   };
 

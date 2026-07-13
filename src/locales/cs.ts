@@ -88,6 +88,7 @@ export const cs = {
       title: 'Nový trénink',
       selectStoredWorkoutButtonLabel: 'Vybrat z uložených',
       lastRunningWorkoutButtonLabel: 'Opakovat poslední',
+      savedWorkoutSubtitle: 'Uložený trénink',
       removeStoredWorkoutPopUp: {
         title: 'Smazání',
         description:
@@ -109,6 +110,12 @@ export const cs = {
         inputLabel: 'Název tréninku',
         positiveButtonLabel: 'Uložit trénink',
         invalidButtonLabel: 'Nejprve vyplň',
+        duplicateNameDescription:
+          'Trénink „{{name}}" už existuje. Můžeš ho přepsat, nebo zvolit jiný název.',
+        overwriteButtonLabel: 'Přepsat',
+        renameButtonLabel: 'Přejmenovat',
+        sameConfigHint: 'Stejné nastavení už máš uložené jako {{names}}.',
+        sameConfigHintAndMore: 'a další',
       },
       rules: {
         required: 'Jméno musíš vyplnit...',

@@ -4,6 +4,8 @@ import { useAppWorkouts } from '../../../../../../contexts/AppWorkoutsProvider/A
 import { useAppTranslation } from '../../../../../../locales/hooks/useAppTranslation.ts';
 import { useRootStackNavigation } from '../../../../hooks/useRootStackNavigation.ts';
 import { useState } from 'react';
+import { useAtomValue, useSetAtom } from 'jotai';
+import { heldWorkoutIdentityAtom } from '../../../../../../contexts/atoms.ts';
 
 export const useDeleteWorkoutPopUp = () => {
   const t = useAppTranslation();
@@ -15,6 +17,9 @@ export const useDeleteWorkoutPopUp = () => {
   const navigation = useRootStackNavigation();
 
   const { storedWorkouts, removeWorkout } = useAppWorkouts();
+
+  const heldWorkoutIdentity = useAtomValue(heldWorkoutIdentityAtom);
+  const setHeldWorkoutIdentity = useSetAtom(heldWorkoutIdentityAtom);
 
   const { popUp, onOpen } = useAppPopUp({
     title: t('screens.landingScreen.removeStoredWorkoutPopUp.title'),
@@ -29,6 +34,10 @@ export const useDeleteWorkoutPopUp = () => {
       onPress: () => {
         if (workoutToDelete) {
           removeWorkout(workoutToDelete.id);
+
+          if (workoutToDelete.id === heldWorkoutIdentity?.savedWorkoutId) {
+            setHeldWorkoutIdentity(null);
+          }
         }
 
         if (storedWorkouts.length <= 1) {

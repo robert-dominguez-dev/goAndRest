@@ -14,7 +14,7 @@ import { FILL_CONTAINER_DIMENSION, UNLIMITED_NUMBER_OF_LINES, } from '../../../.
 import { workoutHistoryAtom } from '../../../../../contexts/atoms.ts';
 import { useAppWorkouts } from '../../../../../contexts/AppWorkoutsProvider/AppWorkoutsProvider.tsx';
 import { AppWorkoutFieldValues } from '../../../../../contexts/AppWorkoutsProvider/types.ts';
-import { getWorkoutConfigSignature } from '../../../../../contexts/workoutHistory/helpers/getWorkoutConfigSignature.ts';
+import { getComparableHistoryEntries } from '../../../../../contexts/workoutHistory/helpers/getComparableHistoryEntries.ts';
 import { ScreenProps } from '../../../types.ts';
 import { AppNavigatorScreen, AppNavigatorScreenParams } from '../../types.ts';
 import { formatHistoryDetailDate } from '../HistoryScreen/helpers/formatHistoryDate.ts';
@@ -25,7 +25,6 @@ import {
   useSaveWorkoutBottomSheet
 } from '../LandingScreen/components/LandingScreenFooter/hooks/useSaveWorkoutBottomSheet.tsx';
 
-const MAX_COMPARED_ENTRIES = 14;
 export const MIN_RATED_ENTRIES_FOR_CHART = 2;
 
 type HistoryDetailScreenProps = ScreenProps<
@@ -65,12 +64,22 @@ export const HistoryDetailScreen = ({
   // Unlike the dashboard, saving from here does not navigate away - it just
   // stores the workout and names this one history entry.
   const handleSave = useCallback(
-    ({ workoutName, ...workoutConfig }: AppWorkoutFieldValues) => {
-      const savedWorkoutId = uuidv4();
+    ({
+      workoutName,
+      savedWorkoutId: incomingSavedWorkoutId,
+      ...workoutConfig
+    }: AppWorkoutFieldValues) => {
+      const savedWorkoutId = incomingSavedWorkoutId ?? uuidv4();
+      const existing = storedWorkouts.find(
+        workout => workout.id === savedWorkoutId,
+      );
+      const meta = existing
+        ? { ...existing.meta, name: workoutName, updatedAt: new Date() }
+        : { name: workoutName, createdAt: new Date() };
 
       storeWorkout({
         id: savedWorkoutId,
-        meta: { name: workoutName, createdAt: new Date() },
+        meta,
         config: workoutConfig,
       });
 
@@ -82,7 +91,7 @@ export const HistoryDetailScreen = ({
         ),
       );
     },
-    [log, routeEntry.date, storeWorkout, setWorkoutHistory],
+    [log, routeEntry.date, storeWorkout, setWorkoutHistory, storedWorkouts],
   );
 
   const { bottomSheet: saveWorkoutBottomSheet, openSaveWorkoutBottomSheet } =
@@ -92,23 +101,10 @@ export const HistoryDetailScreen = ({
     !!entry.config &&
     !storedWorkouts.some(workout => workout.id === entry.savedWorkoutId);
 
-  const chronologicalSiblings = useMemo(() => {
-    if (!entry.config) {
-      return [];
-    }
-
-    const signature = getWorkoutConfigSignature(entry.config);
-
-    const siblings = log.filter(
-      historyEntry =>
-        historyEntry.config &&
-        getWorkoutConfigSignature(historyEntry.config) === signature,
-    );
-
-    return [...siblings]
-      .sort((a, b) => a.date - b.date)
-      .slice(-MAX_COMPARED_ENTRIES);
-  }, [log, entry]);
+  const chronologicalSiblings = useMemo(
+    () => getComparableHistoryEntries(log, entry),
+    [log, entry],
+  );
 
   const ratedSiblings = chronologicalSiblings.filter(
     historyEntry => historyEntry.rpe !== null,

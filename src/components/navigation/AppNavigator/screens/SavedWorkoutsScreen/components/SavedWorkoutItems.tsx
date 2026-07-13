@@ -1,3 +1,4 @@
+import { useSetAtom } from 'jotai';
 import { useAppWorkouts } from '../../../../../../contexts/AppWorkoutsProvider/AppWorkoutsProvider.tsx';
 import {
   MORE_THAN_THIRD_WIDTH_PERCENTS,
@@ -5,6 +6,10 @@ import {
 } from './SavedWorkoutItem.tsx';
 import { AppView } from '../../../../../common/AppView/AppView.tsx';
 import { AppStoredWorkout } from '../../../../../../contexts/AppWorkoutsProvider/types.ts';
+import {
+  heldWorkoutIdentityAtom,
+  lastDefaultWorkoutConfigAtom,
+} from '../../../../../../contexts/atoms.ts';
 import { useStartWorkout } from '../../../../hooks/useStartWorkout.ts';
 import { AppRow } from '../../../../../common/AppRow.tsx';
 import { JSX } from 'react';
@@ -21,14 +26,20 @@ export const SavedWorkoutItems = ({
 
   const startWorkout = useStartWorkout();
 
+  const setHeldWorkoutIdentity = useSetAtom(heldWorkoutIdentityAtom);
+  const setLastDefaultWorkoutConfig = useSetAtom(lastDefaultWorkoutConfigAtom);
+
   const isTabletLandscape = useIsTabletAndLandscape();
 
   const handleStartWorkout = async ({
     id,
     config,
     meta: { name },
-  }: AppStoredWorkout) =>
+  }: AppStoredWorkout) => {
     startWorkout({ workoutName: name, savedWorkoutId: id, ...config });
+    void setHeldWorkoutIdentity({ savedWorkoutId: id, name });
+    void setLastDefaultWorkoutConfig(config);
+  };
 
   const workoutItems = storedWorkouts.map<JSX.Element>(workout => (
     <SavedWorkoutItem

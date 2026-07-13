@@ -23,3 +23,8 @@ export type AppWorkoutFieldValues = AppWorkoutConfig & {
   workoutName: string;
   savedWorkoutId?: string;
 };
+
+export type HeldWorkoutIdentity = {
+  savedWorkoutId: string;
+  name: string;
+};

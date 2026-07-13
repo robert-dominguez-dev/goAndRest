@@ -4,12 +4,16 @@ import { useFormContext } from 'react-hook-form';
 import { AppWorkoutFieldValues } from '../../../../../../../../contexts/AppWorkoutsProvider/types.ts';
 import { defaultWorkoutConfig } from '../../../../../../../../contexts/AppWorkoutsProvider/constants.ts';
 import { useSetAtom } from 'jotai';
-import { lastDefaultWorkoutConfigAtom } from '../../../../../../../../contexts/atoms.ts';
+import {
+  heldWorkoutIdentityAtom,
+  lastDefaultWorkoutConfigAtom,
+} from '../../../../../../../../contexts/atoms.ts';
 
 export const useResetWorkoutPopUp = () => {
   const t = useAppTranslation();
 
   const setLastDefaultWorkoutConfig = useSetAtom(lastDefaultWorkoutConfigAtom);
+  const setHeldWorkoutIdentity = useSetAtom(heldWorkoutIdentityAtom);
 
   const { reset } = useFormContext<AppWorkoutFieldValues>();
 
@@ -20,6 +24,7 @@ export const useResetWorkoutPopUp = () => {
       label: t('screens.landingScreen.resetWorkoutPopUp.positiveButtonLabel'),
       onPress: () => {
         void setLastDefaultWorkoutConfig(defaultWorkoutConfig);
+        void setHeldWorkoutIdentity(null);
         reset(defaultWorkoutConfig);
       },
       backgroundColorStatus: 'negative',

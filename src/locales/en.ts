@@ -89,6 +89,7 @@ export const en = {
       title: 'New Workout',
       selectStoredWorkoutButtonLabel: 'Select from Saved',
       lastRunningWorkoutButtonLabel: 'Repeat Last',
+      savedWorkoutSubtitle: 'Saved workout',
       removeStoredWorkoutPopUp: {
         title: 'Delete Workout',
         description:
@@ -110,6 +111,12 @@ export const en = {
         inputLabel: 'Workout name',
         positiveButtonLabel: 'Save workout',
         invalidButtonLabel: 'Fill in first',
+        duplicateNameDescription:
+          'A workout named "{{name}}" already exists. You can overwrite it or choose a different name.',
+        overwriteButtonLabel: 'Overwrite',
+        renameButtonLabel: 'Rename',
+        sameConfigHint: 'You already have the same setup saved as {{names}}.',
+        sameConfigHintAndMore: 'and more',
       },
       rules: {
         required: 'Name is required...',

@@ -40,6 +40,11 @@ type PopUpTexts = {
 type SaveWorkoutBottomSheetTexts = Omit<PopUpTexts, 'negativeButtonLabel'> & {
   inputLabel: string;
   invalidButtonLabel: string;
+  duplicateNameDescription: string;
+  overwriteButtonLabel: string;
+  renameButtonLabel: string;
+  sameConfigHint: string;
+  sameConfigHintAndMore: string;
 };
 
 export type AppTranslations = {
@@ -102,6 +107,7 @@ export type AppTranslations = {
       title: string;
       selectStoredWorkoutButtonLabel: string;
       lastRunningWorkoutButtonLabel: string;
+      savedWorkoutSubtitle: string;
       removeStoredWorkoutPopUp: PopUpTexts;
       resetWorkoutPopUp: PopUpTexts;
       saveWorkoutBottomSheet: SaveWorkoutBottomSheetTexts;

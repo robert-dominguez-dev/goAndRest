@@ -1,4 +1,6 @@
 import { AppScreenLayout } from '../../../../common/AppScreenLayout/AppScreenLayout.tsx';
+import { AppView } from '../../../../common/AppView/AppView.tsx';
+import { AppText } from '../../../../common/AppText/AppText.tsx';
 import { useAppTranslation } from '../../../../../locales/hooks/useAppTranslation.ts';
 import { ScreenProps } from '../../../types.ts';
 import { AppNavigatorScreen, AppNavigatorScreenParams } from '../../types.ts';
@@ -6,7 +8,10 @@ import { LandingScreenFooter } from './components/LandingScreenFooter/LandingScr
 import { FormProvider, useForm } from 'react-hook-form';
 import { AppWorkoutFieldValues } from '../../../../../contexts/AppWorkoutsProvider/types.ts';
 import { useAtomValue } from 'jotai';
-import { lastDefaultWorkoutConfigAtom } from '../../../../../contexts/atoms.ts';
+import {
+  heldWorkoutIdentityAtom,
+  lastDefaultWorkoutConfigAtom,
+} from '../../../../../contexts/atoms.ts';
 import { useIsTabletAndLandscape } from '../../../../../hooks/useIsTabletAndLandscape.ts';
 import { LandingScreenContent } from './components/LandingScreenContent.tsx';
 import { ComponentType, JSX } from 'react';
@@ -25,6 +30,7 @@ export const LandingScreen = ({ navigation }: LandingScreenProps) => {
   const t = useAppTranslation();
 
   const lastDefaultWorkoutConfig = useAtomValue(lastDefaultWorkoutConfigAtom);
+  const heldWorkoutIdentity = useAtomValue(heldWorkoutIdentityAtom);
 
   const formProps = useForm<AppWorkoutFieldValues>({
     defaultValues: lastDefaultWorkoutConfig,
@@ -53,10 +59,27 @@ export const LandingScreen = ({ navigation }: LandingScreenProps) => {
     ? undefined
     : footerElement;
 
+  const headerTitle: JSX.Element | string = heldWorkoutIdentity?.name ? (
+    <AppView>
+      <AppText
+        textAlign={'center'}
+        category={'header'}>
+        {heldWorkoutIdentity.name}
+      </AppText>
+      <AppText
+        colorStatus={'textMuted'}
+        textAlign={'center'}>
+        {t('screens.landingScreen.savedWorkoutSubtitle')}
+      </AppText>
+    </AppView>
+  ) : (
+    t('screens.landingScreen.title')
+  );
+
   return (
     <FormProvider {...formProps}>
       <AppScreenLayout
-        headerTitle={t('screens.landingScreen.title')}
+        headerTitle={headerTitle}
         headerAccessoryLeftIconName={'Menu'}
         onHeaderAccessoryLeftPress={goToSettings}
         headerAccessoryRightIconName={isPremium ? 'LineChart' : 'Gem'}

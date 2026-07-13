@@ -19,4 +19,9 @@ export const getWorkoutNameRules = (t: TranslateFN) =>
         value: String(MAX_LENGTH),
       }),
     },
+    validate: (value: string | number | undefined) =>
+      String(value ?? '').trim().length >= MIN_LENGTH ||
+      t('screens.landingScreen.rules.minLength', {
+        value: String(MIN_LENGTH),
+      }),
   } satisfies RegisterOptions);

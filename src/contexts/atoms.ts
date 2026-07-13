@@ -17,6 +17,7 @@ import { WorkoutSoundFilePaths } from '../assets/types.ts';
 import {
   AppWorkoutConfig,
   AppWorkoutFieldValues,
+  HeldWorkoutIdentity,
 } from './AppWorkoutsProvider/types.ts';
 import { defaultWorkoutConfig } from './AppWorkoutsProvider/constants.ts';
 import { ONE_SECOND_MS } from '../constants/common.ts';
@@ -98,6 +99,11 @@ export const lastRunningWorkoutAtom =
 export const lastDefaultWorkoutConfigAtom = createAsyncAtom<AppWorkoutConfig>(
   AsyncStorageKey.LAST_DEFAULT_WORKOUT_CONFIG,
   defaultWorkoutConfig,
+);
+
+export const heldWorkoutIdentityAtom = createAsyncAtom<HeldWorkoutIdentity | null>(
+  AsyncStorageKey.HELD_WORKOUT_IDENTITY,
+  null,
 );
 
 export const computedWorkoutStateAtom = atom<WorkoutTimerComputedState | null>(

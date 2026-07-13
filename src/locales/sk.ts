@@ -89,6 +89,7 @@ export const sk = {
       title: 'Nový tréning',
       selectStoredWorkoutButtonLabel: 'Vybrať z uložených',
       lastRunningWorkoutButtonLabel: 'Opakovať posledný',
+      savedWorkoutSubtitle: 'Uložený tréning',
       removeStoredWorkoutPopUp: {
         title: 'Vymazať',
         description:
@@ -110,6 +111,12 @@ export const sk = {
         inputLabel: 'Názov tréningu',
         positiveButtonLabel: 'Uložiť tréning',
         invalidButtonLabel: 'Najprv vyplň',
+        duplicateNameDescription:
+          'Tréning „{{name}}" už existuje. Môžeš ho prepísať, alebo zvoliť iný názov.',
+        overwriteButtonLabel: 'Prepísať',
+        renameButtonLabel: 'Premenovať',
+        sameConfigHint: 'Rovnaké nastavenie už máš uložené ako {{names}}.',
+        sameConfigHintAndMore: 'a ďalšie',
       },
       rules: {
         required: 'Meno musíš vyplniť...',
