@@ -15,10 +15,10 @@ export const AppBadge = ({ label, status = 'info' }: AppBadgeProps) => {
       backgroundColorStatus={background}
       paddingHorizontal={'s'}
       paddingVertical={'xxs'}
-      borderRadius={'xs'}
-      alignSelf={'flex-start'}>
+      borderRadius={'xs'}>
       <AppText
-        category={'caption'}
+        category={'contentBold'}
+        fontSizeOverride={14}
         grow={false}
         colorStatus={text}>
         {label}

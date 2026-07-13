@@ -66,7 +66,7 @@ const HistoryRecentListItemComponent = ({
           grow
           justifyContent={'center'}>
           <AppRow
-            gap={'xs'}
+            gap={'s'}
             alignItems={'center'}>
             <AppText
               grow={false}
