@@ -1,10 +1,13 @@
 import { memo } from 'react';
 import { AppRow } from '../../../../../common/AppRow.tsx';
-import { AppView } from '../../../../../common/AppView/AppView.tsx';
 import { AppText } from '../../../../../common/AppText/AppText.tsx';
 import { useAppTranslation } from '../../../../../../locales/hooks/useAppTranslation.ts';
 import { getStreakLabel } from '../helpers/getStreakLabel.ts';
 import { getWeekVolumeLabel } from '../helpers/getWeekVolumeLabel.ts';
+import { StatBoxWithTitle } from './StatBoxWithTitle.tsx';
+import { StatBox } from './StatBox.tsx';
+
+export const SMALLER_SUMMARY_CARD_WIDTH = 140;
 
 const MOTIVATIONAL_STREAK_VALUE = '💪';
 
@@ -26,13 +29,7 @@ const WeekStatsRowComponent = ({
 
   return (
     <AppRow gap={'sm'}>
-      <AppView
-        alignItems={'center'}
-        justifyContent={'center'}
-        backgroundColorStatus={'backgroundAlt'}
-        borderRadius={'m'}
-        paddingVertical={'m'}
-        paddingHorizontal={'xl'}>
+      <StatBox width={SMALLER_SUMMARY_CARD_WIDTH}>
         <AppText
           grow={false}
           category={'header'}
@@ -46,29 +43,15 @@ const WeekStatsRowComponent = ({
           textAlign={'center'}>
           {getStreakLabel(streak, t)}
         </AppText>
-      </AppView>
-      <AppView
-        grow
-        alignItems={'center'}
-        justifyContent={'center'}
-        backgroundColorStatus={'backgroundAlt'}
-        borderRadius={'m'}
-        padding={'m'}
-        gap={'s'}>
-        <AppText
-          grow={false}
-          category={'title'}
-          colorStatus={'textMuted'}
-          textAlign={'center'}>
-          {t('screens.historyScreen.weekTitle').toUpperCase()}
-        </AppText>
+      </StatBox>
+      <StatBoxWithTitle title={t('screens.historyScreen.weekTitle')}>
         <AppText
           grow={false}
           category={'subHeader'}
           textAlign={'center'}>
           {getWeekVolumeLabel(weekVolumeStats.min, weekVolumeStats.count, t)}
         </AppText>
-      </AppView>
+      </StatBoxWithTitle>
     </AppRow>
   );
 };

@@ -1,5 +1,4 @@
 import { memo } from 'react';
-import { AppView } from '../AppView/AppView.tsx';
 import { AppRow } from '../AppRow.tsx';
 import { AppText } from '../AppText/AppText.tsx';
 import { AppTimeView } from '../AppTimeView.tsx';
@@ -10,6 +9,11 @@ import {
   ONE_SECOND_MS,
 } from '../../../constants/common.ts';
 import { RPE_LEVELS } from '../../../constants/rpe.ts';
+import { SMALLER_SUMMARY_CARD_WIDTH } from '../../navigation/AppNavigator/screens/HistoryScreen/components/WeekStatsRow.tsx';
+import { StatBoxWithTitle } from '../../navigation/AppNavigator/screens/HistoryScreen/components/StatBoxWithTitle.tsx';
+
+const RPE_FONT_SIZE_OVERRIDE = 30;
+const RPE_LINE_HEIGHT_MULTIPLIER = 1.2;
 
 type WorkoutOutcomeTilesProps = {
   sec: number;
@@ -24,55 +28,43 @@ const WorkoutOutcomeTilesComponent = ({
 
   const rpeLevel = rpe !== null ? RPE_LEVELS[rpe] : undefined;
 
+  const rpeEmoji: string = rpeLevel?.face || DASH;
+
   return (
     <AppRow
-      gap={'s'}
+      gap={'sm'}
       width={FILL_CONTAINER_DIMENSION}>
-      <AppView
-        grow
-        flexBasis={0}
-        alignItems={'center'}
-        justifyContent={'center'}
-        backgroundColorStatus={'backgroundAlt'}
-        borderRadius={'m'}
-        padding={'m'}>
-        <AppText
-          category={'content'}
-          colorStatus={'textMuted'}
-          textAlign={'center'}>
-          {t('common.workoutOutcome.totalTime')}
-        </AppText>
+      <StatBoxWithTitle
+        width={SMALLER_SUMMARY_CARD_WIDTH}
+        title={t('common.workoutOutcome.totalTime')}>
         <AppTimeView
           fontSizeOverride={40}
           msLeft={sec * ONE_SECOND_MS}
         />
-      </AppView>
-      <AppView
-        grow
-        flexBasis={0}
-        alignItems={'center'}
-        justifyContent={'center'}
-        backgroundColorStatus={'backgroundAlt'}
-        borderRadius={'m'}
-        padding={'m'}>
-        <AppText
-          category={'content'}
-          colorStatus={'textMuted'}
-          textAlign={'center'}>
-          {t('common.workoutOutcome.difficulty')}
-        </AppText>
+      </StatBoxWithTitle>
+      <StatBoxWithTitle title={t('common.workoutOutcome.difficulty')}>
         <AppRow
-          gap={'xs'}
+          gap={'sm'}
           alignItems={'center'}
           justifyContent={'center'}>
-          <AppText fontSizeOverride={30}>
-            {rpeLevel ? rpeLevel.face : DASH}
+          <AppText
+            grow={false}
+            category={'header'}
+            fontSizeOverride={RPE_FONT_SIZE_OVERRIDE}
+            lineHeightMultiplier={RPE_LINE_HEIGHT_MULTIPLIER}>
+            {rpeEmoji}
           </AppText>
           {rpeLevel && (
-            <AppText category={'contentBold'}>{t(rpeLevel.labelKey)}</AppText>
+            <AppText
+              grow={false}
+              category={'header'}
+              fontSizeOverride={RPE_FONT_SIZE_OVERRIDE}
+              lineHeightMultiplier={RPE_LINE_HEIGHT_MULTIPLIER}>
+              {t(rpeLevel.labelKey).toUpperCase()}
+            </AppText>
           )}
         </AppRow>
-      </AppView>
+      </StatBoxWithTitle>
     </AppRow>
   );
 };

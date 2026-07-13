@@ -9,8 +9,6 @@ import { getOnPressWithHapticFeedbackConditionally } from '../../../../../contro
 import { useAppTranslation } from '../../../../../../locales/hooks/useAppTranslation.ts';
 import { WeekStatsRow } from '../../HistoryScreen/components/WeekStatsRow.tsx';
 
-const SECTION_HEADING_FONT_SIZE = 14;
-
 type FinishedWorkoutSummaryProps = {
   sec: number;
   rpe: number | null;
@@ -31,12 +29,11 @@ const FinishedWorkoutSummaryComponent = ({
   const t = useAppTranslation();
 
   return (
-    <AppView gap={'m'}>
+    <AppView gap={'ml'}>
       <AppView gap={'s'}>
         <AppText
           category={'title'}
-          colorStatus={'textMuted'}
-          fontSizeOverride={SECTION_HEADING_FONT_SIZE}>
+          colorStatus={'textMuted'}>
           {t('screens.finishedWorkoutScreen.thisWorkoutTitle').toUpperCase()}
         </AppText>
         <WorkoutOutcomeTiles
@@ -44,41 +41,42 @@ const FinishedWorkoutSummaryComponent = ({
           rpe={rpe}
         />
       </AppView>
-      <AppView gap={'s'}>
-        <AppText
-          category={'title'}
-          colorStatus={'textMuted'}
-          fontSizeOverride={SECTION_HEADING_FONT_SIZE}>
-          {t(
-            'screens.finishedWorkoutScreen.overallProgressTitle',
-          ).toUpperCase()}
-        </AppText>
-        <WeekStatsRow
-          streak={streak}
-          weekVolumeStats={weekVolumeStats}
-        />
-      </AppView>
-      <Pressable
-        onPress={getOnPressWithHapticFeedbackConditionally(onHistoryPress)}>
-        <AppRow
-          alignItems={'center'}
-          gap={'sm'}
-          padding={'m'}
-          borderRadius={'m'}
-          backgroundColorStatus={'backgroundAlt'}>
-          <AppIcon
-            name={'History'}
-            colorStatus={'textMuted'}
-          />
-          <AppText category={'contentBold'}>
-            {t('screens.finishedWorkoutScreen.historyLink')}
+      <AppView gap={'m'}>
+        <AppView gap={'s'}>
+          <AppText
+            category={'title'}
+            colorStatus={'textMuted'}>
+            {t(
+              'screens.finishedWorkoutScreen.overallProgressTitle',
+            ).toUpperCase()}
           </AppText>
-          <AppIcon
-            name={isPremium ? 'ArrowRight' : 'Lock'}
-            colorStatus={isPremium ? 'textMuted' : 'premium'}
+          <WeekStatsRow
+            streak={streak}
+            weekVolumeStats={weekVolumeStats}
           />
-        </AppRow>
-      </Pressable>
+        </AppView>
+        <Pressable
+          onPress={getOnPressWithHapticFeedbackConditionally(onHistoryPress)}>
+          <AppRow
+            alignItems={'center'}
+            gap={'sm'}
+            padding={'m'}
+            borderRadius={'m'}
+            backgroundColorStatus={'backgroundAlt'}>
+            <AppIcon
+              name={'History'}
+              colorStatus={'textMuted'}
+            />
+            <AppText category={'contentBold'}>
+              {t('screens.finishedWorkoutScreen.historyLink')}
+            </AppText>
+            <AppIcon
+              name={isPremium ? 'ArrowRight' : 'Lock'}
+              colorStatus={isPremium ? 'textMuted' : 'premium'}
+            />
+          </AppRow>
+        </Pressable>
+      </AppView>
     </AppView>
   );
 };
