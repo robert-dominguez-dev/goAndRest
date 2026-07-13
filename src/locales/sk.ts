@@ -349,7 +349,7 @@ export const sk = {
       detailDifficultyChartSubtitleNamed: 'Rovnaký tréning „{{name}}“',
       detailDifficultyChartEmpty:
         'Zatiaľ nie je s čím porovnávať — dokonči viac rovnakých tréningov.',
-      detailSave: 'Uložiť',
+      detailSave: 'Uložiť tréning',
     },
     finishedWorkoutScreen: {
       title: {

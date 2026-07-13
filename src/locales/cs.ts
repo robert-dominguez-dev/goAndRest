@@ -349,7 +349,7 @@ export const cs = {
       detailDifficultyChartSubtitleNamed: 'Stejný trénink „{{name}}“',
       detailDifficultyChartEmpty:
         'Zatím není s čím porovnávat — dokonči víc stejných tréninků.',
-      detailSave: 'Uložit',
+      detailSave: 'Uložit trénink',
     },
     finishedWorkoutScreen: {
       title: {

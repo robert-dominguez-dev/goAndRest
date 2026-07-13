@@ -352,7 +352,7 @@ export const en = {
       detailDifficultyChartSubtitleNamed: 'The same workout “{{name}}”',
       detailDifficultyChartEmpty:
         'Nothing to compare yet — finish more of the same workout.',
-      detailSave: 'Save',
+      detailSave: 'Save workout',
     },
     finishedWorkoutScreen: {
       title: {

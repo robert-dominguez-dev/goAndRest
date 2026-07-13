@@ -15,9 +15,14 @@ import { useRootStackNavigation } from '../../../../../../hooks/useRootStackNavi
 import { v4 as uuidv4 } from 'uuid';
 import { AppNavigatorScreen } from '../../../../../types.ts';
 
+type SaveWorkoutBottomSheetContentProps = AppBottomSheetRenderContentProps & {
+  onSave?: (values: AppWorkoutFieldValues) => void;
+};
+
 const SaveWorkoutBottomSheetContentComponent = ({
   onClose,
-}: AppBottomSheetRenderContentProps) => {
+  onSave,
+}: SaveWorkoutBottomSheetContentProps) => {
   const t = useAppTranslation();
 
   const { storeWorkout } = useAppWorkouts();
@@ -70,7 +75,7 @@ const SaveWorkoutBottomSheetContentComponent = ({
     : 'screens.landingScreen.saveWorkoutBottomSheet.invalidButtonLabel';
 
   const handleSave = () => {
-    handleSubmit(handleSaveWorkout)();
+    handleSubmit(onSave ?? handleSaveWorkout)();
     onClose();
   };
 
