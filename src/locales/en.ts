@@ -6,6 +6,7 @@ import { AppTranslations } from './types.ts';
 export const en = {
   common: {
     ok: 'Ok',
+    chartEmpty: 'No data to display the chart yet.',
     workoutConfig: {
       work: {
         label: 'Work',
@@ -338,7 +339,6 @@ export const en = {
       },
       chartTitle: 'Time progress',
       chartSubtitle: 'How much time did you spend training this week.',
-      chartEmpty: 'Rate a few workouts and you will see your progress here.',
       recentTitle: 'Recent workouts',
       rounds: {
         one: '{{count}} round',
@@ -350,8 +350,6 @@ export const en = {
       detailDifficultyChartTitle: 'Difficulty over time',
       detailDifficultyChartSubtitle: 'Workouts with the same setup',
       detailDifficultyChartSubtitleNamed: 'The same workout “{{name}}”',
-      detailDifficultyChartEmpty:
-        'Nothing to compare yet — finish more of the same workout.',
       detailSave: 'Save workout',
     },
     finishedWorkoutScreen: {

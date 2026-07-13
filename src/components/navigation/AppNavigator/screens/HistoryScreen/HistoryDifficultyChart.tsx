@@ -1,4 +1,4 @@
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
 import { Polyline, Svg, Text as SvgText } from 'react-native-svg';
 import { useAppThemedColors } from '../../../../../hooks/useAppThemedColors.ts';
 import { useAppLanguage } from '../../../../../contexts/AppLanguageProvider/AppLanguageProvider.tsx';
@@ -6,6 +6,7 @@ import { WorkoutHistoryEntry } from '../../../../../contexts/workoutHistory/type
 import { RPE_LEVELS } from '../../../../../constants/rpe.ts';
 import { formatHistoryAxisDate } from './helpers/formatHistoryDate.ts';
 import {
+  AREA_BACKGROUND_ALPHA_SUFFIX,
   CHART_HEIGHT,
   CHART_WIDTH,
   getX,
@@ -14,8 +15,6 @@ import {
   MAX_RPE,
   PLOT_HEIGHT,
 } from './helpers/historyChartLayout.ts';
-
-const AREA_BACKGROUND_ALPHA_SUFFIX = '14';
 
 type HistoryDifficultyChartProps = {
   data: WorkoutHistoryEntry[];
@@ -49,7 +48,7 @@ export const HistoryDifficultyChart = ({
   return (
     <View
       style={[
-        styles.areaBackground,
+        historyChartStyles.areaBackground,
         { backgroundColor: `${appColors.text}${AREA_BACKGROUND_ALPHA_SUFFIX}` },
       ]}>
       <View style={historyChartStyles.container}>
@@ -98,12 +97,3 @@ export const HistoryDifficultyChart = ({
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  areaBackground: {
-    borderRadius: 12,
-    paddingTop: 10,
-    paddingHorizontal: 14,
-    paddingBottom: 4,
-  },
-});

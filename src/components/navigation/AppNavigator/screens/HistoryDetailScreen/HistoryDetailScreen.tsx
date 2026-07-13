@@ -19,6 +19,7 @@ import { ScreenProps } from '../../../types.ts';
 import { AppNavigatorScreen, AppNavigatorScreenParams } from '../../types.ts';
 import { formatHistoryDetailDate } from '../HistoryScreen/helpers/formatHistoryDate.ts';
 import { HistoryDifficultyChart } from '../HistoryScreen/HistoryDifficultyChart.tsx';
+import { HistoryChartEmpty } from '../HistoryScreen/components/HistoryChartEmpty.tsx';
 import { SavedWorkoutItemBody } from '../SavedWorkoutsScreen/components/SavedWorkoutItemBody.tsx';
 import {
   useSaveWorkoutBottomSheet
@@ -185,12 +186,7 @@ export const HistoryDetailScreen = ({
             {hasEnoughDataForChart ? (
               <HistoryDifficultyChart data={chronologicalSiblings} />
             ) : (
-              <AppText
-                colorStatus={'textMuted'}
-                textAlign={'center'}
-                numberOfLines={UNLIMITED_NUMBER_OF_LINES}>
-                {t('screens.historyScreen.detailDifficultyChartEmpty')}
-              </AppText>
+              <HistoryChartEmpty />
             )}
           </AppView>
           {entry.config && (

@@ -45,6 +45,7 @@ type SaveWorkoutBottomSheetTexts = Omit<PopUpTexts, 'negativeButtonLabel'> & {
 export type AppTranslations = {
   common: {
     ok: string;
+    chartEmpty: string;
     workoutConfig: WorkoutConfigTexts;
     pressAnywhere: string;
     adNotAvailablePopUp: {
@@ -230,7 +231,6 @@ export type AppTranslations = {
       };
       chartTitle: string;
       chartSubtitle: string;
-      chartEmpty: string;
       recentTitle: string;
       rounds: {
         one: string;
@@ -242,7 +242,6 @@ export type AppTranslations = {
       detailDifficultyChartTitle: string;
       detailDifficultyChartSubtitle: string;
       detailDifficultyChartSubtitleNamed: string;
-      detailDifficultyChartEmpty: string;
       detailSave: string;
     };
     finishedWorkoutScreen: {

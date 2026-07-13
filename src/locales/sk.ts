@@ -6,6 +6,7 @@ import { AppTranslations } from './types.ts';
 export const sk = {
   common: {
     ok: 'Ok',
+    chartEmpty: 'Zatiaľ žiadne dáta na zobrazenie grafu.',
     workoutConfig: {
       work: {
         label: 'Cvičenie',
@@ -335,7 +336,6 @@ export const sk = {
       },
       chartTitle: 'Vývoj času',
       chartSubtitle: 'Koľko času si tento týždeň na tréningoch strávil.',
-      chartEmpty: 'Ohodnoť pár tréningov škálou a uvidíš tu svoj vývoj.',
       recentTitle: 'Posledné tréningy',
       rounds: {
         one: '{{count}} kolo',
@@ -347,8 +347,6 @@ export const sk = {
       detailDifficultyChartTitle: 'Náročnosť v čase',
       detailDifficultyChartSubtitle: 'Tréningy s rovnakým nastavením',
       detailDifficultyChartSubtitleNamed: 'Rovnaký tréning „{{name}}“',
-      detailDifficultyChartEmpty:
-        'Zatiaľ nie je s čím porovnávať — dokonči viac rovnakých tréningov.',
       detailSave: 'Uložiť tréning',
     },
     finishedWorkoutScreen: {

@@ -15,9 +15,21 @@ export const getX = (index: number, count: number): number =>
     ? MARGIN_LEFT + PLOT_WIDTH / 2
     : MARGIN_LEFT + (index * PLOT_WIDTH) / (count - 1);
 
+export const AREA_BACKGROUND_ALPHA_SUFFIX = '14';
+
 export const historyChartStyles = StyleSheet.create({
   container: {
     width: '100%',
     aspectRatio: CHART_WIDTH / CHART_HEIGHT,
+  },
+  areaBackground: {
+    borderRadius: 12,
+    paddingTop: 10,
+    paddingHorizontal: 14,
+    paddingBottom: 4,
+  },
+  emptyContent: {
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
