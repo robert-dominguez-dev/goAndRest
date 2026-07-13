@@ -113,7 +113,7 @@ export const sk = {
         invalidButtonLabel: 'Najprv vyplň',
         duplicateNameDescription:
           'Tréning „{{name}}" už existuje. Môžeš ho prepísať, alebo zvoliť iný názov.',
-        overwriteButtonLabel: 'Prepísať',
+        overwriteButtonLabel: 'Prepísať existujúci',
         renameButtonLabel: 'Premenovať',
         sameConfigHint: 'Rovnaké nastavenie už máš uložené ako {{names}}.',
         sameConfigHintAndMore: 'a ďalšie',

@@ -112,7 +112,7 @@ export const cs = {
         invalidButtonLabel: 'Nejprve vyplň',
         duplicateNameDescription:
           'Trénink „{{name}}" už existuje. Můžeš ho přepsat, nebo zvolit jiný název.',
-        overwriteButtonLabel: 'Přepsat',
+        overwriteButtonLabel: 'Přepsat existující',
         renameButtonLabel: 'Přejmenovat',
         sameConfigHint: 'Stejné nastavení už máš uložené jako {{names}}.',
         sameConfigHintAndMore: 'a další',

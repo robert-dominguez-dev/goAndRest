@@ -113,7 +113,7 @@ export const en = {
         invalidButtonLabel: 'Fill in first',
         duplicateNameDescription:
           'A workout named "{{name}}" already exists. You can overwrite it or choose a different name.',
-        overwriteButtonLabel: 'Overwrite',
+        overwriteButtonLabel: 'Overwrite existing',
         renameButtonLabel: 'Rename',
         sameConfigHint: 'You already have the same setup saved as {{names}}.',
         sameConfigHintAndMore: 'and more',

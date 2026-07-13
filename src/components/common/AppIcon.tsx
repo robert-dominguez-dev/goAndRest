@@ -31,6 +31,7 @@ export type AppIconName = Extract<
   | 'Gem'
   | 'HandFist'
   | 'History'
+  | 'Info'
   | 'LineChart'
   | 'Lock'
   | 'Maximize2'

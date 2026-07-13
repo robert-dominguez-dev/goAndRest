@@ -3,6 +3,7 @@ import { AppWorkoutFieldValues } from '../../../../../../../../contexts/AppWorko
 import { AppView } from '../../../../../../../common/AppView/AppView.tsx';
 import { AppInput } from '../../../../../../../controls/AppInput/AppInput.tsx';
 import { AppText } from '../../../../../../../common/AppText/AppText.tsx';
+import { AppHint } from '../../../../../../../common/AppHint.tsx';
 import { AppButton } from '../../../../../../../controls/AppButton/AppButton.tsx';
 import { useAppTranslation } from '../../../../../../../../locales/hooks/useAppTranslation.ts';
 import { getWorkoutNameRules } from '../../../../../../../controls/helpers/getWorkoutNameRules.ts';
@@ -27,6 +28,11 @@ type SaveWorkoutBottomSheetContentProps = AppBottomSheetRenderContentProps & {
 type DuplicateWorkout = {
   id: string;
   name: string;
+};
+
+type PendingSave = {
+  duplicate: DuplicateWorkout;
+  values: AppWorkoutFieldValues;
 };
 
 const SaveWorkoutBottomSheetContentComponent = ({
@@ -83,63 +89,72 @@ const SaveWorkoutBottomSheetContentComponent = ({
     }
   }, [isValid, errorMessage, triggerValidation]);
 
-  const [duplicateWorkout, setDuplicateWorkout] = useState<
-    DuplicateWorkout | undefined
-  >(undefined);
+  const [pendingSave, setPendingSave] = useState<PendingSave | undefined>(
+    undefined,
+  );
 
-  const submit = (overwriteId?: string) =>
+  const persistSave = (values: AppWorkoutFieldValues, overwriteId?: string) => {
+    (onSave ?? handleSaveWorkout)({ ...values, savedWorkoutId: overwriteId });
+    onClose();
+  };
+
+  const handleSave = () =>
     handleSubmit(values => {
-      (onSave ?? handleSaveWorkout)({ ...values, savedWorkoutId: overwriteId });
-      onClose();
+      const existing = findStoredWorkoutByName(
+        storedWorkouts,
+        values.workoutName,
+      );
+
+      if (existing) {
+        setPendingSave({
+          duplicate: { id: existing.id, name: existing.meta.name },
+          values,
+        });
+        return;
+      }
+
+      persistSave(values);
     })();
 
-  const handleSave = () => {
-    const existing = findStoredWorkoutByName(
-      storedWorkouts,
-      getValues('workoutName'),
-    );
-
-    if (existing) {
-      setDuplicateWorkout({ id: existing.id, name: existing.meta.name });
-      return;
+  const handleOverwrite = () => {
+    if (pendingSave) {
+      persistSave(pendingSave.values, pendingSave.duplicate.id);
     }
-
-    submit(undefined);
   };
-
-  const handleOverwrite = () => submit(duplicateWorkout?.id);
 
   const handleRename = () => {
-    if (duplicateWorkout) {
-      setValue('workoutName', duplicateWorkout.name);
+    if (pendingSave) {
+      setValue('workoutName', pendingSave.values.workoutName);
     }
 
-    setDuplicateWorkout(undefined);
+    setPendingSave(undefined);
   };
 
-  if (duplicateWorkout) {
+  if (pendingSave) {
     return (
       <AppView gap={'l'}>
         <AppText numberOfLines={UNLIMITED_NUMBER_OF_LINES}>
           {t(
             'screens.landingScreen.saveWorkoutBottomSheet.duplicateNameDescription',
-            { name: duplicateWorkout.name },
+            { name: pendingSave.duplicate.name },
           )}
         </AppText>
-        <AppButton
-          label={t(
-            'screens.landingScreen.saveWorkoutBottomSheet.overwriteButtonLabel',
-          )}
-          onPress={handleOverwrite}
-          backgroundColorStatus={'primary'}
-        />
-        <AppButton
-          label={t(
-            'screens.landingScreen.saveWorkoutBottomSheet.renameButtonLabel',
-          )}
-          onPress={handleRename}
-          backgroundColorStatus={'backgroundAlt'}
-        />
+        <AppView gap={'s'}>
+          <AppButton
+            label={t(
+              'screens.landingScreen.saveWorkoutBottomSheet.overwriteButtonLabel',
+            )}
+            onPress={handleOverwrite}
+            backgroundColorStatus={'primary'}
+          />
+          <AppButton
+            label={t(
+              'screens.landingScreen.saveWorkoutBottomSheet.renameButtonLabel',
+            )}
+            onPress={handleRename}
+            backgroundColorStatus={'backgroundAlt'}
+          />
+        </AppView>
       </AppView>
     );
   }
@@ -170,13 +185,11 @@ const SaveWorkoutBottomSheetContentComponent = ({
         {t('screens.landingScreen.saveWorkoutBottomSheet.description')}
       </AppText>
       {sameConfigOtherNameWorkouts.length > 0 && (
-        <AppText
-          numberOfLines={UNLIMITED_NUMBER_OF_LINES}
-          colorStatus={'textMuted'}>
+        <AppHint>
           {t('screens.landingScreen.saveWorkoutBottomSheet.sameConfigHint', {
             names: sameConfigNamesText,
           })}
-        </AppText>
+        </AppHint>
       )}
       <AppInput
         name={'workoutName'}
