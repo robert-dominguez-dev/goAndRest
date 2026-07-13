@@ -10,7 +10,6 @@ import {
   workoutHistoryAtom,
 } from '../../../../../contexts/atoms.ts';
 import { useIsPremium } from '../../../../../contexts/premium/hooks/useIsPremium.ts';
-import { useHistoryDetailBottomSheet } from './hooks/useHistoryDetailBottomSheet.tsx';
 import { getDemoWorkoutHistoryLog } from './helpers/getDemoWorkoutHistoryLog.ts';
 import { HistoryContent } from './components/HistoryContent.tsx';
 
@@ -31,9 +30,6 @@ export const HistoryScreen = ({ navigation }: HistoryScreenProps) => {
 
   const data = isPremium ? log : demoLog;
 
-  const { bottomSheet: detailBottomSheet, openHistoryDetailBottomSheet } =
-    useHistoryDetailBottomSheet();
-
   // The paywall overlay is rendered at the app root (so it covers the screen
   // edge to edge, above the header). Toggle it on only while this screen is
   // focused for a free user.
@@ -45,18 +41,19 @@ export const HistoryScreen = ({ navigation }: HistoryScreenProps) => {
   );
 
   return (
-    <>
-      <AppScreenLayout
-        scrollable={isPremium}
-        headerTitle={t('screens.historyScreen.title')}
-        headerAccessoryLeftIconName={'ArrowLeft'}
-        onHeaderAccessoryLeftPress={navigation.goBack}>
-        <HistoryContent
-          data={data}
-          onEntryPress={openHistoryDetailBottomSheet}
-        />
-      </AppScreenLayout>
-      {detailBottomSheet}
-    </>
+    <AppScreenLayout
+      scrollable={isPremium}
+      headerTitle={t('screens.historyScreen.title')}
+      headerAccessoryLeftIconName={'ArrowLeft'}
+      onHeaderAccessoryLeftPress={navigation.goBack}>
+      <HistoryContent
+        data={data}
+        onEntryPress={entry =>
+          navigation.navigate(AppNavigatorScreen.HistoryDetailScreen, {
+            entry,
+          })
+        }
+      />
+    </AppScreenLayout>
   );
 };

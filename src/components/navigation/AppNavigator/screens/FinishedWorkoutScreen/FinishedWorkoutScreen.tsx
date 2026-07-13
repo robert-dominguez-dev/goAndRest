@@ -8,12 +8,6 @@ import {
   defaultFinishWorkoutScreenTranslateKeys,
   voiceVariantToFinishWorkoutScreenTranslateKeys,
 } from './constants.ts';
-import { AppText } from '../../../../common/AppText/AppText.tsx';
-import {
-  ONE_SECOND_MS,
-  UNLIMITED_NUMBER_OF_LINES,
-} from '../../../../../constants/common.ts';
-import { AppTimeView } from '../../../../common/AppTimeView.tsx';
 import { useAtomValue } from 'jotai';
 import {
   finishedWorkoutsCountAtom,
@@ -29,7 +23,6 @@ import { useIsPremium } from '../../../../../contexts/premium/hooks/useIsPremium
 import { useFinishedWorkoutSummary } from './hooks/useFinishedWorkoutSummary.ts';
 import { FinishedWorkoutSummary } from './components/FinishedWorkoutSummary.tsx';
 import { RpeRatingPopUp } from './components/RpeRatingPopUp.tsx';
-import { AppDivider } from '../../../../common/AppDivider.tsx';
 import { RatingRequestHint } from './components/RatingRequestHint.tsx';
 
 const MIN_NUMBER_OF_WORKOUTS_TO_REQUEST_REVIEW = 3;
@@ -50,11 +43,7 @@ export const FinishedWorkoutScreen = () => {
     finishedWorkoutsCount >= MIN_NUMBER_OF_WORKOUTS_TO_REQUEST_REVIEW &&
     !starsRatedOriginallyRef.current;
 
-  const {
-    titleKey,
-    buttonLabelKey,
-    stats: { totalTimeKey },
-  } = useBySoundFeedbackSettings({
+  const { titleKey, buttonLabelKey } = useBySoundFeedbackSettings({
     defaultValue: defaultFinishWorkoutScreenTranslateKeys,
     ...voiceVariantToFinishWorkoutScreenTranslateKeys,
     ...characterVariantToFinishWorkoutScreenTranslateKeys,
@@ -94,30 +83,14 @@ export const FinishedWorkoutScreen = () => {
         scrollable
         headerTitle={t(titleKey)}
         footer={footerElement}>
-        <AppView gap={'m'}>
-          <AppView gap={'xs'}>
-            <AppText
-              colorStatus={'textMuted'}
-              category={'title'}
-              textAlign={'center'}
-              numberOfLines={UNLIMITED_NUMBER_OF_LINES}>
-              {t(totalTimeKey).toUpperCase()}
-            </AppText>
-            <AppTimeView
-              colorStatus={'textMuted'}
-              fontSizeOverride={80}
-              msLeft={sec * ONE_SECOND_MS}
-            />
-          </AppView>
-          <AppDivider />
-          <FinishedWorkoutSummary
-            rpe={rpe}
-            streak={streak}
-            weekVolumeStats={weekVolumeStats}
-            isPremium={isPremium}
-            onHistoryPress={handleHistoryPress}
-          />
-        </AppView>
+        <FinishedWorkoutSummary
+          sec={sec}
+          rpe={rpe}
+          streak={streak}
+          weekVolumeStats={weekVolumeStats}
+          isPremium={isPremium}
+          onHistoryPress={handleHistoryPress}
+        />
       </AppScreenLayout>
       {rpe === null && <RpeRatingPopUp onSelect={setRpe} />}
     </>

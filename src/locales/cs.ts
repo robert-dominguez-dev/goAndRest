@@ -44,6 +44,10 @@ export const cs = {
       hard: 'Dřina',
       max: 'Zabijačka',
     },
+    workoutOutcome: {
+      totalTime: 'Odcvičeno',
+      difficulty: 'Náročnost',
+    },
     paywall: {
       title: 'Go&Rest Premium',
       subtitleFree: 'Odemkni vše jedním nákupem.',
@@ -339,8 +343,6 @@ export const cs = {
         many: '{{count}} kol',
       },
       listEmpty: 'Zatím žádný trénink. Po dokončení se sem uloží.',
-      detailTotalTime: 'Odcvičeno',
-      detailDifficulty: 'Náročnost',
       detailConfigTitle: 'Nastavení tréninku',
       detailDifficultyChartTitle: 'Náročnost v čase',
       detailDifficultyChartSubtitle: 'Tréninky se stejným nastavením',
@@ -365,25 +367,6 @@ export const cs = {
           shieldmaiden: 'Bitva vybojována!',
           cyborg: 'Proces dokončen',
           wizard: 'Dobrá práce, dítě!',
-        },
-      },
-      stats: {
-        totalTime: {
-          default: 'Celkový čas',
-          byVoice: {
-            coachMale: 'Celkový čas dnešní dřiny',
-            coachFemale: 'Celkový čas dnešní dřiny',
-            briefMale: 'Celkově odmakáno',
-            briefFemale: 'Celkově odmakáno',
-            calmMale: 'Celkový čas v pohybu',
-            calmFemale: 'Celkový čas v pohybu',
-          },
-          byCharacter: {
-            warrior: 'Celkový čas dnešní bitvy',
-            shieldmaiden: 'Celkový čas dnešní bitvy',
-            cyborg: 'Celková délka procesu',
-            wizard: 'Celková doba námahy v časoprostoru',
-          },
         },
       },
       buttonLabel: {
@@ -412,11 +395,9 @@ export const cs = {
       rpePopupTitle: 'Jak náročné to bylo?',
       rpePopupDescription:
         'Vyber podle toho, kolik tě trénink stál fyzických sil.',
-      difficultyLabel: 'Náročnost',
-      streakStart: 'Začni řadu!',
-      weekTileLabel: 'tento týden · {{min}} min',
-      historyLinkPremium: 'Historie a vývoj náročnosti',
-      historyLinkFree: 'Historie a vývoj náročnosti',
+      thisWorkoutTitle: 'Tento trénink',
+      overallProgressTitle: 'Celkový vývoj',
+      historyLink: 'Zobrazit celou historii',
     },
     disclaimerScreen: {
       title: 'Vítej v Go&Rest',

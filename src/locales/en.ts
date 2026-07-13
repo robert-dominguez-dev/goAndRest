@@ -44,6 +44,10 @@ export const en = {
       hard: 'Burning',
       max: 'Brutal',
     },
+    workoutOutcome: {
+      totalTime: 'Worked out',
+      difficulty: 'Difficulty',
+    },
     paywall: {
       title: 'Go&Rest Premium',
       subtitleFree: 'Unlock everything with a single purchase.',
@@ -342,8 +346,6 @@ export const en = {
         many: '{{count}} rounds',
       },
       listEmpty: 'No workouts yet. They will appear here once you finish one.',
-      detailTotalTime: 'Worked out',
-      detailDifficulty: 'Difficulty',
       detailConfigTitle: 'Workout settings',
       detailDifficultyChartTitle: 'Difficulty over time',
       detailDifficultyChartSubtitle: 'Workouts with the same setup',
@@ -368,25 +370,6 @@ export const en = {
           shieldmaiden: 'Battle Fought!',
           cyborg: 'Process Complete',
           wizard: 'Well done, child!',
-        },
-      },
-      stats: {
-        totalTime: {
-          default: 'Total Time',
-          byVoice: {
-            coachMale: "Total time of today's grind",
-            coachFemale: "Total time of today's grind",
-            briefMale: 'Total time crushed',
-            briefFemale: 'Total time crushed',
-            calmMale: 'Total time in motion',
-            calmFemale: 'Total time in motion',
-          },
-          byCharacter: {
-            warrior: "Total time of today's battle",
-            shieldmaiden: "Total time of today's battle",
-            cyborg: 'Total process length',
-            wizard: 'Total duration of effort in space-time',
-          },
         },
       },
       buttonLabel: {
@@ -414,11 +397,9 @@ export const en = {
       rpePopupTitle: 'How hard was it?',
       rpePopupDescription:
         'Pick the one that matches how much physical effort it took.',
-      difficultyLabel: 'Difficulty',
-      streakStart: 'Start a streak!',
-      weekTileLabel: 'this week · {{min}} min',
-      historyLinkPremium: 'History and difficulty trends',
-      historyLinkFree: 'History and difficulty trends',
+      thisWorkoutTitle: 'This workout',
+      overallProgressTitle: 'Overall progress',
+      historyLink: 'View full history',
     },
     disclaimerScreen: {
       title: 'Welcome to Go&Rest',

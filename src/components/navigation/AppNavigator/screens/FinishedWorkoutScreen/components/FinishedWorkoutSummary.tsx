@@ -4,15 +4,15 @@ import { AppView } from '../../../../../common/AppView/AppView.tsx';
 import { AppRow } from '../../../../../common/AppRow.tsx';
 import { AppText } from '../../../../../common/AppText/AppText.tsx';
 import { AppIcon } from '../../../../../common/AppIcon.tsx';
+import { WorkoutOutcomeTiles } from '../../../../../common/WorkoutOutcomeTiles/WorkoutOutcomeTiles.tsx';
 import { getOnPressWithHapticFeedbackConditionally } from '../../../../../controls/helpers/getOnPressWithHapticFeedbackConditionally.ts';
 import { useAppTranslation } from '../../../../../../locales/hooks/useAppTranslation.ts';
-import { DASH } from '../../../../../../constants/common.ts';
-import { RPE_LEVELS } from '../../../../../../constants/rpe.ts';
 import { WeekStatsRow } from '../../HistoryScreen/components/WeekStatsRow.tsx';
 
-const MOTIVATIONAL_STREAK_VALUE = '💪';
+const SECTION_HEADING_FONT_SIZE = 14;
 
 type FinishedWorkoutSummaryProps = {
+  sec: number;
   rpe: number | null;
   streak: number;
   weekVolumeStats: { min: number; count: number };
@@ -21,6 +21,7 @@ type FinishedWorkoutSummaryProps = {
 };
 
 const FinishedWorkoutSummaryComponent = ({
+  sec,
   rpe,
   streak,
   weekVolumeStats,
@@ -29,42 +30,34 @@ const FinishedWorkoutSummaryComponent = ({
 }: FinishedWorkoutSummaryProps) => {
   const t = useAppTranslation();
 
-  const rpeLevel = rpe !== null ? RPE_LEVELS[rpe] : undefined;
-
   return (
     <AppView gap={'m'}>
-      <AppView
-        alignItems={'center'}
-        gap={'s'}>
+      <AppView gap={'s'}>
         <AppText
-          grow={false}
           category={'title'}
           colorStatus={'textMuted'}
-          textAlign={'center'}>
-          {t('screens.finishedWorkoutScreen.difficultyLabel').toUpperCase()}
+          fontSizeOverride={SECTION_HEADING_FONT_SIZE}>
+          {t('screens.finishedWorkoutScreen.thisWorkoutTitle').toUpperCase()}
         </AppText>
-        <AppView>
-          <AppText
-            grow={false}
-            fontSizeOverride={'xl'}
-            lineHeightMultiplier={1.2}
-            textAlign={'center'}>
-            {rpeLevel ? rpeLevel.face : DASH}
-          </AppText>
-          {rpeLevel && (
-            <AppText
-              grow={false}
-              category={'subHeader'}
-              textAlign={'center'}>
-              {t(rpeLevel.labelKey).toUpperCase()}
-            </AppText>
-          )}
-        </AppView>
+        <WorkoutOutcomeTiles
+          sec={sec}
+          rpe={rpe}
+        />
       </AppView>
-      <WeekStatsRow
-        streak={streak}
-        weekVolumeStats={weekVolumeStats}
-      />
+      <AppView gap={'s'}>
+        <AppText
+          category={'title'}
+          colorStatus={'textMuted'}
+          fontSizeOverride={SECTION_HEADING_FONT_SIZE}>
+          {t(
+            'screens.finishedWorkoutScreen.overallProgressTitle',
+          ).toUpperCase()}
+        </AppText>
+        <WeekStatsRow
+          streak={streak}
+          weekVolumeStats={weekVolumeStats}
+        />
+      </AppView>
       <Pressable
         onPress={getOnPressWithHapticFeedbackConditionally(onHistoryPress)}>
         <AppRow
@@ -78,11 +71,7 @@ const FinishedWorkoutSummaryComponent = ({
             colorStatus={'textMuted'}
           />
           <AppText category={'contentBold'}>
-            {t(
-              isPremium
-                ? 'screens.finishedWorkoutScreen.historyLinkPremium'
-                : 'screens.finishedWorkoutScreen.historyLinkFree',
-            )}
+            {t('screens.finishedWorkoutScreen.historyLink')}
           </AppText>
           <AppIcon
             name={isPremium ? 'ArrowRight' : 'Lock'}

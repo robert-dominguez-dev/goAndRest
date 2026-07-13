@@ -45,6 +45,10 @@ export const sk = {
       hard: 'Drina',
       max: 'Zabíjačka',
     },
+    workoutOutcome: {
+      totalTime: 'Odcvičené',
+      difficulty: 'Náročnosť',
+    },
     paywall: {
       title: 'Go&Rest Premium',
       subtitleFree: 'Odomkni všetko jedným nákupom.',
@@ -339,8 +343,6 @@ export const sk = {
         many: '{{count}} kôl',
       },
       listEmpty: 'Zatiaľ žiadny tréning. Po dokončení sa sem uloží.',
-      detailTotalTime: 'Odcvičené',
-      detailDifficulty: 'Náročnosť',
       detailConfigTitle: 'Nastavenie tréningu',
       detailDifficultyChartTitle: 'Náročnosť v čase',
       detailDifficultyChartSubtitle: 'Tréningy s rovnakým nastavením',
@@ -365,25 +367,6 @@ export const sk = {
           shieldmaiden: 'Bitka vybojovaná!',
           cyborg: 'Proces dokončený',
           wizard: 'Dobrá práca, dieťa!',
-        },
-      },
-      stats: {
-        totalTime: {
-          default: 'Celkový čas',
-          byVoice: {
-            coachMale: 'Celkový čas dnešnej driny',
-            coachFemale: 'Celkový čas dnešnej driny',
-            briefMale: 'Celkovo odmakané',
-            briefFemale: 'Celkovo odmakané',
-            calmMale: 'Celkový čas v pohybe',
-            calmFemale: 'Celkový čas v pohybu',
-          },
-          byCharacter: {
-            warrior: 'Celkový čas dnešnej bitky',
-            shieldmaiden: 'Celkový čas dnešnej bitky',
-            cyborg: 'Celková dĺžka procesu',
-            wizard: 'Celková doba námahy v časopriestore',
-          },
         },
       },
       buttonLabel: {
@@ -412,11 +395,9 @@ export const sk = {
       rpePopupTitle: 'Aké náročné to bolo?',
       rpePopupDescription:
         'Vyber podľa toho, koľko ťa tréning stál fyzických síl.',
-      difficultyLabel: 'Náročnosť',
-      streakStart: 'Začni radu!',
-      weekTileLabel: 'tento týždeň · {{min}} min',
-      historyLinkPremium: 'História a vývoj náročnosti',
-      historyLinkFree: 'História a vývoj náročnosti',
+      thisWorkoutTitle: 'Tento tréning',
+      overallProgressTitle: 'Celkový vývoj',
+      historyLink: 'Zobraziť celú históriu',
     },
     disclaimerScreen: {
       title: 'Vitaj v Go&Rest',

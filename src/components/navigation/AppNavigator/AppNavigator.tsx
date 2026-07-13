@@ -17,6 +17,7 @@ import { FinishedWorkoutScreen } from './screens/FinishedWorkoutScreen/FinishedW
 import { useInitiateWorkoutSounds } from '../../../hooks/useInitiateWorkoutSounds/useInitiateWorkoutSounds.ts';
 import { DevScreen } from './screens/DevScreen/DevScreen.tsx';
 import { HistoryScreen } from './screens/HistoryScreen/HistoryScreen.tsx';
+import { HistoryDetailScreen } from './screens/HistoryDetailScreen/HistoryDetailScreen.tsx';
 import { PaywallScreen } from './screens/PaywallScreen/PaywallScreen.tsx';
 
 const Stack = createNativeStackNavigator<AppNavigatorScreenParams, string>();
@@ -62,6 +63,10 @@ const AppNavigatorComponent = () => {
       <Stack.Screen
         name={AppNavigatorScreen.HistoryScreen}
         component={HistoryScreen}
+      />
+      <Stack.Screen
+        name={AppNavigatorScreen.HistoryDetailScreen}
+        component={HistoryDetailScreen}
       />
       <Stack.Screen
         name={AppNavigatorScreen.PaywallScreen}

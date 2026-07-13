@@ -59,6 +59,10 @@ export type AppTranslations = {
       hard: string;
       max: string;
     };
+    workoutOutcome: {
+      totalTime: string;
+      difficulty: string;
+    };
     paywall: {
       title: string;
       subtitleFree: string;
@@ -234,8 +238,6 @@ export type AppTranslations = {
         many: string;
       };
       listEmpty: string;
-      detailTotalTime: string;
-      detailDifficulty: string;
       detailConfigTitle: string;
       detailDifficultyChartTitle: string;
       detailDifficultyChartSubtitle: string;
@@ -245,20 +247,15 @@ export type AppTranslations = {
     };
     finishedWorkoutScreen: {
       title: TextsByCoachVariant;
-      stats: {
-        totalTime: TextsByCoachVariant;
-      };
       buttonLabel: TextsByCoachVariant;
       ratingRequest: string;
       ratingRequestThankYou: string;
       ratingRequestSorry: string;
       rpePopupTitle: string;
       rpePopupDescription: string;
-      difficultyLabel: string;
-      streakStart: string;
-      weekTileLabel: string;
-      historyLinkPremium: string;
-      historyLinkFree: string;
+      thisWorkoutTitle: string;
+      overallProgressTitle: string;
+      historyLink: string;
     };
     disclaimerScreen: {
       title: string;
