@@ -66,7 +66,7 @@ export const AppScreenLayout = ({
 
   const screenPaddingBottom: AppSizeUnion = footer ? safeAreaPaddingBottom : 0;
 
-  const contentPaddingBottom: AppSizeUnion = footer ? 'l' : 0;
+  const contentPaddingBottom: AppSizeUnion = footer || scrollable ? 'l' : 0;
 
   const content: ReactNode = scrollable ? (
     <ScrollView showsVerticalScrollIndicator={false}>{children}</ScrollView>
