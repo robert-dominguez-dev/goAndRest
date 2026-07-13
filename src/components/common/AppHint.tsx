@@ -9,12 +9,14 @@ import { UNLIMITED_NUMBER_OF_LINES } from '../../constants/common.ts';
 type AppHintProps = ChildrenProp & {
   iconName?: AppIconName;
   colorStatus?: AppColorUnion;
+  backgroundColorStatus?: AppColorUnion;
 };
 
 export const AppHint = ({
   children,
   iconName = 'Info',
-  colorStatus = 'primary',
+  colorStatus = 'border',
+  backgroundColorStatus = 'backgroundAlt',
 }: AppHintProps) => {
   return (
     <AppRow
@@ -22,6 +24,7 @@ export const AppHint = ({
       padding={'sm'}
       borderRadius={'s'}
       borderColorStatus={colorStatus}
+      backgroundColorStatus={backgroundColorStatus}
       alignItems={'center'}>
       <AppIcon
         name={iconName}
