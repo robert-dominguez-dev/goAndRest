@@ -8,15 +8,10 @@ import { AppRow } from '../../../../../../common/AppRow.tsx';
 import { AppSizeUnion } from '../../../../../../../types/ui.ts';
 import { SavedWorkoutsButton } from './components/SavedWorkoutsButton.tsx';
 import { useAppWorkouts } from '../../../../../../../contexts/AppWorkoutsProvider/AppWorkoutsProvider.tsx';
-import { useAtomValue } from 'jotai';
-import { lastRunningWorkoutAtom } from '../../../../../../../contexts/atoms.ts';
-import { LastRunningWorkoutButton } from './components/LastRunningWorkoutButton.tsx';
 
 const GAP: AppSizeUnion = 's';
 
 const WorkoutConfigButtonsComponent = () => {
-  const lastRunningWorkout = useAtomValue(lastRunningWorkoutAtom);
-
   const { storedWorkouts } = useAppWorkouts();
 
   const isWithoutRest = useIsWithoutPauses('series', 'rest');
@@ -24,9 +19,6 @@ const WorkoutConfigButtonsComponent = () => {
 
   return (
     <AppView gap={GAP}>
-      {!!lastRunningWorkout && (
-        <LastRunningWorkoutButton lastRunningWorkout={lastRunningWorkout} />
-      )}
       {!!storedWorkouts.length && <SavedWorkoutsButton />}
       <AppRow gap={GAP}>
         <AppView

@@ -87,7 +87,6 @@ export const cs = {
     landingScreen: {
       title: 'Nový trénink',
       selectStoredWorkoutButtonLabel: 'Vybrat z uložených',
-      lastRunningWorkoutButtonLabel: 'Opakovat poslední',
       savedWorkoutSubtitle: 'Uložený trénink',
       removeStoredWorkoutPopUp: {
         title: 'Smazání',

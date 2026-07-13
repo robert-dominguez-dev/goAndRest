@@ -106,7 +106,6 @@ export type AppTranslations = {
     landingScreen: {
       title: string;
       selectStoredWorkoutButtonLabel: string;
-      lastRunningWorkoutButtonLabel: string;
       savedWorkoutSubtitle: string;
       removeStoredWorkoutPopUp: PopUpTexts;
       resetWorkoutPopUp: PopUpTexts;

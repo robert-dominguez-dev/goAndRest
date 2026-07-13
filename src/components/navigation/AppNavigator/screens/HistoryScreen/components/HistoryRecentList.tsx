@@ -29,7 +29,7 @@ const HistoryRecentListComponent = ({
       <AppView>
         {entries.length ? (
           entries.map((entry, index) => (
-            <Fragment key={`${entry.date}-${index}`}>
+            <Fragment key={entry.id}>
               <HistoryRecentListItem
                 entry={entry}
                 onPress={onEntryPress}
