@@ -10,7 +10,11 @@ type UIStatusProps = {
 };
 
 export const appStatusUIMap: Record<AppStatus, UIStatusProps> = {
-  info: { iconName: 'Info', text: 'infoHintText', background: 'border' },
+  info: {
+    iconName: 'Info',
+    text: 'infoHintText',
+    background: 'infoHintBackground',
+  },
   alert: {
     iconName: 'TriangleAlert',
     text: 'alert',

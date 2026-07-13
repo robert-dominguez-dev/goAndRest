@@ -1,11 +1,5 @@
 import RNBlobUtil from 'react-native-blob-util';
-import {
-  errorCodes,
-  isErrorWithCode,
-  keepLocalCopy,
-  pick,
-  types,
-} from '@react-native-documents/picker';
+import { errorCodes, isErrorWithCode, keepLocalCopy, pick, types, } from '@react-native-documents/picker';
 import { readUtf8File, writeUtf8File } from './fileService.ts';
 import { shareFile } from './shareService.ts';
 import { parseBackup, ParsedBackup } from './helpers/parseBackup.ts';
@@ -15,7 +9,7 @@ import { logCustomEvent } from '../components/navigation/helpers/logCustomEvent.
 import { getErrorMessage } from '../helpers/getErrorMessage.ts';
 
 export const BACKUP_VERSION = 1;
-const BACKUP_FILE_NAME = 'goandrest-zaloha.json';
+const BACKUP_FILE_NAME = 'goandrest-backup.json';
 
 export type BackupPayload = {
   date: number;
