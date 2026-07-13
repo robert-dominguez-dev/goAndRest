@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid';
 import { AppWorkoutSchema } from '../../contexts/AppWorkoutsProvider/helpers/safeParseAppWorkouts.ts';
 import {
   AppStoredWorkout,
@@ -75,6 +76,7 @@ const parseLog = (value: unknown): WorkoutHistoryEntry[] => {
     const { date, sec, rounds, rpe } = entry;
     const record = entry as Record<string, unknown>;
 
+    const id = typeof record.id === 'string' ? record.id : uuidv4();
     const config = parseConfig(record.config);
     const savedWorkoutId =
       typeof record.savedWorkoutId === 'string'
@@ -83,6 +85,7 @@ const parseLog = (value: unknown): WorkoutHistoryEntry[] => {
     const name = typeof record.name === 'string' ? record.name : undefined;
 
     return {
+      id,
       date,
       sec,
       rounds,

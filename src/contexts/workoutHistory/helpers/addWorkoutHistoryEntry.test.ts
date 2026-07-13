@@ -4,6 +4,7 @@ import { WorkoutHistoryEntry } from '../types.ts';
 const now = new Date('2026-06-20T00:00:00.000Z').getTime();
 
 const createEntry = (date: number): WorkoutHistoryEntry => ({
+  id: `entry-${date}`,
   date,
   sec: 120,
   rounds: 3,

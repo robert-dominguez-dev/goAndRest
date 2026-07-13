@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useAtomValue, useSetAtom } from 'jotai';
+import { v4 as uuidv4 } from 'uuid';
 import {
   finishedWorkoutStatsAtom,
   workoutHistoryAtom,
@@ -16,6 +17,7 @@ export const useFinishedWorkoutSummary = () => {
   const currentLog = useAtomValue(workoutHistoryAtom);
   const setWorkoutHistory = useSetAtom(workoutHistoryAtom);
 
+  const idRef = useRef(uuidv4());
   const dateRef = useRef(Date.now());
 
   const startedAt = getNumber(finishedWorkoutStats?.startedAt);
@@ -46,6 +48,7 @@ export const useFinishedWorkoutSummary = () => {
     };
 
     return {
+      id: idRef.current,
       date: dateRef.current,
       sec: secRef.current,
       rounds,

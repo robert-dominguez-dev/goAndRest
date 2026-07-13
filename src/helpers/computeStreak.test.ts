@@ -6,6 +6,7 @@ const DAY = 24 * 60 * 60 * 1000;
 const now = new Date(2026, 5, 20, 12, 0, 0).getTime();
 
 const createEntry = (date: number): WorkoutHistoryEntry => ({
+  id: `entry-${date}`,
   date,
   sec: 120,
   rounds: 3,

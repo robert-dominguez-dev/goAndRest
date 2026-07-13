@@ -14,6 +14,7 @@ const DEMO_NAMES = ['Tabata Blast', 'Leg Day', 'Core Crusher'];
 
 export const getDemoWorkoutHistoryLog = (now: number): WorkoutHistoryEntry[] =>
   Array.from({ length: DEMO_LOG_LENGTH }, (_, index) => ({
+    id: `demo-${index}`,
     date: now - index * DAY_MS * 2,
     sec: 660 + ((index * 173) % 540),
     rounds: 2 + (index % 3),

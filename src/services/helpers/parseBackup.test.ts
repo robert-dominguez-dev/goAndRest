@@ -20,6 +20,7 @@ const validWorkout: AppStoredWorkout = {
 };
 
 const validEntry: WorkoutHistoryEntry = {
+  id: 'entry-1',
   date: 1000,
   sec: 60,
   rounds: 2,
@@ -116,5 +117,14 @@ describe('parseBackup', () => {
     const entry = { ...validEntry, name: 42, savedWorkoutId: false };
 
     expect(parseBackup({ log: [entry] })?.log).toEqual([validEntry]);
+  });
+
+  it('backfills a missing id with a generated one', () => {
+    const entryWithoutId = { date: 1000, sec: 60, rounds: 2, rpe: 1 };
+
+    const parsedEntry = parseBackup({ log: [entryWithoutId] })?.log[0];
+
+    expect(parsedEntry?.id).toEqual(expect.any(String));
+    expect(parsedEntry?.id.length).toBeGreaterThan(0);
   });
 });
