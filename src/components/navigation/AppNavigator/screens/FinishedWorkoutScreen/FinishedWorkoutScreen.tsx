@@ -25,7 +25,7 @@ import { FinishedWorkoutSummary } from './components/FinishedWorkoutSummary.tsx'
 import { RpeRatingPopUp } from './components/RpeRatingPopUp.tsx';
 import { RatingRequestHint } from './components/RatingRequestHint.tsx';
 
-const MIN_NUMBER_OF_WORKOUTS_TO_REQUEST_REVIEW = 3;
+export const MIN_NUMBER_OF_WORKOUTS_TO_REQUEST_REVIEW = 3;
 
 export const FinishedWorkoutScreen = () => {
   useFinishedWorkoutFeedbackOnMount();

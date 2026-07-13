@@ -9,12 +9,15 @@ import { AppText } from '../../../../common/AppText/AppText.tsx';
 import { AppToggle } from '../../../../common/AppToggle/AppToggle.tsx';
 import { SettingsSection } from '../SettingsScreen/components/SettingsSection.tsx';
 import {
+  finishedWorkoutsCountAtom,
   isPremiumAtom,
   premiumCharacterActivationsAtom,
+  starsRatedAtom,
   workoutHistoryAtom,
 } from '../../../../../contexts/atoms.ts';
 import { usePremiumActions } from '../../../../../contexts/premium/hooks/usePremiumActions.ts';
 import { getDemoWorkoutHistoryLog } from '../HistoryScreen/helpers/getDemoWorkoutHistoryLog.ts';
+import { MIN_NUMBER_OF_WORKOUTS_TO_REQUEST_REVIEW } from '../FinishedWorkoutScreen/FinishedWorkoutScreen.tsx';
 
 type DevScreenProps = ScreenProps<
   AppNavigatorScreenParams,
@@ -46,8 +49,15 @@ export const DevScreen = ({ navigation }: DevScreenProps) => {
     premiumCharacterActivationsAtom,
   );
   const setWorkoutHistory = useSetAtom(workoutHistoryAtom);
+  const setFinishedWorkoutsCount = useSetAtom(finishedWorkoutsCountAtom);
+  const setStarsRated = useSetAtom(starsRatedAtom);
 
   const { purchasePremium, restorePremium } = usePremiumActions();
+
+  const enableInAppReview = () => {
+    void setFinishedWorkoutsCount(MIN_NUMBER_OF_WORKOUTS_TO_REQUEST_REVIEW);
+    void setStarsRated(null);
+  };
 
   return (
     <AppScreenLayout
@@ -120,6 +130,21 @@ export const DevScreen = ({ navigation }: DevScreenProps) => {
               iconName={'Trash2'}
               backgroundColorStatus={'negative'}
               onPress={() => void setWorkoutHistory([])}
+            />,
+          ]}
+        />
+        <SettingsSection
+          iconName={'Star'}
+          label={'In-app review'}
+          items={[
+            <AppButton
+              key={'enable_in_app_review'}
+              label={'Zobrazit in-app review'}
+              iconName={'Star'}
+              backgroundColorStatus={'backgroundAlt'}
+              textColorStatus={'text'}
+              borderColorStatus={'border'}
+              onPress={enableInAppReview}
             />,
           ]}
         />
