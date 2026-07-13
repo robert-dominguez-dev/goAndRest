@@ -1,7 +1,7 @@
-import { Fragment, JSX, useCallback, useState } from 'react';
+import { Fragment, useCallback, useState } from 'react';
 import { useAppTranslation } from '../../../../../../locales/hooks/useAppTranslation.ts';
 import { useAppPopUp } from '../../../../../common/AppPopUp/hooks/useAppPopUp.tsx';
-import { AppFullScreenLoader } from '../../../../../common/AppFullScreenLoader.tsx';
+import { useAppFullScreenLoader } from '../../../../../../contexts/AppFullScreenLoaderProvider/AppFullScreenLoaderProvider.tsx';
 import { usePremiumActions } from '../../../../../../contexts/premium/hooks/usePremiumActions.ts';
 
 /**
@@ -13,6 +13,9 @@ import { usePremiumActions } from '../../../../../../contexts/premium/hooks/useP
  */
 export const usePaywallPurchase = (onEntitled: () => void) => {
   const t = useAppTranslation();
+
+  const { showFullScreenLoader, hideFullScreenLoader } =
+    useAppFullScreenLoader();
 
   const { purchasePremium, restorePremium } = usePremiumActions();
 
@@ -45,51 +48,68 @@ export const usePaywallPurchase = (onEntitled: () => void) => {
 
   const handleBuyPress = useCallback(async () => {
     setIsPurchasing(true);
-    const outcome = await purchasePremium();
-    setIsPurchasing(false);
+    showFullScreenLoader(t('common.paywall.processing'));
+    try {
+      const outcome = await purchasePremium();
 
-    if (outcome.status === 'cancelled') {
-      return;
-    }
+      if (outcome.status === 'cancelled') {
+        return;
+      }
 
-    if (outcome.status === 'error') {
-      openErrorPopUp();
-      return;
-    }
+      if (outcome.status === 'error') {
+        openErrorPopUp();
+        return;
+      }
 
-    if (outcome.isPremium) {
-      openSuccessPopUp();
-    } else {
-      openPendingPopUp();
+      if (outcome.isPremium) {
+        openSuccessPopUp();
+      } else {
+        openPendingPopUp();
+      }
+    } finally {
+      hideFullScreenLoader();
+      setIsPurchasing(false);
     }
-  }, [purchasePremium, openErrorPopUp, openSuccessPopUp, openPendingPopUp]);
+  }, [
+    purchasePremium,
+    openErrorPopUp,
+    openSuccessPopUp,
+    openPendingPopUp,
+    showFullScreenLoader,
+    hideFullScreenLoader,
+    t,
+  ]);
 
   const handleRestorePress = useCallback(async () => {
     setIsPurchasing(true);
-    const result = await restorePremium();
-    setIsPurchasing(false);
+    showFullScreenLoader(t('common.paywall.processing'));
+    try {
+      const result = await restorePremium();
 
-    if (result === 'restored') {
-      openSuccessPopUp();
-      return;
+      if (result === 'restored') {
+        openSuccessPopUp();
+        return;
+      }
+
+      if (result === 'notFound') {
+        openRestoreNotFoundPopUp();
+        return;
+      }
+
+      openErrorPopUp();
+    } finally {
+      hideFullScreenLoader();
+      setIsPurchasing(false);
     }
-
-    if (result === 'notFound') {
-      openRestoreNotFoundPopUp();
-      return;
-    }
-
-    openErrorPopUp();
   }, [
     restorePremium,
     openSuccessPopUp,
     openRestoreNotFoundPopUp,
     openErrorPopUp,
+    showFullScreenLoader,
+    hideFullScreenLoader,
+    t,
   ]);
-
-  const loaderOverlay: JSX.Element | null = isPurchasing ? (
-    <AppFullScreenLoader label={t('common.paywall.processing')} />
-  ) : null;
 
   const popUps = (
     <Fragment>
@@ -104,7 +124,6 @@ export const usePaywallPurchase = (onEntitled: () => void) => {
     isPurchasing,
     handleBuyPress,
     handleRestorePress,
-    loaderOverlay,
     popUps,
   };
 };

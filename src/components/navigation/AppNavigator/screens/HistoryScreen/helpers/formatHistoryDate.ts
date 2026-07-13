@@ -31,3 +31,11 @@ export const formatHistoryAxisDate = (
   format(new Date(date), 'd.M.', {
     locale: dateFnsLocaleByAppLanguage[language],
   });
+
+export const formatBackupRestorationDate = (
+  date: number,
+  language: SupportedLanguageCode,
+): string =>
+  format(new Date(date), 'd. M. yyyy', {
+    locale: dateFnsLocaleByAppLanguage[language],
+  });

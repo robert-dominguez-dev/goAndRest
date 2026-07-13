@@ -83,6 +83,10 @@ export const sk = {
       },
       processing: 'Spracúvame…',
     },
+    loader: {
+      exportingBackup: 'Pripravujem zálohu…',
+      importingBackup: 'Načítavam zálohu…',
+    },
   },
   screens: {
     landingScreen: {
@@ -113,7 +117,7 @@ export const sk = {
         duplicateNameDescription:
           'Tréning „{{name}}" už existuje. Môžeš ho prepísať, alebo zvoliť iný názov.',
         overwriteButtonLabel: 'Prepísať existujúci',
-        renameButtonLabel: 'Premenovať',
+        renameButtonLabel: 'Pomenovať inak',
         sameConfigHint: 'Rovnaké nastavenie už máš uložené ako {{names}}.',
         sameConfigHintAndMore: 'a ďalšie',
       },
@@ -351,9 +355,15 @@ export const sk = {
       listEmpty: 'Zatiaľ žiadny tréning. Po dokončení sa sem uloží.',
       detailConfigTitle: 'Nastavenie tréningu',
       detailDifficultyChartTitle: 'Náročnosť v čase',
-      detailDifficultyChartSubtitle: 'Tréningy s rovnakým nastavením',
+      detailDifficultyChartSubtitle: 'Neuložené tréningy s rovnakým nastavením',
       detailDifficultyChartSubtitleNamed: 'Rovnaký tréning „{{name}}“',
       detailSave: 'Uložiť tréning',
+      badgeDeleted: 'Zmazané',
+      badgeChanged: 'Zmenené',
+      detailDeletedHint:
+        'Uložený tréning s týmto názvom už v aplikácii nemáš – bol zmazaný.',
+      detailChangedHint:
+        'Tréning s týmto názvom máš teraz v aplikácii s iným nastavením. Náročnosť tohto záznamu sa preto neobjaví v grafe aktuálneho tréningu.',
     },
     finishedWorkoutScreen: {
       title: {

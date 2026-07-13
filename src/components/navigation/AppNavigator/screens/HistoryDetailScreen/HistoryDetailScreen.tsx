@@ -6,6 +6,7 @@ import { AppScreenLayout } from '../../../../common/AppScreenLayout/AppScreenLay
 import { AppView } from '../../../../common/AppView/AppView.tsx';
 import { AppText } from '../../../../common/AppText/AppText.tsx';
 import { AppDivider } from '../../../../common/AppDivider.tsx';
+import { AppHint } from '../../../../common/AppHint.tsx';
 import { AppButton } from '../../../../controls/AppButton/AppButton.tsx';
 import { WorkoutOutcomeTiles } from '../../../../common/WorkoutOutcomeTiles/WorkoutOutcomeTiles.tsx';
 import { useAppTranslation } from '../../../../../locales/hooks/useAppTranslation.ts';
@@ -15,6 +16,8 @@ import { workoutHistoryAtom } from '../../../../../contexts/atoms.ts';
 import { useAppWorkouts } from '../../../../../contexts/AppWorkoutsProvider/AppWorkoutsProvider.tsx';
 import { AppWorkoutFieldValues } from '../../../../../contexts/AppWorkoutsProvider/types.ts';
 import { getComparableHistoryEntries } from '../../../../../contexts/workoutHistory/helpers/getComparableHistoryEntries.ts';
+import { getHistoryEntryBadgeStatus } from '../../../../../contexts/workoutHistory/helpers/getHistoryEntryBadgeStatus.ts';
+import { getWorkoutConfigSignature } from '../../../../../contexts/workoutHistory/helpers/getWorkoutConfigSignature.ts';
 import { ScreenProps } from '../../../types.ts';
 import { AppNavigatorScreen, AppNavigatorScreenParams } from '../../types.ts';
 import { formatHistoryDetailDate } from '../HistoryScreen/helpers/formatHistoryDate.ts';
@@ -54,10 +57,30 @@ export const HistoryDetailScreen = ({
     [log, routeEntry],
   );
 
+  const savedSignatureByName: Record<string, string> = useMemo(
+    () =>
+      Object.fromEntries(
+        storedWorkouts.map(workout => [
+          workout.meta.name,
+          getWorkoutConfigSignature(workout.config),
+        ]),
+      ),
+    [storedWorkouts],
+  );
+
+  const entryBadgeStatus = getHistoryEntryBadgeStatus(
+    entry,
+    savedSignatureByName,
+  );
+
   // Reuse the dashboard save flow: a FormProvider holding this workout's
-  // config feeds the shared SaveWorkoutBottomSheetContent.
+  // config feeds the shared SaveWorkoutBottomSheetContent. A deleted workout
+  // pre-fills its former name so re-saving keeps it.
   const formProps = useForm<AppWorkoutFieldValues>({
-    defaultValues: { ...routeEntry.config, workoutName: '' },
+    defaultValues: {
+      ...routeEntry.config,
+      workoutName: entryBadgeStatus === 'deleted' ? entry.name ?? '' : '',
+    },
     reValidateMode: 'onBlur',
   });
 
@@ -154,6 +177,19 @@ export const HistoryDetailScreen = ({
         <AppView
           alignItems={'center'}
           gap={'m'}>
+          {entryBadgeStatus && (
+            <AppView width={FILL_CONTAINER_DIMENSION}>
+              {entryBadgeStatus === 'deleted' ? (
+                <AppHint status={'error'}>
+                  {t('screens.historyScreen.detailDeletedHint')}
+                </AppHint>
+              ) : (
+                <AppHint status={'alert'}>
+                  {t('screens.historyScreen.detailChangedHint')}
+                </AppHint>
+              )}
+            </AppView>
+          )}
           <WorkoutOutcomeTiles
             sec={entry.sec}
             rpe={entry.rpe}

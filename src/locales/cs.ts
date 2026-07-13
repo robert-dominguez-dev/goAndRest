@@ -82,6 +82,10 @@ export const cs = {
       },
       processing: 'Zpracováváme…',
     },
+    loader: {
+      exportingBackup: 'Připravuji zálohu…',
+      importingBackup: 'Načítám zálohu…',
+    },
   },
   screens: {
     landingScreen: {
@@ -112,7 +116,7 @@ export const cs = {
         duplicateNameDescription:
           'Trénink „{{name}}" už existuje. Můžeš ho přepsat, nebo zvolit jiný název.',
         overwriteButtonLabel: 'Přepsat existující',
-        renameButtonLabel: 'Přejmenovat',
+        renameButtonLabel: 'Pojmenovat jinak',
         sameConfigHint: 'Stejné nastavení už máš uložené jako {{names}}.',
         sameConfigHintAndMore: 'a další',
       },
@@ -351,9 +355,15 @@ export const cs = {
       listEmpty: 'Zatím žádný trénink. Po dokončení se sem uloží.',
       detailConfigTitle: 'Nastavení tréninku',
       detailDifficultyChartTitle: 'Náročnost v čase',
-      detailDifficultyChartSubtitle: 'Tréninky se stejným nastavením',
+      detailDifficultyChartSubtitle: 'Neuložené tréninky se stejným nastavením',
       detailDifficultyChartSubtitleNamed: 'Stejný trénink „{{name}}“',
       detailSave: 'Uložit trénink',
+      badgeDeleted: 'Smazáno',
+      badgeChanged: 'Změněno',
+      detailDeletedHint:
+        'Uložený trénink s tímto názvem už v aplikaci nemáš – byl smazán.',
+      detailChangedHint:
+        'Trénink s tímto názvem teď máš v aplikaci s jiným nastavením. Náročnost tohoto záznamu se proto neobjeví v grafu náročnosti aktuálního tréninku.',
     },
     finishedWorkoutScreen: {
       title: {

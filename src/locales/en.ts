@@ -83,6 +83,10 @@ export const en = {
       },
       processing: 'Processing…',
     },
+    loader: {
+      exportingBackup: 'Preparing backup…',
+      importingBackup: 'Loading backup…',
+    },
   },
   screens: {
     landingScreen: {
@@ -113,7 +117,7 @@ export const en = {
         duplicateNameDescription:
           'A workout named "{{name}}" already exists. You can overwrite it or choose a different name.',
         overwriteButtonLabel: 'Overwrite existing',
-        renameButtonLabel: 'Rename',
+        renameButtonLabel: 'Use a different name',
         sameConfigHint: 'You already have the same setup saved as {{names}}.',
         sameConfigHintAndMore: 'and more',
       },
@@ -354,9 +358,15 @@ export const en = {
       listEmpty: 'No workouts yet. They will appear here once you finish one.',
       detailConfigTitle: 'Workout settings',
       detailDifficultyChartTitle: 'Difficulty over time',
-      detailDifficultyChartSubtitle: 'Workouts with the same setup',
+      detailDifficultyChartSubtitle: 'Unsaved workouts with the same setup',
       detailDifficultyChartSubtitleNamed: 'The same workout “{{name}}”',
       detailSave: 'Save workout',
+      badgeDeleted: 'Deleted',
+      badgeChanged: 'Changed',
+      detailDeletedHint:
+        'You no longer have a saved workout with this name – it was deleted.',
+      detailChangedHint:
+        "The workout with this name now has different settings in the app. That is why this entry's difficulty will not show in the current workout's chart.",
     },
     finishedWorkoutScreen: {
       title: {

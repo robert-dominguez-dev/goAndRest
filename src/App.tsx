@@ -15,6 +15,7 @@ import { PremiumCharacterActivationGuard } from './components/common/PremiumChar
 import { usePremiumSync } from './contexts/premium/hooks/usePremiumSync.ts';
 import { HistoryPaywallOverlay } from './components/common/HistoryPaywallOverlay.tsx';
 import { AppNavigatorScreen } from './components/navigation/AppNavigator/types.ts';
+import { AppFullScreenLoaderProvider } from './contexts/AppFullScreenLoaderProvider/AppFullScreenLoaderProvider.tsx';
 
 export const App = () => {
   const { navigationRef, onReady, onStateChange } = useNavigationAnalytics();
@@ -44,13 +45,15 @@ export const App = () => {
             <Suspense fallback={null}>
               <AppThemeProvider>
                 <AppWorkoutsProvider>
-                  <AppStatusBar />
-                  <PremiumCharacterActivationGuard />
-                  <AppNavigators />
-                  <HistoryPaywallOverlay
-                    onUnlockPress={goToPaywall}
-                    onClose={goBackFromHistory}
-                  />
+                  <AppFullScreenLoaderProvider>
+                    <AppStatusBar />
+                    <PremiumCharacterActivationGuard />
+                    <AppNavigators />
+                    <HistoryPaywallOverlay
+                      onUnlockPress={goToPaywall}
+                      onClose={goBackFromHistory}
+                    />
+                  </AppFullScreenLoaderProvider>
                 </AppWorkoutsProvider>
               </AppThemeProvider>
             </Suspense>

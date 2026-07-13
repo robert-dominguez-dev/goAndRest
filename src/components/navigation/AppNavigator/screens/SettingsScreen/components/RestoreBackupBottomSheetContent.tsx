@@ -2,16 +2,13 @@ import { memo } from 'react';
 import { AppView } from '../../../../../common/AppView/AppView.tsx';
 import { AppRow } from '../../../../../common/AppRow.tsx';
 import { AppText } from '../../../../../common/AppText/AppText.tsx';
-import { AppIcon } from '../../../../../common/AppIcon.tsx';
+import { AppHint } from '../../../../../common/AppHint.tsx';
 import { AppDivider } from '../../../../../common/AppDivider.tsx';
 import { AppButton } from '../../../../../controls/AppButton/AppButton.tsx';
 import { useAppTranslation } from '../../../../../../locales/hooks/useAppTranslation.ts';
 import { useAppLanguage } from '../../../../../../contexts/AppLanguageProvider/AppLanguageProvider.tsx';
-import {
-  DASH,
-  UNLIMITED_NUMBER_OF_LINES,
-} from '../../../../../../constants/common.ts';
-import { formatHistoryDetailDate } from '../../HistoryScreen/helpers/formatHistoryDate.ts';
+import { DASH } from '../../../../../../constants/common.ts';
+import { formatBackupRestorationDate } from '../../HistoryScreen/helpers/formatHistoryDate.ts';
 import { ParsedBackup } from '../../../../../../services/helpers/parseBackup.ts';
 
 type RestoreBackupBottomSheetContentProps = {
@@ -30,8 +27,16 @@ const RestoreInfoRow = ({ label, value }: RestoreInfoRowProps) => (
     alignItems={'center'}
     gap={'m'}
     paddingVertical={'s'}>
-    <AppText colorStatus={'textMuted'}>{label}</AppText>
-    <AppText category={'subHeader'}>{value}</AppText>
+    <AppText
+      category={'contentBold'}
+      colorStatus={'textMuted'}>
+      {label}
+    </AppText>
+    <AppText
+      grow={false}
+      category={'title'}>
+      {value}
+    </AppText>
   </AppRow>
 );
 
@@ -44,40 +49,27 @@ const RestoreBackupBottomSheetContentComponent = ({
   const { language } = useAppLanguage();
 
   const dates = payload.log.map(entry => entry.date).sort((a, b) => a - b);
+
   const period = dates.length
     ? dates.length > 1
-      ? `${formatHistoryDetailDate(
+      ? `${formatBackupRestorationDate(
           dates[0],
           language,
-        )} – ${formatHistoryDetailDate(dates[dates.length - 1], language)}`
-      : formatHistoryDetailDate(dates[0], language)
+        )} – ${formatBackupRestorationDate(dates[dates.length - 1], language)}`
+      : formatBackupRestorationDate(dates[0], language)
     : DASH;
 
   return (
     <AppView gap={'m'}>
-      <AppRow
-        gap={'s'}
-        alignItems={'flex-start'}
-        padding={'m'}
-        borderRadius={'m'}
-        backgroundColorStatus={'backgroundAlt'}
-        borderColorStatus={'negative'}>
-        <AppIcon
-          name={'TriangleAlert'}
-          colorStatus={'negative'}
-        />
-        <AppText
-          grow
-          numberOfLines={UNLIMITED_NUMBER_OF_LINES}>
-          {t('screens.settingsScreen.backupSection.restoreSheet.warning')}
-        </AppText>
-      </AppRow>
+      <AppHint status={'alert'}>
+        {t('screens.settingsScreen.backupSection.restoreSheet.warning')}
+      </AppHint>
       <AppView>
         <RestoreInfoRow
           label={t('screens.settingsScreen.backupSection.restoreSheet.rowDate')}
           value={
             payload.date !== null
-              ? formatHistoryDetailDate(payload.date, language)
+              ? formatBackupRestorationDate(payload.date, language)
               : t(
                   'screens.settingsScreen.backupSection.restoreSheet.dateUnknown',
                 )

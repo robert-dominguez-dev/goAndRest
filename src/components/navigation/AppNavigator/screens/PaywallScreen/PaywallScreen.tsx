@@ -15,7 +15,7 @@ type PaywallScreenProps = ScreenProps<
 const EMPTY_HEADER_TITLE = ' ';
 
 export const PaywallScreen = ({ navigation }: PaywallScreenProps) => {
-  const { isPurchasing, handleBuyPress, handleRestorePress, loaderOverlay, popUps } =
+  const { isPurchasing, handleBuyPress, handleRestorePress, popUps } =
     usePaywallPurchase(navigation.goBack);
 
   return (
@@ -35,7 +35,6 @@ export const PaywallScreen = ({ navigation }: PaywallScreenProps) => {
         <PaywallContent />
       </AppScreenLayout>
       {popUps}
-      {loaderOverlay}
     </>
   );
 };

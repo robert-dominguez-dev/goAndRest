@@ -12,6 +12,7 @@ import {
   MARGIN_TOP,
   PLOT_HEIGHT,
 } from './helpers/historyChartLayout.ts';
+import { Fragment } from 'react';
 
 type HistoryTrendChartProps = {
   data: WorkoutHistoryEntry[];
@@ -53,7 +54,7 @@ export const HistoryTrendChart = ({ data }: HistoryTrendChartProps) => {
         />
         {data.map((entry, index) => (
           <Circle
-            key={`time-${entry.date}-${index}`}
+            key={`time-${entry.id}`}
             cx={getX(index, count)}
             cy={getTimeY(entry)}
             r={3}
@@ -61,9 +62,8 @@ export const HistoryTrendChart = ({ data }: HistoryTrendChartProps) => {
           />
         ))}
         {data.map((entry, index) => (
-          <>
+          <Fragment key={`time-${entry.id}`}>
             <SvgText
-              key={`time-label-${entry.date}-${index}`}
               x={getX(index, count)}
               y={getTimeY(entry) - 20}
               fontSize={10}
@@ -72,7 +72,6 @@ export const HistoryTrendChart = ({ data }: HistoryTrendChartProps) => {
               {Math.round((entry.sec || 0) / 60)}
             </SvgText>
             <SvgText
-              key={`time-label-unit-${entry.date}-${index}`}
               x={getX(index, count)}
               y={getTimeY(entry) - 9}
               fontSize={10}
@@ -80,7 +79,7 @@ export const HistoryTrendChart = ({ data }: HistoryTrendChartProps) => {
               textAnchor={'middle'}>
               min
             </SvgText>
-          </>
+          </Fragment>
         ))}
         <SvgText
           x={0}

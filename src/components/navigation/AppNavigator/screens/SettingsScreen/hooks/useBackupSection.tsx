@@ -7,6 +7,7 @@ import { workoutHistoryAtom } from '../../../../../../contexts/atoms.ts';
 import { useAppBottomSheet } from '../../../../../common/AppBottomSheet/hooks/useAppBottomSheet.tsx';
 import { AppBottomSheetProps } from '../../../../../common/AppBottomSheet/AppBottomSheet.tsx';
 import { useAppPopUp } from '../../../../../common/AppPopUp/hooks/useAppPopUp.tsx';
+import { useAppFullScreenLoader } from '../../../../../../contexts/AppFullScreenLoaderProvider/AppFullScreenLoaderProvider.tsx';
 import { RestoreBackupBottomSheetContent } from '../components/RestoreBackupBottomSheetContent.tsx';
 import { BackupDataSettingItem } from '../components/items/BackupDataSettingItem.tsx';
 import { RestoreDataSettingItem } from '../components/items/RestoreDataSettingItem.tsx';
@@ -24,6 +25,9 @@ export const useBackupSection = ({
   onPremiumRequired,
 }: UseBackupSectionParams) => {
   const t = useAppTranslation();
+
+  const { showFullScreenLoader, hideFullScreenLoader } =
+    useAppFullScreenLoader();
 
   const isPremium = useIsPremium();
 
@@ -71,12 +75,18 @@ export const useBackupSection = ({
     });
   };
 
-  const handleExportPress = () => {
+  const handleExportPress = async () => {
     if (!isPremium) {
       onPremiumRequired();
       return;
     }
-    void exportBackup(storedWorkouts, log);
+
+    showFullScreenLoader(t('common.loader.exportingBackup'));
+    try {
+      await exportBackup(storedWorkouts, log);
+    } finally {
+      hideFullScreenLoader();
+    }
   };
 
   const handleImportPress = async () => {
@@ -85,7 +95,14 @@ export const useBackupSection = ({
       return;
     }
 
-    const result = await pickAndParseBackup();
+    let result: Awaited<ReturnType<typeof pickAndParseBackup>>;
+
+    showFullScreenLoader(t('common.loader.importingBackup'));
+    try {
+      result = await pickAndParseBackup();
+    } finally {
+      hideFullScreenLoader();
+    }
 
     if (result === 'cancelled') {
       return;
@@ -103,7 +120,7 @@ export const useBackupSection = ({
     <BackupDataSettingItem
       key={'backup'}
       isPremium={isPremium}
-      onPress={handleExportPress}
+      onPress={() => void handleExportPress()}
     />,
     <RestoreDataSettingItem
       key={'restore'}

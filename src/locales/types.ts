@@ -101,6 +101,10 @@ export type AppTranslations = {
       };
       processing: string;
     };
+    loader: {
+      exportingBackup: string;
+      importingBackup: string;
+    };
   };
   screens: {
     landingScreen: {
@@ -248,6 +252,10 @@ export type AppTranslations = {
       detailDifficultyChartSubtitle: string;
       detailDifficultyChartSubtitleNamed: string;
       detailSave: string;
+      badgeDeleted: string;
+      badgeChanged: string;
+      detailDeletedHint: string;
+      detailChangedHint: string;
     };
     finishedWorkoutScreen: {
       title: TextsByCoachVariant;
