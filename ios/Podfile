@@ -36,5 +36,30 @@ target 'GoAndRest' do
       :mac_catalyst_enabled => false,
       # :ccache_enabled => true
     )
+
+    # fmt 11.0.2 fails to compile with newer Clang (Xcode 16.3+, e.g. Xcode
+    # Cloud): its own format-inl.h uses FMT_STRING in consteval contexts the
+    # stricter compiler rejects ("consteval function is not a constant
+    # expression"). Force fmt's compile-time (consteval) format-string checking
+    # off; format strings are still validated at runtime.
+    fmt_base = File.join(__dir__, 'Pods', 'fmt', 'include', 'fmt', 'base.h')
+    if File.exist?(fmt_base)
+      marker = '// patched: force consteval off (Xcode 16.3+ clang compat)'
+      contents = File.read(fmt_base)
+      unless contents.include?(marker)
+        patched = contents.sub(
+          "#if FMT_USE_CONSTEVAL\n#  define FMT_CONSTEVAL consteval",
+          "#undef FMT_USE_CONSTEVAL\n#define FMT_USE_CONSTEVAL 0  #{marker}\n" \
+          "#if FMT_USE_CONSTEVAL\n#  define FMT_CONSTEVAL consteval",
+        )
+        if patched != contents
+          File.chmod(0o644, fmt_base)
+          File.write(fmt_base, patched)
+          Pod::UI.puts '[fmt] forced FMT_USE_CONSTEVAL 0 for Clang compat'.green
+        else
+          Pod::UI.warn '[fmt] consteval patch anchor not found - skipped'
+        end
+      end
+    end
   end
 end
