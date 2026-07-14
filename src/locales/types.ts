@@ -50,6 +50,7 @@ type SaveWorkoutBottomSheetTexts = Omit<PopUpTexts, 'negativeButtonLabel'> & {
 export type AppTranslations = {
   common: {
     ok: string;
+    back: string;
     chartEmpty: string;
     workoutConfig: WorkoutConfigTexts;
     pressAnywhere: string;
@@ -81,6 +82,7 @@ export type AppTranslations = {
       buyButton: string;
       oneTimeNote: string;
       restore: string;
+      restoreShort: string;
       activeState: string;
       charSheetUnlock: string;
       errorPopUp: {

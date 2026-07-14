@@ -1,7 +1,6 @@
 import { AppWorkoutConfig } from '../../../../../contexts/AppWorkoutsProvider/types.ts';
 import { formatTimerTime } from '../../../../../helpers/formatTimerTime.tsx';
 import { AppButtonProps } from '../../../../controls/AppButton/AppButton.tsx';
-import { AppIconName } from '../../../../common/AppIcon.tsx';
 import { TranslateKey } from '../../../../../locales/types.ts';
 import { formatRounds } from '../../../../../helpers/formatRounds.ts';
 import { ONE_SECOND_MS } from '../../../../../constants/common.ts';

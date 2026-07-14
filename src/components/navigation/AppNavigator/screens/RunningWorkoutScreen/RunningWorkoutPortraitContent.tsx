@@ -51,7 +51,8 @@ const _RunningWorkoutPortraitContent = ({
       grow
       paddingBottom={'l'}
       gap={'m'}
-      alignItems={'center'}>
+      alignItems={'center'}
+      justifyContent={justifyContent}>
       <AppView
         grow
         justifyContent={'center'}>

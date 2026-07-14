@@ -6,6 +6,7 @@ import { AppTranslations } from './types.ts';
 export const sk = {
   common: {
     ok: 'Ok',
+    back: 'Späť',
     chartEmpty: 'Zatiaľ žiadne dáta na zobrazenie grafu.',
     workoutConfig: {
       work: {
@@ -62,6 +63,7 @@ export const sk = {
       buyButton: 'Kúpiť Premium — {{priceString}}',
       oneTimeNote: 'Jednorazová platba. Žiadne predplatné.',
       restore: 'Obnoviť predchádzajúci nákup',
+      restoreShort: 'Obnoviť',
       activeState: 'PREMIUM AKTÍVNY ✓',
       charSheetUnlock: 'Odomknúť všetko — {{priceString}}',
       errorPopUp: {

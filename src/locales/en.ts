@@ -6,6 +6,7 @@ import { AppTranslations } from './types.ts';
 export const en = {
   common: {
     ok: 'Ok',
+    back: 'Back',
     chartEmpty: 'No data to display the chart yet.',
     workoutConfig: {
       work: {
@@ -62,6 +63,7 @@ export const en = {
       buyButton: 'Buy Premium — {{priceString}}',
       oneTimeNote: 'One-time payment. No subscription.',
       restore: 'Restore previous purchase',
+      restoreShort: 'Restore',
       activeState: 'PREMIUM ACTIVE ✓',
       charSheetUnlock: 'Unlock everything — {{priceString}}',
       errorPopUp: {

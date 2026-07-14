@@ -47,12 +47,14 @@ export const usePaywallPurchase = (onEntitled: () => void) => {
     title: errorContent.title,
     iconName: errorContent.iconName,
     description: errorContent.description,
-    primaryButtonProps: { label: t('common.ok') },
-    secondaryButtonProps: errorContent.canRestore
+    primaryButtonProps: errorContent.canRestore
       ? {
-          label: t('common.paywall.restore'),
+          label: t('common.paywall.restoreShort'),
           onPress: () => handleRestorePress(),
         }
+      : { label: t('common.ok') },
+    secondaryButtonProps: errorContent.canRestore
+      ? { label: t('common.back'), backgroundColorStatus: 'transparent' }
       : undefined,
   });
 

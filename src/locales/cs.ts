@@ -6,6 +6,7 @@ import { AppTranslations } from './types.ts';
 export const cs = {
   common: {
     ok: 'Ok',
+    back: 'Zpět',
     chartEmpty: 'Zatím žádná data pro zobrazení grafu.',
     workoutConfig: {
       work: {
@@ -61,6 +62,7 @@ export const cs = {
       buyButton: 'Koupit Premium — {{priceString}}',
       oneTimeNote: 'Jednorázová platba. Žádné předplatné.',
       restore: 'Obnovit dřívější nákup',
+      restoreShort: 'Obnovit',
       activeState: 'PREMIUM AKTIVNÍ ✓',
       charSheetUnlock: 'Odemknout vše — {{priceString}}',
       errorPopUp: {
