@@ -67,6 +67,14 @@ export const cs = {
         title: 'Nákup se nezdařil',
         description: 'Zkus to prosím znovu později.',
       },
+      errorNetwork: 'Zkontroluj připojení k internetu a zkus to znovu.',
+      errorNotAllowed:
+        'Nákupy nejsou na tomto zařízení povolené. Zkontroluj případná omezení nebo rodičovskou kontrolu.',
+      errorProductUnavailable:
+        'Produkt teď v obchodě není dostupný. Zkus to prosím později.',
+      errorAlreadyOwnedTitle: 'Tohle už máš koupené',
+      errorAlreadyOwned:
+        'Tento nákup už na tvém účtu je. Obnov ho tlačítkem níže.',
       restoreNotFoundPopUp: {
         title: 'Nenašli jsme nákup',
         description: 'Na tomto účtu jsme nenašli žádný předchozí nákup.',

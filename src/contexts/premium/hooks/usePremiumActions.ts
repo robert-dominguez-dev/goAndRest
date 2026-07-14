@@ -1,5 +1,6 @@
 import { useSetAtom } from 'jotai';
 import { useCallback } from 'react';
+import { PURCHASES_ERROR_CODE } from 'react-native-purchases';
 import { isPremiumAtom } from '../../atoms.ts';
 import {
   hasPremiumEntitlement,
@@ -20,15 +21,17 @@ export const usePremiumActions = () => {
   }, [setIsPremium]);
 
   const restorePremium = useCallback(async (): Promise<
-    'restored' | 'notFound' | 'error'
+    | { status: 'restored' }
+    | { status: 'notFound' }
+    | { status: 'error'; code: PURCHASES_ERROR_CODE | undefined }
   > => {
-    const customerInfo = await restorePurchases();
-    if (!customerInfo) {
-      return 'error';
+    const outcome = await restorePurchases();
+    if (outcome.status === 'error') {
+      return { status: 'error', code: outcome.code };
     }
-    const isPremium = hasPremiumEntitlement(customerInfo);
+    const isPremium = hasPremiumEntitlement(outcome.customerInfo);
     void setIsPremium(isPremium);
-    return isPremium ? 'restored' : 'notFound';
+    return isPremium ? { status: 'restored' } : { status: 'notFound' };
   }, [setIsPremium]);
 
   return { purchasePremium, restorePremium };

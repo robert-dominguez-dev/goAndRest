@@ -87,6 +87,11 @@ export type AppTranslations = {
         title: string;
         description: string;
       };
+      errorNetwork: string;
+      errorNotAllowed: string;
+      errorProductUnavailable: string;
+      errorAlreadyOwnedTitle: string;
+      errorAlreadyOwned: string;
       restoreNotFoundPopUp: {
         title: string;
         description: string;

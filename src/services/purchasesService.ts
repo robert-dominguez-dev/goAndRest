@@ -3,6 +3,7 @@ import Purchases, {
   CustomerInfoUpdateListener,
   LOG_LEVEL,
   PRODUCT_CATEGORY,
+  PURCHASES_ERROR_CODE,
   PurchasesPackage,
   PurchasesStoreProduct,
 } from 'react-native-purchases';
@@ -18,7 +19,11 @@ import { getErrorMessage } from '../helpers/getErrorMessage.ts';
 export type PurchaseOutcome =
   | { status: 'success'; isPremium: boolean }
   | { status: 'cancelled' }
-  | { status: 'error' };
+  | { status: 'error'; code: PURCHASES_ERROR_CODE | undefined };
+
+export type RestoreOutcome =
+  | { status: 'success'; customerInfo: CustomerInfo }
+  | { status: 'error'; code: PURCHASES_ERROR_CODE | undefined };
 
 export const configurePurchases = async (): Promise<void> => {
   try {
@@ -102,6 +107,11 @@ export const getLifetimePriceString = async (): Promise<string | null> => {
   return lifetimeProduct?.priceString ?? null;
 };
 
+const getPurchasesErrorCode = (
+  error: unknown,
+): PURCHASES_ERROR_CODE | undefined =>
+  (error as { code?: PURCHASES_ERROR_CODE } | undefined)?.code;
+
 const toPurchaseErrorOutcome = (error: unknown): PurchaseOutcome => {
   const purchaseError = error as { userCancelled?: boolean } | undefined;
   if (purchaseError?.userCancelled) {
@@ -110,7 +120,7 @@ const toPurchaseErrorOutcome = (error: unknown): PurchaseOutcome => {
   void logCustomEvent('purchase_failure', {
     errorMessage: getErrorMessage(error),
   });
-  return { status: 'error' };
+  return { status: 'error', code: getPurchasesErrorCode(error) };
 };
 
 export const purchaseLifetime = async (): Promise<PurchaseOutcome> => {
@@ -130,7 +140,7 @@ export const purchaseLifetime = async (): Promise<PurchaseOutcome> => {
 
   const lifetimeProduct = await getLifetimeStoreProduct();
   if (!lifetimeProduct) {
-    return { status: 'error' };
+    return { status: 'error', code: undefined };
   }
   try {
     const { customerInfo } = await Purchases.purchaseStoreProduct(
@@ -145,15 +155,15 @@ export const purchaseLifetime = async (): Promise<PurchaseOutcome> => {
   }
 };
 
-export const restorePurchases = async (): Promise<CustomerInfo | null> => {
+export const restorePurchases = async (): Promise<RestoreOutcome> => {
   try {
     await ensureIsConfigured();
-    return await Purchases.restorePurchases();
+    return { status: 'success', customerInfo: await Purchases.restorePurchases() };
   } catch (error) {
     void logCustomEvent('restore_purchases_failure', {
       errorMessage: getErrorMessage(error),
     });
-    return null;
+    return { status: 'error', code: getPurchasesErrorCode(error) };
   }
 };
 

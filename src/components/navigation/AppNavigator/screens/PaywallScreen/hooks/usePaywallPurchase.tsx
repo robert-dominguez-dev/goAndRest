@@ -1,10 +1,12 @@
 import { Fragment, useCallback, useState } from 'react';
+import { PURCHASES_ERROR_CODE } from 'react-native-purchases';
 import { useAppTranslation } from '../../../../../../locales/hooks/useAppTranslation.ts';
 import { useAppPopUp } from '../../../../../common/AppPopUp/hooks/useAppPopUp.tsx';
 import {
   useAppFullScreenLoader
 } from '../../../../../../contexts/AppFullScreenLoaderProvider/AppFullScreenLoaderProvider.tsx';
 import { usePremiumActions } from '../../../../../../contexts/premium/hooks/usePremiumActions.ts';
+import { getPurchaseErrorContent } from '../helpers/getPurchaseErrorContent.ts';
 
 /**
  * Owns the purchase / restore flow for the paywall screen: a non-Modal
@@ -22,6 +24,10 @@ export const usePaywallPurchase = (onEntitled: () => void) => {
   const { purchasePremium, restorePremium } = usePremiumActions();
 
   const [isPurchasing, setIsPurchasing] = useState(false);
+  const [purchaseErrorCode, setPurchaseErrorCode] = useState<
+    PURCHASES_ERROR_CODE | undefined
+  >();
+  const errorContent = getPurchaseErrorContent(purchaseErrorCode, t);
 
   const { popUp: successPopUp, onOpen: openSuccessPopUp } = useAppPopUp({
     title: t('common.paywall.successPopUp.title'),
@@ -38,10 +44,16 @@ export const usePaywallPurchase = (onEntitled: () => void) => {
   });
 
   const { popUp: errorPopUp, onOpen: openErrorPopUp } = useAppPopUp({
-    title: t('common.paywall.errorPopUp.title'),
-    iconName: 'CircleX',
-    description: t('common.paywall.errorPopUp.description'),
+    title: errorContent.title,
+    iconName: errorContent.iconName,
+    description: errorContent.description,
     primaryButtonProps: { label: t('common.ok') },
+    secondaryButtonProps: errorContent.canRestore
+      ? {
+          label: t('common.paywall.restore'),
+          onPress: () => handleRestorePress(),
+        }
+      : undefined,
   });
 
   const { popUp: restoreNotFoundPopUp, onOpen: openRestoreNotFoundPopUp } =
@@ -63,6 +75,7 @@ export const usePaywallPurchase = (onEntitled: () => void) => {
       }
 
       if (outcome.status === 'error') {
+        setPurchaseErrorCode(outcome.code);
         openErrorPopUp();
         return;
       }
@@ -78,6 +91,7 @@ export const usePaywallPurchase = (onEntitled: () => void) => {
     }
   }, [
     purchasePremium,
+    setPurchaseErrorCode,
     openErrorPopUp,
     openSuccessPopUp,
     openPendingPopUp,
@@ -92,16 +106,17 @@ export const usePaywallPurchase = (onEntitled: () => void) => {
     try {
       const result = await restorePremium();
 
-      if (result === 'restored') {
+      if (result.status === 'restored') {
         openSuccessPopUp();
         return;
       }
 
-      if (result === 'notFound') {
+      if (result.status === 'notFound') {
         openRestoreNotFoundPopUp();
         return;
       }
 
+      setPurchaseErrorCode(result.code);
       openErrorPopUp();
     } finally {
       hideFullScreenLoader();
@@ -109,6 +124,7 @@ export const usePaywallPurchase = (onEntitled: () => void) => {
     }
   }, [
     restorePremium,
+    setPurchaseErrorCode,
     openSuccessPopUp,
     openRestoreNotFoundPopUp,
     openErrorPopUp,

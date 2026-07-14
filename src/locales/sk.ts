@@ -68,6 +68,14 @@ export const sk = {
         title: 'Nákup sa nepodaril',
         description: 'Skús to prosím znova neskôr.',
       },
+      errorNetwork: 'Skontroluj pripojenie k internetu a skús to znova.',
+      errorNotAllowed:
+        'Nákupy nie sú na tomto zariadení povolené. Skontroluj prípadné obmedzenia alebo rodičovskú kontrolu.',
+      errorProductUnavailable:
+        'Produkt momentálne nie je v obchode dostupný. Skús to prosím neskôr.',
+      errorAlreadyOwnedTitle: 'Toto už máš kúpené',
+      errorAlreadyOwned:
+        'Tento nákup už na tvojom účte je. Obnov ho tlačidlom nižšie.',
       restoreNotFoundPopUp: {
         title: 'Nenašli sme nákup',
         description: 'Na tomto účte sme nenašli žiadny predchádzajúci nákup.',

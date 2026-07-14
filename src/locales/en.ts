@@ -68,6 +68,14 @@ export const en = {
         title: 'Purchase failed',
         description: 'Please try again later.',
       },
+      errorNetwork: 'Check your internet connection and try again.',
+      errorNotAllowed:
+        'Purchases are not allowed on this device. Check any restrictions or parental controls.',
+      errorProductUnavailable:
+        'The product is currently unavailable in the store. Please try again later.',
+      errorAlreadyOwnedTitle: 'You already own this',
+      errorAlreadyOwned:
+        'This purchase is already on your account. Restore it with the button below.',
       restoreNotFoundPopUp: {
         title: 'No purchase found',
         description: 'We could not find any previous purchase on this account.',
