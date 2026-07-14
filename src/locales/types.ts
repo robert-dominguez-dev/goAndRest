@@ -150,9 +150,7 @@ export type AppTranslations = {
             SettingsItemSubItems<WorkoutCharacterVariant> & {
               premiumBottomSheet: {
                 title: string;
-                titlePremium: string;
                 description: string;
-                descriptionPremium: string;
                 daysRemaining: {
                   lessThanOne: string;
                   one: string;
@@ -193,6 +191,14 @@ export type AppTranslations = {
             title: string;
             description: string;
           };
+        };
+        restoreSuccessPopUp: {
+          title: string;
+          description: string;
+        };
+        exportDonePopUp: {
+          title: string;
+          description: string;
         };
       };
       otherSection: {

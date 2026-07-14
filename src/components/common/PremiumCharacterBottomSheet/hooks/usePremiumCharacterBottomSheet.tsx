@@ -126,9 +126,7 @@ export const usePremiumCharacterBottomSheet = (
         iconColorStatus={'premium'}
         textColorStatus={'premium'}
         label={t(
-          isPremium
-            ? 'screens.settingsScreen.feedbackSection.items.characterVariant.premiumBottomSheet.titlePremium'
-            : 'screens.settingsScreen.feedbackSection.items.characterVariant.premiumBottomSheet.title',
+          'screens.settingsScreen.feedbackSection.items.characterVariant.premiumBottomSheet.title',
         )}
         category={'header'}
       />
@@ -153,7 +151,7 @@ export const usePremiumCharacterBottomSheet = (
   const openBottomSheet = () =>
     handleOpen({
       renderContent,
-      title: titleElement,
+      title: isPremium ? undefined : titleElement,
       backgroundColorStatus: 'backgroundAlt',
       onAccessoryRightPress: handleClose,
       onOverlayPress: handleClose,

@@ -36,6 +36,7 @@ export const useRewardedAd = (setHidden: (hidden: boolean) => void) => {
 
   const { popUp, onOpen: showAdNotAvailablePopUp } = useAppPopUp({
     title: t('common.adNotAvailablePopUp.title'),
+    iconName: 'TriangleAlert',
     description: t('common.adNotAvailablePopUp.description'),
     primaryButtonProps: {
       label: t('common.ok'),

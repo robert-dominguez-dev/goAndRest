@@ -28,6 +28,7 @@ export const useSelectOrExtendPopUp = ({
 
   const { popUp, onOpen } = useAppPopUp({
     title: t(`${TRANSLATE_KEY_PREFIX}.title`),
+    iconName: 'Clock',
     description: pendingValue
       ? t(`${TRANSLATE_KEY_PREFIX}.description`, {
           value:

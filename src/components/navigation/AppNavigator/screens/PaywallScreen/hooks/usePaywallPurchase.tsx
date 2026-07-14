@@ -23,18 +23,21 @@ export const usePaywallPurchase = (onEntitled: () => void) => {
 
   const { popUp: successPopUp, onOpen: openSuccessPopUp } = useAppPopUp({
     title: t('common.paywall.successPopUp.title'),
+    iconName: 'Check',
     description: t('common.paywall.successPopUp.description'),
     primaryButtonProps: { label: t('common.ok'), onPress: onEntitled },
   });
 
   const { popUp: pendingPopUp, onOpen: openPendingPopUp } = useAppPopUp({
     title: t('common.paywall.pendingPopUp.title'),
+    iconName: 'Clock',
     description: t('common.paywall.pendingPopUp.description'),
     primaryButtonProps: { label: t('common.ok') },
   });
 
   const { popUp: errorPopUp, onOpen: openErrorPopUp } = useAppPopUp({
     title: t('common.paywall.errorPopUp.title'),
+    iconName: 'CircleX',
     description: t('common.paywall.errorPopUp.description'),
     primaryButtonProps: { label: t('common.ok') },
   });
@@ -42,6 +45,7 @@ export const usePaywallPurchase = (onEntitled: () => void) => {
   const { popUp: restoreNotFoundPopUp, onOpen: openRestoreNotFoundPopUp } =
     useAppPopUp({
       title: t('common.paywall.restoreNotFoundPopUp.title'),
+      iconName: 'CircleX',
       description: t('common.paywall.restoreNotFoundPopUp.description'),
       primaryButtonProps: { label: t('common.ok') },
     });

@@ -46,8 +46,31 @@ export const useBackupSection = ({
       title: t(
         'screens.settingsScreen.backupSection.restoreSheet.invalidPopUp.title',
       ),
+      iconName: 'TriangleAlert',
       description: t(
         'screens.settingsScreen.backupSection.restoreSheet.invalidPopUp.description',
+      ),
+      primaryButtonProps: { label: t('common.ok') },
+    });
+
+  const { popUp: restoreSuccessPopUp, onOpen: openRestoreSuccessPopUp } =
+    useAppPopUp({
+      iconName: 'Check',
+      title: t(
+        'screens.settingsScreen.backupSection.restoreSuccessPopUp.title',
+      ),
+      description: t(
+        'screens.settingsScreen.backupSection.restoreSuccessPopUp.description',
+      ),
+      primaryButtonProps: { label: t('common.ok') },
+    });
+
+  const { popUp: exportDonePopUp, onOpen: openExportDonePopUp } =
+    useAppPopUp({
+      iconName: 'Check',
+      title: t('screens.settingsScreen.backupSection.exportDonePopUp.title'),
+      description: t(
+        'screens.settingsScreen.backupSection.exportDonePopUp.description',
       ),
       primaryButtonProps: { label: t('common.ok') },
     });
@@ -57,6 +80,7 @@ export const useBackupSection = ({
       replaceAllWorkouts(payload.workouts);
       void setLog(payload.log);
       handleClose();
+      openRestoreSuccessPopUp();
     };
 
     const renderContent: AppBottomSheetProps['renderContent'] = () => (
@@ -82,10 +106,15 @@ export const useBackupSection = ({
     }
 
     showFullScreenLoader(t('common.loader.exportingBackup'));
+    let didShare = false;
     try {
-      await exportBackup(storedWorkouts, log);
+      didShare = await exportBackup(storedWorkouts, log);
     } finally {
       hideFullScreenLoader();
+    }
+
+    if (didShare) {
+      openExportDonePopUp();
     }
   };
 
@@ -133,6 +162,8 @@ export const useBackupSection = ({
     <Fragment>
       {restoreBottomSheet}
       {invalidBackupPopUp}
+      {restoreSuccessPopUp}
+      {exportDonePopUp}
     </Fragment>
   );
 

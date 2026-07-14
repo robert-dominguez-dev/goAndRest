@@ -105,13 +105,13 @@ const PremiumCharacterBottomSheetContentComponent = ({
 
   return (
     <AppView gap={'l'}>
-      <AppText numberOfLines={UNLIMITED_NUMBER_OF_LINES}>
-        {t(
-          isPremium
-            ? 'screens.settingsScreen.feedbackSection.items.characterVariant.premiumBottomSheet.descriptionPremium'
-            : 'screens.settingsScreen.feedbackSection.items.characterVariant.premiumBottomSheet.description',
-        )}
-      </AppText>
+      {!isPremium && (
+        <AppText numberOfLines={UNLIMITED_NUMBER_OF_LINES}>
+          {t(
+            'screens.settingsScreen.feedbackSection.items.characterVariant.premiumBottomSheet.description',
+          )}
+        </AppText>
+      )}
       <AppView>{items}</AppView>
       {!isPremium && onUnlockAllPress && (
         <PremiumCtaButton

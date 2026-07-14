@@ -23,6 +23,7 @@ export const useDeleteWorkoutPopUp = () => {
 
   const { popUp, onOpen } = useAppPopUp({
     title: t('screens.landingScreen.removeStoredWorkoutPopUp.title'),
+    iconName: 'Trash2',
     description: t(
       'screens.landingScreen.removeStoredWorkoutPopUp.description',
       { value: workoutToDelete?.meta.name ?? '' },

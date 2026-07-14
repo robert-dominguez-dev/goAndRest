@@ -73,7 +73,7 @@ export const en = {
         description: 'We could not find any previous purchase on this account.',
       },
       successPopUp: {
-        title: 'Premium active ✓',
+        title: 'Premium active',
         description: 'Thanks for the support! Everything is unlocked.',
       },
       pendingPopUp: {
@@ -208,11 +208,8 @@ export const en = {
             },
             premiumBottomSheet: {
               title: 'Unlock a premium voice!',
-              titlePremium: 'Choose a character',
               description:
                 'Want a premium voice for your timer? Tap it, watch a short video and unlock it free for 7 days — or unlock everything below.\n\nUse the ▷ icon on the right to hear a preview. 👉',
-              descriptionPremium:
-                'You have Premium — every character is unlocked.',
               daysRemaining: {
                 lessThanOne: '< 1 day',
                 one: '{{value}} day',
@@ -288,6 +285,16 @@ export const en = {
             description: 'The backup file could not be loaded.',
           },
         },
+        restoreSuccessPopUp: {
+          title: 'Backup restored',
+          description:
+            'Your workouts and history were successfully restored from the backup.',
+        },
+        exportDonePopUp: {
+          title: 'Done',
+          description:
+            'If you saved the backup file, your data is safe. You can restore it anytime here in settings.',
+        },
       },
       otherSection: {
         label: 'Other',
@@ -358,8 +365,10 @@ export const en = {
       listEmpty: 'No workouts yet. They will appear here once you finish one.',
       detailConfigTitle: 'Workout settings',
       detailDifficultyChartTitle: 'Difficulty over time',
-      detailDifficultyChartSubtitle: 'Unsaved workouts with the same setup',
-      detailDifficultyChartSubtitleNamed: 'The same workout “{{name}}”',
+      detailDifficultyChartSubtitle:
+        'The chart compares this workout with your other (still unsaved) workouts using the same setup – see how their difficulty shifts over time.',
+      detailDifficultyChartSubtitleNamed:
+        'The chart shows how hard “{{name}}” has felt for you over time – watch whether it is getting easier or whether you are pushing harder.',
       detailSave: 'Save workout',
       badgeDeleted: 'Deleted',
       badgeChanged: 'Changed',

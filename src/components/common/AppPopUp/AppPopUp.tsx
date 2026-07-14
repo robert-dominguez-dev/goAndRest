@@ -11,6 +11,8 @@ import {
 } from '../../../constants/common.ts';
 import { AppBackdrop } from '../AppBackdrop.tsx';
 import { useMaxTabletActiveElementWidth } from '../../../hooks/useMaxTabletActiveElementWidth.ts';
+import { AppIconName } from '../AppIcon.tsx';
+import { AppIconAndLabel } from '../../controls/AppButton/components/AppIconAndLabel.tsx';
 
 type AppPopUpButtonProps = Pick<AppButtonProps, 'label' | 'onPress'> &
   Pick<AppButtonProps, 'backgroundColorStatus'>;
@@ -18,6 +20,7 @@ type AppPopUpButtonProps = Pick<AppButtonProps, 'label' | 'onPress'> &
 export type AppPopUpProps = {
   title: string;
   description: string;
+  iconName?: AppIconName;
   primaryButtonProps: AppPopUpButtonProps;
   secondaryButtonProps?: AppPopUpButtonProps;
   onClose: () => void;
@@ -26,6 +29,7 @@ export type AppPopUpProps = {
 export const AppPopUp = ({
   title,
   description,
+  iconName,
   primaryButtonProps,
   secondaryButtonProps,
   onClose,
@@ -66,11 +70,24 @@ export const AppPopUp = ({
         borderColorStatus={'border'}
         shadowColorStatus={'border'}
         borderWidthOverride={1}>
-        <AppText
-          category={'header'}
-          textAlign={'center'}>
-          {title}
-        </AppText>
+        {iconName ? (
+          <AppRow
+            gap={'s'}
+            justifyContent={'center'}
+            alignItems={'center'}>
+            <AppIconAndLabel
+              category={'header'}
+              iconName={iconName}
+              label={title}
+            />
+          </AppRow>
+        ) : (
+          <AppText
+            category={'header'}
+            textAlign={'center'}>
+            {title}
+          </AppText>
+        )}
         <AppText numberOfLines={UNLIMITED_NUMBER_OF_LINES}>
           {description}
         </AppText>

@@ -25,6 +25,7 @@ export const useResetWorkoutPopUp = () => {
 
   const { popUp, onOpen } = useAppPopUp({
     title: t('screens.landingScreen.resetWorkoutPopUp.title'),
+    iconName: 'RotateCcw',
     description: t('screens.landingScreen.resetWorkoutPopUp.description'),
     primaryButtonProps: {
       label: t('screens.landingScreen.resetWorkoutPopUp.positiveButtonLabel'),

@@ -72,7 +72,7 @@ export const cs = {
         description: 'Na tomto účtu jsme nenašli žádný předchozí nákup.',
       },
       successPopUp: {
-        title: 'Premium aktivní ✓',
+        title: 'Premium aktivní',
         description: 'Díky za podporu! Máš odemčeno vše.',
       },
       pendingPopUp: {
@@ -205,11 +205,8 @@ export const cs = {
             },
             premiumBottomSheet: {
               title: 'Aktivuj prémiový hlas!',
-              titlePremium: 'Vyber postavu',
               description:
                 'Chceš prémiový hlas k časovači? Klepni na něj, zhlédni krátké video a odemkneš ho na 7 dní zdarma — nebo si dole odemkni vše.\n\nIkonou ▷ vpravo si přehraješ ukázku. 👉',
-              descriptionPremium:
-                'Máš Premium — všechny postavy jsou odemčené.',
               daysRemaining: {
                 lessThanOne: '< 1 den',
                 one: '{{value}} den',
@@ -285,6 +282,16 @@ export const cs = {
             description: 'Soubor zálohy se nepodařilo načíst.',
           },
         },
+        restoreSuccessPopUp: {
+          title: 'Záloha obnovena',
+          description:
+            'Tvoje tréninky a historie byly úspěšně obnoveny ze zálohy.',
+        },
+        exportDonePopUp: {
+          title: 'Hotovo',
+          description:
+            'Jestli jsi soubor se zálohou uložil, máš svá data v bezpečí. Kdykoli je můžeš obnovit tady v nastavení.',
+        },
       },
       otherSection: {
         label: 'Ostatní',
@@ -355,8 +362,10 @@ export const cs = {
       listEmpty: 'Zatím žádný trénink. Po dokončení se sem uloží.',
       detailConfigTitle: 'Nastavení tréninku',
       detailDifficultyChartTitle: 'Náročnost v čase',
-      detailDifficultyChartSubtitle: 'Neuložené tréninky se stejným nastavením',
-      detailDifficultyChartSubtitleNamed: 'Stejný trénink „{{name}}“',
+      detailDifficultyChartSubtitle:
+        'Graf porovnává tento trénink s tvými dalšími (zatím neuloženými) tréninky se stejným nastavením – uvidíš, jak se ti jejich náročnost proměňuje v čase.',
+      detailDifficultyChartSubtitleNamed:
+        'Graf ukazuje, jak náročný pro tebe trénink „{{name}}“ v čase byl – sleduj, jestli se ti zlehčuje, nebo jestli do něj dáváš čím dál víc.',
       detailSave: 'Uložit trénink',
       badgeDeleted: 'Smazáno',
       badgeChanged: 'Změněno',

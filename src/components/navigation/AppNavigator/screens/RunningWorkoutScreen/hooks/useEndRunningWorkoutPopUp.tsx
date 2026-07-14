@@ -12,6 +12,7 @@ export const useEndRunningWorkoutPopUp = (onCancelWorkout?: () => void) => {
 
   const { popUp, onOpen } = useAppPopUp({
     title: t('screens.runningWorkoutScreen.endWorkoutPopUp.title'),
+    iconName: 'StopCircle',
     description: t('screens.runningWorkoutScreen.endWorkoutPopUp.description'),
     primaryButtonProps: {
       label: t(
