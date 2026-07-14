@@ -41,6 +41,7 @@
 		08D91D198B2542CA80FC6612 /* wizard_en_1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E54F1CB949F44AA78286E603 /* wizard_en_1.m4a */; };
 		08F8864E474B458BA2691F92 /* shieldmaiden_sk_cooldown_short.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 60B8F3ABC6774542BA27D438 /* shieldmaiden_sk_cooldown_short.m4a */; };
 		08F8DD663B5141A59E38A42D /* brief_male_cs_cooldown_v1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 48000C8FE73D4194A1E6110A /* brief_male_cs_cooldown_v1.m4a */; };
+		0927107C8800C47D8BC1FA80 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 606DB3D66BBA95D6783AAB4F /* InfoPlist.strings */; };
 		095C3F172FD0588E00166012 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 095C3F162FD0588E00166012 /* GoogleService-Info.plist */; };
 		096B80E12F4DABF500231B6D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 096B80E02F4DABF500231B6D /* AVFoundation.framework */; };
 		0A4A390C4A8545ED89B2C56D /* cyborg_cs_1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3D57D34D5069460288F7423E /* cyborg_cs_1.m4a */; };
@@ -902,6 +903,7 @@
 		0B39FF97759945318CC7DDAF /* cyborg_cs_2.m4a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = cyborg_cs_2.m4a; path = ../src/assets/audio/workout/characters/cyborg/cs/cyborg_cs_2.m4a; sourceTree = "<group>"; };
 		0B5EE41CF10847899FCF9971 /* cyborg_sk_9.m4a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = cyborg_sk_9.m4a; path = ../src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_9.m4a; sourceTree = "<group>"; };
 		0C019BE1F2124BCE8EFF8E08 /* brief_male_sk_preview.m4a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = brief_male_sk_preview.m4a; path = ../src/assets/audio/preview/voices/brief/male/brief_male_sk_preview.m4a; sourceTree = "<group>"; };
+		0C117610A504B24E12A3D94D /* en */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = en; path = GoAndRest/en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0C1E74B1827948ABBA426F5A /* shieldmaiden_en_cooldown_v3.m4a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = shieldmaiden_en_cooldown_v3.m4a; path = ../src/assets/audio/workout/characters/shieldmaiden/en/shieldmaiden_en_cooldown_v3.m4a; sourceTree = "<group>"; };
 		0C2E114A2B1445078F4AFA7D /* coach_male_sk_work_v3.m4a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = coach_male_sk_work_v3.m4a; path = ../src/assets/audio/workout/voices/coach/male/sk/coach_male_sk_work_v3.m4a; sourceTree = "<group>"; };
 		0C43256CFA3841D59199E3D6 /* brief_male_cs_rest_v3.m4a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = brief_male_cs_rest_v3.m4a; path = ../src/assets/audio/workout/voices/brief/male/cs/brief_male_cs_rest_v3.m4a; sourceTree = "<group>"; };
@@ -1227,6 +1229,7 @@
 		68EDE5CB06CB46E5AE22C9B4 /* cyborg_sk_finish_v2.m4a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = cyborg_sk_finish_v2.m4a; path = ../src/assets/audio/workout/characters/cyborg/sk/cyborg_sk_finish_v2.m4a; sourceTree = "<group>"; };
 		692188EFC2824DC8AF9BA4C6 /* coach_female_sk_work_v4.m4a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = coach_female_sk_work_v4.m4a; path = ../src/assets/audio/workout/voices/coach/female/sk/coach_female_sk_work_v4.m4a; sourceTree = "<group>"; };
 		6952196028224A668771B08D /* coach_female_en_cooldown_short.m4a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = coach_female_en_cooldown_short.m4a; path = ../src/assets/audio/workout/voices/coach/female/en/coach_female_en_cooldown_short.m4a; sourceTree = "<group>"; };
+		69FD78D7D2D2730FC4601757 /* sk */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = sk; path = GoAndRest/sk.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6A1CF0F9DF134B70AF174FF9 /* wizard_cs_warmup_v3.m4a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = wizard_cs_warmup_v3.m4a; path = ../src/assets/audio/workout/characters/wizard/cs/wizard_cs_warmup_v3.m4a; sourceTree = "<group>"; };
 		6A21CE536FCC4C7D95ECE869 /* coach_male_cs_work_short.m4a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = coach_male_cs_work_short.m4a; path = ../src/assets/audio/workout/voices/coach/male/cs/coach_male_cs_work_short.m4a; sourceTree = "<group>"; };
 		6A53FD4A384A4DB1A1901ED4 /* brief_female_cs_finish_v1.m4a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = brief_female_cs_finish_v1.m4a; path = ../src/assets/audio/workout/voices/brief/female/cs/brief_female_cs_finish_v1.m4a; sourceTree = "<group>"; };
@@ -1566,6 +1569,7 @@
 		CF06B166975840BF91DBA373 /* brief_male_cs_3.m4a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = brief_male_cs_3.m4a; path = ../src/assets/audio/workout/voices/brief/male/cs/brief_male_cs_3.m4a; sourceTree = "<group>"; };
 		CF88C545AEFC45E6BD11BEEC /* wizard_cs_work_v3.m4a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = wizard_cs_work_v3.m4a; path = ../src/assets/audio/workout/characters/wizard/cs/wizard_cs_work_v3.m4a; sourceTree = "<group>"; };
 		CFB5F50CFB49453EAEDE9957 /* brief_female_en_4.m4a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = brief_female_en_4.m4a; path = ../src/assets/audio/workout/voices/brief/female/en/brief_female_en_4.m4a; sourceTree = "<group>"; };
+		CFB8970DAFC43F9830206168 /* cs */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = cs; path = GoAndRest/cs.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CFEF0E23B8AD4A7FBFAB3EA3 /* coach_male_en_cooldown_short.m4a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = coach_male_en_cooldown_short.m4a; path = ../src/assets/audio/workout/voices/coach/male/en/coach_male_en_cooldown_short.m4a; sourceTree = "<group>"; };
 		D0A6C68BE2554CCBAEFC90E5 /* brief_male_cs_8.m4a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = brief_male_cs_8.m4a; path = ../src/assets/audio/workout/voices/brief/male/cs/brief_male_cs_8.m4a; sourceTree = "<group>"; };
 		D0CF59A0B3A04714B36554DD /* shieldmaiden_sk_half_v2.m4a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = shieldmaiden_sk_half_v2.m4a; path = ../src/assets/audio/workout/characters/shieldmaiden/sk/shieldmaiden_sk_half_v2.m4a; sourceTree = "<group>"; };
@@ -1746,6 +1750,7 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
+				606DB3D66BBA95D6783AAB4F /* InfoPlist.strings */,
 			);
 			name = GoAndRest;
 			sourceTree = "<group>";
@@ -2700,6 +2705,8 @@
 			knownRegions = (
 				en,
 				Base,
+				cs,
+				sk,
 			);
 			mainGroup = 83CBB9F61A601CBA00E9B192;
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
@@ -3567,6 +3574,7 @@
 				01079E8AB10B4B0CB664E6C5 /* shieldmaiden_sk_work_v1.m4a in Resources */,
 				9D6CFF838DE145629F4D527D /* shieldmaiden_sk_work_v2.m4a in Resources */,
 				6D7F45B7A689495993D58961 /* shieldmaiden_sk_work_v3.m4a in Resources */,
+				0927107C8800C47D8BC1FA80 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3683,6 +3691,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		606DB3D66BBA95D6783AAB4F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0C117610A504B24E12A3D94D /* en */,
+				CFB8970DAFC43F9830206168 /* cs */,
+				69FD78D7D2D2730FC4601757 /* sk */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
