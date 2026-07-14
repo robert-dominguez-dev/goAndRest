@@ -1,7 +1,9 @@
 import { Fragment, useCallback, useState } from 'react';
 import { useAppTranslation } from '../../../../../../locales/hooks/useAppTranslation.ts';
 import { useAppPopUp } from '../../../../../common/AppPopUp/hooks/useAppPopUp.tsx';
-import { useAppFullScreenLoader } from '../../../../../../contexts/AppFullScreenLoaderProvider/AppFullScreenLoaderProvider.tsx';
+import {
+  useAppFullScreenLoader
+} from '../../../../../../contexts/AppFullScreenLoaderProvider/AppFullScreenLoaderProvider.tsx';
 import { usePremiumActions } from '../../../../../../contexts/premium/hooks/usePremiumActions.ts';
 
 /**
@@ -23,7 +25,7 @@ export const usePaywallPurchase = (onEntitled: () => void) => {
 
   const { popUp: successPopUp, onOpen: openSuccessPopUp } = useAppPopUp({
     title: t('common.paywall.successPopUp.title'),
-    iconName: 'Check',
+    iconName: 'CircleCheckBig',
     description: t('common.paywall.successPopUp.description'),
     primaryButtonProps: { label: t('common.ok'), onPress: onEntitled },
   });

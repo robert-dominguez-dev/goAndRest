@@ -70,24 +70,16 @@ export const AppPopUp = ({
         borderColorStatus={'border'}
         shadowColorStatus={'border'}
         borderWidthOverride={1}>
-        {iconName ? (
-          <AppRow
-            gap={'s'}
-            justifyContent={'center'}
-            alignItems={'center'}>
-            <AppIconAndLabel
-              category={'header'}
-              iconName={iconName}
-              label={title}
-            />
-          </AppRow>
-        ) : (
-          <AppText
+        <AppRow
+          gap={'s'}
+          justifyContent={'center'}
+          alignItems={'center'}>
+          <AppIconAndLabel
             category={'header'}
-            textAlign={'center'}>
-            {title}
-          </AppText>
-        )}
+            iconName={iconName}
+            label={title}
+          />
+        </AppRow>
         <AppText numberOfLines={UNLIMITED_NUMBER_OF_LINES}>
           {description}
         </AppText>

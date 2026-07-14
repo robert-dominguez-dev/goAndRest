@@ -82,7 +82,7 @@ export const SettingsScreen = ({ navigation }: SettingsScreenProps) => {
             items={feedbackSettingsItems}
           />
           <SettingsSection
-            iconName={'Timer'}
+            iconName={'Clock'}
             label={t('screens.settingsScreen.workoutSection.label')}
             items={workoutSettingsItems}
           />

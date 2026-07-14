@@ -55,7 +55,7 @@ export const useBackupSection = ({
 
   const { popUp: restoreSuccessPopUp, onOpen: openRestoreSuccessPopUp } =
     useAppPopUp({
-      iconName: 'Check',
+      iconName: 'CircleCheckBig',
       title: t(
         'screens.settingsScreen.backupSection.restoreSuccessPopUp.title',
       ),
@@ -65,15 +65,14 @@ export const useBackupSection = ({
       primaryButtonProps: { label: t('common.ok') },
     });
 
-  const { popUp: exportDonePopUp, onOpen: openExportDonePopUp } =
-    useAppPopUp({
-      iconName: 'Check',
-      title: t('screens.settingsScreen.backupSection.exportDonePopUp.title'),
-      description: t(
-        'screens.settingsScreen.backupSection.exportDonePopUp.description',
-      ),
-      primaryButtonProps: { label: t('common.ok') },
-    });
+  const { popUp: exportDonePopUp, onOpen: openExportDonePopUp } = useAppPopUp({
+    iconName: 'CircleCheckBig',
+    title: t('screens.settingsScreen.backupSection.exportDonePopUp.title'),
+    description: t(
+      'screens.settingsScreen.backupSection.exportDonePopUp.description',
+    ),
+    primaryButtonProps: { label: t('common.ok') },
+  });
 
   const openRestoreBottomSheet = (payload: ParsedBackup) => {
     const handleConfirm = () => {

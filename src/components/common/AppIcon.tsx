@@ -64,6 +64,7 @@ export type AppIconName = Extract<
   | 'Wind'
   | 'Star'
   | 'X'
+  | 'CircleCheckBig'
 >;
 
 type AppIconProps = {
