@@ -17,9 +17,12 @@ export const getComparableHistoryEntries = (
     // Compare by config signature so entries sharing a name but with a
     // config the user changed over time are not lumped together; named
     // entries additionally match on the name, anonymous ones on being nameless.
+    // Entries without a rated difficulty are excluded - they cannot appear on
+    // the difficulty chart.
     return log.filter(
       e =>
         e.config &&
+        e.rpe !== null &&
         getWorkoutConfigSignature(e.config) === signature &&
         (entry.name ? e.name === entry.name : !e.name),
     );

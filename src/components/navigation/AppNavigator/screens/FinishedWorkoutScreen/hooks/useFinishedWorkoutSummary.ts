@@ -34,7 +34,7 @@ export const useFinishedWorkoutSummary = () => {
 
   const [rpe, setRpe] = useState<number | null>(null);
 
-  const committedRef = useRef(false);
+  const [isRpePopupOpen, setIsRpePopupOpen] = useState(true);
 
   const session: WorkoutHistoryEntry = useMemo(() => {
     const runningConfig = finishedWorkoutStats?.workoutConfig;
@@ -67,20 +67,30 @@ export const useFinishedWorkoutSummary = () => {
   const streak = computeStreak(projectedLog);
   const weekVolumeStats = weekVolume(projectedLog);
 
+  // Upsert by id: the first commit records the entry, later commits (e.g. a
+  // corrected difficulty) update the same entry instead of duplicating it.
   const commit = () => {
-    if (committedRef.current) {
-      return;
-    }
+    const alreadyLogged = currentLog.some(entry => entry.id === session.id);
 
-    committedRef.current = true;
+    const nextLog = alreadyLogged
+      ? currentLog.map(entry => (entry.id === session.id ? session : entry))
+      : addWorkoutHistoryEntry(currentLog, session);
 
-    void setWorkoutHistory(addWorkoutHistoryEntry(currentLog, session));
+    void setWorkoutHistory(nextLog);
   };
 
-  // The rating popup is the last mandatory step, so persist the workout as
-  // soon as a difficulty is picked. This guarantees the entry is recorded
-  // even if the user then leaves via the system back button instead of the
-  // Finish / History actions.
+  const selectRpe = (value: number) => {
+    setRpe(value);
+    setIsRpePopupOpen(false);
+  };
+
+  const openRpePopup = () => setIsRpePopupOpen(true);
+
+  const closeRpePopup = () => setIsRpePopupOpen(false);
+
+  // Persist as soon as a difficulty is picked (or corrected), so the entry is
+  // recorded even if the user then leaves via the system back button instead
+  // of the Finish / History actions.
   useEffect(() => {
     if (rpe !== null) {
       commit();
@@ -91,7 +101,10 @@ export const useFinishedWorkoutSummary = () => {
   return {
     sec: secRef.current,
     rpe,
-    setRpe,
+    selectRpe,
+    isRpePopupOpen,
+    openRpePopup,
+    closeRpePopup,
     streak,
     weekVolumeStats,
     commit,

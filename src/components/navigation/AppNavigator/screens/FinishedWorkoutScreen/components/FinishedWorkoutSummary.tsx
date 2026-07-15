@@ -16,6 +16,7 @@ type FinishedWorkoutSummaryProps = {
   weekVolumeStats: { min: number; count: number };
   isPremium: boolean;
   onHistoryPress: () => void;
+  onDifficultyPress: () => void;
 };
 
 const FinishedWorkoutSummaryComponent = ({
@@ -25,6 +26,7 @@ const FinishedWorkoutSummaryComponent = ({
   weekVolumeStats,
   isPremium,
   onHistoryPress,
+  onDifficultyPress,
 }: FinishedWorkoutSummaryProps) => {
   const t = useAppTranslation();
 
@@ -39,6 +41,7 @@ const FinishedWorkoutSummaryComponent = ({
         <WorkoutOutcomeTiles
           sec={sec}
           rpe={rpe}
+          onDifficultyPress={onDifficultyPress}
         />
       </AppView>
       <AppView gap={'m'}>

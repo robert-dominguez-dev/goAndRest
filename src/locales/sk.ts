@@ -7,6 +7,7 @@ export const sk = {
   common: {
     ok: 'Ok',
     back: 'Späť',
+    close: 'Zavrieť',
     chartEmpty: 'Zatiaľ žiadne dáta na zobrazenie grafu.',
     workoutConfig: {
       work: {

@@ -51,6 +51,7 @@ export type AppTranslations = {
   common: {
     ok: string;
     back: string;
+    close: string;
     chartEmpty: string;
     workoutConfig: WorkoutConfigTexts;
     pressAnywhere: string;

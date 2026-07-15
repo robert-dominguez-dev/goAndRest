@@ -7,6 +7,7 @@ export const en = {
   common: {
     ok: 'Ok',
     back: 'Back',
+    close: 'Close',
     chartEmpty: 'No data to display the chart yet.',
     workoutConfig: {
       work: {

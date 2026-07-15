@@ -40,6 +40,7 @@ export type AppIconName = Extract<
   | 'Music4'
   | 'Palette'
   | 'Pause'
+  | 'Pencil'
   | 'Play'
   | 'PlayCircle'
   | 'Radio'

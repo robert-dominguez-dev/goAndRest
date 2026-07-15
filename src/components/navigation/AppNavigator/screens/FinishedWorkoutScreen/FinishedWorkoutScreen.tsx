@@ -51,8 +51,17 @@ export const FinishedWorkoutScreen = () => {
 
   const isPremium = useIsPremium();
 
-  const { sec, rpe, setRpe, streak, weekVolumeStats, commit } =
-    useFinishedWorkoutSummary();
+  const {
+    sec,
+    rpe,
+    selectRpe,
+    isRpePopupOpen,
+    openRpePopup,
+    closeRpePopup,
+    streak,
+    weekVolumeStats,
+    commit,
+  } = useFinishedWorkoutSummary();
 
   const finishWorkout = useFinishWorkout();
 
@@ -90,9 +99,16 @@ export const FinishedWorkoutScreen = () => {
           weekVolumeStats={weekVolumeStats}
           isPremium={isPremium}
           onHistoryPress={handleHistoryPress}
+          onDifficultyPress={openRpePopup}
         />
       </AppScreenLayout>
-      {rpe === null && <RpeRatingPopUp onSelect={setRpe} />}
+      {isRpePopupOpen && (
+        <RpeRatingPopUp
+          onSelect={selectRpe}
+          onClose={closeRpePopup}
+          selectedRpe={rpe}
+        />
+      )}
     </>
   );
 };

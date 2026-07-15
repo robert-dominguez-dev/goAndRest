@@ -124,17 +124,15 @@ export const HistoryDetailScreen = ({
     !!entry.config &&
     !storedWorkouts.some(workout => workout.id === entry.savedWorkoutId);
 
+  // Only entries with a rated difficulty are returned, so an unrated workout
+  // never shows up on the difficulty chart.
   const chronologicalSiblings = useMemo(
     () => getComparableHistoryEntries(log, entry),
     [log, entry],
   );
 
-  const ratedSiblings = chronologicalSiblings.filter(
-    historyEntry => historyEntry.rpe !== null,
-  );
-
   const hasEnoughDataForChart =
-    ratedSiblings.length >= MIN_RATED_ENTRIES_FOR_CHART;
+    chronologicalSiblings.length >= MIN_RATED_ENTRIES_FOR_CHART;
 
   const historyDetailDateFormatted = formatHistoryDetailDate(
     entry.date,

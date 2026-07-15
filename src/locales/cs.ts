@@ -7,6 +7,7 @@ export const cs = {
   common: {
     ok: 'Ok',
     back: 'Zpět',
+    close: 'Zavřít',
     chartEmpty: 'Zatím žádná data pro zobrazení grafu.',
     workoutConfig: {
       work: {

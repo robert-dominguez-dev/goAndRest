@@ -3,6 +3,7 @@ import { AppBackdrop } from '../../../../../common/AppBackdrop.tsx';
 import { AppView } from '../../../../../common/AppView/AppView.tsx';
 import { AppRow } from '../../../../../common/AppRow.tsx';
 import { AppText } from '../../../../../common/AppText/AppText.tsx';
+import { AppButton } from '../../../../../controls/AppButton/AppButton.tsx';
 import { getOnPressWithHapticFeedbackConditionally } from '../../../../../controls/helpers/getOnPressWithHapticFeedbackConditionally.ts';
 import { getPressableOpacity } from '../../../../../controls/helpers/getPressableOpacity.ts';
 import { useAppTranslation } from '../../../../../../locales/hooks/useAppTranslation.ts';
@@ -15,28 +16,35 @@ import { RPE_LEVELS } from '../../../../../../constants/rpe.ts';
 
 type RpeRatingPopUpProps = {
   onSelect: (rpe: number) => void;
+  // Dismiss without rating - the workout is still saved, just with no
+  // difficulty, so the user is not forced to rate right after a workout.
+  onClose: () => void;
+  // Highlights the current pick when the popup is reopened to correct it.
+  selectedRpe: number | null;
 };
 
-/**
- * The popup must not be dismissible without picking a value,
- * so the Android hardware back button is neutralized here...
- */
-const doNotAllowClosing = () => {};
-
-export const RpeRatingPopUp = ({ onSelect }: RpeRatingPopUpProps) => {
+export const RpeRatingPopUp = ({
+  onSelect,
+  onClose,
+  selectedRpe,
+}: RpeRatingPopUpProps) => {
   const t = useAppTranslation();
 
   const maxWidth = useMaxTabletActiveElementWidth();
 
   return (
-    <AppBackdrop onRequestClose={doNotAllowClosing}>
+    <AppBackdrop onRequestClose={onClose}>
       <AppView
         width={FILL_CONTAINER_DIMENSION}
         maxWidth={maxWidth}
         gap={'m'}
         padding={'m'}
+        margin={'m'}
         borderRadius={'s'}
-        backgroundColorStatus={'backgroundAlt'}>
+        backgroundColorStatus={'backgroundAlt'}
+        borderColorStatus={'border'}
+        shadowColorStatus={'border'}
+        borderWidthOverride={1}>
         <AppText
           category={'header'}
           textAlign={'center'}
@@ -66,6 +74,9 @@ export const RpeRatingPopUp = ({ onSelect }: RpeRatingPopUpProps) => {
                   paddingVertical={'s'}
                   paddingHorizontal={'xxs'}
                   borderRadius={'s'}
+                  borderColorStatus={
+                    index === selectedRpe ? 'premium' : undefined
+                  }
                   backgroundColorStatus={'background'}>
                   <AppText
                     grow={false}
@@ -85,6 +96,12 @@ export const RpeRatingPopUp = ({ onSelect }: RpeRatingPopUpProps) => {
             </Pressable>
           ))}
         </AppRow>
+        <AppButton
+          label={t('common.close')}
+          backgroundColorStatus={'transparent'}
+          textColorStatus={'textMuted'}
+          onPress={onClose}
+        />
       </AppView>
     </AppBackdrop>
   );

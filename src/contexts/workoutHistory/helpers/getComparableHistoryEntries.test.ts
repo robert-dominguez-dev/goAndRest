@@ -93,6 +93,38 @@ describe('getComparableHistoryEntries', () => {
     expect(result).toEqual([sameConfigAnonymous, entry]);
   });
 
+  it('excludes entries without a rated difficulty (rpe null)', () => {
+    const entry = buildEntry({ id: 'entry', date: 3, name: 'Leg day' });
+    const ratedSibling = buildEntry({ id: 'rated', date: 1, name: 'Leg day' });
+    const unratedSibling = buildEntry({
+      id: 'unrated',
+      date: 2,
+      name: 'Leg day',
+      rpe: null,
+    });
+
+    const result = getComparableHistoryEntries(
+      [ratedSibling, unratedSibling, entry],
+      entry,
+    );
+
+    expect(result.map(e => e.id)).toEqual(['rated', 'entry']);
+  });
+
+  it('excludes the target entry itself when it is unrated', () => {
+    const entry = buildEntry({
+      id: 'entry',
+      date: 3,
+      name: 'Leg day',
+      rpe: null,
+    });
+    const ratedSibling = buildEntry({ id: 'rated', date: 1, name: 'Leg day' });
+
+    const result = getComparableHistoryEntries([ratedSibling, entry], entry);
+
+    expect(result.map(e => e.id)).toEqual(['rated']);
+  });
+
   it('returns an empty array for an entry without a config', () => {
     const entry = buildEntry({ id: 'entry', date: 1, config: undefined });
     const other = buildEntry({ id: 'other', date: 2 });
