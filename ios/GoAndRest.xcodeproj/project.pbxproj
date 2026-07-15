@@ -3715,7 +3715,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = 84JJGMBQ83;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = GoAndRest/Info.plist;
@@ -3726,7 +3726,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.9;
+				MARKETING_VERSION = 1.0.10;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -3752,7 +3752,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = 84JJGMBQ83;
 				INFOPLIST_FILE = GoAndRest/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Go&Rest";
@@ -3762,7 +3762,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.9;
+				MARKETING_VERSION = 1.0.10;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
