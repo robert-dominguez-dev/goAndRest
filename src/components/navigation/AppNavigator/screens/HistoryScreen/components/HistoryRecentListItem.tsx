@@ -21,8 +21,6 @@ type HistoryRecentListItemProps = {
   badgeStatus: HistoryEntryBadgeStatus | null;
 };
 
-const NO_RPE_PLACEHOLDER = '•';
-
 const HistoryRecentListItemComponent = ({
   entry,
   onPress,
@@ -31,8 +29,8 @@ const HistoryRecentListItemComponent = ({
   const { language } = useAppLanguage();
   const t = useAppTranslation();
 
-  const rpeFace =
-    entry.rpe !== null ? RPE_LEVELS[entry.rpe].face : NO_RPE_PLACEHOLDER;
+  const rpeFace: string | undefined =
+    entry.rpe !== null ? RPE_LEVELS[entry.rpe].face : undefined;
 
   const dateLabel = formatHistoryListDate(entry.date, language);
   const timeLabel = formatTimerTime(entry.sec * ONE_SECOND_MS);
@@ -57,11 +55,6 @@ const HistoryRecentListItemComponent = ({
         height={60}
         alignItems={'center'}
         gap={'sm'}>
-        <AppText
-          grow={false}
-          category={'title'}>
-          {rpeFace}
-        </AppText>
         <AppView
           grow
           justifyContent={'center'}>
@@ -89,15 +82,25 @@ const HistoryRecentListItemComponent = ({
             </AppText>
           )}
         </AppView>
-        <AppText
-          grow={false}
-          colorStatus={'textMuted'}>
-          {timeLabel}
-        </AppText>
-        <AppIcon
-          name={'ChevronRight'}
-          colorStatus={'textMuted'}
-        />
+        <AppRow
+          gap={'sm'}
+          alignItems={'center'}
+          justifyContent={'flex-end'}>
+          <AppText
+            grow={false}
+            category={'title'}>
+            {rpeFace}
+          </AppText>
+          <AppText
+            grow={false}
+            colorStatus={'textMuted'}>
+            {timeLabel}
+          </AppText>
+          <AppIcon
+            name={'ChevronRight'}
+            colorStatus={'textMuted'}
+          />
+        </AppRow>
       </AppRow>
     </Pressable>
   );
